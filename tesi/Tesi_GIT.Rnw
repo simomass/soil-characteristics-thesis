@@ -309,9 +309,6 @@ file.path(DirMain, "tabelle")
 
 \chapter{Suolo agricolo e agricoltura biologica}
 
-
-VERSIONE OTTORINO NUOVA
-
 Il suolo o terreno \`e un concetto piuttosto chiaro nell'immaginario
 collettivo; nonostante questo \`e difficile individuare una
 definizione univoca. Un tentativo di definizione \`e quello di
@@ -736,13 +733,13 @@ variabile di scheletro di piccole e medie dimensioni.
 
 
 Il sito sperimentale \`e costituito da due agro ecosistemi, da qui in
-avanti definiti come \textit{Management}:
+avanti definiti come \textit{Conduzione}:
 \begin{itemize}
-\item conduzione biologica, \emph{Or} (\emph{Organic})
-  \begin{itemize}
-  \item vecchia conduzione, \emph{Old Organic, OO}
-  \item nuova conduzione, (non considerata in questo lavoro)
-  \end{itemize}
+
+\item conduzione, \emph{Biologica} \footnote{Oltre a quelli riportati
+    nella lista, sono presenti anche altri quattro appezzamenti a
+    conduzione biologica denominati \textit{Bionuovo} che non sono
+    stati considerati in questo esperimento} \emph{Old Organic, OO}
 \item conduzione \emph{Convenzionale}, \emph{Co}
 \end{itemize}
 I due agro ecosistemi sono suddivisi in pi\`u appezzamenti
@@ -755,10 +752,7 @@ Nell'anno 2015-2016, sono stati campionati \emph{OO1, OO3, CO9, CO10},
 mentre nell'anno 2016-2017 sono stati campionati \emph{OO2, OO4, CO9,
   CO10}
 
-Oltre a questi descritti sopra, sono presenti anche altri quattro
-appezzamenti a conduzione biologica (\textit{Bionuovo}) che per\`o non
-sono stati studiati in questo esperimento.
-\nonvisibile{chilosa}
+
 
 I due agro ecosistemi sono circondati da infrastrutture ecologiche
 quali siepi naturali e/o artificiali e/o strisce di essenze erbacee
@@ -788,7 +782,7 @@ stato coltivato l'orzo negli appezzamenti \emph{OO2} e \emph{CO9} e il
 girasole negli appezzamenti \emph{OO4} e \emph{CO10}.
 
 In ogni appezzamento sono state messe a confronto le seguenti
-lavorazioni primarie (\textit{Tillage}):
+lavorazioni primarie (\textit{Lavorazione}):
 \begin{itemize}
 \item aratura (\emph{Plw}),
 \item rippatura (\emph{Chp}),
@@ -1186,10 +1180,10 @@ ovvero circa la met\`a della densit\`a reale che si aggira intorno a
 
 <<Summary_Campo, echo=FALSE, eval=TRUE, results=tex>>=
 names(summary.campo) <-  
-    c("Anno", "Management", "Tillage", "Media", "Dev. std", "n")
+    c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n")
 summary.campo$Anno <- 
     c("2015", rep(" ", 5), "2016", rep(" ", 5))
-summary.campo$Management <- 
+summary.campo$Conduzione <- 
     c("Co", rep(" ", 2), "Or", rep(" ", 2), 
       "Co", rep(" ", 2), "Or", rep(" ", 2))
 tabella.campo <-
@@ -1417,8 +1411,8 @@ summary.petrolio <-
 attach(summary.petrolio)
 summary.petrolio <- summary.petrolio[order(TRT, LAVORAZIONE),]
 detach(summary.petrolio)
-names(summary.petrolio) <- c("Management","Tillage","Media","Dev. std", "n")
-summary.petrolio$Management <- c("Co", rep("", 2), "Or", rep("", 2))
+names(summary.petrolio) <- c("Conduzione","Lavorazione","Media","Dev. std", "n")
+summary.petrolio$Conduzione <- c("Co", rep("", 2), "Or", rep("", 2))
 
 tabella.petrolio <-
     xtable(summary.petrolio,
@@ -1513,7 +1507,7 @@ summary(lm.spinta)
 @ 
 
 <<Analisi_Petrolio, echo=FALSE, eval=TRUE, results=tex>>=
-rownames(anova_spinta) <- c("Management", "Tillage", "Residui")
+rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Residui")
 tabella.spinta.anova <-
     xtable(anova_spinta,
            label = 'tab:anova piccoli aggregati', align = 'rrrrrr',
@@ -1874,7 +1868,7 @@ print(xt.IUFD, include.rownames=FALSE,caption.placement = "top")
 
 <<anova_acompWET, echo=FALSE, eval=TRUE, results=tex>>=
 anova.comp.wet <- anova(lm.2)
-rownames(anova.comp.wet) <- c("Intercetta","Management", "Tempo", "Tempo^2","Residui")
+rownames(anova.comp.wet) <- c("Intercetta","Conduzione", "Tempo", "Tempo^2","Residui")
 anova_tabella <- xtable(anova.comp.wet,
        label = 'tab:anova_compWET', align = 'rrrrrrr',
        caption = 'anova stabilit\\`a aggregati per i dati WET '
@@ -1886,7 +1880,7 @@ print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 
 <<anova_acompDRY, echo=FALSE, eval=TRUE, results=tex>>=
 anova.comp.dry <- anova(lm.2.2)
-rownames(anova.comp.dry) <- c("Intercetta","Management","Tempo", "Tempo^2","Residui")
+rownames(anova.comp.dry) <- c("Intercetta","Conduzione","Tempo", "Tempo^2","Residui")
 anova_tabella_dry<- xtable(anova.comp.dry,
        label = 'tab:anova_compWET', align = 'rrrrrrr',
        caption = 'Aggregati per i dati WET '
