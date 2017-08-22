@@ -1,2 +1,4 @@
 Questo è un tentativo per vedere come gira git
-Versione 1.0 fatta dal computer ufficio 8rino
+Versione 1.5 fatta dal computer ufficio 8rino
+
+Aggiungo roba
