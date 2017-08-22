@@ -298,6 +298,8 @@ file.path(DirMain, "tabelle")
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \chapter{Suolo agricolo e agricoltura biologica}
+
+VERSIONE SIMONE
 Il concetto suolo o terreno \`e piuttosto chiaro nell'immaginario
 collettivo; nonostante questo \`e difficile individuare una
 definizione univoca. Un tentativo di definizione \`e quello di
