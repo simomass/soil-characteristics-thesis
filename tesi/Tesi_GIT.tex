@@ -3,9 +3,9 @@
 % Circa 80 lettere per pagina con draft al posto di final fa il pdf senza foto
 \usepackage[toc,page]{appendix}
 
-\usepackage[english, italian]{babel} % per la sillabazione corretta e per biblatex
+\usepackage[english, italian]{babel}
+% per la sillabazione corretta e per biblatex
 % \usepackage[english]english serve se c'e' bisogno di una parte da scriver ion inglese
-
 % https://tex.stackexchange.com/questions/82993/how-to-change-the-name-of-document-elements-like-figure-contents-bibliogr
 
 \usepackage[sc]{mathpazo}
@@ -143,7 +143,6 @@
 
 \usepackage{caption}
 
-
 \DeclareCaptionFont{mysize}{\fontsize{10}{9.6}\selectfont}
 \captionsetup{font=mysize}
 % \usepackage[swapnames]{frontespizio} %per il frontespizio
@@ -158,6 +157,14 @@
 {\cleardoublepage\null \vfill\begin{center}%
     \bfseries Summary  \end{center} \footnotesize}%\doublespace }%
 {\vfill\null}
+
+\renewcommand{\theequation}{Eq. \arabic{equation}}
+\usepackage{environ}
+\NewEnviron{modello}{%
+\begin{equation}
+  \BODY
+\end{equation}
+}
 
 \usepackage[nogin]{Sweave}
 % https://tex.stackexchange.com/questions/11619/resize-arrays-and-figures-in-a-sweave-document
@@ -458,8 +465,10 @@ usata è quella di \citet{greenland1977soil} ed \`e mostrata in tabella
 
 I pori con diametro inferiore ai \SI{0.005}{\micro\meter} sono
 chiamati \textit{pori di legame} e sono particolarmente importanti per
-quanto riguarda le forze che tengono insieme i \emph{domains} e gli
-aggregati.  
+quanto riguarda le forze che tengono insieme i
+\emph{domains}\footnote{I \emph{domains} possono essere considerati
+  come aggregati tra molti singoli foglietti dei minerali argillosi} e
+gli aggregati.
 
 I pori di diametro inferiore a \SI{0.5}{\micro\metre} sono chiamati
 \textit{pori residui} per le loro interazioni chimiche a livello
@@ -908,32 +917,30 @@ elevati rispetto a quelli misurati utilizzando il cilindro, questo \`e
 dovuto al fatto che nella misura non sono considerate le fratture
 \citep{tisdall1951comparison}.
 
-\subsection{Elaborazione dei dati \label{ssec:modello}}
+\subsection{Elaborazione dei dati} %\label{ssec:modello}}
 
 I dati sono stati analizzati utilizzando il linguaggio di
 programmazione ad oggetti R 3.4.0 \citep{r_programming}.
-
-
-
-\migliora[inline]{L'esplorazione dei modelli è stata fatta mediante
-  confronto di modelli marginali, formalmente codificata con un test F. }
+L'esplorazione dei modelli \citep{fox2002r, chambers1992statistical,
+  faraway2004} è stata fatta mediante confronto di modelli marginali e
+un test F ($p < 0,05$).
 
 Tutti i modelli sono stati validati attraverso l'analisi esplorativa
 dei residui in modo da verificare le eventuali violazioni delle
-assunzioni di normalit\`a \citep{stefanini2007introduzione}.
-\info[inline]{Aggiungere john fox, faraway e chambersHAstie alla
-  biblio} Sia per il metodo \emph{Core} che per quello \emph{Clod}
-sono state riscontrate interazioni statisticamente significative tra i
-parametri considerati e quindi esse non compaiono nei modelli sotto
-riportati.
+assunzioni di normalit\`a \citep{stefanini2007introduzione}. Sia per
+il metodo \emph{Core} che per quello \emph{Clod} NON sono state
+riscontrate interazioni statisticamente significative tra i parametri
+considerati e quindi esse non compaiono nei modelli sotto riportati
+che sono quindi di natura additiva.
 
 
-Per il metodo di analisi, \emph{Clod}, \`e stato adattato un modello
-lineare additivo nella forma:
+Per il metodo di analisi, \emph{Clod}, \`e stato adattato il seguente
+modello:
 
-\[
+\begin{modello}
+    \label{mod:MetodoClod}
 Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
-\]
+\end{modello}
 
 dove: \\ 
 
@@ -941,25 +948,22 @@ dove: \\
   $\beta_1 =$ & anno, due livelli: 2015, 2016;\\
   $\beta_2 =$  & conduzione, due livelli: convenzionale, biologico;\\
   $\beta_3 =$ & lavorazioni, tre livelli: arato, rippato, frangizollato;\\
-  \info[inline]{$\epsilon =$ ??.}
-               
+
 \end{tabular}
 \vspace*{3em}
+\info[inline]{$\epsilon =$ ??.}
 
 La variabile categorica \emph{anno}, \`e stata necessariamente
 eliminata dal modello per il metodo \emph{Clod}, per la mancata
 disponibilità dei dati per l'anno 2015.
 
-Una volta ottenuti i modelli, 
-
-Successivamente per verificare la significativit\`a dei
-trattamenti, \`e stata effettuata una analisi della varianza (ANOVA).
+Una volta ottenuto il modell definitivo \`e stata effettuata una
+analisi della varianza (ANOVA).
 % di II tipo (package "car")<- in realt\`a no, però boh.
-con valore prefissato $P < 0.05$.
 
-Per una ulteriore verifica, ai gruppi oggetto dello studio \`e stato
-applicato il test di Siegel-Tukey utilizzando i pacchetti 'agricolae'
-\citep{agricolae} e 'multcomp' \citep{multcomp}.
+Infine, data la natura additiva dei modelli, ai gruppi oggetto dello
+studio \`e stato applicato il test di Siegel-Tukey utilizzando i
+pacchetti 'agricolae' \citep{agricolae} e 'multcomp' \citep{multcomp}.
 
 
 
@@ -1072,7 +1076,7 @@ ovvero circa la met\`a della densit\`a reale che si aggira intorno a
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 11:23:51 2017
+% Tue Aug 22 12:45:50 2017
 \begin{table}[hb]
 \centering
 \caption{Valori medi della densit\`a apparente (in \SI{}{\gram\per\cubic\centi\metre}), condizionati per anno, conduzione e lavorazione } 
@@ -1122,10 +1126,10 @@ pi\`u bassi rispetto a quelli del biologico.
 \FloatBarrier
 
 
-Il modello utilizzato, \`e quello descritto alla sotto sezione
-\ref{ssec:modello}. \`E stato costruito un modello additivo in quanto non
-sono state trovate interazioni statisticamente significative tra
-l'anno, la conduzione e la lavorazione.
+Il modello utilizzato, (\ref{mod:MetodoClod}, pag.
+\pageref{mod:MetodoClod}). \`E stato costruito un modello additivo in
+quanto non sono state trovate interazioni statisticamente
+significative tra l'anno, la conduzione e la lavorazione.
 
 La tabella \ref{tab:anova del modello} riporta l'Anova del
 modello. L'anova mostra che il valore di p dell'effetto della lavorazione
@@ -1135,7 +1139,7 @@ conduzione sono statisticamente significative.
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 11:23:51 2017
+% Tue Aug 22 12:45:50 2017
 \begin{table}[ht]
 \centering
 \caption{Tabella ANOVA per i valori di densità rilevati col metodo \emph{Core}} 
@@ -1164,7 +1168,7 @@ apparenti pi\`u alte rispetto all'anno 2016.
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 11:23:51 2017
+% Tue Aug 22 12:45:50 2017
 \begin{table}[ht]
 \centering
 \caption{} 
@@ -1214,7 +1218,7 @@ valori della densit\`a apparente calcolati (mediante l'equazione
 quelli dell'analisi col metodo \emph{Core}.
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 11:23:52 2017
+% Tue Aug 22 12:45:51 2017
 \begin{table}[ht]
 \centering
 \caption{Valori medi della densit\`a apparente (in 
@@ -1262,7 +1266,7 @@ dalla tabella Anova del modello (tabella \ref{tab:anova piccoli aggregati}).
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 11:23:54 2017
+% Tue Aug 22 12:45:53 2017
 \begin{table}[ht]
 \centering
 \caption{} 
@@ -1286,7 +1290,7 @@ terreni rippati e frangizollati.
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 11:23:54 2017
+% Tue Aug 22 12:45:53 2017
 \begin{table}[ht]
 \centering
 \caption{} 
@@ -1376,7 +1380,7 @@ mantenere la struttura del suolo.
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 11:23:55 2017
+% Tue Aug 22 12:45:54 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{lllll}
@@ -1401,7 +1405,7 @@ Convenzionale & inizio misura & 43.8 & 41.9 & 14.3 \\
 \end{table}
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 11:23:55 2017
+% Tue Aug 22 12:45:54 2017
 \begin{table}[ht]
 \centering
 \caption{Progressione della distribuzione delle particelle 
@@ -1425,7 +1429,7 @@ Convenzionale & inizio misura & 61.8 & 22.8 & 15.3 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 11:23:55 2017
+% Tue Aug 22 12:45:54 2017
 \begin{table}[ht]
 \centering
 \caption{anova stabilit\`a aggregati per i dati WET } 
@@ -1445,7 +1449,7 @@ Intercetta & 1 & 0.92 & 4955.26 & 2 & 835 & 0.0000 \\
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 11:23:55 2017
+% Tue Aug 22 12:45:54 2017
 \begin{table}[ht]
 \centering
 \caption{Aggregati per i dati WET } 
@@ -1586,7 +1590,7 @@ legge di \textit{Lambert-Beer}:
   \frac{I}{I_0}=e^{-\alpha b}
 \end{equation}
 
-Dove:\\
+dove:\\
 \begin{tabular}{rp{12cm}}
   $I$            & è l'intensit\`a della luce a una distanza $b$ dal campo
                    delle particelle di assorbanza $\alpha$\\
@@ -1615,7 +1619,7 @@ $i$ pu\`o essere descritta da:
   \label{eq:boh}
 \end{equation}
 
-Dove:\\
+dove:\\
 \begin{tabular}{rp{12cm}}
   $Q_i$& è l'efficienza dell'estinzione luminosa calcolata dalla
          teoria Mie per una particella di raggio $r_i$\\
