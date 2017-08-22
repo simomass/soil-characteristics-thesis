@@ -1,3 +1,4 @@
+%% Versione branch 8uno
 \documentclass[11pt, a4paper, openright, titlepage, final, language = italian]{book}
 % draft/final onecolumn/twocolumn oneside/twoside openany/openright  
 % Circa 80 lettere per pagina con draft al posto di final fa il pdf senza foto
