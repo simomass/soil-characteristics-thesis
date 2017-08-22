@@ -303,7 +303,7 @@ file.path(DirMain, "tabelle")
 
 \chapter{Suolo agricolo e agricoltura biologica}
 
-VERSIONE OTTORINO
+VERSIONE OTTORINO NUOVA
 
 Il suolo o terreno \`e un concetto piuttosto chiaro nell'immaginario
 collettivo; nonostante questo \`e difficile individuare una
