@@ -908,13 +908,28 @@ elevati rispetto a quelli misurati utilizzando il cilindro, questo \`e
 dovuto al fatto che nella misura non sono considerate le fratture
 \citep{tisdall1951comparison}.
 
-\subsection{Elaborazione dei dati \label{modello}}
+\subsection{Elaborazione dei dati \label{ssec:modello}}
+
 I dati sono stati analizzati utilizzando il linguaggio di
 programmazione ad oggetti R 3.4.0 \citep{r_programming}.
 
-Per entrambi i metodi di analisi, \emph{Clod} e \emph{Core}, \`e stato
-adattato un modello lineare additivo nella forma:
-\info[inline]{Bugia. Nel Clod manca l'anno 2015 ! Non importa se lo dici dopo. I modelli son diversi}
+
+
+\migliora[inline]{L'esplorazione dei modelli è stata fatta mediante
+  confronto di modelli marginali, formalmente codificata con un test F. }
+
+Tutti i modelli sono stati validati attraverso l'analisi esplorativa
+dei residui in modo da verificare le eventuali violazioni delle
+assunzioni di normalit\`a \citep{stefanini2007introduzione}.
+\info[inline]{Aggiungere john fox, faraway e chambersHAstie alla
+  biblio} Sia per il metodo \emph{Core} che per quello \emph{Clod}
+sono state riscontrate interazioni statisticamente significative tra i
+parametri considerati e quindi esse non compaiono nei modelli sotto
+riportati.
+
+
+Per il metodo di analisi, \emph{Clod}, \`e stato adattato un modello
+lineare additivo nella forma:
 
 \[
 Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
@@ -931,17 +946,11 @@ dove: \\
 \end{tabular}
 \vspace*{3em}
 
-La variabile categorica \emph{anno}, \`e stata utilizzata
-solamente per l'analisi col metodo \emph{Core},
-in quanto solo per questa sono disponibili dati dell'anno 2015.
+La variabile categorica \emph{anno}, \`e stata necessariamente
+eliminata dal modello per il metodo \emph{Clod}, per la mancata
+disponibilità dei dati per l'anno 2015.
 
-\migliora[inline]{L'esplorazione dei modelli è stata fatta mediante
-  confronto di modelli marginali, formalmente codificata con un test F: }
-
-
-Entrambi i modelli sono stati validati attraverso l'analisi
-esplorativa dei residui in modo da verificare le eventuali violazioni
-delle assunzioni di normalit\`a \citep{stefanini2007introduzione}.
+Una volta ottenuti i modelli, 
 
 Successivamente per verificare la significativit\`a dei
 trattamenti, \`e stata effettuata una analisi della varianza (ANOVA).
@@ -1063,7 +1072,7 @@ ovvero circa la met\`a della densit\`a reale che si aggira intorno a
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 10:59:37 2017
+% Tue Aug 22 11:23:51 2017
 \begin{table}[hb]
 \centering
 \caption{Valori medi della densit\`a apparente (in \SI{}{\gram\per\cubic\centi\metre}), condizionati per anno, conduzione e lavorazione } 
@@ -1114,7 +1123,7 @@ pi\`u bassi rispetto a quelli del biologico.
 
 
 Il modello utilizzato, \`e quello descritto alla sotto sezione
-\ref{modello}. \`E stato costruito un modello additivo in quanto non
+\ref{ssec:modello}. \`E stato costruito un modello additivo in quanto non
 sono state trovate interazioni statisticamente significative tra
 l'anno, la conduzione e la lavorazione.
 
@@ -1126,7 +1135,7 @@ conduzione sono statisticamente significative.
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 10:59:38 2017
+% Tue Aug 22 11:23:51 2017
 \begin{table}[ht]
 \centering
 \caption{Tabella ANOVA per i valori di densità rilevati col metodo \emph{Core}} 
@@ -1155,7 +1164,7 @@ apparenti pi\`u alte rispetto all'anno 2016.
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 10:59:38 2017
+% Tue Aug 22 11:23:51 2017
 \begin{table}[ht]
 \centering
 \caption{} 
@@ -1205,7 +1214,7 @@ valori della densit\`a apparente calcolati (mediante l'equazione
 quelli dell'analisi col metodo \emph{Core}.
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 10:59:39 2017
+% Tue Aug 22 11:23:52 2017
 \begin{table}[ht]
 \centering
 \caption{Valori medi della densit\`a apparente (in 
@@ -1253,7 +1262,7 @@ dalla tabella Anova del modello (tabella \ref{tab:anova piccoli aggregati}).
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 10:59:41 2017
+% Tue Aug 22 11:23:54 2017
 \begin{table}[ht]
 \centering
 \caption{} 
@@ -1277,7 +1286,7 @@ terreni rippati e frangizollati.
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 10:59:41 2017
+% Tue Aug 22 11:23:54 2017
 \begin{table}[ht]
 \centering
 \caption{} 
@@ -1367,7 +1376,7 @@ mantenere la struttura del suolo.
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 10:59:42 2017
+% Tue Aug 22 11:23:55 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{lllll}
@@ -1392,7 +1401,7 @@ Convenzionale & inizio misura & 43.8 & 41.9 & 14.3 \\
 \end{table}
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 10:59:42 2017
+% Tue Aug 22 11:23:55 2017
 \begin{table}[ht]
 \centering
 \caption{Progressione della distribuzione delle particelle 
@@ -1416,7 +1425,7 @@ Convenzionale & inizio misura & 61.8 & 22.8 & 15.3 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 10:59:42 2017
+% Tue Aug 22 11:23:55 2017
 \begin{table}[ht]
 \centering
 \caption{anova stabilit\`a aggregati per i dati WET } 
@@ -1436,7 +1445,7 @@ Intercetta & 1 & 0.92 & 4955.26 & 2 & 835 & 0.0000 \\
 
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Tue Aug 22 10:59:42 2017
+% Tue Aug 22 11:23:55 2017
 \begin{table}[ht]
 \centering
 \caption{Aggregati per i dati WET } 
