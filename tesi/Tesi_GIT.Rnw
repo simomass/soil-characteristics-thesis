@@ -204,13 +204,7 @@ file.path(DirMain, "tabelle")
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \author{Simone Massenzio}
-\title{
-  1) 30 anni di conduzione biologica: uno studio di fisica del
-  suolo 
-2) Trent'anni e non sentirli !!
-3) Effetto di 30 anni di conduzione biologica sullo stato di
- aggregazione 
-}
+\title{25 anni di conduzione biologica: uno studio di fisica del suolo}
 \begin{document}
 % \begin{frontespizio}
 %   \Universita{Università degli studi di Firenze}
@@ -234,15 +228,7 @@ file.path(DirMain, "tabelle")
   \Istituzione{Universit\`a degli Studi di Firenze}
   \Divisione{Scuola di Agraria}
   \Scuola{Corso di Laurea in Scienze e tecnologie agrarie (LM-69)}
-  \Titolo{
-    1o) 30 anni (di conduzione biologica) e non sentirli ! Uno
-    studio sullo stato di aggregazione del terreno   
-    \newline
-    2o) 30 anni di conduzione biologica: uno studio di fisica del
-    suolo 
-    \newline
-    3o) Effetto di 30 anni di conduzione biologica sullo stato di
-    aggregazione }
+  \Titolo{25 anni di conduzione Biologica: uno studio di fisica del suolo}
   \NCandidato{Candidato}
   \Candidato{Simone Massenzio}
   \NRelatore{Relatore}{}
@@ -257,7 +243,24 @@ file.path(DirMain, "tabelle")
 
 
 \begin{abstract}
-  \lipsum[1-2]
+  Lo scopo di questa tesi \`e quello di \textbf{i)} comparare due
+  sistemi di conduzione agricola (organico e convenzionale, attivi da
+  pi\`u di venti anni) studiando tre propriet\`a fisiche del suolo:
+  densit\`a apparente, distribuzione dei pori e stabilità degli aggregati.
+ \textbf{ii)} Comparare gli effetti di tre lavorazioni primarie:
+ aratura, rippatura e frangizollatura. I campioni di suolo sono stati
+ prelevati nell'azienda agricola Montepaldi, situata a San Casciano
+ val di Pesa (FI). Lo studio \`e inserito nel progetto MOLTE, un
+ \textbf{long term experiment} dell'Universit\`a di Firenze dove, dal
+ 1991, viene condotta una sperimentazione sul sistema Biologico. I
+ risultati delle analisi sulla densit\`a apparente mostrano che ci
+ sono differenze statisticamente significative tra i trattamenti,
+ tuttavia queste non sono significative dal punto di vista
+ tecnologico. I risultati delle analisi sulla distribuzione dei pori non mostrano
+ differenze statisticamente significative, mentre quelle sulla
+ stabilit\`a degli aggregati mostrano indicano una maggior stabilit\`a
+ dei suoli Convenzionali rispetto ai Biologici. Questo potrebbe essere
+ dovuto alla mancanza di fertilizzazione dei suoli Biologici.    
 \end{abstract}
 
 
@@ -272,14 +275,14 @@ file.path(DirMain, "tabelle")
   taken in Montepaldi farm, situated in San Casciano val di Pesa
   (FI). The study is inserted in the MOLTE project, a long term
   experiment of the University of Florence where, since 1991, was
-  carried out an experimentation on the organic farming systems.
-  The results of the analysis of the bulk density, shows that there are
-  statistically significant differences between the soil of the two
-  farming systems, however these are not technologically significant. The
-  results of the pore distribution are not statistically
-  significant. The aggregate stability shows that the conventional's
-  soil is more stable than the organic one. This could be due to the
-  lack of fertilisation in the organic soil.
+  carried out an experimentation on the organic farming systems.  The
+  results of the analysis of the bulk density, shows that there are
+  statistically significant differences between two farming systems,
+  however these are not technologically significant. The results of
+  the pore distribution are not statistically significant. The
+  aggregate stability shows that the conventional's soil is more
+  stable than the organic one. This could be due to the lack of
+  fertilisation in the organic soil.
 \end{engabstract}
 \end{otherlanguage*}
 
@@ -295,9 +298,9 @@ file.path(DirMain, "tabelle")
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \chapter{Suolo agricolo e agricoltura biologica}
-Il suolo o terreno \`e un concetto piuttosto chiaro nell'immaginario
+Il concetto suolo o terreno \`e piuttosto chiaro nell'immaginario
 collettivo; nonostante questo \`e difficile individuare una
-definizione univoca. Un tentativo pu\`o essere quella data da
+definizione univoca. Un tentativo di definizione \`e quello di
 \citet{JOHNSON19986}: \textit{suolo è qualsiasi materiale minerale e
   organico posto alla superficie di pianeti o corpi simili, alterato
   da agenti biologici, chimici e/o fisici.} 
@@ -315,7 +318,7 @@ considerati anche gli organismi vegetali: \textit{Il suolo \`e un
 
 \dubbio{per ora non so cosa scriverci, mi verrà in mente qualcosa}
 
-Dal suolo naturale distinguiamo il terreno agrario, questo è
+Dal suolo naturale distinguiamo il terreno agrario; questo è
 caratterizzato da pesanti modifiche operate dall'uomo mediante
 lavorazioni meccaniche, concimazioni e sistemazioni idrauliche.  Lo
 scopo di queste operazioni è quello di aumentare il più possibile la
@@ -323,7 +326,7 @@ produzione alimentare umana e animale, mantenendo costante la
 fertilit\`a del terreno.  
 
 Secondo \citet{ellis1996soil}: \textit{la
-  fertilit\`a di un suolo si riferisce all'abilit\`a di questo di
+  fertilit\`a di un suolo si riferisce alla sua abilit\`a di
   fornire in maniera adeguata e proporzionata nutrienti e acqua
   necessari per la crescita e la riproduzione delle piante, e
   all'assenza di sostanze tossiche che possono inibirle.}
@@ -332,44 +335,30 @@ Tuttavia, lo sfruttamento intensivo del suolo degli ultimi 50 anni, ne ha
 provocato la degradazione determinando una diminuzione della sua
 fertilit\`a.
 
-A fronte di un previsto aumento di popolazione, \`e pi\`u che mai
-necessario cercare delle tecniche che permettano il mantenimento delle
+A fronte di un previsto aumento di popolazione mondiale, \`e pi\`u che mai
+necessario individuare delle tecniche che permettano il mantenimento delle
 caratteristiche dei terreni agrari senza diminuirne la
 produttivit\`a. Gli stessi consumatori occidentali sono pi\`u attenti
 ai loro acquisti e cercano prodotti che siano coltivati rispettando
 l'ambiente e con un basso impatto ambientale. In particolare sono
-sempre pi\`u diffusi i prodotti di agricoltura biologica che hanno
+sempre pi\`u richiesti prodotti di agricoltura biologica che hanno
 l'obiettivo di impattare il meno possibile l'ambiente utilizzando
 prodotti naturali e non di sintesi.
 
-Nonostante questo, non \`e stato dimostrato scientificamente in maniera
-inequivocabile la superiorit\`a dell'agricoltura biologica rispetto
-all'agricoltura convenzionale. 
-
-Ogni ambiente agrario ha le sue caratteristiche pedoclimatiche e
-risponde in maniera diversa alle varie tecniche agricole, inoltre 
-anche le colture agrarie hanno esigenze molto diverse; questi sono solo
-alcuni dei problemi che riguardano la ricerca scientifica in merito
-all'agricoltura biologica. Non \`e da tralasciare anche il problema
-della scelta dell'indicatore che permette di confrontare i vari tipi
-di agricoltura.
-
-Gli indicatori di fertilit\`a del suolo scelti in questo lavoro sono i
-parametri che descrivono le sue caratteristiche fisiche, ovvero, \`e
-stata effettuata una comparazione tra la densit\`a apparente,
-la distribuzione dei pori e la stabilit\`a  degli aggregati di due
-appezzamenti: uno a conduzione biologica e uno a conduzione convenzionale.
-I due appezzamenti sono inseriti in un Long Term
-Experiment, MOLTE \citep{MOLTE}, che \`e attivo dal 1991.
-
-
-Scopo di questa tesi è quindi la verifica di due ipotesi: 
+Nonostante questo, non \`e stato dimostrato scientificamente in
+maniera inequivocabile la superiorit\`a dell'agricoltura biologica
+rispetto all'agricoltura convenzionale. Questo pu\`o essere dovuto ad
+alcuni dei problemi che la ricerca scientifica deve fronteggiare nello
+studio dell'agricoltura Biologica:
 \begin{itemize}
-\item la relazione tra la forma di conduzione (biologica e
-  convenzionale) e le caratteristiche fisico-strutturali del terreno;
-\item l'effetto di tre diverse lavorazioni primarie (aratura,
-  rippatura e frangizollatura) sullo stato di aggregazione del suolo.
+\item ogni ambiente agrario ha le sue caratteristiche pedoclimatiche e
+  risponde in maniera diversa alle varie tecniche agricole, inoltre
+  anche le colture agrarie hanno esigenze molto diverse;
+\item non esiste un indicatore di fertilit\`a univoco che permette di confrontare i
+  vari tipi di agricoltura. 
 \end{itemize}
+
+
 
 
 \section{Caratteristiche generali del suolo}
@@ -408,59 +397,61 @@ Dove:\\
 \end{tabular}
 \vspace*{3em}
 
-Del terreno è importante la distribuzione granulometrica,
-o tessitura, in cui: le particelle di diametro superiore a \SI{2}{\milli\metre}
+Nel terreno è importante la distribuzione granulometrica,
+o tessitura, in cui le particelle di diametro superiore a \SI{2}{\milli\metre}
 sono dette scheletro, quelle tra \SI{2}{\mm} e \SI{50}{\micro\metre} sono
 dette sabbia, quelle tra \SI{50}{\micro\metre} e \SI{2}{\micro\metre}
 sono dette limo e quelle inferiori a \SI{2}{\micro\metre} sono dette argilla.
 
 La presenza di cementi, organici o minerali, che portano alla
-formazione di aggregati, ci permette di fare
-una distinzione tra la struttura del suolo e la tessitura: la
-struttura del terreno è \textit{il particolare modo di aggregarsi dei
+formazione di aggregati permette di definire la
+struttura del terreno come \textit{il particolare modo di aggregarsi dei
   suoi vari componenti in rapporto soprattutto all'azione "legante"
   della frazione colloidale, organica e inorganica.}
 \citep{tassinari1976manuale}.
 
-Mentre la tessitura \`e il risultato dei fattori di formazione del
-suolo sopra elencati, quindi non risente particolarmente delle diverse
-tecniche agronomiche, la struttura viene notevolmente condizionata
+Essendo il risultato dei fattori di formazione del
+suolo sopra elencati, la struttura non risente particolarmente delle diverse
+tecniche agronomiche, mentre la struttura viene notevolmente condizionata
 dalla tecnica agronomica con effetti sulle propriet\`a fisiche,
 meccaniche e chimiche del suolo, e quindi sulla maggiore o minore fertilit\`a.
 
-La densit\`a apparente \`e un importante parametro del suolo collegato con la tessitura e la
-struttura. Mentre il valore della densit\`a reale è,
-ai fini pratici, costante  e considera solo la frazione minerale\footnote{La densit\`a delle particelle solide non \`e uniforme per tutti i componenti (varia da circa 2 a oltre 3) ma, in considerazione del fatto che nel suolo sono presenti prevalentemente i silicati (con densit\`a che varia da 2,5 a 2,8), si assume il valore di
-  \SI{2.65}{\gram\per\cubic\centi\metre} \citep{radaelli2001chimica}}, la
-densit\`a apparente considera anche gli spazi vuoti, ovvero i pori.
+La densit\`a apparente \`e un importante parametro del suolo collegato
+con la tessitura e la struttura. Mentre il valore della densit\`a
+reale è, ai fini pratici, costante e considera solo la frazione
+minerale\footnote{La densit\`a delle particelle solide non \`e
+  uniforme per tutti i componenti (varia da circa 2 a oltre 3) ma, in
+  considerazione del fatto che nel suolo sono presenti prevalentemente
+  i silicati (con densit\`a che varia da 2,5 a 2,8), si assume il
+  valore di \SI{2.65}{\gram\per\cubic\centi\metre}
+  \citep{radaelli2001chimica}}, la densit\`a apparente considera anche
+gli spazi vuoti, ovvero i pori.
 
 Secondo \citet{AskinBulkDensity}, la densit\`a apparente di un terreno
 è condizionata principalmente dalla tessitura del terreno, e pi\`u in
 particolare dalla frazione sabbiosa e argillosa. Tuttavia, anche se
-con un effetto pi\`u lieve, questo autore riscontra una elevata
+con un effetto pi\`u lieve, questo autore riscontra una significativa
 correlazione negativa tra il contenuto di sostanza organica e il
 valore della densit\`a apparente.
 
 %% Simo Tutta sta roba l'ho presa da Pagliai
 
-La porosit\`a del terreno è un parametro fondamentale: il volume dei
-pori rispetto il volume della fase solida influenza notevolmente il
-contenuto idrico e la lavorabilit\`a del terreno, la sua misura può
-aiutare la quantificazione dell’impatto delle pratiche colturali sul
-suolo ed è il miglior indicatore per la qualit\`a della struttura.
-
-La quantificazione dei pori in termini di forma, spazio, dimensione,
-continuit\`a, orientamento e arrangiamento ci permette di definire la
-complessit\`a della struttura e di capire le modificazioni indotte dalle
-pratiche colturali; in questo modo è possibile indicare quali di
-queste siano più compatibili con la protezione ambientale.
-
-La porosit\`a è correlata con la resistenza alla penetrazione: la
-diminuzione del volume dei pori è solitamente associata ad un aumento
-della resistenza alla penetrazione. La forma dei pori e la
-distribuzione della grandezza sono inoltre correlate a propriet\`a
-chimiche, biochimiche e biologiche (come l'attivit\`a enzimatica e la
-crescita delle radici).
+La porosit\`a del terreno è un ulteriore parametro fondamentale: il
+volume dei pori rispetto il volume della fase solida influenza
+notevolmente il contenuto idrico e la lavorabilit\`a del terreno, la
+sua misura può aiutare la quantificazione dell’impatto delle pratiche
+colturali sul suolo ed è il miglior indicatore per la qualit\`a della
+struttura \citep{pagliai2002soil}. La quantificazione dei pori in
+termini di forma, spazio, dimensione, continuit\`a, orientamento e
+arrangiamento permette di definire la complessit\`a della struttura e
+fa capire le modificazioni indotte dalle pratiche colturali; in questo
+modo è possibile indicare quali di queste siano più compatibili con la
+protezione ambientale. La porosit\`a \`e correlata con la resistenza
+alla penetrazione: la diminuzione del volume dei pori è solitamente
+associata ad un aumento della resistenza alla penetrazione. La forma
+dei pori e la distribuzione della grandezza sono inoltre correlate a
+propriet\`a chimiche, biochimiche e biologiche (come l'attivit\`a
+enzimatica e la crescita delle radici).
 
 In particolare, la struttura dei suoli influenza la profondit\`a a cui
 le radici arrivano e i movimenti di acqua, aria e fauna tellurica.
@@ -473,12 +464,12 @@ usata è quella di \citet{greenland1977soil} ed \`e mostrata in tabella
 
 \begin{table}[ht]
   \caption{Classificazione dei pori del terreno secondo le dimensioni
-    da \citet{pagliai2002soil}}
+    (da \citet{pagliai2002soil})}
   \label{tab:green}
   \centering
   \begin{tabular}{lll}
     \toprule
-    Diametro  & Potenziale idrico & Nome\\
+    Diametro pori & Potenziale idrico & Nome\\
     \SI{}{\micro\metre}  & \SI{}{\bar} & \\
     \midrule
     <0.005    & >-600        & Spazi di legame\\
@@ -492,27 +483,30 @@ usata è quella di \citet{greenland1977soil} ed \`e mostrata in tabella
 
 I pori con diametro inferiore ai \SI{0.005}{\micro\meter} sono
 chiamati \textit{pori di legame} e sono particolarmente importanti per
-quanto riguarda le forze che tengono insieme i \emph{domains} e gli
-aggregati.  
+quanto riguarda le forze che tengono insieme i \emph{domains}
+\dubbio{guardare qui per i domains, non chiarissimo
+  \url{http://tinyurl.com/yd6b3geg}} e gli aggregati.
+
+
 
 I pori di diametro inferiore a \SI{0.5}{\micro\metre} sono chiamati
 \textit{pori residui} per le loro interazioni chimiche a livello
 molecolare; i pori che hanno un diametro che va dai 0,5 ai
 \SI{50}{\micro\metre} sono detti \textit{pori di immagazzinamento},
-quelli compresi tra 50 e \SI{500}{\micro\metre} sono i pori di
-conduzione. I pori di dimensioni maggiori di \SI{500}{\micro\metre}
+quelli compresi tra 50 e \SI{500}{\micro\metre} sono i \emph{pori di
+  conduzione}. I pori di dimensioni maggiori di \SI{500}{\micro\metre}
 possono avere alcuni effetti utili sulla penetrazione delle radici e
 sul movimento dell’acqua (drenaggio) specialmente nei suoli a
-tessitura fine. Comunque, quando questo tipo di pori raggiunge o
-supera il 70-80\% della porosit\`a totale, è indice di cattiva
-struttura e non favorisce la crescita delle piante. Questo è dovuto al
-fatto che le crepe superficiali che si vengono a creare a seguito di
-una pioggia, quando la stabilit\`a degli aggregati non è buona,
-appartengono a questa classe. Se i pori grandi, medi e piccoli sono in
-proporzione ottimale, si osserva un concomitante
-immagazzinamento/conduzione di acqua e aria che permettono una
-adeguata crescita radicale. Questa proporzione non è stata ancora
-definita a causa del fatto che alle radici servono comunque i pori di
+tessitura fine. Quando questa categoria di pori raggiunge o supera il
+70-80\% della porosit\`a totale, è indice di cattiva struttura e non
+favorisce la crescita delle piante. Questo è dovuto al fatto che le
+crepe superficiali che si vengono a creare a seguito di una pioggia,
+quando la stabilit\`a degli aggregati non è buona, appartengono a
+questa classe. Se i pori grandi, medi e piccoli sono in proporzione
+ottimale, si osserva un concomitante immagazzinamento/conduzione di
+acqua e aria che permette un'adeguata crescita radicale. Questa
+proporzione non è stata ancora definita a causa del fatto che alle
+radici servono comunque i pori di
 0.5-\SI{50}{\micro\meter}. \info{simo Fine parte presa da Pagliai}
 
 Un ulteriore indicatore fisico di fertilit\`a del suolo \`e la
@@ -531,37 +525,33 @@ dell'acqua.
 Grazie alla rivoluzione verde avvenuta negli anni '50 del secolo
 scorso, l'agricoltura ha sub\`ito un processo di trasformazione in cui
 si è passati dall'agricoltura tradizionale a una agricoltura
-tecnologica, oggi divenuta convenzionale.
-
-L'agricoltura convenzionale esaspera il concetto di massimizzazione
-del rendimento economico, \`e tecnologicamente orientata, utilizza
-ampie superfici spesso coltivate a monocoltura con conseguente perdita
-della biodiversit\`a e richiede ingenti quantit\`a di
-concimi e fertilizzanti, normalmente di sintesi.
-
-Grazie alla rivoluzione verde, la produzione agricola mondiale ha
-potuto fronteggiare il rapido e gigantesco aumento della popolazione
-di met\`a '900 \citep{Ciuffoletti_2014}; ma, al tempo stesso, ha
-portato a problemi di tipo ambientale e sanitario: patologie dovute
-all'esposizione ad antiparassitari, riduzione della biodiversit\`a
-degli ecosistemi, inquinamento di aria, suolo e acqua,
+tecnologica, oggi divenuta convenzionale. L'agricoltura convenzionale
+esaspera il concetto di massimizzazione del rendimento economico, \`e
+tecnologicamente orientata, utilizza ampie superfici spesso coltivate
+a monocoltura (con conseguente perdita della biodiversit\`a) e
+richiede ingenti quantit\`a di concimi e fertilizzanti, normalmente di
+sintesi. Grazie alla rivoluzione verde, la produzione agricola
+mondiale ha potuto fronteggiare il rapido e gigantesco aumento della
+popolazione di met\`a '900 \citep{Ciuffoletti_2014}; ma, al tempo
+stesso, ha portato a problemi di tipo ambientale e sanitario:
+patologie dovute all'esposizione ad antiparassitari, riduzione della
+biodiversit\`a degli ecosistemi, inquinamento di aria, suolo e acqua,
 desertificazione e desertizzazione. Inoltre le coltivazioni intensive
 monovarietali hanno facilitato la diffusione di patogeni, provocando
 gravi danni di tipo economico agli agricoltori.
 
 In risposta alle problematiche descritte, durante gli anni '70 sono
 nati dei movimenti di agricoltori che cercavano di coltivare in modo
-naturale eliminando fitofarmaci e concimi di sintesi.
-
-Da questi movimenti inizia a prendere forma l'agricoltura biologica
-che, ad oggi, costituisce un'importante realt\`a dell'agricoltura
-mondiale. Si stima infatti che, il 12\% della SAU italiana sia
-coltivata a biologico \citep{Bio_cifre}, inoltre il dato è in
-crescita.  Possono essere quindi definiti gli obiettivi che si
-prefigge di raggiungere l'agricoltura biologica:
+naturale eliminando fitofarmaci e concimi di sintesi. Da questi
+movimenti inizia a prendere forma l'agricoltura biologica che, ad
+oggi, costituisce un'importante realt\`a dell'agricoltura mondiale. Si
+stima infatti che, il 12\% della SAU italiana sia coltivata a
+biologico \citep{Bio_cifre}, inoltre il dato è in crescita.  Possono
+essere quindi definiti gli obiettivi che si prefigge di raggiungere
+l'agricoltura biologica:
 
 \begin{itemize}
-\item migliorare la biodiversit\`a e la stabilit\`a dell'agro ecosistema;
+\item migliorare la biodiversit\`a e la stabilit\`a dell'agro-ecosistema;
 \item evitare mezzi tecnici con impatto ambientale (locale e
   globale);
 \item garantire una buona qualit\`a del prodotto.
@@ -580,12 +570,12 @@ forma di agricoltura si impegnano a:
   sovesci;
 \item utilizzare fertilizzanti naturali;
 \item scegliere variet\`a, sementi e materiale vivaistico idonei, a
-  seconda della vocazione della zona (intesa come l’insieme delle
+  seconda della vocazione della zona, intesa come l’insieme delle
   caratteristiche del terreno e del clima di una certa area, ottimali
-  per una determinata specie);
+  per una determinata specie;
 \item raccogliere i prodotti al momento ottimale di maturazione;
 \item certificare il processo di produzione a garanzia del rispetto
-  delle norme legislative che la codificano e ogni singolo intervento
+  delle norme legislative che lo codificano e ogni singolo intervento
   lungo le differenti filiere produttive;
 \item impiegare le sole tecniche e gli additivi di origine naturale
   per la preparazione e trasformazione degli alimenti.
@@ -597,12 +587,13 @@ comporterebbe una miglior salute della microfauna e microflora
 tellurica, mentre l'impiego di sovesci e concimazioni organiche
 porterebbe ad un aumento della sostanza organica nel terreno.
 
-Al contrario degli studi sulla produzione e sull'impatto ambientale
-dell'agricoltura biologica, che sono stati ampiamente studiati,
-l'impatto sulle propriet\`a del suolo non lo \`e stato
-altrettanto. Inoltre le conclusioni a cui arrivano i pochi studi
-effettuati (quasi tutti a corto termine, ossia dalla durata inferiore
-a 20 anni) sono altamente inconcludenti \citep{williams2017organic}.
+
+Mentre la produzione e l'impatto ambientale dell'agricoltura biologica
+sono stati ampiamente studiati, l'impatto sulle propriet\`a del suolo
+non lo \`e stato altrettanto. Inoltre le conclusioni a cui arrivano i
+pochi studi effettuati (quasi tutti a lieve termine, ossia dalla
+durata inferiore a 20 anni) danno risultati contrastanti
+\citep{williams2017organic}.
 
 \citet{siegrist1998does} affermano che la stabilit\`a degli aggregati
 dei suoli condotti ad agricoltura biologica sia maggiore rispetto a
@@ -615,14 +606,11 @@ migliora le propriet\`a fisiche relative a stabilit\`a degli
 aggregati, compattazione del suolo e di drenaggio delle
 precipitazioni.  
 
-Uno studio che riguarda il progetto MOLTE
+Uno studio che riguarda il progetto MoLTE
 \citep{migliorini2014agronomic} ha riscontrato, a fronte di una
 paragonabile produzione tra agricoltura convenzionale e biologica, un
 minor surplus di azoto e una miglior conservazione di carbonio e azoto
 a lento rilascio in favore di quest'ultima.
-
-
-
 
 
 \section{Progetto \emph{FertilCrop}}
@@ -634,14 +622,14 @@ incrementare la produttivit\`a nei sistemi agricoli biologici.
 FertilCrop è un progetto europeo che prevede la collaborazione di
 venti dipartimenti e istituti di ricerca, tra cui il Dipartimento
 delle Scienze delle Produzioni Agroalimentari e dell'Ambiente (DISPAA)
-dell'Universit\`a degli studi di Firenze gi\`a impegnata
+dell'Universit\`a degli Studi di Firenze gi\`a impegnata
 nell’esperimento di lungo termine MoLTE.  Il progetto FertilCrop si
 pone i seguenti obiettivi:
 \begin{itemize}
 \item studio dell’interazione spazio-temporale tra infestanti, sovesci
   e colture;
 \item valutazione del ruolo della struttura e della porosit\`a degli
-  orizzonti del suolo nella crescita delle colture e delle radici,
+  orizzonti del suolo nella crescita delle colture e delle radici
   nell’assorbimento e perdita di nutrienti e negli scambi gassosi;
 \item identificazione, analisi e miglioramento della comprensione
   dell’interazione pianta-microrganismi;
@@ -661,27 +649,50 @@ pone i seguenti obiettivi:
   fisica del suolo.
 \end{itemize}
 \section{Ipotesi di lavoro e scopo dello studio}
+Scopo di questa tesi è la verifica di due ipotesi: 
+\begin{itemize}
+\item la relazione tra la forma di conduzione (biologica e
+  convenzionale) e le caratteristiche fisico-strutturali del terreno;
+\item l'effetto di tre diverse lavorazioni primarie (aratura,
+  rippatura e frangizollatura) sullo stato di aggregazione del suolo.
+\end{itemize}
+
+Gli indicatori di fertilit\`a del suolo scelti in questo lavoro sono
+parametri che ne descrivono le caratteristiche fisiche, ovvero, \`e
+stata effettuata una comparazione tra la densit\`a apparente, la
+distribuzione dei pori e la stabilit\`a degli aggregati di due
+appezzamenti: uno a conduzione biologica e uno a conduzione
+convenzionale.  I due appezzamenti sono inseriti in un Long Term
+Experiment, MOLTE \citep{MOLTE}, che \`e attivo dal 1991.
+
+
+
+
 
 \chapter{Materiali e metodi}
 \section{Descrizione del sito sperimentale}
-L'esperimento fa parte del progetto MoLTE (Montepaldi Long Term
+L'esperimento oggetto di questa tesi fa parte del progetto MoLTE (Montepaldi Long Term
 Experiment) che è attivo dal 1991 nell’azienda agricola
 dell’Universit\`a di Firenze (localit\`a Montepaldi, San Casciano Val di
 Pesa) e interessa una superficie leggermente declive di circa
 \SI{15}{\hectare} a \SI{90}{\meter} s.l.m. .
-
+\begin{figure}[ht]
+  \centering
+    \includegraphics[width=\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
+  \label{fig:panorMo}
+\end{figure}
 Il clima è sub-appenninico con precipitazioni totali di circa
 \SI{800}{\milli\meter} annui con massimo in autunno e primavera e
 minimo nel periodo tra giugno-agosto. La temperatura media annuale è
 di \SI{14,1}{\celsius} con la massima che può superare i
-\SI{30}{\celsius} in estate e la minima nel mese di gennaio. Dal punto di
-vista pedologico l’Azienda è caratterizzata da terreni evoluti su
-sedimenti pliocenici di tipo conglomeratico misto a lenti sabbiose e
-argillose (aree declivi) e da sedimenti del fiume Pesa risalenti
-all’Olocene (aree pianeggianti) con caratteristiche tessiturali che li
-fanno rientrare nei gruppi dei \textit{medio impasto limo-argillosi}
-fino al gruppo degli \textit{argillosi} con presenza variabile di
-scheletro di piccole e medie dimensioni.
+\SI{30}{\celsius} in estate e la minima nel mese di gennaio che pu\`o
+scendere sotto gli \SI{0}{\celsius}. Dal punto di vista pedologico
+l’Azienda è caratterizzata da terreni evoluti su sedimenti pliocenici
+di tipo conglomeratico misto a lenti sabbiose e argillose (aree
+declivi) e da sedimenti del fiume Pesa risalenti all’Olocene (aree
+pianeggianti) con caratteristiche tessiturali li caratterizzano tra i \textit{medio impasto
+  limo-argillosi} e gli \textit{argillosi} con presenza
+variabile di scheletro di piccole e medie dimensioni.
 
 
 Il sito sperimentale \`e costituito da due agro ecosistemi, da qui in
