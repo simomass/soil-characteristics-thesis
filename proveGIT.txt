@@ -1,0 +1,2 @@
+Questo è un tentativo per vedere come gira git
+Versione 1.0 fatta dal computer ufficio 8rino
