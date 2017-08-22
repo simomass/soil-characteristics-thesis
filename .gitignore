@@ -1,2 +1,4 @@
 # Escludi questa directory dalla subversionamento
-Tesi/ribongia/*
+tesi/auto/*
+tesi/Tesi_GIT.tex
+tesi/Tesi_GIT-frn.tex
