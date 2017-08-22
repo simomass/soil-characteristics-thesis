@@ -3,7 +3,8 @@
 % Circa 80 lettere per pagina con draft al posto di final fa il pdf senza foto
 \usepackage[toc,page]{appendix}
 
-\usepackage[english, italian]{babel} % per la sillabazione corretta e per biblatex
+\usepackage[english, italian]{babel}
+% per la sillabazione corretta e per biblatex
 % \usepackage[english]english serve se c'e' bisogno di una parte da scriver ion inglese
 
 % https://tex.stackexchange.com/questions/82993/how-to-change-the-name-of-document-elements-like-figure-contents-bibliogr
@@ -159,6 +160,14 @@
     \bfseries Summary  \end{center} \footnotesize}%\doublespace }%
 {\vfill\null}
 
+\renewcommand{\theequation}{Eq. \arabic{equation}}
+\usepackage{environ}
+\NewEnviron{modello}{%
+\begin{equation}
+  \BODY
+\end{equation}
+}
+
 \usepackage[nogin]{Sweave}
 % https://tex.stackexchange.com/questions/11619/resize-arrays-and-figures-in-a-sweave-document
 % nogin serve per definiore le dimensioni delle figure e passarle a latex
@@ -299,7 +308,7 @@ file.path(DirMain, "tabelle")
 
 \chapter{Suolo agricolo e agricoltura biologica}
 
-VERSIONE SIMONE
+VERSIONE SIMONE PERDAVVERO
 Il concetto suolo o terreno \`e piuttosto chiaro nell'immaginario
 collettivo; nonostante questo \`e difficile individuare una
 definizione univoca. Un tentativo di definizione \`e quello di
@@ -955,32 +964,30 @@ elevati rispetto a quelli misurati utilizzando il cilindro, questo \`e
 dovuto al fatto che nella misura non sono considerate le fratture
 \citep{tisdall1951comparison}.
 
-\subsection{Elaborazione dei dati \label{ssec:modello}}
+\subsection{Elaborazione dei dati} %\label{ssec:modello}}
 
 I dati sono stati analizzati utilizzando il linguaggio di
 programmazione ad oggetti R 3.4.0 \citep{r_programming}.
-
-
-
-\migliora[inline]{L'esplorazione dei modelli è stata fatta mediante
-  confronto di modelli marginali, formalmente codificata con un test F. }
+L'esplorazione dei modelli \citep{fox2002r, chambers1992statistical,
+  faraway2004} è stata fatta mediante confronto di modelli marginali e
+un test F ($p < 0,05$).
 
 Tutti i modelli sono stati validati attraverso l'analisi esplorativa
 dei residui in modo da verificare le eventuali violazioni delle
-assunzioni di normalit\`a \citep{stefanini2007introduzione}.
-\info[inline]{Aggiungere john fox, faraway e chambersHAstie alla
-  biblio} Sia per il metodo \emph{Core} che per quello \emph{Clod}
-sono state riscontrate interazioni statisticamente significative tra i
-parametri considerati e quindi esse non compaiono nei modelli sotto
-riportati.
+assunzioni di normalit\`a \citep{stefanini2007introduzione}. Sia per
+il metodo \emph{Core} che per quello \emph{Clod} NON sono state
+riscontrate interazioni statisticamente significative tra i parametri
+considerati e quindi esse non compaiono nei modelli sotto riportati
+che sono quindi di natura additiva.
 
 
-Per il metodo di analisi, \emph{Clod}, \`e stato adattato un modello
-lineare additivo nella forma:
+Per il metodo di analisi, \emph{Clod}, \`e stato adattato il seguente
+modello:
 
-\[
+\begin{modello}
+    \label{mod:MetodoClod}
 Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
-\]
+\end{modello}
 
 dove: \\ 
 
@@ -988,25 +995,23 @@ dove: \\
   $\beta_1 =$ & anno, due livelli: 2015, 2016;\\
   $\beta_2 =$  & conduzione, due livelli: convenzionale, biologico;\\
   $\beta_3 =$ & lavorazioni, tre livelli: arato, rippato, frangizollato;\\
-  \info[inline]{$\epsilon =$ ??.}
-               
+
 \end{tabular}
 \vspace*{3em}
+\info[inline]{$\epsilon =$ ??.}
 
 La variabile categorica \emph{anno}, \`e stata necessariamente
 eliminata dal modello per il metodo \emph{Clod}, per la mancata
 disponibilità dei dati per l'anno 2015.
 
-Una volta ottenuti i modelli, 
-
-Successivamente per verificare la significativit\`a dei
-trattamenti, \`e stata effettuata una analisi della varianza (ANOVA).
+Una volta ottenuto il modell definitivo \`e stata effettuata una
+analisi della varianza (ANOVA).
 % di II tipo (package "car")<- in realt\`a no, però boh.
 con valore prefissato $P < 0.05$.
 
-Per una ulteriore verifica, ai gruppi oggetto dello studio \`e stato
-applicato il test di Siegel-Tukey utilizzando i pacchetti 'agricolae'
-\citep{agricolae} e 'multcomp' \citep{multcomp}.
+Infine, data la natura additiva dei modelli, ai gruppi oggetto dello
+studio \`e stato applicato il test di Siegel-Tukey utilizzando i
+pacchetti 'agricolae' \citep{agricolae} e 'multcomp' \citep{multcomp}.
 
 
 
@@ -1236,10 +1241,10 @@ lm.DensSign <-
     lm(densita.apparente ~ YEAR+TRT, data = df.dueAnni)
 @ 
 
-Il modello utilizzato, \`e quello descritto alla sotto sezione
-\ref{ssec:modello}. \`E stato costruito un modello additivo in quanto non
-sono state trovate interazioni statisticamente significative tra
-l'anno, la conduzione e la lavorazione.
+Il modello utilizzato, (\ref{mod:MetodoClod}, pag.
+\pageref{mod:MetodoClod}). \`E stato costruito un modello additivo in
+quanto non sono state trovate interazioni statisticamente
+significative tra l'anno, la conduzione e la lavorazione.
 
 La tabella \ref{tab:anova del modello} riporta l'Anova del
 modello. L'anova mostra che il valore di p dell'effetto della lavorazione
@@ -2035,7 +2040,7 @@ legge di \textit{Lambert-Beer}:
   \frac{I}{I_0}=e^{-\alpha b}
 \end{equation}
 
-Dove:\\
+dove:\\
 \begin{tabular}{rp{12cm}}
   $I$            & è l'intensit\`a della luce a una distanza $b$ dal campo
                    delle particelle di assorbanza $\alpha$\\
@@ -2064,7 +2069,7 @@ $i$ pu\`o essere descritta da:
   \label{eq:boh}
 \end{equation}
 
-Dove:\\
+dove:\\
 \begin{tabular}{rp{12cm}}
   $Q_i$& è l'efficienza dell'estinzione luminosa calcolata dalla
          teoria Mie per una particella di raggio $r_i$\\
