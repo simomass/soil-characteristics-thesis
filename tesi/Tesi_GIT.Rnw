@@ -87,6 +87,8 @@
 % non ho capito a che serve ma dovrebbe essere utile a citare R in bib
 % \newcommand{\code}[1]{\texttt{\smaller #1}}
 
+
+
 %% siunitx serve per le unità di misura
 \usepackage{siunitx}
 \sisetup{detect-all = true, detect-family = true, output-decimal-marker = {,}}
@@ -122,6 +124,10 @@
 
 \usepackage[raggedright]{titlesec} 
 % Serve per evitare la sillabazione nei titoli
+
+%prova
+\emergencystretch=1em
+
 
 \newcommand{\sectionbreak}{\clearpage} 
 %% serve per mettere ogni section a pagina nuova
@@ -407,11 +413,22 @@ Dove:\\
 \end{tabular}
 \vspace*{3em}
 
-Nel terreno è importante la distribuzione granulometrica,
-o tessitura, in cui le particelle di diametro superiore a \SI{2}{\milli\metre}
-sono dette scheletro, quelle tra \SI{2}{\mm} e \SI{50}{\micro\metre} sono
+Nel terreno è importante la distribuzione granulometrica, o tessitura,
+in cui le particelle di diametro superiore a \SI{2}{\milli\metre} sono
+dette scheletro, quelle tra \SI{2}{\mm} e \SI{50}{\micro\metre} sono
 dette sabbia, quelle tra \SI{50}{\micro\metre} e \SI{2}{\micro\metre}
-sono dette limo e quelle inferiori a \SI{2}{\micro\metre} sono dette argilla.
+sono dette limo e quelle inferiori a \SI{2}{\micro\metre} sono dette
+argilla.  La tessitura \`e usualmente rappresentata mediante il
+triangolo tessiturale introdotta da Whitney nel 1911 e adottata
+dall'USDA come metodo di rappresentazione ufficiale; la versione
+attuale (Fig. \ref{fig:triangolo}), modificata dal triangolo tessiturale di Whitney, \`e stata
+introdotta nel 1951 \citep{SoilTr}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{../foto/USDA_triangolo.jpeg}
+  \caption{\label{fig:triangolo}}
+\end{figure}
 
 La presenza di cementi, organici o minerali, che portano alla
 formazione di aggregati permette di definire la
@@ -692,7 +709,7 @@ Pesa) e interessa una superficie leggermente declive di circa
 \begin{figure}[ht]
   \centering
     \includegraphics[width=\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
-  \label{fig:panorMo}
+  \caption{\label{fig:panorMo}}
 \end{figure}
 Il clima è sub-appenninico con precipitazioni totali di circa
 \SI{800}{\milli\meter} annui con massimo in autunno e primavera e
