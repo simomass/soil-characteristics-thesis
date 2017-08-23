@@ -1,5 +1,5 @@
-%% Versione branch 8uno
-\documentclass[11pt, a4paper, openright, titlepage, final, language = italian]{book}
+% Versione branch 8uno
+\documentclass[11pt, a4paper, openright, titlepage, final]{book}
 % draft/final onecolumn/twocolumn oneside/twoside openany/openright  
 % Circa 80 lettere per pagina con draft al posto di final fa il pdf senza foto
 \usepackage[toc,page]{appendix}
@@ -160,6 +160,12 @@
     \bfseries Summary  \end{center} \footnotesize}%\doublespace }%
 {\vfill\null}
 
+%% https://tex.stackexchange.com/questions/202512/translate-appendices-from-addappheadtotoc-in-other-languages-with-polyglossia
+\addto\captionsitalian{%
+   \renewcommand{\appendixtocname}{Appendici}%
+   \renewcommand{\appendixpagename}{Appendici}%
+}
+
 \renewcommand{\theequation}{Eq. \arabic{equation}}
 \usepackage{environ}
 \NewEnviron{modello}{%
@@ -255,21 +261,22 @@ file.path(DirMain, "tabelle")
   Lo scopo di questa tesi \`e quello di \textbf{i)} comparare due
   sistemi di conduzione agricola (organico e convenzionale, attivi da
   pi\`u di venti anni) studiando tre propriet\`a fisiche del suolo:
-  densit\`a apparente, distribuzione dei pori e stabilità degli aggregati.
- \textbf{ii)} Comparare gli effetti di tre lavorazioni primarie:
- aratura, rippatura e frangizollatura. I campioni di suolo sono stati
- prelevati nell'azienda agricola Montepaldi, situata a San Casciano
- val di Pesa (FI). Lo studio \`e inserito nel progetto MOLTE, un
- \textbf{long term experiment} dell'Universit\`a di Firenze dove, dal
- 1991, viene condotta una sperimentazione sul sistema Biologico. I
- risultati delle analisi sulla densit\`a apparente mostrano che ci
- sono differenze statisticamente significative tra i trattamenti,
- tuttavia queste non sono significative dal punto di vista
- tecnologico. I risultati delle analisi sulla distribuzione dei pori non mostrano
- differenze statisticamente significative, mentre quelle sulla
- stabilit\`a degli aggregati mostrano indicano una maggior stabilit\`a
- dei suoli Convenzionali rispetto ai Biologici. Questo potrebbe essere
- dovuto alla mancanza di fertilizzazione dei suoli Biologici.    
+  densit\`a apparente, distribuzione dei pori e stabilità degli
+  aggregati.  \textbf{ii)} Comparare gli effetti di tre lavorazioni
+  primarie: aratura, rippatura e frangizollatura. I campioni di suolo
+  sono stati prelevati nell'azienda agricola Montepaldi, situata a San
+  Casciano val di Pesa (FI). Lo studio \`e inserito nel progetto
+  MOLTE, un \textbf{long term experiment} dell'Universit\`a di Firenze
+  dove, dal 1991, viene condotta una sperimentazione sul sistema
+  Biologico. I risultati delle analisi sulla densit\`a apparente
+  mostrano che ci sono differenze statisticamente significative tra i
+  trattamenti, tuttavia queste non sono significative dal punto di
+  vista tecnologico. I risultati delle analisi sulla distribuzione dei
+  pori non mostrano differenze statisticamente significative, mentre
+  quelle sulla stabilit\`a degli aggregati mostrano indicano una
+  maggior stabilit\`a dei suoli Convenzionali rispetto ai
+  Biologici. Questo potrebbe essere dovuto alla mancanza di
+  fertilizzazione dei suoli Biologici.
 \end{abstract}
 
 
@@ -292,9 +299,8 @@ file.path(DirMain, "tabelle")
   aggregate stability shows that the conventional's soil is more
   stable than the organic one. This could be due to the lack of
   fertilisation in the organic soil.
-\end{engabstract}
+\end{engabstract}%
 \end{otherlanguage*}
-
 
 \tableofcontents
 \newpage
@@ -308,8 +314,6 @@ file.path(DirMain, "tabelle")
 
 \chapter{Suolo agricolo e agricoltura biologica}
 
-
-VERSIONE OTTORINO NUOVA
 
 Il suolo o terreno \`e un concetto piuttosto chiaro nell'immaginario
 collettivo; nonostante questo \`e difficile individuare una
@@ -499,7 +503,7 @@ usata è quella di \citet{greenland1977soil} ed \`e mostrata in tabella
 \ref{tab:green}.
 
 \begin{table}[ht]
-  \caption{Classificazione dei pori del terreno secondo le dimensioni
+  \caption[corta]{Classificazione dei pori del terreno secondo le dimensioni
     (da \citet{pagliai2002soil})}
   \label{tab:green}
   \centering
@@ -735,7 +739,7 @@ variabile di scheletro di piccole e medie dimensioni.
 
 
 Il sito sperimentale \`e costituito da due agro ecosistemi, da qui in
-avanti definiti come \textit{Management}:
+avanti definiti come \textit{Conduzione}:
 \begin{itemize}
 \item conduzione biologica, \emph{Or} (\emph{Organic})
   \begin{itemize}
@@ -787,7 +791,7 @@ stato coltivato l'orzo negli appezzamenti \emph{OO2} e \emph{CO9} e il
 girasole negli appezzamenti \emph{OO4} e \emph{CO10}.
 
 In ogni appezzamento sono state messe a confronto le seguenti
-lavorazioni primarie (\textit{Tillage}):
+lavorazioni primarie (\emph{Lavorazione}):
 \begin{itemize}
 \item aratura (\emph{Plw}),
 \item rippatura (\emph{Chp}),
@@ -815,7 +819,7 @@ serie \emph{m}, quindi 36 campioni.
 \begin{figure}
   \centering
   \includegraphics[width=0.75\textwidth]{../foto/OO_sito.jpeg}
-  \caption{Appezzamenti biologico, i plot sono indicati con dei codici
+  \caption[corta]{Appezzamenti biologico, i plot sono indicati con dei codici
     identificativi: \emph{OO} seguito da un numero che indica
     l'appezzamento; la lettera maiuscola indica la lavorazione
     \emph{A}(aratura), \emph{B}(rippatura), \emph{C}(frangizollatura);
@@ -827,7 +831,7 @@ serie \emph{m}, quindi 36 campioni.
 \begin{figure}
   \centering
   \includegraphics[width=0.75\textwidth]{../foto/CO_sito.jpeg}
-  \caption{Appezzamenti convenzionale, la codifica segue quella
+  \caption[corta]{Appezzamenti convenzionale, la codifica segue quella
     descritta per l'appezzamento biologico \label{fig:CO_sito}}
 
 \end{figure}
@@ -855,7 +859,7 @@ noto (Fig. \ref{fig:cilindro}). \dubbio{verifica unit\`a di
   \centering
   \includegraphics[width=0.5\textwidth]{../foto/cilindroOttone.jpeg}
   
-  \caption{Cilindro in ottone utilizzato per prelevare i campioni da
+  \caption[corta]{Cilindro in ottone utilizzato per prelevare i campioni da
     destinare all'analisi di densit\`a apparente col metodo
     \emph{Core}, altezza = \SI{12}{\centi\metre}
     diametro = \SI{9.5}{\centi\metre} }
@@ -877,7 +881,8 @@ costante, e successivamente pesato.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.8\textwidth]{../foto/secco.jpeg}
-  \caption{\label{fig:secco}}
+  \caption{MANCA LA DIDAS}
+  \label{fig:secco}
 \end{figure}
 Con i dati misurati, \`e stato ricavato il valore della densit\`a
 apparente ($D_{App}$) tramite la seguente formula:
@@ -918,7 +923,8 @@ manipolazioni per mantenere la struttura dell'aggregato stesso.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.8\textwidth]{../foto/petrolio.jpeg}
-  \caption{\label{fig:petrolio}}
+  \caption{rimanca}
+  \label{fig:petrolio}
 \end{figure}
 
 
@@ -936,7 +942,8 @@ petrolio spostato.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.8\textwidth]{../foto/navicella.jpeg}
-  \caption{\label{fig:bilancia}}
+  \caption{eddai !}
+  \label{fig:bilancia}
 \end{figure}
 
 Per il principio di Archimede, il peso misurato \`e uguale al peso del
@@ -1021,8 +1028,8 @@ dove: \\
 
 \begin{tabular}{rp{12cm}}
   $\beta_1 =$ & anno, due livelli: 2015, 2016;\\
-  $\beta_2 =$  & conduzione, due livelli: convenzionale, biologico;\\
-  $\beta_3 =$ & lavorazioni, tre livelli: arato, rippato, frangizollato;\\
+  $\beta_2 =$  & \emph{Conduzione}, due livelli: convenzionale, biologico;\\
+  $\beta_3 =$ & \emph{Lavorazione}, tre livelli: arato, rippato, frangizollato;\\
   $\epsilon =$ & residui o errore. 
 \end{tabular}
 \vspace*{3em}
@@ -1049,7 +1056,7 @@ nella cui didascalia vengono descritti i dettagli.
 \begin{figure}[ht]
   \centering
   \includegraphics[width= \textwidth]{../foto/mastersizer.jpeg}
-  \caption{Schema dello strumento Mastersizer 2000,
+  \caption[corta]{Schema dello strumento Mastersizer 2000,
     immagine tratta dal manuale utente.  1) un tavolo ottico, che
     colleziona i dati i quali verranno usati per calcolare la
     dimensione delle particelle del campione; 2) una unit\`a di
@@ -1104,12 +1111,15 @@ distribuzioni granulometriche, in particolare:
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.8\textwidth]{../foto/distropisa.jpeg}
-  \caption{In figura alcuni esempi di curve di distribuzione
+  \caption[corta]{In figura alcuni esempi di curve di distribuzione
     granulometrica dinamica: sull'asse delle ascisse sono presenti i valori dei
   diametri delle varie particelle misurate dallo strumento in
   \SI{}{\micro\metre}, scala logaritmica; sull'asse delle ordinate
   sono presenti i relativi valori di volume in percentuale sul totale.}
 \end{figure}
+
+\subsection{Analisi dei dati}
+\migliora[inline]{Spostare qui i discorsi sulla composizionale e sui modelli}
 
 \section{Porosimetria}
 
@@ -1173,7 +1183,7 @@ detach(summary.campo)
 
 \subsection{Metodo \emph{Core}}
 
-La tabella \ref{tab:riassunto_1} riassume i dati ottenuti calcolando
+La tabella \ref{tab:summaryCore} riassume i dati ottenuti calcolando
 la densit\`a apparente mediante la formula
 \ref{eq:DensitaApparente}. La figura \ref{fig:boxplotCore} riporta gli
 stessi dati in forma grafica. I valori, la cui media generale \`e pari a
@@ -1186,30 +1196,40 @@ ovvero circa la met\`a della densit\`a reale che si aggira intorno a
 
 <<Summary_Campo, echo=FALSE, eval=TRUE, results=tex>>=
 names(summary.campo) <-  
-    c("Anno", "Management", "Tillage", "Media", "Dev. std", "n")
+    c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n")
 summary.campo$Anno <- 
     c("2015", rep(" ", 5), "2016", rep(" ", 5))
-summary.campo$Management <- 
+summary.campo$Conduzione <- 
     c("Co", rep(" ", 2), "Or", rep(" ", 2), 
       "Co", rep(" ", 2), "Or", rep(" ", 2))
 tabella.campo <-
     xtable(summary.campo,
-           label = 'tab:riassunto_1', align  = "llllccc",
+           label = 'tab:summaryCore', align  = "llllccc",
            caption = 
-               "Valori medi della densit\\`a apparente (in \\SI{}{\\gram\\per\\cubic\\centi\\metre}), condizionati per anno, conduzione e lavorazione " )
+               "Valori medi della densit\\`a apparente (in \\SI{}{\\gram\\per\\cubic\\centi\\metre}), 
+                condizionati per anno, conduzione e lavorazione " )
 print(tabella.campo, include.rownames=FALSE,
       caption.placement = "top",
       table.placement= "hb")
 
 @
- \FloatBarrier
 
- \info[inline]{Dobbiamo giustificare la differenza di numerosità del campione; 5, 6, 15,. Propongo di far sparire quei 15 e portarli a 5}
-La figura \ref{fig:boxplotCore} mostra che l'anno 2015 \`e presenta
-una densit\`a apparente mediamente pi\`u elevata dell'anno 2016. Non
-sono visibili differenze tra le varie lavorazioni, ma si nota come i
-valori di densit\`a apparente misurati sul campo convenzionale siano
-pi\`u bassi rispetto a quelli del biologico.
+\FloatBarrier
+
+\info[inline]{Dobbiamo giustificare la differenza di numerosità del
+   campione; 5, 6, 15,. Propongo di far sparire quei 15 e portarli a
+   5}
+
+ \migliora{Questa roba non è piu' valida dopo la riduzione dei dati
+   2015 a 5 campioni}
+   
+ La figura \ref{fig:boxplotCore} mostra che l'anno 2015 \`e presenta
+ una densit\`a apparente mediamente pi\`u elevata dell'anno 2016. Non
+ sono visibili differenze tra le varie lavorazioni, ma si nota come i
+ valori di densit\`a apparente misurati sul campo \migliora{Questa
+   roba non è piu' valida dopo la riduzione dei dati 2015 a 5
+   campioni} convenzionale siano pi\`u bassi rispetto a quelli del
+ biologico.
 
 <<label = ResiduiCampo, echo=FALSE, fig = TRUE, include = FALSE>>=
 limiti.x <- c(0,13)
@@ -1253,12 +1273,12 @@ text(11, 1.7, "Or", pos = 1, cex = 1.5)
 <<ResiduiCampo>>
 @
 
-\caption{Boxplot della densit\`a apparente per i vari trattamenti: 
-  a sinistra sono presenti le misurazioni dell'anno 2015, a destra quelle del 2016; 
-  all'interno dei due anni sono suddivisi in Convenzionale e Organico; 
-  per colore si possono distinguere le varie lavorazioni (arato, frangizollato e rippato);
-  \info[inline]{La riga rossa ?}
-  }
+\caption[corta]{Boxplot della densit\`a apparente per i vari trattamenti: a
+  sinistra sono presenti le misurazioni dell'anno 2015, a destra
+  quelle del 2016; all'interno dei due anni sono suddivisi in
+  Convenzionale e Organico; per colore si possono distinguere le varie
+  lavorazioni (arato, frangizollato e rippato).La riga rossa indica la
+  media generale }
   
   \label{fig:boxplotCore}
 \end{figure}
@@ -1270,17 +1290,18 @@ lm.Densita <-
 lm.DensSign <-
     lm(densita.apparente ~ YEAR+TRT, data = df.dueAnni)
 @ 
-
+ \migliora[inline]{riscrivere}
 Il modello utilizzato, (\ref{mod:MetodoClod}, pag.
 \pageref{mod:MetodoClod}). \`E stato costruito un modello additivo in
 quanto non sono state trovate interazioni statisticamente
-significative tra l'anno, la conduzione e la lavorazione.
+significative tra l'anno, la \emph{Conduzione} e la \emph{Lavorazione}
 
+\migliora[inline]{riscrivere}
 La tabella \ref{tab:anova del modello} riporta l'Anova del
 modello. L'anova mostra che il valore di p dell'effetto della lavorazione
 sui dati \`e sopra a 0.05 (valore prefissato di significativit\`a), di
 conseguenza si pu\`o eliminare dal modello. Mentre l'anno e la
-conduzione sono statisticamente significative.
+\emph{Conduzione} sono statisticamente significative.
 
 
 <<anova_modello, echo=FALSE, eval=TRUE, results=tex>>=
@@ -1295,11 +1316,11 @@ print(tabella.anova.dens,
       include.rownames=TRUE,
       caption.placement = "top")
 @ 
-
+\migliora[inline]{riscrivere}
 In tabella \ref{tab:t-table del modello2} \`e possibile vedere la
-t-table del modello senza la variabile categorica lavorazione
-\info[inline]{Mi pare si fosse detto che si chiamava tillage}.
+t-table del modello senza la variabile categorica \emph{Lavorazione}
 
+\migliora{riscrivere}
 Da questa \`e possibile confermare ci\`o che \`e stato mostrato
 dall'analisi visuale, ovvero: il terreno degli appezzamenti condotti a
 biologico \`e mediamente pi\`u denso di quello degli appezzamenti
@@ -1368,12 +1389,18 @@ legend(3, 1.2,
 <<label=figboh,fig=TRUE,echo=FALSE, width=5.4, height=5.4 >>=
 <<boxplot2>>
 @
-\caption{Boxplot densit\`a apparente in cui \`e stato eliminato
+\caption[corta]{Boxplot densit\`a apparente in cui \`e stato eliminato
   l'effetto della lavorazione dal modello, le lettere sopra ai boxplot
   sono il risultato del test di Tukey-Siegel \info[inline]{al livello
     di significatività ??}}
 \end{figure}
 \FloatBarrier
+
+ 
+\migliora{Questa roba non è piu' valida dopo tolti i campioni}
+
+In tabella \ref{tab:t-table del modello2} \`e possibile vedere la
+t-table del modello senza la variabile categorica \emph{Lavorazione}
 
 In conclusione di questa analisi, i dati non permettono di confermare
 l'ipotesi di partenza.
@@ -1384,18 +1411,22 @@ livello tecnologico, infatti la differenza \`e al livello della
 seconda cifra decimale. Questo per\`o ci permette di affermare che il
 disegno sperimentale \`e ben costruito e che il numero di campioni \`e
 sufficiente per gli obiettivi dello studio.
-\info{forse questa roba va messa nel capitolo discussione}
+
+\info[inline]{Questa roba, corretta va messa nel capitolo discussione}
 
 \subsection{Metodo \emph{Clod}}
-Con il metodo \emph{Clod}, grazie alla speditivit\`a del metodo sono
-stati analizzati tutti i 108 campioni disponibili, ogni misura \`e
-stata replicata tre volte.
+Il metodo \emph{Clod} ha permesso, grazie alla sua speditivit\`a, di
+analizzare tutti i 108 campioni disponibili e ogni misura \`e stata
+replicata tre volte \info[inline]{Quindi sono 324 numeri ? Strano:
+  dim(df.petrolio) 108 9 }.\migliora[inline]{Sono \emph{Campioni},
+  \emph{misure} oppure \emph{combinazioni dei fattori dell'esperimento
+  }? }
 
-In tabella \ref{tab:summary petrolio} sono riportati in sintesi
-le informazioni presenti nel data frame. \`E possibile vedere come i
-valori della densit\`a apparente calcolati (mediante l'equazione
-\ref{eq:densitapetrolio}) siano mediamente pi\`u elevati rispetto a
-quelli dell'analisi col metodo \emph{Core}.
+In tabella \ref{tab:summaryClod} sono riportati in sintesi le
+informazioni contenute nei dati. I valori della densit\`a apparente
+calcolati (mediante l'equazione \ref{eq:densitapetrolio}) sono
+mediamente pi\`u elevati rispetto a quelli dell'analisi col metodo
+\emph{Core} riportati a pag. \pageref{tab:summaryCore}.
 
 <<Sommario_petrolio, echo=FALSE, eval=TRUE, results=tex >>=
 df.petrolio <- 
@@ -1418,12 +1449,12 @@ summary.petrolio <-
 attach(summary.petrolio)
 summary.petrolio <- summary.petrolio[order(TRT, LAVORAZIONE),]
 detach(summary.petrolio)
-names(summary.petrolio) <- c("Management","Tillage","Media","Dev. std", "n")
-summary.petrolio$Management <- c("Co", rep("", 2), "Or", rep("", 2))
+names(summary.petrolio) <- c("Conduzione","Lavorazione","Media","Dev. std", "n")
+summary.petrolio$Conduzione <- c("Co", rep("", 2), "Or", rep("", 2))
 
 tabella.petrolio <-
     xtable(summary.petrolio,
-           label = 'tab:summary petrolio', align  = "lllccc",
+           label = 'tab:summaryClod', align  = "lllccc",
            caption = 
                "Valori medi della densit\\`a apparente (in 
                 \\SI{}{\\gram\\per\\cubic\\centi\\metre}), 
@@ -1434,7 +1465,7 @@ print(tabella.petrolio, include.rownames=FALSE, caption.placement = "top")
 
 
 
-Dai boxplot mostrati in Fig. \ref{fig:boxplotpetrolio} non sono visibili
+Dai boxplot mostrati in Fig. \ref{fig:boxplotClod} non sono visibili
 differenze tra i trattamenti.
 
 <<label = boxplotpetr, fig.width=0.8, fig.height=0.8, echo=FALSE, fig = TRUE, include = FALSE>>=
@@ -1485,18 +1516,18 @@ with(data = df.petrolio,
 <<label=figmah, fig=TRUE, echo=FALSE, width = 5.4, height  = 5.4 >>=
 <<boxplotpetr>>
 @
-\caption{Boxplot dei valori di densit\`a apparente ottenuti col metodo
+\caption[corta]{Boxplot dei valori di densit\`a apparente ottenuti col metodo
   di analisi \emph{Clod}; gli appezzamenti condotti convenzionalmente
   (a sinistra) hanno valori leggermente più alti degli appezzamenti
   condotti a biologico (a destra) le lettere sopra ai boxplot sono il
   risultato del test di Tukey-Siegel \info[inline]{al livello di
     significatività ??}}
-  \label{fig:boxplotpetrolio}
+  \label{fig:boxplotClod}
 
 \end{figure}
 
 Il modello \`e additivo; come nel caso del metodo \emph{Core} le
-interazioni tra lavorazione e conduzione non sono statisticamente
+interazioni tra \emph{Lavorazione} e \emph{Conduzione} non sono statisticamente
 significative.
 
 I trattamenti sono statisticamente significativi come si pu\`o vedere
@@ -1514,7 +1545,7 @@ summary(lm.spinta)
 @ 
 
 <<Analisi_Petrolio, echo=FALSE, eval=TRUE, results=tex>>=
-rownames(anova_spinta) <- c("Management", "Tillage", "Residui")
+rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Residui")
 tabella.spinta.anova <-
     xtable(anova_spinta,
            label = 'tab:anova piccoli aggregati', align = 'rrrrrr',
@@ -1657,23 +1688,25 @@ lm.2 <-
 %%    didascalia estesa in figura 3.4}
 
 
+\migliora[inline]{Modelli da spostare ai MatMet}
 Per la costruzione dei modelli sono stati esclusi i trattamenti
 lavorazione, che non sono significativi, Nel modello \`e presente
 l'elemento tempo al quadrato il quale, come \`e possibile vedere dalla
 tabella anova \ref{tab:anova_compWET}, \`e significativo.
 
 La misura \`e stata effettuata sia sull'aggregato secco che
-sull'aggregato inumidito per studiare il fenomeno dello
-\emph{slaking} \footnote{Rottura di
-aggregati di suolo (>2-\SI{5}{\mm}) secchi in aggregati pi\`u piccoli
-(<\SI{0.25}{\mm}) quando sono improvvisamente immersi in acqua. Lo
-slaking avviene quando gli aggregati non sono forti abbastanza da
-resistere agli stress interni causati dal rapido ingresso dell'acqua
-\citep{Slaking}}.  \dubbio{E invece il suolo wet si distrugge prima
-  ahah. Non torna niente.}  Quindi sono stati creati due modelli: uno
-per i campioni inumiditi (\emph{WET}) e uno per i camioni secchi
-(\emph{DRY}). I modelli mostrano che pendenza e curvatura sono comuni
-per entrambi i trattamenti.
+sull'aggregato inumidito per studiare il fenomeno dello \emph{slaking}
+\footnote{Rottura di aggregati di suolo (>2-\SI{5}{\mm}) secchi in
+  aggregati pi\`u piccoli (<\SI{0.25}{\mm}) quando sono
+  improvvisamente immersi in acqua. Lo slaking avviene quando gli
+  aggregati non sono forti abbastanza da resistere agli stress interni
+  causati dal rapido ingresso dell'acqua che, comprimendo l'aria,
+  esercita una pressione distruttiva \citep{Slaking}}. \dubbio{E
+  invece il suolo wet si distrugge prima ahah. Non torna niente.}
+Quindi sono stati creati due modelli: uno per i campioni inumiditi
+(\emph{WET}) e uno per i camioni secchi (\emph{DRY}). I modelli
+mostrano che pendenza e curvatura sono comuni per entrambi i
+trattamenti.
 
 Alla fine del trattamento, \`e possibile vedere come tutti gli
 aggregati in fondo al trattamento disgregativo (acqua + ultrasuoni)
@@ -1783,8 +1816,8 @@ questi <-
 df.plot <- df.tessitura[questi,]
 Y.2 <- acomp(df.plot[, 16:18])
 lm.2.2 <-   with(df.plot,lm(ilr(Y.2) ~ COND+TIME2+I(TIME2^2)))
-modello <- lm.2.2
-coefs <-  ilrInv(coef(modello),orig=Y.2)
+modelloMsizer <- lm.2.2
+coefs <-  ilrInv(coef(modelloMsizer),orig=Y.2)
 ##############################################################
 CO <- round(matrix(coefs[1,] +
      acomp(coefs[3,])*on.ultra.off +
@@ -1851,11 +1884,12 @@ legend("topleft",
 <<IUFW, echo=FALSE, eval=TRUE, results=tex>>=
 xt.IUFW <- xtable(df.iufw,
        label = 'tab:iufw', digits = 1,
-       caption = 'Progressione della distribuzione delle particelle 
-                  liberatisi dagli aggregati precedentemente inumiditi in seguito a: 
-                  i) immersione:
-                  ii) inizio sonicazione 
-                  iii) fine  '
+       caption = 'Evoluzione della distribuzione granulometrica
+                  delle particelle liberatisi dagli aggregati
+                  precedentemente inumiditi in seguito a: 
+                  i) inizio misura (immersione):
+                  ii) inizio sonicatura 
+                  iii) fine ciclo '
        )
 print(xt.IUFW,include.rownames=FALSE)
 @ 
@@ -1864,18 +1898,19 @@ print(xt.IUFW,include.rownames=FALSE)
 <<IUFD, echo=FALSE, eval=TRUE, results=tex>>=
 xt.IUFD <- xtable(df.iufd,
        label = 'tab:iufd', digits = 1,
-       caption = 'Progressione della distribuzione delle particelle 
-                  liberatisi dagli aggregati secchi in seguito a: 
-                  i) immersione:
-                  ii) inizio sonicazione 
-                  iii) fine  '
+       caption = 'Evoluzione della distribuzione granulometrica
+                  delle particelle liberatisi dagli aggregati
+                  secchi in aria in seguito a: 
+                  i) inizio misura (immersione):
+                  ii) inizio sonicatura 
+                  iii) fine ciclo '
        )
 print(xt.IUFD, include.rownames=FALSE,caption.placement = "top")
 @ 
 
 <<anova_acompWET, echo=FALSE, eval=TRUE, results=tex>>=
 anova.comp.wet <- anova(lm.2)
-rownames(anova.comp.wet) <- c("Intercetta","Management", "Tempo", "Tempo^2","Residui")
+rownames(anova.comp.wet) <- c("Intercetta","Conduzione", "Tempo", "Tempo^2","Residui")
 anova_tabella <- xtable(anova.comp.wet,
        label = 'tab:anova_compWET', align = 'rrrrrrr',
        caption = 'anova stabilit\\`a aggregati per i dati WET '
@@ -1887,10 +1922,10 @@ print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 
 <<anova_acompDRY, echo=FALSE, eval=TRUE, results=tex>>=
 anova.comp.dry <- anova(lm.2.2)
-rownames(anova.comp.dry) <- c("Intercetta","Management","Tempo", "Tempo^2","Residui")
+rownames(anova.comp.dry) <- c("Intercetta","Conduzione","Tempo", "Tempo^2","Residui")
 anova_tabella_dry<- xtable(anova.comp.dry,
        label = 'tab:anova_compWET', align = 'rrrrrrr',
-       caption = 'Aggregati per i dati WET '
+       caption = 'Aggregati per i dati DRY '
        )
 print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
@@ -1902,24 +1937,35 @@ print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRU
   \centering 
 <<label=figboh3,fig=TRUE,echo=FALSE>>=
 <<plotacompWETDRY>>
+
 @
-  \caption{Plot del modello composizionale}
+
+\caption[corta]{Evoluzione della distribuzione granulometrica delle
+  particelle liberatisi in seguito a: \newline i) inizio misura
+  (immersione, punti indicati dalle lettere minuscole \emph{c} e
+  \emph{o}) \newline ii) accensione sonicatore (lettere \emph{W} e
+  \emph{D}) \newline iii) fine ciclo. \newline Gli apici del triangolo
+  rappresentano particelle maggiori di \Sexpr{vec.paletti[1]} (MACRO),
+  comprese tra \Sexpr{vec.paletti[1]} e \Sexpr{vec.paletti[2]} (MESO)
+  e inferiori a \SI{\Sexpr{vec.paletti[2]}}{\micro\metre} 
+  \info[inline]{Figura troppo grossa: sistemala come la
+    Fig. \ref{fig:boxplotCore}}
+  }
+  
 \end{figure}
+
 
 <<label = qqplotAcomp, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
-qqnorm(ilrInv(resid(modello),orig=Y))
+qqnorm(ilrInv(resid(modelloMsizer), orig=Y))
+## il codice rimane qui, ma la figura è migrata alle appendici
+
 @ 
 
-\begin{figure}[ht]
-  \centering 
-<<label=figboh4,fig=TRUE,echo=FALSE>>=
-<<qqplotAcomp>>
-@
-  \caption{qqplot del modello composizionale \info[inline]{quale ???}}
-  \label{fig:qqplot_dinamica_aggregati}
-\end{figure}
+
+
 
 \section{Porosimetria}
+
 <<Import_porosimetria, echo = FALSE, eval = TRUE>>=
 Export.Dir <-
     file.path(DirMain, "dati_elaborati/porosimetria")
@@ -1959,9 +2005,9 @@ df.analisi <-
     df.data[-c(3,6,11,10),]
 
 Y <- acomp(df.analisi[, 7:9])
-modello <-
+modelloPoro <-
     with(df.analisi, lm(ilr(Y) ~ MAN*TIL))
-coefs <-  ilrInv(coef(modello), orig=Y)
+coefs <-  ilrInv(coef(modelloPoro), orig=Y)
 alpha <- 0.05
 @ 
 
@@ -2041,7 +2087,7 @@ rigorosa, detta \textit{Soluzione di Mie}.
 
 \begin{figure}[ht]
   \includegraphics[width=\textwidth]{../foto/Mie_scattering.jpeg}
-  \caption{In figura \`e rappresentato il fenomeno dello scattering di Mie, presa da
+  \caption[corta]{In figura \`e rappresentato il fenomeno dello scattering di Mie, presa da
     \href{http://www.smart-piv.com/en/techniques/mie-rayleigh-raman/index.php}{questo
       sito}
     \label{fig:Mie}}
@@ -2058,7 +2104,7 @@ dimensione delle particelle in base al pattern di diffusione.
 
 \begin{figure}[ht]
   \includegraphics[width=\textwidth]{../foto/laser_diffraction.jpeg}
-  \caption{Rappresentazione del funzionamento del Mastersizer 2000 presa da:
+  \caption[corta]{Rappresentazione del funzionamento del Mastersizer 2000 presa da:
     \href{https://plus.google.com/communities/110676150876604729660/stream/ffa7f40a-1c65-4268-9121-bb88d63f0c41}{questo sito}
     \label{fig:MastersizerInt}}
 \end{figure}
@@ -2157,10 +2203,22 @@ Nell'equazione \ref{eq:boh2}:
            mezzo disperdente.
 \end{tabular}
 
+\chapter{Grafici dei residui dei modelli utilizzati per l'analisi dei dati}
+
+\begin{figure}[ht]
+  \centering 
+<<label=figboh4, fig=TRUE, echo=FALSE>>=
+<<qqplotAcomp>>
+@
+  \caption[corta]{qqplot del modello composizionale densimetria dinamica}
+  \label{fig:qqplot_dinamica_aggregati}
+\end{figure}
+
+
 \end{appendices}
 
-
-
+%\listoffigures non funziona con xtable
+\listoftables
 \printbibliography
 \listoftodos
 \end{document}
