@@ -51,12 +51,18 @@ header = T, sep = "")
 ## df.dueAnni <- 
 ## read.table(file.path(DirElab, "dens_app.csv"), 
 ## header = T, sep = ";")
-
+df.dueAnni <- df.dueAnni[df.dueAnni$REPLICA== "m",]
 ###################################################
 ###DescrittivaDensitaCampo1
 ###################################################
 #with(df.dueAnni, table(TRT, LAVORAZIONE, APPEZZAMENTO, YEAR))
 options(contrasts=c("contr.treatment","contr.poly"))
+
+fattore <- interaction(df.dueAnni$YEAR, df.dueAnni$TRT, df.dueAnni$LAVORAZIONE)
+amod <- aov(densita.apparente ~ fattore, data=df.dueAnni)
+HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
+tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
+tuk.cld<- cld(tuk)
 summary.campo <-
 data.frame(
 aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
@@ -68,7 +74,8 @@ data = df.dueAnni,
 function(x){round(sd(x, na.rm=TRUE),2)})[,4],
 n= aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
 data = df.dueAnni,
-function(x){sum(!is.na(x))})[,4]
+function(x){sum(!is.na(x))})[,4],
+Tukey  = as.vector(tuk.cld$mcletters$Letters)
 )
 ##names(summary.campo)[4] <- "Dens.app.g.cmc"
 attach(summary.campo)
@@ -80,15 +87,15 @@ detach(summary.campo)
 ### code chunk number 4: Summary_Campo
 ###################################################
 names(summary.campo) <-  
-    c("Anno", "Management", "Tillage", "Media", "Dev. std", "n")
+    c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n", "Tukey")
 summary.campo$Anno <- 
     c("2015", rep(" ", 5), "2016", rep(" ", 5))
-summary.campo$Management <- 
+summary.campo$Conduzione <- 
     c("Co", rep(" ", 2), "Or", rep(" ", 2), 
       "Co", rep(" ", 2), "Or", rep(" ", 2))
 tabella.campo <-
     xtable(summary.campo,
-           label = 'tab:riassunto_1', align  = "llllccc",
+           label = 'tab:riassunto_1', align  = "llllcccc",
            caption = 
                "Valori medi della densit\\`a apparente (in \\SI{}{\\gram\\per\\cubic\\centi\\metre}), condizionati per anno, conduzione e lavorazione " )
 print(tabella.campo, include.rownames=FALSE,
@@ -99,6 +106,10 @@ print(tabella.campo, include.rownames=FALSE,
 ###################################################
 ### code chunk number 5: ResiduiCampo
 ###################################################
+## tapply(df.dueAnni$BD.g.cmc,
+##             fattore, 
+##           function(x) mean(x, na.rm = TRUE)
+##         )
 limiti.x <- c(0,13)
 limiti.y <- c(1, 1.8)
 plot(1, xlim = limiti.x, ylim = limiti.y, type = "n",
@@ -136,6 +147,10 @@ text(11, 1.7, "Or", pos = 1, cex = 1.5)
 ###################################################
 ### code chunk number 6: figboh2
 ###################################################
+## tapply(df.dueAnni$BD.g.cmc,
+##             fattore, 
+##           function(x) mean(x, na.rm = TRUE)
+##         )
 limiti.x <- c(0,13)
 limiti.y <- c(1, 1.8)
 plot(1, xlim = limiti.x, ylim = limiti.y, type = "n",
@@ -214,85 +229,7 @@ print(tabella.summary.dens,
 
 
 ###################################################
-### code chunk number 10: boxplot2
-###################################################
-fattore <- interaction(df.dueAnni$YEAR, df.dueAnni$TRT)
-amod <- aov(densita.apparente ~ fattore, data=df.dueAnni)
-HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
-tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
-tuk.cld<- cld(tuk)   #letter-based display
-posiz.y <- 1.7
-## tapply(df.dueAnni$BD.g.cmc,
-##             fattore, 
-##           function(x) mean(x, na.rm = TRUE)
-##         )
-limiti.x <- c(0,5)
-limiti.y <- c(1, 1.8)
-plot(1, xlim = limiti.x, ylim = limiti.y, type = "n",
-     yaxt = "n", xaxt = "n", xlab = "",ylab = "", main = "Metodo Core")
-##mtext(expression(paste("Densit\`a apparente g ", cm^-3)), side = 2, line = 2)   
-rect(0.25,1, 2.45,1.8, col = "lightgray", border = NA)
-rect(2.48,1, 4.75,1.8, col = "gray", border = NA)
-rect(0.25,1, 2.45,1.8,lwd = 2)
-rect(2.48,1, 4.75,1.8,lwd = 2)
-with(df.dueAnni,
-     boxplot(densita.apparente ~ YEAR + TRT, ### ATTENZIONE A NON INVERTIRE TRT con YEAR !!
-             las = 2, xaxt = "n",
-             col = c(5, 6), add = TRUE))
-mtext(expression(paste("Densit\`a apparente g ", cm^-3)), side = 2, line = 2)
-text(1.5, 1.8, "Anno 2015", pos = 1, cex = 1.5)
-text(3.5, 1.8, "Anno 2016", pos = 1, cex = 1.5)
-text(x = 1:4, y = posiz.y, tuk.cld$mcletters$Letters, cex = 1.5, col = "red")
-legend(3, 1.2, 
-       c("Convenzionale", "Biologico"),
-       box.col = "transparent", 
-       fill=c(5,6), cex=0.8,  ncol = 1)
-##points(y = jitter(rep(1:12, each = 6), 0.5),
-##x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT, YEAR))),
-##cex = 2, pch = 4)
-
-
-###################################################
-### code chunk number 11: figboh
-###################################################
-fattore <- interaction(df.dueAnni$YEAR, df.dueAnni$TRT)
-amod <- aov(densita.apparente ~ fattore, data=df.dueAnni)
-HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
-tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
-tuk.cld<- cld(tuk)   #letter-based display
-posiz.y <- 1.7
-## tapply(df.dueAnni$BD.g.cmc,
-##             fattore, 
-##           function(x) mean(x, na.rm = TRUE)
-##         )
-limiti.x <- c(0,5)
-limiti.y <- c(1, 1.8)
-plot(1, xlim = limiti.x, ylim = limiti.y, type = "n",
-     yaxt = "n", xaxt = "n", xlab = "",ylab = "", main = "Metodo Core")
-##mtext(expression(paste("Densit\`a apparente g ", cm^-3)), side = 2, line = 2)   
-rect(0.25,1, 2.45,1.8, col = "lightgray", border = NA)
-rect(2.48,1, 4.75,1.8, col = "gray", border = NA)
-rect(0.25,1, 2.45,1.8,lwd = 2)
-rect(2.48,1, 4.75,1.8,lwd = 2)
-with(df.dueAnni,
-     boxplot(densita.apparente ~ YEAR + TRT, ### ATTENZIONE A NON INVERTIRE TRT con YEAR !!
-             las = 2, xaxt = "n",
-             col = c(5, 6), add = TRUE))
-mtext(expression(paste("Densit\`a apparente g ", cm^-3)), side = 2, line = 2)
-text(1.5, 1.8, "Anno 2015", pos = 1, cex = 1.5)
-text(3.5, 1.8, "Anno 2016", pos = 1, cex = 1.5)
-text(x = 1:4, y = posiz.y, tuk.cld$mcletters$Letters, cex = 1.5, col = "red")
-legend(3, 1.2, 
-       c("Convenzionale", "Biologico"),
-       box.col = "transparent", 
-       fill=c(5,6), cex=0.8,  ncol = 1)
-##points(y = jitter(rep(1:12, each = 6), 0.5),
-##x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT, YEAR))),
-##cex = 2, pch = 4)
-
-
-###################################################
-### code chunk number 12: Sommario_petrolio
+### code chunk number 10: Sommario_petrolio
 ###################################################
 df.petrolio <- 
     read.table(file.path(DirElab, "df_spinta.csv"), 
@@ -314,8 +251,8 @@ summary.petrolio <-
 attach(summary.petrolio)
 summary.petrolio <- summary.petrolio[order(TRT, LAVORAZIONE),]
 detach(summary.petrolio)
-names(summary.petrolio) <- c("Management","Tillage","Media","Dev. std", "n")
-summary.petrolio$Management <- c("Co", rep("", 2), "Or", rep("", 2))
+names(summary.petrolio) <- c("Conduzione","Lavorazione","Media","Dev. std", "n")
+summary.petrolio$Conduzione <- c("Co", rep("", 2), "Or", rep("", 2))
 
 tabella.petrolio <-
     xtable(summary.petrolio,
@@ -329,7 +266,7 @@ print(tabella.petrolio, include.rownames=FALSE, caption.placement = "top")
 
 
 ###################################################
-### code chunk number 13: boxplotpetr
+### code chunk number 11: boxplotpetr
 ###################################################
 
 with(data = df.petrolio,
@@ -374,7 +311,7 @@ with(data = df.petrolio,
 
 
 ###################################################
-### code chunk number 14: figmah
+### code chunk number 12: figmah
 ###################################################
 
 with(data = df.petrolio,
@@ -419,7 +356,7 @@ with(data = df.petrolio,
 
 
 ###################################################
-### code chunk number 15: Analisi_Petrolio
+### code chunk number 13: Analisi_Petrolio
 ###################################################
 lm.spinta <- 
 lm(densita.apparente ~ TRT + LAVORAZIONE, data = df.petrolio)
@@ -432,9 +369,9 @@ summary(lm.spinta)
 
 
 ###################################################
-### code chunk number 16: Analisi_Petrolio
+### code chunk number 14: Analisi_Petrolio
 ###################################################
-rownames(anova_spinta) <- c("Management", "Tillage", "Residui")
+rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Residui")
 tabella.spinta.anova <-
     xtable(anova_spinta,
            label = 'tab:anova piccoli aggregati', align = 'rrrrrr',
@@ -445,7 +382,7 @@ print(tabella.spinta.anova, caption.placement = "top")
 
 
 ###################################################
-### code chunk number 17: Summary_Petrolio
+### code chunk number 15: Summary_Petrolio
 ###################################################
 
 summary_spinta <- coef(summary_spinta)
@@ -464,7 +401,7 @@ vec.paletti <- c(150, 50)
 
 
 ###################################################
-### code chunk number 18: Import_aggregati
+### code chunk number 16: Import_aggregati
 ###################################################
 df.data <-
     read.table(file.path(DirElab, "Stabilita_wide.csv"),
@@ -552,7 +489,7 @@ lm.2 <-
 
 
 ###################################################
-### code chunk number 19: plotacompWETDRY
+### code chunk number 17: plotacompWETDRY
 ###################################################
 modello <- lm.2
 coefs <-  ilrInv(coef(modello), orig = Y)
@@ -696,7 +633,7 @@ legend("topleft",
 
 
 ###################################################
-### code chunk number 20: IUFW
+### code chunk number 18: IUFW
 ###################################################
 xt.IUFW <- xtable(df.iufw,
        label = 'tab:iufw', digits = 1,
@@ -710,7 +647,7 @@ print(xt.IUFW,include.rownames=FALSE)
 
 
 ###################################################
-### code chunk number 21: IUFD
+### code chunk number 19: IUFD
 ###################################################
 xt.IUFD <- xtable(df.iufd,
        label = 'tab:iufd', digits = 1,
@@ -724,10 +661,10 @@ print(xt.IUFD, include.rownames=FALSE,caption.placement = "top")
 
 
 ###################################################
-### code chunk number 22: anova_acompWET
+### code chunk number 20: anova_acompWET
 ###################################################
 anova.comp.wet <- anova(lm.2)
-rownames(anova.comp.wet) <- c("Intercetta","Management", "Tempo", "Tempo^2","Residui")
+rownames(anova.comp.wet) <- c("Intercetta","Conduzione", "Tempo", "Tempo^2","Residui")
 anova_tabella <- xtable(anova.comp.wet,
        label = 'tab:anova_compWET', align = 'rrrrrrr',
        caption = 'anova stabilit\\`a aggregati per i dati WET '
@@ -736,10 +673,10 @@ print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 
 
 ###################################################
-### code chunk number 23: anova_acompDRY
+### code chunk number 21: anova_acompDRY
 ###################################################
 anova.comp.dry <- anova(lm.2.2)
-rownames(anova.comp.dry) <- c("Intercetta","Management","Tempo", "Tempo^2","Residui")
+rownames(anova.comp.dry) <- c("Intercetta","Conduzione","Tempo", "Tempo^2","Residui")
 anova_tabella_dry<- xtable(anova.comp.dry,
        label = 'tab:anova_compWET', align = 'rrrrrrr',
        caption = 'Aggregati per i dati WET '
@@ -748,7 +685,7 @@ print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRU
 
 
 ###################################################
-### code chunk number 24: figboh3
+### code chunk number 22: figboh3
 ###################################################
 modello <- lm.2
 coefs <-  ilrInv(coef(modello), orig = Y)
@@ -892,19 +829,19 @@ legend("topleft",
 
 
 ###################################################
-### code chunk number 25: qqplotAcomp
+### code chunk number 23: qqplotAcomp
 ###################################################
 qqnorm(ilrInv(resid(modello),orig=Y))
 
 
 ###################################################
-### code chunk number 26: figboh4
+### code chunk number 24: figboh4
 ###################################################
 qqnorm(ilrInv(resid(modello),orig=Y))
 
 
 ###################################################
-### code chunk number 27: Import_porosimetria
+### code chunk number 25: Import_porosimetria
 ###################################################
 Export.Dir <-
     file.path(DirMain, "dati_elaborati/porosimetria")

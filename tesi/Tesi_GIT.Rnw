@@ -733,11 +733,11 @@ avanti definiti come \textit{Conduzione}:
     nella lista, sono presenti anche altri quattro appezzamenti a
     conduzione biologica denominati \textit{Bionuovo} che non sono
     stati considerati in questo esperimento} \emph{Old Organic, OO}
-\item conduzione \emph{Convenzionale}, \emph{Co}
+\item conduzione \emph{Convenzionale}, \emph{CO}
 \end{itemize}
 I due agro ecosistemi sono suddivisi in pi\`u appezzamenti
 rettangolari (\textit{Field}, \SI{1.3}{\hectare} ciascuno),
-identificati da sigle quali \emph{OO1, OO2, OO3, OO4} per il biologico
+identificati dalle sigle \emph{OO1, OO2, OO3, OO4} per il biologico
 vecchio (Fig. \ref{fig:OO_sito}) e \emph{CO9, CO10} per il
 convenzionale (Fig. \ref{fig:CO_sito}). 
 
@@ -777,9 +777,9 @@ girasole negli appezzamenti \emph{OO4} e \emph{CO10}.
 In ogni appezzamento sono state messe a confronto le seguenti
 lavorazioni primarie (\textit{Lavorazione}):
 \begin{itemize}
-\item aratura (\emph{Plw}),
-\item rippatura (\emph{Chp}),
-\item frangizollatura (\emph{Dsh}).
+\item aratura (\emph{A}),
+\item rippatura (\emph{B}),
+\item frangizollatura (\emph{C}).
 \end{itemize}
 
 In pre-semina \`e stata effettuata una ulteriore frangizollatura per
@@ -791,8 +791,8 @@ ogni appezzamento \`e suddiviso in 9 parcelle.
 
 All'interno di ogni parcella sono stati individuati tre punti di
 campionamento, partendo dal centro del campo (Fig. \ref{fig:OO_sito} e
-\ref{fig:CO_sito}): m (medio), a (alto, 4
-metri sopra il medio) e b (basso, 4 metri sotto il medio).
+\ref{fig:CO_sito}): \emph{m} (medio), \emph{a} (alto, 4
+metri sopra il medio) e \emph{b} (basso, 4 metri sotto il medio).
 
 
 
@@ -807,7 +807,7 @@ serie \emph{m}, quindi 36 campioni.
     identificativi: \emph{OO} seguito da un numero che indica
     l'appezzamento; la lettera maiuscola indica la lavorazione
     \emph{A}(aratura), \emph{B}(rippatura), \emph{C}(frangizollatura);
-    il numero (\emph{1, 2 , 3}) indica la riga; la lettera minuscola
+    il numero (\emph{1, 2, 3}) indica la riga; la lettera minuscola
     indica la replica all'interno del plot (\emph{a} alto, \emph{m}
     medio, \emph{b} basso) \label{fig:OO_sito}}
 \end{figure}
@@ -816,7 +816,7 @@ serie \emph{m}, quindi 36 campioni.
   \centering
   \includegraphics[width=0.75\textwidth]{../foto/CO_sito.jpeg}
   \caption{Appezzamenti convenzionale, la codifica segue quella
-    descritta per l'appezzamento biologico \label{fig:CO_sito}}
+    descritta in Fig. \ref{fig:OO_sito} \label{fig:CO_sito}}
 
 \end{figure}
 
@@ -827,8 +827,8 @@ dal fatto che la conduzione biologica, non utilizzando concimi e
 pesticidi di sintesi, avrebbe un minor impatto sulla microflora e
 microfauna tellurica. Di conseguenza ci aspetteremmo una migliore
 struttura con la conduzione biologica.  La densit\`a apparente
-del suolo è stata misurata con il metodo \emph{Core} (utilizzando grandi
-volumi) e con il metodo \emph{Clod} (utilizzando piccoli aggregati).
+del suolo è stata misurata sia con il metodo \emph{Core} (utilizzando grandi
+volumi) che con il metodo \emph{Clod} (utilizzando piccoli aggregati).
 
 \subsection{Metodo \emph{Core}}%Densimetria per grandi volumi (cilindro)}
 Per misurare la densit\`a apparente del suolo con il metodo della
@@ -845,8 +845,7 @@ noto (Fig. \ref{fig:cilindro}). \dubbio{verifica unit\`a di
   
   \caption{Cilindro in ottone utilizzato per prelevare i campioni da
     destinare all'analisi di densit\`a apparente col metodo
-    \emph{Core}, altezza = \SI{12}{\centi\metre}
-    diametro = \SI{9.5}{\centi\metre} }
+    \emph{Core}}
   \label{fig:cilindro}
 \end{figure}
 
@@ -854,7 +853,7 @@ noto (Fig. \ref{fig:cilindro}). \dubbio{verifica unit\`a di
 
 Il cilindro \`e stato inserito nel suolo per tutta la sua lunghezza e
 quindi estratto facendo attenzione che il materiale al suo interno non
-esca in modo da formare due superfici piatte sulle basi del cilindro.
+fuoriuscisse in modo da formare due superfici piatte sulle basi del cilindro.
 Il campione prelevato, portato in laboratorio, \`e stato passato a
 umido attraverso un vaglio con fori circolari di \SI{2}{\milli\metre}
 di diametro. Il volume dello scheletro rimasto nel vaglio \`e stato
@@ -867,40 +866,32 @@ costante, e successivamente pesato.
   \includegraphics[width=0.8\textwidth]{../foto/secco.jpeg}
   \caption{\label{fig:secco}}
 \end{figure}
-Con i dati misurati, \`e stato ricavato il valore della densit\`a
+Con i dati rilevati, \`e stato ricavato il valore della densit\`a
 apparente ($D_{App}$) tramite la seguente formula:
 \begin{equation}
   \label{eq:DensitaApparente}
-  D_{App}=\frac{P_{secco}}{V_{cil}-V_{scheletro}}
+  D_{App}=\frac{P_{secco}}{V_{cilindro}-V_{scheletro}}
 \end{equation}
 
 Dove:\\
 \begin{tabular}{rp{12cm}}
-  $V_{cil}$=       & volume del cilindro di ottone (\SI{854.1}{\cubic\centi\metre}); \\
+  $V_{cilindro}$=       & volume del cilindro di ottone (\SI{854.1}{\cubic\centi\metre}); \\
   $V_{scheletro}$=    & volume dello scheletro misurato per spinta
-                        idrostatica espresso in \SI{}{\cubic\centi\metre}; \\
-  $P_{secco}$=       & peso del terreno vagliato ed essiccato espresso
-                       in \SI{}{\cubic\centi\metre}.
+                        idrostatica (\SI{}{\cubic\centi\metre}); \\
+  $P_{secco}$=       & peso del terreno vagliato ed essiccato (\SI{}{\kilogram}).
 \end{tabular}
 \vspace*{3em}
-
-
-
-
-Questo lavoro di tesi \`e la prosecuzione di uno studio gi\`a
-effettuato nell'anno 2015-2016 con le stesse modalit\`a. Per estendere
-i risultati sono stati inclusi anche questi dati.
 
 
 
 \subsection{Metodo \emph{Clod}}%Densimetria per piccoli aggregati (petrolio)
 
 A differenza del metodo \emph{Core}, questa misura viene di solito
-effettuata su aggregati di piccole dimensioni.  Il metodo \emph{Clod}
-viene anche detto metodo per spinta idrostatica
-\citep{Monnier_1973}. La procedura \`e consistita nel
-mettere per una notte a bagno nel petrolio degli aggregati di
-terreno (Fig. \ref{fig:petrolio}) cercando di ridurre al minimo le
+effettuata su aggregati di piccole dimensioni(3-\SI{4}{\cm} di
+diametro).  Il metodo \emph{Clod} viene anche detto metodo per spinta
+idrostatica \citep{Monnier_1973}. La procedura \`e consiste nel
+mettere per una notte a bagno nel petrolio degli aggregati di terreno
+(Fig. \ref{fig:petrolio}) cercando di ridurre al minimo le
 manipolazioni per mantenere la struttura dell'aggregato stesso.
 
 \begin{figure}[ht]
@@ -913,13 +904,15 @@ manipolazioni per mantenere la struttura dell'aggregato stesso.
 
 Successivamente sono stati asciugati gli aggregati (completamente
 imbevuti di petrolio) con carta, fino a "brillantezza", in modo che
-solo una pellicola di liquido avvolgesse il campione. Per misurare la
-spinta idrostatica \`e stato posto sul piatto di una bilancia precisa
-al milligrammo, un contenitore riempito di petrolio nel quale era
-immersa una navicella di rete forata, mantenuta da un supporto
-metallico. Dopo aver misurato la tara, si \`e posto il campione entro
-navicella (Fig. \ref{fig:bilancia}) e si \`e misurato il peso del
-petrolio spostato.
+solo una pellicola di liquido avvolgesse il campione \dubbio{nella
+  bozza corretta dice nota esaustiva, ma non \`e che c'\`e molto altro
+  da dire...}. Per misurare la spinta idrostatica \`e stato posto sul
+piatto di una bilancia (sensibilit\`a $\pm 10^{-3}$\SI{}{\gram}), un
+contenitore riempito di petrolio nel quale era immersa una navicella
+di rete forata, mantenuta sospesa da un supporto metallico. Dopo aver misurato
+la tara, \`e stato posto il campione entro la navicella
+(Fig. \ref{fig:bilancia}) e quindi \`e misurato il peso del petrolio
+spostato.
 
 \begin{figure}[ht]
   \centering
@@ -940,9 +933,9 @@ formula:
 Dove:\\
 \begin{tabular}{rp{12cm}}
   $V_{aggregato}$= & volume dell'aggregato comprendente anche il
-                    volume dei pori in \SI{}{\cubic\cm};\\
+                    volume dei pori (\SI{}{\cubic\cm});\\
   $P_{petrolio}$=  &  valore della spinta idrostatica
-                   dell'aggregato imbevuto di petrolio in \SI{}{\gram};\\
+                   dell'aggregato imbevuto di petrolio (\SI{}{\gram});\\
   $D_{petrolio}$=  &  densit\`a del petrolio utilizzato per
                   l'analisi (\SI{0.761}{\gram\per\cubic\cm}).
 \end{tabular}
@@ -953,7 +946,7 @@ Successivamente il campione \`e stato essiccato per una notte a
   temperatura consente di allontanare l'acqua di idratazione dei
   cationi di scambio bivalenti (Ca, Mg) degli interstrati dei minerali
   a reticolo espandibile \citep{Monnier_1973}} quindi \`e stato
-pesato. Il peso misurato \`e quello della fase solida.
+pesato. Il peso misurato \`e quello della sola fase solida.
 
 
 Per calcolare la densit\`a reale \`e stato diviso il peso del campione
@@ -968,68 +961,17 @@ campione calcolato con il metodo precedentemente descritto:
 Dove:\\
 \begin{tabular}{rp{12cm}}
   $D_{apparente}$=  & Valore della densit\`a apparente dell'aggregato
-                       misurato in \SI{}{\gram\per\cubic\cm};\\
+                       misurato (\SI{}{\gram\per\cubic\cm});\\
   $P_{150}$=       & peso dell'aggregato essiccato a
-                     \SI{150}{\celsius} espresso in \SI{}{\gram};\\
+                     \SI{150}{\celsius} (\SI{}{\gram});\\
   $V_{aggregato}$=  & volume calcolato con la formula
-                      \ref{eq:VolumeAggr} espresso in \SI{}{\cubic\cm}.
+                      \ref{eq:VolumeAggr}  (\SI{}{\cubic\cm}).
 \end{tabular}
 
 Questo tipo di misura fornisce dei valori di densit\`a apparente pi\`u
-elevati rispetto a quelli misurati utilizzando il cilindro, questo \`e
+elevati rispetto a quelli misurati utilizzando il metodo Core, questo \`e
 dovuto al fatto che nella misura non sono considerate le fratture
 \citep{tisdall1951comparison}.
-
-\subsection{Elaborazione dei dati} %\label{ssec:modello}}
-
-I dati sono stati analizzati utilizzando il linguaggio di
-programmazione ad oggetti R 3.4.0 \citep{r_programming}.
-L'esplorazione dei modelli \citep{fox2002r, chambers1992statistical,
-  faraway2004} è stata fatta mediante confronto di modelli marginali e
-un test F ($p < 0,05$).
-
-Tutti i modelli sono stati validati attraverso l'analisi esplorativa
-dei residui in modo da verificare le eventuali violazioni delle
-assunzioni di normalit\`a \citep{stefanini2007introduzione}. Sia per
-il metodo \emph{Core} che per quello \emph{Clod} NON sono state
-riscontrate interazioni statisticamente significative tra i parametri
-considerati e quindi esse non compaiono nei modelli sotto riportati
-che sono quindi di natura additiva.
-
-
-Per il metodo di analisi, \emph{Clod}, \`e stato adattato il seguente
-modello:
-
-\begin{modello}
-    \label{mod:MetodoClod}
-Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
-\end{modello}
-
-dove: \\ 
-
-\begin{tabular}{rp{12cm}}
-  $\beta_1 =$ & anno, due livelli: 2015, 2016;\\
-  $\beta_2 =$  & conduzione, due livelli: convenzionale, biologico;\\
-  $\beta_3 =$ & lavorazioni, tre livelli: arato, rippato, frangizollato;\\
-
-\end{tabular}
-\vspace*{3em}
-\info[inline]{$\epsilon =$ ??.}
-
-La variabile categorica \emph{anno}, \`e stata necessariamente
-eliminata dal modello per il metodo \emph{Clod}, per la mancata
-disponibilità dei dati per l'anno 2015.
-
-Una volta ottenuto il modell definitivo \`e stata effettuata una
-analisi della varianza (ANOVA).
-% di II tipo (package "car")<- in realt\`a no, però boh.
-con valore prefissato $P < 0.05$.
-
-Infine, data la natura additiva dei modelli, ai gruppi oggetto dello
-studio \`e stato applicato il test di Siegel-Tukey utilizzando i
-pacchetti 'agricolae' \citep{agricolae} e 'multcomp' \citep{multcomp}.
-
-
 
 
 \section{Distribuzione dinamica della dimensione degli aggregati}
@@ -1089,7 +1031,7 @@ distribuzioni granulometriche, in particolare:
 \item 12 distribuzioni dal tempo 1 al tempo 12 per il campione umido
   senza sonicatura;
 \item 12 distribuzioni dal minuto 13 al minuto 24 per il campione
-  secco con la sonicatura attiva.
+  umido con la sonicatura attiva.
 \end{itemize}
 
 \begin{figure}[ht]
@@ -1104,22 +1046,69 @@ distribuzioni granulometriche, in particolare:
 
 \section{Porosimetria}
 
-\section{Elaborazione dei dati}
-I dati provenienti da queste analisi sono, per loro stessa natura,
+
+\subsection{Elaborazione dei dati} %\label{ssec:modello}}
+
+I dati sono stati analizzati utilizzando il linguaggio di
+programmazione ad oggetti R 3.4.0 \citep{r_programming}.
+L'esplorazione dei modelli \citep{fox2002r, chambers1992statistical,
+  faraway2004} è stata fatta mediante confronto di modelli marginali e
+un test F ($p < 0,05$).
+
+Per quanto riguarda i dati provenienti dalle analisi di distribuzione dei pori e di
+stabilit\`a degli aggregati, questi sono per loro stessa natura
 composizionali e quindi sono stati analizzati con il package R
 'Composition' \citep{compositional}.  I valori in output dagli
 strumenti, infatti, sono espressi come valore percentuale sul totale.
-
 Questi sono stati raggruppati in tre range dimensionali (macro
 aggregati, meso aggregati, micro aggregati e macro pori, meso pori,
 micro pori). Le dimensioni sono state definite in base alla
 letteratura \citep{la letteratura}.
 
-Da qui in poi, per la verifica di significativit\`a delle ipotesi, si
-\`e proceduto come nel caso dell'analisi della densit\`a apparente,
-ovvero con la costruzione del modello (opportunamente validato
-mediante esplorazione visuale dei residui) e quindi con l'analisi
-della varianza.
+
+Tutti i modelli sono stati validati attraverso l'analisi esplorativa
+dei residui in modo da verificare le eventuali violazioni delle
+assunzioni di normalit\`a \citep{stefanini2007introduzione}. Non essendo state
+riscontrate interazioni statisticamente significative tra i parametri
+considerati, esse non compaiono nei modelli sotto riportati
+che sono quindi di natura additiva.
+
+
+Per il metodo di analisi, \emph{Clod}, \`e stato adattato il seguente
+modello:
+
+\begin{modello}
+    \label{mod:MetodoClod}
+Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
+\end{modello}
+
+dove: \\ 
+
+\begin{tabular}{rp{12cm}}
+  $\beta_1 =$ & anno, due livelli: 2015, 2016;\\
+  $\beta_2 =$  & conduzione, due livelli: convenzionale, biologico;\\
+  $\beta_3 =$ & lavorazioni, tre livelli: arato, rippato, frangizollato;\\
+  $\epsilon$ & residui;
+\end{tabular}
+\vspace*{3em}
+\info[inline]{$\epsilon =$ ??.}
+
+La variabile categorica \emph{anno}, \`e stata utilizzata solo nel
+modello \emph{Core} in quanto i per l'anno 2015 sono disponibili solo
+per questo metodo.
+
+Nel modello adattato per i dati della stabilit\`a degli aggregati,
+sono state aggiunte la componente tempo (di disgregazione) e tempo al quadrato.
+
+Una volta ottenuto il modell definitivo \`e stata effettuata una
+analisi della varianza (ANOVA).
+% di II tipo (package "car")<- in realt\`a no, però boh.
+con valore prefissato $P < 0.05$.
+
+Sui metodi \emph{Core} e \emph{Clod} \`e stato applicato ai gruppi
+oggetti di studio, data la natura additiva dei modelli, il test di
+Siegel-Tukey utilizzando i pacchetti 'agricolae' \citep{agricolae} e
+'multcomp' \citep{multcomp}.
 
 
 \chapter{Risultati}
@@ -1133,12 +1122,18 @@ header = T, sep = "")
 ## df.dueAnni <- 
 ## read.table(file.path(DirElab, "dens_app.csv"), 
 ## header = T, sep = ";")
-
+df.dueAnni <- df.dueAnni[df.dueAnni$REPLICA== "m",]
 ###################################################
 ###DescrittivaDensitaCampo1
 ###################################################
 #with(df.dueAnni, table(TRT, LAVORAZIONE, APPEZZAMENTO, YEAR))
 options(contrasts=c("contr.treatment","contr.poly"))
+
+fattore <- interaction(df.dueAnni$YEAR, df.dueAnni$TRT, df.dueAnni$LAVORAZIONE)
+amod <- aov(densita.apparente ~ fattore, data=df.dueAnni)
+HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
+tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
+tuk.cld<- cld(tuk)
 summary.campo <-
 data.frame(
 aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
@@ -1150,7 +1145,8 @@ data = df.dueAnni,
 function(x){round(sd(x, na.rm=TRUE),2)})[,4],
 n= aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
 data = df.dueAnni,
-function(x){sum(!is.na(x))})[,4]
+function(x){sum(!is.na(x))})[,4],
+Tukey  = as.vector(tuk.cld$mcletters$Letters)
 )
 ##names(summary.campo)[4] <- "Dens.app.g.cmc"
 attach(summary.campo)
@@ -1173,7 +1169,7 @@ ovvero circa la met\`a della densit\`a reale che si aggira intorno a
 
 <<Summary_Campo, echo=FALSE, eval=TRUE, results=tex>>=
 names(summary.campo) <-  
-    c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n")
+    c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n", "Tukey")
 summary.campo$Anno <- 
     c("2015", rep(" ", 5), "2016", rep(" ", 5))
 summary.campo$Conduzione <- 
@@ -1181,7 +1177,7 @@ summary.campo$Conduzione <-
       "Co", rep(" ", 2), "Or", rep(" ", 2))
 tabella.campo <-
     xtable(summary.campo,
-           label = 'tab:riassunto_1', align  = "llllccc",
+           label = 'tab:riassunto_1', align  = "llllcccc",
            caption = 
                "Valori medi della densit\\`a apparente (in \\SI{}{\\gram\\per\\cubic\\centi\\metre}), condizionati per anno, conduzione e lavorazione " )
 print(tabella.campo, include.rownames=FALSE,
@@ -1198,6 +1194,10 @@ valori di densit\`a apparente misurati sul campo convenzionale siano
 pi\`u bassi rispetto a quelli del biologico.
 
 <<label = ResiduiCampo, echo=FALSE, fig = TRUE, include = FALSE>>=
+## tapply(df.dueAnni$BD.g.cmc,
+##             fattore, 
+##           function(x) mean(x, na.rm = TRUE)
+##         )
 limiti.x <- c(0,13)
 limiti.y <- c(1, 1.8)
 plot(1, xlim = limiti.x, ylim = limiti.y, type = "n",
@@ -1239,14 +1239,11 @@ text(11, 1.7, "Or", pos = 1, cex = 1.5)
 <<ResiduiCampo>>
 @
 
-\caption{Boxplot della densit\`a apparente per i vari trattamenti: 
+\caption{Boxplot della densit\`a apparente per il metodo core: 
   a sinistra sono presenti le misurazioni dell'anno 2015, a destra quelle del 2016; 
   all'interno dei due anni sono suddivisi in Convenzionale e Organico; 
-  per colore si possono distinguere le varie lavorazioni (arato, frangizollato e rippato);
-  \info[inline]{La riga rossa ?}
-  }
-  
-  \label{fig:boxplotCore}
+  per colore si possono distinguere le varie lavorazioni (arato, frangizollato e rippato); la riga rossa rappresenta la met\`a del valore della densit\`a reale
+  \label{fig:boxplotCore}}
 \end{figure}
 \FloatBarrier
 
@@ -1312,54 +1309,6 @@ print(tabella.summary.dens,
 @ 
 
 
-<<label = boxplot2, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
-fattore <- interaction(df.dueAnni$YEAR, df.dueAnni$TRT)
-amod <- aov(densita.apparente ~ fattore, data=df.dueAnni)
-HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
-tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
-tuk.cld<- cld(tuk)   #letter-based display
-posiz.y <- 1.7
-## tapply(df.dueAnni$BD.g.cmc,
-##             fattore, 
-##           function(x) mean(x, na.rm = TRUE)
-##         )
-limiti.x <- c(0,5)
-limiti.y <- c(1, 1.8)
-plot(1, xlim = limiti.x, ylim = limiti.y, type = "n",
-     yaxt = "n", xaxt = "n", xlab = "",ylab = "", main = "Metodo Core")
-##mtext(expression(paste("Densit\`a apparente g ", cm^-3)), side = 2, line = 2)   
-rect(0.25,1, 2.45,1.8, col = "lightgray", border = NA)
-rect(2.48,1, 4.75,1.8, col = "gray", border = NA)
-rect(0.25,1, 2.45,1.8,lwd = 2)
-rect(2.48,1, 4.75,1.8,lwd = 2)
-with(df.dueAnni,
-     boxplot(densita.apparente ~ YEAR + TRT, ### ATTENZIONE A NON INVERTIRE TRT con YEAR !!
-             las = 2, xaxt = "n",
-             col = c(5, 6), add = TRUE))
-mtext(expression(paste("Densit\`a apparente g ", cm^-3)), side = 2, line = 2)
-text(1.5, 1.8, "Anno 2015", pos = 1, cex = 1.5)
-text(3.5, 1.8, "Anno 2016", pos = 1, cex = 1.5)
-text(x = 1:4, y = posiz.y, tuk.cld$mcletters$Letters, cex = 1.5, col = "red")
-legend(3, 1.2, 
-       c("Convenzionale", "Biologico"),
-       box.col = "transparent", 
-       fill=c(5,6), cex=0.8,  ncol = 1)
-##points(y = jitter(rep(1:12, each = 6), 0.5),
-##x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT, YEAR))),
-##cex = 2, pch = 4)
-@
-
-\begin{figure}[ht]
-  \centering 
-<<label=figboh,fig=TRUE,echo=FALSE, width=5.4, height=5.4 >>=
-<<boxplot2>>
-@
-\caption{Boxplot densit\`a apparente in cui \`e stato eliminato
-  l'effetto della lavorazione dal modello, le lettere sopra ai boxplot
-  sono il risultato del test di Tukey-Siegel \info[inline]{al livello
-    di significatività ??}}
-\end{figure}
-\FloatBarrier
 
 In conclusione di questa analisi, i dati non permettono di confermare
 l'ipotesi di partenza.
