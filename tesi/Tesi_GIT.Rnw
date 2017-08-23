@@ -308,8 +308,7 @@ file.path(DirMain, "tabelle")
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \chapter{Suolo agricolo e agricoltura biologica}
-
-Il suolo o terreno \`e un concetto piuttosto chiaro nell'immaginario
+Il concetto suolo o terreno \`e piuttosto chiaro nell'immaginario
 collettivo; nonostante questo \`e difficile individuare una
 definizione univoca. Un tentativo di definizione \`e quello di
 \citet{JOHNSON19986}: \textit{suolo è qualsiasi materiale minerale e
@@ -369,30 +368,7 @@ studio dell'agricoltura Biologica:
   vari tipi di agricoltura. 
 \end{itemize}
 
-Ogni ambiente agrario ha le sue caratteristiche pedoclimatiche e
-risponde in maniera diversa alle varie tecniche agricole, inoltre 
-anche le colture agrarie hanno esigenze molto diverse; questi sono solo
-alcuni dei problemi che riguardano la ricerca scientifica in merito
-all'agricoltura biologica. Non \`e da tralasciare anche il problema
-della scelta dell'indicatore che permette di confrontare i vari tipi
-di agricoltura.
 
-Gli indicatori di fertilit\`a del suolo scelti in questo lavoro sono i
-parametri che descrivono le sue caratteristiche fisiche, ovvero, \`e
-stata effettuata una comparazione tra la densit\`a apparente,
-la distribuzione dei pori e la stabilit\`a  degli aggregati di due
-appezzamenti: uno a conduzione biologica e uno a conduzione convenzionale.
-I due appezzamenti sono inseriti in un Long Term
-Experiment, MOLTE \citep{MOLTE}, che \`e attivo dal 1991.
-
-
-Scopo di questa tesi è quindi la verifica di due ipotesi: 
-\begin{itemize}
-\item la relazione tra la forma di conduzione (biologica e
-  convenzionale) e le caratteristiche fisico-strutturali del terreno;
-\item l'effetto di tre diverse lavorazioni primarie (aratura,
-  rippatura e frangizollatura) sullo stato di aggregazione del suolo.
-\end{itemize}
 
 
 \section{Caratteristiche generali del suolo}
