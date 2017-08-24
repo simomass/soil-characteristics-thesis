@@ -1260,10 +1260,8 @@ quanto non sono state trovate interazioni statisticamente
 significative tra l'anno, la conduzione e la lavorazione.
 
 La tabella \ref{tab:anova del modello} riporta l'Anova del
-modello. L'anova mostra che il valore di p dell'effetto della lavorazione
-sui dati \`e sopra a 0.05 (valore prefissato di significativit\`a), di
-conseguenza si pu\`o eliminare dal modello. Mentre l'anno e la
-conduzione sono statisticamente significative.
+modello. L'anova mostra che nessuno dei trattamenti presi in esame \`e
+statisticamente significativo.
 
 
 <<anova_modello, echo=FALSE, eval=TRUE, results=tex>>=
@@ -1279,47 +1277,9 @@ print(tabella.anova.dens,
       caption.placement = "top")
 @ 
 
-In tabella \ref{tab:t-table del modello2} \`e possibile vedere la
-t-table del modello senza la variabile categorica lavorazione
-\info[inline]{Mi pare si fosse detto che si chiamava tillage}.
-
-Da questa \`e possibile confermare ci\`o che \`e stato mostrato
-dall'analisi visuale, ovvero: il terreno degli appezzamenti condotti a
-biologico \`e mediamente pi\`u denso di quello degli appezzamenti
-condotti a convenzionale. Inoltre l'anno 2015 presenta delle densit\`a
-apparenti pi\`u alte rispetto all'anno 2016.
-
-
-
-<<Summary_modello2, echo=FALSE, eval=TRUE, results=tex>>=
-
-sommario.dens <- summary(lm.DensSign)$coefficients
-
-rownames(sommario.dens) <-
-    c("Co 2015", "Scostamento 2016", "Scostamento Or")
-
-tabella.summary.dens <- 
-    xtable(sommario.dens,
-           label = 'tab:t-table del modello2', align  = "rrrrr",
-           caption = '')
-
-print(tabella.summary.dens,
-      include.rownames=TRUE,
-      caption.placement = "top")
-@ 
-
-
 
 In conclusione di questa analisi, i dati non permettono di confermare
 l'ipotesi di partenza.
-
-Tuttavia la differenza tra la densit\`a apparente del terreno condotto
-a biologico e quello condotto a convenzionale non \`e significativa a
-livello tecnologico, infatti la differenza \`e al livello della
-seconda cifra decimale. Questo per\`o ci permette di affermare che il
-disegno sperimentale \`e ben costruito e che il numero di campioni \`e
-sufficiente per gli obiettivi dello studio.
-\info{forse questa roba va messa nel capitolo discussione}
 
 \subsection{Metodo \emph{Clod}}
 Con il metodo \emph{Clod}, grazie alla speditivit\`a del metodo sono
@@ -1336,6 +1296,11 @@ quelli dell'analisi col metodo \emph{Core}.
 df.petrolio <- 
     read.table(file.path(DirElab, "df_spinta.csv"), 
                header = T, sep = "")
+fattore <- with(df.petrolio, interaction(TRT, LAVORAZIONE))
+amod <- aov(df.petrolio$densita.apparente ~ fattore)
+HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
+tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
+tuk.cld <- cld(tuk) #letter-based display)
 summary.petrolio <-
     data.frame(
         aggregate(densita.apparente ~ TRT+LAVORAZIONE,
@@ -1347,18 +1312,20 @@ summary.petrolio <-
                       function(x){round(sd(x, na.rm=TRUE),2)})[,3],
         n= aggregate(densita.apparente ~ TRT+LAVORAZIONE,
                      data = df.petrolio,
-                     function(x){sum(!is.na(x))})[,3]
+                     function(x){sum(!is.na(x))})[,3],
+        Tukey =     as.vector(tuk.cld$mcletters$Letters)
     )
+
 ##names(summary.campo)[4] <- "Dens.app.g.cmc"
 attach(summary.petrolio)
 summary.petrolio <- summary.petrolio[order(TRT, LAVORAZIONE),]
 detach(summary.petrolio)
-names(summary.petrolio) <- c("Conduzione","Lavorazione","Media","Dev. std", "n")
+names(summary.petrolio) <- c("Conduzione","Lavorazione","Media","Dev. std", "n", "Tukey")
 summary.petrolio$Conduzione <- c("Co", rep("", 2), "Or", rep("", 2))
 
 tabella.petrolio <-
     xtable(summary.petrolio,
-           label = 'tab:summary petrolio', align  = "lllccc",
+           label = 'tab:summary petrolio', align  = "lllcccc",
            caption = 
                "Valori medi della densit\\`a apparente (in 
                 \\SI{}{\\gram\\per\\cubic\\centi\\metre}), 
@@ -1373,14 +1340,8 @@ Dai boxplot mostrati in Fig. \ref{fig:boxplotpetrolio} non sono visibili
 differenze tra i trattamenti.
 
 <<label = boxplotpetr, fig.width=0.8, fig.height=0.8, echo=FALSE, fig = TRUE, include = FALSE>>=
-
 with(data = df.petrolio,
 {
-    fattore <- interaction(TRT, LAVORAZIONE)
-    amod <- aov(densita.apparente ~ fattore)
-    HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
-    tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
-    tuk.cld <- cld(tuk) #letter-based display
     plot(1, xlim = c(0.5, 6.5), ylim = c(1.4, 2.5), type = "n", 
          yaxt = "n", xaxt = "n", xlab = "",ylab = "")
     rect(0.5, 1.4, 3.45,2.5, col = "lightgray", border = NA)
@@ -1405,7 +1366,6 @@ with(data = df.petrolio,
     ## points(y = jitter(rep(1:6, each = 22), 0.5),
     ##   x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT))),
     ##   cex = 2, pch = 4)
-    text(x = 1:6, y = 2.2, tuk.cld$mcletters$Letters, cex = 2, col = "red")
     legend(4.5, 1.7, 
            c("Arato","F.zollato","Rippato"),
            box.col = "transparent", 
@@ -1423,9 +1383,7 @@ with(data = df.petrolio,
 \caption{Boxplot dei valori di densit\`a apparente ottenuti col metodo
   di analisi \emph{Clod}; gli appezzamenti condotti convenzionalmente
   (a sinistra) hanno valori leggermente più alti degli appezzamenti
-  condotti a biologico (a destra) le lettere sopra ai boxplot sono il
-  risultato del test di Tukey-Siegel \info[inline]{al livello di
-    significatività ??}}
+  condotti a biologico (a destra)}
   \label{fig:boxplotpetrolio}
 
 \end{figure}
@@ -1604,8 +1562,7 @@ aggregati di suolo (>2-\SI{5}{\mm}) secchi in aggregati pi\`u piccoli
 (<\SI{0.25}{\mm}) quando sono improvvisamente immersi in acqua. Lo
 slaking avviene quando gli aggregati non sono forti abbastanza da
 resistere agli stress interni causati dal rapido ingresso dell'acqua
-\citep{Slaking}}.  \dubbio{E invece il suolo wet si distrugge prima
-  ahah. Non torna niente.}  Quindi sono stati creati due modelli: uno
+\citep{Slaking}}. Quindi sono stati creati due modelli: uno
 per i campioni inumiditi (\emph{WET}) e uno per i camioni secchi
 (\emph{DRY}). I modelli mostrano che pendenza e curvatura sono comuni
 per entrambi i trattamenti.
@@ -1623,9 +1580,7 @@ La curvatura non ci interessa se non come un modo per estrarre
 informazione dai dati.
 
 I secchi generano, come atteso, particelle più grandi in seguito allo
-slacking \info{E invece dovrebbe essere esattamente il contrario,
-  visto che lo slaking distrugge gli aggregati grandi e li riduce in
-  briciole.}
+slacking.
   
 Risulta che gli aggregati provenienti da appezzamenti condotti
 convenzionalmente, non appena vengono lasciati cadere in acqua, si
