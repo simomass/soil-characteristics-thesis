@@ -3,7 +3,7 @@ PRINCIPALE_TEX		= $(PRINCIPALE).tex
 
 . PHONY : pulisci
 pulisci :
-	rm -f *.aux *.out *.snm *.toc *.bbl *.log *.bbl *.blg *.bcf $(PRINCIPALE)-frn.tex
+	rm -f *.aux *.lof *.out *.snm *.toc *.bbl *.log *.bbl *.blg *.bcf $(PRINCIPALE)-frn.tex
 
 #
 Sweave:
