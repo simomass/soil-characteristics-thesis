@@ -801,8 +801,8 @@ ogni appezzamento \`e suddiviso in 9 parcelle.
 
 
 All'interno di ogni parcella sono stati individuati tre punti di
-campionamento, partendo dal centro del campo (Fig. \ref{fig:OO_sito} e
-\ref{fig:CO_sito}): \emph{m} (medio), \emph{a} (alto, 4
+campionamento, partendo dal centro del campo (Fig. \ref{fig:foto_OO_sito} e
+\ref{fig:foto_CO_sito}): \emph{m} (medio), \emph{a} (alto, 4
 metri sopra il medio) e \emph{b} (basso, 4 metri sotto il medio).
 
 
@@ -1069,10 +1069,10 @@ distribuzioni granulometriche, in particolare:
     percentuale sul totale.}
 \end{figure}
 
-\subsection{Analisi dei dati}
-\migliora[inline]{Spostare qui i discorsi sulla composizionale e sui modelli}
 
 \section{Porosimetria}
+\info{Simo: \newline Sentire Luigi per scrivere materiali e metodi}
+
 
 \section{Elaborazione dei dati}
 
@@ -1124,23 +1124,23 @@ studio, \`e stato applicato il test di Tukey-Siegel utilizzando i
 pacchetti 'agricolae' \citep{agricolae} e 'multcomp' \citep{multcomp}.
 
 
-\subsection{dinamica}
+% \subsection{dinamica}
 
-I dati provenienti da queste analisi sono, per loro stessa natura,
-composizionali e quindi sono stati analizzati con il package R
-'Composition' \citep{compositional}. I valori in output dagli
-strumenti, infatti, sono espressi come valore percentuale sul totale.
+% I dati provenienti da queste analisi sono, per loro stessa natura,
+% composizionali e quindi sono stati analizzati con il package R
+% 'Composition' \citep{compositional}. I valori in output dagli
+% strumenti, infatti, sono espressi come valore percentuale sul totale.
 
-Questi sono stati raggruppati in tre range dimensionali (macro
-aggregati, meso aggregati, micro aggregati e macro pori, meso pori,
-micro pori). Le dimensioni sono state definite in base alla
-letteratura \citep{la letteratura}.
+% Questi sono stati raggruppati in tre range dimensionali (macro
+% aggregati, meso aggregati, micro aggregati e macro pori, meso pori,
+% micro pori). Le dimensioni sono state definite in base alla
+% letteratura \citep{la letteratura}.
 
-Da qui in poi, per la verifica di significativit\`a delle ipotesi, si
-\`e proceduto come nel caso dell'analisi della densit\`a apparente,
-ovvero con la costruzione del modello (opportunamente validato
-mediante esplorazione visuale dei residui) e quindi con l'analisi
-della varianza.
+% Da qui in poi, per la verifica di significativit\`a delle ipotesi, si
+% \`e proceduto come nel caso dell'analisi della densit\`a apparente,
+% ovvero con la costruzione del modello (opportunamente validato
+% mediante esplorazione visuale dei residui) e quindi con l'analisi
+% della varianza.
 
 
 \chapter{Risultati}
