@@ -1072,7 +1072,8 @@ distribuzioni granulometriche, in particolare:
 
 \section{Porosimetria}
 \info{Simo: \newline Sentire Luigi per scrivere materiali e metodi}
-
+\subsection{Protocollo di misura}
+\subsection{}
 
 \section{Elaborazione dei dati}
 
