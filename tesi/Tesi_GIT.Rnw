@@ -320,7 +320,8 @@ file.path(DirMain, "tabelle")
 \chapter{Suolo agricolo e agricoltura biologica}
 
 
-Il suolo o terreno \`e un concetto piuttosto chiaro nell'immaginario
+
+Il concetto di suolo o terreno \`e piuttosto chiaro nell'immaginario
 collettivo; nonostante questo \`e difficile individuare una
 definizione univoca. Un tentativo di definizione \`e quello di
 \citet{JOHNSON19986}: \emph{suolo è qualsiasi materiale minerale e
@@ -380,30 +381,9 @@ studio dell'agricoltura Biologica:
   vari tipi di agricoltura.
 \end{itemize}
 
-Ogni ambiente agrario ha le sue caratteristiche pedoclimatiche e
-risponde in maniera diversa alle varie tecniche agricole, inoltre
-anche le colture agrarie hanno esigenze molto diverse; questi sono solo
-alcuni dei problemi che riguardano la ricerca scientifica in merito
-all'agricoltura biologica. Non \`e da tralasciare anche il problema
-della scelta dell'indicatore che permette di confrontare i vari tipi
-di agricoltura.
-
-Gli indicatori di fertilit\`a del suolo scelti in questo lavoro sono i
-parametri che descrivono le sue caratteristiche fisiche, ovvero, \`e
-stata effettuata una comparazione tra la densit\`a apparente,
-la distribuzione dei pori e la stabilit\`a  degli aggregati di due
-appezzamenti: uno a conduzione biologica e uno a conduzione convenzionale.
-I due appezzamenti sono inseriti in un Long Term
-Experiment, MOLTE \citep{MOLTE}, che \`e attivo dal 1991.
 
 
-Scopo di questa tesi è quindi la verifica di due ipotesi:
-\begin{itemize}
-\item la relazione tra la forma di conduzione (biologica e
-  convenzionale) e le caratteristiche fisico-strutturali del terreno;
-\item l'effetto di tre diverse lavorazioni primarie (aratura,
-  rippatura e frangizollatura) sullo stato di aggregazione del suolo.
-\end{itemize}
+
 
 
 \section{Caratteristiche generali del suolo}
@@ -442,11 +422,22 @@ Dove:\\
 \end{tabular}
 \vspace*{3em}
 
-Nel terreno è importante la distribuzione granulometrica,
-o tessitura, in cui le particelle di diametro superiore a \SI{2}{\milli\metre}
-sono dette scheletro, quelle tra \SI{2}{\mm} e \SI{50}{\micro\metre} sono
+Nel terreno è importante la distribuzione granulometrica, o tessitura,
+in cui le particelle di diametro superiore a \SI{2}{\milli\metre} sono
+dette scheletro, quelle tra \SI{2}{\mm} e \SI{50}{\micro\metre} sono
 dette sabbia, quelle tra \SI{50}{\micro\metre} e \SI{2}{\micro\metre}
-sono dette limo e quelle inferiori a \SI{2}{\micro\metre} sono dette argilla.
+sono dette limo e quelle inferiori a \SI{2}{\micro\metre} sono dette
+argilla.  La tessitura \`e usualmente rappresentata mediante il
+triangolo tessiturale introdotta da Whitney nel 1911 e adottata
+dall'USDA come metodo di rappresentazione ufficiale; la versione
+attuale (Fig. \ref{fig:triangolo}), modificata dal triangolo tessiturale di Whitney, \`e stata
+introdotta nel 1951 \citep{SoilTr}.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{../foto/USDA_triangolo.jpeg}
+  \caption{\label{fig:triangolo}}
+\end{figure}
 
 La presenza di cementi, organici o minerali, che portano alla
 formazione di aggregati permette di definire la
@@ -768,7 +759,6 @@ mentre nell'anno 2016-2017 sono stati campionati \emph{OO2, OO4, CO9,
 Oltre a questi descritti sopra, sono presenti anche altri quattro
 appezzamenti a conduzione biologica (\emph{Bionuovo}) che per\`o non
 sono stati studiati in questo esperimento.
-\nonvisibile{chilosa}
 
 I due agro ecosistemi sono circondati da infrastrutture ecologiche
 quali siepi naturali e/o artificiali e/o strisce di essenze erbacee
@@ -813,9 +803,9 @@ ogni appezzamento \`e suddiviso in 9 parcelle.
 
 
 All'interno di ogni parcella sono stati individuati tre punti di
-campionamento, partendo dal centro del campo (Fig. \ref{fig:foto_OO_sito} e
-\ref{fig:foto_CO_sito}): m (medio), a (alto, 4
-metri sopra il medio) e b (basso, 4 metri sotto il medio).
+campionamento, partendo dal centro del campo (Fig. \ref{fig:OO_sito} e
+\ref{fig:CO_sito}): \emph{m} (medio), \emph{a} (alto, 4
+metri sopra il medio) e \emph{b} (basso, 4 metri sotto il medio).
 
 
 
@@ -854,8 +844,8 @@ dal fatto che la conduzione biologica, non utilizzando concimi e
 pesticidi di sintesi, avrebbe un minor impatto sulla microflora e
 microfauna tellurica. Di conseguenza ci aspetteremmo una migliore
 struttura con la conduzione biologica.  La densit\`a apparente
-del suolo è stata misurata con il metodo \emph{Core} (utilizzando grandi
-volumi) e con il metodo \emph{Clod} (utilizzando piccoli aggregati).
+del suolo è stata misurata sia con il metodo \emph{Core} (utilizzando grandi
+volumi) che con il metodo \emph{Clod} (utilizzando piccoli aggregati).
 
 \subsection{Metodo \emph{Core}}%Densimetria per grandi volumi (cilindro)}
 Per misurare la densit\`a apparente del suolo con il metodo della
@@ -882,7 +872,7 @@ noto (Fig. \ref{fig:cilindro}). \dubbio{verifica unit\`a di
 
 Il cilindro \`e stato inserito nel suolo per tutta la sua lunghezza e
 quindi estratto facendo attenzione che il materiale al suo interno non
-esca in modo da formare due superfici piatte sulle basi del cilindro.
+fuoriuscisse in modo da formare due superfici piatte sulle basi del cilindro.
 Il campione prelevato, portato in laboratorio, \`e stato passato a
 umido attraverso un vaglio con fori circolari di \SI{2}{\milli\metre}
 di diametro. Il volume dello scheletro rimasto nel vaglio \`e stato
@@ -897,41 +887,33 @@ costante, e successivamente pesato.
   \label{fig:FotoSeccoCore}
 \end{figure}
 
-Con i dati misurati, \`e stato ricavato il valore della densit\`a
+Con i dati rilevati, \`e stato ricavato il valore della densit\`a
 apparente ($D_{App}$) tramite la seguente formula:
 
 \begin{equation}
   \label{eq:DensitaApparente}
-  D_{App}=\frac{P_{secco}}{V_{cil}-V_{scheletro}}
+  D_{App}=\frac{P_{secco}}{V_{cilindro}-V_{scheletro}}
 \end{equation}
 
 Dove:\\
 \begin{tabular}{rp{12cm}}
-  $V_{cil}$=       & volume del cilindro di ottone (\SI{854.1}{\cubic\centi\metre}); \\
+  $V_{cilindro}$=       & volume del cilindro di ottone (\SI{854.1}{\cubic\centi\metre}); \\
   $V_{scheletro}$=    & volume dello scheletro misurato per spinta
-                        idrostatica espresso in \SI{}{\cubic\centi\metre}; \\
-  $P_{secco}$=       & peso del terreno vagliato ed essiccato espresso
-                       in \SI{}{\cubic\centi\metre}.
+                        idrostatica (\SI{}{\cubic\centi\metre}); \\
+  $P_{secco}$=       & peso del terreno vagliato ed essiccato (\SI{}{\kilogram}).
 \end{tabular}
 \vspace*{3em}
-
-
-
-
-Questo lavoro di tesi \`e la prosecuzione di uno studio gi\`a
-effettuato nell'anno 2015-2016 con le stesse modalit\`a. Per estendere
-i risultati sono stati inclusi anche questi dati.
 
 
 
 \subsection{Metodo \emph{Clod}}%Densimetria per piccoli aggregati (petrolio)
 
 A differenza del metodo \emph{Core}, questa misura viene di solito
-effettuata su aggregati di piccole dimensioni.  Il metodo \emph{Clod}
-viene anche detto metodo per spinta idrostatica
-\citep{Monnier_1973}. La procedura \`e consistita nel
-mettere per una notte a bagno nel petrolio degli aggregati di
-terreno (Fig. \ref{fig:petrolio}) cercando di ridurre al minimo le
+effettuata su aggregati di piccole dimensioni(3-\SI{4}{\cm} di
+diametro).  Il metodo \emph{Clod} viene anche detto metodo per spinta
+idrostatica \citep{Monnier_1973}. La procedura \`e consiste nel
+mettere per una notte a bagno nel petrolio degli aggregati di terreno
+(Fig. \ref{fig:petrolio}) cercando di ridurre al minimo le
 manipolazioni per mantenere la struttura dell'aggregato stesso.
 
 \begin{figure}[ht]
@@ -946,13 +928,15 @@ manipolazioni per mantenere la struttura dell'aggregato stesso.
 
 Successivamente sono stati asciugati gli aggregati (completamente
 imbevuti di petrolio) con carta, fino a "brillantezza", in modo che
-solo una pellicola di liquido avvolgesse il campione. Per misurare la
-spinta idrostatica \`e stato posto sul piatto di una bilancia precisa
-al milligrammo, un contenitore riempito di petrolio nel quale era
-immersa una navicella di rete forata, mantenuta da un supporto
-metallico. Dopo aver misurato la tara, si \`e posto il campione entro
-navicella (Fig. \ref{fig:bilancia}) e si \`e misurato il peso del
-petrolio spostato.
+solo una pellicola di liquido avvolgesse il campione \dubbio{nella
+  bozza corretta dice nota esaustiva, ma non \`e che c'\`e molto altro
+  da dire...}. Per misurare la spinta idrostatica \`e stato posto sul
+piatto di una bilancia (sensibilit\`a $\pm 10^{-3}$\SI{}{\gram}), un
+contenitore riempito di petrolio nel quale era immersa una navicella
+di rete forata, mantenuta sospesa da un supporto metallico. Dopo aver misurato
+la tara, \`e stato posto il campione entro la navicella
+(Fig. \ref{fig:bilancia}) e quindi \`e misurato il peso del petrolio
+spostato.
 
 \begin{figure}[ht]
   \centering
@@ -975,9 +959,9 @@ formula:
 Dove:\\
 \begin{tabular}{rp{12cm}}
   $V_{aggregato}$= & volume dell'aggregato comprendente anche il
-                    volume dei pori in \SI{}{\cubic\cm};\\
+                    volume dei pori (\SI{}{\cubic\cm});\\
   $P_{petrolio}$=  &  valore della spinta idrostatica
-                   dell'aggregato imbevuto di petrolio in \SI{}{\gram};\\
+                   dell'aggregato imbevuto di petrolio (\SI{}{\gram});\\
   $D_{petrolio}$=  &  densit\`a del petrolio utilizzato per
                   l'analisi (\SI{0.761}{\gram\per\cubic\cm}).
 \end{tabular}
@@ -988,7 +972,7 @@ Successivamente il campione \`e stato essiccato per una notte a
   temperatura consente di allontanare l'acqua di idratazione dei
   cationi di scambio bivalenti (Ca, Mg) degli interstrati dei minerali
   a reticolo espandibile \citep{Monnier_1973}} quindi \`e stato
-pesato. Il peso misurato \`e quello della fase solida.
+pesato. Il peso misurato \`e quello della sola fase solida.
 
 
 Per calcolare la densit\`a reale \`e stato diviso il peso del campione
@@ -1003,15 +987,15 @@ campione calcolato con il metodo precedentemente descritto:
 Dove:\\
 \begin{tabular}{rp{12cm}}
   $D_{apparente}$=  & Valore della densit\`a apparente dell'aggregato
-                       misurato in \SI{}{\gram\per\cubic\cm};\\
+                       misurato (\SI{}{\gram\per\cubic\cm});\\
   $P_{150}$=       & peso dell'aggregato essiccato a
-                     \SI{150}{\celsius} espresso in \SI{}{\gram};\\
+                     \SI{150}{\celsius} (\SI{}{\gram});\\
   $V_{aggregato}$=  & volume calcolato con la formula
-                      \ref{eq:VolumeAggr} espresso in \SI{}{\cubic\cm}.
+                      \ref{eq:VolumeAggr}  (\SI{}{\cubic\cm}).
 \end{tabular}
 
 Questo tipo di misura fornisce dei valori di densit\`a apparente pi\`u
-elevati rispetto a quelli misurati utilizzando il cilindro, questo \`e
+elevati rispetto a quelli misurati utilizzando il metodo Core, questo \`e
 dovuto al fatto che nella misura non sono considerate le fratture
 \citep{tisdall1951comparison}.
 
@@ -1123,7 +1107,7 @@ distribuzioni granulometriche, in particolare:
 \item 12 distribuzioni dal tempo 1 al tempo 12 per il campione umido
   senza sonicatura;
 \item 12 distribuzioni dal minuto 13 al minuto 24 per il campione
-  secco con la sonicatura attiva.
+  umido con la sonicatura attiva.
 \end{itemize}
 
 \begin{figure}[ht]
@@ -1174,12 +1158,18 @@ df.dueAnni <-  df.dueAnni[df.dueAnni$REPLICA == "m", ]
 ## df.dueAnni <-
 ## read.table(file.path(DirElab, "dens_app.csv"),
 ## header = T, sep = ";")
-
+df.dueAnni <- df.dueAnni[df.dueAnni$REPLICA== "m",]
 ###################################################
 ###DescrittivaDensitaCampo1
 ###################################################
 ##with(df.dueAnni, table(TRT, LAVORAZIONE, APPEZZAMENTO, YEAR))
 options(contrasts=c("contr.treatment","contr.poly"))
+
+fattore <- interaction(df.dueAnni$YEAR, df.dueAnni$TRT, df.dueAnni$LAVORAZIONE)
+amod <- aov(densita.apparente ~ fattore, data=df.dueAnni)
+HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
+tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
+tuk.cld<- cld(tuk)
 summary.campo <-
     data.frame(
         aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
@@ -1191,7 +1181,8 @@ summary.campo <-
                       function(x){round(sd(x, na.rm=TRUE),2)})[,4],
         n= aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
                      data = df.dueAnni,
-                     function(x){sum(!is.na(x))})[,4]
+                     function(x){sum(!is.na(x))})[,4],
+        Tukey  = as.vector(tuk.cld$mcletters$Letters)
     )
 ##names(summary.campo)[4] <- "Dens.app.g.cmc"
 attach(summary.campo)
@@ -1218,16 +1209,16 @@ ovvero circa la met\`a della densit\`a reale che si aggira intorno a
 
 
 <<Summary_Campo, echo=FALSE, eval=TRUE, results=tex>>=
-names(summary.campo) <-
-    c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n")
-summary.campo$Anno <-
+names(summary.campo) <-  
+    c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n", "Tukey")
+summary.campo$Anno <- 
     c("2015", rep(" ", 5), "2016", rep(" ", 5))
 summary.campo$Conduzione <-
     c("Co", rep(" ", 2), "Or", rep(" ", 2),
       "Co", rep(" ", 2), "Or", rep(" ", 2))
 tabella.campo <-
     xtable(summary.campo,
-           label = 'tab:summaryCore', align  = "llllccc",
+           label = 'tab:summaryCore', align  = "llllcccc",
            caption =
                "Valori medi della densit\\`a apparente (in \\SI{}{\\gram\\per\\cubic\\centi\\metre}),
                 condizionati per anno, conduzione e lavorazione " )
@@ -1320,11 +1311,10 @@ quanto non sono state trovate interazioni statisticamente
 significative tra l'anno, la \emph{Conduzione} e la \emph{Lavorazione}
 
 \migliora[inline]{riscrivere}
-La tabella \ref{tab:anova del modello} riporta l'ANOVA del
-modello. L'ANOVA mostra che il valore di p dell'effetto della lavorazione
-sui dati \`e sopra a 0.05 (valore prefissato di significativit\`a), di
-conseguenza si pu\`o eliminare dal modello. Mentre l'anno e la
-\emph{Conduzione} sono statisticamente significative.
+
+La tabella \ref{tab:anova del modello} riporta l'Anova del
+modello. L'anova mostra che nessuno dei trattamenti presi in esame \`e
+statisticamente significativo.
 
 
 <<anova_modello, echo=FALSE, eval=TRUE, results=tex>>=
@@ -1430,14 +1420,8 @@ t-table del modello senza la variabile categorica \emph{Lavorazione}
 In conclusione di questa analisi, i dati non permettono di confermare
 l'ipotesi di partenza.
 
-Tuttavia la differenza tra la densit\`a apparente del terreno condotto
-a biologico e quello condotto a convenzionale non \`e significativa a
-livello tecnologico, infatti la differenza \`e al livello della
-seconda cifra decimale. Questo per\`o ci permette di affermare che il
-disegno sperimentale \`e ben costruito e che il numero di campioni \`e
-sufficiente per gli obiettivi dello studio.
 
-\info[inline]{Questa roba, corretta va messa nel capitolo discussione}
+
 
 \subsection{Metodo \emph{Clod}}
 Il metodo \emph{Clod} ha permesso, grazie alla sua speditivit\`a, di
@@ -1457,6 +1441,11 @@ mediamente pi\`u elevati rispetto a quelli dell'analisi col metodo
 df.petrolio <-
     read.table(file.path(DirElab, "df_spinta.csv"),
                header = T, sep = "")
+fattore <- with(df.petrolio, interaction(TRT, LAVORAZIONE))
+amod <- aov(df.petrolio$densita.apparente ~ fattore)
+HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
+tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
+tuk.cld <- cld(tuk) #letter-based display)
 summary.petrolio <-
     data.frame(
         aggregate(densita.apparente ~ TRT+LAVORAZIONE,
@@ -1468,18 +1457,20 @@ summary.petrolio <-
                       function(x){round(sd(x, na.rm=TRUE),2)})[,3],
         n= aggregate(densita.apparente ~ TRT+LAVORAZIONE,
                      data = df.petrolio,
-                     function(x){sum(!is.na(x))})[,3]
+                     function(x){sum(!is.na(x))})[,3],
+        Tukey =     as.vector(tuk.cld$mcletters$Letters)
     )
+
 ##names(summary.campo)[4] <- "Dens.app.g.cmc"
 attach(summary.petrolio)
 summary.petrolio <- summary.petrolio[order(TRT, LAVORAZIONE),]
 detach(summary.petrolio)
-names(summary.petrolio) <- c("Conduzione","Lavorazione","Media","Dev. std", "n")
+names(summary.petrolio) <- c("Conduzione","Lavorazione","Media","Dev. std", "n", "Tukey")
 summary.petrolio$Conduzione <- c("Co", rep("", 2), "Or", rep("", 2))
 
 tabella.petrolio <-
     xtable(summary.petrolio,
-           label = 'tab:summaryClod', align  = "lllccc",
+           label = 'tab:summaryClod', align  = "lllcccc",
            caption =
                "Valori medi della densit\\`a apparente (in
                 \\SI{}{\\gram\\per\\cubic\\centi\\metre}),
@@ -1497,12 +1488,7 @@ differenze tra i trattamenti.
 
 with(data = df.petrolio,
 {
-    fattore <- interaction(TRT, LAVORAZIONE)
-    amod <- aov(densita.apparente ~ fattore)
-    HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
-    tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
-    tuk.cld <- cld(tuk) #letter-based display
-    plot(1, xlim = c(0.5, 6.5), ylim = c(1.4, 2.5), type = "n",
+plot(1, xlim = c(0.5, 6.5), ylim = c(1.4, 2.5), type = "n",
          yaxt = "n", xaxt = "n", xlab = "",ylab = "")
     rect(0.5, 1.4, 3.45,2.5, col = "lightgray", border = NA)
     rect(3.48,1.4, 6.5,2.5, col = "gray", border = NA)
@@ -1526,7 +1512,7 @@ with(data = df.petrolio,
     ## points(y = jitter(rep(1:6, each = 22), 0.5),
     ##   x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT))),
     ##   cex = 2, pch = 4)
-    text(x = 1:6, y = 2.2, tuk.cld$mcletters$Letters, cex = 2, col = "red")
+    
     legend(4.5, 1.7,
            c("Arato","F.zollato","Rippato"),
            box.col = "transparent",
@@ -1747,10 +1733,7 @@ La curvatura non ci interessa se non come un modo per estrarre
 informazione dai dati.
 
 I secchi generano, come atteso, particelle più grandi in seguito allo
-slacking \info{E invece dovrebbe essere esattamente il contrario,
-  visto che lo slaking distrugge gli aggregati grandi e li riduce in
-  briciole.}
-
+slacking.
 Risulta che gli aggregati provenienti da appezzamenti condotti
 convenzionalmente, non appena vengono lasciati cadere in acqua, si
 disgregano generando particelle più grosse di quanto non facciano gli
