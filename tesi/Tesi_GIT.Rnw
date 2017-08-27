@@ -1923,7 +1923,6 @@ print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRU
   \centering
 <<label=figboh3,fig=TRUE,echo=FALSE>>=
 <<plotacompWETDRY>>
-
 @
 
 \caption[Evoluzione della distribuzione granulometrica delle
@@ -1937,14 +1936,12 @@ particelle in seguito alla distruzione degli aggregati]{Evoluzione
   \Sexpr{vec.paletti[1]} e \Sexpr{vec.paletti[2]} (MESO) e inferiori a
   \SI{\Sexpr{vec.paletti[2]}}{\micro\metre} \info[inline]{8rino Figura
     troppo grossa: sistemala come la Fig. \ref{fig:boxplotCore}} }
-
 \end{figure}
 
 
 <<label = qqplotAcomp, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
 qqnorm(ilrInv(resid(modelloMsizer), orig=Y))
 ## il codice rimane qui, ma la figura è migrata alle appendici
-
 @
 
 
@@ -1984,7 +1981,7 @@ df.data <-
                  matrix(df.data[,1], ncol=3, byrow=TRUE)
                  )
 names(df.data)[7:9] <-
-    c("uno","due", "tre")
+    c("micropori","mesopori", "macropori")
 require(compositions)
 row.names(df.data) <- 1:dim(df.data)[1]
 df.analisi <-
@@ -1998,6 +1995,59 @@ alpha <- 0.05
 @
 
 \info{Simo Ho messo intanto tutto l'import, poi per i grafici aspetto il prof}
+
+Inizio porosimetria
+
+<<label = plotacompPore, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+ plot(Y, col=as.factor(df.analisi$TIL))
+ intercetta <-
+  ilrInv(coef(modello)[1,], orig=Y)
+ bi <-
+     ilrInv(rbind(0, coef(modello)[-1,]), orig=Y)
+@
+ 
+\begin{figure}[ht]
+   \centering
+<<label = figurina,fig=TRUE,echo=FALSE>>=
+<<plotacompPore>>
+@
+\end{figure}
+
+ 
+<<label = qqplotpori, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+qqnorm(ilrInv(resid(modello), orig=Y))
+@ 
+
+\begin{figure}[ht]
+  \centering
+<<label = figurina2, fig = TRUE, echo=FALSE>>=
+<<qqplotpori>>
+@
+\end{figure}
+<<summary_pori, eval = TRUE, echo = FALSE, results = tex>>=
+sommario <- 
+    summary(lm(apply(df.data[,7:9], 1, sum) ~ df.data$TIL))
+tabella_sommario <- 
+    xtable(sommario,
+           caption = "T-table modello porosit\\`a", label = 'tab:summary pori', align = "lcccc")
+print(tabella_sommario, include.rownames=FALSE,
+      caption.placement = "top",
+      table.placement= "hb")
+@ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \chapter{Discussione}
 
