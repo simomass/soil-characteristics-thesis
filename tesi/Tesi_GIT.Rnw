@@ -1800,10 +1800,10 @@ plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
 questi <-
     with(df.tessitura, which(HUMIDITY=="dry"))
 df.plot <- df.tessitura[questi,]
-Y.2 <- acomp(df.plot[, 16:18])
-lm.2.2 <-   with(df.plot,lm(ilr(Y.2) ~ COND+TIME2+I(TIME2^2)))
+Y.Msizer <- acomp(df.plot[, 16:18])
+lm.2.2 <-   with(df.plot,lm(ilr(Y.Msizer) ~ COND+TIME2+I(TIME2^2)))
 modelloMsizer <- lm.2.2
-coefs <-  ilrInv(coef(modelloMsizer), orig=Y.2)
+coefs <-  ilrInv(coef(modelloMsizer), orig=Y.Msizer)
 ##############################################################
 CO <- round(matrix(coefs[1,] +
      acomp(coefs[3,])*on.ultra.off +
@@ -1825,7 +1825,7 @@ colnames(dati.iufw) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufw <- cbind(Conduzione, Fase, dati.iufw)
 df.iufw <- rbind(df.iufw[1:3,], "", df.iufw[4:6,])
 
-plot(Y.2, cex=0.25, col= as.numeric(df.plot$COND)+2, add=TRUE)
+plot(Y.Msizer, cex=0.25, col= as.numeric(df.plot$COND)+2, add=TRUE)
 plot(acomp(coefs[1,]) +
      acomp(coefs[3,])*0:23 +
      acomp(coefs[4,])*(0:23)^2,
@@ -1940,7 +1940,7 @@ particelle in seguito alla distruzione degli aggregati]{Evoluzione
 
 
 <<label = qqplotAcomp, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
-qqnorm(ilrInv(resid(modelloMsizer), orig=Y))
+qqnorm(ilrInv(resid(modelloMsizer), orig=Y.Msizer))
 ## il codice rimane qui, ma la figura è migrata alle appendici
 @
 
@@ -1950,9 +1950,18 @@ qqnorm(ilrInv(resid(modelloMsizer), orig=Y))
 \section{Porosimetria}
 
 <<Import_porosimetria, echo = FALSE, eval = TRUE>>=
+PoroElabora <- FALSE
+## Si importano i soli file "CSV" MAIUSCOLI, che derivano dalla manipolazione dei dati grezzi della porosimetria
+vec.paletti.poro <- c(0.005, 0.1) 
+if(PoroElabora){
+    source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
+    }else{
+        NULL}
+
 Export.Dir <-
     file.path(DirMain, "dati_elaborati/porosimetria")
-nomi.file.elab <- list.files(Export.Dir, pattern = ".CSV")
+nomi.file.elab <- 
+    list.files(Export.Dir, pattern = ".CSV")
 
 df.data <- data.frame()
 
@@ -1974,71 +1983,133 @@ for(i in 1:length(nomi.file.elab)){
     df.data <- rbind.data.frame(df.data, df.this)
 }
 
-df.data <- df.data[c(2,3,13:18)]
-
+df.data <- 
+    df.data[c(2,3,13:18)]
+ 
 df.data <-
     cbind.data.frame(df.data[c(T,F,F),-(1:2)],
-                 matrix(df.data[,1], ncol=3, byrow=TRUE)
-                 )
+                     matrix(df.data[,1], ncol=3, byrow=TRUE)
+                     )        
+
 names(df.data)[7:9] <-
     c("micropori","mesopori", "macropori")
 require(compositions)
 row.names(df.data) <- 1:dim(df.data)[1]
-df.analisi <-
+df.porosimetria <-
     df.data[-c(3,6,11,10),]
 
-Y <- acomp(df.analisi[, 7:9])
+Y <- acomp(df.porosimetria[, 7:9])
 modelloPoro <-
-    with(df.analisi, lm(ilr(Y) ~ MAN*TIL))
-coefs <-  ilrInv(coef(modelloPoro), orig=Y)
+    with(df.porosimetria, lm(ilr(Y) ~ MAN+TIL))
+coefs.Poro <-  ilrInv(coef(modelloPoro), orig=Y)
 alpha <- 0.05
+
 @
 
-\info{Simo Ho messo intanto tutto l'import, poi per i grafici aspetto il prof}
 
-Inizio porosimetria
+Inizio discorsi porosimetria
 
 <<label = plotacompPore, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
- plot(Y, col=as.factor(df.analisi$TIL))
- intercetta <-
-  ilrInv(coef(modello)[1,], orig=Y)
- bi <-
-     ilrInv(rbind(0, coef(modello)[-1,]), orig=Y)
+
+intercetta <-
+    ilrInv(coef(modelloPoro)[1,], orig=Y)
+bi <-
+    ilrInv(rbind(0, coef(modelloPoro)[-1,]), orig=Y)
+medie <- intercetta+acomp(bi)
+plot(medie, col=as.factor(df.porosimetria$TIL))
+
 @
  
 \begin{figure}[ht]
    \centering
-<<label = figurina,fig=TRUE,echo=FALSE>>=
+<<label = figurina, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
 <<plotacompPore>>
+
 @
+
+\caption[didascalia corta]{Distribuzione dei pori  
+    \newline Gli apici del triangolo rappresentano particelle maggiori
+  di \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
+  \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori) e inferiori a
+  \SI{\Sexpr{vec.paletti.poro[2]}}{\micro\metre} (micropori)}
+\label{fig:Poros_triangolo}
 \end{figure}
 
- 
-<<label = qqplotpori, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
-qqnorm(ilrInv(resid(modello), orig=Y))
-@ 
 
-\begin{figure}[ht]
-  \centering
-<<label = figurina2, fig = TRUE, echo=FALSE>>=
-<<qqplotpori>>
-@
-\end{figure}
 <<summary_pori, eval = TRUE, echo = FALSE, results = tex>>=
 sommario <- 
-    summary(lm(apply(df.data[,7:9], 1, sum) ~ df.data$TIL))
+    aggregate(Y, by = list(Conduzione = df.porosimetria$MAN, 
+                       Lavorazione = df.porosimetria$TIL), 
+              function(x) round(mean(x),2)
+              )
 tabella_sommario <- 
     xtable(sommario,
-           caption = "T-table modello porosit\\`a", label = 'tab:summary pori', align = "lcccc")
+           caption = "t-table modello porosit\\`a", label = 'tab:Poro_medie', align = "llcccc")
 print(tabella_sommario, include.rownames=FALSE,
       caption.placement = "top",
       table.placement= "hb")
+anova.poros <- anova(modelloPoro)
+rownames(anova.poros) <- c("Intercetta","Conduzione", "Lavorazione","Residui")
+anova_tabella <- xtable(anova.poros,
+       label = 'tab:poros_anova', align = 'rrrrrrr',
+       caption = 'ANOVA per i dati di porosimetria '
+       )
+print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
 
 
 
+<<hist_pori, eval = TRUE, echo = FALSE, results = tex>>=
+nomi.file.elab <- list.files(Export.Dir, pattern = ".csv")
+df.rawdata <- data.frame()
+for(i in 1:length(nomi.file.elab)){
+    file.in.elaborazione <-
+        nomi.file.elab[i]
+    path.completo <-
+        file.path(Export.Dir,file.in.elaborazione)
+    df.this <-
+        read.table(file=path.completo,
+                   sep=";", dec=",", header=TRUE,
+                   fileEncoding =  "UTF-16LE")[,c(2:5)]
+    df.this$MAN <- substr(file.in.elaborazione, 3,3)
+    df.this$FIELD <-  substr(file.in.elaborazione, 4,5 )
+    df.this$TIL <-  substr(file.in.elaborazione, 6,6)
+    df.this$ROW <-  substr(file.in.elaborazione, 7,7)
+    df.this$REP <-  substr(file.in.elaborazione, 8,8)
+    df.this$REPPORO <-  substr(file.in.elaborazione, 10,10)
+    df.this$SUBJECT <-  substr(file.in.elaborazione, 3,10)
+    df.rawdata <- rbind.data.frame(df.rawdata, df.this)
+}
 
+require(lattice)
+hist.esteso <- histogram(~Volume.NA|SUBJECT, data=df.rawdata)
 
+# xyplot(Volume.NA ~ log(Radius.NA, base=10) |MAN+TIL, data=df.rawdata)
+hist.media <- histogram( ~ Volume.NA |MAN+TIL, data=df.rawdata)
+
+@
+
+\begin{figure}[ht]
+   \centering
+<<label = istrogrammiPoro1, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
+print(hist.esteso)
+
+@
+\caption[didascalia corta]{Distribuzione dei pori in ogni campione misurato
+   }
+\label{fig:Poros_hist}
+\end{figure}
+
+\begin{figure}[ht]
+   \centering
+<<label = istogrammiPoro2, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
+print(hist.media)
+
+@
+
+\caption[didascalia corta]{Distribuzione dei pori: media dei trattamenti}
+\label{fig:Poros_hist}
+\end{figure}
 
 
 
@@ -2104,7 +2175,25 @@ interpretabili.
 
 \chapter{Conclusioni}
 
+\begin{itemize}
+\item Densità
+  \begin{itemize}
+  \item Nessuna differenza col metodo Core. Se si osserva è solo
+    perchè si usano molti campioni per OO nel 2015. La differenza è
+    sulla seconda decimale, quindi tecnicamente superflua
+  \item Il metodo \emph{Clod} mostra delle differenze per due
+    combinazioni di trattamenti
+  \end{itemize}
+\item Penetrometria \info[inline]{8rino Già troppa roba non ce la metterei} 
+\item Stabilità aggregati
+  \item Porosimetria
+    
+\end{itemize}
+
+
 \chapter{Prospettive}
+
+
 
 \begin{appendices}
   \chapter{Calcolo della concentrazione delle componenti
@@ -2252,13 +2341,29 @@ Nell'equazione \ref{eq:Msizer_ppm}:
   \centering
 <<label=figboh4, fig=TRUE, echo=FALSE>>=
 <<qqplotAcomp>>
+
 @
+
 \caption{Grafico quantile-quantile per i residui del modello
-  composizionale per la stabilità degli aggregati \textbf{Togliere
-    quei 'uno due tre' dal codice e metterci la roba appropriata} }
+  composizionale per la stabilità degli aggregati}
   \label{fig:qqplot_dinamica_aggregati}
 \end{figure}
 
+
+ 
+<<label = qqplotpori, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+qqnorm(ilrInv(resid(modelloPoro), orig=Y))
+@ 
+
+\begin{figure}[ht]
+  \centering
+<<label = figurina2, fig = TRUE, echo=FALSE>>=
+<<qqplotpori>>
+@
+\caption{Grafico quantile-quantile per i residui del modello
+  composizionale per i datti di porosimetria}
+  \label{fig:qqplot_porosimetria}
+\end{figure}
 
 \end{appendices}
 
