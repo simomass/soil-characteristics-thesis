@@ -49,8 +49,8 @@
 \usepackage{booktabs} % per fare tabelle semplici come nei libri (top mid e bottomrule)
 
 \usepackage{setspace} % permette di cambiare la spaziatura quando necessario
-%\doublespacing % per avere spazio per scrivere a penna
-\onehalfspacing  % per l'interlinea finale
+\doublespacing % per avere spazio per scrivere a penna
+%\onehalfspacing  % per l'interlinea finale
 % meglio questi due comandi sopra che linespread.
 % Cosi sistema interlinea 1 nelle tabelle automaticamente
 % \linespread{1.3} % Di default è \linespread{1} che corrisponde
@@ -118,6 +118,9 @@
 \newcommandx{\fatto}[2][1=]{\todo[linecolor=gray, backgroundcolor=black!75]{#2}}
 \newcommandx{\nonvisibile}[2][1=]{\todo[disable,#1]{#2}}
 %\presetkeys{todonotes}{fancyline}{}
+%Vediamo se con questo si riduce lo spazio tra la caption.
+\usepackage[font=small,skip=0pt]{caption}
+\captionsetup[figure]{font=small,skip=0pt}
 
 \usepackage[raggedright]{titlesec}
 % Serve per evitare la sillabazione nei titoli
@@ -1264,12 +1267,12 @@ text(11, 1.7, "Or", pos = 1, cex = 1.5)
 
 @
 
-
 \begin{figure}[hb]
   \centering
-<<label=figboh2, fig=TRUE, echo=FALSE, width=5.4, height=5.4 >>=
-<<ResiduiCampo>>
-@
+% <<label=figboh2, fig=TRUE, echo=FALSE, width=5.4, height=5.4 >>=
+% <<ResiduiCampo>>
+% @
+\includegraphics[width=\textwidth]{Tesi_GIT-figboh2.pdf}
 
 \caption[Boxplot della densit\`a apparente: metodo
 \emph{Core}]{Boxplot della densit\`a apparente per i vari trattamenti:
@@ -1280,7 +1283,6 @@ text(11, 1.7, "Or", pos = 1, cex = 1.5)
   la media generale }
   \label{fig:boxplotCore}
 \end{figure}
-\FloatBarrier
 
 <<ModelloDensitaCampo, echo=FALSE, eval=TRUE, results=tex>>=
 lm.Densita <-
@@ -1298,7 +1300,6 @@ lm.DensSign <-
 
 La tabella \ref{tab:anova del modello} riporta l'ANOVA del
 modello e indica la non significatività dei trattamenti presi in esame.
-
 
 <<anova_modello, echo=FALSE, eval=TRUE, results=tex>>=
 anova.dens <- anova(lm.Densita)
@@ -1659,10 +1660,10 @@ df.tessitura <-
 questi <-
     with(df.tessitura, which(HUMIDITY=="wet"))
 df.plot <- df.tessitura[questi,]
-Y <-
+Y.Msizer1 <-
     acomp(df.plot[, 16:18])
 lm.2 <-
-    with(df.plot, lm(ilr(Y) ~ COND+TIME2+I(TIME2^2)))
+    with(df.plot, lm(ilr(Y.Msizer1) ~ COND+TIME2+I(TIME2^2)))
 
 @
 
@@ -1726,9 +1727,9 @@ mantenere la struttura del suolo.
 
 <<label = plotacompWETDRY, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
 modello <- lm.2
-coefs <-  ilrInv(coef(modello), orig = Y)
+coefs <-  ilrInv(coef(modello), orig = Y.Msizer1)
 alpha <- 0.05
-plot(Y, cex=0.15, col=df.plot$COND, axes = TRUE )
+plot(Y.Msizer1, cex=0.15, col=df.plot$COND, axes = TRUE )
 ## macro meso micro
 ## plot(acomp(c(2,2,2)), pch = 20, cex = 2, add = TRUE, col = 1)
 ## plot(acomp(c(80,5,15)), pch = 20, cex = 2, add = TRUE, col = 2)
@@ -1752,7 +1753,7 @@ dati.iufd <- rbind(CO*100, OO*100)
 Conduzione <-
     c("Convenzionale"," ", " ",
       "Biologico "," "," ")
-Fase <- rep(c("inizio misura","inizio sonicatura", "fine misura"),2)
+Fase <- rep(c("misura","inizio sonicatura", "fine misura"),2)
 colnames(dati.iufd) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufd <- cbind(Conduzione, Fase, dati.iufd)
 df.iufd <- rbind(df.iufd[1:3,], "", df.iufd[4:6,])
@@ -1921,7 +1922,7 @@ print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRU
 
 \begin{figure}[ht]
   \centering
-<<label=figboh3,fig=TRUE,echo=FALSE>>=
+<<label=figboh3,fig=TRUE,echo=FALSE, width=5.4, height=5.4>>=
 <<plotacompWETDRY>>
 @
 
@@ -1950,13 +1951,13 @@ qqnorm(ilrInv(resid(modelloMsizer), orig=Y.Msizer))
 \section{Porosimetria}
 
 <<Import_porosimetria, echo = FALSE, eval = TRUE>>=
-PoroElabora <- FALSE
-## Si importano i soli file "CSV" MAIUSCOLI, che derivano dalla manipolazione dei dati grezzi della porosimetria
-vec.paletti.poro <- c(0.005, 0.1) 
-if(PoroElabora){
-    source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
-    }else{
-        NULL}
+# PoroElabora <- FALSE
+# ## Si importano i soli file "CSV" MAIUSCOLI, che derivano dalla manipolazione dei dati grezzi della porosimetria
+ vec.paletti.poro <- c(0.005, 0.1) 
+# if(PoroElabora){
+#     source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
+#     }else{
+#         NULL}
 
 Export.Dir <-
     file.path(DirMain, "dati_elaborati/porosimetria")
@@ -2007,35 +2008,46 @@ alpha <- 0.05
 @
 
 
-Inizio discorsi porosimetria
+I dati raccolti sono stati analizzati mediante tecniche di analisi
+composizionale. In Fig. \ref{fig:Poros_triangolo} e in tabella
+\ref{tab:poros_anova} sono visibili i valori medi della composizione
+per ogni combinazione di trattamenti.
 
-<<label = plotacompPore, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+Dai dati \`e possibile osservare come tra i trattamenti non ci siano
+differenze. I punti all'interno del diagramma ternario si trovano
+tutti in valori centrali, quindi, i pori sono distribuiti equamente tra
+le tre classi dimensionali (particelle maggiori
+  di \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
+  \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori) e inferiori a
+  \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre} (micropori)).
 
+<<label = plotacompPore, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+plot(Y, cex=0.15, col=as.numeric(df.porosimetria$MAN), axes = TRUE )
 intercetta <-
     ilrInv(coef(modelloPoro)[1,], orig=Y)
 bi <-
     ilrInv(rbind(0, coef(modelloPoro)[-1,]), orig=Y)
 medie <- intercetta+acomp(bi)
-plot(medie, col=as.factor(df.porosimetria$TIL))
+plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
 
 @
- 
+\newpage
 \begin{figure}[ht]
    \centering
 <<label = figurina, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
 <<plotacompPore>>
 
 @
-
-\caption[didascalia corta]{Distribuzione dei pori  
-    \newline Gli apici del triangolo rappresentano particelle maggiori
+\caption[didascalia corta]{Diagramma ternario della distribuzione dei pori. Gli apici del triangolo rappresentano le classi dimensionali in cui le particelle sono divise in: maggiori
   di \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
   \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori) e inferiori a
-  \SI{\Sexpr{vec.paletti.poro[2]}}{\micro\metre} (micropori)}
+  \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre} (micropori)}
 \label{fig:Poros_triangolo}
 \end{figure}
-
-
+\newpage
+La tabella ANOVA \ref{tab:poros_anova}, conferma l'analisi visuale:
+all'interno dei trattamenti non sono presenti differenze
+statisticamente significative.
 <<summary_pori, eval = TRUE, echo = FALSE, results = tex>>=
 sommario <- 
     aggregate(Y, by = list(Conduzione = df.porosimetria$MAN, 
