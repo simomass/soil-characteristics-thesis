@@ -342,7 +342,6 @@ considerati anche gli organismi vegetali: \emph{Il suolo \`e un
   trasformazioni di energia e materia o l'abilit\`a di supportare
   piante vascolari in un ambiente naturale} \citep{united1999soil}.
 
-\dubbio{Simo \newline per ora non so cosa scriverci, mi verrà in mente qualcosa}
 
 Dal suolo naturale distinguiamo il terreno agrario; questo è
 caratterizzato da pesanti modifiche operate dall'uomo mediante
@@ -724,7 +723,7 @@ di circa \SI{15}{\hectare} a \SI{90}{\meter} s.l.m. .
 \begin{figure}[ht]
   \centering
     \includegraphics[width=\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
-  \label{fig:FotoPanoramaMpaldi}
+  \caption{\label{fig:FotoPanoramaMpaldi}}
 \end{figure}
 Il clima è sub-appenninico con precipitazioni totali di circa
 \SI{800}{\milli\meter} annui con massimo in autunno e primavera e
@@ -1019,16 +1018,20 @@ nella cui didascalia vengono descritti i dettagli.
     \label{fig:DisegnoMsizer2000}
 \end{figure}
 
-Il Mastersizer 2000 dispone di un emettitore di
-ultrasuoni utile a rompere gli aggregati.
+Per rompere totalmente gli aggregati, e verificare se i diversi
+campioni possiedono una distribuzione granulometrica di base uguale,
+viene utilizzato un emettitore di ultrasuoni presente nel Mastersizer
+2000 che li disgrega meccanicamente.
 
-Nel nostro caso, la presenza di una pompa e di un agitatore che
-applicano energia al campione (attraverso il ricircolo dell'acqua)
-sono fondamentali per la determinazione della resistenza alla
-disgregazione degli aggregati. Infatti effettuando una lettura a
-intervalli regolari (quindi analizzando la variazione della
-distribuzione nel tempo) \`e possibile determinare la capacit\`a degli
-aggregati di resistere a sollecitazioni meccaniche.
+La presenza di una pompa e di un agitatore sono necessari per
+consentire il ricircolo della sospensione di suolo e acqua e la
+corretta lettura della sua torbidit\`a. Nel nostro caso l'applicazione
+dell'energia cinetica al campione da parte della pompa, \`e
+fondamentale per la determinazione della resistenza alla disgregazione
+degli aggregati. Infatti effettuando una lettura a intervalli regolari
+(quindi analizzando la variazione della distribuzione nel tempo) \`e
+possibile determinare la capacit\`a degli aggregati di resistere a
+sollecitazioni meccaniche.
 
 
 \subsection{Protocollo di misura}
@@ -1046,9 +1049,20 @@ ricircolo dell'acqua che disgrega le particelle.  Dal
 \SI{13}{\degree} al \SI{24}{\degree} minuto, per completare la rottura
 degli aggregati, viene attivata la sonicazione.
 
+Per studiare il fenomeno dello \emph{slaking} \footnote{Rottura di
+  aggregati di suolo (>2-\SI{5}{\mm}) secchi in aggregati pi\`u
+  piccoli (<\SI{0.25}{\mm}) quando sono improvvisamente immersi in
+  acqua. Lo slaking avviene quando gli aggregati non sono forti
+  abbastanza da resistere agli stress interni causati dal rapido
+  ingresso dell'acqua che, comprimendo l'aria, esercita una pressione
+  distruttiva \citep{Slaking}}, ogni misurazione \`e stata ripetuta
+due volte: una sul campione talquale e una sul campione
+precedentemente inumidito con acqua demineralizzata.
+
 \subsection{Distribuzione granulometrica dinamica}
-A conclusione della misura abbiamo ottenuto, per ogni campione, 48
-distribuzioni granulometriche, in particolare:
+A conclusione della misura abbiamo ottenuto, per ogni combinazione dei
+fattori dell'esperimento, 48 distribuzioni granulometriche, in
+particolare:
 \begin{itemize}
 \item 12 distribuzioni dal minuto 1 al minuto 12 per il campione secco
   senza sonicatura;
@@ -1074,9 +1088,10 @@ distribuzioni granulometriche, in particolare:
 
 
 \section{Porosimetria}
-\info{Simo: \newline Sentire Luigi per scrivere materiali e metodi}
+\info{Simo: \newline Sentire Luigi per scrivere materiali e metodi
+  + Eventuale appendice per il funzionamento della porosimetria a mercurio}
 \subsection{Protocollo di misura}
-\subsection{}
+
 
 \section{Elaborazione dei dati}
 
@@ -1090,8 +1105,8 @@ Tutti i modelli sono stati validati attraverso l'analisi esplorativa
 dei residui in modo da verificare le eventuali violazioni delle
 assunzioni di normalit\`a \citep{stefanini2007introduzione}. 
 
-\subsection{Densità}
-Sia per il metodo \emph{Core} che per quello \emph{Clod} NON sono state
+\subsection{Densit\`a}
+Sia per il metodo \emph{Core} che per quello \emph{Clod} \textbf{non} sono state
 riscontrate interazioni statisticamente significative tra i parametri
 considerati e quindi esse non compaiono nei modelli sotto riportati,
 che sono quindi di natura additiva.
@@ -1128,23 +1143,23 @@ studio, \`e stato applicato il test di Tukey-Siegel utilizzando i
 pacchetti 'agricolae' \citep{agricolae} e 'multcomp' \citep{multcomp}.
 
 
-% \subsection{dinamica}
+\subsection{Dinamica e porosimetria}
 
-% I dati provenienti da queste analisi sono, per loro stessa natura,
-% composizionali e quindi sono stati analizzati con il package R
-% 'Composition' \citep{compositional}. I valori in output dagli
-% strumenti, infatti, sono espressi come valore percentuale sul totale.
+I dati provenienti da queste analisi sono, per loro stessa natura,
+composizionali e quindi sono stati analizzati con il package R
+'Composition' \citep{compositional}. I valori in output dagli
+strumenti, infatti, sono espressi come valore percentuale sul totale.
 
-% Questi sono stati raggruppati in tre range dimensionali (macro
-% aggregati, meso aggregati, micro aggregati e macro pori, meso pori,
-% micro pori). Le dimensioni sono state definite in base alla
-% letteratura \citep{la letteratura}.
+Questi sono stati raggruppati in tre range dimensionali
+(macroaggregati, mesoaggregati, microaggregati e macropori, mesopori,
+micropori). Le dimensioni sono state definite in base alla
+letteratura \citep{la letteratura}.
 
-% Da qui in poi, per la verifica di significativit\`a delle ipotesi, si
-% \`e proceduto come nel caso dell'analisi della densit\`a apparente,
-% ovvero con la costruzione del modello (opportunamente validato
-% mediante esplorazione visuale dei residui) e quindi con l'analisi
-% della varianza.
+Da qui in poi, per la verifica di significativit\`a delle ipotesi, si
+\`e proceduto come nel caso dell'analisi della densit\`a apparente,
+ovvero con la costruzione del modello (opportunamente validato
+mediante esplorazione visuale dei residui) e quindi con l'analisi
+della varianza.
 
 
 \chapter{Risultati}
@@ -1313,14 +1328,14 @@ print(tabella.anova.dens,
       include.rownames=TRUE,
       caption.placement = "top")
 @
+\FloatBarrier
 
-
-\migliora{8rino revisionare \newline Da questa \`e possibile
-  confermare ci\`o che \`e stato mostrato dall'analisi visuale,
-  ovvero: il terreno degli appezzamenti condotti a biologico \`e
-  mediamente pi\`u denso di quello degli appezzamenti condotti a
-  convenzionale. Inoltre l'anno 2015 presenta delle densit\`a
-  apparenti pi\`u alte rispetto all'anno 2016.}
+% 8rino revisionare \newline Da questa \`e possibile
+% confermare ci\`o che \`e stato mostrato dall'analisi visuale,
+% ovvero: il terreno degli appezzamenti condotti a biologico \`e
+% mediamente pi\`u denso di quello degli appezzamenti condotti a
+% convenzionale. Inoltre l'anno 2015 presenta delle densit\`a
+% apparenti pi\`u alte rispetto all'anno 2016.}
 
 
 
@@ -1512,8 +1527,7 @@ plot(1, xlim = c(0.5, 6.5), ylim = c(1.4, 2.5), type = "n",
 ]{Boxplot dei valori di densit\`a apparente ottenuti col metodo di
   analisi \emph{Clod}; gli appezzamenti condotti convenzionalmente (a
   sinistra) hanno valori leggermente più alti degli appezzamenti
-  condotti a biologico (a destra) le lettere sopra ai boxplot sono il
-  risultato del test di Tukey-Siegel ($p<0.05$)}
+  condotti a biologico (a destra)}
   \label{fig:boxplotClod}
 
 \end{figure}
@@ -1687,13 +1701,7 @@ l'elemento tempo al quadrato il quale, come \`e possibile vedere dalla
 tabella ANOVA \ref{tab:anova_compWET}, \`e significativo.
 
 La misura \`e stata effettuata sia sull'aggregato secco che
-sull'aggregato inumidito per studiare il fenomeno dello \emph{slaking}
-\footnote{Rottura di aggregati di suolo (>2-\SI{5}{\mm}) secchi in
-  aggregati pi\`u piccoli (<\SI{0.25}{\mm}) quando sono
-  improvvisamente immersi in acqua. Lo slaking avviene quando gli
-  aggregati non sono forti abbastanza da resistere agli stress interni
-  causati dal rapido ingresso dell'acqua che, comprimendo l'aria,
-  esercita una pressione distruttiva \citep{Slaking}}.
+sull'aggregato inumidito per studiare il fenomeno dello \emph{slaking}.
 Quindi sono stati creati due modelli: uno per i campioni inumiditi
 (\emph{WET}) e uno per i camioni secchi (\emph{DRY}). I modelli
 mostrano che pendenza e curvatura sono comuni per entrambi i
@@ -1935,8 +1943,7 @@ particelle in seguito alla distruzione degli aggregati]{Evoluzione
   \newline Gli apici del triangolo rappresentano particelle maggiori
   di \Sexpr{vec.paletti[1]} (MACRO), comprese tra
   \Sexpr{vec.paletti[1]} e \Sexpr{vec.paletti[2]} (MESO) e inferiori a
-  \SI{\Sexpr{vec.paletti[2]}}{\micro\metre} \info[inline]{8rino Figura
-    troppo grossa: sistemala come la Fig. \ref{fig:boxplotCore}} }
+  \SI{\Sexpr{vec.paletti[2]}}{\micro\metre}}
 \end{figure}
 
 
@@ -2054,6 +2061,12 @@ sommario <-
                        Lavorazione = df.porosimetria$TIL), 
               function(x) round(mean(x),2)
               )
+attach(sommario)
+sommario <- sommario[order(Conduzione, Lavorazione),]
+detach(sommario)
+sommario$Conduzione <- c("Co","","", "Or", "", "")
+sommario$Lavorazione <- c("Ara", "Rip", "Fzo", "Ara", "Rip", "Fzo")
+
 tabella_sommario <- 
     xtable(sommario,
            caption = "t-table modello porosit\\`a", label = 'tab:Poro_medie', align = "llcccc")
@@ -2092,12 +2105,12 @@ for(i in 1:length(nomi.file.elab)){
     df.this$SUBJECT <-  substr(file.in.elaborazione, 3,10)
     df.rawdata <- rbind.data.frame(df.rawdata, df.this)
 }
-
+names(df.rawdata)[1] <- "Volume"
 require(lattice)
-hist.esteso <- histogram(~Volume.NA|SUBJECT, data=df.rawdata)
+hist.esteso <- histogram(~Volume|SUBJECT, data=df.rawdata)
 
 # xyplot(Volume.NA ~ log(Radius.NA, base=10) |MAN+TIL, data=df.rawdata)
-hist.media <- histogram( ~ Volume.NA |MAN+TIL, data=df.rawdata)
+hist.media <- histogram( ~ Volume |MAN+TIL, data=df.rawdata)
 
 @
 
@@ -2133,12 +2146,17 @@ print(hist.media)
 
 
 \chapter{Discussione}
+\section{Densit\`a apparente}
+\info{Devo trovare la voglia di leggere un po' di bibliografia, anche
+  se mi pare che non ci sia niente di ch\'e.}
 
-Dall'analisi statistica \`e emerso che
+Il metodo \emph{Clod} metodo \`e noto fornire dei valori di densit\`a
+apparente pi\`u elevati rispetto a quelli misurati utilizzando il
+metodo \emph{Core}, questo \`e dovuto al fatto che nella misura non
+sono considerate le fratture \citep{tisdall1951comparison}.
 \section{Dati composizionali: cosa sono e come vengono analizzati
   \citep{van2013analyzing}}
 
-\info{Simo Mi faccio un riassuntino dell'introduzione del libro intanto}
 Tradizionalmente un dataset pu\`o essere definito composizionale se
 contiene porzioni di totale: percentuale di lavoratori in differenti
 settori, porzioni di elementi chimici in un minerale, tessitura di un
