@@ -7,8 +7,8 @@ pulisci :
 
 #
 Sweave:
-	Rscript -e "Sweave('$(PRINCIPALE).Rnw', driver=RweaveLatex())"
-	Rscript -e "Sweave('$(PRINCIPALE).Rnw', driver=Rtangle())"
+	Rscript -e "Sweave('$(PRINCIPALE).Rnw', driver=RweaveLatex(), encoding = 'utf8')"
+	Rscript -e "Sweave('$(PRINCIPALE).Rnw', driver=Rtangle(), encoding = 'utf8')"
 	pdflatex $(PRINCIPALE)
 	pdflatex $(PRINCIPALE)-frn.tex
 	pdflatex $(PRINCIPALE_TEX)
@@ -25,8 +25,8 @@ pdf:
 	pdflatex $(PRINCIPALE)
 
 tutto:
-	Rscript -e "Sweave('$(PRINCIPALE).Rnw', driver=RweaveLatex())"
-	Rscript -e "Sweave('$(PRINCIPALE).Rnw', driver=Rtangle())"
+	Rscript -e "Sweave('$(PRINCIPALE).Rnw', driver=RweaveLatex(), encoding = 'utf8')"
+	Rscript -e "Sweave('$(PRINCIPALE).Rnw', driver=Rtangle(), encoding = 'utf8')"
 	pdflatex $(PRINCIPALE)
 	biber $(PRINCIPALE)
 	pdflatex $(PRINCIPALE)

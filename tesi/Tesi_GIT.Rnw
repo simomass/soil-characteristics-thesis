@@ -67,7 +67,7 @@
 % scommentare nella versione finale
 
 % Queste righe sotto si occupano della bibliografia
-\usepackage[babel]{csquotes}
+%\usepackage[babel]{csquotes}
 \usepackage[backend=biber, sorting=nyt, style=authoryear, autolang=hyphen, natbib=true, backref]{biblatex}
 %% style=numeric
 
@@ -391,7 +391,7 @@ studio dell'agricoltura Biologica:
 \section{Caratteristiche generali del suolo}
 Il suolo è un sistema naturale trifasico composto da:
 \begin{itemize}%%[topsep=0ex, itemsep=1ex, parsep=1ex, partopsep=1ex]
-\item una fase solida, (materiale minerale e materiale
+\item una fase solida, materiale minerale e materiale
   organico vivo o in decomposizione;
 \item una fase liquida, ovvero una soluzione acquosa di cationi,
   anioni e composti organici;
@@ -2397,8 +2397,7 @@ qqnorm(ilrInv(resid(modelloPoro), orig=Y))
 
 \end{appendices}
 
-\migliora{8rino La lista della bibliografia mostra dei quadretti neri sui
-  riferimenti di tipo @article. Non ho trovato soluzione}
+\nonvisibile{Simo: pagina 143 Pantieri per sitografia}
 \listoffigures % non funziona con xtable
 \listoftables
 \printbibliography
