@@ -1,5 +1,6 @@
 % Versione branch 8uno
 \documentclass[11pt, a4paper, openright, titlepage, final]{book}
+%linea aggiunta per capire come funziona il merge.
 % draft/final onecolumn/twocolumn oneside/twoside openany/openright
 % Circa 80 lettere per pagina con draft al posto di final fa il pdf senza foto
 \usepackage[toc,page]{appendix}
