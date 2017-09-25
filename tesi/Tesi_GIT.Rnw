@@ -2004,7 +2004,16 @@ modelloPoro <-
     with(df.porosimetria, lm(ilr(Y) ~ MAN+TIL))
 coefs.Poro <-  ilrInv(coef(modelloPoro), orig=Y)
 alpha <- 0.05
-
+df.data$TOT <- rowSums(df.data[,7:8])
+df.data$PESI <- read.table("~/Simo_GIT/dati_elaborati/pesoaggre.csv", sep = ";")$x
+df.data$P.INDEX <- df.data$TOT/df.data$PESI
+lm.totale <- 
+    lm(df.data$P.INDEX ~ df.data$MAN+df.data$TIL)
+## lm.totale2 <- 
+##     lm(df.data$P.INDEX ~ df.data$MAN*df.data$TIL)
+## anova(lm.totale, lm.totale2)
+anova.PorTot <- 
+    anova(lm.totale)
 @
 
 
@@ -2122,6 +2131,17 @@ print(hist.media)
 \caption[didascalia corta]{Distribuzione dei pori: media dei trattamenti}
 \label{fig:Poros_hist}
 \end{figure}
+
+
+Anova facendo il totale.
+<<anova_tot, eval = TRUE, echo = FALSE, results = tex>>=
+tabella_PorTot <- 
+    xtable(anova.PorTot,
+           caption = "Tabella anova della porosit\\`a totale", label = 'tab:Poro_Tot', align = "llcccc")
+print(tabella_PorTot, include.rownames=FALSE,
+      caption.placement = "top",
+      table.placement= "hb")
+@ 
 
 
 
@@ -2373,9 +2393,25 @@ qqnorm(ilrInv(resid(modelloPoro), orig=Y))
 <<qqplotpori>>
 @
 \caption{Grafico quantile-quantile per i residui del modello
-  composizionale per i datti di porosimetria}
+  composizionale per i dati di porosimetria}
   \label{fig:qqplot_porosimetria}
 \end{figure}
+
+<<label = qqplotPorTot, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+qqnorm(resid(lm.totale), orig=Y)
+qqline(resid(lm.totale))
+@ 
+
+\begin{figure}[ht]
+  \centering
+<<label = figurina3, fig = TRUE, echo=FALSE>>=
+<<qqplotPorTot>>
+@
+\caption{Grafico quantile-quantile per i residui del modello
+  per i dati totali di porosimetria}
+  \label{fig:qqplot_PorTot}
+\end{figure}
+
 
 \end{appendices}
 

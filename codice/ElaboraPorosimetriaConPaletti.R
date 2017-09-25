@@ -24,6 +24,8 @@
 ## Il risultato e gli eventuali errori compaiono nel
 ## file "result.out".
 ######################################################
+DirMain <-"~/Simo_GIT"
+vec.paletti.poro <- c(0.005, 0.1) 
 MOLTE <- vec.paletti.poro
 Main.Dir <- DirMain
 ##getwd()
@@ -101,6 +103,9 @@ for(i in 1:length(nomi.file)){
         blocco.iniziale[riga.iniziale.results:(riga.iniziale.results+5)]
     results <-
         gsub("\t", "", results)
+    aggregate.weight[i] <-
+        as.numeric(unlist(strsplit(blocco.iniziale[12], "\t"))[2])
+
 ######################################################
     ## esportazione di tutti i dati grezzi
     write.table(df.data,
@@ -119,8 +124,8 @@ for(i in 1:length(nomi.file)){
               2500, 5000,7500, 10000,
               25000, 50000,75000, 100000,250000,500000,750000,1000000)/2
     }else if(punti=="ogni.X"){
-            punti.desiderati <-
-                seq(1,dim(df.data)[1], by=ogni.X)
+        punti.desiderati <-
+            seq(1,dim(df.data)[1], by=ogni.X)
     }else{
         punti.desiderati <- MOLTE
     }
@@ -209,3 +214,5 @@ for(i in 1:length(nomi.file)){
     dev.off()
     closeAllConnections()
 }
+write.table(as.numeric(aggregate.weight), "~/Simo_GIT/dati_elaborati/pesoaggre.csv",
+            sep = ";")
