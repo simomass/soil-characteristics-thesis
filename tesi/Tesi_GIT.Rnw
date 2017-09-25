@@ -2094,7 +2094,7 @@ print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 
 
 
-<<hist_pori, eval = TRUE, echo = FALSE, results = tex>>=
+<<hist_pori, eval = FALSE, echo = FALSE, results = tex>>=
 nomi.file.elab <- list.files(Export.Dir, pattern = ".csv")
 df.rawdata <- data.frame()
 for(i in 1:length(nomi.file.elab)){
@@ -2118,36 +2118,33 @@ for(i in 1:length(nomi.file.elab)){
 names(df.rawdata)[1] <- "Volume"
 require(lattice)
 hist.esteso <- histogram(~Volume|SUBJECT, data=df.rawdata)
-
 # xyplot(Volume.NA ~ log(Radius.NA, base=10) |MAN+TIL, data=df.rawdata)
 hist.media <- histogram( ~ Volume |MAN+TIL, data=df.rawdata)
-
 @
 
-\begin{figure}[ht]
-   \centering
-<<label = istrogrammiPoro1, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
-print(hist.esteso)
+% \begin{figure}[ht]
+%    \centering
+% <<label = istrogrammiPoro1, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
+% print(hist.esteso)
 
-@
-\caption[didascalia corta]{Distribuzione dei pori in ogni campione misurato
-   }
-\label{fig:Poros_hist}
-\end{figure}
+% @
+% \caption[didascalia corta]{Distribuzione dei pori in ogni campione misurato
+%    }
+% \label{fig:Poros_hist}
+% \end{figure}
 
-\begin{figure}[ht]
-   \centering
-<<label = istogrammiPoro2, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
-print(hist.media)
+% \begin{figure}[ht]
+%    \centering
+% <<label = istogrammiPoro2, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
+% print(hist.media)
+% @
 
-@
+% \caption[didascalia corta]{Distribuzione dei pori: media dei trattamenti}
+% \label{fig:Poros_hist}
+% \end{figure}
 
-\caption[didascalia corta]{Distribuzione dei pori: media dei trattamenti}
-\label{fig:Poros_hist}
-\end{figure}
+Essendo la statistica composizionale un tipo di analisi che li
 
-
-Anova facendo il totale.
 <<anova_tot, eval = TRUE, echo = FALSE, results = tex>>=
 tabella_PorTot <- 
     xtable(anova.PorTot,
