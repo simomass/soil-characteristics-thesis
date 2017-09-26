@@ -2004,7 +2004,7 @@ names(df.data)[7:9] <-
     c("micropori", "mesopori", "macropori")
 require(compositions)
 row.names(df.data) <- 1:dim(df.data)[1]
-PESI <- read.table("~/Simo_GIT/dati_elaborati/pesoaggre.csv", sep = ";")$x
+PESI <- read.table(file.path(DirElab, "pesoaggre.csv"), sep = ";")$x
 
 df.data <- data.frame(
     df.data[,1:6],
