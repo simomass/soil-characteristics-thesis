@@ -24,8 +24,10 @@
 ## Il risultato e gli eventuali errori compaiono nel
 ## file "result.out".
 ######################################################
-DirMain <-"~/Simo_GIT"
-vec.paletti.poro <- c(0.005, 0.1) 
+
+DirMain<-"~/Simo_GIT"
+##Si sta lavorando offline, in caso scommentare
+vec.paletti.poro <- c(0.05, 0.1) 
 MOLTE <- vec.paletti.poro
 Main.Dir <- DirMain
 ##getwd()
@@ -60,6 +62,7 @@ tipo.punti <- "l"
 xlim.grafico <-c(0.5, 6) #minimo e massimo
 ylim.grafico <- c(0,400) #minimo e massimo
 ## inizio dell'elaborazione
+aggregati.weight <- c()
 for(i in 1:length(nomi.file)){
     file.in.elaborazione <-
         nomi.file[i]
@@ -103,7 +106,7 @@ for(i in 1:length(nomi.file)){
         blocco.iniziale[riga.iniziale.results:(riga.iniziale.results+5)]
     results <-
         gsub("\t", "", results)
-    aggregate.weight[i] <-
+    aggregati.weight[i] <-
         as.numeric(unlist(strsplit(blocco.iniziale[12], "\t"))[2])
 
 ######################################################
@@ -117,6 +120,7 @@ for(i in 1:length(nomi.file)){
     ## write.table(results,
     ##              file.path(Export.Dir,nome.results),
     ##              sep= ";",row.names=FALSE,dec =",")
+    closeAllConnections()
     if(punti=="fissi"){
         punti.desiderati <-
             c(0,10,  25,50, 75,100,
@@ -214,5 +218,6 @@ for(i in 1:length(nomi.file)){
     dev.off()
     closeAllConnections()
 }
-write.table(as.numeric(aggregate.weight), "~/Simo_GIT/dati_elaborati/pesoaggre.csv",
+write.table(as.numeric(aggregati.weight),
+            file.path(Export.Dir, "pesoaggre.csv"),
             sep = ";")

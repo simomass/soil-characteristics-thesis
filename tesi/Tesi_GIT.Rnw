@@ -1959,13 +1959,13 @@ qqnorm(ilrInv(resid(modelloMsizer), orig=Y.Msizer))
 \section{Porosimetria}
 
 <<Import_porosimetria, echo = FALSE, eval = TRUE>>=
-# PoroElabora <- FALSE
+#PoroElabora <- FALSE
 # ## Si importano i soli file "CSV" MAIUSCOLI, che derivano dalla manipolazione dei dati grezzi della porosimetria
- vec.paletti.poro <- c(0.005, 0.1) 
-# if(PoroElabora){
-#     source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
-#     }else{
-#         NULL}
+vec.paletti.poro <- c(0.05, 0.1) 
+## if(PoroElabora){
+##    source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
+##     }else{
+##         NULL}
 
 Export.Dir <-
     file.path(DirMain, "dati_elaborati/porosimetria")
@@ -2001,9 +2001,41 @@ df.data <-
                      )        
 
 names(df.data)[7:9] <-
-    c("micropori","mesopori", "macropori")
+    c("micropori", "mesopori", "macropori")
 require(compositions)
 row.names(df.data) <- 1:dim(df.data)[1]
+PESI <- read.table("~/Simo_GIT/dati_elaborati/pesoaggre.csv", sep = ";")$x
+
+df.data <- data.frame(
+    df.data[,1:6],
+    MICROPORI = (df.data[,7]-df.data[,8])/PESI, 
+    MESOPORI = (df.data[,8]-df.data[,9])/PESI, 
+    MACROPORI = df.data[,9]/PESI
+#    TOT = df.data[,7]/PESI
+)
+
+## lm.micropori <- 
+##     with(df.data, lm(MICROPORI ~ MAN)) #+ TIL))
+## anova(lm.micropori)
+## summary(lm.micropori)
+## lm.macropori <- 
+##     with(df.data, lm(MACROPORI ~ MAN)) #+ TIL))
+## anova(lm.macropori)
+## summary(lm.macropori)
+## lm.totale <- 
+##     with(df.data, lm(TOT ~ MAN))#+TIL))
+## anova(lm.totale)
+## summary(lm.totale)
+
+
+## par(mfrow = c(2,2))
+## qqnorm(resid(lm.macropori))
+
+## lm.ratio <-
+##     lm(MACROPORI/MICROPORI ~ MAN*TIL, data = df.data)
+## anova(lm.ratio)
+
+
 df.porosimetria <-
     df.data[-c(3,6,11,10),]
 
@@ -2012,16 +2044,15 @@ modelloPoro <-
     with(df.porosimetria, lm(ilr(Y) ~ MAN+TIL))
 coefs.Poro <-  ilrInv(coef(modelloPoro), orig=Y)
 alpha <- 0.05
-df.data$TOT <- rowSums(df.data[,7:8])
-df.data$PESI <- read.table("~/Simo_GIT/dati_elaborati/pesoaggre.csv", sep = ";")$x
-df.data$P.INDEX <- df.data$TOT/df.data$PESI
-lm.totale <- 
-    lm(df.data$P.INDEX ~ df.data$MAN+df.data$TIL)
+##df.data$TOT <- rowSums(df.data[,7:8])
+##df.data$P.INDEX <- df.data$TOT/df.data$PESI
+## lm.totale <- 
+##     lm(df.data$P.INDEX ~ df.data$MAN+df.data$TIL)
 ## lm.totale2 <- 
 ##     lm(df.data$P.INDEX ~ df.data$MAN*df.data$TIL)
 ## anova(lm.totale, lm.totale2)
-anova.PorTot <- 
-    anova(lm.totale)
+##anova.PorTot <- 
+##    anova(lm.totale)
 @
 
 
@@ -2039,7 +2070,7 @@ le tre classi dimensionali (particelle maggiori
   \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre} (micropori)).
 
 <<label = plotacompPore, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
-plot(Y, cex=0.15, col=as.numeric(df.porosimetria$MAN), axes = TRUE )
+plot(Y, cex=0.15, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
 intercetta <-
     ilrInv(coef(modelloPoro)[1,], orig=Y)
 bi <-
@@ -2055,9 +2086,10 @@ plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
 <<plotacompPore>>
 
 @
-\caption[didascalia corta]{Diagramma ternario della distribuzione dei pori. Gli apici del triangolo rappresentano le classi dimensionali in cui le particelle sono divise in: maggiori
+
+\caption[didascalia corta]{Diagramma ternario della distribuzione dei pori. Gli apici del triangolo rappresentano le classi dimensionali in cui le particelle sono divise in: inferiori
   di \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
-  \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori) e inferiori a
+  \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori) e superiori a
   \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre} (micropori)}
 \label{fig:Poros_triangolo}
 \end{figure}
@@ -2090,6 +2122,40 @@ anova_tabella <- xtable(anova.poros,
        caption = 'ANOVA per i dati di porosimetria '
        )
 print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
+@ 
+
+I risultati dell'analisi composizionale non sono statisticamente
+significativi, di conseguenza \`e stata tentata una analisi statistica
+univariata prendendo come variabile dipendente il valore della
+porosit\`a totale del campione, normalizzato al suo peso.
+
+
+<<pori_totali, eval = TRUE, echo = FALSE, results = tex>>=
+lm.totale <- 
+    lm(MICROPORI+MACROPORI+MESOPORI ~ MAN, data = df.data)
+anova.totale <- 
+    anova(lm.totale)
+anova_tabellaTot <- xtable(anova.totale,
+       label = 'tab:tot_anova', align = 'lrrrrr',
+       caption = 'ANOVA per i dati di porosit\\`a totale'
+       )
+print(anova_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
+@ 
+La tabella Anova \ref{tab:tot_anova}, anche in questo caso, ci
+permette di affermare il numero di campioni non \`e sufficiente per
+determinare la significativit\`a dei trattamenti, tuttavia come si
+pu\`o vedere dalla tabella \ref{tab:tot_sommario}, i dati tenderebbero a
+confermare il risultato dell'analisi della densit\`a apparente
+misurata con il metodo \emph{clod} dal quale risultava una maggior
+porosit\`a nei campioni di suolo Biologico. 
+<<sommario_totali, eval = TRUE, echo = FALSE, results = tex>>=
+sommario.totale <- 
+    summary(lm.totale)
+sommario_tabellaTot <- xtable(sommario.totale,
+       label = 'tab:tot_sommario', align = 'lrrrr',
+       caption = 'T-table del modello con porosit\\`a totale'
+       )
+print(sommario_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
 
 
@@ -2143,16 +2209,16 @@ hist.media <- histogram( ~ Volume |MAN+TIL, data=df.rawdata)
 % \label{fig:Poros_hist}
 % \end{figure}
 
-Essendo la statistica composizionale un tipo di analisi che li
+%%Essendo la statistica composizionale un tipo di analisi che li
 
-<<anova_tot, eval = TRUE, echo = FALSE, results = tex>>=
-tabella_PorTot <- 
-    xtable(anova.PorTot,
-           caption = "Tabella anova della porosit\\`a totale", label = 'tab:Poro_Tot', align = "llcccc")
-print(tabella_PorTot, include.rownames=FALSE,
-      caption.placement = "top",
-      table.placement= "hb")
-@ 
+%%<<anova_tot, eval = TRUE, echo = FALSE, results = tex>>=
+%%tabella_PorTot <- 
+%%    xtable(anova.PorTot,
+%%           caption = "Tabella anova della porosit\\`a totale", label = 'tab:Poro_Tot', align = "llcccc")
+%%print(tabella_PorTot, include.rownames=FALSE,
+%%      caption.placement = "top",
+%%      table.placement= "hb")
+%%@ 
 
 
 
@@ -2389,7 +2455,6 @@ Nell'equazione \ref{eq:Msizer_ppm}:
   \centering
 <<label=figboh4, fig=TRUE, echo=FALSE>>=
 <<qqplotAcomp>>
-
 @
 
 \caption{Grafico quantile-quantile per i residui del modello
@@ -2413,20 +2478,20 @@ qqnorm(ilrInv(resid(modelloPoro), orig=Y))
   \label{fig:qqplot_porosimetria}
 \end{figure}
 
-<<label = qqplotPorTot, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
-qqnorm(resid(lm.totale), orig=Y)
-qqline(resid(lm.totale))
-@ 
+%%<<label = qqplotPorTot, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+%%qqnorm(resid(lm.totale), orig=Y)
+%%qqline(resid(lm.totale))
+%%@ 
 
-\begin{figure}[ht]
-  \centering
-<<label = figurina3, fig = TRUE, echo=FALSE>>=
-<<qqplotPorTot>>
-@
-\caption{Grafico quantile-quantile per i residui del modello
-  per i dati totali di porosimetria}
-  \label{fig:qqplot_PorTot}
-\end{figure}
+%%\begin{figure}[ht]
+%%  \centering
+%%<<label = figurina3, fig = TRUE, echo=FALSE>>=
+%%<<qqplotPorTot>>
+%%@
+%%\caption{Grafico quantile-quantile per i residui del modello
+%%  per i dati totali di porosimetria}
+%%  \label{fig:qqplot_PorTot}
+%%\end{figure}
 
 
 \end{appendices}
