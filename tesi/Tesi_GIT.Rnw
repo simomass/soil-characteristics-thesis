@@ -185,6 +185,9 @@
 % https://tex.stackexchange.com/questions/11619/resize-arrays-and-figures-in-a-sweave-document
 % nogin serve per definiore le dimensioni delle figure e passarle a latex
 
+\DeclareSIUnit\atm{atm}
+\DeclareSIUnit\torr{torr}
+
 \usepackage{lipsum}
 % blocchi di testo fittizi
 <<PacchettiRichiesti, echo=FALSE, eval=TRUE>>=
@@ -1088,10 +1091,61 @@ particolare:
 \end{figure}
 
 
-\section{Porosimetria}
-\info{Simo: \newline Sentire Luigi per scrivere materiali e metodi
-  + Eventuale appendice per il funzionamento della porosimetria a mercurio}
-\subsection{Protocollo di misura}
+\section{Porosimetria per intrusione di mercurio}
+Le misure della distribuzione dei pori sono state realizzate con
+porosimetro Carlo Erba serie 2000 collegato ad un elaboratore DOS per
+la raccolta e la elaborazione dei dati.
+
+Il porosimetro \`e corredato di una unit\`a macropore per la misura
+dei macropori nell'intervallo compreso da circa \SI{15}{\micro\meter}
+e circa \SI{2000}{\micro\meter} di diametro, anch'essa connessa con il calcolatore.
+
+L'intrusione di mercurio tra \SI{0}{\atm} e \SI{1}{\atm} \`e
+realizzato con l'unit\`a macropore, da \SI{1}{atm} a \SI{2000}{atm}
+mediante il Porosimetro serie 2000.
+
+Zollette di circa un grammo vengono introdotte in un contenitore di
+vetro speciale (dilatometro) esso ha nella base un contatto elettrico
+con terminazione interna ed esterna, superiormente \`e chiuso da un
+cono a smeriglio che si prolunga in un capillare calibrato di
+\SI{6}{\mm} di diametro e lungo \SI{10}{\centi\meter}.
+
+Il dilatometro contenente il campione viene inserito nel circuito del
+vuoto dall'unit\`a macropore; dopo la stabilizzazione del vuoto esso
+viene lentamente riempito (\SI{15}{\centi\meter\cubed} fino a
+raggiungere una pressione idrostatica, valutata dal baricentro del
+campione, di circa \SI{35}{\torr}. Questo livello consente di seguire,
+traguardandomne otticamente il menisco, l'intrusione di mercurio
+nell'intervallo 0-\SI{1}{\atm}, realizzato per progressiva immissione
+di aria esterna. La scelta di questo valore di pressione idrostatica
+del mercurio consente di seguire il livello del menisco in
+tutto l'intervallo di intrusione dei campioni. Questa scelta
+limita a circa \SI{200}{\micro\meter} il valore massimo del diametro
+dei pori misurabile.
+
+Per valutare i pori pi\`u piccoli si introduce il dilatometro, previo
+riempimento del capillare, nell'autoclave del Porosimetro 2000. Una
+pompa idraulica collegata ad un moltiplicatore di pressione realizza
+all'interno, tramite un olio dielettrico, una pressione fino a
+\SI{2000}{\atm}; incrementi di pressione possono essere regolati da
+un'unit\`a di controllo, naturalmente pi\`u \`e lenta l'intrusione
+migliore \`e la distribuzione delle dimensioni dei pori.
+
+La progressiva penetrazione di mercurio nel campione \`e seguita
+elettricamente, infatti il mercurio all'interno del capillare
+costituisce una delle armature di un condensatore (l'altra \`e
+solidale con la chiusura dell'autoclave) la cui capacit\`a varia al
+diminuire di mercurio nel capillare. Il segnale elettrico che ne
+deriva viene convertito in volume di mercurio intruso sull'unit\`a di
+controllo. Il calcolo della distribuzione dei pori, mediante
+l'equazione di Washburn, viene effettuata dopo la sottrazione
+automatica punto per punto dei valori legati alla compressibilit\`a di
+mercurio preventivamente calcolati in un ciclo di misura senza
+campioni. Alla fine del ciclo di intrusione, l'apparecchio va
+automaticamente in depressione.
+
+
+%\subsection{Protocollo di misura}
 
 
 \section{Elaborazione dei dati}
@@ -1416,8 +1470,10 @@ legend(3, 1.2,
 %% In conclusione di questa analisi, i dati non permettono di confermare
 %% l'ipotesi di partenza.
 
-
-
+<<label = qqplotCampo, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+par(mfrow = c(2,2))
+plot(lm.Densita)
+@ 
 
 \subsection{Metodo \emph{Clod}}
 Il metodo \emph{Clod} ha permesso, grazie alla sua speditivit\`a, di
@@ -1473,12 +1529,11 @@ In tabella \ref{tab:summaryClod} sono riportate in sintesi le
 informazioni contenute nei dati. Gli stsssi dati sono mostrati
 graficamente in Fig. \ref{fig:boxplotClod}.
 
-I valori della densit\`a apparente
-calcolati mediante l'equazione \ref{eq:densitapetrolio} sono
-mediamente pi\`u elevati (media;
-\Sexpr{round(mean(df.petrolio$densita.apparente, na.rm=T),2)}) 
-rispetto a quelli dell'analisi col metodo
-\emph{Core} riportati a pag. \pageref{tab:summaryCore}.
+I valori della densit\`a apparente calcolati mediante l'equazione
+\ref{eq:densitapetrolio} sono mediamente pi\`u elevati (media;
+\Sexpr{round(mean(df.petrolio$densita.apparente, na.rm=T),2)})
+rispetto a quelli dell'analisi col metodo \emph{Core} riportati a
+pag. \pageref{tab:summaryCore}.
 
 
 <<label = boxplotpetr, fig.width=0.8, fig.height=0.8, echo=FALSE, fig = TRUE, include = FALSE>>=
@@ -1533,7 +1588,7 @@ plot(1, xlim = c(0.5, 6.5), ylim = c(1.4, 2.5), type = "n",
 
 \end{figure}
 
-La tabella \ref{tab:anova piccoli aggregati}) indica che entrambi i
+La tabella \ref{tab:anova piccoli aggregati} indica che entrambi i
 fattori considerati sono statisticamente significativi. Avendo
 verificato l'assenza di interazioni tra \emph{Conduzione} e
 \emph{Lavorazione} (vedi pag. \pageref{mod:MetodoClod}) è quindi
@@ -1581,17 +1636,15 @@ label = 'tab:sommario piccoli aggregati', align = 'rrrrr',
 caption = ''
 )
 print(tabella.summary.spinta, caption.placement = "top")
-vec.paletti <- c(150, 50)
+vec.paletti <- c(250, 20)
 #vec.paletti <- c(180, 50)
-
+#https://books.google.it/books?hl=it&lr=&id=gDnLAwAAQBAJ&oi=fnd&pg=PA15&dq=the+soil+habitat+voroney+heck&ots=rfoIOSpZhk&sig=4KK3HFUIYP2oAsd8FZIhEpv_iNg#v=onepage&q=the%20soil%20habitat%20voroney%20heck&f=false
 @
 
-\migliora{8rino da rivedere \newline Come nel metodo \emph{Core},
-  anche in questo caso il numero di campioni \`e stato sufficiente a
-  determinare la differenza significativa di due trattamenti
-  nonostante si differenzino per la seconda cifra decimale.}
-
-
+<<label = qqplotPetrolio, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+par(mfrow = c(2,2))
+plot(lm.spinta)
+@ 
 
 
 \section{Distribuzione dinamica della dimensione degli aggregati}
@@ -1956,7 +2009,7 @@ qqnorm(ilrInv(resid(modelloMsizer), orig=Y.Msizer))
 
 
 
-\section{Porosimetria}
+\section{Porosimetria per intrusione di mercurio}
 
 <<Import_porosimetria, echo = FALSE, eval = TRUE>>=
 #PoroElabora <- FALSE
@@ -2008,18 +2061,18 @@ PESI <- read.table(file.path(DirElab, "pesoaggre.csv"), sep = ";")$x
 
 df.data <- data.frame(
     df.data[,1:6],
-    MICROPORI = (df.data[,7]-df.data[,8])/PESI, 
-    MESOPORI = (df.data[,8]-df.data[,9])/PESI, 
-    MACROPORI = df.data[,9]/PESI
+    MICRO = (df.data[,7]-df.data[,8])/PESI, 
+    MESO = (df.data[,8]-df.data[,9])/PESI, 
+    MACRO = df.data[,9]/PESI
 #    TOT = df.data[,7]/PESI
 )
 
 ## lm.micropori <- 
-##     with(df.data, lm(MICROPORI ~ MAN)) #+ TIL))
+##     with(df.data, lm(MICRO ~ MAN)) #+ TIL))
 ## anova(lm.micropori)
 ## summary(lm.micropori)
 ## lm.macropori <- 
-##     with(df.data, lm(MACROPORI ~ MAN)) #+ TIL))
+##     with(df.data, lm(MACRO ~ MAN)) #+ TIL))
 ## anova(lm.macropori)
 ## summary(lm.macropori)
 ## lm.totale <- 
@@ -2032,7 +2085,7 @@ df.data <- data.frame(
 ## qqnorm(resid(lm.macropori))
 
 ## lm.ratio <-
-##     lm(MACROPORI/MICROPORI ~ MAN*TIL, data = df.data)
+##     lm(MACRO/MICRO ~ MAN*TIL, data = df.data)
 ## anova(lm.ratio)
 
 
@@ -2062,12 +2115,12 @@ composizionale. In Fig. \ref{fig:Poros_triangolo} e in tabella
 per ogni combinazione di trattamenti.
 
 Dai dati \`e possibile osservare come tra i trattamenti non ci siano
-differenze. I punti all'interno del diagramma ternario si trovano
-tutti in valori centrali, quindi, i pori sono distribuiti equamente tra
-le tre classi dimensionali (particelle maggiori
-  di \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
-  \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori) e inferiori a
-  \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre} (micropori)).
+sostanziali differenze. I punti all'interno del diagramma ternario si
+trovano tutti ravvicinati all'apice dei macropori (particelle minori
+di \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
+\Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori) e
+maggiori di \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre}
+(micropori)).
 
 <<label = plotacompPore, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
 plot(Y, cex=0.15, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
@@ -2079,21 +2132,26 @@ medie <- intercetta+acomp(bi)
 plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
 
 @
-\newpage
+
+%\noindent%
+%\begin{minipage}{\linewidth}% to keep image and caption on one page
+%\makebox[\linewidth]{%        to center the image
 \begin{figure}[ht]
    \centering
-<<label = figurina, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
+<<label = figurina, fig=TRUE, echo=FALSE, width=4.5, height=4.5>>=
 <<plotacompPore>>
-
 @
-
-\caption[didascalia corta]{Diagramma ternario della distribuzione dei pori. Gli apici del triangolo rappresentano le classi dimensionali in cui le particelle sono divise in: inferiori
-  di \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
-  \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori) e superiori a
-  \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre} (micropori)}
+\caption[didascalia corta]{Diagramma ternario della distribuzione dei
+  pori. Gli apici del triangolo rappresentano le classi dimensionali
+  in cui le particelle sono divise in: inferiori di
+  \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
+  \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori)
+  e superiori di \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre}
+  (micropori)}
 \label{fig:Poros_triangolo}
 \end{figure}
-\newpage
+%\end{minipage}
+
 La tabella ANOVA \ref{tab:poros_anova}, conferma l'analisi visuale:
 all'interno dei trattamenti non sono presenti differenze
 statisticamente significative.
@@ -2124,6 +2182,7 @@ anova_tabella <- xtable(anova.poros,
 print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
 
+\newline
 I risultati dell'analisi composizionale non sono statisticamente
 significativi, di conseguenza \`e stata tentata una analisi statistica
 univariata prendendo come variabile dipendente il valore della
@@ -2132,7 +2191,7 @@ porosit\`a totale del campione, normalizzato al suo peso.
 
 <<pori_totali, eval = TRUE, echo = FALSE, results = tex>>=
 lm.totale <- 
-    lm(MICROPORI+MACROPORI+MESOPORI ~ MAN, data = df.data)
+    lm(MICRO+MACRO+MESO ~ MAN, data = df.data)
 anova.totale <- 
     anova(lm.totale)
 anova_tabellaTot <- xtable(anova.totale,
@@ -2141,13 +2200,17 @@ anova_tabellaTot <- xtable(anova.totale,
        )
 print(anova_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
+
+
 La tabella Anova \ref{tab:tot_anova}, anche in questo caso, ci
-permette di affermare il numero di campioni non \`e sufficiente per
+permette di affermare che il numero di campioni non \`e sufficiente per
 determinare la significativit\`a dei trattamenti, tuttavia come si
 pu\`o vedere dalla tabella \ref{tab:tot_sommario}, i dati tenderebbero a
 confermare il risultato dell'analisi della densit\`a apparente
 misurata con il metodo \emph{clod} dal quale risultava una maggior
-porosit\`a nei campioni di suolo Biologico. 
+porosit\`a nei campioni di suolo Biologico.
+
+
 <<sommario_totali, eval = TRUE, echo = FALSE, results = tex>>=
 sommario.totale <- 
     summary(lm.totale)
@@ -2230,65 +2293,40 @@ hist.media <- histogram( ~ Volume |MAN+TIL, data=df.rawdata)
 
 
 \chapter{Discussione}
-\section{Densit\`a apparente}
-\info{Devo trovare la voglia di leggere un po' di bibliografia, anche
-  se mi pare che non ci sia niente di ch\'e.}
 
-Il metodo \emph{Clod} metodo \`e noto fornire dei valori di densit\`a
-apparente pi\`u elevati rispetto a quelli misurati utilizzando il
-metodo \emph{Core}, questo \`e dovuto al fatto che nella misura non
-sono considerate le fratture \citep{tisdall1951comparison}.
-\section{Dati composizionali: cosa sono e come vengono analizzati
-  \citep{van2013analyzing}}
-
-Tradizionalmente un dataset pu\`o essere definito composizionale se
-contiene porzioni di totale: percentuale di lavoratori in differenti
-settori, porzioni di elementi chimici in un minerale, tessitura di un
-suolo ecc.
-
-Le parti individuali delle composizioni sono chiamate
-\emph{componenti}. Ogni \emph{componente} ha una quota (in valori
-  assoluti o relativi), rappresentata dalla sua importanza sul totale.
-
-I metodi classici di analisi multivariata sono inapplicabili per i dati
-composizionali che richiedono, quindi, il loro set di metodi
-statistici e non dovrebbero essere trattati con metodi fatti per dati
-scalari \citep{aitchison1986statistical}.
-
-La caratteristica fondamentale dei dati composizionali \`e che non
-siamo interessati alla somma totale delle composizioni, questo accade
-per diverse ragioni:
+Dai risultati della densit\`a apparente \`e emerso che:
 \begin{itemize}
-  \item quando i dati composizionali sono misurati, possiamo
-    influenzare il totale;
-   \item spesso il totale delle composizioni non \`e completo e non dà
-     la somma del totale "reale";
-   \item tipicamente, il totale non \`e comparabile tra le diverse
-     unit\`a statistiche.
+  \item la densit\`a apparente misurata tramite metodo \emph{Core},
+    non evidenzia differenze statisticamente significative tra i trattamenti;
+  \item la densit\`a apparente misurata tramite metodo \emph{Clod}
+    mostra differenze statisticamente significative tra i trattamenti.
 \end{itemize}
 
-Una composizione \`e sempre formata da pi\`u subcomposizioni. E la
-stessa composizione di partenza \`e a sua volta una subcomposizione:
-infatti i dati composizionali non possono contenere ogni singola parte
-dell'unit\`a statistica analizzata.
+Come si pu\`o notare confrontando la tabella \ref{tab:summaryCore} con
+la tabella \ref{tab:summaryClod}, il metodo \emph{Clod} fornisce
+dei  valori di  densit\`a apparente  pi\`u elevati  rispetto a  quelli
+misurati utilizzando il metodo \emph{Core}, questo \`e dovuto al fatto
+che    nella    misura    non    sono    considerate    le    fratture
+\citep{tisdall1951comparison}.
 
-Nonostante ci\`o, l'analisi dei dati composizionali \`e eseguibile
-anche su dataset a cui mancano delle componenti irrilevanti, questa
-\`e chiamata 'coerenza subcomposizionale'
-\citep{aitchison1986statistical}.
+I dati si allineano con ci\`o che hanno rilevato altri autori
+(\citet{williams2017organic}, \citet{green2005soil},
+\citet{ikemura2008some}), ovvero una densit\`a apparente con valori
+mediamente pi\`u bassi nei terreni condotti ad agricoltura Biologica
+rispetto ai terreni condotti ad agricoltura Convenzionale.
 
-I dati composizionali vengono sempre trattati in una
-\emph{log-ratio-transformed scale}. Questo operazione porta a definire
-uno spazio vettoriale ristretto, contenuto nello spazio reale,
-denominato \emph{simplesso}.
+La t-table in tabella \ref{tab:anova piccoli aggregati} mostra che,
+nonostante la rilevata significativit\`a statistica, le differenze di
+densit\`a sono dell'ordine della seconda cifra decimale. Questo ci
+permette di affermare: in primo luogo che il numero di campioni \`e
+idoneo agli obiettivi dello studio, in secondo luogo che i trattamenti
+non risultano significativi dal punto di vista tecnologico. 
 
-In questo spazio vettoriale possono essere applicate tutte le tecniche
-di statistica multivariata ai dati composizionali trasformati; i
-risultati verranno anti-trasformati in composizioni per poter essere
-interpretabili.
 
 \chapter{Conclusioni}
 
+Dai risultati \`e emerso che gli indicatori dello stato fisico del
+suolo non sono in grado di evidenziare differenze significative 
 \begin{itemize}
 \item Densità
   \begin{itemize}
@@ -2448,8 +2486,82 @@ Nell'equazione \ref{eq:Msizer_ppm}:
            mezzo disperdente.
 \end{tabular}
 
+\chapter{Funzionamento porosimetro ad intrusione di mercurio}
+
+\chapter{Dati composizionali: cosa sono e come vengono analizzati
+  \citep{van2013analyzing}}
+
+Tradizionalmente un dataset pu\`o essere definito composizionale se
+contiene porzioni di totale: percentuale di lavoratori in differenti
+settori, porzioni di elementi chimici in un minerale, tessitura di un
+suolo ecc.
+
+Le parti individuali delle composizioni sono chiamate
+\emph{componenti}. Ogni \emph{componente} ha una quota (in valori
+  assoluti o relativi), rappresentata dalla sua importanza sul totale.
+
+I metodi classici di analisi multivariata sono inapplicabili per i dati
+composizionali che richiedono, quindi, il loro set di metodi
+statistici e non dovrebbero essere trattati con metodi fatti per dati
+scalari \citep{aitchison1986statistical}.
+
+La caratteristica fondamentale dei dati composizionali \`e che non
+siamo interessati alla somma totale delle composizioni, questo accade
+per diverse ragioni:
+\begin{itemize}
+  \item quando i dati composizionali sono misurati, possiamo
+    influenzare il totale;
+   \item spesso il totale delle composizioni non \`e completo e non dà
+     la somma del totale "reale";
+   \item tipicamente, il totale non \`e comparabile tra le diverse
+     unit\`a statistiche.
+\end{itemize}
+
+Una composizione \`e sempre formata da pi\`u subcomposizioni. E la
+stessa composizione di partenza \`e a sua volta una subcomposizione:
+infatti i dati composizionali non possono contenere ogni singola parte
+dell'unit\`a statistica analizzata.
+
+Nonostante ci\`o, l'analisi dei dati composizionali \`e eseguibile
+anche su dataset a cui mancano delle componenti irrilevanti, questa
+\`e chiamata 'coerenza subcomposizionale'
+\citep{aitchison1986statistical}.
+
+I dati composizionali vengono sempre trattati in una
+\emph{log-ratio-transformed scale}. Questo operazione porta a definire
+uno spazio vettoriale ristretto, contenuto nello spazio reale,
+denominato \emph{simplesso}.
+
+In questo spazio vettoriale possono essere applicate tutte le tecniche
+di statistica multivariata ai dati composizionali trasformati; i
+risultati verranno anti-trasformati in composizioni per poter essere
+interpretabili.
+
+
 \chapter{Grafici dei residui dei modelli utilizzati per l'analisi dei
   dati}
+
+\begin{figure}[ht]
+  \centering
+<<label = figkek, fig = TRUE, echo = FALSE>>=
+<<qqplotCampo>>
+@ 
+
+\caption{Plot del modello densit\`a con metodo \emph{Core}}
+\label{fig:qqplotCore}
+\end{figure}
+
+
+\begin{figure}[ht]
+  \centering
+<<label = figlel, fig = TRUE, echo = FALSE>>=
+<<qqplotPetrolio>>
+@ 
+
+\caption{Plot del modello densit\`a con metodo \emph{Clod}}
+\label{fig:qqplotClod}
+\end{figure}
+
 
 \begin{figure}[ht]
   \centering
