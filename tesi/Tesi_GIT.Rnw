@@ -1749,28 +1749,20 @@ lm.2 <-
 
 
 Per la costruzione dei modelli sono stati esclusi i trattamenti
-lavorazione, che non sono significativi, Nel modello \`e presente
-l'elemento tempo al quadrato il quale, come \`e possibile vedere dalla
-tabella ANOVA \ref{tab:anova_compWET}, \`e significativo.
+lavorazione in quanto non significativi.
+
+Nel modello \`e presente l'elemento tempo al quadrato il quale, come
+\`e possibile vedere dalla tabella ANOVA \ref{tab:anova_compWET}, \`e
+significativo.
 
 La misura \`e stata effettuata sia sull'aggregato secco che
-sull'aggregato inumidito per studiare il fenomeno dello \emph{slaking}.
-Quindi sono stati creati due modelli: uno per i campioni inumiditi
-(\emph{WET}) e uno per i camioni secchi (\emph{DRY}). I modelli
-mostrano che pendenza e curvatura sono comuni per entrambi i
-trattamenti.
+sull'aggregato inumidito per studiare il fenomeno dello
+\emph{slaking}.
 
-Alla fine del trattamento, \`e possibile vedere come tutti gli
-aggregati in fondo al trattamento disgregativo (acqua + ultrasuoni)
-mostrino distribuzioni granulometriche uguali.
-
-I paletti macro meso micro sono a \Sexpr{vec.paletti[1]},
-\Sexpr{vec.paletti[2]} rispettivamente \info{ 8rino \newline
-  giustificare come mai si sono scelti questi valori invece che
-  180 e 50 come suggerito da Luigi (io non me lo ricordo)}
-
-La curvatura non ci interessa se non come un modo per estrarre
-informazione dai dati.
+Di conseguenza sono stati creati due modelli: uno per i campioni
+inumiditi (\emph{WET}) e uno per i campioni secchi (\emph{DRY}). Dai
+modelli \`e possibile vedere che pendenza e curvatura sono comuni
+per entrambi i trattamenti.
 
 I secchi generano, come atteso, particelle più grandi in seguito allo
 slacking. Risulta che gli aggregati provenienti da appezzamenti
@@ -2182,7 +2174,7 @@ anova_tabella <- xtable(anova.poros,
 print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
 
-\newline
+
 I risultati dell'analisi composizionale non sono statisticamente
 significativi, di conseguenza \`e stata tentata una analisi statistica
 univariata prendendo come variabile dipendente il valore della
@@ -2327,16 +2319,37 @@ stabilit\`a degli aggregati Convenzionali rispetto agli aggregati
 Biologici. Mentre tra le lavorazioni non risultano differenze
 statisticamente significative.
 
+Alla fine del trattamento disgregativo con ultrasuoni, tutti gli
+aggregati convergono in un punto che coincide con i dati disponibili
+sulla distribuzione tessiturale del sito di prelievo dei campioni.
+
 I risultati vanno in controtendenza a ci\`o che hanno rilevato altri
 autori come \citet{siegrist1998does}, \citet{williams2017organic} e
 \citet{green2005soil}.
 
-Questo pu\`o essere dato dal fatto che l'appezzamento coltivato a
-Biologico non \`e stato concimato organicamente, quindi la sostanza
-organica non \`e stata reintegrata in nessun modo 
+Questo pu\`o essere dato dal fatto che nell'appezzamento coltivato a
+Biologico non sono state effettuate concimazioni, quindi la sostanza
+organica non \`e stata reintegrata in nessun modo.
 
+Nell'appezzamento convenzionale, al contrario, sono state effettuate
+concimazioni con fertilizzanti di sintesi. Questo ha portato ad un
+aumento delle radici superficiali con conseguente incremento della
+biomassa nei primi \SI{20}{\centi\meter} di suolo.
 
+Secondo \citet{mizuta2015soil}, la stabilit\`a degli aggregati dipende
+esclusivamente dal contenuto di sostanza organica e non dal tipo di
+molecole organiche coinvolte, tuttavia secondo \citet{d2017physical}
+la stabilit\`a degli aggregati \`e fortemente influenzata dalla
+sostanza organica protetta. Sarebbe quindi interessante ripetere la
+misura in seguito alla rimozione della sostanza organica superficiale.
 
+Per quanto riguarda la distribuzione dei pori non sono state
+riscontrate differenze significative tra i trattamenti.
+
+Tuttavia i dati mostrano come i campioni biologici tendano ad avere
+una maggior porosit\`a rispetto ai campioni convenzionali, in linea
+con quanto riscontrato dall'analisi \emph{Clod} e con quanto hanno
+trovato altri autori (\citep{ikemura2008some} e \citep{mendoza2011assessment}).
 
 \chapter{Conclusioni}
 
