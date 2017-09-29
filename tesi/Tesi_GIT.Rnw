@@ -1208,7 +1208,7 @@ strumenti, infatti, sono espressi come valore percentuale sul totale.
 Questi sono stati raggruppati in tre range dimensionali
 (macroaggregati, mesoaggregati, microaggregati e macropori, mesopori,
 micropori). Le dimensioni sono state definite in base alla
-letteratura \citep{la letteratura}.
+letteratura (\citet{paul2014soil}, \citet{greenland1977soil}).
 
 Da qui in poi, per la verifica di significativit\`a delle ipotesi, si
 \`e proceduto come nel caso dell'analisi della densit\`a apparente,
@@ -1748,7 +1748,6 @@ lm.2 <-
 %%    didascalia estesa in figura 3.4}
 
 
-\migliora[inline]{8rino Modelli da spostare ai MatMet}
 Per la costruzione dei modelli sono stati esclusi i trattamenti
 lavorazione, che non sono significativi, Nel modello \`e presente
 l'elemento tempo al quadrato il quale, come \`e possibile vedere dalla
@@ -1791,7 +1790,7 @@ mantenere la struttura del suolo.
 modello <- lm.2
 coefs <-  ilrInv(coef(modello), orig = Y.Msizer1)
 alpha <- 0.05
-plot(Y.Msizer1, cex=0.15, col=df.plot$COND, axes = TRUE )
+plot(Y.Msizer1, cex=0.15, col=df.plot$COND, axes = TRUE, plotMissings = FALSE)
 ## macro meso micro
 ## plot(acomp(c(2,2,2)), pch = 20, cex = 2, add = TRUE, col = 1)
 ## plot(acomp(c(80,5,15)), pch = 20, cex = 2, add = TRUE, col = 2)
@@ -2155,6 +2154,7 @@ plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
 La tabella ANOVA \ref{tab:poros_anova}, conferma l'analisi visuale:
 all'interno dei trattamenti non sono presenti differenze
 statisticamente significative.
+
 <<summary_pori, eval = TRUE, echo = FALSE, results = tex>>=
 sommario <- 
     aggregate(Y, by = list(Conduzione = df.porosimetria$MAN, 
@@ -2311,7 +2311,7 @@ che    nella    misura    non    sono    considerate    le    fratture
 
 I dati si allineano con ci\`o che hanno rilevato altri autori
 (\citet{williams2017organic}, \citet{green2005soil},
-\citet{ikemura2008some}), ovvero una densit\`a apparente con valori
+\citet{ikemura2008some}, \citet{vian2009effects}), ovvero una densit\`a apparente con valori
 mediamente pi\`u bassi nei terreni condotti ad agricoltura Biologica
 rispetto ai terreni condotti ad agricoltura Convenzionale.
 
@@ -2321,6 +2321,21 @@ densit\`a sono dell'ordine della seconda cifra decimale. Questo ci
 permette di affermare: in primo luogo che il numero di campioni \`e
 idoneo agli obiettivi dello studio, in secondo luogo che i trattamenti
 non risultano significativi dal punto di vista tecnologico. 
+
+Dall'analisi della stabilit\`a degli aggregati \`e emersa una maggiore
+stabilit\`a degli aggregati Convenzionali rispetto agli aggregati
+Biologici. Mentre tra le lavorazioni non risultano differenze
+statisticamente significative.
+
+I risultati vanno in controtendenza a ci\`o che hanno rilevato altri
+autori come \citet{siegrist1998does}, \citet{williams2017organic} e
+\citet{green2005soil}.
+
+Questo pu\`o essere dato dal fatto che l'appezzamento coltivato a
+Biologico non \`e stato concimato organicamente, quindi la sostanza
+organica non \`e stata reintegrata in nessun modo 
+
+
 
 
 \chapter{Conclusioni}
