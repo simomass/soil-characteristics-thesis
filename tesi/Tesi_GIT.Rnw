@@ -87,6 +87,12 @@
 % non ho capito a che serve ma dovrebbe essere utile a citare R in bib
 % \newcommand{\code}[1]{\texttt{\smaller #1}}
 
+\DeclareBibliographyCategory{cartaceo}
+\DeclareBibliographyCategory{web}
+
+\defbibheading{cartaceo}{\subsection*{Bibliografia}}
+\defbibheading{web}{\subsection*{Siti Web consultati}}
+
 %% siunitx serve per le unità di misura
 \usepackage{siunitx}
 \sisetup{detect-all = true, detect-family = true, output-decimal-marker = {,}}
@@ -2639,5 +2645,7 @@ qqnorm(ilrInv(resid(modelloPoro), orig=Y))
 \nonvisibile{Simo: pagina 143 Pantieri per sitografia}
 \listoffigures % non funziona con xtable
 \listoftables
-\printbibliography
+%\section*{\refname}
+\printbibliography[nottype=misc]
+\printbibliography[heading=web,type=misc]
 \end{document}

@@ -25,6 +25,7 @@ pdf:
 	pdflatex $(PRINCIPALE)
 
 tutto:
+	rm -f *.aux *.lof *.out *.snm *.toc *.bbl *.log *.bbl *.blg *.bcf $(PRINCIPALE)-frn.tex
 	Rscript -e "Sweave('$(PRINCIPALE).Rnw', driver=RweaveLatex(), encoding = 'utf8')"
 	Rscript -e "Sweave('$(PRINCIPALE).Rnw', driver=Rtangle(), encoding = 'utf8')"
 	pdflatex $(PRINCIPALE)
