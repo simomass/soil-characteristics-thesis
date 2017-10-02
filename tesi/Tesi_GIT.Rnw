@@ -1,6 +1,6 @@
 % Versione branch 8uno
 \documentclass[11pt, a4paper, openright, titlepage, final]{book}
-%linea aggiunta per capire come funziona il merge.
+% linea aggiunta per capire come funziona il merge.
 % draft/final onecolumn/twocolumn oneside/twoside openany/openright
 % Circa 80 lettere per pagina con draft al posto di final fa il pdf senza foto
 \usepackage[toc,page]{appendix}
@@ -24,7 +24,7 @@
 
 % hyperref serve per i link
 % Tutti le opzioni che ci sono adesso non sappiamo se servono: le disattivo per il momento
-%
+% 
 \usepackage[]{hyperref} % caricare questo prima di floats per evitare casini
 % unicode=true, pdfusetitle, backref=false, pdfborder={0 0 1},
 % bookmarks=true, bookmarksnumbered=true, bookmarksopen=true, bookmarksopenlevel=2, colorlinks=false,
@@ -51,7 +51,7 @@
 
 \usepackage{setspace} % permette di cambiare la spaziatura quando necessario
 \doublespacing % per avere spazio per scrivere a penna
-%\onehalfspacing  % per l'interlinea finale
+% \onehalfspacing  % per l'interlinea finale
 % meglio questi due comandi sopra che linespread.
 % Cosi sistema interlinea 1 nelle tabelle automaticamente
 % \linespread{1.3} % Di default è \linespread{1} che corrisponde
@@ -68,7 +68,7 @@
 % scommentare nella versione finale
 
 % Queste righe sotto si occupano della bibliografia
-%\usepackage[babel]{csquotes}
+% \usepackage[babel]{csquotes}
 \usepackage[backend=biber, sorting=nyt, style=authoryear, autolang=hyphen, natbib=true, backref]{biblatex}
 %% style=numeric
 
@@ -124,8 +124,8 @@
 \newcommandx{\migliora}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
 \newcommandx{\fatto}[2][1=]{\todo[linecolor=gray, backgroundcolor=black!75]{#2}}
 \newcommandx{\nonvisibile}[2][1=]{\todo[disable,#1]{#2}}
-%\presetkeys{todonotes}{fancyline}{}
-%Vediamo se con questo si riduce lo spazio tra la caption.
+% \presetkeys{todonotes}{fancyline}{}
+% Vediamo se con questo si riduce lo spazio tra la caption.
 \usepackage[font=small,skip=0pt]{caption}
 \captionsetup[figure]{font=small,skip=0pt}
 
@@ -172,16 +172,16 @@
 
 %% https://tex.stackexchange.com/questions/202512/translate-appendices-from-addappheadtotoc-in-other-languages-with-polyglossia
 \addto\captionsitalian{%
-   \renewcommand{\appendixtocname}{Appendici}%
-   \renewcommand{\appendixpagename}{Appendici}%
+  \renewcommand{\appendixtocname}{Appendici}%
+  \renewcommand{\appendixpagename}{Appendici}%
 }
 
 \renewcommand{\theequation}{Eq. \arabic{equation}}
 \usepackage{environ}
 \NewEnviron{modello}{%
-\begin{equation}
-  \BODY
-\end{equation}
+  \begin{equation}
+    \BODY
+  \end{equation}
 }
 
 \usepackage{amsmath}
@@ -233,19 +233,19 @@ file.path(DirMain, "tabelle")
 @
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \author{Simone Massenzio}
 \title{25 anni di conduzione biologica: uno studio di fisica del suolo}
 \begin{document}
 % \begin{frontespizio}
 %   \Universita{Università degli studi di Firenze}
 %   \Facolta{Agraria}
-%
+%   
 %   \Corso{Scienze e tecnologie agrarie}
 %   \Annoaccademico{2016-2017}
 %   \Titolo{Tesi di laurea magistrale}
-%   %\Sottotitolo{Svolto da Simone Massenzio,\\ residente in Via don Minzoni 31A 59011 - Carmignano (PO), \\
-%       %       tel.: 3336277649, e-mail: simone.massenzio@stud.unifi.it\\ Svolto nel periodo compreso tra il 05/12/2016 e il 08/03/2017}
+%   %   \Sottotitolo{Svolto da Simone Massenzio,\\ residente in Via don Minzoni 31A 59011 - Carmignano (PO), \\
+%       %   tel.: 3336277649, e-mail: simone.massenzio@stud.unifi.it\\ Svolto nel periodo compreso tra il 05/12/2016 e il 08/03/2017}
 %   \NCandidato{Candidato}
 %   \Candidato{Simone Massenzio}
 %   \NRelatore{Relatore}{relatore}
@@ -269,7 +269,7 @@ file.path(DirMain, "tabelle")
   \Correlatore{Prof. Gaio Cesare Pacini}
   \Piede{Anno accademico 2016-2017}
 \end{frontespizio}
-%\maketitle
+% \maketitle
 
 
 \listoftodos %messo qui per non rischiare di scordarselo alla stampa finale
@@ -299,25 +299,25 @@ file.path(DirMain, "tabelle")
 
 
 \begin{otherlanguage*}{english}
-\begin{engabstract}
-  The purposes of this work were: \textbf{i)} to compare two farming
-  systems (organic and conventional management on site since more than
-  twenty years) through three soil's physical properties such as: bulk
-  density, pore size distribution and aggregate stability.
-  \textbf{ii)} to compare the effects of three tillage systems:
-  plowing, chisel plowing and disk harrowing. The soil samples were
-  taken in Montepaldi farm, situated in San Casciano val di Pesa
-  (FI). The study is inserted in the MOLTE project, a long term
-  experiment of the University of Florence where, since 1991, was
-  carried out an experimentation on the organic farming systems.  The
-  results of the analysis of the bulk density, shows that there are
-  statistically significant differences between two farming systems,
-  however these are not technologically significant. The results of
-  the pore distribution are not statistically significant. The
-  aggregate stability shows that the conventional's soil is more
-  stable than the organic one. This could be due to the lack of
-  fertilisation in the organic soil.
-\end{engabstract}%
+  \begin{engabstract}
+    The purposes of this work were: \textbf{i)} to compare two farming
+    systems (organic and conventional management on site since more than
+    twenty years) through three soil's physical properties such as: bulk
+    density, pore size distribution and aggregate stability.
+    \textbf{ii)} to compare the effects of three tillage systems:
+    plowing, chisel plowing and disk harrowing. The soil samples were
+    taken in Montepaldi farm, situated in San Casciano val di Pesa
+    (FI). The study is inserted in the MOLTE project, a long term
+    experiment of the University of Florence where, since 1991, was
+    carried out an experimentation on the organic farming systems.  The
+    results of the analysis of the bulk density, shows that there are
+    statistically significant differences between two farming systems,
+    however these are not technologically significant. The results of
+    the pore distribution are not statistically significant. The
+    aggregate stability shows that the conventional's soil is more
+    stable than the organic one. This could be due to the lack of
+    fertilisation in the organic soil.
+  \end{engabstract}%
 \end{otherlanguage*}
 
 \tableofcontents
@@ -328,7 +328,7 @@ file.path(DirMain, "tabelle")
 \fancyfoot[C]{\today\  \currenttime}
 \fancyfoot[LE,RO]{\thepage}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \chapter{Suolo agricolo e agricoltura biologica}
 
@@ -534,9 +534,7 @@ usata è quella di \citet{greenland1977soil} ed \`e mostrata in tabella
 
 I pori con diametro inferiore ai \SI{0.005}{\micro\meter} sono
 chiamati \emph{pori di legame} e sono particolarmente importanti per
-quanto riguarda le forze che tengono insieme i \emph{domains}
-\dubbio{Simo guardare qui per i domains, non chiarissimo
-  \url{http://tinyurl.com/yd6b3geg}} e gli aggregati.
+quanto riguarda le forze che tengono insieme i \emph{domains}.
 
 
 
@@ -732,7 +730,7 @@ Casciano Val di Pesa) e interessa una superficie leggermente declive
 di circa \SI{15}{\hectare} a \SI{90}{\meter} s.l.m. .
 \begin{figure}[ht]
   \centering
-    \includegraphics[width=\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
+  \includegraphics[width=\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
   \caption{\label{fig:FotoPanoramaMpaldi}}
 \end{figure}
 Il clima è sub-appenninico con precipitazioni totali di circa
@@ -965,11 +963,11 @@ formula:
 Dove:\\
 \begin{tabular}{rp{12cm}}
   $V_{aggregato}$= & volume dell'aggregato comprendente anche il
-                    volume dei pori (\SI{}{\cubic\cm});\\
+                     volume dei pori (\SI{}{\cubic\cm});\\
   $P_{petrolio}$=  &  valore della spinta idrostatica
-                   dell'aggregato imbevuto di petrolio (\SI{}{\gram});\\
+                     dell'aggregato imbevuto di petrolio (\SI{}{\gram});\\
   $D_{petrolio}$=  &  densit\`a del petrolio utilizzato per
-                  l'analisi (\SI{0.761}{\gram\per\cubic\cm}).
+                     l'analisi (\SI{0.761}{\gram\per\cubic\cm}).
 \end{tabular}
 
 
@@ -993,7 +991,7 @@ campione calcolato con il metodo precedentemente descritto:
 Dove:\\
 \begin{tabular}{rp{12cm}}
   $D_{apparente}$=  & Valore della densit\`a apparente dell'aggregato
-                       misurato (\SI{}{\gram\per\cubic\cm});\\
+                      misurato (\SI{}{\gram\per\cubic\cm});\\
   $P_{150}$=       & peso dell'aggregato essiccato a
                      \SI{150}{\celsius} (\SI{}{\gram});\\
   $V_{aggregato}$=  & volume calcolato con la formula
@@ -1025,7 +1023,7 @@ nella cui didascalia vengono descritti i dettagli.
     3) un elaboratore su cui è installato il software apposito che
     analizza i dati grezzi per determinare la dimensione delle
     particelle.}
-    \label{fig:DisegnoMsizer2000}
+  \label{fig:DisegnoMsizer2000}
 \end{figure}
 
 Per rompere totalmente gli aggregati, e verificare se i diversi
@@ -1098,17 +1096,21 @@ particolare:
 
 
 \section{Porosimetria per intrusione di mercurio}
-Le misure della distribuzione dei pori sono state realizzate con
-porosimetro Carlo Erba serie 2000 collegato ad un elaboratore DOS per
-la raccolta e la elaborazione dei dati.
+Le misure della distribuzione dei pori sono state realizzate con: un
+porosimetro Carlo Erba serie 2000 per la misura dei macropori e un
+porosimetro PASCAL 140 per la misura dei micropori, entrambi collegati
+ad un elaboratore DOS per la raccolta e la elaborazione dei dati.
 
-Il porosimetro \`e corredato di una unit\`a macropore per la misura
-dei macropori nell'intervallo compreso da circa \SI{15}{\micro\meter}
-e circa \SI{2000}{\micro\meter} di diametro, anch'essa connessa con il calcolatore.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../foto/porosimetri.jpeg}
+  \caption{A sinistra il porosimetro PASCAL 140 utilizzato per la misura
+    dei micropori, a destra il porosimetro Carlo Erba series 2000 per
+    la misura dei macropori. \label{fig:porosimetri}}
+\end{figure}
 
-L'intrusione di mercurio tra \SI{0}{\atm} e \SI{1}{\atm} \`e
-realizzato con l'unit\`a macropore, da \SI{1}{atm} a \SI{2000}{atm}
-mediante il Porosimetro serie 2000.
+La misura viene effettuata per i pori nell'intervallo compreso da circa
+\SI{15}{\micro\meter} e circa \SI{2000}{\micro\meter} di diametro.
 
 Zollette di circa un grammo vengono introdotte in un contenitore di
 vetro speciale (dilatometro) esso ha nella base un contatto elettrico
@@ -1130,28 +1132,25 @@ limita a circa \SI{200}{\micro\meter} il valore massimo del diametro
 dei pori misurabile.
 
 Per valutare i pori pi\`u piccoli si introduce il dilatometro, previo
-riempimento del capillare, nell'autoclave del Porosimetro 2000. Una
+riempimento del capillare, nell'autoclave del Porosimetro PASCAL 140. Una
 pompa idraulica collegata ad un moltiplicatore di pressione realizza
 all'interno, tramite un olio dielettrico, una pressione fino a
 \SI{2000}{\atm}; incrementi di pressione possono essere regolati da
 un'unit\`a di controllo, naturalmente pi\`u \`e lenta l'intrusione
 migliore \`e la distribuzione delle dimensioni dei pori.
 
-La progressiva penetrazione di mercurio nel campione \`e seguita
-elettricamente, infatti il mercurio all'interno del capillare
-costituisce una delle armature di un condensatore (l'altra \`e
-solidale con la chiusura dell'autoclave) la cui capacit\`a varia al
-diminuire di mercurio nel capillare. Il segnale elettrico che ne
-deriva viene convertito in volume di mercurio intruso sull'unit\`a di
-controllo. Il calcolo della distribuzione dei pori, mediante
-l'equazione di Washburn, viene effettuata dopo la sottrazione
+La progressiva penetrazione di mercurio nel campione \`e acquisita
+tramite un sensore capacitivo. Il segnale elettrico che ne deriva
+viene convertito in volume di mercurio intruso. Il calcolo della
+distribuzione dei pori, mediante l'equazione di Washburn
+(eq. \ref{eq:Washburn}), viene effettuata dopo la sottrazione
 automatica punto per punto dei valori legati alla compressibilit\`a di
 mercurio preventivamente calcolati in un ciclo di misura senza
 campioni. Alla fine del ciclo di intrusione, l'apparecchio va
 automaticamente in depressione.
 
 
-%\subsection{Protocollo di misura}
+% \subsection{Protocollo di misura}
 
 
 \section{Elaborazione dei dati}
@@ -1177,8 +1176,8 @@ Per il metodo di analisi \emph{Clod}, \`e stato adattato il seguente
 modello:
 
 \begin{modello}
-    \label{mod:MetodoClod}
-Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
+  \label{mod:MetodoClod}
+  Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
 \end{modello}
 
 dove: \\
@@ -1228,8 +1227,8 @@ della varianza.
 
 <<ImportDensCampo, eval=TRUE, echo=FALSE>>=
 df.dueAnni <-
-    read.table(file.path(DirElab, "df_dueanni.csv"),
-               header = T, sep = "")
+read.table(file.path(DirElab, "df_dueanni.csv"),
+header = T, sep = "")
 df.dueAnni <-  df.dueAnni[df.dueAnni$REPLICA == "m", ]
 
 ##with(df.dueAnni, table(YEAR, TRT,LAVORAZIONE, APPEZZAMENTO))
@@ -1249,23 +1248,23 @@ HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
 tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
 tuk.cld<- cld(tuk)
 summary.campo <-
-    data.frame(
-        aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
-                  data = df.dueAnni,
-                  function(x){round(mean(x, na.rm=TRUE),2)}),
-        ST.DEV=
-            aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
-                      data = df.dueAnni,
-                      function(x){round(sd(x, na.rm=TRUE),2)})[,4],
-        n= aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
-                     data = df.dueAnni,
-                     function(x){sum(!is.na(x))})[,4],
-        Tukey  = as.vector(tuk.cld$mcletters$Letters)
-    )
+data.frame(
+aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
+data = df.dueAnni,
+function(x){round(mean(x, na.rm=TRUE),2)}),
+ST.DEV=
+aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
+data = df.dueAnni,
+function(x){round(sd(x, na.rm=TRUE),2)})[,4],
+n= aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
+data = df.dueAnni,
+function(x){sum(!is.na(x))})[,4],
+Tukey  = as.vector(tuk.cld$mcletters$Letters)
+)
 ##names(summary.campo)[4] <- "Dens.app.g.cmc"
 attach(summary.campo)
 summary.campo <-
-    summary.campo[order(YEAR, TRT, LAVORAZIONE),]
+summary.campo[order(YEAR, TRT, LAVORAZIONE),]
 detach(summary.campo)
 
 @
@@ -1281,26 +1280,25 @@ non si allontanano
 molto da quelli che pi\`u frequentemente si riscontrano nel suolo,
 ovvero circa la met\`a della densit\`a reale che si aggira intorno a
 \SI{2.65}{\gram\per\cubic\centi\metre}
-\migliora{8rino Rimane da giustificare i 5 campioni del 2015}
 
 
 <<Summary_Campo, echo=FALSE, eval=TRUE, results=tex>>=
 names(summary.campo) <-  
-    c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n", "Tukey")
+c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n", "Tukey")
 summary.campo$Anno <- 
-    c("2015", rep(" ", 5), "2016", rep(" ", 5))
+c("2015", rep(" ", 5), "2016", rep(" ", 5))
 summary.campo$Conduzione <-
-    c("Co", rep(" ", 2), "Or", rep(" ", 2),
-      "Co", rep(" ", 2), "Or", rep(" ", 2))
+c("Co", rep(" ", 2), "Or", rep(" ", 2),
+"Co", rep(" ", 2), "Or", rep(" ", 2))
 tabella.campo <-
-    xtable(summary.campo[,-7],
-           label = 'tab:summaryCore', align  = "llllccc",
-           caption =
-               "Valori medi della densit\\`a apparente (in \\SI{}{\\gram\\per\\cubic\\centi\\metre}),
-                condizionati per \\emph{Anno}, \\emph{Conduzione} e \\emph{Lavorazione} " )
+xtable(summary.campo[,-7],
+label = 'tab:summaryCore', align  = "llllccc",
+caption =
+"Valori medi della densit\\`a apparente (in \\SI{}{\\gram\\per\\cubic\\centi\\metre}),
+condizionati per \\emph{Anno}, \\emph{Conduzione} e \\emph{Lavorazione} " )
 print(tabella.campo, include.rownames=FALSE,
-      caption.placement = "top",
-      table.placement= "hb")
+caption.placement = "top",
+table.placement= "hb")
 
 @
 
@@ -1312,9 +1310,9 @@ print(tabella.campo, include.rownames=FALSE,
 limiti.x <- c(0,13)
 limiti.y <- c(1, 1.8)
 plot(1, xlim = limiti.x, ylim = limiti.y, type = "n",
-     yaxt = "n", xaxt = "n", xlab = "", ylab = "", main = "Metodo Core")
+yaxt = "n", xaxt = "n", xlab = "", ylab = "", main = "Metodo Core")
 mtext(expression(paste("Densit\`a apparente g ", cm^-3)),
-      side = 2, line = 2)
+side = 2, line = 2)
 rect(0.25,1, 3.45,1.8, col = "lightgray", border = NA)
 rect(3.55,1, 6.5,1.8, col = "gray", border = NA)
 rect(6.5,1, 9.45,1.8,col = "lightgray", border = NA)
@@ -1323,16 +1321,16 @@ rect(0.25,1, 6.5,1.8,lwd = 2)
 rect(6.5,1, 12.75,1.8,lwd = 2)
 abline(h = 2.65/2, col = 2)
 with(df.dueAnni,
-     boxplot(densita.apparente ~ LAVORAZIONE+TRT+YEAR,
-             las = 2, xaxt = "n",
-             col = c(2,3,4), add = TRUE)
-     )
+boxplot(densita.apparente ~ LAVORAZIONE+TRT+YEAR,
+las = 2, xaxt = "n",
+col = c(2,3,4), add = TRUE)
+)
 text(3.5, 1.8, "Anno 2015", pos = 1, cex = 2)
 text(9.5, 1.8, "Anno 2016", pos = 1, cex = 2)
 legend(9.3, 1.2,
-       c("Arato","F.zollato","Rippato"),
-       box.col = "transparent",
-       fill=c(2,3,4), cex=1,  ncol = 1)
+c("Arato","F.zollato","Rippato"),
+box.col = "transparent",
+fill=c(2,3,4), cex=1,  ncol = 1)
 ## points(y = jitter(rep(1:12, each = 6), 0.5),
 ##        x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT, YEAR))),
 ##        cex = 2, pch = 4)
@@ -1345,26 +1343,26 @@ text(11, 1.7, "Or", pos = 1, cex = 1.5)
 
 \begin{figure}[hb]
   \centering
-% <<label=figboh2, fig=TRUE, echo=FALSE, width=5.4, height=5.4 >>=
-% <<ResiduiCampo>>
-% @
-\includegraphics[width=\textwidth]{Tesi_GIT-figboh2.pdf}
+  % <<label=figboh2, fig=TRUE, echo=FALSE, width=5.4, height=5.4 >>=
+  % <<ResiduiCampo>>
+  % @
+  \includegraphics[width=\textwidth]{Tesi_GIT-figboh2.pdf}
 
-\caption[Boxplot della densit\`a apparente: metodo
-\emph{Core}]{Boxplot della densit\`a apparente per i vari trattamenti:
-  a sinistra sono presenti le misurazioni dell'anno 2015, a destra
-  quelle del 2016; all'interno dei due anni sono suddivisi in
-  \emph{Convenzionale} e \emph{Organico}; per colore si possono distinguere le varie
-  lavorazioni (arato, frangizollato e rippato). La riga rossa indica
-  la media generale }
+  \caption[Boxplot della densit\`a apparente: metodo
+  \emph{Core}]{Boxplot della densit\`a apparente per i vari trattamenti:
+    a sinistra sono presenti le misurazioni dell'anno 2015, a destra
+    quelle del 2016; all'interno dei due anni sono suddivisi in
+    \emph{Convenzionale} e \emph{Organico}; per colore si possono distinguere le varie
+    lavorazioni (arato, frangizollato e rippato). La riga rossa indica
+    la media generale }
   \label{fig:boxplotCore}
 \end{figure}
 
 <<ModelloDensitaCampo, echo=FALSE, eval=TRUE, results=tex>>=
 lm.Densita <-
-    lm(densita.apparente ~ YEAR+TRT+LAVORAZIONE, data = df.dueAnni)
+lm(densita.apparente ~ YEAR+TRT+LAVORAZIONE, data = df.dueAnni)
 lm.DensSign <-
-    lm(densita.apparente ~ YEAR+TRT, data = df.dueAnni)
+lm(densita.apparente ~ YEAR+TRT, data = df.dueAnni)
 @
 
 %% Il modello utilizzato, (\ref{mod:MetodoClod}, pag.
@@ -1382,12 +1380,12 @@ anova.dens <- anova(lm.Densita)
 rownames(anova.dens) <-     c("Anno", "Conduzione", "Lavorazione", "residui")
 ##%   c("Anno", "Management", "Tillage", "residui")
 tabella.anova.dens <-
-    xtable(anova.dens,
-           label = 'tab:anova del modello', align  = "rrrrrr",
-           caption = 'Tabella ANOVA per i valori di densità rilevati col metodo \\emph{Core}')
+xtable(anova.dens,
+label = 'tab:anova del modello', align  = "rrrrrr",
+caption = 'Tabella ANOVA per i valori di densità rilevati col metodo \\emph{Core}')
 print(tabella.anova.dens,
-      include.rownames=TRUE,
-      caption.placement = "top")
+include.rownames=TRUE,
+caption.placement = "top")
 @
 \FloatBarrier
 
@@ -1405,16 +1403,16 @@ print(tabella.anova.dens,
 sommario.dens <- summary(lm.DensSign)$coefficients
 
 rownames(sommario.dens) <-
-    c("Co 2015", "Scostamento 2016", "Scostamento Or")
+c("Co 2015", "Scostamento 2016", "Scostamento Or")
 
 tabella.summary.dens <-
-    xtable(sommario.dens,
-           label = 'tab:t-table del modello2', align  = "rrrrr",
-           caption = '')
+xtable(sommario.dens,
+label = 'tab:t-table del modello2', align  = "rrrrr",
+caption = '')
 
 print(tabella.summary.dens,
-      include.rownames=TRUE,
-      caption.placement = "top")
+include.rownames=TRUE,
+caption.placement = "top")
 @
 
 
@@ -1432,24 +1430,24 @@ posiz.y <- 1.7
 limiti.x <- c(0,5)
 limiti.y <- c(1, 1.8)
 plot(1, xlim = limiti.x, ylim = limiti.y, type = "n",
-     yaxt = "n", xaxt = "n", xlab = "",ylab = "", main = "Metodo Core")
+yaxt = "n", xaxt = "n", xlab = "",ylab = "", main = "Metodo Core")
 ##mtext(expression(paste("Densit\`a apparente g ", cm^-3)), side = 2, line = 2)
 rect(0.25,1, 2.45,1.8, col = "lightgray", border = NA)
 rect(2.48,1, 4.75,1.8, col = "gray", border = NA)
 rect(0.25,1, 2.45,1.8,lwd = 2)
 rect(2.48,1, 4.75,1.8,lwd = 2)
 with(df.dueAnni,
-     boxplot(densita.apparente ~ YEAR + TRT, ### ATTENZIONE A NON INVERTIRE TRT con YEAR !!
-             las = 2, xaxt = "n",
-             col = c(5, 6), add = TRUE))
+boxplot(densita.apparente ~ YEAR + TRT, ### ATTENZIONE A NON INVERTIRE TRT con YEAR !!
+las = 2, xaxt = "n",
+col = c(5, 6), add = TRUE))
 mtext(expression(paste("Densit\`a apparente g ", cm^-3)), side = 2, line = 2)
 text(1.5, 1.8, "Anno 2015", pos = 1, cex = 1.5)
 text(3.5, 1.8, "Anno 2016", pos = 1, cex = 1.5)
 text(x = 1:4, y = posiz.y, tuk.cld$mcletters$Letters, cex = 1.5, col = "red")
 legend(3, 1.2,
-       c("Convenzionale", "Biologico"),
-       box.col = "transparent",
-       fill=c(5,6), cex=0.8,  ncol = 1)
+c("Convenzionale", "Biologico"),
+box.col = "transparent",
+fill=c(5,6), cex=0.8,  ncol = 1)
 ##points(y = jitter(rep(1:12, each = 6), 0.5),
 ##x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT, YEAR))),
 ##cex = 2, pch = 4)
@@ -1457,15 +1455,15 @@ legend(3, 1.2,
 
 %% \begin{figure}[ht]
 %%   \centering
-%% <<label=figboh,fig=TRUE,echo=FALSE, width=5.4, height=5.4 >>=
-%% <<boxplot2>>
-%% @
-%% \caption[Metodo \emph{Core}: boxplot dei valori di densit\`a apparente
-%% per i due tipi di conduzione ]{Boxplot densit\`a apparente in cui \`e
+%%   <<label=figboh,fig=TRUE,echo=FALSE, width=5.4, height=5.4 >>=
+%%   <<boxplot2>>
+%%   @
+%%   \caption[Metodo \emph{Core}: boxplot dei valori di densit\`a apparente
+%%   per i due tipi di conduzione ]{Boxplot densit\`a apparente in cui \`e
 %%   stato eliminato l'effetto della lavorazione dal modello, le lettere
 %%   sopra ai boxplot sono il risultato del test di Tukey-Siegel \protect
 %%   \info[inline]{al livello di significatività ?? LA LASCEREI E CI
-%%     FAREI UN DISCORSO SULLE TENDENZE}}
+%%   FAREI UN DISCORSO SULLE TENDENZE}}
 %% \end{figure}
 %% \FloatBarrier
 
@@ -1490,27 +1488,27 @@ tre campioni è stata usata per l'analisi dei dati.
 
 <<Sommario_petrolio, echo=FALSE, eval=TRUE, results=tex >>=
 df.petrolio <-
-    read.table(file.path(DirElab, "df_spinta.csv"),
-               header = T, sep = "")
+read.table(file.path(DirElab, "df_spinta.csv"),
+header = T, sep = "")
 fattore <- with(df.petrolio, interaction(TRT, LAVORAZIONE))
 amod <- aov(df.petrolio$densita.apparente ~ fattore)
 HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
 tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
 tuk.cld <- cld(tuk) #letter-based display)
 summary.petrolio <-
-    data.frame(
-        aggregate(densita.apparente ~ TRT+LAVORAZIONE,
-                  data = df.petrolio,
-                  function(x){round(mean(x, na.rm=TRUE),2)}),
-        ST.DEV=
-            aggregate(densita.apparente ~ TRT+LAVORAZIONE,
-                      data = df.petrolio,
-                      function(x){round(sd(x, na.rm=TRUE),2)})[,3],
-        n= aggregate(densita.apparente ~ TRT+LAVORAZIONE,
-                     data = df.petrolio,
-                     function(x){sum(!is.na(x))})[,3],
-        Tukey =     as.vector(tuk.cld$mcletters$Letters)
-    )
+data.frame(
+aggregate(densita.apparente ~ TRT+LAVORAZIONE,
+data = df.petrolio,
+function(x){round(mean(x, na.rm=TRUE),2)}),
+ST.DEV=
+aggregate(densita.apparente ~ TRT+LAVORAZIONE,
+data = df.petrolio,
+function(x){round(sd(x, na.rm=TRUE),2)})[,3],
+n= aggregate(densita.apparente ~ TRT+LAVORAZIONE,
+data = df.petrolio,
+function(x){sum(!is.na(x))})[,3],
+Tukey =     as.vector(tuk.cld$mcletters$Letters)
+)
 
 ##names(summary.campo)[4] <- "Dens.app.g.cmc"
 attach(summary.petrolio)
@@ -1520,12 +1518,12 @@ names(summary.petrolio) <- c("Conduzione","Lavorazione","Media","Dev. std", "n",
 summary.petrolio$Conduzione <- c("Co", rep("", 2), "Or", rep("", 2))
 
 tabella.petrolio <-
-    xtable(summary.petrolio,
-           label = 'tab:summaryClod', align  = "lllcccc",
-           caption =
-               "Valori medi della densit\\`a apparente (in
-                \\SI{}{\\gram\\per\\cubic\\centi\\metre}),
-                condizionati per conduzione e lavorazione " )
+xtable(summary.petrolio,
+label = 'tab:summaryClod', align  = "lllcccc",
+caption =
+"Valori medi della densit\\`a apparente (in
+\\SI{}{\\gram\\per\\cubic\\centi\\metre}),
+condizionati per conduzione e lavorazione " )
 print(tabella.petrolio, include.rownames=FALSE, caption.placement = "top")
 
 @
@@ -1546,35 +1544,35 @@ pag. \pageref{tab:summaryCore}.
 
 with(data = df.petrolio,
 {
-plot(1, xlim = c(0.5, 6.5), ylim = c(1.4, 2.5), type = "n",
-         yaxt = "n", xaxt = "n", xlab = "",ylab = "")
-    rect(0.5, 1.4, 3.45,2.5, col = "lightgray", border = NA)
-    rect(3.48,1.4, 6.5,2.5, col = "gray", border = NA)
-    boxplot(jitter(densita.apparente) ~ LAVORAZIONE+TRT, col = c(2,3,4),
-            main = "Metodo Clod",
-            ##xlab = "Densità apparente",
-            las = 1, xaxt = "n",
-            ylim = c(1.5, 2.3),
-            yaxs = "i",
-            add=TRUE
-            )
-    axis(1, labels = FALSE)
-    etichette <- levels(interaction(LAVORAZIONE,TRT))
-## Plot x labs at default x position
-    text(x =  seq_along(etichette), y = 1.3,
-         srt = 45, adj = 1,
-         labels = etichette, xpd = TRUE)
-    mtext(expression(paste("Densità apparente g ", cm^-3)), side = 2, line = 2)
-    text(2, 2.3, "Co", pos = 3, cex = 2)
-    text(5, 2.3, "Or", pos = 3, cex = 2)
-    ## points(y = jitter(rep(1:6, each = 22), 0.5),
-    ##   x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT))),
-    ##   cex = 2, pch = 4)
-    
-    legend(4.5, 1.7,
-           c("Arato","F.zollato","Rippato"),
-           box.col = "transparent",
-           fill=c(2,3,4), cex=1,  ncol = 1)
+  plot(1, xlim = c(0.5, 6.5), ylim = c(1.4, 2.5), type = "n",
+  yaxt = "n", xaxt = "n", xlab = "",ylab = "")
+  rect(0.5, 1.4, 3.45,2.5, col = "lightgray", border = NA)
+  rect(3.48,1.4, 6.5,2.5, col = "gray", border = NA)
+  boxplot(jitter(densita.apparente) ~ LAVORAZIONE+TRT, col = c(2,3,4),
+  main = "Metodo Clod",
+  ##xlab = "Densità apparente",
+  las = 1, xaxt = "n",
+  ylim = c(1.5, 2.3),
+  yaxs = "i",
+  add=TRUE
+  )
+  axis(1, labels = FALSE)
+  etichette <- levels(interaction(LAVORAZIONE,TRT))
+  ## Plot x labs at default x position
+  text(x =  seq_along(etichette), y = 1.3,
+  srt = 45, adj = 1,
+  labels = etichette, xpd = TRUE)
+  mtext(expression(paste("Densità apparente g ", cm^-3)), side = 2, line = 2)
+  text(2, 2.3, "Co", pos = 3, cex = 2)
+  text(5, 2.3, "Or", pos = 3, cex = 2)
+  ## points(y = jitter(rep(1:6, each = 22), 0.5),
+  ##   x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT))),
+  ##   cex = 2, pch = 4)
+  
+  legend(4.5, 1.7,
+  c("Arato","F.zollato","Rippato"),
+  box.col = "transparent",
+  fill=c(2,3,4), cex=1,  ncol = 1)
 }
 )
 
@@ -1585,11 +1583,11 @@ plot(1, xlim = c(0.5, 6.5), ylim = c(1.4, 2.5), type = "n",
 <<label=figmah, fig=TRUE, echo=FALSE, width = 5.4, height  = 5.4 >>=
 <<boxplotpetr>>
 @
-\caption[Boxplot dei valori di densit\`a apparente: metodo \emph{Clod}
-]{Boxplot dei valori di densit\`a apparente ottenuti col metodo di
-  analisi \emph{Clod}; gli appezzamenti condotti convenzionalmente (a
-  sinistra) hanno valori leggermente più alti degli appezzamenti
-  condotti a biologico (a destra)}
+  \caption[Boxplot dei valori di densit\`a apparente: metodo \emph{Clod}
+  ]{Boxplot dei valori di densit\`a apparente ottenuti col metodo di
+    analisi \emph{Clod}; gli appezzamenti condotti convenzionalmente (a
+    sinistra) hanno valori leggermente più alti degli appezzamenti
+    condotti a biologico (a destra)}
   \label{fig:boxplotClod}
 
 \end{figure}
@@ -1614,10 +1612,10 @@ summary(lm.spinta)
 <<Analisi_Petrolio, echo=FALSE, eval=TRUE, results=tex>>=
 rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Residui")
 tabella.spinta.anova <-
-    xtable(anova_spinta,
-           label = 'tab:anova piccoli aggregati', align = 'rrrrrr',
-           caption = ' Tabella ANOVA per il metodo \\emph{Clod}'
-           )
+xtable(anova_spinta,
+label = 'tab:anova piccoli aggregati', align = 'rrrrrr',
+caption = ' Tabella ANOVA per il metodo \\emph{Clod}'
+)
 print(tabella.spinta.anova, caption.placement = "top")
 
 @
@@ -1634,8 +1632,8 @@ terreni rippati e frangizollati.
 
 summary_spinta <- coef(summary_spinta)
 rownames(summary_spinta) <-
-    c("Co Arato","Scostamento Or",
-      "Scostamento Frangizollato","Scostamento Rippato")
+c("Co Arato","Scostamento Or",
+"Scostamento Frangizollato","Scostamento Rippato")
 
 tabella.summary.spinta <- xtable(summary_spinta,
 label = 'tab:sommario piccoli aggregati', align = 'rrrrr',
@@ -1657,9 +1655,9 @@ plot(lm.spinta)
 
 <<Import_aggregati, echo = FALSE, eval = TRUE>>=
 df.data <-
-    read.table(file.path(DirElab, "Stabilita_wide.csv"),
-               sep = ";", dec = ".", header=TRUE
-               )
+read.table(file.path(DirElab, "Stabilita_wide.csv"),
+sep = ";", dec = ".", header=TRUE
+)
 
 df.data$TIME <- df.data$TIME-1 ## corregge i tempi che partono con 1
 df.data$TIME2 <- df.data$TIME
@@ -1667,37 +1665,37 @@ UltraVeri <- which(df.data$Ultrasonic.level)
 df.data$TIME2[UltraVeri] <- df.data$TIME2[UltraVeri]+12
 ##df.data[1:30, c("TIME", "TIME2", "Ultrasonic.level","Sample.Name")]
 anomali32 <-
-    with(df.data,
-         which(Sample.Name == "32" & Ultrasonic.level & HUMIDITY == "dry"))
+with(df.data,
+which(Sample.Name == "32" & Ultrasonic.level & HUMIDITY == "dry"))
 ##df.data$TIME2[anomali32] <- 12:20
 
 df.boyocous <-
-    read.table(file.path(DirData, "outputUSDA3.csv"),
-               sep = ";", dec = ",", header=TRUE
-               )
+read.table(file.path(DirData, "outputUSDA3.csv"),
+sep = ";", dec = ",", header=TRUE
+)
 
 diametri <-
-    as.numeric(
-        substr(names(df.data)[19:119], 2,
-               nchar(names(df.data)[19:119]))
-    )
+as.numeric(
+substr(names(df.data)[19:119], 2,
+nchar(names(df.data)[19:119]))
+)
 
 
 lis.paletti <-
-    list(uno=which(diametri > vec.paletti[1])+18,
-         due=which(diametri < vec.paletti[1] & diametri > vec.paletti[2] )+18,
-         tre=which(diametri < vec.paletti[2])+18
-         )
+list(uno=which(diametri > vec.paletti[1])+18,
+due=which(diametri < vec.paletti[1] & diametri > vec.paletti[2] )+18,
+tre=which(diametri < vec.paletti[2])+18
+)
 
 df.tessitura <-
-    data.frame(df.data[,c(1:13,18,120)],
-               MACRO = apply(df.data[,lis.paletti$uno], 1,
-                             function(x) sum(x, na.rm=TRUE)),
-               MESO = apply(df.data[,lis.paletti$due], 1,
-                            function(x) sum(x, na.rm=TRUE)),
-               MICRO = apply(df.data[,lis.paletti$tre], 1,
-                             function(x) sum(x, na.rm=TRUE))
-               )
+data.frame(df.data[,c(1:13,18,120)],
+MACRO = apply(df.data[,lis.paletti$uno], 1,
+function(x) sum(x, na.rm=TRUE)),
+MESO = apply(df.data[,lis.paletti$due], 1,
+function(x) sum(x, na.rm=TRUE)),
+MICRO = apply(df.data[,lis.paletti$tre], 1,
+function(x) sum(x, na.rm=TRUE))
+)
 require(compositions)
 
 ###############################
@@ -1705,39 +1703,39 @@ require(compositions)
 ###############################
 
 getModelMatrix <- function(object,
-                           newdata=NULL,
-                           na.action=na.pass) {
-    if( is.null(newdata) )
-        return(model.matrix(object))
-    Terms <- delete.response(terms(object))
-    mf <- model.frame(Terms,newdata,na.action=na.action,
-                      xlev = object$xlevels)
-    if (!is.null(cl <- attr(Terms, "dataClasses")))
-        .checkMFClasses(cl, mf)
-    model.matrix(Terms, mf, contrasts.arg = object$contrasts)
+newdata=NULL,
+na.action=na.pass) {
+  if( is.null(newdata) )
+  return(model.matrix(object))
+  Terms <- delete.response(terms(object))
+  mf <- model.frame(Terms,newdata,na.action=na.action,
+  xlev = object$xlevels)
+  if (!is.null(cl <- attr(Terms, "dataClasses")))
+  .checkMFClasses(cl, mf)
+  model.matrix(Terms, mf, contrasts.arg = object$contrasts)
 }
 lis.paletti <-
-    list(uno=which(diametri > vec.paletti[1])+18,
-         due=which(diametri < vec.paletti[1] & diametri > vec.paletti[2] )+18,
-         tre=which(diametri < vec.paletti[2])+18
-         )
+list(uno=which(diametri > vec.paletti[1])+18,
+due=which(diametri < vec.paletti[1] & diametri > vec.paletti[2] )+18,
+tre=which(diametri < vec.paletti[2])+18
+)
 df.tessitura <-
-    data.frame(df.data[,c(1:13,18,120)],
-               MACRO = apply(df.data[,lis.paletti$uno], 1,
-                             function(x) sum(x, na.rm=TRUE)),
-               MESO = apply(df.data[,lis.paletti$due], 1,
-                            function(x) sum(x, na.rm=TRUE)),
-               MICRO = apply(df.data[,lis.paletti$tre], 1,
-                             function(x) sum(x, na.rm=TRUE))
-               )
+data.frame(df.data[,c(1:13,18,120)],
+MACRO = apply(df.data[,lis.paletti$uno], 1,
+function(x) sum(x, na.rm=TRUE)),
+MESO = apply(df.data[,lis.paletti$due], 1,
+function(x) sum(x, na.rm=TRUE)),
+MICRO = apply(df.data[,lis.paletti$tre], 1,
+function(x) sum(x, na.rm=TRUE))
+)
 
 questi <-
-    with(df.tessitura, which(HUMIDITY=="wet"))
+with(df.tessitura, which(HUMIDITY=="wet"))
 df.plot <- df.tessitura[questi,]
 Y.Msizer1 <-
-    acomp(df.plot[, 16:18])
+acomp(df.plot[, 16:18])
 lm.2 <-
-    with(df.plot, lm(ilr(Y.Msizer1) ~ COND+TIME2+I(TIME2^2)))
+with(df.plot, lm(ilr(Y.Msizer1) ~ COND+TIME2+I(TIME2^2)))
 
 @
 
@@ -1747,11 +1745,11 @@ lm.2 <-
 
 %% \migliora{ref aitchinson, analisi of compositional data, buccianti e
 
-%%    egozcue mettere nella discussione come mai si usano i composizionali
+%% egozcue mettere nella discussione come mai si usano i composizionali
 
-%%    mettere nei matmet il modello usato mettere 10 alla meno 3 nella tabella 3.7
+%% mettere nei matmet il modello usato mettere 10 alla meno 3 nella tabella 3.7
 
-%%    didascalia estesa in figura 3.4}
+%% didascalia estesa in figura 3.4}
 
 
 Per la costruzione dei modelli sono stati esclusi i trattamenti
@@ -1771,11 +1769,13 @@ modelli \`e possibile vedere che pendenza e curvatura sono comuni
 per entrambi i trattamenti.
 
 I secchi generano, come atteso, particelle più grandi in seguito allo
-slacking. Risulta che gli aggregati provenienti da appezzamenti
+slacking. 
+
+Sia dalle analisi su gli aggregati secchi che da quelle su gli
+aggregati umidi, risulta che gli aggregati provenienti da appezzamenti
 condotti convenzionalmente, non appena vengono lasciati cadere in
 acqua, si disgregano generando particelle più grosse di quanto non
-facciano gli aggregati "biologici". E questo avviene sia con aggregati
-umidi che secchi.
+facciano gli aggregati "biologici".
 
 Siccome le particelle inizialmente liberate sono anch'esse mantenute
 insieme da cementi che vengono distrutti in seguito, possiamo
@@ -1799,19 +1799,19 @@ plot(Y.Msizer1, cex=0.15, col=df.plot$COND, axes = TRUE, plotMissings = FALSE)
 ## plot(acomp(c(5, 55 ,40)), pch = 20, cex = 2, add = TRUE, col = 3)
 on.ultra.off <- c(0, 11, 23)
 CO <- round(matrix(coefs[1,] +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     ncol = 3, byrow = FALSE), 3)
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
+ncol = 3, byrow = FALSE), 3)
 OO <- round(matrix(acomp(coefs[1,]) +
-                   acomp(coefs[2,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     ncol = 3, byrow = FALSE), 3)
+acomp(coefs[2,]) +
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
+ncol = 3, byrow = FALSE), 3)
 dati.iufd <- rbind(CO*100, OO*100)
 #i = inizio, u = accension ultrasuoni, f = fine d = dry/w = wet
 Conduzione <-
-    c("Convenzionale"," ", " ",
-      "Biologico "," "," ")
+c("Convenzionale"," ", " ",
+"Biologico "," "," ")
 Fase <- rep(c("misura","inizio sonicatura", "fine misura"),2)
 colnames(dati.iufd) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufd <- cbind(Conduzione, Fase, dati.iufd)
@@ -1821,44 +1821,44 @@ df.iufd <- rbind(df.iufd[1:3,], "", df.iufd[4:6,])
 
 ## banda.predizione <- FALSE
 ## for(i in 1:2){
-##     for(k in 0:23){
-##         newdata <-
-##             list(COND = levels(df.plot$COND)[i],
-##                  TIME2 = k)
-##         X <- getModelMatrix(modello,newdata)
-##         prediction <- ilrInv(predict(modello,newdata=newdata),orig=Y)
-##         varEpsilon = var(modello)
-##         XX <- kronecker(diag(ncol(predict(modello))),X)
-##         estVar <- XX %*% vcov(modello) %*% t(XX)
-##         predVar <- estVar+varEpsilon
-##         plot(prediction,  add=TRUE, col= i, type= "b")
-##         ## ellipses(prediction,ilrvar2clr(estVar),
-##         ##          r=ConfRadius(modello,1-alpha), col=i)
-##         if(banda.predizione)
-##             ellipses(prediction,ilrvar2clr(predVar),
-##                      r=ConfRadius(modello,1-alpha), col=i)
-##     }
-## }
+  ##     for(k in 0:23){
+    ##         newdata <-
+    ##             list(COND = levels(df.plot$COND)[i],
+    ##                  TIME2 = k)
+    ##         X <- getModelMatrix(modello,newdata)
+    ##         prediction <- ilrInv(predict(modello,newdata=newdata),orig=Y)
+    ##         varEpsilon = var(modello)
+    ##         XX <- kronecker(diag(ncol(predict(modello))),X)
+    ##         estVar <- XX %*% vcov(modello) %*% t(XX)
+    ##         predVar <- estVar+varEpsilon
+    ##         plot(prediction,  add=TRUE, col= i, type= "b")
+    ##         ## ellipses(prediction,ilrvar2clr(estVar),
+    ##         ##          r=ConfRadius(modello,1-alpha), col=i)
+    ##         if(banda.predizione)
+    ##             ellipses(prediction,ilrvar2clr(predVar),
+    ##                      r=ConfRadius(modello,1-alpha), col=i)
+    ##     }
+  ## }
 
 plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*0:23 +
-     acomp(coefs[4,])*(0:23)^2,
-     col=1,  type="l", add=TRUE)## sequenza temporale CO
+acomp(coefs[3,])*0:23 +
+acomp(coefs[4,])*(0:23)^2,
+col=1,  type="l", add=TRUE)## sequenza temporale CO
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*0:23+
-     acomp(coefs[4,])*(0:23)^2,
-     col=2, add=TRUE, type="l")## sequenza temporale OO
+acomp(coefs[3,])*0:23+
+acomp(coefs[4,])*(0:23)^2,
+col=2, add=TRUE, type="l")## sequenza temporale OO
 plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "D","C"))## start stop CO
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
+col=1, add=TRUE, pch=c("c", "D","C"))## start stop CO
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=2, add=TRUE, pch= c("o","D","O"))## start stop OO
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
+col=2, add=TRUE, pch= c("o","D","O"))## start stop OO
 
 questi <-
-    with(df.tessitura, which(HUMIDITY=="dry"))
+with(df.tessitura, which(HUMIDITY=="dry"))
 df.plot <- df.tessitura[questi,]
 Y.Msizer <- acomp(df.plot[, 16:18])
 lm.2.2 <-   with(df.plot,lm(ilr(Y.Msizer) ~ COND+TIME2+I(TIME2^2)))
@@ -1866,20 +1866,20 @@ modelloMsizer <- lm.2.2
 coefs <-  ilrInv(coef(modelloMsizer), orig=Y.Msizer)
 ##############################################################
 CO <- round(matrix(coefs[1,] +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     ncol = 3, byrow = FALSE), 3)
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
+ncol = 3, byrow = FALSE), 3)
 OO <- round(matrix(acomp(coefs[1,]) +
-                   acomp(coefs[2,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     ncol = 3, byrow = FALSE), 3)
+acomp(coefs[2,]) +
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
+ncol = 3, byrow = FALSE), 3)
 dati.iufw <- rbind(CO*100, OO*100)
 #i = inizio, u = accension ultrasuoni, f = fine d = dry/w = wet
 rm(CO);rm(OO)
 Conduzione <-
-    c("Convenzionale"," ", " ",
-      "Biologico "," "," ")
+c("Convenzionale"," ", " ",
+"Biologico "," "," ")
 Fase <- rep(c("inizio misura","inizio sonicatura", "fine misura"),2)
 colnames(dati.iufw) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufw <- cbind(Conduzione, Fase, dati.iufw)
@@ -1887,70 +1887,70 @@ df.iufw <- rbind(df.iufw[1:3,], "", df.iufw[4:6,])
 
 plot(Y.Msizer, cex=0.25, col= as.numeric(df.plot$COND)+2, add=TRUE)
 plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*0:23 +
-     acomp(coefs[4,])*(0:23)^2,
-     col=3,  type="l", add=TRUE)## sequenza temporale CO
+acomp(coefs[3,])*0:23 +
+acomp(coefs[4,])*(0:23)^2,
+col=3,  type="l", add=TRUE)## sequenza temporale CO
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*0:23+
-     acomp(coefs[4,])*(0:23)^2,
-     col=4, add=TRUE, type="l")## sequenza temporale OO
+acomp(coefs[3,])*0:23+
+acomp(coefs[4,])*(0:23)^2,
+col=4, add=TRUE, type="l")## sequenza temporale OO
 plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
+col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
+col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
 ## for(i in 1:2){
-##     for(k in 0:23){
-##         newdata <-
-##             list(COND = levels(df.plot$COND)[i],
-##                  TIME2 = k)
-##         X <- getModelMatrix(modello,newdata)
-##         prediction <- ilrInv(predict(modello,newdata=newdata),orig=Y)
-##         varEpsilon = var(modello)
-##         XX <- kronecker(diag(ncol(predict(modello))),X)
-##         estVar <- XX %*% vcov(modello) %*% t(XX)
-##         predVar <- estVar+varEpsilon
-##         plot(prediction,  add=TRUE, col= i, type= "b")
-##         ## ellipses(prediction,ilrvar2clr(estVar),
-##         ##          r=ConfRadius(modello,1-alpha), col=i)
-##         if(banda.predizione)
-##             ellipses(prediction,ilrvar2clr(predVar),
-##                      r=ConfRadius(modello,1-alpha), col=i)
-##     }
-## }
+  ##     for(k in 0:23){
+    ##         newdata <-
+    ##             list(COND = levels(df.plot$COND)[i],
+    ##                  TIME2 = k)
+    ##         X <- getModelMatrix(modello,newdata)
+    ##         prediction <- ilrInv(predict(modello,newdata=newdata),orig=Y)
+    ##         varEpsilon = var(modello)
+    ##         XX <- kronecker(diag(ncol(predict(modello))),X)
+    ##         estVar <- XX %*% vcov(modello) %*% t(XX)
+    ##         predVar <- estVar+varEpsilon
+    ##         plot(prediction,  add=TRUE, col= i, type= "b")
+    ##         ## ellipses(prediction,ilrvar2clr(estVar),
+    ##         ##          r=ConfRadius(modello,1-alpha), col=i)
+    ##         if(banda.predizione)
+    ##             ellipses(prediction,ilrvar2clr(predVar),
+    ##                      r=ConfRadius(modello,1-alpha), col=i)
+    ##     }
+  ## }
 legend("topleft",
-       c("Dry.CO", "Dry.OO", "CO.Wet", "OO.Wet"),
-       fill=1:4)
+c("Dry.CO", "Dry.OO", "CO.Wet", "OO.Wet"),
+fill=1:4)
 @
 
 
 <<IUFW, echo=FALSE, eval=TRUE, results=tex>>=
 xt.IUFW <- xtable(df.iufw,
-       label = 'tab:iufw', digits = 1,
-       caption = 'Evoluzione della distribuzione granulometrica
-                  delle particelle liberatisi dagli aggregati
-                  precedentemente inumiditi in seguito a:
-                  i) inizio misura (immersione):
-                  ii) inizio sonicatura
-                  iii) fine ciclo '
-       )
+label = 'tab:iufw', digits = 1,
+caption = 'Evoluzione della distribuzione granulometrica
+delle particelle liberatisi dagli aggregati
+precedentemente inumiditi in seguito a:
+i) inizio misura (immersione):
+ii) inizio sonicatura
+iii) fine ciclo '
+)
 print(xt.IUFW,include.rownames=FALSE,caption.placement = "top")
 @
 
 
 <<IUFD, echo=FALSE, eval=TRUE, results=tex>>=
 xt.IUFD <- xtable(df.iufd,
-       label = 'tab:iufd', digits = 1,
-       caption = 'Evoluzione della distribuzione granulometrica
-                  delle particelle liberatisi dagli aggregati
-                  secchi in aria in seguito a:
-                  i) inizio misura (immersione):
-                  ii) inizio sonicatura
-                  iii) fine ciclo '
-       )
+label = 'tab:iufd', digits = 1,
+caption = 'Evoluzione della distribuzione granulometrica
+delle particelle liberatisi dagli aggregati
+secchi in aria in seguito a:
+i) inizio misura (immersione):
+ii) inizio sonicatura
+iii) fine ciclo '
+)
 print(xt.IUFD, include.rownames=FALSE,caption.placement = "top")
 @
 
@@ -1958,9 +1958,9 @@ print(xt.IUFD, include.rownames=FALSE,caption.placement = "top")
 anova.comp.wet <- anova(lm.2)
 rownames(anova.comp.wet) <- c("Intercetta","Conduzione", "Tempo", "Tempo^2","Residui")
 anova_tabella <- xtable(anova.comp.wet,
-       label = 'tab:anova_compWET', align = 'rrrrrrr',
-       caption = 'anova stabilit\\`a aggregati per i dati WET '
-       )
+label = 'tab:anova_compWET', align = 'rrrrrrr',
+caption = 'anova stabilit\\`a aggregati per i dati WET '
+)
 print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 @
 
@@ -1970,9 +1970,9 @@ print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 anova.comp.dry <- anova(lm.2.2)
 rownames(anova.comp.dry) <- c("Intercetta","Conduzione","Tempo", "Tempo^2","Residui")
 anova_tabella_dry<- xtable(anova.comp.dry,
-       label = 'tab:anova_compWET', align = 'rrrrrrr',
-       caption = 'Aggregati per i dati DRY '
-       )
+label = 'tab:anova_compWET', align = 'rrrrrrr',
+caption = 'Aggregati per i dati DRY '
+)
 print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRUE)
 @
 
@@ -1985,16 +1985,16 @@ print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRU
 <<plotacompWETDRY>>
 @
 
-\caption[Evoluzione della distribuzione granulometrica delle
-particelle in seguito alla distruzione degli aggregati]{Evoluzione
-  della distribuzione granulometrica delle particelle liberatisi in
-  seguito a: \newline i) inizio misura (immersione, punti indicati
-  dalle lettere minuscole \emph{c} e \emph{o}) \newline ii) accensione
-  sonicatore (lettere \emph{W} e \emph{D}) \newline iii) fine ciclo.
-  \newline Gli apici del triangolo rappresentano particelle maggiori
-  di \Sexpr{vec.paletti[1]} (MACRO), comprese tra
-  \Sexpr{vec.paletti[1]} e \Sexpr{vec.paletti[2]} (MESO) e inferiori a
-  \SI{\Sexpr{vec.paletti[2]}}{\micro\metre}}
+  \caption[Evoluzione della distribuzione granulometrica delle
+  particelle in seguito alla distruzione degli aggregati]{Evoluzione
+    della distribuzione granulometrica delle particelle liberatisi in
+    seguito a: \newline i) inizio misura (immersione, punti indicati
+    dalle lettere minuscole \emph{c} e \emph{o}) \newline ii) accensione
+    sonicatore (lettere \emph{W} e \emph{D}) \newline iii) fine ciclo.
+    \newline Gli apici del triangolo rappresentano particelle maggiori
+    di \Sexpr{vec.paletti[1]} (MACRO), comprese tra
+    \Sexpr{vec.paletti[1]} e \Sexpr{vec.paletti[2]} (MESO) e inferiori a
+    \SI{\Sexpr{vec.paletti[2]}}{\micro\metre}}
 \end{figure}
 
 
@@ -2013,54 +2013,54 @@ qqnorm(ilrInv(resid(modelloMsizer), orig=Y.Msizer))
 # ## Si importano i soli file "CSV" MAIUSCOLI, che derivano dalla manipolazione dei dati grezzi della porosimetria
 vec.paletti.poro <- c(0.05, 0.1) 
 ## if(PoroElabora){
-##    source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
-##     }else{
-##         NULL}
+  ##    source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
+  ##     }else{
+  ##         NULL}
 
 Export.Dir <-
-    file.path(DirMain, "dati_elaborati/porosimetria")
+file.path(DirMain, "dati_elaborati/porosimetria")
 nomi.file.elab <- 
-    list.files(Export.Dir, pattern = ".CSV")
+list.files(Export.Dir, pattern = ".CSV")
 
 df.data <- data.frame()
 
 for(i in 1:length(nomi.file.elab)){
-    file.in.elaborazione <-
-        nomi.file.elab[i]
-    path.completo <-
-        file.path(Export.Dir,file.in.elaborazione)
-    df.this <-
-        read.table(file=path.completo,
-                   sep=";", dec=",", header=TRUE,
-                   fileEncoding =  "UTF-16LE")[-4,]
-    df.this$MAN <- substr(file.in.elaborazione, 3,3)
-    df.this$FIELD <-  substr(file.in.elaborazione, 4,5 )
-    df.this$TIL <-  substr(file.in.elaborazione, 6,6)
-    df.this$ROW <-  substr(file.in.elaborazione, 7,7)
-    df.this$REP <-  substr(file.in.elaborazione, 8,8)
-    df.this$REPPORO <-  substr(file.in.elaborazione, 10,10)
-    df.data <- rbind.data.frame(df.data, df.this)
+  file.in.elaborazione <-
+  nomi.file.elab[i]
+  path.completo <-
+  file.path(Export.Dir,file.in.elaborazione)
+  df.this <-
+  read.table(file=path.completo,
+  sep=";", dec=",", header=TRUE,
+  fileEncoding =  "UTF-16LE")[-4,]
+  df.this$MAN <- substr(file.in.elaborazione, 3,3)
+  df.this$FIELD <-  substr(file.in.elaborazione, 4,5 )
+  df.this$TIL <-  substr(file.in.elaborazione, 6,6)
+  df.this$ROW <-  substr(file.in.elaborazione, 7,7)
+  df.this$REP <-  substr(file.in.elaborazione, 8,8)
+  df.this$REPPORO <-  substr(file.in.elaborazione, 10,10)
+  df.data <- rbind.data.frame(df.data, df.this)
 }
 
 df.data <- 
-    df.data[c(2,3,13:18)]
- 
+df.data[c(2,3,13:18)]
+
 df.data <-
-    cbind.data.frame(df.data[c(T,F,F),-(1:2)],
-                     matrix(df.data[,1], ncol=3, byrow=TRUE)
-                     )        
+cbind.data.frame(df.data[c(T,F,F),-(1:2)],
+matrix(df.data[,1], ncol=3, byrow=TRUE)
+)        
 
 names(df.data)[7:9] <-
-    c("micropori", "mesopori", "macropori")
+c("micropori", "mesopori", "macropori")
 require(compositions)
 row.names(df.data) <- 1:dim(df.data)[1]
 PESI <- read.table(file.path(DirElab, "pesoaggre.csv"), sep = ";")$x
 
 df.data <- data.frame(
-    df.data[,1:6],
-    MICRO = (df.data[,7]-df.data[,8])/PESI, 
-    MESO = (df.data[,8]-df.data[,9])/PESI, 
-    MACRO = df.data[,9]/PESI
+df.data[,1:6],
+MICRO = (df.data[,7]-df.data[,8])/PESI, 
+MESO = (df.data[,8]-df.data[,9])/PESI, 
+MACRO = df.data[,9]/PESI
 #    TOT = df.data[,7]/PESI
 )
 
@@ -2087,11 +2087,11 @@ df.data <- data.frame(
 
 
 df.porosimetria <-
-    df.data[-c(3,6,11,10),]
+df.data[-c(3,6,11,10),]
 
 Y <- acomp(df.porosimetria[, 7:9])
 modelloPoro <-
-    with(df.porosimetria, lm(ilr(Y) ~ MAN+TIL))
+with(df.porosimetria, lm(ilr(Y) ~ MAN+TIL))
 coefs.Poro <-  ilrInv(coef(modelloPoro), orig=Y)
 alpha <- 0.05
 ##df.data$TOT <- rowSums(df.data[,7:8])
@@ -2122,32 +2122,32 @@ maggiori di \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre}
 <<label = plotacompPore, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
 plot(Y, cex=0.15, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
 intercetta <-
-    ilrInv(coef(modelloPoro)[1,], orig=Y)
+ilrInv(coef(modelloPoro)[1,], orig=Y)
 bi <-
-    ilrInv(rbind(0, coef(modelloPoro)[-1,]), orig=Y)
+ilrInv(rbind(0, coef(modelloPoro)[-1,]), orig=Y)
 medie <- intercetta+acomp(bi)
 plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
 
 @
 
-%\noindent%
-%\begin{minipage}{\linewidth}% to keep image and caption on one page
-%\makebox[\linewidth]{%        to center the image
+% \noindent%
+% \begin{minipage}{\linewidth}% to keep image and caption on one page
+%   \makebox[\linewidth]{%        to center the image
 \begin{figure}[ht]
-   \centering
+  \centering
 <<label = figurina, fig=TRUE, echo=FALSE, width=4.5, height=4.5>>=
 <<plotacompPore>>
 @
-\caption[didascalia corta]{Diagramma ternario della distribuzione dei
-  pori. Gli apici del triangolo rappresentano le classi dimensionali
-  in cui le particelle sono divise in: inferiori di
-  \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
-  \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori)
-  e superiori di \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre}
-  (micropori)}
-\label{fig:Poros_triangolo}
+  \caption[didascalia corta]{Diagramma ternario della distribuzione dei
+    pori. Gli apici del triangolo rappresentano le classi dimensionali
+    in cui le particelle sono divise in: inferiori di
+    \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
+    \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori)
+    e superiori di \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre}
+    (micropori)}
+  \label{fig:Poros_triangolo}
 \end{figure}
-%\end{minipage}
+% \end{minipage}
 
 La tabella ANOVA \ref{tab:poros_anova}, conferma l'analisi visuale:
 all'interno dei trattamenti non sono presenti differenze
@@ -2155,10 +2155,10 @@ statisticamente significative.
 
 <<summary_pori, eval = TRUE, echo = FALSE, results = tex>>=
 sommario <- 
-    aggregate(Y, by = list(Conduzione = df.porosimetria$MAN, 
-                       Lavorazione = df.porosimetria$TIL), 
-              function(x) round(mean(x),2)
-              )
+aggregate(Y, by = list(Conduzione = df.porosimetria$MAN, 
+Lavorazione = df.porosimetria$TIL), 
+function(x) round(mean(x),2)
+)
 attach(sommario)
 sommario <- sommario[order(Conduzione, Lavorazione),]
 detach(sommario)
@@ -2166,17 +2166,17 @@ sommario$Conduzione <- c("Co","","", "Or", "", "")
 sommario$Lavorazione <- c("Ara", "Rip", "Fzo", "Ara", "Rip", "Fzo")
 
 tabella_sommario <- 
-    xtable(sommario,
-           caption = "t-table modello porosit\\`a", label = 'tab:Poro_medie', align = "llcccc")
+xtable(sommario,
+caption = "t-table modello porosit\\`a", label = 'tab:Poro_medie', align = "llcccc")
 print(tabella_sommario, include.rownames=FALSE,
-      caption.placement = "top",
-      table.placement= "hb")
+caption.placement = "top",
+table.placement= "hb")
 anova.poros <- anova(modelloPoro)
 rownames(anova.poros) <- c("Intercetta","Conduzione", "Lavorazione","Residui")
 anova_tabella <- xtable(anova.poros,
-       label = 'tab:poros_anova', align = 'rrrrrrr',
-       caption = 'ANOVA per i dati di porosimetria '
-       )
+label = 'tab:poros_anova', align = 'rrrrrrr',
+caption = 'ANOVA per i dati di porosimetria '
+)
 print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
 
@@ -2189,13 +2189,13 @@ porosit\`a totale del campione, normalizzato al suo peso.
 
 <<pori_totali, eval = TRUE, echo = FALSE, results = tex>>=
 lm.totale <- 
-    lm(MICRO+MACRO+MESO ~ MAN, data = df.data)
+lm(MICRO+MACRO+MESO ~ MAN, data = df.data)
 anova.totale <- 
-    anova(lm.totale)
+anova(lm.totale)
 anova_tabellaTot <- xtable(anova.totale,
-       label = 'tab:tot_anova', align = 'lrrrrr',
-       caption = 'ANOVA per i dati di porosit\\`a totale'
-       )
+label = 'tab:tot_anova', align = 'lrrrrr',
+caption = 'ANOVA per i dati di porosit\\`a totale'
+)
 print(anova_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
 
@@ -2211,11 +2211,11 @@ porosit\`a nei campioni di suolo Biologico.
 
 <<sommario_totali, eval = TRUE, echo = FALSE, results = tex>>=
 sommario.totale <- 
-    summary(lm.totale)
+summary(lm.totale)
 sommario_tabellaTot <- xtable(sommario.totale,
-       label = 'tab:tot_sommario', align = 'lrrrr',
-       caption = 'T-table del modello con porosit\\`a totale'
-       )
+label = 'tab:tot_sommario', align = 'lrrrr',
+caption = 'T-table del modello con porosit\\`a totale'
+)
 print(sommario_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
 
@@ -2225,22 +2225,22 @@ print(sommario_tabellaTot, caption.placement = "top")#, math.style.exponents = T
 nomi.file.elab <- list.files(Export.Dir, pattern = ".csv")
 df.rawdata <- data.frame()
 for(i in 1:length(nomi.file.elab)){
-    file.in.elaborazione <-
-        nomi.file.elab[i]
-    path.completo <-
-        file.path(Export.Dir,file.in.elaborazione)
-    df.this <-
-        read.table(file=path.completo,
-                   sep=";", dec=",", header=TRUE,
-                   fileEncoding =  "UTF-16LE")[,c(2:5)]
-    df.this$MAN <- substr(file.in.elaborazione, 3,3)
-    df.this$FIELD <-  substr(file.in.elaborazione, 4,5 )
-    df.this$TIL <-  substr(file.in.elaborazione, 6,6)
-    df.this$ROW <-  substr(file.in.elaborazione, 7,7)
-    df.this$REP <-  substr(file.in.elaborazione, 8,8)
-    df.this$REPPORO <-  substr(file.in.elaborazione, 10,10)
-    df.this$SUBJECT <-  substr(file.in.elaborazione, 3,10)
-    df.rawdata <- rbind.data.frame(df.rawdata, df.this)
+  file.in.elaborazione <-
+  nomi.file.elab[i]
+  path.completo <-
+  file.path(Export.Dir,file.in.elaborazione)
+  df.this <-
+  read.table(file=path.completo,
+  sep=";", dec=",", header=TRUE,
+  fileEncoding =  "UTF-16LE")[,c(2:5)]
+  df.this$MAN <- substr(file.in.elaborazione, 3,3)
+  df.this$FIELD <-  substr(file.in.elaborazione, 4,5 )
+  df.this$TIL <-  substr(file.in.elaborazione, 6,6)
+  df.this$ROW <-  substr(file.in.elaborazione, 7,7)
+  df.this$REP <-  substr(file.in.elaborazione, 8,8)
+  df.this$REPPORO <-  substr(file.in.elaborazione, 10,10)
+  df.this$SUBJECT <-  substr(file.in.elaborazione, 3,10)
+  df.rawdata <- rbind.data.frame(df.rawdata, df.this)
 }
 names(df.rawdata)[1] <- "Volume"
 require(lattice)
@@ -2250,36 +2250,36 @@ hist.media <- histogram( ~ Volume |MAN+TIL, data=df.rawdata)
 @
 
 % \begin{figure}[ht]
-%    \centering
-% <<label = istrogrammiPoro1, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
-% print(hist.esteso)
+%   \centering
+%   <<label = istrogrammiPoro1, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
+%   print(hist.esteso)
 
-% @
-% \caption[didascalia corta]{Distribuzione dei pori in ogni campione misurato
-%    }
-% \label{fig:Poros_hist}
+%   @
+%   \caption[didascalia corta]{Distribuzione dei pori in ogni campione misurato
+% }
+%   \label{fig:Poros_hist}
 % \end{figure}
 
 % \begin{figure}[ht]
-%    \centering
-% <<label = istogrammiPoro2, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
-% print(hist.media)
-% @
+%   \centering
+%   <<label = istogrammiPoro2, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
+%   print(hist.media)
+%   @
 
-% \caption[didascalia corta]{Distribuzione dei pori: media dei trattamenti}
-% \label{fig:Poros_hist}
+%   \caption[didascalia corta]{Distribuzione dei pori: media dei trattamenti}
+%   \label{fig:Poros_hist}
 % \end{figure}
 
-%%Essendo la statistica composizionale un tipo di analisi che li
+%% Essendo la statistica composizionale un tipo di analisi che li
 
-%%<<anova_tot, eval = TRUE, echo = FALSE, results = tex>>=
-%%tabella_PorTot <- 
-%%    xtable(anova.PorTot,
-%%           caption = "Tabella anova della porosit\\`a totale", label = 'tab:Poro_Tot', align = "llcccc")
-%%print(tabella_PorTot, include.rownames=FALSE,
-%%      caption.placement = "top",
-%%      table.placement= "hb")
-%%@ 
+%% <<anova_tot, eval = TRUE, echo = FALSE, results = tex>>=
+%% tabella_PorTot <- 
+%% xtable(anova.PorTot,
+%% caption = "Tabella anova della porosit\\`a totale", label = 'tab:Poro_Tot', align = "llcccc")
+%% print(tabella_PorTot, include.rownames=FALSE,
+%% caption.placement = "top",
+%% table.placement= "hb")
+%% @ 
 
 
 
@@ -2294,10 +2294,10 @@ hist.media <- histogram( ~ Volume |MAN+TIL, data=df.rawdata)
 
 Dai risultati della densit\`a apparente \`e emerso che:
 \begin{itemize}
-  \item la densit\`a apparente misurata tramite metodo \emph{Core},
-    non evidenzia differenze statisticamente significative tra i trattamenti;
-  \item la densit\`a apparente misurata tramite metodo \emph{Clod}
-    mostra differenze statisticamente significative tra i trattamenti.
+\item la densit\`a apparente misurata tramite metodo \emph{Core},
+  non evidenzia differenze statisticamente significative tra i trattamenti;
+\item la densit\`a apparente misurata tramite metodo \emph{Clod}
+  mostra differenze statisticamente significative tra i trattamenti.
 \end{itemize}
 
 Come si pu\`o notare confrontando la tabella \ref{tab:summaryCore} con
@@ -2370,219 +2370,330 @@ suolo non sono in grado di evidenziare differenze significative
   \item Il metodo \emph{Clod} mostra delle differenze per due
     combinazioni di trattamenti
   \end{itemize}
-\item Penetrometria \info[inline]{8rino Già troppa roba non ce la metterei} 
 \item Stabilità aggregati
-  \item Porosimetria
-    
+\item Porosimetria
+  
 \end{itemize}
-
-
-\chapter{Prospettive}
 
 
 
 \begin{appendices}
   \chapter{Calcolo della concentrazione delle componenti
     granulometriche con Mastersizer 2000}
-Il Mastersizer 2000 si basa sul fenomeno della diffusione ottica (scattering), ovvero
-\emph{un'ampia classe di fenomeni di interazione radiazione-materia
-  in cui onde o particelle vengono deflesse ovvero cambiano
-  traiettoria) a seconda della collisione con altre particelle o onde
-  (dal punto di vista quantistico) in maniera disordinata e in buona
-  maniera casuale} \citep{scattering}.
+  Il Mastersizer 2000 si basa sul fenomeno della diffusione ottica (scattering), ovvero
+  \emph{un'ampia classe di fenomeni di interazione radiazione-materia
+    in cui onde o particelle vengono deflesse ovvero cambiano
+    traiettoria) a seconda della collisione con altre particelle o onde
+    (dal punto di vista quantistico) in maniera disordinata e in buona
+    maniera casuale} \citep{scattering}.
 
-Le equazioni che descrivono lo scattering sono molto complesse; nel
-caso in cui le particelle abbiano dimensione maggiore della lunghezza
-d'onda della radiazione luminosa incidente, esiste (assumendo la
-perfetta sfericit\`a delle particelle) una soluzione matematicamente
-rigorosa, detta \emph{Soluzione di Mie}.
+  Le equazioni che descrivono lo scattering sono molto complesse; nel
+  caso in cui le particelle abbiano dimensione maggiore della lunghezza
+  d'onda della radiazione luminosa incidente, esiste (assumendo la
+  perfetta sfericit\`a delle particelle) una soluzione matematicamente
+  rigorosa, detta \emph{Soluzione di Mie}.
 
-\begin{figure}[ht]
-  \includegraphics[width=\textwidth]{../foto/Mie_scattering.jpeg}
-  \caption[Scattering di Mie]{In figura \`e rappresentato il fenomeno
-    dello scattering di Mie, presa da
-    \href{http://www.smart-piv.com/en/techniques/mie-rayleigh-raman/index.php}{questo
-      sito}}
-  \label{fig:Mie}
-\end{figure}
+  \begin{figure}[ht]
+    \includegraphics[width=\textwidth]{../foto/Mie_scattering.jpeg}
+    \caption[Scattering di Mie]{In figura \`e rappresentato il fenomeno
+      dello scattering di Mie, presa da
+      \url{http://www.smart-piv.com/en/techniques/mie-rayleigh-raman/index.php}}%{questo
+                                %sito}}
+    \label{fig:Mie}
+  \end{figure}
 
-Se la dimensione delle particelle e dettagli riguardanti la loro
-struttura sono noti, il modo in cui diffondono la luce pu\`o essere
-previsto accuratamente. Ogni dimensione della particella avr\`a il suo
-caratteristico pattern di diffusione che sar\`a diverso da quello di
-qualsiasi altra particella a diversa dimensione.
+  Se la dimensione delle particelle e dettagli riguardanti la loro
+  struttura sono noti, il modo in cui diffondono la luce pu\`o essere
+  previsto accuratamente. Ogni dimensione della particella avr\`a il suo
+  caratteristico pattern di diffusione che sar\`a diverso da quello di
+  qualsiasi altra particella a diversa dimensione.
 
-Facendo il ragionamento inverso \`e quindi possibile calcolare la
-dimensione delle particelle in base al pattern di diffusione.
+  Facendo il ragionamento inverso \`e quindi possibile calcolare la
+  dimensione delle particelle in base al pattern di diffusione.
 
-\begin{figure}[ht]
-  \includegraphics[width=\textwidth]{../foto/laser_diffraction.jpeg}
-  \caption[Schema di funzionamento del Mastersizer
-  2000]{Rappresentazione del funzionamento del Mastersizer 2000 presa
-    da:
-    \href{https://plus.google.com/communities/110676150876604729660/stream/ffa7f40a-1c65-4268-9121-bb88d63f0c41}{questo
-      sito}}
+  \begin{figure}[ht]
+    \includegraphics[width=\textwidth]{../foto/laser_diffraction.jpeg}
+    \caption[Schema di funzionamento del Mastersizer
+    2000]{Rappresentazione del funzionamento del Mastersizer 2000 presa
+      da:
+      %\href
+      \url{https://plus.google.com/communities/110676150876604729660/stream/ffa7f40a-1c65-4268-9121-bb88d63f0c41}}%{questo
+                                %sito}}
     \label{fig:MastersizerInt}
-\end{figure}
-Per calcolare la concentrazione del campione, il software utilizza la
-legge di \emph{Lambert-Beer}:
+  \end{figure}
+  Per calcolare la concentrazione del campione, il software utilizza la
+  legge di \emph{Lambert-Beer}:
 
-\begin{equation}
-  \label{eq:BeerLambert}
-  \frac{I}{I_0}=e^{-\alpha b}
-\end{equation}
+  \begin{equation}
+    \label{eq:BeerLambert}
+    \frac{I}{I_0}=e^{-\alpha b}
+  \end{equation}
 
-dove:\\
-\begin{tabular}{rp{12cm}}
-  $I$            & è l'intensit\`a della luce a una distanza $b$ dal campo
-                   delle particelle di assorbanza $\alpha$\\
-  $I_0$          & è l'intensit\`a della radiazione luminosa all'ingresso
-                   del campo delle particelle \\
-  $\frac{I}{I_0}$ & è la trasmittanza T del raggio (misurata direttamente dallo strumento), ovvero, $I_0$ \`e
-                    l'intensit\`a del laser quando
-                    nessun campione \`e presente e $I$ \`e l'intensit\`a con il
-                    campione presente.
-\end{tabular}
+  dove:\\
+  \begin{tabular}{rp{12cm}}
+    $I$            & è l'intensit\`a della luce a una distanza $b$ dal campo
+                     delle particelle di assorbanza $\alpha$\\
+    $I_0$          & è l'intensit\`a della radiazione luminosa all'ingresso
+                     del campo delle particelle \\
+    $\frac{I}{I_0}$ & è la trasmittanza T del raggio (misurata direttamente dallo strumento), ovvero, $I_0$ \`e
+                      l'intensit\`a del laser quando
+                      nessun campione \`e presente e $I$ \`e l'intensit\`a con il
+                      campione presente.
+  \end{tabular}
 
-Esprimendo la legge in termini di trasmittanza e ri-arrangiando:
+  Esprimendo la legge in termini di trasmittanza e ri-arrangiando:
 
-\begin{equation}
-  \alpha=\frac{-1}{b}Ln \langle T \rangle
-\end{equation}
+  \begin{equation}
+    \alpha=\frac{-1}{b}Ln \langle T \rangle
+  \end{equation}
 
-Il termine $\alpha$ contiene informazioni riguardo la concentrazione e
-la dimensione delle particelle.
+  Il termine $\alpha$ contiene informazioni riguardo la concentrazione e
+  la dimensione delle particelle.
 
-Dalla teoria dello scattering, la luce attenuata da una particella
-$i$ pu\`o essere descritta da:
+  Dalla teoria dello scattering, la luce attenuata da una particella
+  $i$ pu\`o essere descritta da:
 
-\begin{equation}
-  a_i=Q_i\pi r_i^2n_i
-  \label{eq:Msizer_Luce_Attenuata}
-\end{equation}
+  \begin{equation}
+    a_i=Q_i\pi r_i^2n_i
+    \label{eq:Msizer_Luce_Attenuata}
+  \end{equation}
 
-dove:\\
-\begin{tabular}{rp{12cm}}
-  $Q_i$& è l'efficienza dell'estinzione luminosa calcolata dalla
-         teoria Mie per una particella di raggio $r_i$\\
-       &Il secondo termine \`e l'area della sezione della particella
-         e il termine finale $n_i$ \`e il numero di particelle di raggio $r_i$
-\end{tabular}
+  dove:\\
+  \begin{tabular}{rp{12cm}}
+    $Q_i$& è l'efficienza dell'estinzione luminosa calcolata dalla
+           teoria Mie per una particella di raggio $r_i$\\
+         &Il secondo termine \`e l'area della sezione della particella
+           e il termine finale $n_i$ \`e il numero di particelle di raggio $r_i$
+  \end{tabular}
 
-In termini di volume delle particelle $V_i=\frac{4}{3}\pi r_i^3n_i$,
-l'equazione \ref{eq:Msizer_Luce_Attenuata} diventa, per un insieme di
-particelle:
+  In termini di volume delle particelle $V_i=\frac{4}{3}\pi r_i^3n_i$,
+  l'equazione \ref{eq:Msizer_Luce_Attenuata} diventa, per un insieme di
+  particelle:
 
-\begin{equation}
-  \alpha_i=\frac{3}{4} \sum \frac{Q_iV_i}{r_i}
-\end{equation}
+  \begin{equation}
+    \alpha_i=\frac{3}{4} \sum \frac{Q_iV_i}{r_i}
+  \end{equation}
 
-La dimensione delle particelle \`e espressa in base al diametro $d$ e
-il volume pu\`o essere separato in una distribuzione relativa dei
-volumi $v$ e in una concentrazione totale $C_v$ (volume totale delle
-particelle in una unit\`a di volume del disperdente). L'equazione
-quindi diventa:
+  La dimensione delle particelle \`e espressa in base al diametro $d$ e
+  il volume pu\`o essere separato in una distribuzione relativa dei
+  volumi $v$ e in una concentrazione totale $C_v$ (volume totale delle
+  particelle in una unit\`a di volume del disperdente). L'equazione
+  quindi diventa:
 
-\begin{equation}
-  \alpha_i=\frac{3}{2} \sum \frac{Q_iV_i}{d_i}
-\end{equation}
+  \begin{equation}
+    \alpha_i=\frac{3}{2} \sum \frac{Q_iV_i}{d_i}
+  \end{equation}
 
-Sostituendo con $\alpha$
+  Sostituendo con $\alpha$
 
-\begin{equation}
-  C_v=\frac{-2 Ln \langle T \rangle}{3b \sum \frac{Q_iv_i}{d_i}}
-\end{equation}
+  \begin{equation}
+    C_v=\frac{-2 Ln \langle T \rangle}{3b \sum \frac{Q_iv_i}{d_i}}
+  \end{equation}
 
-Se $d$ \`e espressa in $\mu$m e b in mm, allora $v$ \`e la
-concentrazione relativa della distribuzione del volume (in cui $\sum
-v_i=1$) allora:
+  Se $d$ \`e espressa in $\mu$m e b in mm, allora $v$ \`e la
+  concentrazione relativa della distribuzione del volume (in cui $\sum
+  v_i=1$) allora:
 
-\begin{equation}
-  \label{eq:Msizer_ppm}
-  C_v(ppm)=\frac{-2000 Ln \langle T \rangle}{3b \sum \frac{Q_iv_i}{d_i}}
-\end{equation}
+  \begin{equation}
+    \label{eq:Msizer_ppm}
+    C_v(ppm)=\frac{-2000 Ln \langle T \rangle}{3b \sum \frac{Q_iv_i}{d_i}}
+  \end{equation}
 
-Questa equazione ci fornisce la concentrazione delle particelle di
-dimensione $x_i$ in parti per milione
-(ppm). Per calcolare il valore della percentuale di concentrazione del
-volume, il valore finale deve essere diviso per 10000.
+  Questa equazione ci fornisce la concentrazione delle particelle di
+  dimensione $x_i$ in parti per milione
+  (ppm). Per calcolare il valore della percentuale di concentrazione del
+  volume, il valore finale deve essere diviso per 10000.
 
-Nell'equazione \ref{eq:Msizer_ppm}:
+  Nell'equazione \ref{eq:Msizer_ppm}:
 
-\begin{tabular}{rp{12cm}}
-  $\langle T \rangle$ &  Trasmittanza, \`e un valore compreso tra 0 e 1 ed \`e
-          misurato direttamente dallo strumento\\
-  $v_i$ & \`e la distribuzione di particelle, ovvero il volume relativo
-          nella classe dimensionale $i$ con diametro medio $d_i$\\
-  $Q_i$, & il coefficiente di estinzione medio per la classe
-           dimensionale $i$, \`e calcolato dalla teoria dello scattering, ed
-           \`e una funzione delle propriet\`a ottiche delle particelle e del
-           mezzo disperdente.
-\end{tabular}
+  \begin{tabular}{rp{12cm}}
+    $\langle T \rangle$ &  Trasmittanza, \`e un valore compreso tra 0 e 1 ed \`e
+                          misurato direttamente dallo strumento\\
+    $v_i$ & \`e la distribuzione di particelle, ovvero il volume relativo
+            nella classe dimensionale $i$ con diametro medio $d_i$\\
+    $Q_i$, & il coefficiente di estinzione medio per la classe
+             dimensionale $i$, \`e calcolato dalla teoria dello scattering, ed
+             \`e una funzione delle propriet\`a ottiche delle particelle e del
+             mezzo disperdente.
+  \end{tabular}
 
-\chapter{Funzionamento porosimetro ad intrusione di mercurio}
+  \chapter{Funzionamento porosimetria ad intrusione di mercurio}
 
-\chapter{Dati composizionali: cosa sono e come vengono analizzati
-  \citep{van2013analyzing}}
+  L'analisi della distribuzione dei pori nei campioni di suolo \`e
+  stata fatta mediante due porosimetri ad intrusione di mercurio: il
+  PASCAL 140 \citep{Pascal_140} per la misura della microporosit\`a e
+  il Porosimetro Carlo Erba 2000 series \citep{carli1989particle} per la misura della
+  macroporosit\`a.
 
-Tradizionalmente un dataset pu\`o essere definito composizionale se
-contiene porzioni di totale: percentuale di lavoratori in differenti
-settori, porzioni di elementi chimici in un minerale, tessitura di un
-suolo ecc.
+  Entrambi gli strumenti sono formati da tre macroblocchi:
+  \begin{enumerate}
+  \item un dilatometro, in cui vengono immessi i campioni pesati;
+  \item un sistema di pressurizzazione, che include una pompa peristaltica
+    per l'aria, un moltiplicatore di pressione e una autoclave;
+  \item un sistema di misura della capacit\`a e della pressione del
+    mercurio che viene intruso nel campione.
+  \end{enumerate}
 
-Le parti individuali delle composizioni sono chiamate
-\emph{componenti}. Ogni \emph{componente} ha una quota (in valori
+  La determinazione della dimensione dei pori mediante la tecnica a penetrazione
+  di mercurio, \`e basata sul comportamento dei liquidi non bagnanti nei
+  capillari. Un liquido non pu\`o spontaneamente entrare in un piccolo
+  poro che ha un angolo di contatto maggiore di \SI{90}{\degree} a causa
+  della tensione superficiale, comunque questa resistenza pu\`o essere
+  superata grazie a una pressione esterna.
+
+  La pressione richiesta \`e in funzione della dimensione dei pori, la
+  relazione tra la dimensione dei pori e la pressione esercitata quando
+  un poro viene considerato cilindrico \`e espresso dalla seguente relazione:
+
+  \begin{equation}
+    pr=2\sigma cos \theta
+    \label{eq:Washburn}
+  \end{equation}
+
+  \begin{tabular}{rp{12cm}}
+    $r$      &  \`e il raggio dei pori, espresso in \SI{}{\nano\meter}\\
+    $\sigma$ & \`e la tensione superficiale del mercurio, espressa in \SI{}{\meter \newton \per \meter \squared}\\
+    $\theta$ & \`e l'angolo di contatto, espresso in \SI{}{\degree}\\
+    $p$ &  \`e la pressione assoluta applicata, espressa in
+          \SI{}{\kilogram \per \centi \meter \squared}
+  \end{tabular}
+
+  La relazione \`e conosciuta come equazione di Washburn. Nonostante in
+  quasi tutte le sostanze porose i pori non siano cilindrici ma sferici,
+  questa euqazione \`e generalmente usata per calcolare la distribuzione
+  dei pori per la porosimetria a mercurio. 
+
+  L'equazione di Washburn \`e derivata dalla seguente considerazione:
+  \emph{in un capillare con una sezione circolare, la tensione
+    superficiale del liquido \`e esercitata nell'area di contatto in cui
+    la circonferenza del poro \`e superiore all'area di contatto.}
+
+  La forza $2\pi r \sigma$, \`e perpendicolare al piano della superficie
+  di contatto.
+
+  La forza che tende a spingere il liquido all'esterno del capillare \`e:
+  \begin{equation}
+    2\pi r \sigma_i cos \theta
+    \label{eq:forzaliqu}
+  \end{equation}
+
+  Contro questa forza, la pressione esterna che dovr\`a essere
+  esercitata sull'area della superficie di contatto sar\`a uguale a:
+
+  \begin{equation}
+    \pi r^2 p
+    \label{eq:forzacont}
+  \end{equation}
+
+  Quando l'equilibrio \`e raggiunto, queste due forze si equivalgono.
+  L'equazione \ref{eq:Washburn} espressa in funzione della pressione sar\`a:
+
+  \begin{equation}
+    r=\frac{2\sigma cos \theta}{p}
+    \label{eq:WashburnP}
+  \end{equation}
+
+  Sapendo le caratteristiche fisiche del mercurio (tensione superficiale
+  di \SI{480}{\meter \newton \per \meter \squared} e angolo di contatto
+  di \SI{143.1}{\degree}) e assumendo i pori come cilindrici, si ottiene
+  la seguente relazione:
+  \begin{equation}
+    r=7500/P
+    \label{eq:WashburnHg}
+  \end{equation}
+
+  dove:\\
+  \begin{tabular}{rp{12cm}}
+    $r$ &  \`e il raggio dei pori, espresso in \SI{}{\nano\meter}\\
+    $p$ &  \`e la pressione assoluta applicata, espressa in
+          \SI{}{\kilogram \per \centi \meter \squared}
+  \end{tabular}
+
+  Per i pori irregolari, il rapporto tra la sezione trasversale dei
+  pori (relativa alla pressione esercitata) e alla circonferenza dei
+  pori (relativa alla tensione superficiale) non \`e proporzionale al
+  raggio e dipende dalla forma del poro e l'equazione
+  \ref{eq:WashburnHg} dar\`a valori pi\`u bassi.
+  \subsection{misura del volume}
+  Il volume di mercurio penetrato corrisponde al volume del poro del
+  campione espresso in \SI{}{\mm \cubed}, ed \`e acquisito tramite un
+  sensore capacitivo, in cui una delle due armature \`e rappresentata
+  da un elettrodo tubulare esterno, fissato al dilatometro. Mentre la
+  seconda armatura \`e rappresentata dalla colonnina di mercurio
+  interna al dilatometro.
+  
+  Con gli incrementi di pressione e in presenza di penetrazione, la
+  colonna di mercurio diventera pi\`u bassa.
+  In questo modo sar\`a possibile calcolare il valore della capacit\`a
+  in funzione della penetrazione.
+  
+  Siccome il valore sar\`a influenzato anche dalla compressibilit\`a
+  del mercurio (e non solo dalla sua penetrazione) \`e necessario
+  effettuare una prova in bianco preliminare.
+
+
+  \chapter{Dati composizionali: cosa sono e come vengono analizzati}
+  In questa tesi sono state utilizzate tecniche di analisi dei dati
+  composizionali  \citep{van2013analyzing}.
+  
+  Tradizionalmente un dataset pu\`o essere definito composizionale se
+  contiene porzioni di totale: percentuale di lavoratori in differenti
+  settori, porzioni di elementi chimici in un minerale, tessitura di un
+  suolo ecc.
+
+  Le parti individuali delle composizioni sono chiamate
+  \emph{componenti}. Ogni \emph{componente} ha una quota (in valori
   assoluti o relativi), rappresentata dalla sua importanza sul totale.
 
-I metodi classici di analisi multivariata sono inapplicabili per i dati
-composizionali che richiedono, quindi, il loro set di metodi
-statistici e non dovrebbero essere trattati con metodi fatti per dati
-scalari \citep{aitchison1986statistical}.
+  I metodi classici di analisi multivariata sono inapplicabili per i dati
+  composizionali che richiedono, quindi, il loro set di metodi
+  statistici e non dovrebbero essere trattati con metodi fatti per dati
+  scalari \citep{aitchison1986statistical}.
 
-La caratteristica fondamentale dei dati composizionali \`e che non
-siamo interessati alla somma totale delle composizioni, questo accade
-per diverse ragioni:
-\begin{itemize}
+  La caratteristica fondamentale dei dati composizionali \`e che non
+  siamo interessati alla somma totale delle composizioni, questo accade
+  per diverse ragioni:
+  \begin{itemize}
   \item quando i dati composizionali sono misurati, possiamo
     influenzare il totale;
-   \item spesso il totale delle composizioni non \`e completo e non dà
-     la somma del totale "reale";
-   \item tipicamente, il totale non \`e comparabile tra le diverse
-     unit\`a statistiche.
-\end{itemize}
+  \item spesso il totale delle composizioni non \`e completo e non dà
+    la somma del totale "reale";
+  \item tipicamente, il totale non \`e comparabile tra le diverse
+    unit\`a statistiche.
+  \end{itemize}
 
-Una composizione \`e sempre formata da pi\`u subcomposizioni. E la
-stessa composizione di partenza \`e a sua volta una subcomposizione:
-infatti i dati composizionali non possono contenere ogni singola parte
-dell'unit\`a statistica analizzata.
+  Una composizione \`e sempre formata da pi\`u subcomposizioni. E la
+  stessa composizione di partenza \`e a sua volta una subcomposizione:
+  infatti i dati composizionali non possono contenere ogni singola parte
+  dell'unit\`a statistica analizzata.
 
-Nonostante ci\`o, l'analisi dei dati composizionali \`e eseguibile
-anche su dataset a cui mancano delle componenti irrilevanti, questa
-\`e chiamata 'coerenza subcomposizionale'
-\citep{aitchison1986statistical}.
+  Nonostante ci\`o, l'analisi dei dati composizionali \`e eseguibile
+  anche su dataset a cui mancano delle componenti irrilevanti, questa
+  \`e chiamata 'coerenza subcomposizionale'
+  \citep{aitchison1986statistical}.
 
-I dati composizionali vengono sempre trattati in una
-\emph{log-ratio-transformed scale}. Questo operazione porta a definire
-uno spazio vettoriale ristretto, contenuto nello spazio reale,
-denominato \emph{simplesso}.
+  I dati composizionali vengono sempre trattati in una
+  \emph{log-ratio-transformed scale}. Questo operazione porta a definire
+  uno spazio vettoriale ristretto, contenuto nello spazio reale,
+  denominato \emph{simplesso}.
 
-In questo spazio vettoriale possono essere applicate tutte le tecniche
-di statistica multivariata ai dati composizionali trasformati; i
-risultati verranno anti-trasformati in composizioni per poter essere
-interpretabili.
+  In questo spazio vettoriale possono essere applicate tutte le tecniche
+  di statistica multivariata ai dati composizionali trasformati; i
+  risultati verranno anti-trasformati in composizioni per poter essere
+  interpretabili.
 
 
 \chapter{Grafici dei residui dei modelli utilizzati per l'analisi dei
-  dati}
+    dati}
 
 \begin{figure}[ht]
-  \centering
+    \centering
 <<label = figkek, fig = TRUE, echo = FALSE>>=
 <<qqplotCampo>>
 @ 
 
-\caption{Plot del modello densit\`a con metodo \emph{Core}}
-\label{fig:qqplotCore}
+    \caption{Plot del modello densit\`a con metodo \emph{Core}}
+    \label{fig:qqplotCore}
 \end{figure}
 
 
@@ -2592,8 +2703,8 @@ interpretabili.
 <<qqplotPetrolio>>
 @ 
 
-\caption{Plot del modello densit\`a con metodo \emph{Clod}}
-\label{fig:qqplotClod}
+   \caption{Plot del modello densit\`a con metodo \emph{Clod}}
+   \label{fig:qqplotClod}
 \end{figure}
 
 
@@ -2602,42 +2713,41 @@ interpretabili.
 <<label=figboh4, fig=TRUE, echo=FALSE>>=
 <<qqplotAcomp>>
 @
-
-\caption{Grafico quantile-quantile per i residui del modello
-  composizionale per la stabilità degli aggregati}
+  \caption{Grafico quantile-quantile per i residui del modello
+    composizionale per la stabilità degli aggregati}
   \label{fig:qqplot_dinamica_aggregati}
 \end{figure}
 
 
- 
+  
 <<label = qqplotpori, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
-qqnorm(ilrInv(resid(modelloPoro), orig=Y))
+ qqnorm(ilrInv(resid(modelloPoro), orig=Y))
 @ 
 
-\begin{figure}[ht]
+ \begin{figure}[ht]
   \centering
 <<label = figurina2, fig = TRUE, echo=FALSE>>=
 <<qqplotpori>>
 @
-\caption{Grafico quantile-quantile per i residui del modello
-  composizionale per i dati di porosimetria}
+  \caption{Grafico quantile-quantile per i residui del modello
+    composizionale per i dati di porosimetria}
   \label{fig:qqplot_porosimetria}
 \end{figure}
 
-%%<<label = qqplotPorTot, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
-%%qqnorm(resid(lm.totale), orig=Y)
-%%qqline(resid(lm.totale))
-%%@ 
+  %% <<label = qqplotPorTot, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+  %% qqnorm(resid(lm.totale), orig=Y)
+  %% qqline(resid(lm.totale))
+  %% @ 
 
-%%\begin{figure}[ht]
-%%  \centering
-%%<<label = figurina3, fig = TRUE, echo=FALSE>>=
-%%<<qqplotPorTot>>
-%%@
-%%\caption{Grafico quantile-quantile per i residui del modello
-%%  per i dati totali di porosimetria}
-%%  \label{fig:qqplot_PorTot}
-%%\end{figure}
+  %% \begin{figure}[ht]
+  %%   \centering
+  %%   <<label = figurina3, fig = TRUE, echo=FALSE>>=
+  %%   <<qqplotPorTot>>
+  %%   @
+  %%   \caption{Grafico quantile-quantile per i residui del modello
+  %%   per i dati totali di porosimetria}
+  %%   \label{fig:qqplot_PorTot}
+  %% \end{figure}
 
 
 \end{appendices}
@@ -2645,7 +2755,7 @@ qqnorm(ilrInv(resid(modelloPoro), orig=Y))
 \nonvisibile{Simo: pagina 143 Pantieri per sitografia}
 \listoffigures % non funziona con xtable
 \listoftables
-%\section*{\refname}
+% \section*{\refname}
 \printbibliography[nottype=misc]
 \printbibliography[heading=web,type=misc]
 \end{document}
