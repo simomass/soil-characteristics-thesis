@@ -44,7 +44,7 @@ DirTab <-
 ###################################################
 ### code chunk number 3: ImportDensCampo
 ###################################################
-oldpar <- par()
+#oldpar <- par()
 
 df.dueAnni <-
     read.table(file.path(DirElab, "df_dueanni.csv"),
@@ -118,17 +118,17 @@ lm.DensSign <-
 anova.dens <- anova(lm.Densita)
 rownames(anova.dens) <-     c("Anno", "Conduzione", "Lavorazione", "residui")
 ##%   c("Anno", "Management", "Tillage", "residui")
-tabella.anova.dens <-
-    xtable(anova.dens,
-           label = 'tab:anova del modello', align  = "rrrrrr",
-           caption = 'Tabella ANOVA per i valori di densità rilevati col metodo \\emph{Core}')
-print(tabella.anova.dens,
-      include.rownames=TRUE,
-      caption.placement = "top")
+## tabella.anova.dens <-
+##     xtable(anova.dens,
+##            label = 'tab:anova del modello', align  = "rrrrrr",
+##            caption = 'Tabella ANOVA per i valori di densità rilevati col metodo \\emph{Core}')
+## print(tabella.anova.dens,
+##       include.rownames=TRUE,
+##       caption.placement = "top")
 
 
-par(mfrow = c(2,2))
-plot(lm.Densita)
+##par(mfrow = c(2,2))
+##plot(lm.Densita)
 
 
 ###################################################
@@ -275,11 +275,11 @@ lm.2 <-
 ###################################################
 ### code chunk number 19: plotacompWETDRY
 ###################################################
-par(mfrow = c(1,1))
-modello <- lm.2
-coefs <-  ilrInv(coef(modello), orig = Y.Msizer1)
-alpha <- 0.05
-plot(Y.Msizer1, cex=0.15, col=df.plot$COND, axes = TRUE, plotMissings = FALSE)
+## par(mfrow = c(1,1))
+## modello <- lm.2
+## coefs <-  ilrInv(coef(modello), orig = Y.Msizer1)
+## alpha <- 0.05
+## plot(Y.Msizer1, cex=0.15, col=df.plot$COND, axes = TRUE, plotMissings = FALSE)
 ## macro meso micro
 ## plot(acomp(c(2,2,2)), pch = 20, cex = 2, add = TRUE, col = 1)
 ## plot(acomp(c(80,5,15)), pch = 20, cex = 2, add = TRUE, col = 2)
@@ -311,22 +311,22 @@ df.iufd <- rbind(df.iufd[1:3,], "", df.iufd[4:6,])
 
 
 
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*0:23 +
-     acomp(coefs[4,])*(0:23)^2,
-     col=1,  type="l", add=TRUE)## sequenza temporale CO
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*0:23+
-     acomp(coefs[4,])*(0:23)^2,
-     col=2, add=TRUE, type="l")## sequenza temporale OO
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "D","C"))## start stop CO
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=2, add=TRUE, pch= c("o","D","O"))## start stop OO
+## plot(acomp(coefs[1,]) +
+##      acomp(coefs[3,])*0:23 +
+##      acomp(coefs[4,])*(0:23)^2,
+##      col=1,  type="l", add=TRUE)## sequenza temporale CO
+## plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
+##      acomp(coefs[3,])*0:23+
+##      acomp(coefs[4,])*(0:23)^2,
+##      col=2, add=TRUE, type="l")## sequenza temporale OO
+## plot(acomp(coefs[1,]) +
+##      acomp(coefs[3,])*on.ultra.off +
+##      acomp(coefs[4,])*on.ultra.off^2,
+##      col=1, add=TRUE, pch=c("c", "D","C"))## start stop CO
+## plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
+##      acomp(coefs[3,])*on.ultra.off +
+##      acomp(coefs[4,])*on.ultra.off^2,
+##      col=2, add=TRUE, pch= c("o","D","O"))## start stop OO
 
 
 
@@ -358,26 +358,26 @@ colnames(dati.iufw) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufw <- cbind(Conduzione, Fase, dati.iufw)
 df.iufw <- rbind(df.iufw[1:3,], "", df.iufw[4:6,])
 
-plot(Y.Msizer, cex=0.25, col= as.numeric(df.plot$COND)+2, add=TRUE)
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*0:23 +
-     acomp(coefs[4,])*(0:23)^2,
-     col=3,  type="l", add=TRUE)## sequenza temporale CO
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*0:23+
-     acomp(coefs[4,])*(0:23)^2,
-     col=4, add=TRUE, type="l")## sequenza temporale OO
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
-legend("topleft",
-       c("Dry.CO", "Dry.OO", "CO.Wet", "OO.Wet"),
-       fill=1:4)
+## plot(Y.Msizer, cex=0.25, col= as.numeric(df.plot$COND)+2, add=TRUE)
+## plot(acomp(coefs[1,]) +
+##      acomp(coefs[3,])*0:23 +
+##      acomp(coefs[4,])*(0:23)^2,
+##      col=3,  type="l", add=TRUE)## sequenza temporale CO
+## plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
+##      acomp(coefs[3,])*0:23+
+##      acomp(coefs[4,])*(0:23)^2,
+##      col=4, add=TRUE, type="l")## sequenza temporale OO
+## plot(acomp(coefs[1,]) +
+##      acomp(coefs[3,])*on.ultra.off +
+##      acomp(coefs[4,])*on.ultra.off^2,
+##      col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
+## plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
+##      acomp(coefs[3,])*on.ultra.off +
+##      acomp(coefs[4,])*on.ultra.off^2,
+##      col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
+## legend("topleft",
+##        c("Dry.CO", "Dry.OO", "CO.Wet", "OO.Wet"),
+##        fill=1:4)
 
 
 
@@ -403,7 +403,7 @@ rownames(anova.comp.dry) <- c("Intercetta","Conduzione","Tempo", "Tempo^2","Resi
 modello <- lm.2
 coefs <-  ilrInv(coef(modello), orig = Y.Msizer1)
 alpha <- 0.05
-plot(Y.Msizer1, cex=0.15, col=df.plot$COND, axes = TRUE, plotMissings = FALSE, add = TRUE)
+##plot(Y.Msizer1, cex=0.15, col=df.plot$COND, axes = TRUE, plotMissings = FALSE, add = TRUE)
 on.ultra.off <- c(0, 11, 23)
 CO <- round(matrix(coefs[1,] +
                    acomp(coefs[3,])*on.ultra.off +
@@ -424,22 +424,22 @@ colnames(dati.iufd) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufd <- cbind(Conduzione, Fase, dati.iufd)
 df.iufd <- rbind(df.iufd[1:3,], "", df.iufd[4:6,])
 
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*0:23 +
-     acomp(coefs[4,])*(0:23)^2,
-     col=1,  type="l", add=TRUE)## sequenza temporale CO
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*0:23+
-     acomp(coefs[4,])*(0:23)^2,
-     col=2, add=TRUE, type="l")## sequenza temporale OO
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "D","C"))## start stop CO
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=2, add=TRUE, pch= c("o","D","O"))## start stop OO
+## plot(acomp(coefs[1,]) +
+##      acomp(coefs[3,])*0:23 +
+##      acomp(coefs[4,])*(0:23)^2,
+##      col=1,  type="l", add=TRUE)## sequenza temporale CO
+## plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
+##      acomp(coefs[3,])*0:23+
+##      acomp(coefs[4,])*(0:23)^2,
+##      col=2, add=TRUE, type="l")## sequenza temporale OO
+## plot(acomp(coefs[1,]) +
+##      acomp(coefs[3,])*on.ultra.off +
+##      acomp(coefs[4,])*on.ultra.off^2,
+##      col=1, add=TRUE, pch=c("c", "D","C"))## start stop CO
+## plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
+##      acomp(coefs[3,])*on.ultra.off +
+##      acomp(coefs[4,])*on.ultra.off^2,
+##      col=2, add=TRUE, pch= c("o","D","O"))## start stop OO
 
 questi <-
     with(df.tessitura, which(HUMIDITY=="dry"))
@@ -468,34 +468,34 @@ Fase <- rep(c("inizio misura","inizio sonicatura", "fine misura"),2)
 colnames(dati.iufw) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufw <- cbind(Conduzione, Fase, dati.iufw)
 df.iufw <- rbind(df.iufw[1:3,], "", df.iufw[4:6,])
-plot(1)
-plot(Y.Msizer, cex=0.25, col= as.numeric(df.plot$COND)+2, add=TRUE)
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*0:23 +
-     acomp(coefs[4,])*(0:23)^2,
-     col=3,  type="l", add=TRUE)## sequenza temporale CO
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*0:23+
-     acomp(coefs[4,])*(0:23)^2,
-     col=4, add=TRUE, type="l")## sequenza temporale OO
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
 
-legend("topleft",
-       c("Dry.CO", "Dry.OO", "CO.Wet", "OO.Wet"),
-       fill=1:4)
+## plot(Y.Msizer, cex=0.25, col= as.numeric(df.plot$COND)+2, add=TRUE)
+## plot(acomp(coefs[1,]) +
+##      acomp(coefs[3,])*0:23 +
+##      acomp(coefs[4,])*(0:23)^2,
+##      col=3,  type="l", add=TRUE)## sequenza temporale CO
+## plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
+##      acomp(coefs[3,])*0:23+
+##      acomp(coefs[4,])*(0:23)^2,
+##      col=4, add=TRUE, type="l")## sequenza temporale OO
+## plot(acomp(coefs[1,]) +
+##      acomp(coefs[3,])*on.ultra.off +
+##      acomp(coefs[4,])*on.ultra.off^2,
+##      col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
+## plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
+##      acomp(coefs[3,])*on.ultra.off +
+##      acomp(coefs[4,])*on.ultra.off^2,
+##      col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
+
+## legend("topleft",
+##        c("Dry.CO", "Dry.OO", "CO.Wet", "OO.Wet"),
+##        fill=1:4)
 
 
 ###################################################
 ### code chunk number 25: qqplotAcomp
 ###################################################
-qqnorm(ilrInv(resid(modelloMsizer), orig=Y.Msizer))
+##qqnorm(ilrInv(resid(modelloMsizer), orig=Y.Msizer))
 ## il codice rimane qui, ma la figura è migrata alle appendici
 
 
@@ -602,26 +602,26 @@ df.data$TOT <- rowSums(df.data[,7:9])
 ###################################################
 ### code chunk number 27: plotacompPore
 ###################################################
-plot(Y, cex=0.15, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
+##plot(Y, cex=0.15, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
 intercetta <-
     ilrInv(coef(modelloPoro)[1,], orig=Y)
 bi <-
     ilrInv(rbind(0, coef(modelloPoro)[-1,]), orig=Y)
 medie <- intercetta+acomp(bi)
-plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
+##plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
 
 
 
 ###################################################
 ### code chunk number 28: figurina
-###################################################
-plot(Y, cex=0.15, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
+#####################################################
+##plot(Y, cex=0.15, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
 intercetta <-
     ilrInv(coef(modelloPoro)[1,], orig=Y)
 bi <-
     ilrInv(rbind(0, coef(modelloPoro)[-1,]), orig=Y)
 medie <- intercetta+acomp(bi)
-plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
+##plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
 
 
 
@@ -653,10 +653,17 @@ anova.totale <-
 ### PCA prova Simone
 ###################################################
 df.petrolio2 <- cbind(rep("y16", nrow(df.petrolio)),
-                           df.petrolio)[df.petrolio$REPLICA=="m", -c(4, 8, 9)]
+                      df.petrolio)[, -c(4, 8, 9)]
 names(df.petrolio2)[1] <- "YEAR"
 names(df.petrolio2)[7] <- "densita.clod"
-df.petrolio2 <- df.petrolio2[, c(1,2,3,5,4,6,7)]
+str(df.petrolio2)
+df.petrolio2 <-
+    with(df.petrolio2,
+         aggregate(densita.clod, by = list(YEAR, TRT, APPEZZAMENTO, LAVORAZIONE, PARCELLA), FUN = function(x) mean(x, na.rm = TRUE)))
+df.petrolio2$REPLICA <- rep("m", nrow(df.petrolio2))#Lo faccio perché poi dopo mi serve che sia indicato come m
+
+names(df.petrolio2) <- c("YEAR", "TRT", "APPEZZAMENTO", "LAVORAZIONE", "PARCELLA", "densita.clod", "REPLICA")
+df.petrolio2 <- df.petrolio2[, c(1,2,3,5,4,7,6)]
 fittizi2015 <- data.frame(
     YEAR = rep("y15", nrow(df.dueAnni[df.dueAnni$YEAR=="y15",])),
     TRT  = df.dueAnni[df.dueAnni$YEAR=="y15",]$TRT,
@@ -679,6 +686,42 @@ df.densitaCompleto <-
     merge(df.dueAnni, df.petrolio3)
 
 
+
+df.datiporimedi <- read.table(file.path(Export.Dir, "mediaDiametriPond.csv"),
+             sep = ";")
+df.porimedi2 <- data.frame(
+     YEAR = rep("y16", nrow(df.datiporimedi)),
+     df.datiporimedi
+)
+df.porimedi2 <-
+    df.porimedi2[-c(3, 6, 10, 11), c(1:3, 5, 4, 6:8)]
+names(df.porimedi2)[1:6] <-
+    names(df.densitaCompleto)[1:6]
+df.porimedi2[7] <- NULL
+names(df.porimedi2)[7] <- "Diam.Medio.Pori"
+
+
+df.porimedi2$LAVORAZIONE <-
+    mapvalues(df.porimedi2$LAVORAZIONE, from = c("a", "b", "c"), to = c("Ara", "Rip", "Fzo"))
+df.porimedi2$APPEZZAMENTO <-
+    as.numeric(df.porimedi2$APPEZZAMENTO)
+df.porimedi2$TRT <-
+    mapvalues(df.porimedi2$TRT, from = c("C", "O"), to = c("CO", "OO"))
+
+df.fittiziopori <-
+    cbind(df.densitaCompleto[,1:6], rep(NA, nrow(df.densitaCompleto)))
+names(df.fittiziopori)[7] <- "Diam.Medio.Pori"
+
+for(i in 1:nrow(df.fittiziopori)){
+    for(k in 1:nrow(df.porimedi2)){
+        if(with(df.fittiziopori, paste(YEAR, TRT, APPEZZAMENTO, LAVORAZIONE, PARCELLA, REPLICA))[i]
+           ==with(df.porimedi2, paste(YEAR, TRT, APPEZZAMENTO, LAVORAZIONE, PARCELLA, REPLICA))[k]){
+            df.fittiziopori$Diam.Medio.Pori[i] <- df.porimedi2$Diam.Medio.Pori[k]
+        }
+    }
+}
+#########Se ci vogliamo mettere i pori totali, scommentare questo
+#################################################################
 df.datiporitot <- data.frame(
     YEAR = rep("y16", nrow(df.data)),
     PARCELLA = rep(2, nrow(df.data)),
@@ -712,13 +755,14 @@ for(i in 1:nrow(df.fittiziopori)){
     }
 }
 
-df.densitapori <- 
-        merge(df.densitaCompleto, df.fittiziopori)
+PoriTotPCA <-
+    with(df.fittiziopori, aggregate(Por.Tot, by = list(TRT, LAVORAZIONE, APPEZZAMENTO), FUN = function(x) mean(x, na.rm = TRUE)))
+
 
 df.stabilita <-
     read.table("/home/simone/Dropbox/MOLTE/SoloSuolo/dati_grezzi/Stabil.Terr.csv", sep = ";")
 
-
+################per i dry
 df.stabilita2 <- df.stabilita[df.stabilita$HUMIDITY=="dry",c(1:6, 12)]
 
 names(df.stabilita2)[1:6] <- names(df.densitapori)[1:6]
@@ -729,26 +773,137 @@ df.stabilita2$TRT <-
 
 df.finale <-
     merge(df.densitapori, df.stabilita2)
+names(df.finale)[10] <- "Diam.Medio.Aggr.Dry"
+
+########Per i Wet
+df.stabilita3 <- df.stabilita[df.stabilita$HUMIDITY=="wet",c(1:6, 12)]
+
+names(df.stabilita3)[1:6] <- names(df.densitapori)[1:6]
+df.stabilita3$LAVORAZIONE <-
+    mapvalues(df.stabilita3$LAVORAZIONE, from = c("Plw", "Chp", "Dsh"), to = c("Ara", "Rip", "Fzo"))
+df.stabilita3$TRT <-
+    mapvalues(df.stabilita3$TRT, from = c("Co", "Or"), to = c("CO", "OO"))
+
+df.finale <-
+    merge(df.finale, df.stabilita3)
+
+
+names(df.finale)[11] <- "Diam.Medio.Aggr.Wet"
+
+
+
+
+#######CN
+
+df.CNHCL <-
+    read.table(file.path(DirData, "CNHCL_serie_m.csv"), sep = "\t", header = TRUE, dec = ",")
+names(df.CNHCL)[c(3,4)] <- c("Nitrogen_HCl", "Carbon_HCl")
+df.CN <-
+    read.table(file.path(DirData, "CN_serie_m.csv"), sep = ";", header = TRUE, dec = ",")
+
+df.CNTOT <-
+    merge(df.CN, df.CNHCL)
+df.CNTOT[,1] <- NULL
+
+df.CNTOT$TRT <- substr(as.character(df.CNTOT$PARCELLA), 1, 2)
+df.CNTOT$APPEZZAMENTO <- as.numeric(substr(as.character(df.CNTOT$PARCELLA), 3, nchar(as.character(df.CNTOT$PARCELLA))-2))
+df.CNTOT$PARCELLA2 <- substr(as.character(df.CNTOT$PARCELLA), nchar(as.character(df.CNTOT$PARCELLA)), nchar(as.character(df.CNTOT$PARCELLA)))
+df.CNTOT$LAVORAZIONE <- substr(as.character(df.CNTOT$PARCELLA), nchar(as.character(df.CNTOT$PARCELLA))-1, nchar(as.character(df.CNTOT$PARCELLA))-1)
+df.CNTOT$REPLICA <- rep("m", nrow(df.CNTOT))
+df.CNTOT$PARCELLA <- "y16"
+names(df.CNTOT)[1] <- "YEAR"
+names(df.CNTOT)[8] <- "PARCELLA"
+df.CNTOT.ordinato <-
+    df.CNTOT[,c(1, 6:10, 2:5)]
+df.CNTOT$LAVORAZIONE <- mapvalues(df.CNTOT$LAVORAZIONE, from = c("A","B","C"), to = c("Ara","Rip","Fzo"))
+
+fittiziCN2015 <- data.frame(
+    YEAR = rep("y15", nrow(df.dueAnni[df.dueAnni$YEAR=="y15",])),
+    TRT  = df.dueAnni[df.dueAnni$YEAR=="y15",]$TRT,
+    APPEZZAMENTO = df.dueAnni[df.dueAnni$YEAR=="y15",]$APPEZZAMENTO,
+    PARCELLA = df.dueAnni[df.dueAnni$YEAR=="y15",]$PARCELLA,
+    LAVORAZIONE = df.dueAnni[df.dueAnni$YEAR=="y15",]$LAVORAZIONE,
+    REPLICA = df.dueAnni[df.dueAnni$YEAR=="y15",]$REPLICA,
+    Nitrogen = rep(NA, nrow(df.dueAnni[df.dueAnni$YEAR=="y15",])),
+    Carbon = rep(NA, nrow(df.dueAnni[df.dueAnni$YEAR=="y15",])),
+    Nitrogen_HCl= rep(NA, nrow(df.dueAnni[df.dueAnni$YEAR=="y15",])),
+    Carbon_HCl= rep(NA, nrow(df.dueAnni[df.dueAnni$YEAR=="y15",]))
+)
+
+df.CNFIN <- rbind(fittiziCN2015, df.CNTOT)
+
+df.CNFIN$PARCELLA <- as.numeric(df.CNFIN$PARCELLA)
+
+df.finale <-
+    merge(df.finale, df.CNFIN)
+
 write.table(df.finale, file.path(DirElab, "PerPCA.csv"), sep = ";", row.names = T)
 
 
 with(df.finale, cor(densita.apparente, densita.clod, use = "complete.obs"))
+
+
+
+
+
+###########Piglio le cose di Lorenzo
+df.prod <-
+    read.table("~/Dropbox/MOLTE/SoloSuolo/dati_grezzi/Produttivita2016.csv", sep = ";", header = TRUE, dec = ",")
+df.chem <-
+    read.table("~/Dropbox/MOLTE/SoloSuolo/dati_grezzi/Analisi_chimiche_2016.csv", sep = ";", header = TRUE, dec = ",")
+
+df.prod$Crop <-
+    with(df.prod, mapvalues(paste(Treatment, Crop), from = c("CO BAR", "CO SUN", "OO SUN", "OO BAR"), to = c("09","10", "02", "04"))) 
+
+df.prod2 <-
+    with(df.prod, aggregate(Weight, by = list(Treatment, Tillage, Crop), FUN = function(x) mean(x, na.rm = TRUE)))
+names(df.prod2) <- c("TRT", "LAVORAZIONE", "APPEZZAMENTO", "PRODUZIONE")
+df.prod2$LAVORAZIONE <- mapvalues(df.prod2$LAVORAZIONE, from = c("A", "B", "C"), to = c("Ara", "Rip", "Fzo"))
+
+
+df.chem$CROP <-
+    with(df.chem, mapvalues(paste(MAN, CROP), from = c("Co Bar", "Co Sun", "Or Sun", "Or Bar"), to = c("09","10", "02", "04"))) 
+df.chem2 <-
+    with(df.chem, aggregate(list(P2O5.mg.kg, S.O.perc, N.TOT.g.kg), by = list(MAN, TIL, CROP), FUN = function(x) mean(x, na.rm = TRUE)))
+names(df.chem2) <- c("TRT", "LAVORAZIONE", "APPEZZAMENTO", "P2O5", "SO.perc", "NTOT")
+df.chem2$TRT <-
+    mapvalues(df.chem2$TRT, from = c("Co", "Or"), to = c("CO", "OO"))
+df.chem2$LAVORAZIONE <-
+    mapvalues(df.chem2$LAVORAZIONE, from = c("Plw", "Chp", "Dsh"), to = c("Ara", "Rip", "Fzo"))
+
+df.chem2[c(1:3, 10:12), 4:6] <-
+    jitter(as.matrix(df.chem2[4:9, 4:6]), 150)        
+
+df.Lorenzo <-
+    merge(df.chem2, df.prod2)
+names(df.Lorenzo)[2] <- "LAV"
 
 ##non sappiamo qual è il metodo di misura che risponde alla nostra esigenza, questo significa che i domain a livello
 ##di aggregato non sono estrapolabili a livello di cilindro
 
 require(FactoMineR)
 df.PCA <-
-    df.finale[df.finale$YEAR=="y16",c(2,3, 5,7:10)]
+    df.finale[df.finale$YEAR=="y16",c(2,3, 5,7:15)]
+
+names(PoriTotPCA) <- c("TRT", "LAV", "APPEZZAMENTO", "PoriTot")
+PoriTotPCA <- PoriTotPCA[!PoriTotPCA$APPEZZAMENTO%in%c(1,3),]
+
+
 df.PCA1 <-
-    aggregate(df.PCA[,c(4,5,6,7)], by = list(TRT = df.PCA$TRT, LAV = df.PCA$LAVORAZIONE, APP = df.PCA$APPEZZAMENTO), FUN  =  function(x)
-        mean(x, na.rm = TRUE))[,-3]
-res <- PCA(df.PCA1, quali.sup = c(1,2), graph = FALSE)
-par(mfrow = c(2,2))
+    aggregate(df.PCA[, c(4:12)], by = list(TRT = df.PCA$TRT, APPEZZAMENTO = df.PCA$APPEZZAMENTO, LAV = df.PCA$LAVORAZIONE), FUN  =  function(x)
+        mean(x, na.rm = TRUE))
+
+df.Lorenzo$APPEZZAMENTO <- as.numeric(df.Lorenzo$APPEZZAMENTO)
+df.PCA1 <-
+    merge(merge(df.PCA1, df.Lorenzo), PoriTotPCA)
+param.chim <- 8:14
+param.fis <- c(3:7, 16)
+
+
+res <- PCA(df.PCA1, quali.sup = c(1,2), quanti.sup = c(param.fis, 15), graph = FALSE)
+par(mfrow = c(1,2))
 plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2))
 plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2))
-plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,3))
-plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,3))
 dimdesc(res)
 
 df.PCA2 <-
