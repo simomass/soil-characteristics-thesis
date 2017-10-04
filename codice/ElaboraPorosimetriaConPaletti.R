@@ -63,6 +63,16 @@ xlim.grafico <-c(0.5, 6) #minimo e massimo
 ylim.grafico <- c(0,400) #minimo e massimo
 ## inizio dell'elaborazione
 aggregati.weight <- c()
+diametro.medio.pond <- data.frame(
+    MAN = rep(NA, length(nomi.file)),
+    FIELD = rep(NA, length(nomi.file)),
+    TIL = rep(NA, length(nomi.file)),
+    ROW = rep(NA, length(nomi.file)),
+    REP = rep(NA, length(nomi.file)),
+    REPPORO = rep(NA, length(nomi.file)),
+    DIAMETRO = rep(NA, length(nomi.file))
+)
+    
 for(i in 1:length(nomi.file)){
     file.in.elaborazione <-
         nomi.file[i]
@@ -108,7 +118,14 @@ for(i in 1:length(nomi.file)){
         gsub("\t", "", results)
     aggregati.weight[i] <-
         as.numeric(unlist(strsplit(blocco.iniziale[12], "\t"))[2])
-
+    
+    diametro.medio.pond$MAN[i] <- substr(nome.export, 3,3)
+    diametro.medio.pond$FIELD[i] <-  substr(nome.export, 4,5 )
+    diametro.medio.pond$TIL[i] <-  substr(nome.export, 6,6)
+    diametro.medio.pond$ROW[i] <-  substr(nome.export, 7,7)
+    diametro.medio.pond$REP[i] <-  substr(nome.export, 8,8)
+    diametro.medio.pond$REPPORO[i] <-  substr(nome.export, 10,10)
+    diametro.medio.pond$DIAMETRO[i] <- sum(df.data[,5]*df.data[,3])/sum(df.data[,5])
 ######################################################
     ## esportazione di tutti i dati grezzi
     write.table(df.data,
@@ -220,4 +237,8 @@ for(i in 1:length(nomi.file)){
 }
 write.table(as.numeric(aggregati.weight),
             file.path(Export.Dir, "pesoaggre.csv"),
+            sep = ";")
+
+write.table(diametro.medio.pond,
+            file.path(Export.Dir, "mediaDiametriPond.csv"),
             sep = ";")

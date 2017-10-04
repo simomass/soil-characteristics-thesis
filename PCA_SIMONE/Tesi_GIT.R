@@ -896,13 +896,58 @@ df.PCA1 <-
 df.Lorenzo$APPEZZAMENTO <- as.numeric(df.Lorenzo$APPEZZAMENTO)
 df.PCA1 <-
     merge(merge(df.PCA1, df.Lorenzo), PoriTotPCA)
-param.chim <- 8:14
-param.fis <- c(3:7, 16)
+
+df.PCA1 <-
+    df.PCA1[,c(1,3,2,16,4,5,7,8,6,17,11:15,9,10)]
+
+df.PCA1$APPEZZAMENTO <- NULL
+df.PCA1$NTOT <- NULL
+df.PCA1$SO.perc <- NULL
+df.PCA1$Nitrogen <- NULL
+df.PCA1$Carbon <- NULL
+
+param.chim <- 10:ncol(df.PCA1)
+param.fis <- 5:10-1
+
+##res <- PCA(df.PCA1, quali.sup = c(1, 2, 3), quanti.sup = c(param.chim, 16), graph = FALSE)
+pdf(file.path(DirGraf, "RisultatiPCA.pdf"))
+##
+res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(param.chim, 3), graph = FALSE)
+plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fori")
+plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fori")
+##
+res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(param.fis, 3), graph = FALSE)
+plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "chimica dentro fisica fuori")
+plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "chimica dentro fisica fuori")
+##
+res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(3, 7, 8, 12), graph = FALSE)
+plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "tutti dentro")
+plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "tutti dentro")
+##
+res1 <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(param.chim, 3, 7, 8), graph = FALSE)
+plot.PCA(res1, choix = "var", habillage = "TRT", axes = c(2,3), title = "fisica dentro chimica fuori, anche distroporo")
+plot.PCA(res1, choix = "ind", habillage = "TRT", axes = c(2,3), title = "fisica dentro chimica fuori, anche distroporo")
+##PRova mia
+res2 <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(3, 4, 7, 8, 9, 10, 12), graph = FALSE)
+plot.PCA(res2, choix = "var", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche distroporo")
+plot.PCA(res2, choix = "ind", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche distroporo")
+##Senza Core
+res3 <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(3,4,param.chim), graph = FALSE)
+plot.PCA(res3, choix = "var", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche core")
+x11()
+plot.PCA(res3, choix = "ind", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche core")
+dev.off()
 
 
-res <- PCA(df.PCA1, quali.sup = c(1,2), quanti.sup = c(param.fis, 15), graph = FALSE)
-par(mfrow = c(1,2))
-plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2))
+dimdesc(res2)
+
+lm.prova <-
+    lm(densita.clod/PoriTot ~ TRT, data = df.PCA1)
+anova(lm.prova)
+summary(lm.prova)
+plot(lm.prova)
+
+
 plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2))
 dimdesc(res)
 
