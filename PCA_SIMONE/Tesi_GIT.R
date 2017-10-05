@@ -720,13 +720,19 @@ for(i in 1:nrow(df.fittiziopori)){
         }
     }
 }
+
+df.porimedi3 <- df.fittiziopori
+
 #########Se ci vogliamo mettere i pori totali, scommentare questo
 #################################################################
+
+
 df.datiporitot <- data.frame(
     YEAR = rep("y16", nrow(df.data)),
     PARCELLA = rep(2, nrow(df.data)),
     df.data
 )
+
 
 df.datiporitot <-
     df.datiporitot[,c(1, 3, 4, 2, 5, 7, 12)]
@@ -758,40 +764,42 @@ for(i in 1:nrow(df.fittiziopori)){
 PoriTotPCA <-
     with(df.fittiziopori, aggregate(Por.Tot, by = list(TRT, LAVORAZIONE, APPEZZAMENTO), FUN = function(x) mean(x, na.rm = TRUE)))
 
+df.densitapori <- merge(merge(df.densitaCompleto, df.porimedi3), df.fittiziopori)
 
 df.stabilita <-
     read.table("/home/simone/Dropbox/MOLTE/SoloSuolo/dati_grezzi/Stabil.Terr.csv", sep = ";")
 
+
+
 ################per i dry
 df.stabilita2 <- df.stabilita[df.stabilita$HUMIDITY=="dry",c(1:6, 12)]
-
-names(df.stabilita2)[1:6] <- names(df.densitapori)[1:6]
-df.stabilita2$LAVORAZIONE <-
-    mapvalues(df.stabilita2$LAVORAZIONE, from = c("Plw", "Chp", "Dsh"), to = c("Ara", "Rip", "Fzo"))
-df.stabilita2$TRT <-
-    mapvalues(df.stabilita2$TRT, from = c("Co", "Or"), to = c("CO", "OO"))
-
-df.finale <-
-    merge(df.densitapori, df.stabilita2)
-names(df.finale)[10] <- "Diam.Medio.Aggr.Dry"
-
-########Per i Wet
 df.stabilita3 <- df.stabilita[df.stabilita$HUMIDITY=="wet",c(1:6, 12)]
+names(df.stabilita2)[7] <- "Diam.aggr.dry"
+df.stabilita2$Diam.aggr.wet <- NA
+for(i in 1:nrow(df.stabilita2)){
+    for(k in 1:nrow(df.stabilita3)){
+        if(with(df.stabilita2[i, ], paste(YEAR, MAN, FIELD, PLOT, TIL, REP))==
+           with(df.stabilita3[k,], paste(YEAR, MAN, FIELD, PLOT, TIL, REP))){
+            df.stabilita2[i,8] <- df.stabilita3[k,7]
+        }else{
+            NULL
+            }
+    }
+}
 
-names(df.stabilita3)[1:6] <- names(df.densitapori)[1:6]
-df.stabilita3$LAVORAZIONE <-
-    mapvalues(df.stabilita3$LAVORAZIONE, from = c("Plw", "Chp", "Dsh"), to = c("Ara", "Rip", "Fzo"))
-df.stabilita3$TRT <-
-    mapvalues(df.stabilita3$TRT, from = c("Co", "Or"), to = c("CO", "OO"))
+##Tolgo il 2015 va
+df.stabilita4 <- df.stabilita2[df.stabilita2$YEAR=="y16",]
+df.densitapori <- df.densitapori[df.densitapori$YEAR=="y16",]
+
+names(df.stabilita4)[1:6] <- names(df.densitapori)[1:6]
+df.stabilita4$LAVORAZIONE <-
+    mapvalues(df.stabilita4$LAVORAZIONE, from = c("Plw", "Chp", "Dsh"), to = c("Ara", "Rip", "Fzo"))
+df.stabilita4$TRT <-
+    mapvalues(df.stabilita4$TRT, from = c("Co", "Or"), to = c("CO", "OO"))
+
 
 df.finale <-
-    merge(df.finale, df.stabilita3)
-
-
-names(df.finale)[11] <- "Diam.Medio.Aggr.Wet"
-
-
-
+    merge(df.densitapori, df.stabilita4)
 
 #######CN
 
@@ -840,102 +848,101 @@ df.finale <-
 write.table(df.finale, file.path(DirElab, "PerPCA.csv"), sep = ";", row.names = T)
 
 
-with(df.finale, cor(densita.apparente, densita.clod, use = "complete.obs"))
-
-
-
-
 
 ###########Piglio le cose di Lorenzo
 df.prod <-
     read.table("~/Dropbox/MOLTE/SoloSuolo/dati_grezzi/Produttivita2016.csv", sep = ";", header = TRUE, dec = ",")
-df.chem <-
-    read.table("~/Dropbox/MOLTE/SoloSuolo/dati_grezzi/Analisi_chimiche_2016.csv", sep = ";", header = TRUE, dec = ",")
 
 df.prod$Crop <-
     with(df.prod, mapvalues(paste(Treatment, Crop), from = c("CO BAR", "CO SUN", "OO SUN", "OO BAR"), to = c("09","10", "02", "04"))) 
 
-df.prod2 <-
-    with(df.prod, aggregate(Weight, by = list(Treatment, Tillage, Crop), FUN = function(x) mean(x, na.rm = TRUE)))
-names(df.prod2) <- c("TRT", "LAVORAZIONE", "APPEZZAMENTO", "PRODUZIONE")
-df.prod2$LAVORAZIONE <- mapvalues(df.prod2$LAVORAZIONE, from = c("A", "B", "C"), to = c("Ara", "Rip", "Fzo"))
+##df.prod2 <-
+##    with(df.prod, aggregate(Weight, by = list(Treatment, Tillage, Crop), FUN = function(x) mean(x, na.rm = TRUE)))
+names(df.prod) <- c("TRT", "LAVORAZIONE", "PARCELLA", "APPEZZAMENTO", "PRODUZIONE")
+df.prod$LAVORAZIONE <- mapvalues(df.prod$LAVORAZIONE, from = c("A", "B", "C"), to = c("Ara", "Rip", "Fzo"))
+df.finale$YEAR <- NULL
+df.prod$APPEZZAMENTO <- as.numeric(df.prod$APPEZZAMENTO)
+df.prod$REPLICA <- "m"
+df.prod <- df.prod[,c(1,4,3,2,6,5)]
 
 
-df.chem$CROP <-
-    with(df.chem, mapvalues(paste(MAN, CROP), from = c("Co Bar", "Co Sun", "Or Sun", "Or Bar"), to = c("09","10", "02", "04"))) 
-df.chem2 <-
-    with(df.chem, aggregate(list(P2O5.mg.kg, S.O.perc, N.TOT.g.kg), by = list(MAN, TIL, CROP), FUN = function(x) mean(x, na.rm = TRUE)))
-names(df.chem2) <- c("TRT", "LAVORAZIONE", "APPEZZAMENTO", "P2O5", "SO.perc", "NTOT")
-df.chem2$TRT <-
-    mapvalues(df.chem2$TRT, from = c("Co", "Or"), to = c("CO", "OO"))
-df.chem2$LAVORAZIONE <-
-    mapvalues(df.chem2$LAVORAZIONE, from = c("Plw", "Chp", "Dsh"), to = c("Ara", "Rip", "Fzo"))
+## df.chem <-
+##     read.table("~/Dropbox/MOLTE/SoloSuolo/dati_grezzi/Analisi_chimiche_2016.csv", sep = ";", header = TRUE, dec = ",")
 
-df.chem2[c(1:3, 10:12), 4:6] <-
-    jitter(as.matrix(df.chem2[4:9, 4:6]), 150)        
+## df.chem$CROP <-
+##     with(df.chem, mapvalues(paste(MAN, CROP), from = c("Co Bar", "Co Sun", "Or Sun", "Or Bar"), to = c("09","10", "02", "04"))) 
+## df.chem2 <-
+##     with(df.chem, aggregate(list(P2O5.mg.kg, S.O.perc, N.TOT.g.kg), by = list(MAN, TIL, CROP), FUN = function(x) mean(x, na.rm = TRUE)))
+## names(df.chem2) <- c("TRT", "LAVORAZIONE", "APPEZZAMENTO", "P2O5", "SO.perc", "NTOT")
+## df.chem2$TRT <-
+##     mapvalues(df.chem2$TRT, from = c("Co", "Or"), to = c("CO", "OO"))
+## df.chem2$LAVORAZIONE <-
+##     mapvalues(df.chem2$LAVORAZIONE, from = c("Plw", "Chp", "Dsh"), to = c("Ara", "Rip", "Fzo"))
 
-df.Lorenzo <-
-    merge(df.chem2, df.prod2)
-names(df.Lorenzo)[2] <- "LAV"
+## df.chem2[c(1:3, 10:12), 4:6] <-
+##     jitter(as.matrix(df.chem2[4:9, 4:6]), 150)    
+##df.Lorenzo <-
+##    merge(df.chem2, df.prod2)
+##names(df.Lorenzo)[2] <- "LAV"
+
 
 ##non sappiamo qual è il metodo di misura che risponde alla nostra esigenza, questo significa che i domain a livello
 ##di aggregato non sono estrapolabili a livello di cilindro
 
 require(FactoMineR)
 df.PCA <-
-    df.finale[df.finale$YEAR=="y16",c(2,3, 5,7:15)]
+    df.finale[,c(1,2, 4, 6:15)]
 
-names(PoriTotPCA) <- c("TRT", "LAV", "APPEZZAMENTO", "PoriTot")
-PoriTotPCA <- PoriTotPCA[!PoriTotPCA$APPEZZAMENTO%in%c(1,3),]
+##names(PoriTotPCA) <- c("TRT", "LAV", "APPEZZAMENTO", "PoriTot")
+##PoriTotPCA <- PoriTotPCA[!PoriTotPCA$APPEZZAMENTO%in%c(1,3),]
 
 
-df.PCA1 <-
-    aggregate(df.PCA[, c(4:12)], by = list(TRT = df.PCA$TRT, APPEZZAMENTO = df.PCA$APPEZZAMENTO, LAV = df.PCA$LAVORAZIONE), FUN  =  function(x)
-        mean(x, na.rm = TRUE))
+##df.PCA1 <-
+##    aggregate(df.PCA[, c(4:12)], by = list(TRT = df.PCA$TRT, APPEZZAMENTO = df.PCA$APPEZZAMENTO, LAV = df.PCA$LAVORAZIONE), FUN  =  function(x)
+##        mean(x, na.rm = TRUE))
 
-df.Lorenzo$APPEZZAMENTO <- as.numeric(df.Lorenzo$APPEZZAMENTO)
-df.PCA1 <-
-    merge(merge(df.PCA1, df.Lorenzo), PoriTotPCA)
+##df.Lorenzo$APPEZZAMENTO <- as.numeric(df.Lorenzo$APPEZZAMENTO)
+##df.PCA1 <-
+##    merge(merge(df.PCA1, df.Lorenzo), PoriTotPCA)
 
-df.PCA1 <-
-    df.PCA1[,c(1,3,2,16,4,5,7,8,6,17,11:15,9,10)]
-
+##df.PCA1 <-
+##    df.PCA1[,c(1,3,2,16,4,5,7,8,6,17,11:15,9,10)]
+df.PCA1 <- df.PCA
 df.PCA1$APPEZZAMENTO <- NULL
-df.PCA1$NTOT <- NULL
-df.PCA1$SO.perc <- NULL
-df.PCA1$Nitrogen <- NULL
-df.PCA1$Carbon <- NULL
+## df.PCA1$NTOT <- NULL
+## df.PCA1$SO.perc <- NULL
+## df.PCA1$Nitrogen <- NULL
+## df.PCA1$Carbon <- NULL
 
-param.chim <- 10:ncol(df.PCA1)
-param.fis <- 5:10-1
+##param.chim <- 10:ncol(df.PCA1)
+##param.fis <- 5:10-1
 
 ##res <- PCA(df.PCA1, quali.sup = c(1, 2, 3), quanti.sup = c(param.chim, 16), graph = FALSE)
 pdf(file.path(DirGraf, "RisultatiPCA.pdf"))
 ##
-res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(param.chim, 3), graph = FALSE)
+res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(5,6), graph = FALSE)
 plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fori")
 plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fori")
 ##
-res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(param.fis, 3), graph = FALSE)
-plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "chimica dentro fisica fuori")
-plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "chimica dentro fisica fuori")
-##
-res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(3, 7, 8, 12), graph = FALSE)
-plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "tutti dentro")
-plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "tutti dentro")
-##
-res1 <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(param.chim, 3, 7, 8), graph = FALSE)
-plot.PCA(res1, choix = "var", habillage = "TRT", axes = c(2,3), title = "fisica dentro chimica fuori, anche distroporo")
-plot.PCA(res1, choix = "ind", habillage = "TRT", axes = c(2,3), title = "fisica dentro chimica fuori, anche distroporo")
-##PRova mia
-res2 <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(3, 4, 7, 8, 9, 10, 12), graph = FALSE)
-plot.PCA(res2, choix = "var", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche distroporo")
-plot.PCA(res2, choix = "ind", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche distroporo")
-##Senza Core
-res3 <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(3,4,param.chim), graph = FALSE)
-plot.PCA(res3, choix = "var", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche core")
-x11()
-plot.PCA(res3, choix = "ind", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche core")
+## res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(param.fis, 3), graph = FALSE)
+## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "chimica dentro fisica fuori")
+## plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "chimica dentro fisica fuori")
+## ##
+## res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(3, 7, 8, 12), graph = FALSE)
+## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "tutti dentro")
+## plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "tutti dentro")
+## ##
+## res1 <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(param.chim, 3, 7, 8), graph = FALSE)
+## plot.PCA(res1, choix = "var", habillage = "TRT", axes = c(2,3), title = "fisica dentro chimica fuori, anche distroporo")
+## plot.PCA(res1, choix = "ind", habillage = "TRT", axes = c(2,3), title = "fisica dentro chimica fuori, anche distroporo")
+## ##PRova mia
+## res2 <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(3, 4, 7, 8, 9, 10, 12), graph = FALSE)
+## plot.PCA(res2, choix = "var", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche distroporo")
+## plot.PCA(res2, choix = "ind", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche distroporo")
+## ##Senza Core
+## res3 <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(3,4,param.chim), graph = FALSE)
+## plot.PCA(res3, choix = "var", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche core")x11()
+## plot.PCA(res3, choix = "ind", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche core")
 dev.off()
 
 
