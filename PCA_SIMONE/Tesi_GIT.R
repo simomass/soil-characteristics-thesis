@@ -891,7 +891,7 @@ df.prod <- df.prod[,c(1,4,3,2,6,5)]
 
 require(FactoMineR)
 df.PCA <-
-    df.finale[,c(1,2, 4, 6:15)]
+    merge(df.finale,df.prod)[,c(1,2, 4, 6:16)]
 
 ##names(PoriTotPCA) <- c("TRT", "LAV", "APPEZZAMENTO", "PoriTot")
 ##PoriTotPCA <- PoriTotPCA[!PoriTotPCA$APPEZZAMENTO%in%c(1,3),]
@@ -907,26 +907,38 @@ df.PCA <-
 
 ##df.PCA1 <-
 ##    df.PCA1[,c(1,3,2,16,4,5,7,8,6,17,11:15,9,10)]
-df.PCA1 <- df.PCA
-df.PCA1$APPEZZAMENTO <- NULL
+
+Inorg <- df.PCA[,11]-df.PCA[,13]
+df.PCA[,11] <- Inorg
+rm(Inorg)
+
+names(df.PCA)[c(11, 13)] <- c("C.Inorganico","C.Organico")
 ## df.PCA1$NTOT <- NULL
 ## df.PCA1$SO.perc <- NULL
 ## df.PCA1$Nitrogen <- NULL
 ## df.PCA1$Carbon <- NULL
-
+df.PCA1 <- df.PCA
+##df.PCA1$APPEZZAMENTO <- NULL
 ##param.chim <- 10:ncol(df.PCA1)
 ##param.fis <- 5:10-1
-
+write.table(df.PCA, file.path(DirElab, "PerPCA.csv"), sep = ";", row.names = T)
 ##res <- PCA(df.PCA1, quali.sup = c(1, 2, 3), quanti.sup = c(param.chim, 16), graph = FALSE)
 pdf(file.path(DirGraf, "RisultatiPCA.pdf"))
 ##
-res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(5,6), graph = FALSE)
-plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fori")
-plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fori")
-##
-## res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(param.fis, 3), graph = FALSE)
-## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "chimica dentro fisica fuori")
-## plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "chimica dentro fisica fuori")
+res <- PCA(df.PCA1, quali.sup = c(1, 2, 3), quanti.sup = c(6, 7, 8, 9, 10, 12, 14), graph = FALSE)
+plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "Tutti quelli misurati da noi a parte porosità")
+plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2),
+         title = "Tutti quelli misurati da noi a parte porosità")
+plotellipses(res, keepvar = c("TRT", "LAVORAZIONE", "APPEZZAMENTO"))
+## df.PCA2 <- df.PCA1[,c(1:4, 7, 8, 10, 12, 13)]
+## res <- PCA(df.PCA2, quali.sup = c(1, 2), quanti.sup = 9, graph = FALSE)
+## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "Tolta la porosità anche dal dataframe e gli N")
+## plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "Tolta la porosità anche dal dataframe e gli N")
+
+## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,3), title = "Tolta la porosità anche dal dataframe e gli N")
+## plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,3), title = "Tolta la porosità anche dal dataframe e gli N")
+## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(2,3), title = "Tolta la porosità anche dal dataframe e gli N")
+## plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(2,3), title = "Tolta la porosità anche dal dataframe e gli N")
 ## ##
 ## res <- PCA(df.PCA1, quali.sup = c(1, 2), quanti.sup = c(3, 7, 8, 12), graph = FALSE)
 ## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "tutti dentro")
@@ -945,6 +957,19 @@ plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "fisica d
 ## plot.PCA(res3, choix = "ind", habillage = "TRT", axes = c(1,2), title = "fisica dentro chimica fuori, anche core")
 dev.off()
 
+
+modello <- lm(C.Organico ~ TRT/C.Inorganico-1, data = df.PCA1)
+summary(modello)
+plot(df.PCA1[,c(11,13)], col = df.PCA1$TRT, pch  = 20,
+     cex = 1.5, xlim = c(-1,5), ylim = c(-0.5,1.5))
+abline(v = 0, lty = 2);abline(h = 0, lty = 2);
+abline(coef(modello)[c(1,3)], col = 1)
+abline(coef(modello)[c(2,4)], col = 2)
+points(x = c(0,0), y = coef(modello)[1:2], col = 1:2, cex = 3)
+modello <- lm(C.Organico ~ TRT*C.Inorganico, data = df.PCA1)
+summary(modello)
+
+modello <- lm(C.Inorganico ~ TRT, data = df.PCA1)
 
 dimdesc(res2)
 
@@ -969,6 +994,3 @@ plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2))
 plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,3))
 plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,3))
 dimdesc(res)
-
-##Domani: L'unità statistica è la parcella: medie petrolio, CN,
-##aggiungere diametro medio ponderato secco, diametro medio ponderato dei pori

@@ -460,7 +460,7 @@ struttura del terreno come \emph{il particolare modo di aggregarsi dei
 \citep{tassinari1976manuale}.
 
 Essendo il risultato dei fattori di formazione del suolo sopra
-elencati, la struttura non risente particolarmente delle diverse
+elencati, la tessitura non risente particolarmente delle diverse
 tecniche agronomiche, mentre la struttura viene notevolmente
 condizionata dalla tecnica agronomica con effetti sulle propriet\`a
 fisiche, meccaniche e chimiche del suolo, e quindi sulla maggiore o
