@@ -866,25 +866,24 @@ df.prod$REPLICA <- "m"
 df.prod <- df.prod[,c(1,4,3,2,6,5)]
 
 
-## df.chem <-
-##     read.table("~/Dropbox/MOLTE/SoloSuolo/dati_grezzi/Analisi_chimiche_2016.csv", sep = ";", header = TRUE, dec = ",")
+df.chem <-
+    read.table("~/Dropbox/MOLTE/SoloSuolo/dati_grezzi/Analisi_chimiche_2016.csv", sep = ";", header = TRUE, dec = ",")
 
-## df.chem$CROP <-
-##     with(df.chem, mapvalues(paste(MAN, CROP), from = c("Co Bar", "Co Sun", "Or Sun", "Or Bar"), to = c("09","10", "02", "04"))) 
-## df.chem2 <-
-##     with(df.chem, aggregate(list(P2O5.mg.kg, S.O.perc, N.TOT.g.kg), by = list(MAN, TIL, CROP), FUN = function(x) mean(x, na.rm = TRUE)))
-## names(df.chem2) <- c("TRT", "LAVORAZIONE", "APPEZZAMENTO", "P2O5", "SO.perc", "NTOT")
-## df.chem2$TRT <-
-##     mapvalues(df.chem2$TRT, from = c("Co", "Or"), to = c("CO", "OO"))
-## df.chem2$LAVORAZIONE <-
-##     mapvalues(df.chem2$LAVORAZIONE, from = c("Plw", "Chp", "Dsh"), to = c("Ara", "Rip", "Fzo"))
+df.chem$CROP <-
+    with(df.chem, mapvalues(paste(MAN, CROP), from = c("Co Bar", "Co Sun", "Or Sun", "Or Bar"), to = c("09","10", "02", "04"))) 
+df.chem2 <-
+    with(df.chem, aggregate(list(P2O5.mg.kg, S.O.perc, N.TOT.g.kg), by = list(MAN, TIL, CROP), FUN = function(x) mean(x, na.rm = TRUE)))
+names(df.chem2) <- c("TRT", "LAVORAZIONE", "APPEZZAMENTO", "P2O5", "SO.perc", "NTOT")
+df.chem2$TRT <-
+    mapvalues(df.chem2$TRT, from = c("Co", "Or"), to = c("CO", "OO"))
+df.chem2$LAVORAZIONE <-
+    mapvalues(df.chem2$LAVORAZIONE, from = c("Plw", "Chp", "Dsh"), to = c("Ara", "Rip", "Fzo"))
 
-## df.chem2[c(1:3, 10:12), 4:6] <-
-##     jitter(as.matrix(df.chem2[4:9, 4:6]), 150)    
+df.chem2[c(1:3, 10:12), 4:6] <-
+    jitter(as.matrix(df.chem2[4:9, 4:6]), 150)    
 ##df.Lorenzo <-
 ##    merge(df.chem2, df.prod2)
 ##names(df.Lorenzo)[2] <- "LAV"
-
 
 ##non sappiamo qual è il metodo di misura che risponde alla nostra esigenza, questo significa che i domain a livello
 ##di aggregato non sono estrapolabili a livello di cilindro
@@ -917,24 +916,91 @@ names(df.PCA)[c(11, 13)] <- c("C.Inorganico","C.Organico")
 ## df.PCA1$SO.perc <- NULL
 ## df.PCA1$Nitrogen <- NULL
 ## df.PCA1$Carbon <- NULL
+
+df.PCAChimica <- df.PCA[,c(1:3, 10:14)]
+df.PCAFisica <- df.PCA[,c(1:3, 4:9, 14)]
+df.PCAChimica$P2O5 <- NA
+df.PCAChimica$SO.perc <- NA
+df.PCAChimica$NTOT <- NA
+df.chem2$APPEZZAMENTO <- as.numeric(df.chem2$APPEZZAMENTO)
+for(i in 1:nrow(df.PCAChimica)){
+    for(k in 1:nrow(df.chem2)){
+        if(with(df.PCAChimica[i, ], paste(TRT, LAVORAZIONE, APPEZZAMENTO))==
+           with(df.chem2[k,], paste(TRT, LAVORAZIONE, APPEZZAMENTO))){
+            df.PCAChimica$P2O5[i] <- df.chem2$P2O5[k]
+            df.PCAChimica$SO.perc[i] <- df.chem2$SO.perc[k]
+            df.PCAChimica$NTOT[i] <- df.chem2$NTOT[k]            
+        }else{
+            NULL
+            }
+    }
+}
+
 df.PCA1 <- df.PCA
 ##df.PCA1$APPEZZAMENTO <- NULL
 ##param.chim <- 10:ncol(df.PCA1)
 ##param.fis <- 5:10-1
 write.table(df.PCA, file.path(DirElab, "PerPCA.csv"), sep = ";", row.names = T)
 ##res <- PCA(df.PCA1, quali.sup = c(1, 2, 3), quanti.sup = c(param.chim, 16), graph = FALSE)
-pdf(file.path(DirGraf, "RisultatiPCA.pdf"))
+require(Factoshiny)
 ##
-res <- PCA(df.PCA1, quali.sup = c(1, 2, 3), quanti.sup = c(6, 7, 8, 9, 10, 12, 14), graph = FALSE)
-plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "Tutti quelli misurati da noi a parte porosità")
+
+require(factoextra)
+
+require(car)
+require(corrplot)
+corrplot(res$var$cos2)
+fviz_pca_var(res, col.var = "contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
+fviz_pca_ind(res,
+             geom.ind = "point", col.ind = df.PCA1$TRT, addEllipses = TRUE)
+fviz_pca_biplot(res, col.ind = df.PCA1$TRT, palette = "jco", addEllipses = TRUE, label = "var", col.var = "black", repel = TRUE)
+
+
+pdf(file.path(DirGraf, "RisultatiChimica-Fisica.pdf"))
+res <- PCA(df.PCAFisica, quali.sup = c(1, 2, 3), quanti.sup = 10, graph = FALSE)
+fviz_screeplot(res, addlabels = TRUE)
+corrplot(res$var$cos2)
+fviz_pca_var(res, col.var = "contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
+##fviz_pca_ind(res, geom.ind = "point", col.ind = df.PCAFisica$TRT, addEllipses = TRUE)
+fviz_pca_biplot(res, col.ind = df.PCAFisica$TRT, palette = "jco", addEllipses = FALSE, label = "var", col.var = "black", repel = TRUE)
+fviz_ellipses(res, habillage = df.PCAFisica$TRT, axes = c(1, 2), addEllipses = TRUE,
+       ellipse.type = "confidence", , palette = NULL, pointsize = 1,
+       geom = c("point", "text"))
+
+res <- PCA(df.PCAChimica, quali.sup = c(1, 2, 3), quanti.sup = 8:11, graph = FALSE)
+fviz_screeplot(res, addlabels = TRUE)
+corrplot(res$var$cos2)
+fviz_pca_var(res, col.var = "contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
+##fviz_pca_ind(res,geom.ind = "point", col.ind = df.PCAChimica$TRT, addEllipses = TRUE)
+fviz_pca_biplot(res, col.ind = df.PCAChimica$TRT, palette = "jco", addEllipses = FALSE, label = "var", col.var = "black", repel = TRUE)
+fviz_ellipses(res, habillage = df.PCAChimica$TRT, axes = c(1, 2), addEllipses = TRUE,
+       ellipse.type = "confidence", , palette = NULL, pointsize = 1,
+       geom = c("point", "text"))
+dev.off()
+
+
+
+
+pdf(file.path(DirGraf, "RisultatiPCA.pdf"))
+res <- PCA(df.PCAChimica, quali.sup = c(1, 2, 3),
+           quanti.sup = 8:11, graph = FALSE)
+plot.PCA(res, choix = "var", habillage = "TRT",
+         axes = c(1,2), title = "Chimica")
 plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2),
-         title = "Tutti quelli misurati da noi a parte porosità")
-plotellipses(res, keepvar = c("TRT", "LAVORAZIONE", "APPEZZAMENTO"))
+         title = "Chimica")
+plotellipses(res, keepvar = c("TRT", "LAVORAZIONE"),
+             level = c(0.90, 0.99))
+res <- PCA(df.PCAFisica, quali.sup = c(1, 2, 3),
+           quanti.sup = 10, graph = FALSE)
+plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2),
+         title = "Fisica")
+plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2),
+         title = "Chimica")
+plotellipses(res, keepvar = c("TRT", "LAVORAZIONE"))
 ## df.PCA2 <- df.PCA1[,c(1:4, 7, 8, 10, 12, 13)]
 ## res <- PCA(df.PCA2, quali.sup = c(1, 2), quanti.sup = 9, graph = FALSE)
 ## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "Tolta la porosità anche dal dataframe e gli N")
 ## plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "Tolta la porosità anche dal dataframe e gli N")
-
 ## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,3), title = "Tolta la porosità anche dal dataframe e gli N")
 ## plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,3), title = "Tolta la porosità anche dal dataframe e gli N")
 ## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(2,3), title = "Tolta la porosità anche dal dataframe e gli N")
@@ -994,3 +1060,11 @@ plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2))
 plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,3))
 plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,3))
 dimdesc(res)
+
+plot(res$ind$coord[,1:2], col = df.PCAChimica$TRT)
+confidenceEllipse(lm(res$ind$coord[,1] ~ res$ind$coord[,2]),
+                  levels=.95, 
+             lty=2, fill=TRUE, fill.alpha=0.1)
+x11()
+confidenceEllipse(lm(education ~ income, data=Duncan), Scheffe=FALSE)
+
