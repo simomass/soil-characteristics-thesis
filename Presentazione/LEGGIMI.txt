@@ -1,0 +1,86 @@
+fPer compilare tutte le lezioni di fila da dentro
+/home/ottorino/Documenti/BitBucket/GIT_corso_vivaistica
+
+digitare
+> sh compila_tutte_le_lezioni.sh
+
+Il Makefile entro ogni dir ??_lezione si occupa della compilazione.
+Nella lezione 3, 4, 5, 7, 10, 11 il Makefile effettua la compilazione
+due volte di file per la presenza delle frecce delle reazioni redox in
+chemfig. Tre volte nella lezione 3 e 10.
+
+Per creare tutti lucidi per gli studenti, operare come segue
+da terminale in 
+/home/ottorino/Documenti/BitBucket/GIT_corso_vivaistica
+digitare
+> sh compila_tutti_gli_handouts.sh
+
+Il Makefile entro ogni dir ??_lezione compila lo handout e lo salva
+dentro la directory ~/handouts.  
+
+Per compilarne uno solo, entrare nella ??_lezione e da terminale
+digitare
+> make handout
+
+e verra salvato dentro la directory "handouts".
+
+Invece il comando
+> make lezione
+compila la lezione e salva dentro la directory ??_lezione
+
+Invece il comando
+> make clean
+elimina tutti i file intermedi di compilazione tranne i .log, utili
+per vedere se qualcosa non va. 
+
+Il Makefile presuppone un preambolo particolare che esiste in ogni
+file lezione_??.tex. Il sito di riferimento è
+http://tex.stackexchange.com/questions/1492/passing-parameters-to-a-document/
+
+
+Nota del 3 marzo 2015: In tutte le lezioni *.tex ho aggiunto delle righe iniziali
+per compilare le sole note e ho modificato tutti i Makefile in modo che  il comando
+> make note
+
+compili un file lezione_??.pdf dentro /handouts/note
+
+Digitando
+> sh compila_tutte_le_note.sh
+lo script compila solo la 01 e la 03, le uniche per ora con le note
+Nota 14 marzo 2016; dentro 01 e 03 lezione ho modificato il makefile in modo
+che il file in uscita si chiami "noteXX" invece che "lezioneXX". Altrimenti
+in moodle si creavano problemi coi nomi dei files
+
+Le righe che si occupano degli handouts non vengono attivate per la
+compilazione normale con pdflatex. In auctex si puo' continuare a
+usare C-c C-c per compilare normalmente
+
+In auctex si puo' usare 
+C-M-z compila il frame in cui ci si trova.
+C-c f apre un nuovo frame completo vuoto
+C-c b apre un nuovo blocco completo vuoto
+C-c = apre una lista coi titoli dei frames
+F12 inserisce le riga \only<beamer:0|handout:0>{}%fine slide xx
+Vedi il file di configurazione di beamer  nella dir .emacs.d
+21 dic 2015 Adesso è nella sezione beamer di ottorino.org
+
+
+NON E' POSSIBILE inserire hyperlink negli handouts
+http://tex.stackexchange.com/questions/48088/beamer-handout-with-hyperlinks
+Quindi digitarli in chiaro, tipo \url{http://pippo\_....} e non 
+\href{http://pippo\_....}{pippo}. In questo modo rimangono almeno
+scritti.
+Oppure metterli nelle note, che li rimangono attivi
+
+
+Per cercare tutte le righe con la scritta NOTE NOTA note Nota etc,
+da dentro
+/home/ottorino/Documenti/BitBucket/GIT_corso_vivaistica
+inviare il comando
+
+> grep -nRi --include="*.tex" 'NOT[AE]' ./ > CercaNOTE.txt
+
+dove:
+-n numero di riga
+-R Recursive dir
+-i ignora maiuscole minuscole
