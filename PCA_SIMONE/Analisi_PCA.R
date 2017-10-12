@@ -44,21 +44,20 @@ df.PCATotale<-
     read.table(file.path(DirElab, "df.PCATotale.csv"), sep = ";")
 df.PCAFisica<-
     read.table(file.path(DirElab, "df.PCAFisica.csv"), sep = ";")
+df.PCAChimica<-
+    read.table(file.path(DirElab, "df.PCAChimica.csv"), sep = ";")
 require(FactoMineR)
 ##res <- PCA(df.PCA1, quali.sup = c(1, 2, 3), quanti.sup = c(param.chim, 16), graph = FALSE)
 require(Factoshiny)
-##
-
 require(factoextra)
-
 require(car)
 require(corrplot)
+res <- PCA(df.PCAFisica, quali.sup = c(1, 2, 3, 4), quanti.sup = c(8,9), graph = FALSE)
 corrplot(res$var$cos2)
 fviz_pca_var(res, col.var = "contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
 fviz_pca_ind(res,
-             geom.ind = "point", col.ind = df.PCA1$TRT, addEllipses = TRUE)
-fviz_pca_biplot(res, col.ind = df.PCA1$TRT, palette = "jco", addEllipses = TRUE, label = "var", col.var = "black", repel = TRUE)
-
+             geom.ind = "point", col.ind = df.PCAFisica$TRT, addEllipses = TRUE)
+fviz_pca_biplot(res, col.ind = df.PCAFisica$TRT, palette = "jco", addEllipses = TRUE, label = "var", col.var = "black", repel = TRUE)
 
 
 pdf(file.path(DirGraf, "RisultatiChimica-Fisica.pdf"))
@@ -72,7 +71,7 @@ fviz_ellipses(res, habillage = df.PCAFisica$TRT, axes = c(1, 2), addEllipses = T
        ellipse.type = "confidence", , palette = NULL, pointsize = 1,
        geom = c("point", "text"))
 
-res <- PCA(df.PCAChimica, quali.sup = c(1, 2, 3), quanti.sup = 8:11, graph = FALSE)
+res <- PCA(df.PCAChimica, quali.sup = c(1, 2, 3, 4), quanti.sup = 7, graph = FALSE)
 fviz_screeplot(res, addlabels = TRUE)
 corrplot(res$var$cos2)
 fviz_pca_var(res, col.var = "contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
@@ -88,16 +87,16 @@ library(chemometrics)
 library(robustbase)
 
 pdf(file.path(DirGraf, "RisultatiPCA.pdf"))
-res <- PCA(df.PCAChimica, quali.sup = c(1, 2, 3),
-           quanti.sup =  c(6, 8, 10, 11), graph = FALSE)
+res <- PCA(df.PCAChimica, quali.sup = c(1, 2, 3, 4),
+           quanti.sup =  7, graph = FALSE)
 plot.PCA(res, choix = "var", habillage = "TRT",
          axes = c(1,2), title = "Chimica")
 plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2),
          title = "Chimica")
 plotellipses(res, keepvar = c("TRT", "LAVORAZIONE"),
              level = c(0.90, 0.99))
-res <- PCA(df.PCAFisica, quali.sup = c(1, 2, 3),
-           quanti.sup = 10, graph = FALSE)
+res <- PCA(df.PCAFisica, quali.sup = c(1, 2, 3, 4),
+           quanti.sup = 7:9, graph = FALSE) 
 plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2),
          title = "Fisica")
 plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2),
@@ -112,7 +111,7 @@ plotellipses(res, keepvar = c("TRT", "LAVORAZIONE"))
 ## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(2,3), title = "Tolta la porosità anche dal dataframe e gli N")
 ## plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(2,3), title = "Tolta la porosità anche dal dataframe e gli N")
 ## ##
- res <- PCA(df.PCA, quali.sup = c(1, 3, 2), quanti.sup = c(14), graph = FALSE)
+## res <- PCA(df.PCA, quali.sup = c(1, 3, 2), quanti.sup = c(14), graph = FALSE)
 ## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "tutti dentro")
 ## plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2), title = "tutti dentro")
 ## ##
@@ -130,18 +129,18 @@ plotellipses(res, keepvar = c("TRT", "LAVORAZIONE"))
 dev.off()
 
 
-modello <- lm(C.Organico ~ TRT/C.Inorganico-1, data = df.PCA1)
+modello <- lm(C.organico ~ TRT/C.inorganico-1, data = df.PCAChimica)
 summary(modello)
-plot(df.PCA1[,c(11,13)], col = df.PCA1$TRT, pch  = 20,
+plot(df.PCAChimica[,c(6,8)], col = df.PCAChimica$TRT, pch  = 20,
      cex = 1.5, xlim = c(-1,5), ylim = c(-0.5,1.5))
 abline(v = 0, lty = 2);abline(h = 0, lty = 2);
 abline(coef(modello)[c(1,3)], col = 1)
 abline(coef(modello)[c(2,4)], col = 2)
 points(x = c(0,0), y = coef(modello)[1:2], col = 1:2, cex = 3)
-modello <- lm(C.Organico ~ TRT*C.Inorganico, data = df.PCA1)
+modello <- lm(C.organico ~ TRT*C.inorganico, data = df.PCAChimica)
 summary(modello)
 
-modello <- lm(C.Inorganico ~ TRT, data = df.PCA1)
+modello <- lm(C.inorganico ~ TRT, data = df.PCAChimica)
 
 ##dimdesc(res2)
 
@@ -168,61 +167,44 @@ modello <- lm(C.Inorganico ~ TRT, data = df.PCA1)
 ## dimdesc(res)
 
 
+
+X <-
+    df.PCAChimica[,5:8]
+X_scala <-
+    scale(X, center = TRUE, scale = TRUE)
+X_mcd <-
+    covMcd(X)
+d_Mahalanobis_robust <- sqrt(mahalanobis(X, center = X_mcd$center, cov = X_mcd$cov))
+res <- Moutlier(X, quantile = 0.95, plot = FALSE)
+questi <- which(res$rd<3)
+df.PCAChimica[-questi,1:3]
+plot(1:length(res$rd), res$rd, pch = ".")
+text(1:length(res$rd), res$rd, paste(df.PCAChimica$TRT, df.PCAChimica$APPEZZAMENTO, df.PCAChimica$LAVORAZIONE, sep = ""))
+abline(h = res$cutoff, lty = 2)
+
+
+x11()
+X <-
+    df.PCAFisica[-3,c(5, 6, 9,10)]
+X_scala <-
+    scale(X, center = TRUE, scale = TRUE)
+X_mcd <-
+    covMcd(X)
+d_Mahalanobis_robust <- sqrt(mahalanobis(X, center = X_mcd$center, cov = X_mcd$cov))
+res <- Moutlier(X, quantile = 0.95, plot = FALSE)
+questi <- which(res$rd<res$cutoff)
+df.PCAFisica[-questi,1:3]
+plot(1:length(res$rd), res$rd, pch = ".")
+text(1:length(res$rd), res$rd, paste(df.PCAFisica$TRT, df.PCAFisica$APPEZZAMENTO, df.PCAFisica$LAVORAZIONE, df.PCAFisica$PARCELLA, sep = ""))
+abline(h = res$cutoff, lty = 2)
+
+
+
 library("PerformanceAnalytics")
-chart.Correlation(df.PCA[, 4:7, 9:11], histogram=TRUE, pch=19)
+chart.Correlation(df.PCAFisica[, 5:10], histogram=TRUE, pch=19)
 require(rgl)
-rgl_init <- function(new.device = FALSE, bg = "white", width = 640) {
-  if( new.device | rgl.cur() == 0 ) {
-    rgl.open()
-    par3d(windowRect = 50 + c( 0, 0, width, width ) )
-    rgl.bg(color = bg )
-  }
-  rgl.clear(type = c("shapes", "bboxdeco"))
-  rgl.viewpoint(theta = 15, phi = 20, zoom = 0.7)
-}
-get_colors <- function(groups, group.col = palette()){
-  groups <- as.factor(groups)
-  ngrps <- length(levels(groups))
-  if(ngrps > length(group.col))
-    group.col <- rep(group.col, ngrps)
-  color <- group.col[as.numeric(groups)]
-  names(color) <- as.vector(groups)
-  return(color)
-}
-rgl_add_axes <- function(x, y, z, axis.col = "darkgrey",
-                xlab = "Dim 1", ylab="Dim 2", zlab="Dim 3", show.plane = TRUE,
-                show.bbox = FALSE, bbox.col = c("#333377","black"))
-  {
+source(file.path(DirFunz, "PCA_3d.R"))
 
-  lim <- function(x){c(-max(abs(x)), max(abs(x))) * 1.1}
-  # Add axes
-  xlim <- lim(x); ylim <- lim(y); zlim <- lim(z)
-  rgl.lines(xlim, c(0, 0), c(0, 0), color = axis.col)
-  rgl.lines(c(0, 0), ylim, c(0, 0), color = axis.col)
-  rgl.lines(c(0, 0), c(0, 0), zlim, color = axis.col)
-
-   # Add a point at the end of each axes to specify the direction
-   axes <- rbind(c(xlim[2], 0, 0), c(0, ylim[2], 0),
-                 c(0, 0, zlim[2]))
-   rgl.points(axes, color = axis.col, size = 3)
-
-  # Add axis labels
-  rgl.texts(axes, text = c(xlab, ylab, zlab), color = axis.col,
-             adj = c(0.5, -0.8), size = 2)
-
-  # Add plane
-  if(show.plane)
-    xlim <- xlim/1.1; zlim <- zlim /1.1
-    rgl.quads( x = rep(xlim, each = 2), y = c(0, 0, 0, 0),
-             z = c(zlim[1], zlim[2], zlim[2], zlim[1]))
-
-  # Add bounding box decoration
-  if(show.bbox){
-    rgl.bbox(color=c(bbox.col[1],bbox.col[2]), alpha = 0.5,
-          emission=bbox.col[1], specular=bbox.col[1], shininess=5,
-          xlen = 3, ylen = 3, zlen = 3)
-  }
-  }
 
 ##############################################################################
 ##############################################################################
@@ -368,32 +350,3 @@ texts3d(x=c(0,xyz.coo[i, 1]),
 ##          theta = 0, phi = 0)
 
 
-X <-
-    df.PCAChimica[,4:7]
-X_scala <-
-    scale(X, center = TRUE, scale = TRUE)
-X_mcd <-
-    covMcd(X)
-d_Mahalanobis_robust <- sqrt(mahalanobis(X, center = X_mcd$center, cov = X_mcd$cov))
-res <- Moutlier(X, quantile = 0.95, plot = FALSE)
-questi <- which(res$rd<3)
-df.PCAChimica[-questi,1:3]
-plot(1:length(res$rd), res$rd, pch = ".")
-text(1:length(res$rd), res$rd, paste(df.PCAChimica$TRT, df.PCAChimica$APPEZZAMENTO, df.PCAChimica$LAVORAZIONE, sep = ""))
-abline(h = res$cutoff, lty = 2)
-
-
-x11()
-X <-
-    df.PCAFisica[-3,c(5, 6, 9,10)]
-X_scala <-
-    scale(X, center = TRUE, scale = TRUE)
-X_mcd <-
-    covMcd(X)
-d_Mahalanobis_robust <- sqrt(mahalanobis(X, center = X_mcd$center, cov = X_mcd$cov))
-res <- Moutlier(X, quantile = 0.95, plot = FALSE)
-questi <- which(res$rd<res$cutoff)
-df.PCAFisica[-questi,1:3]
-plot(1:length(res$rd), res$rd, pch = ".")
-text(1:length(res$rd), res$rd, paste(df.PCAFisica$TRT, df.PCAFisica$APPEZZAMENTO, df.PCAFisica$LAVORAZIONE, df.PCAFisica$PARCELLA, sep = ""))
-abline(h = res$cutoff, lty = 2)
