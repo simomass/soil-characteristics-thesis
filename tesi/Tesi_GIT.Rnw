@@ -1,5 +1,5 @@
 % Versione branch 8uno
-\documentclass[11pt, a4paper, openright, titlepage, final]{book}
+\documentclass[11pt, a4paper, openright, titlepage, final]{scrbook}
 % linea aggiunta per capire come funziona il merge.
 % draft/final onecolumn/twocolumn oneside/twoside openany/openright
 % Circa 80 lettere per pagina con draft al posto di final fa il pdf senza foto
@@ -51,7 +51,7 @@
 
 \usepackage{setspace} % permette di cambiare la spaziatura quando necessario
 \doublespacing % per avere spazio per scrivere a penna
-% \onehalfspacing  % per l'interlinea finale
+%\onehalfspacing  % per l'interlinea finale
 % meglio questi due comandi sopra che linespread.
 % Cosi sistema interlinea 1 nelle tabelle automaticamente
 % \linespread{1.3} % Di default è \linespread{1} che corrisponde
@@ -132,7 +132,7 @@
 \usepackage[raggedright]{titlesec}
 % Serve per evitare la sillabazione nei titoli
 
-\newcommand{\sectionbreak}{\clearpage}
+%\newcommand{\sectionbreak}{\clearpage}
 %% serve per mettere ogni section a pagina nuova
 
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\space#1}{}}
@@ -259,7 +259,8 @@ file.path(DirMain, "tabelle")
   \Istituzione{Universit\`a degli Studi di Firenze}
   \Divisione{Scuola di Agraria}
   \Scuola{Corso di Laurea in Scienze e tecnologie agrarie (LM-69)}
-  \Titolo{25 anni di conduzione Biologica: uno studio di fisica del suolo}
+  \Titolo{25 anni di conduzione Biologica}
+  \Sottotitolo{Uno studio di fisica del suolo}
   \NCandidato{Candidato}
   \Candidato{Simone Massenzio}
   \NRelatore{Relatore}{}
@@ -278,45 +279,44 @@ file.path(DirMain, "tabelle")
 \begin{abstract}
   Lo scopo di questa tesi \`e quello di \textbf{i)} comparare due
   sistemi di conduzione agricola (organico e convenzionale, attivi da
-  pi\`u di venti anni) studiando tre propriet\`a fisiche del suolo:
+  venticinque anni) studiando tre propriet\`a fisiche del suolo:
   densit\`a apparente, distribuzione dei pori e stabilità degli
-  aggregati.  \textbf{ii)} Comparare gli effetti di tre lavorazioni
-  primarie: aratura, rippatura e frangizollatura. I campioni di suolo
-  sono stati prelevati nell'azienda agricola Montepaldi, situata a San
-  Casciano val di Pesa (FI). Lo studio \`e inserito nel progetto
-  MOLTE, un \textbf{long term experiment} dell'Universit\`a di Firenze
-  dove, dal 1991, viene condotta una sperimentazione sul sistema
-  Biologico. I risultati delle analisi sulla densit\`a apparente
-  mostrano che ci sono differenze statisticamente significative tra i
-  trattamenti, tuttavia queste non sono significative dal punto di
-  vista tecnologico. I risultati delle analisi sulla distribuzione dei
-  pori non mostrano differenze statisticamente significative, mentre
-  quelle sulla stabilit\`a degli aggregati mostrano indicano una
-  maggior stabilit\`a dei suoli Convenzionali rispetto ai
-  Biologici. Questo potrebbe essere dovuto alla mancanza di
-  fertilizzazione dei suoli Biologici.
+  aggregati; \textbf{ii)} comparare gli effetti di tre lavorazioni
+  primarie: aratura, rippatura e frangizollatura. Lo studio \`e
+  inserito nel progetto MOLTE, un \textbf{long term experiment}
+  dell'Universit\`a di Firenze dove, dal 1991 presso l'azienda
+  agricola Montepaldi, situata a San Casciano val di Pesa (FI), viene
+  condotta una sperimentazione sul sistema Biologico. I risultati
+  delle analisi sulla densit\`a apparente mostrano differenze
+  statisticamente significative tra i trattamenti, tuttavia i
+  cambiamenti sono minimi rendendoli non rilevanti dal punto
+  di vista pratico. Invece i risultati delle analisi sulla
+  distribuzione dei pori non mostrano differenze statisticamente
+  significative, mentre quelle sulla stabilit\`a degli aggregati
+  indicano una maggior stabilit\`a degli aggregati nei suoli a
+  conduzione Convenzionale rispetto a quella Biologica.
 \end{abstract}
 
 
 \begin{otherlanguage*}{english}
   \begin{engabstract}
     The purposes of this work were: \textbf{i)} to compare two farming
-    systems (organic and conventional management on site since more than
-    twenty years) through three soil's physical properties such as: bulk
-    density, pore size distribution and aggregate stability.
-    \textbf{ii)} to compare the effects of three tillage systems:
-    plowing, chisel plowing and disk harrowing. The soil samples were
-    taken in Montepaldi farm, situated in San Casciano val di Pesa
-    (FI). The study is inserted in the MOLTE project, a long term
-    experiment of the University of Florence where, since 1991, was
-    carried out an experimentation on the organic farming systems.  The
-    results of the analysis of the bulk density, shows that there are
+    systems (organic and conventional management on site since twenty
+    five years) through the assessement of three soil's physical
+    properties such as: bulk density, pore size distribution and
+    aggregate stability; \textbf{ii)} to compare the effects of three
+    tillage systems: plowing, chisel plowing and disk harrowing. The
+    study is implemented within the \emph{MOLTE} project, a long term
+    experiment of the University of Florence where, since 1991, at
+    Montepaldi farm, located in San Casciano val di Pesa (FI) was
+    carried out an experimentation on the organic farming systems.
+    The results of the analysis of the bulk density, shows
     statistically significant differences between two farming systems,
-    however these are not technologically significant. The results of
-    the pore distribution are not statistically significant. The
-    aggregate stability shows that the conventional's soil is more
-    stable than the organic one. This could be due to the lack of
-    fertilisation in the organic soil.
+    however these difference were so small that are irrelevant from the point of view 
+    of practical reason. Instead the results of the pore distribution 
+    do not display statistically significant differences. 
+    The aggregate stability shows that the aggregates from the conventional 
+    soil are more stable than the organic one. 
   \end{engabstract}%
 \end{otherlanguage*}
 
@@ -330,7 +330,7 @@ file.path(DirMain, "tabelle")
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\chapter{Suolo agricolo e agricoltura biologica}
+\chapter{Il suolo in sistemi agricoli Convenzionali e Biologici}
 
 
 
@@ -342,7 +342,7 @@ definizione univoca. Un tentativo di definizione \`e quello di
   da agenti biologici, chimici e/o fisici.}
 
 Nella definizione di Johnson non vengono considerate le piante; la
-Soil Taxonomy ha fornito una definizione pi\`u completa in cui vengono
+''Soil Taxonomy'' americana (USDA) ha fornito una definizione pi\`u completa in cui vengono
 considerati anche gli organismi vegetali: \emph{Il suolo \`e un
   corpo naturale composto da una fase solida (minerale e organica),
   una fase liquida e una gassosa presenti sulla superficie terrestre,
@@ -376,7 +376,7 @@ caratteristiche dei terreni agrari senza diminuirne la
 produttivit\`a. Gli stessi consumatori occidentali sono pi\`u attenti
 ai loro acquisti e cercano prodotti che siano coltivati rispettando
 l'ambiente e con un basso impatto ambientale. In particolare sono
-sempre pi\`u richiesti prodotti di agricoltura biologica che hanno
+sempre pi\`u richiesti prodotti di agricoltura Biologica che hanno
 l'obiettivo di impattare il meno possibile l'ambiente utilizzando
 prodotti naturali e non di sintesi.
 
@@ -392,25 +392,20 @@ studio dell'agricoltura Biologica:
 \item non esiste un indicatore di fertilit\`a univoco che permette di confrontare i
   vari tipi di agricoltura.
 \end{itemize}
-
-
-
-
-
-
 \section{Caratteristiche generali del suolo}
-Il suolo è un sistema naturale trifasico composto da:
+Il suolo è un sistema naturale trifasico costituito da:
 \begin{itemize}%%[topsep=0ex, itemsep=1ex, parsep=1ex, partopsep=1ex]
 \item una fase solida, materiale minerale e materiale
   organico vivo o in decomposizione;
 \item una fase liquida, ovvero una soluzione acquosa di cationi,
   anioni e composti organici;
-\item fase gassosa, simile per composizione a quella atmosferica.
+\item una fase gassosa, simile per composizione a quella atmosferica.
 \end{itemize}
 
 In linea di massima, il 50\% del suolo è composto dalla fase solida
-(di cui il 5\% è organico), il 30\% è liquida e il 20\% è gassosa,
-anche se queste ultime due variano a seconda delle condizioni atmosferiche.
+(di cui il 5\% è materiale organico), il 30\% dalla fase liquida e il
+20\% dalla fase gassosa, anche se queste ultime due variano
+proporzionalmente a seconda delle condizioni atmosferiche.
 
 La formazione del suolo è un processo estremamente complesso in cui
 intervengono fattori fisici (frantumazione, alternanza gelo disgelo,
@@ -425,22 +420,23 @@ formazione del suolo possono essere descritti con la seguente funzione:
 
 Dove:\\
 \begin{tabular}{rl}
-  s  &  sono le propriet\`a del suolo\\
-  cl &  \`e il clima\\
-  o  &  sono i fattori biologici\\
-  r  &  \`e la topografia\\
-  p  &  \`e la roccia madre\\
-  t  &  \`e il tempo.
+  $s$  &  sono le propriet\`a del suolo\\
+  $cl$ &  \`e il clima\\
+  $o$  &  sono i fattori biologici\\
+  $r$  &  \`e la topografia\\
+  $p$  &  \`e la roccia madre\\
+  $t$  &  \`e il tempo.
 \end{tabular}
 \vspace*{3em}
 
-Nel terreno è importante la distribuzione granulometrica, o tessitura,
+Nel terreno, data la sua influenza verso gli altri parametri fisici e
+chimici del suolo, è importante la distribuzione granulometrica, o tessitura,
 in cui le particelle di diametro superiore a \SI{2}{\milli\metre} sono
-dette scheletro, quelle tra \SI{2}{\mm} e \SI{50}{\micro\metre} sono
-dette sabbia, quelle tra \SI{50}{\micro\metre} e \SI{2}{\micro\metre}
-sono dette limo e quelle inferiori a \SI{2}{\micro\metre} sono dette
+definite scheletro, quelle tra \SI{2}{\mm} e \SI{50}{\micro\metre} sono
+definite sabbia, quelle tra \SI{50}{\micro\metre} e \SI{2}{\micro\metre}
+sono definite limo e quelle inferiori a \SI{2}{\micro\metre} sono definite
 argilla. La tessitura \`e usualmente rappresentata mediante il
-triangolo tessiturale introdotta da Whitney nel 1911 e adottata
+triangolo tessiturale introdotto da Whitney nel 1911 e adottata
 dall'USDA come metodo di rappresentazione ufficiale; la versione
 attuale (Fig. \ref{fig:triangolo}), modificata dal triangolo
 tessiturale di Whitney, \`e stata introdotta nel 1951 \citep{SoilTr}.
@@ -451,6 +447,7 @@ tessiturale di Whitney, \`e stata introdotta nel 1951 \citep{SoilTr}.
   \caption[Il triangolo tessiturale]{Triangolo tessiturale secondo USDA}
   \label{fig:triangolo}
 \end{figure}
+\FloatBarrier
 
 La presenza di cementi, organici o minerali, che portano alla
 formazione di aggregati permette di definire la
@@ -466,16 +463,16 @@ condizionata dalla tecnica agronomica con effetti sulle propriet\`a
 fisiche, meccaniche e chimiche del suolo, e quindi sulla maggiore o
 minore fertilit\`a.
 
-La densit\`a apparente \`e un importante parametro del suolo collegato
-con la tessitura e la struttura. Mentre il valore della densit\`a
-reale è, ai fini pratici, costante e considera solo la frazione
-minerale\footnote{La densit\`a delle particelle solide non \`e
-  uniforme per tutti i componenti (varia da circa 2 a oltre 3) ma, in
-  considerazione del fatto che nel suolo sono presenti prevalentemente
-  i silicati (con densit\`a che varia da 2,5 a 2,8), si assume il
-  valore di \SI{2.65}{\gram\per\cubic\centi\metre}
-  \citep{radaelli2001chimica}}, la densit\`a apparente considera anche
-gli spazi vuoti, ovvero i pori.
+La densit\`a apparente \`e un importante parametro del suolo legato
+principalmente alla distribuzione granulometrica e alla struttura in
+quanto tiene conto anche degli spazi vuoti, ovvero dei pori. Invece la
+densit\`a reale è, ai fini pratici, costante e considera solo la
+frazione minerale\footnote{La densit\`a delle particelle solide non
+  \`e uniforme per tutti i componenti (varia da circa 2 a oltre 3) ma,
+  in considerazione del fatto che nel suolo sono presenti
+  prevalentemente i silicati (con densit\`a che varia da 2,5 a 2,8),
+  si assume il valore di \SI{2.65}{\gram\per\cubic\centi\metre}
+  \citep{radaelli2001chimica}}.
 
 Secondo \citet{AskinBulkDensity}, la densit\`a apparente di un terreno
 è condizionata principalmente dalla tessitura del terreno, e pi\`u in
@@ -486,31 +483,31 @@ valore della densit\`a apparente.
 
 %% Simo Tutta sta roba l'ho presa da Pagliai
 
-La porosit\`a del terreno è un ulteriore parametro fondamentale: il
-volume dei pori rispetto il volume della fase solida influenza
-notevolmente il contenuto idrico e la lavorabilit\`a del terreno, la
-sua misura può aiutare la quantificazione dell’impatto delle pratiche
-colturali sul suolo ed è il miglior indicatore per la qualit\`a della
-struttura \citep{pagliai2002soil}. La quantificazione dei pori in
-termini di forma, spazio, dimensione, continuit\`a, orientamento e
-arrangiamento permette di definire la complessit\`a della struttura e
-fa capire le modificazioni indotte dalle pratiche colturali; in questo
-modo è possibile indicare quali di queste siano più compatibili con la
-protezione ambientale. La porosit\`a \`e correlata con la resistenza
+La porosit\`a del terreno è un ulteriore parametro fondamentale per le
+caratteristiche fisiche del suolo: il volume dei pori rispetto il
+volume della fase solida influenza notevolmente il contenuto idrico e
+la lavorabilit\`a del terreno. La sua misura può aiutare la
+quantificazione dell’impatto delle pratiche colturali sul suolo ed è
+il miglior indicatore per la qualit\`a della struttura
+\citep{pagliai2002soil}. La valutazione dei pori in termini di forma,
+spazio, dimensione, continuit\`a, orientamento e arrangiamento
+permette di definire la complessit\`a della struttura e fa capire le
+modificazioni indotte dalle pratiche colturali; in questo modo è
+possibile indicare quali di queste siano più compatibili con la
+protezione ambientale. La porosit\`a ha relazioni con la resistenza
 alla penetrazione: la diminuzione del volume dei pori è solitamente
 associata ad un aumento della resistenza alla penetrazione. La forma
-dei pori e la distribuzione della grandezza sono inoltre correlate a
-propriet\`a chimiche, biochimiche e biologiche (come l'attivit\`a
-enzimatica e la crescita delle radici).
+dei pori e la distribuzione della loro grandezza influenza
+direttamente le propriet\`a chimiche, biochimiche e biologiche.
 
-In particolare, la struttura dei suoli influenza la profondit\`a a cui
-le radici arrivano e i movimenti di acqua, aria e fauna tellurica.
-Inoltre una cattiva struttura è collegata a erosione, compattazione e
-desertificazione.
+In particolare, una buona struttura dei suoli promuove
+l'approfondimento radicale e i movimenti di acqua, aria e fauna
+tellurica.  Invece una cattiva struttura favorisce l'erosione, la
+compattazione e la desertificazione.
 
 Secondo \citet{pagliai2002soil}, la classificazione dei suoli più
 usata è quella di \citet{greenland1977soil} ed \`e mostrata in tabella
-\ref{tab:green}.
+\ref{tab:green}. \migliora{Luigi dice di mettere più classificazioni con la pubblicazione che mi ha dato}
 
 \begin{table}[ht]
   \caption[Classificazione dei pori del terreno secondo le
@@ -534,60 +531,54 @@ usata è quella di \citet{greenland1977soil} ed \`e mostrata in tabella
 
 I pori con diametro inferiore ai \SI{0.005}{\micro\meter} sono
 chiamati \emph{pori di legame} e sono particolarmente importanti per
-quanto riguarda le forze che tengono insieme i \emph{domains}.
+quanto riguarda le forze che tengono insieme la particelle primarie in
+\emph{domains}.
 
 
-
-I pori di diametro inferiore a \SI{0.5}{\micro\metre} sono chiamati
+I pori di diametro inferiore a \SI{0.5}{\micro\metre} sono definiti
 \emph{pori residui} per le loro interazioni chimiche a livello
 molecolare; i pori che hanno un diametro che va dai 0,5 ai
 \SI{50}{\micro\metre} sono detti \emph{pori di immagazzinamento},
 quelli compresi tra 50 e \SI{500}{\micro\metre} sono i \emph{pori di
   conduzione}. I pori di dimensioni maggiori di \SI{500}{\micro\metre}
-possono avere alcuni effetti utili sulla penetrazione delle radici e
-sul movimento dell’acqua (drenaggio) specialmente nei suoli a
-tessitura fine. Quando questa categoria di pori raggiunge o supera il
-70-80\% della porosit\`a totale, è indice di cattiva struttura e non
-favorisce la crescita delle piante. Questo è dovuto al fatto che le
-crepe superficiali che si vengono a creare a seguito di una pioggia,
-quando la stabilit\`a degli aggregati non è buona, appartengono a
-questa classe. Se i pori grandi, medi e piccoli sono in proporzione
-ottimale, si osserva un concomitante immagazzinamento/conduzione di
-acqua e aria che permette un'adeguata crescita radicale. Questa
-proporzione non è stata ancora definita a causa del fatto che alle
-radici servono comunque i pori di
-0.5-\SI{50}{\micro\meter}.
+sono utili alla penetrazione delle radici e al movimento dell’acqua di
+drenaggio specialmente nei suoli a tessitura fine. Quando questo tipo
+di pori raggiunge o supera il 70-80\% della porosit\`a totale, è
+indice di cattiva struttura e non favorisce la crescita delle
+piante. Se i pori grandi, medi e piccoli sono in proporzione ottimale,
+si osserva un concomitante immagazzinamento/conduzione di acqua e aria
+che permette un'adeguata crescita radicale.
 
-Un ulteriore indicatore fisico di fertilit\`a del suolo \`e la
-stabilit\`a degli aggregati, questi sono definiti come \emph{un gruppo
-  di particelle di suolo legate l'un l'altra in modo maggiore rispetto
-  ale particelle adiacenti}, mentre la stabilit\`a degli aggregati \`e
-\emph{l'abilit\`a degli aggregati di suolo di resistere alla rottura
-  quando vengono applicate forze esterne (solitamente dall'acqua)}
-\citep{SoilQualStab}. L'importanza della stabilit\`a degli aggregati
-si esplica soprattutto durante una pioggia o durante il movimento
-dell'acqua.
+Un ulteriore indicatore di fertilit\`a fisica del suolo \`e la
+stabilit\`a degli aggregati, questi ultimi sono definiti come \emph{un
+  insieme di particelle primarie di suolo legate l'un l'altra in modo maggiore
+  rispetto alle particelle adiacenti}, mentre la stabilit\`a degli
+aggregati \`e \emph{la capacit\`a degli aggregati di suolo di resistere
+  alla rottura quando vengono applicate forze esterne (solitamente
+  dall'acqua)} \citep{SoilQualStab}. L'importanza della stabilit\`a
+degli aggregati si esplica soprattutto durante una pioggia.
 
 
 
 \section{Sistemi agricoli a basso impatto ambientale}
 Grazie alla rivoluzione verde avvenuta negli anni '50 del secolo
 scorso, l'agricoltura ha sub\`ito un processo di trasformazione in cui
-si è passati dall'agricoltura tradizionale a una agricoltura
-tecnologica, oggi divenuta convenzionale. L'agricoltura convenzionale
-esaspera il concetto di massimizzazione del rendimento economico, \`e
-tecnologicamente orientata, utilizza ampie superfici spesso coltivate
-a monocoltura (con conseguente perdita della biodiversit\`a) e
-richiede ingenti quantit\`a di concimi e fertilizzanti, normalmente di
-sintesi. Grazie alla rivoluzione verde, la produzione agricola
-mondiale ha potuto fronteggiare il rapido e gigantesco aumento della
-popolazione di met\`a '900 \citep{Ciuffoletti_2014}; ma, al tempo
-stesso, ha portato a problemi di tipo ambientale e sanitario:
-patologie dovute all'esposizione ad antiparassitari, riduzione della
-biodiversit\`a degli ecosistemi, inquinamento di aria, suolo e acqua,
-desertificazione e desertizzazione. Inoltre le coltivazioni intensive
-monovarietali hanno facilitato la diffusione di patogeni, provocando
-gravi danni di tipo economico agli agricoltori.
+si è passati da una agricoltura tradizionale a una agricoltura che fa
+largo uso della tecnologia, oggi chiamata Convenzionale. L'agricoltura
+Convenzionale esaspera il concetto di massimizzazione del rendimento
+economico, \`e tecnologicamente orientata, utilizza ampie superfici
+spesso coltivate a monocoltura (con conseguente perdita della
+biodiversit\`a) e richiede ingenti quantit\`a di concimi e
+fertilizzanti, normalmente di sintesi. Grazie alla rivoluzione verde,
+la produzione agricola mondiale ha potuto fronteggiare il rapido e
+gigantesco aumento della popolazione di met\`a '900
+\citep{Ciuffoletti_2014}; ma, al tempo stesso, ha portato a problemi
+di tipo ambientale e sanitario: patologie dovute all'esposizione dell'uomo ad
+antiparassitari, alla riduzione della biodiversit\`a degli ecosistemi,
+all'inquinamento di aria, suolo e acqua, alla desertificazione e
+desertizzazione. Inoltre le coltivazioni intensive monovarietali hanno
+facilitato la diffusione di patogeni, provocando gravi danni di tipo
+economico agli agricoltori.
 
 In risposta alle problematiche descritte, durante gli anni '70 sono
 nati dei movimenti di agricoltori che cercavano di coltivare in modo
@@ -612,7 +603,7 @@ forma di agricoltura si impegnano a:
 \begin{itemize}
 \item escludere prodotti di sintesi;
 \item utilizzare tecniche agronomiche idonee, piante resistenti
-  e insetti predatori contro i parassiti;
+  e insetti predatori contro i parassiti (\emph{lotta biologica});
 \item utilizzare tecniche di lavorazione non
   distruttive;
 \item effettuare rotazioni colturali e
@@ -651,18 +642,16 @@ dall'agricoltura convenzionale non sono sufficienti a ridurre
 l'erosione dovuta ad una pioggia molto intensa.
 
 \citet{williams2017organic} sostengono che l'agricoltura biologica
-migliora le propriet\`a fisiche relative a stabilit\`a degli
-aggregati, compattazione del suolo e di drenaggio delle
-precipitazioni.
+migliora le propriet\`a fisiche relative alla stabilit\`a degli
+aggregati, alla compattazione del suolo e e al drenaggio.
 
 Uno studio che riguarda il progetto MoLTE
-\citep{migliorini2014agronomic} ha riscontrato, a fronte di una
-paragonabile produzione tra agricoltura convenzionale e biologica, un
-minor surplus di azoto e una miglior conservazione di carbonio e azoto
-a lento rilascio in favore di quest'ultima.
-
-
-
+\citep{migliorini2014agronomic}, ovvero l'esperimento a lungo termine
+attivo da 25 anni in cui \`e coinvolto anche questo studio (\ref{sec:MOLTE}), ha
+riscontrato, a fronte di una paragonabile produzione tra agricoltura
+convenzionale e biologica, un minor surplus di azoto ed una miglior
+conservazione di carbonio e azoto a lento rilascio (organico) in
+favore di quest'ultima.
 
 
 \section{Progetto \emph{FertilCrop}}
@@ -677,7 +666,7 @@ delle Scienze delle Produzioni Agroalimentari e dell'Ambiente (DISPAA)
 dell'Universit\`a degli Studi di Firenze gi\`a impegnata
 nell’esperimento di lungo termine MoLTE.  Il progetto FertilCrop si
 pone i seguenti obiettivi:
-\begin{itemize}
+\begin{enumerate}
 \item studio dell’interazione spazio-temporale tra infestanti, sovesci
   e colture;
 \item valutazione del ruolo della struttura e della porosit\`a degli
@@ -695,18 +684,20 @@ pone i seguenti obiettivi:
   del suolo;
 \item sviluppo, in collaborazione con gli agricoltori, di strumenti e
   strategie per il riconoscimento visivo della fertilit\`a dei suoli.
-  Il presente lavoro si pone come scopo quello di contribuire al
-  raggiungimento dell’obiettivo 2 di FertilCrop, studiando l’impatto
-  di lavorazioni a diversa intensit\`a su indicatori della struttura
-  fisica del suolo.
-\end{itemize}
-\section{Ipotesi di lavoro e scopo dello studio}
-Scopo di questa tesi è la verifica di due ipotesi:
+\end{enumerate}
+
+Il presente lavoro che si inserisce nell'ambito di questo progetto, ha
+l'intento di contribuire al raggiungimento dell’obiettivo 2 di
+FertilCrop, studiando l’impatto di lavorazioni a diversa intensit\`a
+per mezzo di indicatori di qualit\`a della struttura fisica del suolo.
+
+\section{Scopo dello studio}
+Lo scopo di questa tesi è la verifica di due ipotesi:
 \begin{itemize}
-\item la relazione tra la forma di conduzione (biologica e
-  convenzionale) e le caratteristiche fisico-strutturali del terreno;
-\item l'effetto di tre diverse lavorazioni primarie (aratura,
-  rippatura e frangizollatura) sullo stato di aggregazione del suolo.
+\item la presenza di una relazione tra il tipo di conduzione (Biologica e
+  Convenzionale) e le caratteristiche fisico-strutturali del terreno;
+\item la presenza di una relazione tra tre diverse lavorazioni primarie (aratura,
+  rippatura e frangizollatura) e lo stato di aggregazione del suolo.
 \end{itemize}
 
 Gli indicatori di fertilit\`a del suolo scelti in questo lavoro sono
@@ -723,16 +714,19 @@ Experiment, MOLTE \citep{MOLTE}, che \`e attivo dal 1991.
 
 \chapter{Materiali e metodi}
 \section{Descrizione del sito sperimentale}
+\label{sec:MOLTE}
 L'esperimento oggetto di questa tesi fa parte del progetto MoLTE
 (Montepaldi Long Term Experiment) che è attivo dal 1991 nell’azienda
 agricola dell’Universit\`a di Firenze (localit\`a Montepaldi, San
-Casciano Val di Pesa) e interessa una superficie leggermente declive
-di circa \SI{15}{\hectare} a \SI{90}{\meter} s.l.m. .
+Casciano Val di Pesa) ed interessa una superficie leggermente declive
+di circa \SI{15}{\hectare} a \SI{90}{\meter} s.l.m.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
+  \includegraphics[width=0.8\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
   \caption{\label{fig:FotoPanoramaMpaldi}}
 \end{figure}
+\FloatBarrier
+
 Il clima è sub-appenninico con precipitazioni totali di circa
 \SI{800}{\milli\meter} annui con massimo in autunno e primavera e
 minimo nel periodo tra giugno-agosto. La temperatura media annuale è
@@ -742,7 +736,7 @@ scendere sotto gli \SI{0}{\celsius}. Dal punto di vista pedologico
 l’Azienda è caratterizzata da terreni evoluti su sedimenti pliocenici
 di tipo conglomeratico misto a lenti sabbiose e argillose (aree
 declivi) e da sedimenti del fiume Pesa risalenti all’Olocene (aree
-pianeggianti) con caratteristiche tessiturali li caratterizzano tra i
+pianeggianti) con caratteristiche tessiturali da essere definite tra i
 \emph{medio impasto limo-argillosi} e gli \emph{argillosi} con
 presenza variabile di scheletro di piccole e medie dimensioni.
 
@@ -754,17 +748,17 @@ avanti definiti come \emph{Conduzione}:
     presenti due blocchi a conduzione biologica: essi vengono
     comunemente designati come \emph{biologico nuovo} e
     \emph{biologico vecchio}. Il presente lavoro è stato condotto su
-    questi ultimi appezzamenti. }, \emph{Or} (\emph{Organic})
-\item conduzione \emph{Convenzionale}, \emph{Co}
+    questi ultimi appezzamenti. }, \emph{OO} (\emph{Old Organic})
+\item conduzione \emph{Convenzionale}, \emph{CO}
 \end{itemize}
 
 I due agro ecosistemi sono suddivisi in pi\`u appezzamenti
-rettangolari (\emph{Field}, \SI{1.3}{\hectare} ciascuno),
+rettangolari (\SI{1.3}{\hectare} ciascuno),
 identificati da sigle quali \emph{OO1, OO2, OO3, OO4} per il biologico
 vecchio (Fig. \ref{fig:foto_OO_sito}) e \emph{CO9, CO10} per il
 convenzionale (Fig. \ref{fig:foto_CO_sito}).
 
-Nell'anno 2015-2016, sono stati campionati \emph{OO1, OO3, CO9, CO10},
+Nell'anno 2015-2016, sono stati campionati gli appezzamenti \emph{OO1, OO3, CO9, CO10},
 mentre nell'anno 2016-2017 sono stati campionati \emph{OO2, OO4, CO9,
   CO10}
 
@@ -776,22 +770,27 @@ lati da due strisce inerbite di 2 metri; l’altra siepe artificiale,
 piantata dal DISAT con l’aiuto del WWF agli inizi degli anni ’90,
 separa gli appezzamenti a conduzione biologica dagli altri campi
 aziendali ed è formata da specie autoctone. Inoltre, una striscia
-inerbita separa il sistema \emph{Bionuovo} da quello
+inerbita separa il sistema \emph{Biologico nuovo} da quello
 \emph{Convenzionale}.
 
 
 Dal 2001, sono state adottate le seguente rotazioni:
 \begin{itemize}
-\item \small{sovescio + coltura
-    da rinnovo - cereale + leguminosa - leguminosa - cereale}
-
-  per la conduzione biologica
-\item  \small{coltura da rinnovo - cereale}
-
-  per la conduzione convenzionale
+\item per la conduzione biologica
+  \begin{enumerate}
+  \item \small sovescio e coltura da rinnovo 
+  \item \small cereale e leguminosa
+  \item \small leguminosa 
+  \item \small cereale
+  \end{enumerate}
+\item  per la conduzione convenzionale
+  \begin{enumerate}
+    \item \small coltura da rinnovo
+    \item \small cereale
+  \end{enumerate} 
 \end{itemize}
 
-Nell'anno precedente alle rilevazioni di questo studio, (2015), \`e
+Nell'anno precedente ai campionamenti effettuati per questo studio, (2015), \`e
 stato coltivato l'orzo negli appezzamenti \emph{OO2} e \emph{CO9} e il
 girasole negli appezzamenti \emph{OO4} e \emph{CO10}.
 
@@ -806,8 +805,8 @@ lavorazioni primarie (\emph{Lavorazione}):
 In pre-semina \`e stata effettuata una ulteriore frangizollatura per
 tutti gli appezzamenti.
 
-Ogni lavorazione \`e stata replicata tre volte (\emph{Plot}), quindi
-ogni appezzamento \`e suddiviso in 9 parcelle.
+Ogni lavorazione \`e stata replicata tre volte per appezzamento che
+diventa cos\`i suddiviso in 9 parcelle.
 
 
 All'interno di ogni parcella sono stati individuati tre punti di
@@ -831,10 +830,11 @@ serie \emph{m}, quindi 36 campioni.
     \emph{A}(aratura), \emph{B}(rippatura), \emph{C}(frangizollatura);
     il numero (\emph{1, 2 , 3}) indica la riga; la lettera minuscola
     indica la replica all'interno del plot (\emph{a} alto, \emph{m}
-    medio, \emph{b}. Il fiume Pesa si trova sul margine inferiore
-    dello schema e la collina su quello superiore. basso)}
+    medio, \emph{b} basso). Il fiume Pesa si trova sul margine inferiore
+    dello schema e la collina su quello superiore}
   \label{fig:foto_OO_sito}
 \end{figure}
+\FloatBarrier
 
 \begin{figure}
   \centering
@@ -845,22 +845,22 @@ serie \emph{m}, quindi 36 campioni.
   \label{fig:foto_CO_sito}
 
 \end{figure}
-
+\FloatBarrier
 
 \section{Misura della densit\`a apparente}
 L'ipotesi che ci ha portato ad effettuare questa misurazione \`e data
 dal fatto che la conduzione biologica, non utilizzando concimi e
 pesticidi di sintesi, avrebbe un minor impatto sulla microflora e
-microfauna tellurica. Di conseguenza ci aspetteremmo una migliore
-struttura con la conduzione biologica.  La densit\`a apparente
+microfauna tellurica, e di conseguenza ci aspetteremmo una migliore
+struttura favorita dall'attivit\`a biologica.  La densit\`a apparente
 del suolo è stata misurata sia con il metodo \emph{Core} (utilizzando grandi
-volumi) che con il metodo \emph{Clod} (utilizzando piccoli aggregati).
+volumi) che con il metodo \emph{Clod} (utilizzando piccoli aggregati) \citep{black1900method}.
 
 \subsection{Metodo \emph{Core}}%Densimetria per grandi volumi (cilindro)}
-Per misurare la densit\`a apparente del suolo con il metodo della
-pesata \citep{ugolini2010basi}, sono stati prelevati dei campioni di
-terreno mediante l'utilizzo di un cilindro non deformabile di volume
-noto (Fig. \ref{fig:cilindro}).
+Per misurare la densit\`a apparente del suolo con il metodo
+\emph{Core} \citep{ugolini2010basi}, sono stati prelevati dei campioni
+di terreno mediante l'utilizzo di un cilindro non deformabile di
+volume noto (Fig. \ref{fig:cilindro}).
 
 
 \begin{figure}[ht]
@@ -873,16 +873,16 @@ noto (Fig. \ref{fig:cilindro}).
     apparente col metodo \emph{Core}.}
   \label{fig:cilindro}
 \end{figure}
-
+\FloatBarrier
 
 
 Il cilindro \`e stato inserito nel suolo per tutta la sua lunghezza e
 quindi estratto facendo attenzione che il materiale al suo interno non
 fuoriuscisse in modo da formare due superfici piatte sulle basi del cilindro.
 Il campione prelevato, portato in laboratorio, \`e stato passato a
-umido attraverso un vaglio con fori circolari di \SI{2}{\milli\metre}
+umido attraverso un vaglio con fori circolari a \SI{2}{\milli\metre}
 di diametro. Il volume dello scheletro rimasto nel vaglio \`e stato
-misurato per spinta idrostatica.  Il suolo vagliato
+misurato successivamente per spinta idrostatica.  Il suolo vagliato
 \`e stato essiccato in stufa a \SI{105}{\celsius} fino a peso
 costante, e successivamente pesato.
 
@@ -892,8 +892,9 @@ costante, e successivamente pesato.
   \caption{Metodo \emph{Core}: il terreno dopo essicazione in stufa}
   \label{fig:FotoSeccoCore}
 \end{figure}
+\FloatBarrier
 
-Con i dati rilevati, \`e stato ricavato il valore della densit\`a
+Con i dati ottenuti, \`e stato ricavato il valore della densit\`a
 apparente ($D_{App}$) tramite la seguente formula:
 
 \begin{equation}
@@ -904,9 +905,11 @@ apparente ($D_{App}$) tramite la seguente formula:
 Dove:\\
 \begin{tabular}{rp{12cm}}
   $V_{cilindro}$=       & volume del cilindro di ottone (\SI{854.1}{\cubic\centi\metre}); \\
-  $V_{scheletro}$=    & volume dello scheletro misurato per spinta
+  $V_{scheletro}$=    & volume dello scheletro (>\SI{2}{\milli\metre}) misurato per spinta
                         idrostatica (\SI{}{\cubic\centi\metre}); \\
-  $P_{secco}$=       & peso del terreno vagliato ed essiccato (\SI{}{\kilogram}).
+  $P_{secco}$=       & peso del terreno vagliato
+                       (<\SI{2}{\milli\metre}) ed essiccato a
+                       \SI{105}{\degree} (\SI{}{\kilogram}).
 \end{tabular}
 \vspace*{3em}
 
@@ -914,11 +917,11 @@ Dove:\\
 
 \subsection{Metodo \emph{Clod}}%Densimetria per piccoli aggregati (petrolio)
 
-A differenza del metodo \emph{Core}, questa misura viene di solito
-effettuata su aggregati di piccole dimensioni(3-\SI{4}{\cm} di
-diametro).  Il metodo \emph{Clod} viene anche detto metodo per spinta
-idrostatica \citep{Monnier_1973}. La procedura \`e consiste nel
-mettere per una notte a bagno nel petrolio degli aggregati di terreno
+A differenza del metodo \emph{Core}, questa misura viene effettuata su
+aggregati di piccole dimensioni(3-\SI{4}{\cm} di diametro).  Il metodo
+\emph{Clod} viene anche detto metodo per spinta idrostatica
+\citep{Monnier_1973}. La procedura consiste nel mettere per una notte
+a bagno nel petrolio degli aggregati di terreno
 (Fig. \ref{fig:petrolio}) cercando di ridurre al minimo le
 manipolazioni per mantenere la struttura dell'aggregato stesso.
 
@@ -929,11 +932,11 @@ manipolazioni per mantenere la struttura dell'aggregato stesso.
     misura della densità apparente}
   \label{fig:petrolio}
 \end{figure}
+\FloatBarrier
 
 
-
-Successivamente sono stati asciugati gli aggregati (completamente
-imbevuti di petrolio) con carta, fino a "brillantezza", in modo che
+Successivamente gli aggregati (completamente imbevuti di petrolio)
+sono stati asciugati con carta fino a "brillantezza", in modo che
 solo una pellicola di liquido avvolgesse il campione. Per misurare la
 spinta idrostatica \`e stato posto sul piatto di una bilancia
 (sensibilit\`a $\pm 10^{-3}$\SI{}{\gram}), un contenitore riempito di
@@ -944,12 +947,12 @@ quindi \`e misurato il peso del petrolio spostato.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.8\textwidth]{../foto/navicella.jpeg}
+  \includegraphics[width=0.7\textwidth]{../foto/navicella.jpeg}
   \caption{Metodo \emph{Clod}: disposizione della bilancia per la
     misura della spinta idrostatica}
   \label{fig:bilancia}
 \end{figure}
-
+\FloatBarrier
 Per il principio di Archimede, il peso misurato \`e uguale al peso del
 volume di petrolio spostato, da questa informazione \`e stato
 possibile calcolare al volume del campione applicando la seguente
@@ -957,14 +960,14 @@ formula:
 
 \begin{equation}
   \label{eq:VolumeAggr}
-  V_{aggregato}=\frac{P_{petrolio}}{D_{petrolio}}
+  V_{totale}=\frac{S_{totale}}{D_{petrolio}}
 \end{equation}
 
 Dove:\\
 \begin{tabular}{rp{12cm}}
-  $V_{aggregato}$= & volume dell'aggregato comprendente anche il
-                     volume dei pori (\SI{}{\cubic\cm});\\
-  $P_{petrolio}$=  &  valore della spinta idrostatica
+  $V_{totale}$= & volume dell'aggregato comprendente il volume del
+                  solido e il volume dei vuoti (\SI{}{\cubic\cm});\\
+  $P_{totale}$=  &  valore della spinta idrostatica
                      dell'aggregato imbevuto di petrolio (\SI{}{\gram});\\
   $D_{petrolio}$=  &  densit\`a del petrolio utilizzato per
                      l'analisi (\SI{0.761}{\gram\per\cubic\cm}).
@@ -985,7 +988,7 @@ campione calcolato con il metodo precedentemente descritto:
 
 \begin{equation}
   \label{eq:densitapetrolio}
-  D_{App} = \frac{P_{150}}{V_{aggregato}}
+  D_{App} = \frac{P_{150}}{V_{totale}}
 \end{equation}
 
 Dove:\\
@@ -994,18 +997,14 @@ Dove:\\
                       misurato (\SI{}{\gram\per\cubic\cm});\\
   $P_{150}$=       & peso dell'aggregato essiccato a
                      \SI{150}{\celsius} (\SI{}{\gram});\\
-  $V_{aggregato}$=  & volume calcolato con la formula
+  $V_{totale}$=  & volume calcolato con la formula
                       \ref{eq:VolumeAggr}  (\SI{}{\cubic\cm}).
 \end{tabular}
 
-Questo tipo di misura fornisce dei valori di densit\`a apparente pi\`u
-elevati rispetto a quelli misurati utilizzando il metodo Core, questo \`e
-dovuto al fatto che nella misura non sono considerate le fratture
-\citep{tisdall1951comparison}.
 
 
 
-\section{Distribuzione dinamica della dimensione degli aggregati}
+\section{Dinamica della distribuzione della dimensione degli aggregati}
 La dinamica di disgregazione degli aggregati di suolo \`e stata
 indagata per mezzo dello strumento Mastersizer 2000 \citep{Mas_2000}.
 Il Mastersizer 2000 \`e mostrato in Fig. \ref{fig:DisegnoMsizer2000}
@@ -1019,87 +1018,89 @@ nella cui didascalia vengono descritti i dettagli.
     ottico, che colleziona i dati i quali verranno usati per calcolare
     la dimensione delle particelle del campione; 2) una unit\`a di
     dispersione del campione, che ha lo scopo di disperdere il
-    campione in acqua e mandarlo al tavolo ottico tramite una pompa;
+    campione in acqua e condurlo al tavolo ottico tramite una pompa, per effettuare la misura laser;
     3) un elaboratore su cui è installato il software apposito che
     analizza i dati grezzi per determinare la dimensione delle
     particelle.}
   \label{fig:DisegnoMsizer2000}
 \end{figure}
-
+\FloatBarrier
 Per rompere totalmente gli aggregati, e verificare se i diversi
 campioni possiedono una distribuzione granulometrica di base uguale,
 viene utilizzato un emettitore di ultrasuoni presente nel Mastersizer
-2000 che li disgrega meccanicamente.
+2000.
 
 La presenza di una pompa e di un agitatore sono necessari per
 consentire il ricircolo della sospensione di suolo e acqua e la
 corretta lettura della sua torbidit\`a. Nel nostro caso l'applicazione
-dell'energia cinetica al campione da parte della pompa, \`e
-fondamentale per la determinazione della resistenza alla disgregazione
-degli aggregati. Infatti effettuando una lettura a intervalli regolari
-(quindi analizzando la variazione della distribuzione nel tempo) \`e
-possibile determinare la capacit\`a degli aggregati di resistere a
-sollecitazioni meccaniche.
+dell'energia cinetica al campione dovuta al ricircolo dell'acqua, \`e tenuta in considerazione
+per la determinazione della resistenza alla disgregazione
+degli aggregati. Infatti viene effettuata una lettura a intervalli regolari
+(quindi analizzando la variazione della distribuzione nel tempo) viene
+determinata la capacit\`a degli aggregati di resistere alle
+sollecitazioni prima della sonicazione
 
 
 \subsection{Protocollo di misura}
 Da una aliquota dei campioni freschi \`e stata separata una
 frazione di suolo compresa tra 1 e \SI{2}{\milli\meter} e,
 successivamente, seccata a \SI{40}{\celsius}.  Prima della misurazione
-effettiva del campione \`e necessario misurare il "bianco" per
-acquisire $I_0$ (Eq. \ref{eq:BeerLambert}).
+effettiva del campione \`e necessario misurare un "bianco" per
+acquisire l'intensit\`a della radiazione luminosa all'ingresso del campo delle particelle,
+$I_0$ (Eq. \ref{eq:BeerLambert}).
 
 Da questa aliquota, \SI{300}{\mg} sono stati immessi
 nell'unit\`a di dispersione del campione opportunamente riempita di
 acqua.  Lo strumento effettua una misurazione della distribuzione
-granulometrica ogni minuto, per 12 minuti. Al tempo stesso provvede al
-ricircolo dell'acqua che disgrega le particelle.  Dal
-\SI{13}{\degree} al \SI{24}{\degree} minuto, per completare la rottura
+granulometrica ogni minuto, per 12 minuti.  Dopo il
+\SI{12}{\degree} minuto, per completare la rottura
 degli aggregati, viene attivata la sonicazione.
 
-Per studiare il fenomeno dello \emph{slaking} \footnote{Rottura di
+Per valutare il fenomeno dello \emph{slaking} \footnote{Rottura di
   aggregati di suolo (>2-\SI{5}{\mm}) secchi in aggregati pi\`u
   piccoli (<\SI{0.25}{\mm}) quando sono improvvisamente immersi in
   acqua. Lo slaking avviene quando gli aggregati non sono forti
   abbastanza da resistere agli stress interni causati dal rapido
   ingresso dell'acqua che, comprimendo l'aria, esercita una pressione
   distruttiva \citep{Slaking}}, ogni misurazione \`e stata ripetuta
-due volte: una sul campione talquale e una sul campione
+due volte: una sul campione secco e una sul campione
 precedentemente inumidito con acqua demineralizzata.
 
-\subsection{Distribuzione granulometrica dinamica}
+\subsection{Dinamica della distribuzione granulometrica}
 A conclusione della misura abbiamo ottenuto, per ogni combinazione dei
 fattori dell'esperimento, 48 distribuzioni granulometriche, in
 particolare:
 \begin{itemize}
-\item 12 distribuzioni dal minuto 1 al minuto 12 per il campione secco
-  senza sonicatura;
-\item 12 distribuzioni dal minuto 13 al minuto 24 per il campione
-  secco con la sonicatura attiva;
-\item 12 distribuzioni dal tempo 1 al tempo 12 per il campione umido
-  senza sonicatura;
-\item 12 distribuzioni dal minuto 13 al minuto 24 per il campione
-  umido con la sonicatura attiva.
+  \item 24 per il campione secco di cui:
+  \begin{itemize}
+    \item 12 distribuzioni dal minuto 1 al minuto 12 senza sonicatura;
+    \item 12 distribuzioni dal minuto 13 al minuto 24 con la sonicatura attiva;
+  \end{itemize}
+  \item 24 per il campione umido di cui
+    \begin{itemize}
+      \item 12 distribuzioni dal tempo 1 al tempo 12 senza sonicatura;
+      \item 12 distribuzioni dal minuto 13 al minuto 24 con la sonicatura attiva.
+    \end{itemize}
 \end{itemize}
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.8\textwidth]{../foto/distropisa.jpeg}
   \caption[Esempi di curve di distribuzione granulometrica
-  dinamica]{In figura alcuni esempi di curve di distribuzione
-    granulometrica dinamica: sull'asse delle ascisse sono presenti i
-    valori dei diametri delle varie particelle misurate dallo
-    strumento in \SI{}{\micro\metre}, scala logaritmica; sull'asse
-    delle ordinate sono presenti i relativi valori di volume in
-    percentuale sul totale.}
+  dinamica]{Alcuni esempi di curve di distribuzione
+    granulometrica dei campioni 25, 28, 13, 17, 1, 10. Sull'asse delle ascisse
+    in scala logaritmica sono presenti i valori dei diametri delle varie particelle 
+    misurate dallo strumento in \SI{}{\micro\metre}; sull'asse
+    delle ordinate sono presenti i relativi valori in
+    percentuale.}
 \end{figure}
-
+\FloatBarrier
 
 \section{Porosimetria per intrusione di mercurio}
 Le misure della distribuzione dei pori sono state realizzate con: un
 porosimetro Carlo Erba serie 2000 per la misura dei macropori e un
 porosimetro PASCAL 140 per la misura dei micropori, entrambi collegati
-ad un elaboratore DOS per la raccolta e la elaborazione dei dati.
+ad un elaboratore DOS per la raccolta e per una prima elaborazione dei dati.
 
 \begin{figure}[ht]
   \centering
@@ -1108,7 +1109,7 @@ ad un elaboratore DOS per la raccolta e la elaborazione dei dati.
     dei micropori, a destra il porosimetro Carlo Erba series 2000 per
     la misura dei macropori. \label{fig:porosimetri}}
 \end{figure}
-
+\FloatBarrier
 La misura viene effettuata per i pori nell'intervallo compreso da circa
 \SI{15}{\micro\meter} e circa \SI{2000}{\micro\meter} di diametro.
 
@@ -1155,25 +1156,22 @@ automaticamente in depressione.
 
 \section{Elaborazione dei dati}
 
-I dati sono stati analizzati utilizzando il linguaggio di
+I dati sono stati analizzati mediante il linguaggio di
 programmazione ad oggetti R 3.4.0 \citep{r_programming}.
-L'esplorazione dei modelli \citep{fox2002r, chambers1992statistical,
-  faraway2004} è stata fatta mediante confronto di modelli marginali e
-un test F ($\textrm{p < 0,05}$).
-
-Tutti i modelli sono stati validati attraverso l'analisi esplorativa
+L'esplorazione dei modelli statistici \citep{fox2002r, chambers1992statistical,
+  faraway2004} è stata fatta mediante confronto di modelli statistici marginali e un test F ($\textrm{p < 0,05}$).
+\dubbio{Gigi diceva che non si può dire semplicemente "modelli" perché è fraintendibile, poi non gli tornava neanche il nome "modello additivo"}
+Tutti i modelli statistici sono stati validati attraverso l'analisi esplorativa
 dei residui in modo da verificare le eventuali violazioni delle
 assunzioni di normalit\`a \citep{stefanini2007introduzione}. 
 
 \subsection{Densit\`a}
-Sia per il metodo \emph{Core} che per quello \emph{Clod} \textbf{non} sono state
-riscontrate interazioni statisticamente significative tra i parametri
-considerati e quindi esse non compaiono nei modelli sotto riportati,
+I risultati delle analisi sia con il metodo \emph{Core} che con il metodo \emph{Clod} \textbf{non} hanno
+riscontrato interazioni statisticamente significative tra i parametri
+considerati e quindi esse non compaiono nei modelli statistici sotto riportati,
 che sono quindi di natura additiva.
 
-
-Per il metodo di analisi \emph{Clod}, \`e stato adattato il seguente
-modello:
+\`E stato quindi adattato il seguente modello statistico:
 
 \begin{modello}
   \label{mod:MetodoClod}
@@ -1192,34 +1190,33 @@ dove: \\
 
 
 La variabile categorica \emph{anno}, \`e stata necessariamente
-eliminata dal modello per il metodo \emph{Clod}, per la mancata
+eliminata dal modello statistico per il metodo \emph{Clod}, per la mancata
 disponibilità dei dati per l'anno 2015.
 
-Una volta ottenuto il modello definitivo \`e stata effettuata una
-analisi della varianza (ANOVA).
+Una volta ottenuto il modello statistico definitivo \`e stata effettuata una
+analisi della varianza (ANOVA) sui residui del modello.
 
-Infine, data la natura additiva dei modelli, ai gruppi oggetto dello
+Infine, data la natura additiva dei modelli statistici, ai gruppi oggetto dello
 studio, \`e stato applicato il test di Tukey-Siegel utilizzando i
-pacchetti 'agricolae' \citep{agricolae} e 'multcomp' \citep{multcomp}.
+package 'agricolae' \citep{agricolae} e 'multcomp' \citep{multcomp}.
 
 
-\subsection{Dinamica e porosimetria}
+\subsection{Dinamica della distribuzione degli aggregati e porosimetria}
 
-I dati provenienti da queste analisi sono, per loro stessa natura,
+I dati provenienti da queste due analisi sono, per loro stessa natura,
 composizionali e quindi sono stati analizzati con il package R
-'Composition' \citep{compositional}. I valori in output dagli
-strumenti, infatti, sono espressi come valore percentuale sul totale.
+'Composition' \citep{compositional}, che \`e specifico per questo tipo di dati. 
+I valori in output dagli
+strumenti, infatti, sono espressi come valore percentuale sul totale; questi sono stati raggruppati 
+in tre range dimensionali (macroaggregati, mesoaggregati, microaggregati e macropori, mesopori,
+micropori). Le dimensioni sono state definite in base alla classificazione della
+letteratura (\cite{paul2014soil}, \cite{greenland1977soil}).
 
-Questi sono stati raggruppati in tre range dimensionali
-(macroaggregati, mesoaggregati, microaggregati e macropori, mesopori,
-micropori). Le dimensioni sono state definite in base alla
-letteratura (\citet{paul2014soil}, \citet{greenland1977soil}).
-
-Da qui in poi, per la verifica di significativit\`a delle ipotesi, si
+Da qui in poi, per la verifica di significativit\`a dei trattamenti, si
 \`e proceduto come nel caso dell'analisi della densit\`a apparente,
-ovvero con la costruzione del modello (opportunamente validato
-mediante esplorazione visuale dei residui) e quindi con l'analisi
-della varianza.
+ovvero con la costruzione del modello statistico (opportunamente validato
+mediante esplorazione visuale dei residui) e successivamente con l'analisi
+della varianza dei residui del modello.
 
 
 \chapter{Risultati}
@@ -1272,14 +1269,11 @@ detach(summary.campo)
 \subsection{Metodo \emph{Core}}
 
 La tabella \ref{tab:summaryCore} riassume i dati ottenuti calcolando
-la densit\`a apparente mediante la formula \ref{eq:DensitaApparente}.
+la densit\`a apparente mediante la formula \ref{eq:DensitaApparente} a pagina \pageref{eq:DensitaApparente}. \dubbio{gigi dice: o il boxplot o il sommario}
 La figura \ref{fig:boxplotCore} riporta gli stessi dati in forma
 grafica. I valori, la cui media generale \`e pari a
 \SI{\Sexpr{round(mean(df.dueAnni$densita.apparente,na.rm=TRUE),2)}}{\gram\per\cubic\centi\metre},
-non si allontanano
-molto da quelli che pi\`u frequentemente si riscontrano nel suolo,
-ovvero circa la met\`a della densit\`a reale che si aggira intorno a
-\SI{2.65}{\gram\per\cubic\centi\metre}
+sono simili a quelli che pi\`u frequentemente si riscontrano nel suolo.
 
 
 <<Summary_Campo, echo=FALSE, eval=TRUE, results=tex>>=
@@ -1295,13 +1289,12 @@ xtable(summary.campo[,-7],
 label = 'tab:summaryCore', align  = "llllccc",
 caption =
 "Valori medi della densit\\`a apparente (in \\SI{}{\\gram\\per\\cubic\\centi\\metre}),
-condizionati per \\emph{Anno}, \\emph{Conduzione} e \\emph{Lavorazione} " )
+suddivisi per \\emph{Anno}, \\emph{Conduzione} e \\emph{Lavorazione} " )
 print(tabella.campo, include.rownames=FALSE,
 caption.placement = "top",
 table.placement= "hb")
 
 @
-
 \FloatBarrier
 
 
@@ -1338,7 +1331,6 @@ text( 2, 1.7, "Co", pos = 1, cex = 1.5)
 text( 5, 1.7, "Or", pos = 1, cex = 1.5)
 text( 8, 1.7, "Co", pos = 1, cex = 1.5)
 text(11, 1.7, "Or", pos = 1, cex = 1.5)
-
 @
 
 \begin{figure}[hb]
@@ -1349,14 +1341,13 @@ text(11, 1.7, "Or", pos = 1, cex = 1.5)
   \includegraphics[width=\textwidth]{Tesi_GIT-figboh2.pdf}
 
   \caption[Boxplot della densit\`a apparente: metodo
-  \emph{Core}]{Boxplot della densit\`a apparente per i vari trattamenti:
-    a sinistra sono presenti le misurazioni dell'anno 2015, a destra
-    quelle del 2016; all'interno dei due anni sono suddivisi in
-    \emph{Convenzionale} e \emph{Organico}; per colore si possono distinguere le varie
+  \emph{Core}]{Boxplot della densit\`a apparente metodo \emph{Core} relativi alla
+    (\emph{Convenzionale} e \emph{Organico}) e per le varie
     lavorazioni (arato, frangizollato e rippato). La riga rossa indica
     la media generale }
   \label{fig:boxplotCore}
 \end{figure}
+\FloatBarrier
 
 <<ModelloDensitaCampo, echo=FALSE, eval=TRUE, results=tex>>=
 lm.Densita <-
@@ -1372,8 +1363,8 @@ lm(densita.apparente ~ YEAR+TRT, data = df.dueAnni)
 
 %% \migliora[inline]{riscrivere}
 
-La tabella \ref{tab:anova del modello} riporta l'ANOVA del
-modello e indica la non significatività dei trattamenti presi in esame.
+La tabella \ref{tab:anova del modello} riporta l'ANOVA dei residui del
+modello statistico e indica la non significatività dei trattamenti presi in esame.
 
 <<anova_modello, echo=FALSE, eval=TRUE, results=tex>>=
 anova.dens <- anova(lm.Densita)
@@ -1381,7 +1372,7 @@ rownames(anova.dens) <-     c("Anno", "Conduzione", "Lavorazione", "residui")
 ##%   c("Anno", "Management", "Tillage", "residui")
 tabella.anova.dens <-
 xtable(anova.dens,
-label = 'tab:anova del modello', align  = "rrrrrr",
+label = 'tab:anova del modello', align  = "lrrrrr",
 caption = 'Tabella ANOVA per i valori di densità rilevati col metodo \\emph{Core}')
 print(tabella.anova.dens,
 include.rownames=TRUE,
@@ -1407,7 +1398,7 @@ c("Co 2015", "Scostamento 2016", "Scostamento Or")
 
 tabella.summary.dens <-
 xtable(sommario.dens,
-label = 'tab:t-table del modello2', align  = "rrrrr",
+label = 'tab:t-table del modello2', align  = "lrrrr",
 caption = '')
 
 print(tabella.summary.dens,
@@ -1523,20 +1514,20 @@ label = 'tab:summaryClod', align  = "lllcccc",
 caption =
 "Valori medi della densit\\`a apparente (in
 \\SI{}{\\gram\\per\\cubic\\centi\\metre}),
-condizionati per conduzione e lavorazione " )
+relativi al tipo di conduzione e lavorazione " )
 print(tabella.petrolio, include.rownames=FALSE, caption.placement = "top")
 
 @
 
 
-In tabella \ref{tab:summaryClod} sono riportate in sintesi le
-informazioni contenute nei dati. Gli stsssi dati sono mostrati
-graficamente in Fig. \ref{fig:boxplotClod}.
+In tabella \ref{tab:summaryClod} \`e riportata l'ANOVA dei dati di densit\`a apparente 
+relativi al tipo di conduzione. In Fig. \ref{fig:boxplotClod}
+\`e riportato i boxplot.
 
 I valori della densit\`a apparente calcolati mediante l'equazione
 \ref{eq:densitapetrolio} sono mediamente pi\`u elevati (media;
 \Sexpr{round(mean(df.petrolio$densita.apparente, na.rm=T),2)})
-rispetto a quelli dell'analisi col metodo \emph{Core} riportati a
+rispetto a quelli ottenuti utilizzandi il metodo \emph{Core} riportati a
 pag. \pageref{tab:summaryCore}.
 
 
@@ -1584,19 +1575,20 @@ with(data = df.petrolio,
 <<boxplotpetr>>
 @
   \caption[Boxplot dei valori di densit\`a apparente: metodo \emph{Clod}
-  ]{Boxplot dei valori di densit\`a apparente ottenuti col metodo di
+  ]{Boxplot dei valori di densit\`a apparente dei campioni misurati col metodo di
     analisi \emph{Clod}; gli appezzamenti condotti convenzionalmente (a
-    sinistra) hanno valori leggermente più alti degli appezzamenti
+    sinistra) hanno valori più alti degli appezzamenti
     condotti a biologico (a destra)}
   \label{fig:boxplotClod}
 
 \end{figure}
+\FloatBarrier
 
-La tabella \ref{tab:anova piccoli aggregati} indica che entrambi i
-fattori considerati sono statisticamente significativi. Avendo
+La tabella \ref{tab:anova piccoli aggregati} indica che i trattamenti
+sono statisticamente significativi. Avendo
 verificato l'assenza di interazioni tra \emph{Conduzione} e
 \emph{Lavorazione} (vedi pag. \pageref{mod:MetodoClod}) è quindi
-possibile effettuare un test di Tukey-Siegel.
+stato effettuato un test di Tukey-Siegel.
 
 <<Analisi_Petrolio, echo=FALSE, eval=TRUE>>=
 lm.spinta <-
@@ -1613,14 +1605,14 @@ summary(lm.spinta)
 rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Residui")
 tabella.spinta.anova <-
 xtable(anova_spinta,
-label = 'tab:anova piccoli aggregati', align = 'rrrrrr',
-caption = ' Tabella ANOVA per il metodo \\emph{Clod}'
+label = 'tab:anova piccoli aggregati', align = 'lrrrrr',
+caption = ' Tabella ANOVA per i valori di densit\\`a misurati con il metodo \\emph{Clod}'
 )
 print(tabella.spinta.anova, caption.placement = "top")
 
 @
 
-La t-table (tabella \ref{tab:sommario piccoli aggregati}) mostra come i
+La t-table \dubbio{Gigi dice che non si chiama t-table} (tabella \ref{tab:sommario piccoli aggregati}) mostra come i
 terreni a conduzione biologica abbiano una densit\`a apparente minore
 rispetto a quelli convenzionali; il terreno in cui \`e stata
 effettuata l'aratura, \`e indicato come pi\`u denso rispetto ai
@@ -1636,7 +1628,7 @@ c("Co Arato","Scostamento Or",
 "Scostamento Frangizollato","Scostamento Rippato")
 
 tabella.summary.spinta <- xtable(summary_spinta,
-label = 'tab:sommario piccoli aggregati', align = 'rrrrr',
+label = 'tab:sommario piccoli aggregati', align = 'lrrrr',
 caption = ''
 )
 print(tabella.summary.spinta, caption.placement = "top")
@@ -1651,7 +1643,7 @@ plot(lm.spinta)
 @ 
 
 
-\section{Distribuzione dinamica della dimensione degli aggregati}
+\section{Dinamica della distribuzione della dimensione degli aggregati}
 
 <<Import_aggregati, echo = FALSE, eval = TRUE>>=
 df.data <-
@@ -1752,36 +1744,31 @@ with(df.plot, lm(ilr(Y.Msizer1) ~ COND+TIME2+I(TIME2^2)))
 %% didascalia estesa in figura 3.4}
 
 
-Per la costruzione dei modelli sono stati esclusi i trattamenti
+Per la costruzione dei modelli statistici sono stati esclusi i trattamenti
 lavorazione in quanto non significativi.
 
-Nel modello \`e presente l'elemento tempo al quadrato il quale, come
+Nel modello statistico \`e presente l'elemento tempo espresso al quadrato il quale, come
 \`e possibile vedere dalla tabella ANOVA \ref{tab:anova_compWET}, \`e
 significativo.
 
-La misura \`e stata effettuata sia sull'aggregato secco che
-sull'aggregato inumidito per studiare il fenomeno dello
+La misura \`e stata effettuata sia su aggregati essiccati all'aria che
+su aggregati inumiditi, per studiare il fenomeno dello
 \emph{slaking}.
 
-Di conseguenza sono stati creati due modelli: uno per i campioni
+Di conseguenza sono stati creati due modelli statistici: uno per i campioni
 inumiditi (\emph{WET}) e uno per i campioni secchi (\emph{DRY}). Dai
-modelli \`e possibile vedere che pendenza e curvatura sono comuni
+modelli statistici \`e possibile vedere che pendenza e curvatura siano comuni
 per entrambi i trattamenti.
 
-I secchi generano, come atteso, particelle più grandi in seguito allo
+I campioni essiccati generano, come atteso, frammenti di particelle più grandi in seguito allo
 slacking. 
 
-Sia dalle analisi su gli aggregati secchi che da quelle su gli
-aggregati umidi, risulta che gli aggregati provenienti da appezzamenti
-condotti convenzionalmente, non appena vengono lasciati cadere in
-acqua, si disgregano generando particelle più grosse di quanto non
-facciano gli aggregati "biologici".
+L'analisi evidenzia che gli aggregati provenienti da appezzamenti condotti convenzionalmente,
+successivamente all'immersione, si disgregano generando frammenti pi\`u grandi di quanto non facciano
+gli aggregati provenienti da appezzamenti a conduzione Biologica.
+E questo avviene sia con gli aggregati umidi che con quelli essiccati.
 
-Siccome le particelle inizialmente liberate sono anch'esse mantenute
-insieme da cementi che vengono distrutti in seguito, possiamo
-concludere che i cementi presenti nella conduzione biologica sono
-leggermente, ancorch\`e significativamente, meno efficaci nel
-mantenere la struttura del suolo.
+Questo comportamento mostrerebbe che le pratiche agricole utilizzate nella conduzione di tipo biologico condurrebbero a formare aggregati di meno stabili con cementi meno efficaci rispetto a quelli ottenuti con la conduzione convenzionale.
 
 
 <<label = plotacompWETDRY, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
@@ -1930,9 +1917,7 @@ fill=1:4)
 <<IUFW, echo=FALSE, eval=TRUE, results=tex>>=
 xt.IUFW <- xtable(df.iufw,
 label = 'tab:iufw', digits = 1,
-caption = 'Evoluzione della distribuzione granulometrica
-delle particelle liberatisi dagli aggregati
-precedentemente inumiditi in seguito a:
+caption = 'Distribuzione dei frammenti di particelle degli aggregati inumiditi in seguito a:
 i) inizio misura (immersione):
 ii) inizio sonicatura
 iii) fine ciclo '
@@ -1944,9 +1929,7 @@ print(xt.IUFW,include.rownames=FALSE,caption.placement = "top")
 <<IUFD, echo=FALSE, eval=TRUE, results=tex>>=
 xt.IUFD <- xtable(df.iufd,
 label = 'tab:iufd', digits = 1,
-caption = 'Evoluzione della distribuzione granulometrica
-delle particelle liberatisi dagli aggregati
-secchi in aria in seguito a:
+caption = 'Distribuzione dei frammenti di particelle degli aggregati essiccati in seguito a:
 i) inizio misura (immersione):
 ii) inizio sonicatura
 iii) fine ciclo '
@@ -1958,8 +1941,8 @@ print(xt.IUFD, include.rownames=FALSE,caption.placement = "top")
 anova.comp.wet <- anova(lm.2)
 rownames(anova.comp.wet) <- c("Intercetta","Conduzione", "Tempo", "Tempo^2","Residui")
 anova_tabella <- xtable(anova.comp.wet,
-label = 'tab:anova_compWET', align = 'rrrrrrr',
-caption = 'anova stabilit\\`a aggregati per i dati WET '
+label = 'tab:anova_compWET', align = 'lrrrrrr',
+caption = 'ANOVA stabilit\\`a aggregati per i dati WET '
 )
 print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 @
@@ -1970,8 +1953,8 @@ print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 anova.comp.dry <- anova(lm.2.2)
 rownames(anova.comp.dry) <- c("Intercetta","Conduzione","Tempo", "Tempo^2","Residui")
 anova_tabella_dry<- xtable(anova.comp.dry,
-label = 'tab:anova_compWET', align = 'rrrrrrr',
-caption = 'Aggregati per i dati DRY '
+label = 'tab:anova_compWET', align = 'lrrrrrr',
+caption = 'ANOVA stabilit\\`a aggregati per i dati DRY '
 )
 print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRUE)
 @
@@ -1996,6 +1979,7 @@ print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRU
     \Sexpr{vec.paletti[1]} e \Sexpr{vec.paletti[2]} (MESO) e inferiori a
     \SI{\Sexpr{vec.paletti[2]}}{\micro\metre}}
 \end{figure}
+\FloatBarrier
 
 
 <<label = qqplotAcomp, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
@@ -2006,7 +1990,7 @@ qqnorm(ilrInv(resid(modelloMsizer), orig=Y.Msizer))
 
 
 
-\section{Porosimetria per intrusione di mercurio}
+\section{Distribuzione dimensionale dei pori}
 
 <<Import_porosimetria, echo = FALSE, eval = TRUE>>=
 #PoroElabora <- FALSE
@@ -2106,12 +2090,39 @@ alpha <- 0.05
 @
 
 
-I dati raccolti sono stati analizzati mediante tecniche di analisi
+I dati ottenuti sono stati analizzati mediante tecniche di analisi
 composizionale. In Fig. \ref{fig:Poros_triangolo} e in tabella
 \ref{tab:poros_anova} sono visibili i valori medi della composizione
 per ogni combinazione di trattamenti.
 
-Dai dati \`e possibile osservare come tra i trattamenti non ci siano
+<<summary_pori, eval = TRUE, echo = FALSE, results = tex>>=
+sommario <- 
+aggregate(Y, by = list(Conduzione = df.porosimetria$MAN, 
+Lavorazione = df.porosimetria$TIL), 
+function(x) round(mean(x),2)
+)
+attach(sommario)
+sommario <- sommario[order(Conduzione, Lavorazione),]
+detach(sommario)
+sommario$Conduzione <- c("Co","","", "Or", "", "")
+sommario$Lavorazione <- c("Ara", "Rip", "Fzo", "Ara", "Rip", "Fzo")
+
+tabella_sommario <- 
+xtable(sommario,
+caption = "sommario prosit\\`a", label = 'tab:Poro_medie', align = "llcccc")
+print(tabella_sommario, include.rownames=FALSE,
+caption.placement = "top",
+table.placement= "hb")
+anova.poros <- anova(modelloPoro)
+rownames(anova.poros) <- c("Intercetta","Conduzione", "Lavorazione","Residui")
+anova_tabella <- xtable(anova.poros,
+label = 'tab:poros_anova', align = 'lrrrrrr',
+caption = 'ANOVA per i dati di porosimetria '
+)
+print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
+@ 
+
+Dai dati \`e possibile evincere come tra i trattamenti non ci siano
 sostanziali differenze. I punti all'interno del diagramma ternario si
 trovano tutti ravvicinati all'apice dei macropori (particelle minori
 di \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
@@ -2140,7 +2151,7 @@ plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
 @
   \caption[didascalia corta]{Diagramma ternario della distribuzione dei
     pori. Gli apici del triangolo rappresentano le classi dimensionali
-    in cui le particelle sono divise in: inferiori di
+    in cui i pori sono divisi in: inferiori di
     \Sexpr{vec.paletti.poro[1]} (macropori), comprese tra
     \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori)
     e superiori di \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre}
@@ -2148,37 +2159,11 @@ plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
   \label{fig:Poros_triangolo}
 \end{figure}
 % \end{minipage}
+\FloatBarrier
 
-La tabella ANOVA \ref{tab:poros_anova}, conferma l'analisi visuale:
+La tabella ANOVA \ref{tab:poros_anova}, mostra che
 all'interno dei trattamenti non sono presenti differenze
 statisticamente significative.
-
-<<summary_pori, eval = TRUE, echo = FALSE, results = tex>>=
-sommario <- 
-aggregate(Y, by = list(Conduzione = df.porosimetria$MAN, 
-Lavorazione = df.porosimetria$TIL), 
-function(x) round(mean(x),2)
-)
-attach(sommario)
-sommario <- sommario[order(Conduzione, Lavorazione),]
-detach(sommario)
-sommario$Conduzione <- c("Co","","", "Or", "", "")
-sommario$Lavorazione <- c("Ara", "Rip", "Fzo", "Ara", "Rip", "Fzo")
-
-tabella_sommario <- 
-xtable(sommario,
-caption = "t-table modello porosit\\`a", label = 'tab:Poro_medie', align = "llcccc")
-print(tabella_sommario, include.rownames=FALSE,
-caption.placement = "top",
-table.placement= "hb")
-anova.poros <- anova(modelloPoro)
-rownames(anova.poros) <- c("Intercetta","Conduzione", "Lavorazione","Residui")
-anova_tabella <- xtable(anova.poros,
-label = 'tab:poros_anova', align = 'rrrrrrr',
-caption = 'ANOVA per i dati di porosimetria '
-)
-print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
-@ 
 
 
 I risultati dell'analisi composizionale non sono statisticamente
@@ -2378,8 +2363,8 @@ suolo non sono in grado di evidenziare differenze significative
 
 
 \begin{appendices}
-  \chapter{Calcolo della concentrazione delle componenti
-    granulometriche con Mastersizer 2000}
+  \chapter{Misurazione delle distribuzioni
+    granulometriche ottenuta mediante Mastersizer 2000}
   Il Mastersizer 2000 si basa sul fenomeno della diffusione ottica (scattering), ovvero
   \emph{un'ampia classe di fenomeni di interazione radiazione-materia
     in cui onde o particelle vengono deflesse ovvero cambiano
@@ -2401,8 +2386,9 @@ suolo non sono in grado di evidenziare differenze significative
                                 %sito}}
     \label{fig:Mie}
   \end{figure}
+\FloatBarrier
 
-  Se la dimensione delle particelle e dettagli riguardanti la loro
+  Se la dimensione delle particelle in dettagli riguardanti la loro
   struttura sono noti, il modo in cui diffondono la luce pu\`o essere
   previsto accuratamente. Ogni dimensione della particella avr\`a il suo
   caratteristico pattern di diffusione che sar\`a diverso da quello di
@@ -2421,7 +2407,9 @@ suolo non sono in grado di evidenziare differenze significative
                                 %sito}}
     \label{fig:MastersizerInt}
   \end{figure}
-  Per calcolare la concentrazione del campione, il software utilizza la
+  \FloatBarrier
+
+  Per calcolare la relativa classe dimensionale, il software si basa sulla
   legge di \emph{Lambert-Beer}:
 
   \begin{equation}
@@ -2632,26 +2620,25 @@ suolo non sono in grado di evidenziare differenze significative
   effettuare una prova in bianco preliminare.
 
 
-  \chapter{Dati composizionali: cosa sono e come vengono analizzati}
+  \chapter{Dati composizionali: natura e metodi di analisi}
   In questa tesi sono state utilizzate tecniche di analisi dei dati
   composizionali  \citep{van2013analyzing}.
   
   Tradizionalmente un dataset pu\`o essere definito composizionale se
-  contiene porzioni di totale: percentuale di lavoratori in differenti
+  contiene porzioni di un totale: percentuale di lavoratori in differenti
   settori, porzioni di elementi chimici in un minerale, tessitura di un
   suolo ecc.
 
-  Le parti individuali delle composizioni sono chiamate
+  Le parti individuali del dataset composizionale sono chiamate
   \emph{componenti}. Ogni \emph{componente} ha una quota (in valori
   assoluti o relativi), rappresentata dalla sua importanza sul totale.
 
-  I metodi classici di analisi multivariata sono inapplicabili per i dati
+  I metodi classici di analisi multivariata utiizzati per i dati scalari non possono essere applicati per i dati
   composizionali che richiedono, quindi, il loro set di metodi
-  statistici e non dovrebbero essere trattati con metodi fatti per dati
-  scalari \citep{aitchison1986statistical}.
+  statistici \citep{aitchison1986statistical}.
 
   La caratteristica fondamentale dei dati composizionali \`e che non
-  siamo interessati alla somma totale delle composizioni, questo accade
+  siamo interessati alla somma totale delle composizioni e questo accade
   per diverse ragioni:
   \begin{itemize}
   \item quando i dati composizionali sono misurati, possiamo
@@ -2679,11 +2666,11 @@ suolo non sono in grado di evidenziare differenze significative
 
   In questo spazio vettoriale possono essere applicate tutte le tecniche
   di statistica multivariata ai dati composizionali trasformati; i
-  risultati verranno anti-trasformati in composizioni per poter essere
+  risultati verranno trasformati inversamente in composizioni per poter essere
   interpretabili.
 
 
-\chapter{Grafici dei residui dei modelli utilizzati per l'analisi dei
+\chapter{Grafici dei residui dei modelli statistici utilizzati per l'analisi dei
     dati}
 
 \begin{figure}[ht]
@@ -2695,6 +2682,7 @@ suolo non sono in grado di evidenziare differenze significative
     \caption{Plot del modello densit\`a con metodo \emph{Core}}
     \label{fig:qqplotCore}
 \end{figure}
+\FloatBarrier
 
 
 \begin{figure}[ht]
@@ -2706,6 +2694,7 @@ suolo non sono in grado di evidenziare differenze significative
    \caption{Plot del modello densit\`a con metodo \emph{Clod}}
    \label{fig:qqplotClod}
 \end{figure}
+\FloatBarrier
 
 
 \begin{figure}[ht]
@@ -2713,10 +2702,11 @@ suolo non sono in grado di evidenziare differenze significative
 <<label=figboh4, fig=TRUE, echo=FALSE>>=
 <<qqplotAcomp>>
 @
-  \caption{Grafico quantile-quantile per i residui del modello
+  \caption{Grafico quantile-quantile per i residui del modello statistico
     composizionale per la stabilità degli aggregati}
   \label{fig:qqplot_dinamica_aggregati}
 \end{figure}
+\FloatBarrier
 
 
   
@@ -2733,6 +2723,7 @@ suolo non sono in grado di evidenziare differenze significative
     composizionale per i dati di porosimetria}
   \label{fig:qqplot_porosimetria}
 \end{figure}
+\FloatBarrier
 
   %% <<label = qqplotPorTot, fig.width=0.5, fig.height=0.5, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
   %% qqnorm(resid(lm.totale), orig=Y)
