@@ -196,6 +196,7 @@
 
 \usepackage{lipsum}
 % blocchi di testo fittizi
+
 <<PacchettiRichiesti, echo=FALSE, eval=TRUE>>=
 library(nlme)
 library(plyr)
@@ -277,7 +278,7 @@ file.path(DirMain, "tabelle")
 
 
 \begin{abstract}
-  Lo scopo di questa tesi \`e quello di \textbf{i)} comparare due
+  Lo scopo di questa tesi \`e quello di: \textbf{i)} comparare due
   sistemi di conduzione agricola (organico e convenzionale, attivi da
   venticinque anni) studiando tre propriet\`a fisiche del suolo:
   densit\`a apparente, distribuzione dei pori e stabilità degli
@@ -382,7 +383,7 @@ prodotti naturali e non di sintesi.
 
 Nonostante questo, non \`e stato dimostrato scientificamente in
 maniera inequivocabile la superiorit\`a dell'agricoltura biologica
-rispetto all'agricoltura convenzionale. Questo pu\`o essere dovuto ad
+rispetto all'agricoltura convenzionale. Ci\`o pu\`o essere dovuto ad
 alcuni dei problemi che la ricerca scientifica deve fronteggiare nello
 studio dell'agricoltura Biologica:
 \begin{itemize}
@@ -484,7 +485,7 @@ valore della densit\`a apparente.
 %% Simo Tutta sta roba l'ho presa da Pagliai
 
 La porosit\`a del terreno è un ulteriore parametro fondamentale per le
-caratteristiche fisiche del suolo: il volume dei pori rispetto il
+caratteristiche fisiche del suolo: il volume dei pori rispetto al
 volume della fase solida influenza notevolmente il contenuto idrico e
 la lavorabilit\`a del terreno. La sua misura può aiutare la
 quantificazione dell’impatto delle pratiche colturali sul suolo ed è
@@ -494,16 +495,17 @@ spazio, dimensione, continuit\`a, orientamento e arrangiamento
 permette di definire la complessit\`a della struttura e fa capire le
 modificazioni indotte dalle pratiche colturali; in questo modo è
 possibile indicare quali di queste siano più compatibili con la
-protezione ambientale. La porosit\`a ha relazioni con la resistenza
-alla penetrazione: la diminuzione del volume dei pori è solitamente
-associata ad un aumento della resistenza alla penetrazione. La forma
-dei pori e la distribuzione della loro grandezza influenza
-direttamente le propriet\`a chimiche, biochimiche e biologiche.
+protezione ambientale. 
 
-In particolare, una buona struttura dei suoli promuove
-l'approfondimento radicale e i movimenti di acqua, aria e fauna
-tellurica.  Invece una cattiva struttura favorisce l'erosione, la
-compattazione e la desertificazione.
+La porosit\`a ha relazioni con la resistenza alla penetrazione: la
+diminuzione del volume dei pori è solitamente associata ad un aumento
+della resistenza alla penetrazione. La forma dei pori e la
+distribuzione della loro grandezza influenza direttamente le
+propriet\`a chimiche, biochimiche e biologiche.  In particolare, una
+buona struttura dei suoli promuove l'approfondimento radicale e i
+movimenti di acqua, aria e fauna tellurica.  Invece una cattiva
+struttura favorisce l'erosione, la compattazione e la
+desertificazione.
 
 Secondo \citet{pagliai2002soil}, la classificazione dei suoli più
 usata è quella di \citet{greenland1977soil} ed \`e mostrata in tabella
@@ -647,7 +649,7 @@ aggregati, alla compattazione del suolo e e al drenaggio.
 
 Uno studio che riguarda il progetto MoLTE
 \citep{migliorini2014agronomic}, ovvero l'esperimento a lungo termine
-attivo da 25 anni in cui \`e coinvolto anche questo studio (\ref{sec:MOLTE}), ha
+attivo da 25 anni in cui \`e coinvolto anche questo studio (paragrafo \ref{sec:MOLTE}), ha
 riscontrato, a fronte di una paragonabile produzione tra agricoltura
 convenzionale e biologica, un minor surplus di azoto ed una miglior
 conservazione di carbonio e azoto a lento rilascio (organico) in
@@ -745,10 +747,9 @@ Il sito sperimentale \`e costituito da due agro ecosistemi, da qui in
 avanti definiti come \emph{Conduzione}:
 \begin{itemize}
 \item conduzione biologica\footnote{In realtà nell'azienda sono
-    presenti due blocchi a conduzione biologica: essi vengono
-    comunemente designati come \emph{biologico nuovo} e
-    \emph{biologico vecchio}. Il presente lavoro è stato condotto su
-    questi ultimi appezzamenti. }, \emph{OO} (\emph{Old Organic})
+    presenti due blocchi a conduzione biologica: il primo \`e quello
+    citato, ovvero il "Biologico vecchio", il secondo, non esaminato
+    nel presente lavoro \`e denominato "Biologico nuovo"}, \emph{OO} (\emph{Old Organic})
 \item conduzione \emph{Convenzionale}, \emph{CO}
 \end{itemize}
 
@@ -858,7 +859,7 @@ volumi) che con il metodo \emph{Clod} (utilizzando piccoli aggregati) \citep{bla
 
 \subsection{Metodo \emph{Core}}%Densimetria per grandi volumi (cilindro)}
 Per misurare la densit\`a apparente del suolo con il metodo
-\emph{Core} \citep{ugolini2010basi}, sono stati prelevati dei campioni
+\emph{Core} \citep{black1900method}, sono stati prelevati dei campioni
 di terreno mediante l'utilizzo di un cilindro non deformabile di
 volume noto (Fig. \ref{fig:cilindro}).
 
@@ -884,7 +885,7 @@ umido attraverso un vaglio con fori circolari a \SI{2}{\milli\metre}
 di diametro. Il volume dello scheletro rimasto nel vaglio \`e stato
 misurato successivamente per spinta idrostatica.  Il suolo vagliato
 \`e stato essiccato in stufa a \SI{105}{\celsius} fino a peso
-costante, e successivamente pesato.
+costante, e successivamente pesato \citep{ugolini2010basi}.
 
 \begin{figure}[ht]
   \centering
@@ -918,7 +919,7 @@ Dove:\\
 \subsection{Metodo \emph{Clod}}%Densimetria per piccoli aggregati (petrolio)
 
 A differenza del metodo \emph{Core}, questa misura viene effettuata su
-aggregati di piccole dimensioni(3-\SI{4}{\cm} di diametro).  Il metodo
+aggregati di piccole dimensioni (3-\SI{4}{\cm} di diametro).  Il metodo
 \emph{Clod} viene anche detto metodo per spinta idrostatica
 \citep{Monnier_1973}. La procedura consiste nel mettere per una notte
 a bagno nel petrolio degli aggregati di terreno
@@ -967,7 +968,7 @@ Dove:\\
 \begin{tabular}{rp{12cm}}
   $V_{totale}$= & volume dell'aggregato comprendente il volume del
                   solido e il volume dei vuoti (\SI{}{\cubic\cm});\\
-  $P_{totale}$=  &  valore della spinta idrostatica
+  $S_{totale}$=  &  valore della spinta idrostatica
                      dell'aggregato imbevuto di petrolio (\SI{}{\gram});\\
   $D_{petrolio}$=  &  densit\`a del petrolio utilizzato per
                      l'analisi (\SI{0.761}{\gram\per\cubic\cm}).
@@ -1110,8 +1111,8 @@ ad un elaboratore DOS per la raccolta e per una prima elaborazione dei dati.
     la misura dei macropori. \label{fig:porosimetri}}
 \end{figure}
 \FloatBarrier
-La misura viene effettuata per i pori nell'intervallo compreso da circa
-\SI{15}{\micro\meter} e circa \SI{2000}{\micro\meter} di diametro.
+La misura viene effettuata per i pori nell'intervallo compreso tra circa
+\SI{15}{\micro\meter} a circa \SI{2000}{\micro\meter} di diametro.
 
 Zollette di circa un grammo vengono introdotte in un contenitore di
 vetro speciale (dilatometro) esso ha nella base un contatto elettrico
@@ -1121,7 +1122,7 @@ cono a smeriglio che si prolunga in un capillare calibrato di
 
 Il dilatometro contenente il campione viene inserito nel circuito del
 vuoto dall'unit\`a macropore; dopo la stabilizzazione del vuoto esso
-viene lentamente riempito (\SI{15}{\centi\meter\cubed} fino a
+viene lentamente riempito (\SI{15}{\centi\meter\cubed}) fino a
 raggiungere una pressione idrostatica, valutata dal baricentro del
 campione, di circa \SI{35}{\torr}. Questo livello consente di seguire,
 traguardandomne otticamente il menisco, l'intrusione di mercurio
@@ -1129,7 +1130,7 @@ nell'intervallo 0-\SI{1}{\atm}, realizzato per progressiva immissione
 di aria esterna. La scelta di questo valore di pressione idrostatica
 del mercurio consente di seguire il livello del menisco in
 tutto l'intervallo di intrusione dei campioni. Questa scelta
-limita a circa \SI{200}{\micro\meter} il valore massimo del diametro
+limita a circa \SI{2000}{\micro\meter} il valore massimo del diametro
 dei pori misurabile.
 
 Per valutare i pori pi\`u piccoli si introduce il dilatometro, previo
@@ -1144,7 +1145,7 @@ La progressiva penetrazione di mercurio nel campione \`e acquisita
 tramite un sensore capacitivo. Il segnale elettrico che ne deriva
 viene convertito in volume di mercurio intruso. Il calcolo della
 distribuzione dei pori, mediante l'equazione di Washburn
-(eq. \ref{eq:Washburn}), viene effettuata dopo la sottrazione
+(eq. \ref{eq:Washburn}, pagina \pageref{eq:Washburn}), viene effettuata dopo la sottrazione
 automatica punto per punto dei valori legati alla compressibilit\`a di
 mercurio preventivamente calcolati in un ciclo di misura senza
 campioni. Alla fine del ciclo di intrusione, l'apparecchio va
@@ -1166,7 +1167,7 @@ dei residui in modo da verificare le eventuali violazioni delle
 assunzioni di normalit\`a \citep{stefanini2007introduzione}. 
 
 \subsection{Densit\`a}
-I risultati delle analisi sia con il metodo \emph{Core} che con il metodo \emph{Clod} \textbf{non} hanno
+I risultati delle analisi sia con il metodo \emph{Core} che con il metodo \emph{Clod} non hanno
 riscontrato interazioni statisticamente significative tra i parametri
 considerati e quindi esse non compaiono nei modelli statistici sotto riportati,
 che sono quindi di natura additiva.
@@ -1181,9 +1182,9 @@ che sono quindi di natura additiva.
 dove: \\
 
 \begin{tabular}{rp{12cm}}
-  $\beta_1 =$ & anno, due livelli: 2015, 2016;\\
-  $\beta_2 =$  & \emph{Conduzione}, due livelli: convenzionale, biologico;\\
-  $\beta_3 =$ & \emph{Lavorazione}, tre livelli: arato, rippato, frangizollato;\\
+  $\beta_1 =$ & \emph{Anno}, due livelli: \emph{2015, 2016};\\
+  $\beta_2 =$  & \emph{Conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
+  $\beta_3 =$ & \emph{Lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
   $\epsilon =$ & residui o errore.
 \end{tabular}
 \vspace*{3em}
@@ -1263,7 +1264,6 @@ attach(summary.campo)
 summary.campo <-
 summary.campo[order(YEAR, TRT, LAVORAZIONE),]
 detach(summary.campo)
-
 @
 
 \subsection{Metodo \emph{Core}}
@@ -1282,8 +1282,10 @@ c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n", "Tukey")
 summary.campo$Anno <- 
 c("2015", rep(" ", 5), "2016", rep(" ", 5))
 summary.campo$Conduzione <-
-c("Co", rep(" ", 2), "Or", rep(" ", 2),
-"Co", rep(" ", 2), "Or", rep(" ", 2))
+c("Convenzionale", rep(" ", 2), "Organico", rep(" ", 2),
+"Convenzionale", rep(" ", 2), "Organico", rep(" ", 2))
+summary.campo$Lavorazione <- 
+    mapvalues(summary.campo$Lavorazione, from = c("Ara", "Rip", "Fzo"), to = c("Arato", "Rippato", "Frangizollato"))
 tabella.campo <-
 xtable(summary.campo[,-7],
 label = 'tab:summaryCore', align  = "llllccc",
@@ -1327,10 +1329,10 @@ fill=c(2,3,4), cex=1,  ncol = 1)
 ## points(y = jitter(rep(1:12, each = 6), 0.5),
 ##        x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT, YEAR))),
 ##        cex = 2, pch = 4)
-text( 2, 1.7, "Co", pos = 1, cex = 1.5)
-text( 5, 1.7, "Or", pos = 1, cex = 1.5)
-text( 8, 1.7, "Co", pos = 1, cex = 1.5)
-text(11, 1.7, "Or", pos = 1, cex = 1.5)
+text( 2, 1.7, "CO", pos = 1, cex = 1.5)
+text( 5, 1.7, "OO", pos = 1, cex = 1.5)
+text( 8, 1.7, "CO", pos = 1, cex = 1.5)
+text(11, 1.7, "OO", pos = 1, cex = 1.5)
 @
 
 \begin{figure}[hb]
@@ -1343,17 +1345,17 @@ text(11, 1.7, "Or", pos = 1, cex = 1.5)
   \caption[Boxplot della densit\`a apparente: metodo
   \emph{Core}]{Boxplot della densit\`a apparente metodo \emph{Core} relativi alla
     (\emph{Convenzionale} e \emph{Organico}) e per le varie
-    lavorazioni (arato, frangizollato e rippato). La riga rossa indica
-    la media generale }
+    lavorazioni (\emph{arato, frangizollato} e \emph{rippato}). La riga rossa indica
+    la media generale}
   \label{fig:boxplotCore}
 \end{figure}
 \FloatBarrier
 
 <<ModelloDensitaCampo, echo=FALSE, eval=TRUE, results=tex>>=
 lm.Densita <-
-lm(densita.apparente ~ YEAR+TRT+LAVORAZIONE, data = df.dueAnni)
+    lm(densita.apparente ~ YEAR+TRT+LAVORAZIONE, data = df.dueAnni)
 lm.DensSign <-
-lm(densita.apparente ~ YEAR+TRT, data = df.dueAnni)
+    lm(densita.apparente ~ YEAR+TRT, data = df.dueAnni)
 @
 
 %% Il modello utilizzato, (\ref{mod:MetodoClod}, pag.
@@ -1391,11 +1393,13 @@ caption.placement = "top")
 
 <<Summary_modello2, echo=FALSE, eval=FALSE, results=tex>>=
 
-sommario.dens <- summary(lm.DensSign)$coefficients
+sommario.dens <- 
+    round(summary(lm.DensSign)$coefficients, 3)
 
 rownames(sommario.dens) <-
-c("Co 2015", "Scostamento 2016", "Scostamento Or")
-
+c("CO 2015", "Scostamento 2016", "Scostamento OO")
+sommario.dens[,4] <- round(sommario.dens[,4],2)
+sommario.dens[1,4] <- "<10^-3"
 tabella.summary.dens <-
 xtable(sommario.dens,
 label = 'tab:t-table del modello2', align  = "lrrrr",
@@ -1472,7 +1476,7 @@ plot(lm.Densita)
 
 \subsection{Metodo \emph{Clod}}
 Il metodo \emph{Clod} ha permesso, grazie alla sua speditivit\`a, di
-analizzare tutte le combinazioni (108) dei fattori dell'esperimento:
+analizzare tutte le 108 combinazioni dei fattori dell'esperimento:
 per ogni combinazione sono stati analizzati tre campioni. La media dei
 tre campioni è stata usata per l'analisi dei dati.
 
@@ -1506,8 +1510,9 @@ attach(summary.petrolio)
 summary.petrolio <- summary.petrolio[order(TRT, LAVORAZIONE),]
 detach(summary.petrolio)
 names(summary.petrolio) <- c("Conduzione","Lavorazione","Media","Dev. std", "n", "Tukey")
-summary.petrolio$Conduzione <- c("Co", rep("", 2), "Or", rep("", 2))
-
+summary.petrolio$Conduzione <- c("Convenzionale", rep("", 2), "Organico", rep("", 2))
+summary.petrolio$Lavorazione <- mapvalues(summary.petrolio$Lavorazione, from = c("Ara", "Rip", "Fzo"),
+                                          to = c("Arato", "Rippato", "Frangizollato"))
 tabella.petrolio <-
 xtable(summary.petrolio,
 label = 'tab:summaryClod', align  = "lllcccc",
@@ -1542,20 +1547,20 @@ with(data = df.petrolio,
   boxplot(jitter(densita.apparente) ~ LAVORAZIONE+TRT, col = c(2,3,4),
   main = "Metodo Clod",
   ##xlab = "Densità apparente",
-  las = 1, xaxt = "n",
+  las = 1, xaxt = 'n',
   ylim = c(1.5, 2.3),
   yaxs = "i",
   add=TRUE
   )
-  axis(1, labels = FALSE)
-  etichette <- levels(interaction(LAVORAZIONE,TRT))
+  ##axis(1, labels = FALSE)
+  ##etichette <- levels(interaction(LAVORAZIONE,TRT))
   ## Plot x labs at default x position
-  text(x =  seq_along(etichette), y = 1.3,
-  srt = 45, adj = 1,
-  labels = etichette, xpd = TRUE)
+  ##text(x =  seq_along(etichette), y = 1.3,
+  ##srt = 45, adj = 1,
+  ##labels = etichette, xpd = TRUE)
   mtext(expression(paste("Densità apparente g ", cm^-3)), side = 2, line = 2)
-  text(2, 2.3, "Co", pos = 3, cex = 2)
-  text(5, 2.3, "Or", pos = 3, cex = 2)
+  text(2, 2.3, "CO", pos = 3, cex = 2)
+  text(5, 2.3, "OO", pos = 3, cex = 2)
   ## points(y = jitter(rep(1:6, each = 22), 0.5),
   ##   x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT))),
   ##   cex = 2, pch = 4)
@@ -1578,7 +1583,7 @@ with(data = df.petrolio,
   ]{Boxplot dei valori di densit\`a apparente dei campioni misurati col metodo di
     analisi \emph{Clod}; gli appezzamenti condotti convenzionalmente (a
     sinistra) hanno valori più alti degli appezzamenti
-    condotti a biologico (a destra)}
+    condotti a Biologico (a destra)}
   \label{fig:boxplotClod}
 
 \end{figure}
@@ -1613,8 +1618,8 @@ print(tabella.spinta.anova, caption.placement = "top")
 @
 
 La t-table \dubbio{Gigi dice che non si chiama t-table} (tabella \ref{tab:sommario piccoli aggregati}) mostra come i
-terreni a conduzione biologica abbiano una densit\`a apparente minore
-rispetto a quelli convenzionali; il terreno in cui \`e stata
+terreni a conduzione Biologica abbiano una densit\`a apparente minore
+rispetto a quelli Convenzionali; il terreno in cui \`e stata
 effettuata l'aratura, \`e indicato come pi\`u denso rispetto ai
 terreni rippati e frangizollati.
 
@@ -1624,7 +1629,7 @@ terreni rippati e frangizollati.
 
 summary_spinta <- coef(summary_spinta)
 rownames(summary_spinta) <-
-c("Co Arato","Scostamento Or",
+c("CO Arato","Scostamento OO",
 "Scostamento Frangizollato","Scostamento Rippato")
 
 tabella.summary.spinta <- xtable(summary_spinta,
@@ -1720,7 +1725,6 @@ function(x) sum(x, na.rm=TRUE)),
 MICRO = apply(df.data[,lis.paletti$tre], 1,
 function(x) sum(x, na.rm=TRUE))
 )
-
 questi <-
 with(df.tessitura, which(HUMIDITY=="wet"))
 df.plot <- df.tessitura[questi,]
@@ -1745,9 +1749,9 @@ with(df.plot, lm(ilr(Y.Msizer1) ~ COND+TIME2+I(TIME2^2)))
 
 
 Per la costruzione dei modelli statistici sono stati esclusi i trattamenti
-lavorazione in quanto non significativi.
+\emph{lavorazione} in quanto non significativi.
 
-Nel modello statistico \`e presente l'elemento tempo espresso al quadrato il quale, come
+Nel modello statistico \`e presente l'elemento \emph{tempo} espresso al quadrato il quale, come
 \`e possibile vedere dalla tabella ANOVA \ref{tab:anova_compWET}, \`e
 significativo.
 
@@ -1760,15 +1764,19 @@ inumiditi (\emph{WET}) e uno per i campioni secchi (\emph{DRY}). Dai
 modelli statistici \`e possibile vedere che pendenza e curvatura siano comuni
 per entrambi i trattamenti.
 
-I campioni essiccati generano, come atteso, frammenti di particelle più grandi in seguito allo
-slacking. 
+I campioni essiccati generano, come atteso, frammenti di particelle
+più grandi in seguito allo slaking.
 
-L'analisi evidenzia che gli aggregati provenienti da appezzamenti condotti convenzionalmente,
-successivamente all'immersione, si disgregano generando frammenti pi\`u grandi di quanto non facciano
-gli aggregati provenienti da appezzamenti a conduzione Biologica.
-E questo avviene sia con gli aggregati umidi che con quelli essiccati.
+L'analisi evidenzia che gli aggregati provenienti da appezzamenti
+condotti convenzionalmente, successivamente all'immersione, si
+disgregano generando frammenti pi\`u grandi di quanto non facciano gli
+aggregati provenienti da appezzamenti a conduzione Biologica.  E
+questo avviene sia con gli aggregati umidi che con quelli essiccati.
 
-Questo comportamento mostrerebbe che le pratiche agricole utilizzate nella conduzione di tipo biologico condurrebbero a formare aggregati di meno stabili con cementi meno efficaci rispetto a quelli ottenuti con la conduzione convenzionale.
+Questo comportamento mostrerebbe che le pratiche agricole utilizzate
+nella conduzione di tipo Biologico condurrebbero a formare aggregati
+di meno stabili con cementi meno efficaci rispetto a quelli ottenuti
+con la conduzione Convenzionale.
 
 
 <<label = plotacompWETDRY, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
@@ -1939,6 +1947,8 @@ print(xt.IUFD, include.rownames=FALSE,caption.placement = "top")
 
 <<anova_acompWET, echo=FALSE, eval=TRUE, results=tex>>=
 anova.comp.wet <- anova(lm.2)
+anova.comp.wet[1:4,6] <- "<10^-3"
+
 rownames(anova.comp.wet) <- c("Intercetta","Conduzione", "Tempo", "Tempo^2","Residui")
 anova_tabella <- xtable(anova.comp.wet,
 label = 'tab:anova_compWET', align = 'lrrrrrr',
@@ -1952,6 +1962,7 @@ print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 <<anova_acompDRY, echo=FALSE, eval=TRUE, results=tex>>=
 anova.comp.dry <- anova(lm.2.2)
 rownames(anova.comp.dry) <- c("Intercetta","Conduzione","Tempo", "Tempo^2","Residui")
+anova.comp.dry[1:4,6] <- "<10^-3"
 anova_tabella_dry<- xtable(anova.comp.dry,
 label = 'tab:anova_compWET', align = 'lrrrrrr',
 caption = 'ANOVA stabilit\\`a aggregati per i dati DRY '
@@ -2104,8 +2115,8 @@ function(x) round(mean(x),2)
 attach(sommario)
 sommario <- sommario[order(Conduzione, Lavorazione),]
 detach(sommario)
-sommario$Conduzione <- c("Co","","", "Or", "", "")
-sommario$Lavorazione <- c("Ara", "Rip", "Fzo", "Ara", "Rip", "Fzo")
+sommario$Conduzione <- c("CO","","", "OO", "", "")
+sommario$Lavorazione <- c("Arato", "Rippato", "Frangizollato", "Arato", "Rippato", "Frangizollato")
 
 tabella_sommario <- 
 xtable(sommario,
@@ -2115,6 +2126,7 @@ caption.placement = "top",
 table.placement= "hb")
 anova.poros <- anova(modelloPoro)
 rownames(anova.poros) <- c("Intercetta","Conduzione", "Lavorazione","Residui")
+anova.poros[1,6] <- "<10^-3"
 anova_tabella <- xtable(anova.poros,
 label = 'tab:poros_anova', align = 'lrrrrrr',
 caption = 'ANOVA per i dati di porosimetria '
@@ -2177,6 +2189,7 @@ lm.totale <-
 lm(MICRO+MACRO+MESO ~ MAN, data = df.data)
 anova.totale <- 
 anova(lm.totale)
+rownames(anova.totale) <- c("Conduzione", "Residui")
 anova_tabellaTot <- xtable(anova.totale,
 label = 'tab:tot_anova', align = 'lrrrrr',
 caption = 'ANOVA per i dati di porosit\\`a totale'
@@ -2191,15 +2204,19 @@ determinare la significativit\`a dei trattamenti, tuttavia come si
 pu\`o vedere dalla tabella \ref{tab:tot_sommario}, i dati tenderebbero a
 confermare il risultato dell'analisi della densit\`a apparente
 misurata con il metodo \emph{clod} dal quale risultava una maggior
-porosit\`a nei campioni di suolo Biologico.
+porosit\`a nei campioni di suolo provenienti da appezzamenti condotti
+a Biologico.
 
 
 <<sommario_totali, eval = TRUE, echo = FALSE, results = tex>>=
 sommario.totale <- 
-summary(lm.totale)
+    round(coef(summary(lm.totale)),3)
+rownames(sommario.totale) <- 
+    c("Convenzionale", "Biologico")
+sommario.totale[1,4] <- "<10^-3" 
 sommario_tabellaTot <- xtable(sommario.totale,
 label = 'tab:tot_sommario', align = 'lrrrr',
-caption = 'T-table del modello con porosit\\`a totale'
+caption = 't-table del modello con porosit\\`a totale'
 )
 print(sommario_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
@@ -2294,16 +2311,19 @@ che    nella    misura    non    sono    considerate    le    fratture
 
 I dati si allineano con ci\`o che hanno rilevato altri autori
 (\citet{williams2017organic}, \citet{green2005soil},
-\citet{ikemura2008some}, \citet{vian2009effects}), ovvero una densit\`a apparente con valori
-mediamente pi\`u bassi nei terreni condotti ad agricoltura Biologica
-rispetto ai terreni condotti ad agricoltura Convenzionale.
+\citet{ikemura2008some}, \citet{vian2009effects}), ovvero una
+densit\`a apparente con valori mediamente pi\`u bassi nei terreni
+condotti ad agricoltura Biologica rispetto ai terreni condotti ad
+agricoltura Convenzionale e nei terreni lavorati superficialmente
+rispetto a quelli lavorati pi\`u in profondit\`a.
 
 La t-table in tabella \ref{tab:anova piccoli aggregati} mostra che,
 nonostante la rilevata significativit\`a statistica, le differenze di
 densit\`a sono dell'ordine della seconda cifra decimale. Questo ci
 permette di affermare: in primo luogo che il numero di campioni \`e
 idoneo agli obiettivi dello studio, in secondo luogo che i trattamenti
-non risultano significativi dal punto di vista tecnologico. 
+non risultano significativi dal punto di vista tecnologico, ovvero non
+hanno una rilevanza pratica effettiva. 
 
 Dall'analisi della stabilit\`a degli aggregati \`e emersa una maggiore
 stabilit\`a degli aggregati Convenzionali rispetto agli aggregati
@@ -2322,7 +2342,7 @@ Questo pu\`o essere dato dal fatto che nell'appezzamento coltivato a
 Biologico non sono state effettuate concimazioni, quindi la sostanza
 organica non \`e stata reintegrata in nessun modo.
 
-Nell'appezzamento convenzionale, al contrario, sono state effettuate
+Nell'appezzamento Convenzionale, al contrario, sono state effettuate
 concimazioni con fertilizzanti di sintesi. Questo ha portato ad un
 aumento delle radici superficiali con conseguente incremento della
 biomassa nei primi \SI{20}{\centi\meter} di suolo.
@@ -2331,8 +2351,10 @@ Secondo \citet{mizuta2015soil}, la stabilit\`a degli aggregati dipende
 esclusivamente dal contenuto di sostanza organica e non dal tipo di
 molecole organiche coinvolte, tuttavia secondo \citet{d2017physical}
 la stabilit\`a degli aggregati \`e fortemente influenzata dalla
-sostanza organica protetta. Sarebbe quindi interessante ripetere la
-misura in seguito alla rimozione della sostanza organica superficiale.
+sostanza organica protetta. È quindi necessario ripetere la misura di
+stabilit\`a in seguito alla rimozione della sostanza organica
+superficiale, per comprendere se la conduzione influenzi diversi tipi
+di sostanza organica.
 
 Per quanto riguarda la distribuzione dei pori non sono state
 riscontrate differenze significative tra i trattamenti.
