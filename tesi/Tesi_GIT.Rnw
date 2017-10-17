@@ -1,13 +1,22 @@
 % Versione branch 8uno
-\documentclass[11pt, a4paper, openright, titlepage, final]{scrbook}
-% linea aggiunta per capire come funziona il merge.
+\documentclass[fontsize=11pt,
+captions=tableheading,
+captions=figureheading,
+a4paper,
+headsepline=true,
+footsepline=true,
+open=right,
+titlepage,
+final]{scrbook}
+
 % draft/final onecolumn/twocolumn oneside/twoside openany/openright
 % Circa 80 lettere per pagina con draft al posto di final fa il pdf senza foto
-\usepackage[toc,page]{appendix}
+\usepackage{scrlayer-scrpage}
+%\usepackage[toc, page]{appendix}
 
 \usepackage[english, italian]{babel}
 % per la sillabazione corretta e per biblatex
-% \usepackage[english]english serve se c'e' bisogno di una parte da scriver ion inglese
+% \usepackage[english]english serve se c'e' bisogno di una parte da scrivere in inglese
 
 % https://tex.stackexchange.com/questions/82993/how-to-change-the-name-of-document-elements-like-figure-contents-bibliogr
 
@@ -44,8 +53,8 @@
 %% \usepackage{enumitem}
 %% \setlist{nosep} %
 
-\usepackage{longtable} % per avere tabelle spezzate tra le pagine
-\usepackage{tabularx} % per le tabelle con molto testo
+%%\usepackage{longtable} % per avere tabelle spezzate tra le pagine
+%%\usepackage{tabularx} % per le tabelle con molto testo
 \usepackage{lscape} % per ruotare qualche pagina in landscape
 \usepackage{booktabs} % per fare tabelle semplici come nei libri (top mid e bottomrule)
 
@@ -69,7 +78,10 @@
 
 % Queste righe sotto si occupano della bibliografia
 % \usepackage[babel]{csquotes}
-\usepackage[backend=biber, sorting=nyt, style=authoryear, autolang=hyphen, natbib=true, backref]{biblatex}
+
+
+\usepackage[backend=biber, sorting=nyt, style=authoryear,
+            autolang=hyphen, natbib=true, backref]{biblatex}
 %% style=numeric
 
 % nty Sort by name, title, year.
@@ -101,17 +113,17 @@
 %% questa roba sotto serve per non perdere il filo sulle copie stampate
 %% commentare opportunamente nella versione finale
 \usepackage[short, hhmmss]{datetime}
-\usepackage{fancyhdr}
+%\usepackage{fancyhdr}
 \usepackage{placeins}
 \usepackage{graphicx} %per le figure
-\pagestyle{fancy}
+%\pagestyle{fancy}
 % \setlength{\headheight}{14pt} % il compilatore si lamenta che c'e' poco spazio 1 ott 2016 Siena
-% \usepackage[]{subfig} % per le figure affiancate
+\usepackage[]{subfig} % per le figure affiancate
 
 \usepackage{float}
 % per forzare il posizionamento delle figure
 
-\usepackage[normalem]{ulem}
+%% \usepackage[normalem]{ulem}
 % serve per barrare del testo in fase di correzione
 % se non si usa [normalem], \emph sottolinea invece di fare il suo dovere
 
@@ -126,18 +138,17 @@
 \newcommandx{\nonvisibile}[2][1=]{\todo[disable,#1]{#2}}
 % \presetkeys{todonotes}{fancyline}{}
 % Vediamo se con questo si riduce lo spazio tra la caption.
-\usepackage[font=small,skip=0pt]{caption}
-\captionsetup[figure]{font=small,skip=0pt}
+\usepackage[font=small, textfont=it, labelfont=bf, format=plain]{caption}
 
-\usepackage[raggedright]{titlesec}
+%\usepackage[raggedright]{titlesec}
 % Serve per evitare la sillabazione nei titoli
 
 %\newcommand{\sectionbreak}{\clearpage}
 %% serve per mettere ogni section a pagina nuova
 
-\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\space#1}{}}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.2pt}
+%\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\space#1}{}}
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.2pt}
 % \cfoot{Pag. \thepage\, Compilata il \today\ alle \currenttime}
 % \lfoot{}
 % \rfoot{}
@@ -153,10 +164,13 @@
 % per fare l'itemize con il tondo intorno ai numeri
 % e altri controlli sulle liste
 
-\usepackage{caption}
-
-\DeclareCaptionFont{mysize}{\fontsize{10}{9.6}\selectfont}
-\captionsetup{font=mysize}
+%\usepackage[font=it, labelfont=bf, format=plain, skip=40pt]{caption}
+% The optional argument of \setcapwidth is not supported and will be ignored if used in con-
+% junction with the caption package. Furthermore the KOMA-Script options tablecaption-
+% 30above & tablecaptionbelow and the commands \captionabove & \captionbelow
+% are stronger than the position= setting offered by the caption package.
+% \DeclareCaptionFont{mysize}{\fontsize{10}{9.6}\selectfont}
+% \captionsetup{font=mysize}
 % \usepackage[swapnames]{frontespizio} %per il frontespizio
 \usepackage{frontespizio}
 
@@ -171,10 +185,10 @@
 {\vfill\null}
 
 %% https://tex.stackexchange.com/questions/202512/translate-appendices-from-addappheadtotoc-in-other-languages-with-polyglossia
-\addto\captionsitalian{%
-  \renewcommand{\appendixtocname}{Appendici}%
-  \renewcommand{\appendixpagename}{Appendici}%
-}
+% \addto\captionsitalian{%
+%   \renewcommand{\appendixtocname}{Appendici}%
+%   \renewcommand{\appendixpagename}{Appendici}%
+% }
 
 \renewcommand{\theequation}{Eq. \arabic{equation}}
 \usepackage{environ}
@@ -323,11 +337,11 @@ file.path(DirMain, "tabelle")
 
 \tableofcontents
 \newpage
-\fancyhead[RO,LE]{}
-\fancyfoot{} % clear all footer fields
-\fancyfoot[RE,LO]{Tesi Simone Massenzio}
-\fancyfoot[C]{\today\  \currenttime}
-\fancyfoot[LE,RO]{\thepage}
+% \fancyhead[RO,LE]{}
+% \fancyfoot{} % clear all footer fields
+% \fancyfoot[RE,LO]{Tesi Simone Massenzio}
+% \fancyfoot[C]{\today\  \currenttime}
+% \fancyfoot[LE,RO]{\thepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
@@ -393,14 +407,16 @@ studio dell'agricoltura Biologica:
 \item non esiste un indicatore di fertilit\`a univoco che permette di confrontare i
   vari tipi di agricoltura.
 \end{itemize}
+
+
 \section{Caratteristiche generali del suolo}
 Il suolo è un sistema naturale trifasico costituito da:
 \begin{itemize}%%[topsep=0ex, itemsep=1ex, parsep=1ex, partopsep=1ex]
-\item una fase solida, materiale minerale e materiale
+\item  fase solida, materiale minerale e materiale
   organico vivo o in decomposizione;
-\item una fase liquida, ovvero una soluzione acquosa di cationi,
+\item fase liquida, ovvero una soluzione acquosa di cationi,
   anioni e composti organici;
-\item una fase gassosa, simile per composizione a quella atmosferica.
+\item fase gassosa, simile per composizione a quella atmosferica.
 \end{itemize}
 
 In linea di massima, il 50\% del suolo è composto dalla fase solida
@@ -464,6 +480,10 @@ condizionata dalla tecnica agronomica con effetti sulle propriet\`a
 fisiche, meccaniche e chimiche del suolo, e quindi sulla maggiore o
 minore fertilit\`a.
 
+\migliora[inline]{Introduci un paragrafino tipo; I materiali del suolo hanno
+  diversa densità che varia da bla bla a blabla. Quello che di solito
+  interessa è la dens app blabla}
+
 La densit\`a apparente \`e un importante parametro del suolo legato
 principalmente alla distribuzione granulometrica e alla struttura in
 quanto tiene conto anche degli spazi vuoti, ovvero dei pori. Invece la
@@ -474,7 +494,7 @@ frazione minerale\footnote{La densit\`a delle particelle solide non
   prevalentemente i silicati (con densit\`a che varia da 2,5 a 2,8),
   si assume il valore di \SI{2.65}{\gram\per\cubic\centi\metre}
   \citep{radaelli2001chimica}}.
-
+\migliora[inline]{manca un \emph{and} dentro bibliomone}
 Secondo \citet{AskinBulkDensity}, la densit\`a apparente di un terreno
 è condizionata principalmente dalla tessitura del terreno, e pi\`u in
 particolare dalla frazione sabbiosa e argillosa. Tuttavia, anche se
@@ -507,14 +527,16 @@ movimenti di acqua, aria e fauna tellurica.  Invece una cattiva
 struttura favorisce l'erosione, la compattazione e la
 desertificazione.
 
+\migliora[inline]{mancava una virgola dentro bibliomone}
 Secondo \citet{pagliai2002soil}, la classificazione dei suoli più
 usata è quella di \citet{greenland1977soil} ed \`e mostrata in tabella
-\ref{tab:green}. \migliora{Luigi dice di mettere più classificazioni con la pubblicazione che mi ha dato}
+\ref{tab:green}. \migliora{Luigi dice di mettere più classificazioni con la pubblicazione che mi ha dato.}
+ \todo[inline]{Son d'accordo e forse meglio una figura}
 
 \begin{table}[ht]
   \caption[Classificazione dei pori del terreno secondo le
   dimensioni]{Classificazione dei pori del terreno secondo le
-    dimensioni (da \citet{pagliai2002soil})}
+    dimensioni: da \citet{pagliai2002soil}.}
   \label{tab:green}
   \centering
   \begin{tabular}{lll}
@@ -522,11 +544,11 @@ usata è quella di \citet{greenland1977soil} ed \`e mostrata in tabella
     Diametro pori & Potenziale idrico & Nome\\
     \SI{}{\micro\metre}  & \SI{}{\bar} & \\
     \midrule
-    <0.005    & >-600        & Spazi di legame\\
-    0.005-0.5 & -600/-6      & Pori residui\\
-    0.5-50    & -6/-0.06     & Pori di immagazzinamento\\
-    50-500    & -0.06/-0.006 & Pori di trasmissione\\
-    >500      & <-0.006      & Fessure\\
+    < 0,005    & > -600        & Spazi di legame\\
+    0,005-0,5 & -600/-6        & Pori residui\\
+    0,5-50    & - 6/- 0,06     & Pori di immagazzinamento\\
+    50-500    & - 0,06/- 0,006 & Pori di trasmissione\\
+    > 500      & <- 0,006      & Fessure\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -544,9 +566,9 @@ molecolare; i pori che hanno un diametro che va dai 0,5 ai
 quelli compresi tra 50 e \SI{500}{\micro\metre} sono i \emph{pori di
   conduzione}. I pori di dimensioni maggiori di \SI{500}{\micro\metre}
 sono utili alla penetrazione delle radici e al movimento dell’acqua di
-drenaggio specialmente nei suoli a tessitura fine. Quando questo tipo
-di pori raggiunge o supera il 70-80\% della porosit\`a totale, è
-indice di cattiva struttura e non favorisce la crescita delle
+drenaggio specialmente nei suoli a tessitura fine. Cionondimeno, una loro
+percentuale pari o superiore al 70-80\% della porosit\`a totale,
+indica una cattiva struttura che non favorisce la crescita delle
 piante. Se i pori grandi, medi e piccoli sono in proporzione ottimale,
 si osserva un concomitante immagazzinamento/conduzione di acqua e aria
 che permette un'adeguata crescita radicale.
@@ -559,6 +581,7 @@ aggregati \`e \emph{la capacit\`a degli aggregati di suolo di resistere
   alla rottura quando vengono applicate forze esterne (solitamente
   dall'acqua)} \citep{SoilQualStab}. L'importanza della stabilit\`a
 degli aggregati si esplica soprattutto durante una pioggia.
+\migliora[inline]{quando i l'energia cinetica e lo slacking bla bla}
 
 
 
@@ -647,27 +670,29 @@ l'erosione dovuta ad una pioggia molto intensa.
 migliora le propriet\`a fisiche relative alla stabilit\`a degli
 aggregati, alla compattazione del suolo e e al drenaggio.
 
-Uno studio che riguarda il progetto MoLTE
-\citep{migliorini2014agronomic}, ovvero l'esperimento a lungo termine
-attivo da 25 anni in cui \`e coinvolto anche questo studio (paragrafo \ref{sec:MOLTE}), ha
-riscontrato, a fronte di una paragonabile produzione tra agricoltura
-convenzionale e biologica, un minor surplus di azoto ed una miglior
-conservazione di carbonio e azoto a lento rilascio (organico) in
-favore di quest'ultima.
+\citet{migliorini2014agronomic}, in un lavoro sul progetto MoLTE
+\footnote{Montepaldi Long Term Experiment: l'esperimento a lungo
+  termine attivo dal 1991 in cui \`e coinvolto anche questo studio
+  (paragrafo \ref{sec:MOLTE}}, hanno riscontrato, a fronte di una
+paragonabile produzione tra i due metodi di conduzione, un minor
+surplus di azoto ed una miglior conservazione di carbonio e azoto a
+lento rilascio (organico) in favore della coinduzione biologica.
 
 
 \section{Progetto \emph{FertilCrop}}
-Lo scopo principale del progetto FertilCrop (Fertility Building
-Management Measures in Organic Cropping Systems) è quello di
-sviluppare delle tecniche di gestione sostenibili ed efficienti per
-incrementare la produttivit\`a nei sistemi agricoli biologici.
 
-FertilCrop è un progetto europeo che prevede la collaborazione di
-venti dipartimenti e istituti di ricerca, tra cui il Dipartimento
-delle Scienze delle Produzioni Agroalimentari e dell'Ambiente (DISPAA)
+FertilCrop (Fertility Building Management Measures in Organic Cropping
+Systems) è un progetto europeo che prevede la collaborazione di venti
+dipartimenti e istituti di ricerca, tra cui il Dipartimento delle
+Scienze delle Produzioni Agroalimentari e dell'Ambiente (DISPAA)
 dell'Universit\`a degli Studi di Firenze gi\`a impegnata
-nell’esperimento di lungo termine MoLTE.  Il progetto FertilCrop si
-pone i seguenti obiettivi:
+nell’esperimento di lungo termine MoLTE.
+
+Lo scopo principale del progetto è quello di sviluppare delle tecniche
+di gestione sostenibili ed efficienti per incrementare la
+produttivit\`a nei sistemi agricoli biologici e si pone i seguenti
+obiettivi:
+
 \begin{enumerate}
 \item studio dell’interazione spazio-temporale tra infestanti, sovesci
   e colture;
@@ -688,30 +713,24 @@ pone i seguenti obiettivi:
   strategie per il riconoscimento visivo della fertilit\`a dei suoli.
 \end{enumerate}
 
-Il presente lavoro che si inserisce nell'ambito di questo progetto, ha
-l'intento di contribuire al raggiungimento dell’obiettivo 2 di
-FertilCrop, studiando l’impatto di lavorazioni a diversa intensit\`a
-per mezzo di indicatori di qualit\`a della struttura fisica del suolo.
+Il presente lavoro si inserisce nell'ambito di questo progetto con
+l'intento di contribuire al raggiungimento dell’obiettivo 2, studiando
+l’impatto di lavorazioni a diversa intensit\`a per mezzo di indicatori
+di qualit\`a della struttura fisica del suolo.
 
 \section{Scopo dello studio}
-Lo scopo di questa tesi è la verifica di due ipotesi:
+Lo scopo di questo lavoro è cercare la risposta ai seguenti due quesiti:
 \begin{itemize}
-\item la presenza di una relazione tra il tipo di conduzione (Biologica e
-  Convenzionale) e le caratteristiche fisico-strutturali del terreno;
-\item la presenza di una relazione tra tre diverse lavorazioni primarie (aratura,
-  rippatura e frangizollatura) e lo stato di aggregazione del suolo.
+\item dopo 25 anni di conduzione biologica, sono cambiate le
+  caratteristiche fisico-strutturali del terreno ?
+\item tre diverse lavorazioni primarie quali aratura,
+  rippatura e frangizollatura influenzano i parametri fisici del suolo ?
 \end{itemize}
 
-Gli indicatori di fertilit\`a del suolo scelti in questo lavoro sono
-parametri che ne descrivono le caratteristiche fisiche, ovvero, \`e
-stata effettuata una comparazione tra la densit\`a apparente, la
-distribuzione dei pori e la stabilit\`a degli aggregati di due
-appezzamenti: uno a conduzione biologica e uno a conduzione
-convenzionale.  I due appezzamenti sono inseriti in un Long Term
-Experiment, MOLTE \citep{MOLTE}, che \`e attivo dal 1991.
-
-
-
+Per rispondere a queste due domande sono stati scelti degli indicatori
+di fertilit\`a del suolo di natura fisica, quali la densit\`a
+apparente, la distribuzione dei pori e la stabilit\`a degli aggregati.
+Tali parametri sono stati misurati durante la stagione 2016-2017.
 
 
 \chapter{Materiali e metodi}
@@ -721,13 +740,9 @@ L'esperimento oggetto di questa tesi fa parte del progetto MoLTE
 (Montepaldi Long Term Experiment) che è attivo dal 1991 nell’azienda
 agricola dell’Universit\`a di Firenze (localit\`a Montepaldi, San
 Casciano Val di Pesa) ed interessa una superficie leggermente declive
-di circa \SI{15}{\hectare} a \SI{90}{\meter} s.l.m.
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.8\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
-  \caption{\label{fig:FotoPanoramaMpaldi}}
-\end{figure}
-\FloatBarrier
+di circa \SI{15}{\hectare} a \SI{90}{\meter} s.l.m..
+
+
 
 Il clima è sub-appenninico con precipitazioni totali di circa
 \SI{800}{\milli\meter} annui con massimo in autunno e primavera e
@@ -742,8 +757,13 @@ pianeggianti) con caratteristiche tessiturali da essere definite tra i
 \emph{medio impasto limo-argillosi} e gli \emph{argillosi} con
 presenza variabile di scheletro di piccole e medie dimensioni.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
+  \caption{\label{fig:FotoPanoramaMpaldi} Veduta d'insieme dei campi sperimentali oggetto dello studio}
+\end{figure}
 
-Il sito sperimentale \`e costituito da due agro ecosistemi, da qui in
+Il sito sperimentale \`e costituito da due agroecosistemi, da qui in
 avanti definiti come \emph{Conduzione}:
 \begin{itemize}
 \item conduzione biologica\footnote{In realtà nell'azienda sono
@@ -753,7 +773,7 @@ avanti definiti come \emph{Conduzione}:
 \item conduzione \emph{Convenzionale}, \emph{CO}
 \end{itemize}
 
-I due agro ecosistemi sono suddivisi in pi\`u appezzamenti
+I due agroecosistemi sono suddivisi in pi\`u appezzamenti
 rettangolari (\SI{1.3}{\hectare} ciascuno),
 identificati da sigle quali \emph{OO1, OO2, OO3, OO4} per il biologico
 vecchio (Fig. \ref{fig:foto_OO_sito}) e \emph{CO9, CO10} per il
@@ -763,7 +783,7 @@ Nell'anno 2015-2016, sono stati campionati gli appezzamenti \emph{OO1, OO3, CO9,
 mentre nell'anno 2016-2017 sono stati campionati \emph{OO2, OO4, CO9,
   CO10}
 
-I due agro ecosistemi sono circondati da infrastrutture ecologiche
+I due agroecosistemi sono circondati da infrastrutture ecologiche
 quali siepi naturali e/o artificiali e/o strisce di essenze erbacee
 spontanee. In particolare sono presenti due siepi: una naturale che
 separa il biologico vecchio da quello nuovo, costeggiata da entrambi i
@@ -821,32 +841,38 @@ In totale sono stati raccolti 108 campioni di terreno, sia nell'anno
 2015 che nell'anno 2016, principalmente le analisi hanno riguardato la
 serie \emph{m}, quindi 36 campioni.
 
+\begin{landscape}
 \begin{figure}
+ % \begin{minipage}{.5\linewidth}
   \centering
-  \includegraphics[width=0.75\textwidth]{../foto/OO_sito.jpeg}
-  \caption[Diagramma degli appezzamenti a conduzione
-  biologica]{Appezzamenti a conduzione biologica, i plot sono indicati
-    con dei codici identificativi: \emph{OO} seguito da un numero che
-    indica l'appezzamento; la lettera maiuscola indica la lavorazione
-    \emph{A}(aratura), \emph{B}(rippatura), \emph{C}(frangizollatura);
-    il numero (\emph{1, 2 , 3}) indica la riga; la lettera minuscola
-    indica la replica all'interno del plot (\emph{a} alto, \emph{m}
-    medio, \emph{b} basso). Il fiume Pesa si trova sul margine inferiore
-    dello schema e la collina su quello superiore}
+  \subfloat[Biologico]{
+    \includegraphics[width=0.5\textwidth]{../foto/OO_sito.jpeg}
+  }\quad
+  \subfloat[Convenzionale]{
+    \includegraphics[width=0.5\textwidth]{../foto/CO_sito.jpeg}
+  }
+  \caption[Diagramma degli appezzamenti a conduzione biologica w
+  convenzionale]{Appezzamenti oggetto di studio. \emph{OO} seguito da un
+    numero che indica l'appezzamento; la lettera maiuscola indica la
+    lavorazione \emph{A}(aratura), \emph{B}(rippatura),
+    \emph{C}(frangizollatura); il numero (\emph{1, 2, 3}) indica la
+    riga; la lettera minuscola indica la replica all'interno del plot
+    (\emph{a} alto, \emph{m} medio, \emph{b} basso). Il fiume Pesa si
+    trova sul margine inferiore dello schema e la collina su quello
+    superiore}
   \label{fig:foto_OO_sito}
+%   \end{minipage} %
 \end{figure}
-\FloatBarrier
+\end{landscape}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.75\textwidth]{../foto/CO_sito.jpeg}
+%   \caption[Diagramma degli appezzamenti a conduzione
+%   convenzionale]{Appezzamenti convenzionale, la codifica segue quella
+%     descritta per l'appezzamento biologico}
+%   \label{fig:foto_CO_sito}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.75\textwidth]{../foto/CO_sito.jpeg}
-  \caption[Diagramma degli appezzamenti a conduzione
-  convenzionale]{Appezzamenti convenzionale, la codifica segue quella
-    descritta per l'appezzamento biologico}
-  \label{fig:foto_CO_sito}
-
-\end{figure}
-\FloatBarrier
+% \end{figure}
 
 \section{Misura della densit\`a apparente}
 L'ipotesi che ci ha portato ad effettuare questa misurazione \`e data
@@ -2384,7 +2410,7 @@ suolo non sono in grado di evidenziare differenze significative
 
 
 
-\begin{appendices}
+\appendix
   \chapter{Misurazione delle distribuzioni
     granulometriche ottenuta mediante Mastersizer 2000}
   Il Mastersizer 2000 si basa sul fenomeno della diffusione ottica (scattering), ovvero
@@ -2624,7 +2650,8 @@ suolo non sono in grado di evidenziare differenze significative
   pori (relativa alla tensione superficiale) non \`e proporzionale al
   raggio e dipende dalla forma del poro e l'equazione
   \ref{eq:WashburnHg} dar\`a valori pi\`u bassi.
-  \subsection{misura del volume}
+
+  \subsection{Misura del volume}
   Il volume di mercurio penetrato corrisponde al volume del poro del
   campione espresso in \SI{}{\mm \cubed}, ed \`e acquisito tramite un
   sensore capacitivo, in cui una delle due armature \`e rappresentata
@@ -2763,7 +2790,6 @@ suolo non sono in grado di evidenziare differenze significative
   %% \end{figure}
 
 
-\end{appendices}
 
 \nonvisibile{Simo: pagina 143 Pantieri per sitografia}
 \listoffigures % non funziona con xtable
