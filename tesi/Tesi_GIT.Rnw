@@ -140,6 +140,11 @@ final]{scrbook}
 % Vediamo se con questo si riduce lo spazio tra la caption.
 \usepackage[font=small, textfont=it, labelfont=bf, format=plain]{caption}
 
+
+% \usepackage[printwatermark]{xwatermark}
+% \newwatermark[allpages,color=grey!50,angle=90,scale=1,xpos=0,ypos=0]{Tesi
+% di Simone Massenzio}
+
 %\usepackage[raggedright]{titlesec}
 % Serve per evitare la sillabazione nei titoli
 
@@ -274,7 +279,7 @@ file.path(DirMain, "tabelle")
   \Istituzione{Universit\`a degli Studi di Firenze}
   \Divisione{Scuola di Agraria}
   \Scuola{Corso di Laurea in Scienze e tecnologie agrarie (LM-69)}
-  \Titolo{25 anni di conduzione Biologica}
+  \Titolo{25 anni di conduzione Biologica in area Mediterranea}
   \Sottotitolo{Uno studio di fisica del suolo}
   \NCandidato{Candidato}
   \Candidato{Simone Massenzio}
@@ -288,50 +293,51 @@ file.path(DirMain, "tabelle")
 % \maketitle
 
 
-\listoftodos %messo qui per non rischiare di scordarselo alla stampa finale
+%\listoftodos %messo qui per non rischiare di scordarselo alla stampa finale
 
 
 \begin{abstract}
   Lo scopo di questa tesi \`e quello di: \textbf{i)} comparare due
-  sistemi di conduzione agricola (Biologico e Convenzionale, attivi da
-  venticinque anni) studiando tre propriet\`a fisiche del suolo:
-  densit\`a apparente, distribuzione dei pori e stabilità degli
-  aggregati; \textbf{ii)} comparare gli effetti di tre lavorazioni
-  primarie: aratura, rippatura e frangizollatura. Lo studio \`e
-  inserito nel progetto MOLTE, un \textbf{long term experiment}
-  dell'Universit\`a di Firenze dove, dal 1991 presso l'azienda
-  agricola Montepaldi, situata a San Casciano val di Pesa (FI), viene
-  condotta una sperimentazione sul sistema Biologico. I risultati
-  delle analisi sulla densit\`a apparente mostrano differenze
-  statisticamente significative tra i trattamenti, tuttavia i
-  cambiamenti sono minimi rendendoli non rilevanti dal punto
-  di vista pratico. Invece i risultati delle analisi sulla
-  distribuzione dei pori non mostrano differenze statisticamente
-  significative, mentre quelle sulla stabilit\`a degli aggregati
-  indicano una maggior stabilit\`a degli aggregati nei suoli a
-  conduzione Convenzionale rispetto a quella Biologica.
+  sistemi di conduzione agricola in ambiente Mediterraneo (Biologico e
+  Convenzionale, attivi da venticinque anni) studiando tre propriet\`a
+  fisiche del suolo: densit\`a apparente, distribuzione dei pori e
+  stabilità degli aggregati; \textbf{ii)} comparare gli effetti di tre
+  lavorazioni primarie: aratura, rippatura e frangizollatura. Lo
+  studio \`e inserito nel progetto MOLTE, un \textbf{long term
+    experiment} dell'Universit\`a di Firenze dove, dal 1991 presso
+  l'azienda agricola Montepaldi, situata a San Casciano val di Pesa
+  (FI), viene condotta una sperimentazione sul sistema Biologico. I
+  risultati delle analisi sulla densit\`a apparente mostrano
+  differenze statisticamente significative tra i trattamenti, tuttavia
+  i cambiamenti sono minimi rendendoli non rilevanti dal punto di
+  vista pratico. Invece i risultati delle analisi sulla distribuzione
+  dei pori non mostrano differenze statisticamente significative,
+  mentre quelle sulla stabilit\`a degli aggregati indicano una maggior
+  stabilit\`a degli aggregati nei suoli a conduzione Convenzionale
+  rispetto a quella Biologica.
 \end{abstract}
 
 
 \begin{otherlanguage*}{english}
   \begin{engabstract}
     The purposes of this work were: \textbf{i)} to compare two farming
-    systems (organic and conventional management on site since twenty
-    five years) through the assessement of three soil's physical
-    properties such as: bulk density, pore size distribution and
-    aggregate stability; \textbf{ii)} to compare the effects of three
-    tillage systems: plowing, chisel plowing and disk harrowing. The
-    study is implemented within the \emph{MOLTE} project, a long term
-    experiment of the University of Florence where, since 1991, at
-    Montepaldi farm, located in San Casciano val di Pesa (FI) was
-    carried out an experimentation on organic farming systems.
-    The result of the analysis of the bulk density, show
+    systems in Mediterranean area (organic and conventional management
+    on site since twenty five years) through the assessement of three
+    soil's physical properties such as: bulk density, pore size
+    distribution and aggregate stability; \textbf{ii)} to compare the
+    effects of three tillage systems: plowing, chisel plowing and disk
+    harrowing. The study is implemented within the \emph{MOLTE}
+    project, a long term experiment of the University of Florence
+    where, since 1991, at Montepaldi farm, located in San Casciano val
+    di Pesa (FI) was carried out an experimentation on organic farming
+    systems.  The result of the analysis of the bulk density, show
     statistically significant differences between two farming systems,
     however these difference were so small that are negligible from a
-    practical point of view. On the contrary the results of the pore size distribution 
-    do not display statistically significant differences. 
-    The aggregate stability shows that the aggregates from the conventional 
-    soil are more stable than those from the organic one. 
+    practical point of view. On the contrary the results of the pore
+    size distribution do not display statistically significant
+    differences.  The aggregate stability shows that the aggregates
+    from the conventional soil are more stable than those from the
+    organic one.
   \end{engabstract}%
 \end{otherlanguage*}
 
@@ -442,8 +448,7 @@ Dove:\\
   $o$  &  sono i fattori biologici\\
   $r$  &  \`e la topografia\\
   $p$  &  \`e la roccia madre\\
-  $t$  &  \`e il tempo\\
-       &  ulteriori fattori secondari
+  $t$  &  \`e il tempo.
 \end{tabular}
 \vspace*{3em}
 
@@ -529,8 +534,8 @@ desertificazione.
 
 Secondo \citet{pagliai2002soil}, la classificazione dei suoli più
 usata è quella di \citet{greenland1977soil} ed \`e mostrata in tabella
-\ref{tab:green}. \migliora{Luigi dice di mettere più classificazioni con la pubblicazione che mi ha dato.}
- \todo[inline]{Son d'accordo e forse meglio una figura}
+\ref{tab:green}. %\migliora{Luigi dice di mettere più classificazioni con la pubblicazione che mi ha dato.}
+ %\todo[inline]{Son d'accordo e forse meglio una figura}
 
 \begin{table}[ht]
   \caption[Classificazione dei pori del terreno secondo le
@@ -648,8 +653,24 @@ naturale eliminando fitofarmaci e concimi di sintesi. Da questi
 movimenti inizia a prendere forma l'agricoltura Biologica che, ad
 oggi, costituisce un'importante realt\`a dell'agricoltura mondiale. Si
 stima infatti che, il 12\% della SAU italiana sia coltivata a
-Biologico \citep{Bio_cifre}, in crescita.  Gli obiettivi che si
-prefigge di raggiungere l'agricoltura Biologica sono:
+Biologico \citep{Bio_cifre}, in crescita. 
+
+Secondo il \citet{ue2007834}: \emph{La produzione biologica è un
+  sistema globale di gestione dell’azienda agricola e di produzione
+  agroalimentare basato sull’interazione tra le migliori pratiche
+  ambientali, un alto livello di biodiversità, la salvaguardia delle
+  risorse naturali, l’applicazione di criteri rigorosi in materia di
+  benessere degli animali e una produzione confacente alle preferenze
+  di taluni consumatori per prodotti ottenuti con sostanze e
+  procedimenti naturali. Il metodo di produzione biologico esplica
+  pertanto una duplice funzione sociale, provvedendo da un lato a un
+  mercato specifico che risponde alla domanda di prodotti biologici
+  dei consumatori e, dall’altro, fornendo beni pubblici che
+  contribuiscono alla tutela dell’ambiente, al benessere degli animali
+  e allo sviluppo rurale.}
+
+Gli obiettivi che si prefigge di raggiungere l'agricoltura Biologica
+sono:
 
 \begin{itemize}
 \item migliorare la biodiversit\`a e la stabilit\`a dell'agro-ecosistema;
@@ -687,6 +708,13 @@ mantenimento della fertilit\`a dei suoli: l'eliminazione dei pesticidi
 comporterebbe una miglior salute della microfauna e microflora
 tellurica, mentre l'impiego di sovesci e concimazioni organiche
 porterebbe ad un aumento della sostanza organica nel terreno.
+
+
+La conservazione di sostanza organica \`e un punto chiave dei sistemi
+agricoli biologici, soprattutto nei sistemi agricoli localizzati in
+ambienti Mediterranei in cui le precipitazioni incostanti e le alte
+temperature sono favorevoli alla sua mineralizzazione
+\citep{montemurro2008anaerobic}.
 
 
 Mentre la produzione e l'impatto ambientale dell'agricoltura Biologica
@@ -757,8 +785,9 @@ di qualit\`a della struttura fisica del suolo.
 \section{Scopo dello studio}
 Lo scopo di questo lavoro è cercare la risposta ai seguenti due quesiti:
 \begin{itemize}
-\item dopo 25 anni di conduzione Biologica, sono cambiate le
-  caratteristiche fisico-strutturali del terreno ?
+\item dopo 25 anni di conduzione Biologica tipica di ambienti
+  Mediterranei, sono cambiate le caratteristiche fisico-strutturali
+  del terreno ?
 \item tre diverse lavorazioni primarie quali aratura,
   rippatura e frangizollatura influenzano i parametri fisici del suolo ?
 \end{itemize}
@@ -773,10 +802,15 @@ Tali parametri sono stati misurati durante la stagione 2016-2017.
 \section{Descrizione del sito sperimentale}
 \label{sec:MOLTE}
 L'esperimento oggetto di questa tesi fa parte del progetto MoLTE
-(Montepaldi Long Term Experiment) che è attivo dal 1991 nell’azienda
-agricola dell’Universit\`a di Firenze (localit\`a Montepaldi, San
-Casciano Val di Pesa) ed interessa una superficie leggermente declive
-di circa \SI{15}{\hectare} a \SI{90}{\meter} s.l.m..
+(Montepaldi Long Term Experiment, \cite{MOLTE}) che è attivo dal 1991
+\citep{gaifami2017influence, migliorini2014agronomic,
+  bedini2013mycorrhizal, vazzana2008sustainability,
+  migliorini2007biodiversity, vereijken1999manual,
+  raso1999applicazione, vazzana1997nuova, vereijken1997methodical,
+  vereijken1994designing} nell’azienda agricola dell’Universit\`a di
+Firenze (localit\`a Montepaldi, San Casciano Val di Pesa) ed interessa
+una superficie leggermente declive di circa \SI{15}{\hectare} a
+\SI{90}{\meter} s.l.m..
 
 
 
@@ -871,7 +905,10 @@ campionamento, partendo dal centro del campo
 (Fig. \ref{fig:foto_OO_sito}): \emph{m} (medio), \emph{a} (alto, 4
 metri sopra il medio) e \emph{b} (basso, 4 metri sotto il medio).
 
-
+L'esperimento MoLTE si propone di studiare il comportamento di un
+sistema agricolo biologico in area Mediterranea, questo comporta un
+ridotto apporto di concimi organici di origine animale
+(\emph{stockless farming system}, \cite{migliorini2014agronomic}). 
 
 In totale sono stati raccolti 108 campioni di terreno, sia nell'anno
 2015 che nell'anno 2016, principalmente le analisi hanno riguardato la
@@ -954,7 +991,7 @@ costante, e successivamente pesato \citep{ugolini2010basi}.
 \FloatBarrier
 
 Con i dati ottenuti, \`e stato ricavato il valore della densit\`a
-apparente ($rho_{CoreApp}$) tramite la seguente formula:
+apparente ($\rho_{CoreApp}$) tramite la seguente formula:
 
 \begin{equation}
   \label{eq:DensitaApparente}
@@ -962,11 +999,11 @@ apparente ($rho_{CoreApp}$) tramite la seguente formula:
 \end{equation}
 
 Dove:\\
-\begin{tabular}{rp{12cm}}
-  $V_{cilindro}$=       & volume del cilindro di ottone (\SI{854.1}{\cubic\centi\metre}); \\
-  $V_{scheletro}$=    & volume dello scheletro (>\SI{2}{\milli\metre}) misurato per spinta
+\begin{tabular}{lp{12cm}}
+  $V_{cilindro}$     & = volume del cilindro di ottone (\SI{854.1}{\cubic\centi\metre}); \\
+  $V_{scheletro}$    & = volume dello scheletro (>\SI{2}{\milli\metre}) misurato per spinta
                         idrostatica (\SI{}{\cubic\centi\metre}); \\
-  $P_{secco}$=       & peso del terreno vagliato
+  $P_{secco}$       & = peso del terreno vagliato
                        (<\SI{2}{\milli\metre}) ed essiccato a
                        \SI{105}{\degree} (\SI{}{\kilogram}).
 \end{tabular}
@@ -1023,16 +1060,17 @@ formula:
 \end{equation}
 
 Dove:\\
-\begin{tabular}{rp{12cm}}
-  $V_{totale}$= & volume dell'aggregato comprendente il volume del
+\begin{tabular}{lp{12cm}}
+  $V_{totale}$    & = volume dell'aggregato comprendente il volume del
                   solido e il volume dei vuoti (\SI{}{\cubic\cm});\\
-  $S_{totale}$=  &  spinta idrostatica
+  $S_{totale}$    & = spinta idrostatica
                      dell'aggregato imbevuto di petrolio (\SI{}{\gram});\\
-  $D_{petrolio}$=  &  densit\`a del petrolio utilizzato per
+  $D_{petrolio}$  & = densit\`a del petrolio utilizzato per
                      l'analisi (\SI{0.761}{\gram\per\cubic\cm}).
 \end{tabular}
 
 
+\bigskip
 Successivamente il campione \`e stato essiccato per una notte a
 \SI{150}{\degreeCelsius} quindi \`e stato pesato\footnote{Il
   raggiungimento di questa temperatura consente di allontanare l'acqua
@@ -1050,12 +1088,12 @@ La densit\`a reale \`e si ottiene da:
 \end{equation}
 
 Dove:\\
-\begin{tabular}{rp{12cm}}
-  $\rho_{ClodApp}$=  & valore della densit\`a apparente dell'aggregato
+\begin{tabular}{lp{12cm}}
+  $\rho_{ClodApp}$  & = valore della densit\`a apparente dell'aggregato
                       misurato (\SI{}{\gram\per\cubic\cm});\\
-  $P_{150}$=       & peso dell'aggregato essiccato a
+  $P_{150}$       & = peso dell'aggregato essiccato a
                      \SI{150}{\celsius} (\SI{}{\gram});\\
-  $V_{totale}$=  & volume calcolato con la formula
+  $V_{totale}$  & = volume calcolato con la formula
                       \ref{eq:VolumeAggr}  (\SI{}{\cubic\cm}).
 \end{tabular}
 
@@ -1231,11 +1269,11 @@ che sono quindi di natura additiva.
 
 dove: \\
 
-\begin{tabular}{rp{12cm}}
-  $\beta_1 =$ & \emph{Anno}, due livelli: \emph{2015, 2016};\\
-  $\beta_2 =$  & \emph{Conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
-  $\beta_3 =$ & \emph{Lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
-  $\epsilon =$ & residui o errore.
+\begin{tabular}{lp{12cm}}
+  $\beta_1$ & = \emph{Anno}, due livelli: \emph{2015, 2016};\\
+  $\beta_2$  & = \emph{Conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
+  $\beta_3$ & = \emph{Lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
+  $\epsilon$ & = residui o errore.
 \end{tabular}
 \vspace*{3em}
 
@@ -1261,9 +1299,8 @@ strumenti, infatti, sono espresse come valore percentuale sul totale;
 questi sono stati raggruppati in tre classi dimensionali
 (macroaggregati, mesoaggregati, microaggregati e macropori, mesopori,
 micropori). I limiti delle tre classi dimensionali sono state definiti
-in base alla classificazione della letteratura (\cite{paul2014soil},
-\cite{tisdall1982organic}, \cite{greenland1977soil},
-\cite{lal2004principles}).
+in base alla classificazione della letteratura \citep{paul2014soil,
+  tisdall1982organic, greenland1977soil, lal2004principles}.
 
 A questo punto \`e stato adattato il modello statistico all'interno
 dello spazio vettoriale del simplesso
@@ -1652,8 +1689,8 @@ print(tabella.spinta.anova, caption.placement = "top")
 
 @
 
-La t-table \dubbio{Gigi dice che non si chiama t-table} (tabella
-\ref{tab:sommario piccoli aggregati}) mostra come i terreni a
+La t-table %\dubbio{Gigi dice che non si chiama t-table} 
+(tabella \ref{tab:sommario piccoli aggregati}) mostra come i terreni a
 conduzione Biologica abbiano una densit\`a apparente minore rispetto a
 quelli a conduzione Convenzionale; il terreno in cui \`e stata effettuata
 l'aratura, risulta pi\`u denso rispetto ai terreni rippati e
@@ -1772,34 +1809,19 @@ with(df.plot, lm(ilr(Y.Msizer1) ~ COND+TIME2+I(TIME2^2)))
 @
 
 
-
-
-
-%% \migliora{ref aitchinson, analisi of compositional data, buccianti e
-
-%% egozcue mettere nella discussione come mai si usano i composizionali
-
-%% mettere nei matmet il modello usato mettere 10 alla meno 3 nella tabella 3.7
-
-%% didascalia estesa in figura 3.4}
-
-
 Per la costruzione dei modelli statistici \`e stato escluso il fattore
 \emph{lavorazione} in quanto non significativi.
 
 Nel modello statistico \`e presente la variabile continua \emph{tempo}
-espressa al quadrato il quale, come \`e possibile vedere dalla tabella
-ANOVA \ref{tab:anova_compWET}, \`e significativo.
+espressa al quadrato la quale, come \`e possibile vedere dalla tabella
+ANOVA \ref{tab:anova_compWET}, \`e significativa.
 
 La misura \`e stata effettuata sia su aggregati essiccati all'aria che
 su aggregati inumiditi, per studiare il fenomeno dello
 \emph{slaking}. Di conseguenza sono stati creati due modelli: uno per
 i campioni inumiditi (\emph{WET}) e uno per i campioni secchi
-(\emph{DRY}). Dai modelli \`e possibile vedere che pendenza
-e curvatura siano comuni per entrambi i trattamenti.
-
-I campioni essiccati generano, come atteso, frammenti di particelle
-più grandi in seguito allo slaking.
+(\emph{DRY}). Dai modelli \`e possibile vedere come la pendenza
+e la curvatura sono comuni per entrambi i trattamenti.
 
 L'analisi evidenzia che gli aggregati provenienti da appezzamenti
 condotti convenzionalmente, successivamente all'immersione, si
@@ -2329,7 +2351,8 @@ L'ipotesi che ci ha portato ad effettuare questa misurazione \`e data
 dal fatto che la conduzione Biologica, non utilizzando concimi e
 pesticidi di sintesi, avrebbe un minor impatto sulla microflora e
 microfauna tellurica, e di conseguenza ci aspetteremmo una migliore
-struttura favorita dall'attivit\`a biologica.  
+struttura favorita dall'attivit\`a biologica e dal conseguente
+incremento di sostanza organica.
 
 Dai risultati della densit\`a apparente \`e emerso che:
 \begin{itemize}
@@ -2347,12 +2370,12 @@ che    nella    misura    non    sono    considerate    le    fratture
 \citep{tisdall1951comparison}.
 
 I dati si allineano con ci\`o che hanno rilevato altri autori
-(\citet{williams2017organic}, \citet{green2005soil},
-\citet{ikemura2008some}, \citet{vian2009effects}), ovvero una
-densit\`a apparente con valori mediamente pi\`u bassi nei terreni
-condotti ad agricoltura Biologica rispetto ai terreni condotti ad
-agricoltura Convenzionale e nei terreni lavorati superficialmente
-rispetto a quelli lavorati pi\`u in profondit\`a.
+\citep{williams2017organic, green2005soil, ikemura2008some,
+  vian2009effects}, ovvero una densit\`a apparente con valori
+mediamente pi\`u bassi nei terreni condotti ad agricoltura Biologica
+rispetto ai terreni condotti ad agricoltura Convenzionale e nei
+terreni lavorati superficialmente rispetto a quelli lavorati pi\`u in
+profondit\`a.
 
 La t-table in tabella \ref{tab:anova piccoli aggregati} mostra che,
 nonostante la rilevata significativit\`a statistica, le differenze di
@@ -2375,22 +2398,23 @@ I risultati vanno in controtendenza a ci\`o che hanno rilevato altri
 autori come \citet{siegrist1998does}, \citet{williams2017organic} e
 \citet{green2005soil}.
 
-Questo pu\`o essere dato dal fatto che nell'appezzamento coltivato a
-Biologico non sono state effettuate concimazioni, quindi la sostanza
-organica non \`e stata reintegrata in nessun modo.
-
 Nell'appezzamento Convenzionale, al contrario, sono state effettuate
-concimazioni con fertilizzanti di sintesi. Questo ha portato ad un
-aumento delle radici superficiali con conseguente incremento della
-biomassa nei primi \SI{20}{\centi\meter} di suolo.
+concimazioni con fertilizzanti di sintesi. Questo potrebbe aver
+portato ad un aumento delle radici superficiali con conseguente
+incremento della biomassa nei primi \SI{20}{\centi\meter} di suolo.
 
 Secondo \citet{mizuta2015soil}, la stabilit\`a degli aggregati dipende
 esclusivamente dal contenuto di sostanza organica e non dal tipo di
-molecole organiche coinvolte, tuttavia secondo \citet{d2017physical}
-la stabilit\`a degli aggregati \`e fortemente influenzata dalla
-sostanza organica protetta. È quindi necessario ripetere la misura di
+molecole organiche coinvolte. Di conseguenza nell'appezzamento
+biologico, nonostante la minore stabilit\`a degli aggregati possono
+essere presenti cementi organici di maggiore qualit\`a (quindi meno
+labili) rispetto a quelli presenti nell'appezzamento biologico.
+
+Secondo \citet{d2017physical} la stabilit\`a degli aggregati \`e
+fortemente influenzata dalla sostanza organica protetta dagli
+aggregati stessi. Sarebbe quindi interessante ripetere la misura di
 stabilit\`a in seguito alla rimozione della sostanza organica
-superficiale, per comprendere se la conduzione influenzi diversi tipi
+superficiale, per comprendere se la conduzione influenzi questo tipo
 di sostanza organica.
 
 Per quanto riguarda la distribuzione dei pori non sono state
@@ -2399,7 +2423,30 @@ riscontrate differenze significative tra i trattamenti.
 Tuttavia i dati mostrano come i campioni biologici tendano ad avere
 una maggior porosit\`a rispetto ai campioni convenzionali, in linea
 con quanto riscontrato dall'analisi \emph{Clod} e con quanto hanno
-trovato altri autori (\citep{ikemura2008some} e \citep{mendoza2011assessment}).
+trovato altri autori \citep{ikemura2008some, mendoza2011assessment}.
+
+La mancanza di risultati coerenti tra le diverse analisi pu\`o essere
+spiegata dal disegno sperimentale stesso: lo scopo dello studio era
+infatti quello di valutare l'effetto su alcune caratteristiche fisiche
+del suolo dovute all'impiego di diverse pratiche agronomiche tipiche
+di ambienti Mediterranei, sistemi che, a causa della mancanza di
+allevamenti associati \citep{migliorini2014agronomic}, non hanno la
+possibilit\`a di utilizzare concimi organici di origine animale in
+modo costante.
+
+L'importanza fondamentale dell'effetto dei concimi organici sul suolo,
+\'e stata studiata e riscontrata da numerosi autori
+\citep{hati2006effect, haynes1998influence, benbi1998influence},
+inoltre tutti gli studi effettuati su agroecosistemi Biologici presi in
+considerazione nella bibliografia, hanno utilizzato pratiche di
+concimazioni organiche.
+
+In conclusione, i dati non ci permettono di affermare una differenza
+statisticamente significativa tra le differenti lavorazioni del suolo
+sulle sue caratteristiche fisiche; inoltre non ci permettono di
+confermare che le pratiche agricole Biologiche, senza una adeguata
+concimazione organica, portano a benefici dal punto di vista fisico al
+terreno agrario.
 
 \chapter{Conclusioni}
 
@@ -2408,16 +2455,27 @@ suolo non sono in grado di evidenziare differenze significative
 \begin{itemize}
 \item Densità
   \begin{itemize}
-  \item Nessuna differenza col metodo Core. Se si osserva è solo
-    perchè si usano molti campioni per OO nel 2015. La differenza è
-    sulla seconda decimale, quindi tecnicamente superflua
+  \item Nessuna differenza col metodo \emph{Core}. 
   \item Il metodo \emph{Clod} mostra delle differenze per due
-    combinazioni di trattamenti
+    combinazioni di trattamenti. La differenza è
+    sulla seconda decimale, quindi tecnicamente superflua
   \end{itemize}
-\item Stabilità aggregati
-\item Porosimetria
-  
+  % In generale si deve considerare che la densit\`a apparente \`e
+  % principalmente influenzata dalla tessitura \citep{AskinBulkDensity}
+  % e solo in secondo luogo dalla quantit\`a di sostanza organica.
+\item Le misura di stabilit\`a hanno riscontrato un maggiore
+  stabilit\`a degli aggregati convenzionali rispetto ai biologici, questo pu\`o essere
+  dovuto alla mancata concimazione organica dei campi coltivati
+  biologicamente; nessuna significativit\`a dei trattamenti di lavorazione;
+\item Per quanto riguarda le misure tramite porosimetria al mercurio,
+  la tendenza conferma la maggiore porosit\`a per i campioni di suolo
+  biologico, tuttavia il numero di campioni non \`e sufficiente a
+  confermare la significativit\`a dei trattamenti.
 \end{itemize}
+
+In conclusione, nessuno dei parametri fisici a disposizione \`e
+riuscito a differenziare adeguatamente le parcelle con diversi
+trattamenti.
 
 
 
@@ -2441,9 +2499,8 @@ suolo non sono in grado di evidenziare differenze significative
   \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{../foto/Mie_scattering.jpeg}
-    \caption[Scattering di Mie]{In figura \`e rappresentato il fenomeno
-      dello scattering di Mie, presa da
-      \url{http://www.smart-piv.com/en/techniques/mie-rayleigh-raman/index.php}}%{questo
+    \caption[Scattering di Mie]{In figura \`e rappresentato il
+      fenomeno dello scattering di Mie, immagine presa da \citet{MieScatter}}%{questo
                                 %sito}}
     \label{fig:Mie}
   \end{figure}
@@ -2460,13 +2517,16 @@ suolo non sono in grado di evidenziare differenze significative
 
   \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{../foto/laser_diffraction.jpeg}
-    \caption[Schema di funzionamento del Mastersizer
-    2000]{Rappresentazione del funzionamento del Mastersizer 2000 presa
-      da:
-      %\href
-      \url{https://plus.google.com/communities/110676150876604729660/stream/ffa7f40a-1c65-4268-9121-bb88d63f0c41}}%{questo
-                                %sito}}
+    \includegraphics[width=0.8\textwidth]{../foto/laser_diffraction.jpeg}
+    \caption[Schema di funzionamento del Mastersizer 2000]{In figura, un tipico
+      sistema a diffrezione laser costituito da: 1) un laser per fornire una fonte di
+      luce con lunghezza d’onda fissa coerente ed intensa; 2) un
+      sistema di presentazione del campione per garantire che il
+      materiale in prova passi attraverso il raggio laser come un
+      flusso omogeneo di particelle in uno stato di dispersione noto e
+      riproducibile; 3) una serie di rilevatori che sono utilizzati per
+      misurare il “pattern” (disegno) di luce ottenuto in una vasta
+      gamma di angoli. (Immagine e descrizione prese da \cite{MsizerDiff})}
     \label{fig:MastersizerInt}
   \end{figure}
   \FloatBarrier
@@ -2480,12 +2540,15 @@ suolo non sono in grado di evidenziare differenze significative
   \end{equation}
 
   dove:\\
-  \begin{tabular}{rp{12cm}}
-    $I$            & è l'intensit\`a della luce a una distanza $b$ dal campo
+  \begin{tabular}{lp{12cm}}
+    $I$            & = intensit\`a della luce a una distanza $b$ dal campo
                      delle particelle di assorbanza $\alpha$\\
-    $I_0$          & è l'intensit\`a della radiazione luminosa all'ingresso
+    $I_0$          & = intensit\`a della radiazione luminosa all'ingresso
                      del campo delle particelle 
   \end{tabular}
+  
+  \bigskip
+  
   Il rapporto a sinistra dell'equazione ($\frac{I}{I_0}$) rappresenta
   la trasmittanza T del raggio (misurata direttamente dallo
   strumento), ovvero, $I_0$ \`e l'intensit\`a del laser quando nessun
@@ -2512,12 +2575,12 @@ suolo non sono in grado di evidenziare differenze significative
   \end{equation}
 
   dove:\\
-  \begin{tabular}{rp{12cm}}
-    $a_i$       &  \`e la dimensione della particella i\\
-    $Q_i$       &  \`e l'efficienza dell'estinzione luminosa calcolata dalla
+  \begin{tabular}{lp{12cm}}
+    $a_i$       &  = dimensione della particella i\\
+    $Q_i$       &  = efficienza dell'estinzione luminosa calcolata dalla
                   teoria Mie per una particella di raggio $r_i$\\
-    $\pi r_i^2$ &  \`e l'area della sezione della particella\\
-    $n_i$       &  \`e il numero di particelle di raggio $r_i$
+    $\pi r_i^2$ &  = area della sezione della particella\\
+    $n_i$       &  = il numero di particelle di raggio $r_i$
                       
   \end{tabular}
 
@@ -2554,32 +2617,36 @@ suolo non sono in grado di evidenziare differenze significative
     C_v(ppm)=\frac{-2000 Ln \langle T \rangle}{3b \sum \frac{Q_iv_i}{d_i}}
   \end{equation}
 
-  Nell'equazione \ref{eq:Msizer_ppm}:
+  Dove:
 
-  \begin{tabular}{rp{12cm}}
-    $\langle T \rangle$ &  Trasmittanza, \`e un valore compreso tra 0 e 1 ed \`e
+  \begin{tabular}{lp{12cm}}
+    $\langle T \rangle$ & =  Trasmittanza, \`e un valore compreso tra 0 e 1 ed \`e
                           misurato direttamente dallo strumento\\
-    $v_i$ & \`e la distribuzione di particelle, ovvero il volume relativo
+    $v_i$ & = distribuzione di particelle, ovvero il volume relativo
             nella classe dimensionale $i$ con diametro medio $d_i$\\
-    $Q_i$, & il coefficiente di estinzione medio per la classe
+    $Q_i$, & = coefficiente di estinzione medio per la classe
              dimensionale $i$, \`e calcolato dalla teoria dello scattering, ed
              \`e una funzione delle propriet\`a ottiche delle particelle e del
              mezzo disperdente.
   \end{tabular}
+  
+  \bigskip
+  
   Questa equazione ci fornisce la concentrazione delle particelle
   della classe dimensionale $i$ in parti per milione (ppm). La
   percentuale di concentrazione del volume viene calcolata dividendo
   il valore finale per 10000.
   
   I precedenti calcoli partono dall'assunto che le particelle misurate
-  siano sfere perfette. In pratica questo avviene raramente e questo
-  causa problemi in termini di misura della dimensione delle
-  particelle: se le particelle sono in una forma irregolare, quale
-  delle tre dimensioni dello spazio (altezza, larghezza, profondit\`a)
-  dovrei misurare?
+  siano sfere perfette e non irregolari. In pratica questo avviene
+  raramente, quindi si pone il seguente problema: quale delle tre
+  dimensioni della particella irregolare (altezza, larghezza,
+  profondit\`a) dovrei misurare?
   
   Lo scopo dello strumento \`e quello di fornire un singolo numero che
-  descriva la dimensione delle particelle, per esempio:
+  descriva la dimensione delle particelle, per farlo \`e necessario
+  scegliere un valore che ne descriva, col minimo errore, le
+  caratteristiche dimensionali; ad esempio:
   \begin{itemize}
     \item il diametro teorico di una sfera che abbia la stessa
       superficie della particella originale;
@@ -2592,18 +2659,18 @@ suolo non sono in grado di evidenziare differenze significative
   \end{itemize}
   
   Il Mastersizer utilizza quest'ultimo metodo. Ognuno di questi metodi
-  \`e accettabile, ma ognuno fornisce una dimensione differente,
-  \`e dunque possibile confrontare seriamente le misure che sono state
-  effettuate utilizzando lo stesso metodo.
+  \`e accettabile ma, allo stesso tempo, fornisce un valore
+  differente.  A causa di ci\`o non \`e possibile mettere a confronto
+  misure che sono state effettuate utilizzando metodi diversi.
   
   
   
   
-  \chapter{Princ\`ipi di unzionamento della porosimetria ad intrusione
-    di mercurio}
+  \chapter{Princ\`ipi di funzionamento della porosimetria ad
+    intrusione di mercurio}
 
-  La distribuzione dei pori nei campioni di suolo \`e stata rilevata mediante due
-  porosimetri ad intrusione di mercurio: il PASCAL 140
+  La distribuzione dei pori nei campioni di suolo \`e stata rilevata
+  mediante due porosimetri ad intrusione di mercurio: il PASCAL 140
   \citep{Pascal_140} per la misura della microporosit\`a e il
   Porosimetro Carlo Erba 2000 series \citep{carli1989particle} per
   quella della macroporosit\`a.
@@ -2611,8 +2678,9 @@ suolo non sono in grado di evidenziare differenze significative
   Entrambi gli strumenti sono formati da tre macroblocchi:
   \begin{enumerate}
   \item un dilatometro, in cui viene immesso il campione pesato;
-  \item un sistema di pressurizzazione, che include una pompa peristaltica
-    per l'aria, un moltiplicatore di pressione e una autoclave;
+  \item un sistema di pressurizzazione, che include una pompa
+    peristaltica per l'aria, un moltiplicatore di pressione e una
+    autoclave;
   \item un sistema di misura del volume e della pressione del
     mercurio che viene intruso nel campione.
   \end{enumerate}
@@ -2620,26 +2688,26 @@ suolo non sono in grado di evidenziare differenze significative
   La determinazione della dimensione dei pori mediante la tecnica a
   penetrazione di mercurio \`e basata sul comportamento dei liquidi
   non bagnanti nei capillari. Un liquido non pu\`o spontaneamente
-  entrare in un poro che ha un angolo di contatto superficie/liquido maggiore di
-  \SI{90}{\degree} a causa della tensione superficiale, comunque
-  questa resistenza pu\`o essere superata grazie a una pressione
-  esterna.
+  entrare in un poro che ha un angolo di contatto superficie/liquido
+  maggiore di \SI{90}{\degree} a causa della tensione superficiale,
+  comunque questa resistenza pu\`o essere superata grazie a una
+  pressione esterna.
 
-  La pressione richiesta per vincere tale resistenza, \`e in funzione della dimensione dei pori, la
-  relazione tra la dimensione dei pori e la pressione esercitata quando
-  un poro viene considerato cilindrico \`e espresso dalla seguente
-  relazione, detta equazione di Washburn:
+  La pressione richiesta per vincere tale resistenza, \`e in funzione
+  della dimensione dei pori, la relazione tra la dimensione dei pori e
+  la pressione esercitata quando un poro viene considerato cilindrico
+  \`e espresso dalla seguente relazione, detta equazione di Washburn:
 
   \begin{equation}
     pr=2\sigma cos \theta
     \label{eq:Washburn}
   \end{equation}
 
-  \begin{tabular}{rp{12cm}}
-    $p$ &  \`e la pressione assoluta applicata (\SI{}{\kilogram \per \centi \meter \squared})\\
-    $r$      &  \`e il raggio dei pori (\SI{}{\nano\meter})\\
-    $\sigma$ & \`e la tensione superficiale del mercurio (\SI{}{\meter \newton \per \meter \squared})\\
-    $\theta$ & \`e l'angolo di contatto (\SI{}{\celsius})
+  \begin{tabular}{lp{12cm}}
+    $p$      & = pressione assoluta applicata (\SI{}{\kilogram \per \centi \meter \squared})\\
+    $r$      & = raggio dei pori (\SI{}{\nano\meter})\\
+    $\sigma$ & = tensione superficiale del mercurio (\SI{}{\meter \newton \per \meter \squared})\\
+    $\theta$ & = angolo di contatto (\SI{}{\celsius})
   \end{tabular}
 
   Nonostante che quasi tutte le sostanze porose abbiano pori sferici e
@@ -2649,8 +2717,8 @@ suolo non sono in grado di evidenziare differenze significative
 
   L'equazione di Washburn \`e derivata dalla seguente considerazione:
   \emph{in un capillare con una sezione circolare, la tensione
-    superficiale del liquido \`e esercitata nell'area di contatto in cui
-    la circonferenza del poro \`e superiore all'area di contatto.}
+    superficiale del liquido \`e esercitata nell'area di contatto in
+    cui la circonferenza del poro \`e superiore all'area di contatto.}
 
   La forza $2\pi r \sigma$, \`e perpendicolare al piano della superficie
   di contatto.
@@ -2687,9 +2755,9 @@ suolo non sono in grado di evidenziare differenze significative
   \end{equation}
 
   dove:\\
-  \begin{tabular}{rp{12cm}}
-    $r$ &  \`e il raggio dei pori, espresso in \SI{}{\nano\meter}\\
-    $p$ &  \`e la pressione assoluta applicata, espressa in
+  \begin{tabular}{lp{12cm}}
+    $r$ &  = raggio dei pori, espresso in \SI{}{\nano\meter}\\
+    $p$ &  = pressione assoluta applicata, espressa in
           \SI{}{\kilogram \per \centi \meter \squared}
   \end{tabular}
 
@@ -2800,8 +2868,8 @@ suolo non sono in grado di evidenziare differenze significative
   assumono una distribuzione normale;\newline in basso a sinistra,
   viene ripetuta la verifica della varianza costante con i valori dei
   residui standardizzati, anche in questo caso la varianza \`e
-  costante;\newline in basso a destra sono presenti rappresentati i
-  punti di leverage (...)}
+  costante;\newline in basso a destra sono rappresentati i
+  punti di leverage}
     \label{fig:qqplotCore}
 \end{figure}
 \FloatBarrier
@@ -2820,8 +2888,8 @@ suolo non sono in grado di evidenziare differenze significative
   assumono una distribuzione normale;\newline in basso a sinistra,
   viene ripetuta la verifica della varianza costante con i valori dei
   residui standardizzati, anche in questo caso la varianza \`e
-  costante;\newline in basso a destra sono presenti rappresentati i
-  punti di leverage (...)}
+  costante;\newline in basso a destra sono rappresentati i
+  punti di leverage}
    \label{fig:qqplotClod}
 \end{figure}
 \FloatBarrier
@@ -2832,8 +2900,9 @@ suolo non sono in grado di evidenziare differenze significative
 <<label=figboh4, fig=TRUE, echo=FALSE>>=
 <<qqplotAcomp>>
 @
-  \caption[qqplot stabilit\`a]{Grafico quantile-quantile per i residui del modello statistico
-    composizionale per la stabilità degli aggregati}
+\caption[qqplot stabilit\`a]{Grafico quantile-quantile per i residui
+  del modello statistico composizionale per la stabilità degli
+  aggregati}
   \label{fig:qqplot_dinamica_aggregati}
 \end{figure}
 \FloatBarrier
@@ -2849,8 +2918,8 @@ suolo non sono in grado di evidenziare differenze significative
 <<label = figurina2, fig = TRUE, echo=FALSE>>=
 <<qqplotpori>>
 @
-  \caption[qqplot porosimetria]{Grafico quantile-quantile per i residui del modello
-    composizionale per i dati di porosimetria}
+\caption[qqplot porosimetria]{Grafico quantile-quantile per i residui
+  del modello composizionale per i dati di porosimetria}
   \label{fig:qqplot_porosimetria}
 \end{figure}
 \FloatBarrier
