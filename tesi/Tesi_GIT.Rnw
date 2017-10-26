@@ -592,6 +592,8 @@ come la stabilit\`a degli aggregati dipenda dalla quantit\`a di
 sostanza organica e quindi, in un suolo
 agrario, dalla gestione dell'agroecosistema \citep{tisdall1982organic}.
 
+
+\begin{samepage}
 Sono diversi i meccanismi che provocano la rottura degli aggregati \citep{EJSS4_12311}:
 \begin{itemize}
   \item rottura per compressione di aria intrappolata (\emph{slaking});
@@ -599,6 +601,7 @@ Sono diversi i meccanismi che provocano la rottura degli aggregati \citep{EJSS4_
   \item rottura per impatto della pioggia;
   \item dispersione fisico-chimica;
 \end{itemize}
+\end{samepage}
 Lo \emph{slaking} consiste nella rottura degli aggregati di suolo
 causata dall'aria intrappolata dentro all'aggregato durante
 l'inumidimento; avviene quando gli aggregati secchi sono immersi in
@@ -756,7 +759,6 @@ Lo scopo principale del progetto è quello di sviluppare delle tecniche
 di gestione sostenibili ed efficienti per incrementare la
 produttivit\`a nei sistemi agricoli biologici e si pone i seguenti
 obiettivi:
-
 \begin{enumerate}
 \item studio dell’interazione spazio-temporale tra infestanti, sovesci
   e colture;
@@ -1262,19 +1264,21 @@ che sono quindi di natura additiva.
 
 \`E stato quindi adattato il seguente modello statistico:
 
+\begin{samepage}
 \begin{modello}
   \label{mod:MetodoClod}
   Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
 \end{modello}
-
+\nopagebreak
 dove: \\
-
+\nopagebreak
 \begin{tabular}{lp{12cm}}
   $\beta_1$ & = \emph{Anno}, due livelli: \emph{2015, 2016};\\
   $\beta_2$  & = \emph{Conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
   $\beta_3$ & = \emph{Lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
   $\epsilon$ & = residui o errore.
 \end{tabular}
+\end{samepage}
 \vspace*{3em}
 
 
@@ -1286,7 +1290,7 @@ Una volta ottenuto il modello definitivo \`e stata effettuata
 un'analisi della varianza (ANOVA) sul modello.
 
 Infine, data la natura additiva dei modelli statistici, ai gruppi oggetto dello
-studio, \`e stato applicato il test di Tukey-Siegel utilizzando le
+studio, \`e stato applicato il test di \citet{siegel1960nonparametric} utilizzando le
 librerie 'agricolae' \citep{agricolae} e 'multcomp' \citep{multcomp}.
 
 
@@ -1304,7 +1308,7 @@ in base alla classificazione della letteratura \citep{paul2014soil,
 
 A questo punto \`e stato adattato il modello statistico all'interno
 dello spazio vettoriale del simplesso
-(appendice \label{sec:composizionale}) e, dopo l'esplorazione visuale
+(appendice \ref{sec:composizionale}) e, dopo l'esplorazione visuale
 della normalit\`a dei residui (appendice \ref{sec:residui}),
 verificata la significativit\`a dei trattamenti mediante l'ANOVA.
 
@@ -2176,7 +2180,8 @@ sommario$Lavorazione <- c("Arato", "Rippato", "Frangizollato", "Arato", "Rippato
 
 tabella_sommario <- 
 xtable(sommario,
-caption = "Sommario della distribuzione dei pori nelle tre classi dimensionali dei dati ottenuti dalla analisi con porosimetria a mercurio", label = 'tab:Poro_medie', align = "lllccc")
+caption = "Sommario della distribuzione dei pori nelle tre classi dimensionali dei dati ottenuti dalla analisi 
+con porosimetria a mercurio", label = 'tab:Poro_medie', align = "lllccc")
 print(tabella_sommario, include.rownames=FALSE,
 caption.placement = "top",
 table.placement= "hb")
@@ -2196,14 +2201,16 @@ tutti ravvicinati all'apice dei macropori (maggiori di
 \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre} (macropori)).
 
 <<label = plotacompPore, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
-plot(Y, cex=0.15, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
+plot(Y, cex=2, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
 intercetta <-
 ilrInv(coef(modelloPoro)[1,], orig=Y)
 bi <-
 ilrInv(rbind(0, coef(modelloPoro)[-1,]), orig=Y)
 medie <- intercetta+acomp(bi)
-plot(medie, col=as.factor(df.porosimetria$TIL), add = TRUE)
-
+plot(medie, col= 3:6, pch = 20, add = TRUE)
+legend("topleft",
+c("CO Ara", "OO Ara", "CO Rip", "CO Fzo"), cex = 0.7, pt.cex = 1,
+fill=3:6)
 @
 
 % \noindent%
@@ -2697,12 +2704,12 @@ trattamenti.
   della dimensione dei pori, la relazione tra la dimensione dei pori e
   la pressione esercitata quando un poro viene considerato cilindrico
   \`e espresso dalla seguente relazione, detta equazione di Washburn:
-
   \begin{equation}
     pr=2\sigma cos \theta
     \label{eq:Washburn}
-  \end{equation}
-
+  \end{equation}  
+  Dove:
+  
   \begin{tabular}{lp{12cm}}
     $p$      & = pressione assoluta applicata (\SI{}{\kilogram \per \centi \meter \squared})\\
     $r$      & = raggio dei pori (\SI{}{\nano\meter})\\
@@ -2710,6 +2717,7 @@ trattamenti.
     $\theta$ & = angolo di contatto (\SI{}{\celsius})
   \end{tabular}
 
+  
   Nonostante che quasi tutte le sostanze porose abbiano pori sferici e
   non cilindrici, questa equazione \`e generalmente usata per
   calcolare la distribuzione dei pori a partire da dati derivati da
