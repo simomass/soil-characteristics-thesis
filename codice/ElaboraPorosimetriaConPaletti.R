@@ -27,7 +27,8 @@
 
 DirMain<-"~/Simo_GIT"
 ##Si sta lavorando offline, in caso scommentare
-vec.paletti.poro <- c(0.05, 0.1) 
+#vec.paletti.poro <- c(0.05, 0.1) 
+vec.paletti.poro <- c(0.5, 50) 
 MOLTE <- vec.paletti.poro
 Main.Dir <- DirMain
 ##getwd()

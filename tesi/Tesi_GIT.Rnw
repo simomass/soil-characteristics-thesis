@@ -1301,9 +1301,10 @@ composizionali e quindi sono stati analizzati con la libreria
 'composition' \citep{compositional}.  Le distribuzioni ricavate dagli
 strumenti, infatti, sono espresse come valore percentuale sul totale;
 questi sono stati raggruppati in tre classi dimensionali
-(macroaggregati, mesoaggregati, microaggregati e macropori, mesopori,
-micropori). I limiti delle tre classi dimensionali sono state definiti
-in base alla classificazione della letteratura \citep{paul2014soil,
+(rispettivamente: macroaggregati, mesoaggregati e microaggregati per
+gli aggregati e residui, immagazzinamento e trasmissione per i
+pori). I limiti delle tre classi dimensionali sono state definiti in
+base alla classificazione della letteratura \citep{paul2014soil,
   tisdall1982organic, greenland1977soil, lal2004principles}.
 
 A questo punto \`e stato adattato il modello statistico all'interno
@@ -2066,7 +2067,7 @@ qqnorm(ilrInv(resid(modelloMsizer), orig=Y.Msizer))
 <<Import_porosimetria, echo = FALSE, eval = TRUE>>=
 #PoroElabora <- FALSE
 # ## Si importano i soli file "CSV" MAIUSCOLI, che derivano dalla manipolazione dei dati grezzi della porosimetria
-vec.paletti.poro <- c(0.05, 0.1) 
+vec.paletti.poro <- c(0.5, 50) 
 ## if(PoroElabora){
   ##    source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
   ##     }else{
@@ -2106,16 +2107,16 @@ matrix(df.data[,1], ncol=3, byrow=TRUE)
 )        
 
 names(df.data)[7:9] <-
-c("micropori", "mesopori", "macropori")
+c("Residuals", "Storage", "Transmission")
 require(compositions)
 row.names(df.data) <- 1:dim(df.data)[1]
 PESI <- read.table(file.path(DirElab, "pesoaggre.csv"), sep = ";")$x
 
 df.data <- data.frame(
 df.data[,1:6],
-MICRO = (df.data[,7]-df.data[,8])/PESI, 
-MESO = (df.data[,8]-df.data[,9])/PESI, 
-MACRO = df.data[,9]/PESI
+RESIDUALS = (df.data[,7]-df.data[,8])/PESI, 
+STORAGE = (df.data[,8]-df.data[,9])/PESI, 
+TRANSMISSION = df.data[,9]/PESI
 #    TOT = df.data[,7]/PESI
 )
 
@@ -2142,7 +2143,7 @@ MACRO = df.data[,9]/PESI
 
 
 df.porosimetria <-
-df.data[-c(3,6,11,10),]
+    df.data[-c(3,6,11,10),]
 
 Y <- acomp(df.porosimetria[, 7:9])
 modelloPoro <-
@@ -2168,23 +2169,23 @@ per ogni combinazione di trattamenti.
 
 <<summary_pori, eval = TRUE, echo = FALSE, results = tex>>=
 sommario <- 
-aggregate(Y, by = list(Conduzione = df.porosimetria$MAN, 
-Lavorazione = df.porosimetria$TIL), 
-function(x) round(mean(x),2)
-)
+    aggregate(Y, by = list(Conduzione = df.porosimetria$MAN, 
+                           Lavorazione = df.porosimetria$TIL), 
+              function(x) round(mean(x),2)
+              )
 attach(sommario)
 sommario <- sommario[order(Conduzione, Lavorazione),]
 detach(sommario)
 sommario$Conduzione <- c("Convenzionale","","", "Biologico", "", "")
 sommario$Lavorazione <- c("Arato", "Rippato", "Frangizollato", "Arato", "Rippato", "Frangizollato")
-
+colnames(sommario)[3:5] <- c("Residui (%)", "Immagazzinamento (%)", "Trasmissione (%)")
 tabella_sommario <- 
-xtable(sommario,
-caption = "Sommario della distribuzione dei pori nelle tre classi dimensionali dei dati ottenuti dalla analisi 
+    xtable(sommario,
+           caption = "Sommario della distribuzione dei pori nelle tre classi dimensionali dei dati ottenuti dalla analisi 
 con porosimetria a mercurio", label = 'tab:Poro_medie', align = "lllccc")
 print(tabella_sommario, include.rownames=FALSE,
-caption.placement = "top",
-table.placement= "hb")
+      caption.placement = "top",
+      table.placement= "hb")
 anova.poros <- round(anova(modelloPoro), 3)
 rownames(anova.poros) <- c("Intercetta","Conduzione", "Lavorazione","Residui")
 anova.poros[1,6] <- "<10^-3"
@@ -2196,38 +2197,40 @@ print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
 
 \`E possibile evincere come i dati non permettano di evidenziare delle
-differenze. I punti all'interno del diagramma ternario si trovano
-tutti ravvicinati all'apice dei macropori (maggiori di
-\Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre} (macropori)).
+differenze. I punti all'interno del diagramma ternario si trovano in
+corrispondenza dei pori residui (minori di
+\Sexpr{vec.paletti.poro[1]} \SI{}{\micro\metre}), indicando quindi una
+prevalenza di questi pori rispetto ai pori di trasmissione e immagazzinamento.
 
 <<label = plotacompPore, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
-plot(Y, cex=2, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
-intercetta <-
-ilrInv(coef(modelloPoro)[1,], orig=Y)
-bi <-
-ilrInv(rbind(0, coef(modelloPoro)[-1,]), orig=Y)
-medie <- intercetta+acomp(bi)
-plot(medie, col= 3:6, pch = 20, add = TRUE)
-legend("topleft",
-c("CO Ara", "OO Ara", "CO Rip", "CO Fzo"), cex = 0.7, pt.cex = 1,
-fill=3:6)
-@
 
+plot(acomp(df.porosimetria[, 7:9]), cex = 2, col = as.numeric(as.factor(df.porosimetria$MAN)), pch = as.numeric(as.factor(df.porosimetria$TIL)))
+#plot(Y)#, cex=2, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
+## intercetta <-
+## ilrInv(coef(modelloPoro)[1,], orig=Y)
+## bi <-
+## ilrInv(rbind(0, coef(modelloPoro)[-1,]), orig=Y)
+## medie <- intercetta+acomp(bi)
+## plot(medie, col= 3:6, pch = 20, add = TRUE)
+
+legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"), cex = 0.7, pt.cex = 1, col = rep(1:2, each = 3), pch = 1:3, border = "white", fill=NULL)
+@
+ 
 % \noindent%
 % \begin{minipage}{\linewidth}% to keep image and caption on one page
 %   \makebox[\linewidth]{%        to center the image
 \begin{figure}[ht]
   \centering
-<<label = figurina, fig=TRUE, echo=FALSE, width=4.5, height=4.5>>=
+<<label = figurina, fig=TRUE, echo=FALSE, width=5, height=5>>=
 <<plotacompPore>>
 @
   \caption[didascalia corta]{Diagramma ternario della distribuzione dei
     pori. Gli apici del triangolo rappresentano le classi dimensionali
     in cui i pori sono divisi in: inferiori di
-    \Sexpr{vec.paletti.poro[1]} (micropori), comprese tra
-    \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (mesopori)
+    \Sexpr{vec.paletti.poro[1]} (pori residui), comprese tra
+    \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (pori di immagazzinamento)
     e superiori di \Sexpr{vec.paletti.poro[2]} \SI{}{\micro\metre}
-    (macropori)}
+    (pori di trasmissione)}
   \label{fig:Poros_triangolo}
 \end{figure}
 % \end{minipage}
@@ -2247,7 +2250,7 @@ della porosit\`a totale del campione, normalizzato al suo peso.
 
 <<pori_totali, eval = TRUE, echo = FALSE, results = tex>>=
 lm.totale <- 
-lm(MICRO+MACRO+MESO ~ MAN, data = df.data)
+lm(RESIDUALS+STORAGE+TRANSMISSION ~ MAN, data = df.data)
 anova.totale <- 
 anova(lm.totale)
 rownames(anova.totale) <- c("Conduzione", "Residui")
@@ -2280,36 +2283,6 @@ caption = 'Sommario del modello adattato alla porosit\\`a totale'
 )
 print(sommario_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
-
-
-
-<<hist_pori, eval = FALSE, echo = FALSE, results = tex>>=
-nomi.file.elab <- list.files(Export.Dir, pattern = ".csv")
-df.rawdata <- data.frame()
-for(i in 1:length(nomi.file.elab)){
-  file.in.elaborazione <-
-  nomi.file.elab[i]
-  path.completo <-
-  file.path(Export.Dir,file.in.elaborazione)
-  df.this <-
-  read.table(file=path.completo,
-  sep=";", dec=",", header=TRUE,
-  fileEncoding =  "UTF-16LE")[,c(2:5)]
-  df.this$MAN <- substr(file.in.elaborazione, 3,3)
-  df.this$FIELD <-  substr(file.in.elaborazione, 4,5 )
-  df.this$TIL <-  substr(file.in.elaborazione, 6,6)
-  df.this$ROW <-  substr(file.in.elaborazione, 7,7)
-  df.this$REP <-  substr(file.in.elaborazione, 8,8)
-  df.this$REPPORO <-  substr(file.in.elaborazione, 10,10)
-  df.this$SUBJECT <-  substr(file.in.elaborazione, 3,10)
-  df.rawdata <- rbind.data.frame(df.rawdata, df.this)
-}
-names(df.rawdata)[1] <- "Volume"
-require(lattice)
-hist.esteso <- histogram(~Volume|SUBJECT, data=df.rawdata)
-# xyplot(Volume.NA ~ log(Radius.NA, base=10) |MAN+TIL, data=df.rawdata)
-hist.media <- histogram( ~ Volume |MAN+TIL, data=df.rawdata)
-@
 
 % \begin{figure}[ht]
 %   \centering
