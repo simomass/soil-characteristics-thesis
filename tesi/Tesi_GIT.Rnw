@@ -2786,15 +2786,34 @@ trattamenti.
   Le parti individuali del dataset composizionale sono chiamate
   \emph{componenti}. Ogni \emph{componente} ha una quota (in valori
   assoluti o relativi), rappresentata dalla sua frazione sul totale.
-
+  
+  Ogni composizione pu\`o essere rappresentata da un vettore positivo
+  le cui componenti convergono ad una costante. Il vettore che
+  rappresenta la somma costante delle componenti \`e detta
+  \emph{chiusura} \citep{aitchison1986statistical} ed \`e indicata con $C[\cdot]$
+  
+  \begin{equation}
+  \label{eq:chiusura}
+  C[x_1,x_2,\dots,x_D]=[\frac{x_1}{\sum_{i=1}^{D} x_i}, \frac{x_2}{\sum_{i=1}^{D} x_i}, \dots,\frac{x_D}{\sum_{i=1}^{D}
+      x_i}]
+  \end{equation}
+  Dove:\\
+  \begin{tabular}{lp{12cm}}
+    $C[\cdot]$ &  = vettore riga\\
+    $D$        &  = numero delle componenti\\
+    $x$        &  = valore della componente i-esima         
+  \end{tabular}
+  
+  \bigskip
+  
   I metodi classici di analisi utilizzati per i dati scalari non
   possono essere applicati per i dati composizionali che richiedono
   quindi i metodi statistici appropriati
   \citep{aitchison1986statistical}.
 
   La caratteristica fondamentale dei dati composizionali \`e che non
-  siamo interessati alla somma totale delle composizioni, questo accade
-  per diverse ragioni:
+  siamo interessati alla somma totale delle composizioni, questo
+  accade per diverse ragioni:
   \begin{itemize}
   \item quando i dati composizionali sono misurati, possiamo
     influenzare il totale;
@@ -2813,7 +2832,7 @@ trattamenti.
   \citep{aitchison1986statistical}.
   
   La coerenza subcomposizionale si applica tutte le volte che \emph{si
-    chiude} una composzizione. Ad esempio: gli elementi presenti
+    chiude} una composizione. Ad esempio: gli elementi presenti
   nell'acqua sono molteplici ma hanno in genere concentrazioni ben
   diverse: possiamo infatti dividerli in macro e microelementi. La
   composizione totale dovrebbe comprenderli tutti, ma a seconda dello
@@ -2826,8 +2845,21 @@ trattamenti.
   I dati composizionali vengono sempre trattati in una
   \emph{log-ratio-transformed scale}. Questo operazione porta a
   definire uno spazio vettoriale ristretto, contenuto nello spazio
-  reale, denominato \emph{simplesso}.
-
+  reale, denominato \emph{simplesso} definito come:
+  \begin{equation}
+    \label{eq:simplesso}
+    S^D= \{ x=[x_1,x_2,\dots,x_D] \in R^D | x_i>0, i=1,2,\dots,D;
+      \sum_{i=1}^D x_i =\kappa \}
+  \end{equation}
+  Dove:\\
+   \begin{tabular}{lp{12cm}}
+    $S^D$ &  = Simplesso di Aitchinson\\
+    $D$        &  = numero delle componenti\\
+    $x$        &  = valore della componente i-esima         
+  \end{tabular}
+  
+  \bigskip
+  
   In questo spazio vettoriale le relazioni sono linearizzate e quindi
   \`e possibile utilizzare tutte le tecniche di statistica
   multivariata: regressione, anova, modelli lineari, ecc.
