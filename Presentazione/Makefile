@@ -14,6 +14,7 @@ handout: $(PRINCIPALE_PDF)
 tutto:
 	rm -f *.aux *.out *.snm *.toc *.nav regionsje.*
 	pdflatex $(PRINCIPALE)
+	pdflatex $(PRINCIPALE)
 	xreader $(PRINCIPALE).pdf
 
 note: $(NOTE)

@@ -33,6 +33,7 @@
 \usepackage{hyperref}
 \usepackage{pgfplots, pgfplotstable}
 \usepackage{siunitx}
+\usepackage{placeins}
 % -------------------------------------------------------
 % DEFFINING AND REDEFINING COMMANDS
 % -------------------------------------------------------
@@ -243,90 +244,160 @@
 % \subsection{Strumentazione e metodo}
 \begin{frame}
   \frametitle{Misura stabilit\`a degli aggregati}
-  %   \citep{ugolini2010basi} 
+  % \citep{ugolini2010basi} 
   \begin{columns}
     \column{.50\textwidth}
-    %     \begin{block}{}
-      \pause
-      \begin{enumerate}[<+->] 
-      \item immissione degli aggregati di terreno setacciati nella vasca
-        dello strumento
-      \item acquisizione ottica della distribuzione granulometrica:
-        una al minuto per 12 minuti durante i quali \ldots
-      \item lo strumento provvede al ricircolo dell'acqua che disgrega
-        le particelle di suolo
-      \item attivazione della sonicazione dal \SI{13}{\degree} al
-        \SI{24}{\degree} minuto per completare la rottura degli
-        aggregati
-      \end{enumerate}
+    % \begin{block}{}
+    \pause
+    \begin{enumerate}[<+->] 
+    \item immissione degli aggregati di terreno setacciati nella vasca
+      dello strumento
+    \item acquisizione ottica della distribuzione granulometrica:
+      una al minuto per 12 minuti durante i quali \ldots
+    \item lo strumento provvede al ricircolo dell'acqua che disgrega
+      le particelle di suolo
+    \item attivazione della sonicazione dal \SI{13}{\degree} al
+      \SI{24}{\degree} minuto per completare la rottura degli
+      aggregati
+    \end{enumerate}
 
     \column{.48\textwidth}
     \only<2>{
-    \begin{figure}[ht]
-      \includegraphics[width=\textwidth]{../foto/Hydro.jpeg}
-    \end{figure}
-  }
+      \begin{figure}[ht]
+        \includegraphics[width=\textwidth]{../foto/Hydro.jpeg}
+      \end{figure}
+    }
     \only<3-4>{
-    \begin{figure}
-      \includegraphics[width=0.8\textwidth]{../foto/Acquisiz.jpeg}
-    \end{figure}
-  }    
-% \only<4>{
-%     \begin{figure}
-%       \includegraphics[width=0.8\textwidth]{../foto/Acquisiz.jpeg}
-%     \end{figure}
-%   } 
-  \only<5>{
-    \begin{figure}
-      \includegraphics[width=\textwidth]{../foto/distropisa.jpeg}
-    \end{figure}
-  }
+      \begin{figure}
+        \includegraphics[width=0.8\textwidth]{../foto/Acquisiz.jpeg}
+      \end{figure}
+    }    
+    % \only<4>{
+    % \begin{figure}
+    %   \includegraphics[width=0.8\textwidth]{../foto/Acquisiz.jpeg}
+    % \end{figure}
+    % } 
+    \only<5>{
+      \begin{figure}
+        \includegraphics[width=\textwidth]{../foto/distropisa.jpeg}
+      \end{figure}
+    }
   \end{columns}  
 \end{frame}
 
 
 \begin{frame}
-  \footnotesize
-  \begin{itemize}[<+->]
-  \item i dati ottenuti sono rappresentati da distribuzioni in cui ad
-    ogni classe dimensionale \`e associato il valore percentuale di
-    volume sul totale
-  \item La variazione di queste distribuzioni nel tempo ci fornisce
-    informazioni sulla resistenza degli aggregati alle sollecitazioni
-    meccaniche.
-  \item Oltre che sui campioni \textcolor{blue}{secchi}, la misura \`e
-    stata ripetuta su aggregati \textcolor{magenta}{previamente
-      inumiditi} per studiare la disgregazione in assenza del fenomeno
-    dello \textit{slacking}
-  \end{itemize}
+
+  \only<1>{\vspace{1.5cm}}
+  \only<2>{\vspace{0.5cm}}
+  \onslide<3->{\vspace{1.5cm}}
+  \begin{minipage}[ht]{\textwidth}
+    \footnotesize
+    \begin{itemize}[<+->]
+    \item i dati ottenuti sono rappresentati da distribuzioni in cui ad
+      ogni classe dimensionale \`e associato il valore percentuale di
+      volume sul totale
+      \pause
+    \item La variazione di queste distribuzioni nel tempo ci fornisce
+      informazioni sulla resistenza degli aggregati alle sollecitazioni
+      meccaniche.
+    \item Oltre che sui campioni \textcolor{blue}{secchi}, la misura \`e
+      stata ripetuta su aggregati \textcolor{magenta}{previamente
+        inumiditi} per studiare la disgregazione in assenza del fenomeno
+      dello \textit{slacking}
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}[ht]{\textwidth}
+    \centering
+    \only<2>{
+      \vspace{2cm}
+      \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.center) 
+        {%\vspace{1cm}
+          \includegraphics[width=0.5\textwidth]{../grafici/boh.jpg}
+        };
+      \end{tikzpicture}
+      % \begin{figure}[hb][width=6cm]
+      %   \includegraphics[width=\textwidth]{../grafici/boh.pdf}
+      % \end{figure}
+    }
+  \end{minipage}
+
 \end{frame}
 
 \begin{frame}
-  I dati ottenuti dalla misurazione contengono porzioni di un totale,
-  questo tipo di dati prende il nome di \emph{dati Composizionali}.
 
+  \vspace{1.5cm}
+
+  \begin{minipage}[ht]{\textwidth}
+    \onslide<1->{I dati ottenuti dalla misurazione contengono porzioni di un totale,
+      questo tipo di dati prende il nome di \emph{dati Composizionali}.}
+
+    \onslide<2->{Questi sono stati elaborati tramite il package 'composition' del
+      linguaggio di programmazione R}
+
+    \onslide<3->{I dati vengono trattati tramite una \emph{Isometric
+        logratio transform} che porta a definire uno spazio vettoriale
+      (\emph{simplesso}) in cui possono essere applicate le tecniche di
+      statistica multivariata.}
+  \end{minipage}
+
+  \begin{minipage}[hb]{\textwidth}
+    \only<3>{
+      \begin{figure}[hb]
+        \includegraphics[width=0.8\textwidth]{../foto/simplessodeforma.png}
+      \end{figure}}
+  \end{minipage}
 \end{frame}
 
-\begin{frame}{Tabella Anova dati composizionali}
-  \footnotesize
-  %   latex table generated in R 3.4.0 by xtable 1.8-2 package
-  %   Tue Jun 27 21:29:19 2017
-  \begin{table}
-    \centering
-    \begin{tabular}{lrrrrrr}
-      \hline
-      & Df & Pillai & approx F & num Df & den Df & Pr($>$F) \\ 
-      \hline
-      COnvenzionale & 1 & 0.92 & 4955.26 & 2 & 835 & $<10^{-3}$ \\ 
-      Organico  & 1 & 0.09 & 41.72 & 2 & 835 &  $<10^{-3}$ \\ 
-      Tempo & 1 & 0.92 & 4504.77 & 2 & 835 &  $<10^{-3}$  \\ 
-      Tempo$^2$& 1 & 0.35 & 227.06 & 2 & 835 &  $<10^{-3}$ \\ 
-      Residui & 836 &  &  &  &  &  \\ 
-      \hline
-    \end{tabular}
-  \end{table}
+\begin{frame}[label=Composizionale]
+  \vspace{2cm}
+  Risultati analisi \hyperlink{Anova}{\beamerbutton{composizionale}}
+  \begin{figure}[hb]
+    \includegraphics[width=0.6\textwidth]{../tesi/Tesi_GIT-plotacompWETDRY.pdf}
+  \end{figure}
 \end{frame}
 
+
+
+
+% 
+
+
+
+
+
+\section{Porosimetria}
+
+\begin{frame}{Metodo di misura}
+  \begin{columns}
+    \column{.50\textwidth}
+    \begin{itemize}[<+->]
+    \item Separazione aggregati di circa \SI{1}{\gram}
+    \item immissione degli aggregati nel \emph{dilatometro}
+    \item il porosimetro riempie di mercurio il dilatometro e lo
+      comprime per permetterne l'ingresso nei pori
+    \item la variazione del volume di mercurio indica l'ingresso del
+      mercurio nei pori 
+    \item mediante l'equazione di Washburn si risale, in base alla
+      pressione esercitata ($p$), al valore del diametro del poro ($r$)
+    \end{itemize}
+    \column{.48\textwidth}
+    \only<3>{
+      \begin{figure}[ht]
+        \includegraphics[width=\textwidth]{../foto/porosimetri.jpeg}
+      \end{figure}
+    }
+\only<5>{
+\large{Equazione di Washburn}
+
+  \[
+    pr=2\sigma cos \theta
+    %\label{eq:Washburn}
+  \]
+}
+  \end{columns}
+\end{frame}
 
 % \begin{frame}
 %   \begin{figure}[ht]
@@ -358,15 +429,11 @@
   \item Le misure di stabilit\`a indicano un suolo generalmente poco
     stabile (aggregati inferiori a 1 mm) e che il CO produce aggregati
     di maggiori dimensioni (sia secchi che umidi).
-  \item La penetrometria indica un marcato effetto dell'anno (=
-    sessione di misura) attribuibile alle condizioni meteo e agli
-    operatori. L'appezzamento CO.F.zo risulta sempre pi\'u duro
-    rispetto agli altri. Analisi composizionale dubbia.
-  \item Porosimetria da analizzare
+  \item La 
   \end{itemize}
 
 \end{frame}
- \section{Porosimetria a mercurio}
+\section{Porosimetria a mercurio}
 
 \begin{frame}
   \finalpage{Boh.}
@@ -390,8 +457,6 @@
   \vspace{1.5cm}
   \hyperlink{densita}{\beamerbutton{main}}
   \footnotesize
-  % latex table generated in R 3.4.0 by xtable 1.8-2 package
-  % Thu Jun 22 15:19:10 2017
   \begin{table}[ht]
     \centering
     \begin{tabular}{lllccc}
@@ -399,24 +464,25 @@
       Anno & Conduzione & Lavorazione & Densit\`a apparente
                                         ($g/cm^3$) & dev std & n \\ 
       \hline
-      2015 & Convenzionale & Arato & 1.35 & 0.14 &   5 \\ 
-           &   & Frangizollato & 1.34 & 0.07 &   5 \\ 
-           &   & Rippato & 1.38 & 0.10 &   5 \\ 
-           & Organico & Arato & 1.38 & 0.07 &   5 \\ 
-           &   & Frangizollato & 1.42 & 0.13 &   5 \\ 
-           &   & Rippato & 1.43 & 0.04 &   5 \\ 
+      2015 & CO & Ara & 1.35 & 0.14 &   5 \\ 
+           &    & Fzo & 1.34 & 0.07 &   5 \\ 
+           &    & Rip & 1.38 & 0.10 &   5 \\ 
+           & OO & Ara & 1.37 & 0.10 &  15 \\ 
+           &    & Fzo & 1.44 & 0.10 &  15 \\ 
+           &    & Rip & 1.43 & 0.07 &  15 \\ 
       \\
-      2016 & Convenzionale & Arato & 1.38 & 0.16 &   6 \\ 
-           &   & Frangizollato & 1.35 & 0.15 &   6 \\ 
-           &   & Rippato & 1.26 & 0.09 &   5 \\ 
-           & Organico & Arato & 1.37 & 0.06 &   6 \\ 
-           &   & Frangizollato & 1.35 & 0.07 &   6 \\ 
-           &   & Rippato & 1.40 & 0.15 &   6 \\ 
+      2016 & CO & Ara & 1.38 & 0.16 &   6 \\ 
+           &    & Fzo & 1.35 & 0.15 &   6 \\ 
+           &    & Rip & 1.26 & 0.09 &   5 \\ 
+           & OO & Ara & 1.37 & 0.06 &   6 \\ 
+           &    & Fzo & 1.35 & 0.07 &   6 \\ 
+           &    & Rip & 1.40 & 0.15 &   6 \\ 
       \hline
     \end{tabular}
     \label{tab:RiassuntoDensitaCAmpo}
   \end{table}
 \end{frame}
+
 
 \begin{frame}
   \vspace{1.5cm}
@@ -438,7 +504,7 @@
       Anno & 1 & 0.02 & 0.02 & 1.41 & 0.2390 \\ 
       Conduzione & 1 & 0.04 & 0.04 & 3.29 & 0.0745 \\ 
       Lavorazione & 2 & 0.00 & 0.00 & 0.03 & 0.9728 \\ 
-      residui & 60 & 0.71 & 0.01 &  &  \\ 
+      Residui & 90 & 0.97 & 0.01 &  &  \\ 
       \hline
     \end{tabular}
   \end{table}
@@ -446,7 +512,7 @@
 
 
 \begin{frame}[label=Clod]
-\hyperlink{densita}{\beamerbutton{main}}
+  \hyperlink{densita}{\beamerbutton{main}}
   \footnotesize
   \begin{table}[ht]
     \centering
@@ -473,6 +539,7 @@
   \end{figure}
 \end{frame}
 
+
 \begin{frame}{Tabella ANOVA per i valori di densità rilevati col metodo \emph{Clod}}
   % latex table generated in R 3.4.0 by xtable 1.8-2 package
   % Thu Jun 22 16:32:35 2017
@@ -484,7 +551,7 @@
       \hline
       Conduzione & 1 & 0.03 & 0.03 & 6.31 & 0.012 \\ 
       Lavorazione & 2 & 0.05 & 0.02 & 5.83 & 0.004 \\ 
-      Residui & 104 & 0.42 & 0.00 &  &  \\ 
+      Totale & 104 & 0.42 & 0.00 &  &  \\ 
       \hline
     \end{tabular}
     \label{tab:Anova densita per spinta}
@@ -492,22 +559,22 @@
 \end{frame}
 
 \begin{frame}[label=summary]
-\hyperlink{densita}{\beamerbutton{main}}
-  %   latex table generated in R 3.4.0 by xtable 1.8-2 package
-  %   Thu Jun 22 10:44:00 2017
+  % \hyperlink{densita}{\beamerbutton{main}}
+  % latex table generated in R 3.4.0 by xtable 1.8-2 package
+  % Thu Jun 22 10:44:00 2017
   \footnotesize
-  %   latex table generated in R 3.4.0 by xtable 1.8-2 package
-  %   Thu Jun 22 16:31:31 2017
+  % latex table generated in R 3.4.0 by xtable 1.8-2 package
+  % Thu Jun 22 16:31:31 2017
   \begin{table}[ht]
     \centering
     \begin{tabular}{rrrrr}
       \hline
       & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
       \hline
-      %       Convenzionale arato & 1.9470 & 0.0295 & 65.98 & 0.0000 \\ 
-      %       Scostamento biologico & -0.0534 & 0.0295 & -1.81 & 0.0731 \\ 
-      %       Scostamento frangizollato & -0.0780 & 0.0361 & -2.16 & 0.0331 \\ 
-      %       Scostamento rippato & -0.0881 & 0.0361 & -2.44 & 0.0164 \\ 
+      % Convenzionale arato & 1.9470 & 0.0295 & 65.98 & 0.0000 \\ 
+      % Scostamento biologico & -0.0534 & 0.0295 & -1.81 & 0.0731 \\ 
+      % Scostamento frangizollato & -0.0780 & 0.0361 & -2.16 & 0.0331 \\ 
+      % Scostamento rippato & -0.0881 & 0.0361 & -2.44 & 0.0164 \\ 
       Convenzionale arato & 1.93 & 0.01 & 157.38 & 0.000 \\ 
       Scostamento biologico & -0.03 & 0.01 & -2.51 & 0.014 \\ 
       Scostamento frangizollato & -0.05 & 0.02 & -3.39 & 0.001 \\ 
@@ -518,6 +585,26 @@
   \end{table}
 \end{frame}
 
+\begin{frame}[label=Anova]
+  \hyperlink{Composizionale}{\beamerbutton{main}}
+  \footnotesize
+  % latex table generated in R 3.4.0 by xtable 1.8-2 package
+  % Tue Jun 27 21:29:19 2017
+  \begin{table}
+    \centering
+    \begin{tabular}{lrrrrcr}
+      \hline
+      & Df & Pillai & approx F & num Df & den Df & Pr($>$F) \\ 
+      \hline
+      Convenzionale & 1 & 0.92 & 4955.26 & 2 & 835 & $<10^{-3}$ \\ 
+      Biologico  & 1 & 0.09 & 41.72 & 2 & 835 &  $<10^{-3}$ \\ 
+      Tempo & 1 & 0.92 & 4504.77 & 2 & 835 &  $<10^{-3}$  \\ 
+      Tempo$^2$& 1 & 0.35 & 227.06 & 2 & 835 &  $<10^{-3}$ \\ 
+      Totale & 836 &  &  &  &  &  \\ 
+      \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
 
 
 \end{document}

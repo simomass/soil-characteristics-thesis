@@ -363,7 +363,7 @@ definizione univoca. Un tentativo di definizione \`e quello di
   da agenti biologici, chimici e/o fisici.}
 
 Nella definizione di Johnson non vengono considerate le piante; la
-"Soil Taxonomy" americana (USDA) ha fornito una definizione pi\`u completa in cui vengono
+"Soil Taxonomy" americana \citep{united1999soil} ha fornito una definizione pi\`u completa in cui vengono
 considerati anche gli organismi vegetali: \emph{Il suolo \`e un
   corpo naturale composto da una fase solida (minerale e organica),
   una fase liquida e una gassosa presenti sulla superficie terrestre,
@@ -371,7 +371,7 @@ considerati anche gli organismi vegetali: \emph{Il suolo \`e un
   caratteristiche: orizzonti, o strati, che sono distinguibili dal
   materiale iniziale grazie alle aggiunte, perdite, trasferimenti e
   trasformazioni di energia e materia o l'abilit\`a di supportare
-  piante vascolari in un ambiente naturale} \citep{united1999soil}.
+  piante vascolari in un ambiente naturale}.
 
 
 Dal suolo naturale distinguiamo il terreno agrario; questo è
@@ -599,7 +599,7 @@ Sono diversi i meccanismi che provocano la rottura degli aggregati \citep{EJSS4_
   \item rottura per compressione di aria intrappolata (\emph{slaking});
   \item rottura per rigonfiamento asimmetrico;
   \item rottura per impatto della pioggia;
-  \item dispersione fisico-chimica;
+  \item dispersione fisico-chimica.
 \end{itemize}
 \end{samepage}
 Lo \emph{slaking} consiste nella rottura degli aggregati di suolo
@@ -610,7 +610,7 @@ intrappolata e dalla velocit\`a di inumidimento, i frammenti
 risultanti dallo \emph{slaking} sono principalmente microaggregati e
 aumentano in dimensioni all'aumentare del contenuto di argilla; lo
 \emph{slaking} diminuisce all'aumentare dell'umidit\`a
-\citep{le1988comportement, truman1990antecedent} .
+\citep{le1988comportement, truman1990antecedent}.
 
 La rottura per rigonfiamento asimmetrico, \`e un meccanismo molto
 simile al precedente: ha lo stesso effetto ed \`e generato dalle
@@ -1466,8 +1466,8 @@ esame.
 
 <<anova_modello, echo=FALSE, eval=TRUE, results=tex>>=
 anova.dens <- anova(lm.Densita)
-rownames(anova.dens) <-     c("Anno", "Conduzione", "Lavorazione", "residui")
-##%   c("Anno", "Management", "Tillage", "residui")
+rownames(anova.dens) <-     c("Anno", "Conduzione", "Lavorazione", "Totale")
+##%   c("Anno", "Management", "Tillage", "Totale")
 tabella.anova.dens <-
 xtable(anova.dens,
 label = 'tab:anova del modello', align  = "lrrrrr",
@@ -1684,7 +1684,7 @@ summary(lm.spinta)
 @
 
 <<Analisi_Petrolio, echo=FALSE, eval=TRUE, results=tex>>=
-rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Residui")
+rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Totale")
 tabella.spinta.anova <-
 xtable(anova_spinta,
 label = 'tab:anova piccoli aggregati', align = 'lrrrrr',
@@ -2010,7 +2010,7 @@ print(xt.IUFD, include.rownames=FALSE,caption.placement = "top")
 anova.comp.wet <- anova(lm.2)
 anova.comp.wet[1:4,6] <- "<10^-3"
 
-rownames(anova.comp.wet) <- c("Intercetta","Conduzione", "Tempo", "Tempo^2","Residui")
+rownames(anova.comp.wet) <- c("Intercetta","Conduzione", "Tempo", "Tempo^2","Totale")
 anova_tabella <- xtable(anova.comp.wet,
 label = 'tab:anova_compWET', align = 'lrrrrrr',
 caption = 'ANOVA stabilit\\`a aggregati per i dati WET '
@@ -2022,7 +2022,7 @@ print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 
 <<anova_acompDRY, echo=FALSE, eval=TRUE, results=tex>>=
 anova.comp.dry <- anova(lm.2.2)
-rownames(anova.comp.dry) <- c("Intercetta","Conduzione","Tempo", "Tempo^2","Residui")
+rownames(anova.comp.dry) <- c("Intercetta","Conduzione","Tempo", "Tempo^2","Totale")
 anova.comp.dry[1:4,6] <- "<10^-3"
 anova_tabella_dry<- xtable(anova.comp.dry,
 label = 'tab:anova_compWET', align = 'lrrrrrr',
@@ -2176,6 +2176,7 @@ sommario <-
 attach(sommario)
 sommario <- sommario[order(Conduzione, Lavorazione),]
 detach(sommario)
+sommario[,3:5] <- sommario[,3:5]*100
 sommario$Conduzione <- c("Convenzionale","","", "Biologico", "", "")
 sommario$Lavorazione <- c("Arato", "Rippato", "Frangizollato", "Arato", "Rippato", "Frangizollato")
 colnames(sommario)[3:5] <- c("Residui (%)", "Immagazzinamento (%)", "Trasmissione (%)")
@@ -2187,7 +2188,7 @@ print(tabella_sommario, include.rownames=FALSE,
       caption.placement = "top",
       table.placement= "hb")
 anova.poros <- round(anova(modelloPoro), 3)
-rownames(anova.poros) <- c("Intercetta","Conduzione", "Lavorazione","Residui")
+rownames(anova.poros) <- c("Intercetta","Conduzione", "Lavorazione","Totale")
 anova.poros[1,6] <- "<10^-3"
 anova_tabella <- xtable(anova.poros,
 label = 'tab:poros_anova', align = 'lrrrrrr',
@@ -2250,14 +2251,14 @@ della porosit\`a totale del campione, normalizzato al suo peso.
 
 <<pori_totali, eval = TRUE, echo = FALSE, results = tex>>=
 lm.totale <- 
-lm(RESIDUALS+STORAGE+TRANSMISSION ~ MAN, data = df.data)
+    lm(RESIDUALS+STORAGE+TRANSMISSION ~ MAN+TIL, data = df.data)
 anova.totale <- 
-anova(lm.totale)
-rownames(anova.totale) <- c("Conduzione", "Residui")
+    anova(lm.totale)
+rownames(anova.totale) <- c("Conduzione", "Lavorazione", "Totale")
 anova_tabellaTot <- xtable(anova.totale,
-label = 'tab:tot_anova', align = 'lrrrrr',
-caption = 'ANOVA del modello adattato alla porosit\\`a totale'
-)
+                           label = 'tab:tot_anova', align = 'lrrrrr',
+                           caption = 'ANOVA del modello adattato alla porosit\\`a totale'
+                           )
 print(anova_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
 
@@ -2275,12 +2276,12 @@ campioni di suolo provenienti da appezzamenti condotti a \emph{Biologico}.
 sommario.totale <- 
     round(coef(summary(lm.totale)),3)
 rownames(sommario.totale) <- 
-    c("Convenzionale", "Biologico")
+    c("Convenzionale Arato", "Biologico Arato", "Convenzionale Rippato", "Convenzionale F.zollato")
 sommario.totale[1,4] <- "<10^-3" 
 sommario_tabellaTot <- xtable(sommario.totale,
-label = 'tab:tot_sommario', align = 'lrrrr',
-caption = 'Sommario del modello adattato alla porosit\\`a totale'
-)
+                              label = 'tab:tot_sommario', align = 'lrrrr',
+                              caption = 'Sommario del modello adattato alla porosit\\`a totale'
+                              )
 print(sommario_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
 
@@ -2794,8 +2795,8 @@ trattamenti.
   
   \begin{equation}
   \label{eq:chiusura}
-  C[x_1,x_2,\dots,x_D]=[\frac{x_1}{\sum_{i=1}^{D} x_i}, \frac{x_2}{\sum_{i=1}^{D} x_i}, \dots,\frac{x_D}{\sum_{i=1}^{D}
-      x_i}]
+  C \left[x_1,x_2,\dots,x_D \right]= \left[\frac{x_1}{\sum_{i=1}^{D} x_i}, \frac{x_2}{\sum_{i=1}^{D} x_i}, \dots,\frac{x_D}{\sum_{i=1}^{D}
+      x_i} \right]
   \end{equation}
   Dove:\\
   \begin{tabular}{lp{12cm}}
@@ -2843,13 +2844,13 @@ trattamenti.
   subcomposizione.
   
   I dati composizionali vengono sempre trattati in una
-  \emph{log-ratio-transformed scale}. Questo operazione porta a
+  \emph{log-ratio-transformed scale}. Questa operazione porta a
   definire uno spazio vettoriale ristretto, contenuto nello spazio
   reale, denominato \emph{simplesso} definito come:
   \begin{equation}
     \label{eq:simplesso}
-    S^D= \{ x=[x_1,x_2,\dots,x_D] \in R^D | x_i>0, i=1,2,\dots,D;
-      \sum_{i=1}^D x_i =\kappa \}
+    S^D= \left \{ x= \left [x_1,x_2,\dots,x_D \right ] \in R^D | x_i>0, i=1,2,\dots,D;
+      \sum_{i=1}^D x_i =\kappa \right \}
   \end{equation}
   Dove:\\
    \begin{tabular}{lp{12cm}}
