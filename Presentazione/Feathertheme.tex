@@ -52,10 +52,10 @@
 % \setbeamertemplate{title page}
 % {
 \title[25 anni di conduzione Biologica in
-    area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar on every slide
+area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar on every slide
 { % is placed on the title page
   25 anni di  conduzione Biologica  in
-    area Mediterranea}
+  area Mediterranea}
 
 
 \subtitle[Uno studio di fisica del suolo]
@@ -118,33 +118,28 @@
 
 
 
-<<<<<<< HEAD
-\begin{frame}{Obiettivi}
-||||||| merged common ancestors
-\begin{frame}{Obiettivi}{Pippo}
-=======
+
 \begin{frame}{Obiettivi}{}
->>>>>>> 35b11c09dc87465b8ec40cfec86c53214c22b178
-  % \frametitle{Obiettivi}
-  \large
-  \begin{itemize}[<+->]
-  \item verificare la presenza di differenze nelle caratteristiche
-    fisiche del suolo in aree: coltivate convenzionalmente (\emph{CO})
-    oppure coltivate a biologico (\emph{OO}) tramite:
+
+\large
+\begin{itemize}[<+->]
+\item verificare la presenza di differenze nelle caratteristiche
+  fisiche del suolo in aree: coltivate convenzionalmente (\emph{CO})
+  oppure coltivate a biologico (\emph{OO}) tramite:
+  \begin{itemize}
+  \item Densit\`a apparente
     \begin{itemize}
-    \item Densit\`a apparente
-      \begin{itemize}
-      \item Metodo \emph{Core}
-      \item Metodo \emph{Clod}
-      \end{itemize}
-    \item Stabilit\`a degli aggregati tramite dinamica della
-      distribuzione della dimensione degli aggregati;
-    \item Distribuzione dimensionale dei pori tramite tecniche di
-      porosimetria ad intrusione di mercurio;      
+    \item Metodo \emph{Core}
+    \item Metodo \emph{Clod}
     \end{itemize}
-  \item verificare eventuali effetti dovuti a diverse lavorazioni
-    (aratura, rippatura, frangizollatura).
+  \item Stabilit\`a degli aggregati tramite dinamica della
+    distribuzione della dimensione degli aggregati;
+  \item Distribuzione dimensionale dei pori tramite tecniche di
+    porosimetria ad intrusione di mercurio;      
   \end{itemize}
+\item verificare eventuali effetti dovuti a diverse lavorazioni
+  (aratura, rippatura, frangizollatura).
+\end{itemize}
 \end{frame}
 
 \section{Densit\`a apparente}
@@ -338,27 +333,27 @@
 
   \vspace{1.5cm}
 
-%  \begin{minipage}[ht]{\textwidth}
-    \onslide<1->{I dati ottenuti dalla misurazione contengono porzioni di un totale,
-      questo tipo di dati prende il nome di \emph{dati Composizionali}.}
+  % \begin{minipage}[ht]{\textwidth}
+  \onslide<1->{I dati ottenuti dalla misurazione contengono porzioni di un totale,
+    questo tipo di dati prende il nome di \emph{dati Composizionali}.}
 
-    \onslide<2->{Questi sono stati elaborati tramite il package 'composition' del
-      linguaggio di programmazione R}
+  \onslide<2->{Questi sono stati elaborati tramite il package 'composition' del
+    linguaggio di programmazione R}
 
 
-    \onslide<3->{I dati vengono trattati tramite una \emph{Isometric
-        logratio transform} che porta a definire uno spazio vettoriale
-      (\emph{simplesso}) in cui possono essere applicate le tecniche di
-      statistica multivariata.}
- % \end{minipage}
+  \onslide<3->{I dati vengono trattati tramite una \emph{Isometric
+      logratio transform} che porta a definire uno spazio vettoriale
+    (\emph{simplesso}) in cui possono essere applicate le tecniche di
+    statistica multivariata.}
+  % \end{minipage}
 
- % \begin{minipage}[hb]{\textwidth}
-    \transdissolve<3>
- \onslide<3->{
-      \begin{figure}[hb]
-        \includegraphics[width=0.8\textwidth]{../foto/simplessodeforma.png}
-      \end{figure}}
-      % \end{minipage}
+  % \begin{minipage}[hb]{\textwidth}
+  \transdissolve<3>
+  \onslide<3->{
+    \begin{figure}[hb]
+      \includegraphics[width=0.8\textwidth]{../foto/simplessodeforma.png}
+    \end{figure}}
+  % \end{minipage}
 \end{frame}
 
 \begin{frame}[label=Composizionale]
@@ -399,14 +394,14 @@
         \includegraphics[width=\textwidth]{../foto/porosimetri.jpeg}
       \end{figure}
     }
-\only<5>{
-\large{Equazione di Washburn}
+    \only<5>{
+      \large{Equazione di Washburn}
 
-  \[
-    pr=2\sigma cos \theta
-    %\label{eq:Washburn}
-  \]
-}
+      \[
+      pr=2\sigma cos \theta
+      % \label{eq:Washburn}
+      \]
+    }
   \end{columns}
 \end{frame}
 
@@ -619,3 +614,8 @@
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
