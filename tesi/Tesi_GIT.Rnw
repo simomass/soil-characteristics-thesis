@@ -1389,6 +1389,7 @@ c("Convenzionale", rep(" ", 2), "Organico", rep(" ", 2),
 "Convenzionale", rep(" ", 2), "Organico", rep(" ", 2))
 summary.campo$Lavorazione <- 
     mapvalues(summary.campo$Lavorazione, from = c("Ara", "Rip", "Fzo"), to = c("Arato", "Rippato", "Frangizollato"))
+summary.campo <- rbind(summary.campo[1:3,], rep(NA, 7), summary.campo[1:3,], rep(NA, 7), rep(NA, 7), summary.campo[7:9,], rep(NA, 7), summary.campo[10:nrow(summary.campo),])
 tabella.campo <-
 xtable(summary.campo[,-7],
 label = 'tab:summaryCore', align  = "llllccc",
@@ -1402,6 +1403,8 @@ table.placement= "hb")
 @
 \FloatBarrier
 
+I risultati del  Tukey test, a differenza della tabella \ref{tab:summaryClod}, non sono stati inseriti in
+quanto non significativi.
 
 
 <<label = ResiduiCampo, echo=FALSE, fig = TRUE, include = FALSE>>=
@@ -1473,13 +1476,15 @@ statistico e indica la non significatività dei trattamenti presi in
 esame.
 
 <<anova_modello, echo=FALSE, eval=TRUE, results=tex>>=
-anova.dens <- anova(lm.Densita)
+anova.dens <- round(anova(lm.Densita), 3)
 rownames(anova.dens) <-     c("Anno", "Conduzione", "Lavorazione", "Totale")
 ##%   c("Anno", "Management", "Tillage", "Totale")
 tabella.anova.dens <-
 xtable(anova.dens,
 label = 'tab:anova del modello', align  = "lrrrrr",
-caption = 'Tabella ANOVA per i valori di densità rilevati col metodo \\emph{Core}')
+caption = 'Tabella ANOVA per i valori di densità rilevati col metodo \\emph{Core}',
+digits = c(0,0,rep(3,4)), 
+display = NULL, auto = FALSE)
 print(tabella.anova.dens,
 include.rownames=TRUE,
 caption.placement = "top")
@@ -1612,7 +1617,8 @@ label = 'tab:summaryClod', align  = "lllcccc",
 caption =
 "Valori medi della densit\\`a apparente (in
 \\SI{}{\\gram\\per\\cubic\\centi\\metre}),
-relativi al tipo di conduzione e lavorazione " )
+relativi al tipo di conduzione e lavorazione ", 
+digits =  c(rep(0,3),2,2,0,0))
 print(tabella.petrolio, include.rownames=FALSE, caption.placement = "top")
 @
 
@@ -1696,7 +1702,8 @@ rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Totale")
 tabella.spinta.anova <-
 xtable(anova_spinta,
 label = 'tab:anova piccoli aggregati', align = 'lrrrrr',
-caption = ' Tabella ANOVA per i valori di densit\\`a misurati con il metodo \\emph{Clod}'
+caption = ' Tabella ANOVA per i valori di densit\\`a misurati con il metodo \\emph{Clod}',
+digits = c(0,0,rep(3,4))
 )
 print(tabella.spinta.anova, caption.placement = "top")
 
@@ -1720,7 +1727,8 @@ c("CO Arato","Scostamento OO",
 
 tabella.summary.spinta <- xtable(summary_spinta,
 label = 'tab:sommario piccoli aggregati', align = 'lrrrr',
-caption = 'sommario del modello adattato per i valori misurati con il metodo \\emph{Clod}'
+caption = 'sommario del modello adattato per i valori misurati con il metodo \\emph{Clod}',
+
 )
 print(tabella.summary.spinta, caption.placement = "top")
 vec.paletti <- c(250, 20)
@@ -1823,7 +1831,7 @@ with(df.plot, lm(ilr(Y.Msizer1) ~ COND+TIME2+I(TIME2^2)))
 
 
 Per la costruzione dei modelli statistici è stato escluso il fattore
-\emph{lavorazione} in quanto non significativi.
+\emph{lavorazione} in quanto non significativo.
 
 Nel modello statistico è presente la variabile continua \emph{tempo}
 espressa al quadrato la quale, come è possibile vedere dalla tabella
@@ -1833,14 +1841,18 @@ La misura è stata effettuata sia su aggregati essiccati all'aria che
 su aggregati inumiditi, per studiare il fenomeno dello
 \emph{slaking}. Di conseguenza sono stati creati due modelli: uno per
 i campioni inumiditi (\emph{WET}) e uno per i campioni secchi
-(\emph{DRY}). Dai modelli è possibile vedere come la pendenza
-e la curvatura sono comuni per entrambi i trattamenti.
+(\emph{DRY}). 
+
 
 L'analisi evidenzia che gli aggregati provenienti da appezzamenti
 condotti convenzionalmente, successivamente all'immersione, si
 disgregano generando frammenti più grandi di quanto non facciano gli
 aggregati provenienti da appezzamenti a conduzione Biologica.  E
 questo avviene sia con gli aggregati umidi che con quelli essiccati.
+
+Questo si ricavare dall'intercetta del modello; per quanto riguarda i
+valori di pendenza e di curvatura, questi sono invarianti rispetto alla
+conduzione.
 
 Questo comportamento mostrerebbe che le pratiche agricole utilizzate
 nella conduzione di tipo \emph{Biologico} condurrebbero a formare aggregati
@@ -1849,6 +1861,7 @@ con la conduzione \emph{Convenzionale}.
 
 
 <<label = plotacompWETDRY, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+
 modello <- lm.2
 coefs <-  ilrInv(coef(modello), orig = Y.Msizer1)
 alpha <- 0.05
@@ -1903,7 +1916,6 @@ df.iufd <- rbind(df.iufd[1:3,], "", df.iufd[4:6,])
     ##                      r=ConfRadius(modello,1-alpha), col=i)
     ##     }
   ## }
-
 plot(acomp(coefs[1,]) +
 acomp(coefs[3,])*0:23 +
 acomp(coefs[4,])*(0:23)^2,
@@ -1912,10 +1924,24 @@ plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
 acomp(coefs[3,])*0:23+
 acomp(coefs[4,])*(0:23)^2,
 col=2, add=TRUE, type="l")## sequenza temporale OO
+
+plot(acomp(coefs[1,]) +
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
+col="white",
+add=TRUE, pch=16, cex = 2)## start stop CO
+plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
+col="white", add=TRUE, pch= 16, cex = 2)## start stop OO
+
+
+
 plot(acomp(coefs[1,]) +
 acomp(coefs[3,])*on.ultra.off +
 acomp(coefs[4,])*on.ultra.off^2,
 col=1, add=TRUE, pch=c("c", "D","C"))## start stop CO
+
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
 acomp(coefs[3,])*on.ultra.off +
 acomp(coefs[4,])*on.ultra.off^2,
@@ -1961,6 +1987,14 @@ col=4, add=TRUE, type="l")## sequenza temporale OO
 plot(acomp(coefs[1,]) +
 acomp(coefs[3,])*on.ultra.off +
 acomp(coefs[4,])*on.ultra.off^2,
+col="white", add=TRUE, pch=16, cex = 2)## start stop CO
+plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
+col="white", add=TRUE, pch= 16, cex = 2)## start stop OO
+plot(acomp(coefs[1,]) +
+acomp(coefs[3,])*on.ultra.off +
+acomp(coefs[4,])*on.ultra.off^2,
 col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
 acomp(coefs[3,])*on.ultra.off +
@@ -1987,29 +2021,52 @@ col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
   ## }
 legend("topleft",
 c("Dry.CO", "Dry.OO", "CO.Wet", "OO.Wet"),
-fill=1:4)
+fill=1:4, bty = "n")
+
 @
 
 
 <<IUFW, echo=FALSE, eval=TRUE, results=tex>>=
+nomi <- 
+    colnames(df.iufw)
+df.iufw <- 
+    data.frame(
+        df.iufw[,1:2],
+        apply(df.iufw[,3:5], 2, as.numeric)
+    )
+names(df.iufw) <- nomi
+rm(nomi)
+
 xt.IUFW <- xtable(df.iufw,
-label = 'tab:iufw', digits = 1,
+
+                  label = 'tab:iufw',
 caption = 'Distribuzione dei frammenti di particelle degli aggregati inumiditi in seguito a:
 i) inizio misura (immersione):
 ii) inizio sonicatura
-iii) fine ciclo '
+iii) fine ciclo ',  digits = 1
 )
 print(xt.IUFW,include.rownames=FALSE,caption.placement = "top")
 @
 
 
 <<IUFD, echo=FALSE, eval=TRUE, results=tex>>=
+
+nomi <- 
+    colnames(df.iufd)
+df.iufd <- 
+    data.frame(
+        df.iufd[,1:2],
+        apply(df.iufd[,3:5], 2, as.numeric)
+    )
+names(df.iufd) <- nomi
+rm(nomi)
+
 xt.IUFD <- xtable(df.iufd,
-label = 'tab:iufd', digits = 1,
+label = 'tab:iufd',
 caption = 'Distribuzione dei frammenti di particelle degli aggregati essiccati in seguito a:
 i) inizio misura (immersione):
 ii) inizio sonicatura
-iii) fine ciclo '
+iii) fine ciclo ', digits = 1
 )
 print(xt.IUFD, include.rownames=FALSE,caption.placement = "top")
 @
@@ -2188,10 +2245,12 @@ sommario[,3:5] <- sommario[,3:5]*100
 sommario$Conduzione <- c("Convenzionale","","", "Biologico", "", "")
 sommario$Lavorazione <- c("Arato", "Rippato", "Frangizollato", "Arato", "Rippato", "Frangizollato")
 colnames(sommario)[3:5] <- c("Residui (%)", "Immagazzinamento (%)", "Trasmissione (%)")
+sommario <- 
+    rbind(sommario[1:3,], rep(NA, 5), sommario[4:6,])
 tabella_sommario <- 
     xtable(sommario,
            caption = "Sommario della distribuzione dei pori nelle tre classi dimensionali dei dati ottenuti dalla analisi 
-con porosimetria a mercurio", label = 'tab:Poro_medie', align = "lllccc")
+con porosimetria a mercurio", label = 'tab:Poro_medie', align = "lllccc", digits = 0)
 print(tabella_sommario, include.rownames=FALSE,
       caption.placement = "top",
       table.placement= "hb")
@@ -2265,7 +2324,7 @@ anova.totale <-
 rownames(anova.totale) <- c("Conduzione", "Lavorazione", "Totale")
 anova_tabellaTot <- xtable(anova.totale,
                            label = 'tab:tot_anova', align = 'lrrrrr',
-                           caption = 'ANOVA del modello adattato alla porosit\\`a totale'
+                           caption = 'ANOVA del modello adattato alla porosit\\`a totale', digits = c(0,0, rep(3,4))
                            )
 print(anova_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
@@ -2288,7 +2347,7 @@ rownames(sommario.totale) <-
 sommario.totale[1,4] <- "<10^-3" 
 sommario_tabellaTot <- xtable(sommario.totale,
                               label = 'tab:tot_sommario', align = 'lrrrr',
-                              caption = 'Sommario del modello adattato alla porosit\\`a totale'
+                              caption = 'Tabella di contingenza del modello adattato alla porosit\\`a totale'
                               )
 print(sommario_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
