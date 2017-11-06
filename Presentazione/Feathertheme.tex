@@ -23,7 +23,7 @@
 % -------------------------------------------------------
 
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
+\usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
 \usepackage{pgfplots}
@@ -34,6 +34,9 @@
 \usepackage{pgfplots, pgfplotstable}
 \usepackage{siunitx}
 \usepackage{placeins}
+\usepackage{datetime}
+\newdate{date}{21}{12}{2017}
+
 % -------------------------------------------------------
 % DEFFINING AND REDEFINING COMMANDS
 % -------------------------------------------------------
@@ -48,25 +51,25 @@
 % -------------------------------------------------------
 % \setbeamertemplate{title page}
 % {
-\title[] % [] is optional - is placed on the bottom of the sidebar on every slide
+\title[25 anni di conduzione Biologica in
+    area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar on every slide
 { % is placed on the title page
-  \textbf{25 anni di conduzione Biologica in
+  25 anni di  conduzione Biologica  in
     area Mediterranea}
-}
 
 
 \subtitle[Uno studio di fisica del suolo]
 {
-  \textbf{Uno studio di fisica del suolo}
+  Uno studio di fisica del suolo
 }
 
 \author[Simone Massenzio]
 { 
-  Candidato: \\Simone Massenzio \\
-  Relatore: \\Dott. O.L. Pantani\\
+  Candidato: Simone Massenzio \\
+  Relatore: Dott. O.L. Pantani\\
   \vspace{0.1cm}
-  Correlatori:\\
-  Dott. L.P. D'acqui, Prof. G.C. Pacini}     
+  Correlatori:
+  Dott. L.P. D'Acqui, Prof. G.C. Pacini}     
 
 
 
@@ -79,7 +82,7 @@
   %   % do not know why;( )
 }
 
-\date{\today}
+\date{\displaydate{date}}
 
 
 % -------------------------------------------------------
@@ -115,7 +118,13 @@
 
 
 
+<<<<<<< HEAD
 \begin{frame}{Obiettivi}
+||||||| merged common ancestors
+\begin{frame}{Obiettivi}{Pippo}
+=======
+\begin{frame}{Obiettivi}{}
+>>>>>>> 35b11c09dc87465b8ec40cfec86c53214c22b178
   % \frametitle{Obiettivi}
   \large
   \begin{itemize}[<+->]
@@ -329,25 +338,27 @@
 
   \vspace{1.5cm}
 
-  \begin{minipage}[ht]{\textwidth}
+%  \begin{minipage}[ht]{\textwidth}
     \onslide<1->{I dati ottenuti dalla misurazione contengono porzioni di un totale,
       questo tipo di dati prende il nome di \emph{dati Composizionali}.}
 
     \onslide<2->{Questi sono stati elaborati tramite il package 'composition' del
       linguaggio di programmazione R}
 
+
     \onslide<3->{I dati vengono trattati tramite una \emph{Isometric
         logratio transform} che porta a definire uno spazio vettoriale
       (\emph{simplesso}) in cui possono essere applicate le tecniche di
       statistica multivariata.}
-  \end{minipage}
+ % \end{minipage}
 
-  \begin{minipage}[hb]{\textwidth}
-    \only<3>{
+ % \begin{minipage}[hb]{\textwidth}
+    \transdissolve<3>
+ \onslide<3->{
       \begin{figure}[hb]
         \includegraphics[width=0.8\textwidth]{../foto/simplessodeforma.png}
       \end{figure}}
-  \end{minipage}
+      % \end{minipage}
 \end{frame}
 
 \begin{frame}[label=Composizionale]
@@ -455,7 +466,7 @@
 \begin{frame}[label=Core]
 
   \vspace{1.5cm}
-  \hyperlink{densita}{\beamerbutton{main}}
+  \hyperlink{densita}{\beamerbutton{indietro}}
   \footnotesize
   \begin{table}[ht]
     \centering
@@ -512,7 +523,7 @@
 
 
 \begin{frame}[label=Clod]
-  \hyperlink{densita}{\beamerbutton{main}}
+  \hyperlink{densita}{\beamerbutton{indietro}}
   \footnotesize
   \begin{table}[ht]
     \centering
@@ -559,7 +570,7 @@
 \end{frame}
 
 \begin{frame}[label=summary]
-  % \hyperlink{densita}{\beamerbutton{main}}
+  % \hyperlink{densita}{\beamerbutton{indietro}}
   % latex table generated in R 3.4.0 by xtable 1.8-2 package
   % Thu Jun 22 10:44:00 2017
   \footnotesize
@@ -586,7 +597,7 @@
 \end{frame}
 
 \begin{frame}[label=Anova]
-  \hyperlink{Composizionale}{\beamerbutton{main}}
+  \hyperlink{Composizionale}{\beamerbutton{indietro}}
   \footnotesize
   % latex table generated in R 3.4.0 by xtable 1.8-2 package
   % Tue Jun 27 21:29:19 2017
