@@ -534,7 +534,7 @@ struttura favorisce l'erosione, la compattazione e la
 desertificazione.
 
 Secondo \citet{pagliai2002soil}, la classificazione dei suoli più
-usata è quella di \citet{greenland1977soil} ed è mostrata in tabella
+usata è quella di \citet{greenland1977soil} ed è mostrata in Tab.
 \ref{tab:green}. %\migliora{Luigi dice di mettere più classificazioni con la pubblicazione che mi ha dato.}
  %\todo[inline]{Son d'accordo e forse meglio una figura}
 
@@ -1148,7 +1148,7 @@ particelle è compresa tra 1 e \SI{2}{\milli\meter}; successivamente
 della misurazione effettiva del campione è stato necessario misurare
 un "bianco" per acquisire l'intensità della radiazione luminosa
 all'ingresso del campo delle particelle, $I_0$
-(Eq. \ref{eq:BeerLambert} pagina \pageref{eq:BeerLambert}). Da questa
+(Eq. \ref{eq:BeerLambert} pag. \pageref{eq:BeerLambert}). Da questa
 aliquota, \SI{300}{\mg} sono stati immessi nell'unità di dispersione
 del campione opportunamente riempita di acqua.  
 
@@ -1241,7 +1241,7 @@ La progressiva penetrazione di mercurio nel campione è acquisita
 tramite un sensore capacitivo. Il segnale elettrico che ne deriva
 viene convertito in volume di mercurio intruso. Il calcolo della
 distribuzione dei pori, mediante l'equazione di Washburn
-(eq. \ref{eq:Washburn}, pagina \pageref{eq:Washburn}), viene effettuata dopo la sottrazione
+(eq. \ref{eq:Washburn}, pag. \pageref{eq:Washburn}), viene effettuata dopo la sottrazione
 automatica punto per punto dei valori legati alla compressibilità di
 mercurio preventivamente calcolati in un ciclo di misura senza
 campioni. Alla fine del ciclo di intrusione, l'apparecchio va
@@ -1371,14 +1371,14 @@ detach(summary.campo)
 \subsection{Metodo \emph{Core}}
 
 La tabella \ref{tab:summaryCore} riassume i dati ottenuti calcolando
-la densità apparente (formula \ref{eq:DensitaApparente}, pagina
-\pageref{eq:DensitaApparente}). La figura \ref{fig:boxplotCore} riporta gli stessi dati in
-forma grafica. I valori, la cui media generale è pari a
+la densità apparente (formula \ref{eq:DensitaApparente}, pag.
+\pageref{eq:DensitaApparente}). La figura \ref{fig:boxplotCore}
+riporta gli stessi dati in forma grafica. I valori, la cui media
+generale è pari a
 \SI{\Sexpr{round(mean(df.dueAnni$densita.apparente,na.rm=TRUE),2)}}{\gram\per\cubic\centi\metre},
-sono simili a quelli che più frequentemente si riscontrano nel
-suolo.
+sono simili a quelli che più frequentemente si riscontrano nel suolo.
 
-
+\todo{mettere righe vuote tra anni e tra conduzioni}
 <<Summary_Campo, echo=FALSE, eval=TRUE, results=tex>>=
 names(summary.campo) <-  
 c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n", "Tukey")
@@ -1472,8 +1472,8 @@ lm.DensSign <-
 %% \migliora[inline]{riscrivere}
 
 La tabella \ref{tab:anova del modello} riporta l'ANOVA del modello
-statistico e indica la non significatività dei trattamenti presi in
-esame.
+statistico e indica la non significatività \todo[inline]{a che livello
+  di p ??} dei trattamenti presi in esame.
 
 <<anova_modello, echo=FALSE, eval=TRUE, results=tex>>=
 anova.dens <- round(anova(lm.Densita), 3)
@@ -1605,10 +1605,10 @@ per ogni combinazione sono stati analizzati tre campioni. La media dei
 tre campioni è stata usata per l'analisi dei dati.
 I valori della densità apparente calcolati mediante l'equazione
 \ref{eq:densitapetrolio} sono mediamente più elevati (media;
-\Sexpr{round(mean(df.petrolio$densita.apparente, na.rm=T),2)})
-rispetto a quelli ottenuti utilizzando il metodo \emph{Core} riportato a
-pag. \pageref{tab:summaryCore}.
-
+(\SI{\Sexpr{round(mean(df.petrolio$densita.apparente, na.rm=T),2)}}{\gram\per\cubic\centi\metre}
+rispetto a quelli ottenuti utilizzando il metodo \emph{Core}
+(\SI{\Sexpr{round(mean(df.dueAnni$densita.apparente, na.rm=),2)}}{\gram\per\cubic\centi\metre}
+ \todo[inline]{righe vuote tra Conduzioni}
 
 <<Sommario_petrolio, echo=FALSE, eval=TRUE, results=tex>>=
 tabella.petrolio <-
@@ -1622,9 +1622,10 @@ digits =  c(rep(0,3),2,2,0,0))
 print(tabella.petrolio, include.rownames=FALSE, caption.placement = "top")
 @
 
-In tabella \ref{tab:summaryClod} è riportata l'ANOVA dei dati di densità apparente 
-relativi al tipo di conduzione. In Fig. \ref{fig:boxplotClod}
-è riportato il boxplot.
+In tabella \ref{tab:summaryClod} è riportata l'ANOVA dei dati
+\todo[inline]{mica vero !! è la 3.4 con l'anova} di densità apparente
+relativi al tipo di \emph{Conduzione}. In Fig. \ref{fig:boxplotClod} è
+riportato il boxplot.
 
 
 <<label = boxplotpetr, fig.width=0.8, fig.height=0.8, echo=FALSE, fig = TRUE, include = FALSE>>=
@@ -1680,11 +1681,11 @@ with(data = df.petrolio,
 \end{figure}
 \FloatBarrier
 
-La tabella \ref{tab:anova piccoli aggregati} indica che entrambi i
-fattori sono statisticamente significativi. Avendo verificato
-l'assenza di interazioni tra \emph{Conduzione} e \emph{Lavorazione}
-(vedi pag. \pageref{mod:MetodoClod}) è quindi stato effettuato un test
-di Tukey-Siegel.
+L'analisi della varianza, (Tab. \ref{tab:anova piccoli aggregati})
+indica che entrambi i fattori sono statisticamente significativi.\todo[inline]{a livello p ?}
+Avendo verificato l'assenza di interazioni tra \emph{Conduzione} e
+\emph{Lavorazione} (vedi pag. \pageref{mod:MetodoClod}) è quindi stato
+effettuato un test di Tukey-Siegel.
 
 <<Analisi_Petrolio, echo=FALSE, eval=TRUE>>=
 lm.spinta <-
@@ -1709,12 +1710,14 @@ print(tabella.spinta.anova, caption.placement = "top")
 
 @
 
-La t-table %\dubbio{Gigi dice che non si chiama t-table} 
-(tabella \ref{tab:sommario piccoli aggregati}) mostra come i terreni a
-conduzione Biologica abbiano una densità apparente minore rispetto a
-quelli a conduzione Convenzionale; il terreno in cui è stata effettuata
-l'aratura, risulta più denso rispetto ai terreni rippati e
-frangizollati.
+La tabella dei contrasti %\dubbio{Gigi dice che non si chiama t-table}
+(Tab. \ref{tab:sommario piccoli aggregati}) mostra come i terreni a
+conduzione Biologica abbiano una densità apparente minore
+(\todo[inline]{valore medio e unità misura}) rispetto a quelli a
+conduzione Convenzionale (\todo[inline]{valore medio e unità misura});
+il terreno in cui è stata effettuata l'aratura
+\todo[inline]{convenzionale}, risulta più denso rispetto ai terreni
+rippati e frangizollati.
 
 
 
@@ -1835,7 +1838,7 @@ Per la costruzione dei modelli statistici è stato escluso il fattore
 
 Nel modello statistico è presente la variabile continua \emph{tempo}
 espressa al quadrato la quale, come è possibile vedere dalla tabella
-ANOVA \ref{tab:anova_compWET}, è significativa.
+ANOVA (Tab. \ref{tab:anova_compWET}), è significativa.
 
 La misura è stata effettuata sia su aggregati essiccati all'aria che
 su aggregati inumiditi, per studiare il fenomeno dello
@@ -2045,7 +2048,8 @@ i) inizio misura (immersione):
 ii) inizio sonicatura
 iii) fine ciclo ',  digits = 1
 )
-print(xt.IUFW,include.rownames=FALSE,caption.placement = "top")
+print(xt.IUFW,include.rownames=FALSE,
+      caption.placement = "top")
 @
 
 
@@ -2228,7 +2232,7 @@ alpha <- 0.05
 
 
 I dati ottenuti sono stati analizzati mediante tecniche di analisi
-composizionale. In Fig. \ref{fig:Poros_triangolo} e in tabella
+composizionale. In Fig. \ref{fig:Poros_triangolo} e in Tab.
 \ref{tab:poros_anova} sono visibili i valori medi della composizione
 per ogni combinazione di trattamenti.
 
@@ -2330,7 +2334,7 @@ print(anova_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE
 @ 
 
 
-La tabella Anova \ref{tab:tot_anova} ci permette di affermare che il
+La tabella AANOVA (Tab. \ref{tab:tot_anova}) ci permette di affermare che il
 numero di campioni non è sufficiente per determinare la
 significatività dei trattamenti, tuttavia come si può vedere dalla
 tabella \ref{tab:tot_sommario}, i dati tenderebbero a confermare il
@@ -2425,7 +2429,7 @@ rispetto ai terreni condotti ad agricoltura Convenzionale e nei
 terreni lavorati superficialmente rispetto a quelli lavorati più in
 profondità.
 
-La t-table in tabella \ref{tab:anova piccoli aggregati} mostra che,
+La t-table in Tab. \ref{tab:anova piccoli aggregati} mostra che,
 nonostante la rilevata significatività statistica, le differenze di
 densità sono dell'ordine della seconda cifra decimale. Questo ci
 permette di affermare: in primo luogo che il numero di campioni è
