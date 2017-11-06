@@ -441,7 +441,8 @@ formazione del suolo possono essere descritti con la seguente funzione:
   s = f(cl, o, r, p, t, ...)
 \end{equation}
 
-Dove:\\
+Dove:
+
 \begin{tabular}{rl}
   $s$  &  sono le propriet\`a del suolo\\
   $cl$ &  \`e il clima\\
@@ -1000,7 +1001,8 @@ apparente ($\rho_{CoreApp}$) tramite la seguente formula:
   \rho_{CoreApp}=\frac{P_{secco}}{V_{cilindro}-V_{scheletro}}
 \end{equation}
 
-Dove:\\
+Dove:
+
 \begin{tabular}{lp{12cm}}
   $V_{cilindro}$     & = volume del cilindro di ottone (\SI{854.1}{\cubic\centi\metre}); \\
   $V_{scheletro}$    & = volume dello scheletro (>\SI{2}{\milli\metre}) misurato per spinta
@@ -1061,7 +1063,8 @@ formula:
   V_{totale}=\frac{S_{totale}}{D_{petrolio}}
 \end{equation}
 
-Dove:\\
+Dove:
+
 \begin{tabular}{lp{12cm}}
   $V_{totale}$    & = volume dell'aggregato comprendente il volume del
                   solido e il volume dei vuoti (\SI{}{\cubic\cm});\\
@@ -1089,7 +1092,8 @@ La densit\`a reale \`e si ottiene da:
   \rho_{ClodApp} = \frac{P_{150}}{V_{totale}}
 \end{equation}
 
-Dove:\\
+Dove:
+
 \begin{tabular}{lp{12cm}}
   $\rho_{ClodApp}$  & = valore della densit\`a apparente dell'aggregato
                       misurato (\SI{}{\gram\per\cubic\cm});\\
@@ -1270,7 +1274,9 @@ che sono quindi di natura additiva.
   Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
 \end{modello}
 \nopagebreak
-dove: \\
+
+Dove:
+
 \nopagebreak
 \begin{tabular}{lp{12cm}}
   $\beta_1$ & = \emph{Anno}, due livelli: \emph{2015, 2016};\\
@@ -2520,7 +2526,8 @@ trattamenti.
     \frac{I}{I_0}=e^{-\alpha b}
   \end{equation}
 
-  dove:\\
+  Dove:
+  
   \begin{tabular}{lp{12cm}}
     $I$            & = intensit\`a della luce a una distanza $b$ dal campo
                      delle particelle di assorbanza $\alpha$\\
@@ -2555,7 +2562,8 @@ trattamenti.
     \label{eq:Msizer_Luce_Attenuata}
   \end{equation}
 
-  dove:\\
+  Dove:
+  
   \begin{tabular}{lp{12cm}}
     $a_i$       &  = dimensione della particella i\\
     $Q_i$       &  = efficienza dell'estinzione luminosa calcolata dalla
@@ -2682,6 +2690,7 @@ trattamenti.
     pr=2\sigma cos \theta
     \label{eq:Washburn}
   \end{equation}  
+  
   Dove:
   
   \begin{tabular}{lp{12cm}}
@@ -2736,12 +2745,16 @@ trattamenti.
     \label{eq:WashburnHg}
   \end{equation}
 
-  dove:\\
+  \begin{samepage}
+  Dove:
+  \nopagebreak
+  
   \begin{tabular}{lp{12cm}}
     $r$ &  = raggio dei pori, espresso in \SI{}{\nano\meter}\\
     $p$ &  = pressione assoluta applicata, espressa in
           \SI{}{\kilogram \per \centi \meter \squared}
   \end{tabular}
+  \end{samepage}
 
   Per i pori irregolari, il rapporto tra la sezione trasversale dei
   pori (relativa alla pressione esercitata) e alla circonferenza dei
@@ -2798,7 +2811,9 @@ trattamenti.
   C \left[x_1,x_2,\dots,x_D \right]= \left[\frac{x_1}{\sum_{i=1}^{D} x_i}, \frac{x_2}{\sum_{i=1}^{D} x_i}, \dots,\frac{x_D}{\sum_{i=1}^{D}
       x_i} \right]
   \end{equation}
-  Dove:\\
+  
+  Dove:
+  
   \begin{tabular}{lp{12cm}}
     $C[\cdot]$ &  = vettore riga\\
     $D$        &  = numero delle componenti\\
@@ -2852,8 +2867,10 @@ trattamenti.
     S^D= \left \{ x= \left [x_1,x_2,\dots,x_D \right ] \in R^D | x_i>0, i=1,2,\dots,D;
       \sum_{i=1}^D x_i =\kappa \right \}
   \end{equation}
-  Dove:\\
-   \begin{tabular}{lp{12cm}}
+  
+  Dove:
+  
+  \begin{tabular}{lp{12cm}}
     $S^D$ &  = Simplesso di Aitchinson\\
     $D$        &  = numero delle componenti\\
     $x$        &  = valore della componente i-esima         
