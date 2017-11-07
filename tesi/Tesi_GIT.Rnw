@@ -52,6 +52,7 @@ final]{scrbook}
 % Sperimentale per le liste; non attivare
 %% \usepackage{enumitem}
 %% \setlist{nosep} %
+\usepackage{bm}
 
 %%\usepackage{longtable} % per avere tabelle spezzate tra le pagine
 %%\usepackage{tabularx} % per le tabelle con molto testo
@@ -88,8 +89,8 @@ final]{scrbook}
 % nyt Sort by name, year, title.
 % nyvt Sort by name, year, volume, title.
 % anyt Sort by alphabetic label, name, year, title.
-% anyvt Sort by alphabetic label, name, year, volume, title.
-% ynt Sort by year, name, title.
+% anyvt Sort by alphabetic label, name, year, volume, ynt.
+% titl Sort by year, name, title.
 % ydnt Sort by year (descending), name, title.
 % none Do not sort at all. All entries are processed in citation order.
 % Debug Sort by entry key. This is intended for debugging only.
@@ -98,37 +99,37 @@ final]{scrbook}
 \bibliography{bibliomone.bib}
 % non ho capito a che serve ma dovrebbe essere utile a citare R in bib
 % \newcommand{\code}[1]{\texttt{\smaller #1}}
-\setlength\bibitemsep{1.5\itemsep}
-\DeclareBibliographyCategory{cartaceo}
-\DeclareBibliographyCategory{web}
+    \setlength\bibitemsep{1.5\itemsep}
+    \DeclareBibliographyCategory{cartaceo}
+    \DeclareBibliographyCategory{web}
 
-\defbibheading{cartaceo}{\subsection*{Bibliografia}}
-\defbibheading{web}{\subsection*{Siti Web consultati}}
+    \defbibheading{cartaceo}{\subsection*{Bibliografia}}
+    \defbibheading{web}{\subsection*{Siti Web consultati}}
 
-%% siunitx serve per le unità di misura
-\usepackage{siunitx}
-\sisetup{detect-all = true, detect-family = true, output-decimal-marker = {,}}
-% http://tex.stackexchange.com/questions/66713/can-i-make-siunitx-commands-use-serif-fonts-like-the-rest-of-the-math-in-beamer
+    %% siunitx serve per le unità di misura
+    \usepackage{siunitx}
+    \sisetup{detect-all = true, detect-family = true, output-decimal-marker = {,}}
+    % http://tex.stackexchange.com/questions/66713/can-i-make-siunitx-commands-use-serif-fonts-like-the-rest-of-the-math-in-beamer
 
 %% questa roba sotto serve per non perdere il filo sulle copie stampate
 %% commentare opportunamente nella versione finale
 \usepackage[short, hhmmss]{datetime}
 %\usepackage{fancyhdr}
-\usepackage{placeins}
-\usepackage{graphicx} %per le figure
+    \usepackage{placeins}
+    \usepackage{graphicx} %per le figure
 %\pagestyle{fancy}
-% \setlength{\headheight}{14pt} % il compilatore si lamenta che c'e' poco spazio 1 ott 2016 Siena
-\usepackage[]{subfig} % per le figure affiancate
+    % \setlength{\headheight}{14pt} % il compilatore si lamenta che c'e' poco spazio 1 ott 2016 Siena
+    \usepackage[]{subfig} % per le figure affiancate
 
 \usepackage{float}
 % per forzare il posizionamento delle figure
 
-%% \usepackage[normalem]{ulem}
-% serve per barrare del testo in fase di correzione
+    %% \usepackage[normalem]{ulem}
+    % serve per barrare del testo in fase di correzione
 % se non si usa [normalem], \emph sottolinea invece di fare il suo dovere
 
-%% Pezzo per scrivere note a margine
-\usepackage{xargs} % Use more than one optional parameter in a new commands
+    %% Pezzo per scrivere note a margine
+    \usepackage{xargs} % Use more than one optional parameter in a new commands
 \usepackage[colorinlistoftodos, prependcaption, italian, textsize=scriptsize]{todonotes}
 \newcommandx{\dubbio}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
 \newcommandx{\cambia}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
@@ -137,55 +138,55 @@ final]{scrbook}
 \newcommandx{\fatto}[2][1=]{\todo[linecolor=gray, backgroundcolor=black!75]{#2}}
 \newcommandx{\nonvisibile}[2][1=]{\todo[disable,#1]{#2}}
 % \presetkeys{todonotes}{fancyline}{}
-% Vediamo se con questo si riduce lo spazio tra la caption.
+    % Vediamo se con questo si riduce lo spazio tra la caption.
 \usepackage[font=small, textfont=it, labelfont=bf, format=plain]{caption}
 
 
 % \usepackage[printwatermark]{xwatermark}
-% \newwatermark[allpages,color=grey!50,angle=90,scale=1,xpos=0,ypos=0]{Tesi
+    % \newwatermark[allpages,color=grey!50,angle=90,scale=1,xpos=0,ypos=0]{Tesi
 % di Simone Massenzio}
 
-%\usepackage[raggedright]{titlesec}
+    %\usepackage[raggedright]{titlesec}
 % Serve per evitare la sillabazione nei titoli
 
-%\newcommand{\sectionbreak}{\clearpage}
+    %\newcommand{\sectionbreak}{\clearpage}
 %% serve per mettere ogni section a pagina nuova
 
 %\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\space#1}{}}
-%\renewcommand{\headrulewidth}{0.4pt}
+    %\renewcommand{\headrulewidth}{0.4pt}
 %\renewcommand{\footrulewidth}{0.2pt}
-% \cfoot{Pag. \thepage\, Compilata il \today\ alle \currenttime}
+    % \cfoot{Pag. \thepage\, Compilata il \today\ alle \currenttime}
 % \lfoot{}
-% \rfoot{}
+    % \rfoot{}
 % E Even page
-% O Odd page
+    % O Odd page
 % L Left field
-% C Center field
+    % C Center field
 % R Right field
-% H Header
+    % H Header
 % F Footer
-% \fancyhead{} % clear all header fields
-\usepackage{enumitem}
-% per fare l'itemize con il tondo intorno ai numeri
+    % \fancyhead{} % clear all header fields
+    \usepackage{enumitem}
+    % per fare l'itemize con il tondo intorno ai numeri
 % e altri controlli sulle liste
 
-%\usepackage[font=it, labelfont=bf, format=plain, skip=40pt]{caption}
+    %\usepackage[font=it, labelfont=bf, format=plain, skip=40pt]{caption}
 % The optional argument of \setcapwidth is not supported and will be ignored if used in con-
-% junction with the caption package. Furthermore the KOMA-Script options tablecaption-
+                                                                                            % junction with the caption package. Furthermore the KOMA-Script options tablecaption-
 % 30above & tablecaptionbelow and the commands \captionabove & \captionbelow
-% are stronger than the position= setting offered by the caption package.
+    % are stronger than the position= setting offered by the caption package.
 % \DeclareCaptionFont{mysize}{\fontsize{10}{9.6}\selectfont}
-% \captionsetup{font=mysize}
+    % \captionsetup{font=mysize}
 % \usepackage[swapnames]{frontespizio} %per il frontespizio
 \usepackage{frontespizio}
 
 \newenvironment{abstract}%
-{\cleardoublepage\null \vfill\begin{center}%
+    {\cleardoublepage\null \vfill\begin{center}%
     \bfseries \abstractname \end{center} \footnotesize}%\doublespace }%
 {\vfill\null}
 
 \newenvironment{engabstract}%
-{\cleardoublepage\null \vfill\begin{center}%
+    {\cleardoublepage\null \vfill\begin{center}%
     \bfseries Summary  \end{center} \footnotesize}%\doublespace }%
 {\vfill\null}
 
@@ -195,9 +196,9 @@ final]{scrbook}
 %   \renewcommand{\appendixpagename}{Appendici}%
 % }
 
-\renewcommand{\theequation}{Eq. \arabic{equation}}
-\usepackage{environ}
-\NewEnviron{modello}{%
+    \renewcommand{\theequation}{Eq. \arabic{equation}}
+    \usepackage{environ}
+    \NewEnviron{modello}{%
   \begin{equation}
     \BODY
   \end{equation}
@@ -206,15 +207,15 @@ final]{scrbook}
 \usepackage{amsmath}
 \numberwithin{equation}{chapter} % numera le equazioni col numero di capitolo
 
-\usepackage[nogin]{Sweave}
-% https://tex.stackexchange.com/questions/11619/resize-arrays-and-figures-in-a-sweave-document
+  \usepackage[nogin]{Sweave}
+  % https://tex.stackexchange.com/questions/11619/resize-arrays-and-figures-in-a-sweave-document
 % nogin serve per definiore le dimensioni delle figure e passarle a latex
 
-\DeclareSIUnit\atm{atm}
-\DeclareSIUnit\torr{torr}
+  \DeclareSIUnit\atm{atm}
+  \DeclareSIUnit\torr{torr}
 
-\usepackage{lipsum}
-% blocchi di testo fittizi
+  \usepackage{lipsum}
+  % blocchi di testo fittizi
 
 <<PacchettiRichiesti, echo=FALSE, eval=TRUE>>=
 library(nlme)
@@ -274,19 +275,19 @@ file.path(DirMain, "tabelle")
 %   \Correlatore{Dott. Luigi P. D'Acqui}
 % \end{frontespizio}
 \begin{frontespizio}
-  \Margini{5cm}{1.5cm}{3cm}{1cm}
-  \Logo[2.5cm]{logo-unifi_positivo.jpeg}
-  \Istituzione{Università degli Studi di Firenze}
-  \Divisione{Scuola di Agraria}
-  \Scuola{Corso di Laurea in Scienze e tecnologie agrarie (LM-69)}
-  \Titolo{25 anni di conduzione Biologica in area Mediterranea}
-  \Sottotitolo{Uno studio di fisica del suolo}
-  \NCandidato{Candidato}
-  \Candidato{Simone Massenzio}
-  \NRelatore{Relatore}{}
-  \Relatore{Dott. Ottorino-Luca Pantani}
-  \NCorrelatore{Correlatori}{Correlatori}
-  \Correlatore{Dott. Luigi Paolo D'Acqui}
+\Margini{5cm}{1.5cm}{3cm}{1cm}
+\Logo[2.5cm]{logo-unifi_positivo.jpeg}
+\Istituzione{Università degli Studi di Firenze}
+\Divisione{Scuola di Agraria}
+\Scuola{Corso di Laurea in Scienze e tecnologie agrarie (LM-69)}
+\Titolo{25 anni di conduzione Biologica in area Mediterranea}
+\Sottotitolo{Uno studio di fisica del suolo}
+\NCandidato{Candidato}
+\Candidato{Simone Massenzio}
+\NRelatore{Relatore}{}
+\Relatore{Dott. Ottorino-Luca Pantani}
+\NCorrelatore{Correlatori}{Correlatori}
+\Correlatore{Dott. Luigi Paolo D'Acqui}
   \Correlatore{Prof. Gaio Cesare Pacini}
   \Piede{Anno accademico 2016-2017}
 \end{frontespizio}
@@ -324,21 +325,21 @@ file.path(DirMain, "tabelle")
     systems in Mediterranean area (organic and conventional management
     on site since twenty five years) through the assessement of three
     soil's physical properties such as: bulk density, pore size
-    distribution and aggregate stability; \textbf{ii)} to compare the
-    effects of three tillage systems: plowing, chisel plowing and disk
-    harrowing. The study is implemented within the \emph{MOLTE}
-    project, a long term experiment of the University of Florence
-    where, since 1991, at Montepaldi farm, located in San Casciano val
-    di Pesa (FI) was carried out an experimentation on organic farming
-    systems.  The result of the analysis of the bulk density, show
-    statistically significant differences between two farming systems,
-    however these difference were so small that are negligible from a
-    practical point of view. On the contrary the results of the pore
-    size distribution do not display statistically significant
-    differences.  The aggregate stability shows that the aggregates
-    from the conventional soil are more stable than those from the
-    organic one.
-  \end{engabstract}%
+  distribution and aggregate stability; \textbf{ii)} to compare the
+effects of three tillage systems: plowing, chisel plowing and disk
+harrowing. The study is implemented within the \emph{MOLTE}
+project, a long term experiment of the University of Florence
+where, since 1991, at Montepaldi farm, located in San Casciano val
+di Pesa (FI) was carried out an experimentation on organic farming
+systems.  The result of the analysis of the bulk density, show
+statistically significant differences between two farming systems,
+however these difference were so small that are negligible from a
+practical point of view. On the contrary the results of the pore
+size distribution do not display statistically significant
+differences.  The aggregate stability shows that the aggregates
+from the conventional soil are more stable than those from the
+organic one.
+\end{engabstract}%
 \end{otherlanguage*}
 
 \tableofcontents
@@ -467,7 +468,7 @@ tessiturale di Whitney, è stata introdotta nel 1951 \citep{SoilTr}.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.7\textwidth]{../foto/USDA_triangolo.jpeg}
+  \includegraphics[width=0.8\textwidth]{../foto/USDA_triangolo.jpeg}
   \caption[Il triangolo tessiturale]{Triangolo tessiturale secondo USDA}
   \label{fig:triangolo}
 \end{figure}
@@ -535,8 +536,8 @@ desertificazione.
 
 Secondo \citet{pagliai2002soil}, la classificazione dei suoli più
 usata è quella di \citet{greenland1977soil} ed è mostrata in Tab.
-\ref{tab:green}. %\migliora{Luigi dice di mettere più classificazioni con la pubblicazione che mi ha dato.}
- %\todo[inline]{Son d'accordo e forse meglio una figura}
+\ref{tab:green}. 
+ 
 
 \begin{table}[ht]
   \caption[Classificazione dei pori del terreno secondo le
@@ -920,10 +921,10 @@ serie \emph{m}, quindi 36 campioni.
 \begin{landscape}
 \begin{figure}
  % \begin{minipage}{.5\linewidth}
-  \centering
-  \subfloat[Biologico]{
+\centering
+\subfloat[Biologico]{
     \includegraphics[width=0.5\textwidth]{../foto/OO_sito.jpeg}
-  }\quad
+}\quad
   \subfloat[Convenzionale]{
     \includegraphics[width=0.5\textwidth]{../foto/CO_sito.jpeg}
   }
@@ -946,16 +947,16 @@ serie \emph{m}, quindi 36 campioni.
 %   \caption[Diagramma degli appezzamenti a conduzione
 %   Convenzionale]{Appezzamenti Convenzionale, la codifica segue quella
 %     descritta per l'appezzamento Biologico}
-%   \label{fig:foto_CO_sito}
+    %   \label{fig:foto_CO_sito}
 
 % \end{figure}
 
-\section{Misura della densità apparente}
-La densità apparente del suolo è stata misurata sia con il metodo
-\emph{Core} (utilizzando grandi volumi) che con il metodo \emph{Clod}
-(utilizzando piccoli aggregati) \citep{black1900method}.
+    \section{Misura della densità apparente}
+    La densità apparente del suolo è stata misurata sia con il metodo
+    \emph{Core} (utilizzando grandi volumi) che con il metodo \emph{Clod}
+    (utilizzando piccoli aggregati) \citep{black1900method}.
 
-\subsection{Metodo \emph{Core}}%Densimetria per grandi volumi (cilindro)}
+    \subsection{Metodo \emph{Core}}%Densimetria per grandi volumi (cilindro)}
 Per misurare la densità apparente del suolo con il metodo
 \emph{Core}, sono stati prelevati dei campioni
 di terreno mediante l'utilizzo di un cilindro non deformabile di
@@ -1017,13 +1018,13 @@ Dove:
 
 \subsection{Metodo \emph{Clod}}%Densimetria per piccoli aggregati (petrolio)
 
-A differenza del metodo \emph{Core}, questa misura viene effettuata su
-aggregati di piccole dimensioni (3-\SI{4}{\cm} di diametro).  Il
-metodo \emph{Clod} viene anche detto metodo per spinta idrostatica
-\citep{Monnier_1973}. La procedura consiste nel mantenere a bagno nel
-petrolio per una notte degli aggregati di terreno
-(Fig. \ref{fig:petrolio}) cercando di ridurre al minimo le
-manipolazioni per mantenere la struttura dell'aggregato stesso.
+    A differenza del metodo \emph{Core}, questa misura viene effettuata su
+    aggregati di piccole dimensioni (3-\SI{4}{\cm} di diametro).  Il
+    metodo \emph{Clod} viene anche detto metodo per spinta idrostatica
+    \citep{Monnier_1973}. La procedura consiste nel mantenere a bagno nel
+    petrolio per una notte degli aggregati di terreno
+    (Fig. \ref{fig:petrolio}) cercando di ridurre al minimo le
+    manipolazioni per mantenere la struttura dell'aggregato stesso.
 
 \begin{figure}[ht]
   \centering
@@ -1067,18 +1068,18 @@ Dove:
 
 \begin{tabular}{lp{12cm}}
   $V_{totale}$    & = volume dell'aggregato comprendente il volume del
-                  solido e il volume dei vuoti (\SI{}{\cubic\cm});\\
-  $S_{totale}$    & = spinta idrostatica
-                     dell'aggregato imbevuto di petrolio (\SI{}{\gram});\\
+    solido e il volume dei vuoti (\SI{}{\cubic\cm});\\
+    $S_{totale}$    & = spinta idrostatica
+    dell'aggregato imbevuto di petrolio (\SI{}{\gram});\\
   $D_{petrolio}$  & = densità del petrolio utilizzato per
                      l'analisi (\SI{0.761}{\gram\per\cubic\cm}).
-\end{tabular}
+    \end{tabular}
 
 
-\bigskip
-Successivamente il campione è stato essiccato per una notte a
-\SI{150}{\degreeCelsius} quindi è stato pesato\footnote{Il
-  raggiungimento di questa temperatura consente di allontanare l'acqua
+    \bigskip
+    Successivamente il campione è stato essiccato per una notte a
+    \SI{150}{\degreeCelsius} quindi è stato pesato\footnote{Il
+        raggiungimento di questa temperatura consente di allontanare l'acqua
   di idratazione dei cationi di scambio bivalenti (Ca, Mg) degli
   interstrati dei minerali a reticolo espandibile
   \citep{Monnier_1973}}. Il peso misurato è quello della sola fase
@@ -1096,8 +1097,8 @@ Dove:
 
 \begin{tabular}{lp{12cm}}
   $\rho_{ClodApp}$  & = valore della densità apparente dell'aggregato
-                      misurato (\SI{}{\gram\per\cubic\cm});\\
-  $P_{150}$       & = peso dell'aggregato essiccato a
+        misurato (\SI{}{\gram\per\cubic\cm});\\
+        $P_{150}$       & = peso dell'aggregato essiccato a
                      \SI{150}{\celsius} (\SI{}{\gram});\\
   $V_{totale}$  & = volume calcolato con la formula
                       \ref{eq:VolumeAggr}  (\SI{}{\cubic\cm}).
@@ -1165,16 +1166,16 @@ precedentemente inumidito con acqua demineralizzata.
 A conclusione della misura abbiamo ottenuto, per le 36 combinazioni dei
 fattori dell'esperimento, 24+24 distribuzioni granulometriche:
 \begin{itemize}
-  \item 24 per ogni campione secco di cui:
+\item 24 per ogni campione secco di cui:
   \begin{itemize}
-    \item 12 distribuzioni dal minuto 1 al minuto 12 senza sonicatura;
-    \item 12 distribuzioni dal minuto 13 al minuto 24 con la sonicatura attiva;
+  \item 12 distribuzioni dal minuto 1 al minuto 12 senza sonicatura;
+  \item 12 distribuzioni dal minuto 13 al minuto 24 con la sonicatura attiva;
   \end{itemize}
-  \item 24 per ogni campione umido di cui
-    \begin{itemize}
-      \item 12 distribuzioni dal tempo 1 al tempo 12 senza sonicatura;
-      \item 12 distribuzioni dal minuto 13 al minuto 24 con la sonicatura attiva.
-    \end{itemize}
+\item 24 per ogni campione umido di cui
+  \begin{itemize}
+  \item 12 distribuzioni dal tempo 1 al tempo 12 senza sonicatura;
+  \item 12 distribuzioni dal minuto 13 al minuto 24 con la sonicatura attiva.
+  \end{itemize}
 \end{itemize}
 
 % \begin{figure}[ht]
@@ -1182,11 +1183,11 @@ fattori dell'esperimento, 24+24 distribuzioni granulometriche:
 %   \includegraphics[width=0.8\textwidth]{../foto/distropisa.jpeg}
 %   \caption[Esempi di curve di distribuzione granulometrica
 %   dinamica]{Alcuni esempi di curve di distribuzione
-%     granulometrica dei campioni 25, 28, 13, 17, 1, 10. Sull'asse delle ascisse
-%     in scala logaritmica sono presenti i valori dei diametri delle varie particelle 
-%     misurate dallo strumento in \SI{}{\micro\metre}; sull'asse
-%     delle ordinate sono presenti i relativi valori in
-%     percentuale.}
+%   granulometrica dei campioni 25, 28, 13, 17, 1, 10. Sull'asse delle ascisse
+%   in scala logaritmica sono presenti i valori dei diametri delle varie particelle 
+%   misurate dallo strumento in \SI{}{\micro\metre}; sull'asse
+%   delle ordinate sono presenti i relativi valori in
+%   percentuale.}
 % \end{figure}
 % \FloatBarrier
 
@@ -1273,7 +1274,7 @@ che sono quindi di natura additiva.
 \begin{samepage}
 \begin{modello}
   \label{mod:MetodoClod}
-  Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
+  y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
 \end{modello}
 \nopagebreak
 
@@ -1281,9 +1282,11 @@ Dove:
 
 \nopagebreak
 \begin{tabular}{lp{12cm}}
-  $\beta_1$ & = \emph{Anno}, due livelli: \emph{2015, 2016};\\
-  $\beta_2$  & = \emph{Conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
-  $\beta_3$ & = \emph{Lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
+  $y$       & = densità apparente\\
+  $\mu$     & = media generale\\
+  $\beta_1$ & = coefficiente della variabile \emph{anno}, due livelli: \emph{2015, 2016};\\
+  $\beta_2$  & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
+  $\beta_3$ & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
   $\epsilon$ & = residui o errore.
 \end{tabular}
 \end{samepage}
@@ -1327,8 +1330,8 @@ verificata la significatività dei trattamenti mediante l'ANOVA.
 
 <<ImportDensCampo, eval=TRUE, echo=FALSE>>=
 df.dueAnni <-
-read.table(file.path(DirElab, "df_dueanni.csv"),
-header = T, sep = "")
+         read.table(file.path(DirElab, "df_dueanni.csv"),
+                     header = T, sep = "")
 df.dueAnni <-  df.dueAnni[df.dueAnni$REPLICA == "m", ]
 
 ##with(df.dueAnni, table(YEAR, TRT,LAVORAZIONE, APPEZZAMENTO))
@@ -1348,23 +1351,23 @@ HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
 tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
 tuk.cld<- cld(tuk)
 summary.campo <-
-data.frame(
-aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
-data = df.dueAnni,
-function(x){round(mean(x, na.rm=TRUE),2)}),
-ST.DEV=
-aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
-data = df.dueAnni,
-function(x){round(sd(x, na.rm=TRUE),2)})[,4],
-n= aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
-data = df.dueAnni,
-function(x){sum(!is.na(x))})[,4],
-Tukey  = as.vector(tuk.cld$mcletters$Letters)
-)
+    data.frame(
+        aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
+                  data = df.dueAnni,
+                  function(x){round(mean(x, na.rm=TRUE),2)}),
+        ST.DEV=
+            aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
+                      data = df.dueAnni,
+                      function(x){round(sd(x, na.rm=TRUE),2)})[,4],
+        n= aggregate(densita.apparente ~ YEAR+TRT+LAVORAZIONE,
+                     data = df.dueAnni,
+                     function(x){sum(!is.na(x))})[,4],
+        Tukey  = as.vector(tuk.cld$mcletters$Letters)
+    )
 ##names(summary.campo)[4] <- "Dens.app.g.cmc"
 attach(summary.campo)
 summary.campo <-
-summary.campo[order(YEAR, TRT, LAVORAZIONE),]
+    summary.campo[order(YEAR, TRT, LAVORAZIONE),]
 detach(summary.campo)
 @
 
@@ -1372,33 +1375,34 @@ detach(summary.campo)
 
 La tabella \ref{tab:summaryCore} riassume i dati ottenuti calcolando
 la densità apparente (formula \ref{eq:DensitaApparente}, pag.
-\pageref{eq:DensitaApparente}). La figura \ref{fig:boxplotCore}
+                      \pageref{eq:DensitaApparente}). La figura \ref{fig:boxplotCore}
 riporta gli stessi dati in forma grafica. I valori, la cui media
 generale è pari a
 \SI{\Sexpr{round(mean(df.dueAnni$densita.apparente,na.rm=TRUE),2)}}{\gram\per\cubic\centi\metre},
 sono simili a quelli che più frequentemente si riscontrano nel suolo.
 
-\todo{mettere righe vuote tra anni e tra conduzioni}
 <<Summary_Campo, echo=FALSE, eval=TRUE, results=tex>>=
 names(summary.campo) <-  
-c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n", "Tukey")
+    c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n", "Tukey")
 summary.campo$Anno <- 
-c("2015", rep(" ", 5), "2016", rep(" ", 5))
+    c("2015", rep(" ", 5), "2016", rep(" ", 5))
 summary.campo$Conduzione <-
-c("Convenzionale", rep(" ", 2), "Organico", rep(" ", 2),
-"Convenzionale", rep(" ", 2), "Organico", rep(" ", 2))
+    c("Convenzionale", rep(" ", 2), "Organico", rep(" ", 2),
+      "Convenzionale", rep(" ", 2), "Organico", rep(" ", 2))
 summary.campo$Lavorazione <- 
     mapvalues(summary.campo$Lavorazione, from = c("Ara", "Rip", "Fzo"), to = c("Arato", "Rippato", "Frangizollato"))
-summary.campo <- rbind(summary.campo[1:3,], rep(NA, 7), summary.campo[1:3,], rep(NA, 7), rep(NA, 7), summary.campo[7:9,], rep(NA, 7), summary.campo[10:nrow(summary.campo),])
+summary.campo <- rbind(summary.campo[1:3,], rep(NA, 7), 
+                       summary.campo[3:6,], rep(NA, 7), rep(NA, 7), summary.campo[7:9,], rep(NA, 7), 
+                       summary.campo[10:nrow(summary.campo),])
 tabella.campo <-
-xtable(summary.campo[,-7],
-label = 'tab:summaryCore', align  = "llllccc",
-caption =
-"Valori medi della densit\\`a apparente (in \\SI{}{\\gram\\per\\cubic\\centi\\metre}),
+    xtable(summary.campo[,-7],
+           label = 'tab:summaryCore', align  = "llllccc",
+           caption =
+               "Valori medi della densit\\`a apparente (in \\SI{}{\\gram\\per\\cubic\\centi\\metre}),
 suddivisi per \\emph{Anno}, \\emph{Conduzione} e \\emph{Lavorazione} " )
 print(tabella.campo, include.rownames=FALSE,
-caption.placement = "top",
-table.placement= "hb")
+      caption.placement = "top",
+      table.placement= "hb")
 
 @
 \FloatBarrier
@@ -1411,9 +1415,9 @@ quanto non significativi.
 limiti.x <- c(0,13)
 limiti.y <- c(1, 1.8)
 plot(1, xlim = limiti.x, ylim = limiti.y, type = "n",
-yaxt = "n", xaxt = "n", xlab = "", ylab = "", main = "Metodo Core")
+     yaxt = "n", xaxt = "n", xlab = "", ylab = "", main = "Metodo Core")
 mtext(expression(paste("Densit\`a apparente g ", cm^-3)),
-side = 2, line = 2)
+      side = 2, line = 2)
 rect(0.25,1, 3.45,1.8, col = "lightgray", border = NA)
 rect(3.55,1, 6.5,1.8, col = "gray", border = NA)
 rect(6.5,1, 9.45,1.8,col = "lightgray", border = NA)
@@ -1422,16 +1426,16 @@ rect(0.25,1, 6.5,1.8,lwd = 2)
 rect(6.5,1, 12.75,1.8,lwd = 2)
 abline(h = 2.65/2, col = 2)
 with(df.dueAnni,
-boxplot(densita.apparente ~ LAVORAZIONE+TRT+YEAR,
-las = 2, xaxt = "n",
-col = c(2,3,4), add = TRUE)
-)
+     boxplot(densita.apparente ~ LAVORAZIONE+TRT+YEAR,
+             las = 2, xaxt = "n",
+             col = c(2,3,4), add = TRUE)
+     )
 text(3.5, 1.8, "Anno 2015", pos = 1, cex = 2)
 text(9.5, 1.8, "Anno 2016", pos = 1, cex = 2)
 legend(9.3, 1.2,
-c("Arato","F.zollato","Rippato"),
-box.col = "transparent",
-fill=c(2,3,4), cex=1,  ncol = 1)
+       c("Arato","F.zollato","Rippato"),
+       box.col = "transparent",
+       fill=c(2,3,4), cex=1,  ncol = 1)
 ## points(y = jitter(rep(1:12, each = 6), 0.5),
 ##        x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT, YEAR))),
 ##        cex = 2, pch = 4)
@@ -1442,11 +1446,11 @@ text(11, 1.7, "OO", pos = 1, cex = 1.5)
 @
 
 \begin{figure}[hb]
-  \centering
-  % <<label=figboh2, fig=TRUE, echo=FALSE, width=5.4, height=5.4 >>=
+\centering
+% <<label=figboh2, fig=TRUE, echo=FALSE, width=5.4, height=5.4 >>=
   % <<ResiduiCampo>>
-  % @
-  \includegraphics[width=\textwidth]{Tesi_GIT-figboh2.pdf}
+% @
+  \includegraphics[width=0.9\textwidth]{boxCore.pdf}
 
   \caption[Boxplot della densità apparente: metodo
   \emph{Core}]{Boxplot della densità apparente misurata con il metodo \emph{Core}
@@ -1472,22 +1476,21 @@ lm.DensSign <-
 %% \migliora[inline]{riscrivere}
 
 La tabella \ref{tab:anova del modello} riporta l'ANOVA del modello
-statistico e indica la non significatività \todo[inline]{a che livello
-  di p ??} dei trattamenti presi in esame.
+statistico e indica la non significatività ($p<0.05$) dei trattamenti presi in esame.
 
 <<anova_modello, echo=FALSE, eval=TRUE, results=tex>>=
 anova.dens <- round(anova(lm.Densita), 3)
 rownames(anova.dens) <-     c("Anno", "Conduzione", "Lavorazione", "Totale")
 ##%   c("Anno", "Management", "Tillage", "Totale")
 tabella.anova.dens <-
-xtable(anova.dens,
-label = 'tab:anova del modello', align  = "lrrrrr",
-caption = 'Tabella ANOVA per i valori di densità rilevati col metodo \\emph{Core}',
-digits = c(0,0,rep(3,4)), 
-display = NULL, auto = FALSE)
+    xtable(anova.dens,
+           label = 'tab:anova del modello', align  = "lrrrrr",
+           caption = 'Tabella ANOVA per i valori di densità rilevati col metodo \\emph{Core}',
+           digits = c(0,0,rep(3,4)), 
+           display = NULL, auto = FALSE)
 print(tabella.anova.dens,
-include.rownames=TRUE,
-caption.placement = "top")
+      include.rownames=TRUE,
+      caption.placement = "top")
 @
 \FloatBarrier
 
@@ -1534,24 +1537,24 @@ posiz.y <- 1.7
 limiti.x <- c(0,5)
 limiti.y <- c(1, 1.8)
 plot(1, xlim = limiti.x, ylim = limiti.y, type = "n",
-yaxt = "n", xaxt = "n", xlab = "",ylab = "", main = "Metodo Core")
+     yaxt = "n", xaxt = "n", xlab = "",ylab = "", main = "Metodo Core")
 ##mtext(expression(paste("Densit\`a apparente g ", cm^-3)), side = 2, line = 2)
 rect(0.25,1, 2.45,1.8, col = "lightgray", border = NA)
 rect(2.48,1, 4.75,1.8, col = "gray", border = NA)
 rect(0.25,1, 2.45,1.8,lwd = 2)
 rect(2.48,1, 4.75,1.8,lwd = 2)
 with(df.dueAnni,
-boxplot(densita.apparente ~ YEAR + TRT, ### ATTENZIONE A NON INVERTIRE TRT con YEAR !!
-las = 2, xaxt = "n",
-col = c(5, 6), add = TRUE))
+     boxplot(densita.apparente ~ YEAR + TRT, ### ATTENZIONE A NON INVERTIRE TRT con YEAR !!
+             las = 2, xaxt = "n",
+             col = c(5, 6), add = TRUE))
 mtext(expression(paste("Densit\`a apparente g ", cm^-3)), side = 2, line = 2)
 text(1.5, 1.8, "Anno 2015", pos = 1, cex = 1.5)
 text(3.5, 1.8, "Anno 2016", pos = 1, cex = 1.5)
 text(x = 1:4, y = posiz.y, tuk.cld$mcletters$Letters, cex = 1.5, col = "red")
 legend(3, 1.2,
-c("Convenzionale", "Biologico"),
-box.col = "transparent",
-fill=c(5,6), cex=0.8,  ncol = 1)
+       c("Convenzionale", "Biologico"),
+       box.col = "transparent",
+       fill=c(5,6), cex=0.8,  ncol = 1)
 ##points(y = jitter(rep(1:12, each = 6), 0.5),
 ##x = unlist(split(densita.apparente, interaction(LAVORAZIONE, TRT, YEAR))),
 ##cex = 2, pch = 4)
@@ -1567,27 +1570,27 @@ plot(lm.Densita)
 
 <<importa_petrolio, echo=FALSE, eval=TRUE>>=
 df.petrolio <-
-read.table(file.path(DirElab, "df_spinta.csv"),
-header = T, sep = "")
+    read.table(file.path(DirElab, "df_spinta.csv"),
+               header = T, sep = "")
 fattore <- with(df.petrolio, interaction(TRT, LAVORAZIONE))
 amod <- aov(df.petrolio$densita.apparente ~ fattore)
 HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
 tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
 tuk.cld <- cld(tuk) #letter-based display)
 summary.petrolio <-
-data.frame(
-aggregate(densita.apparente ~ TRT+LAVORAZIONE,
-data = df.petrolio,
-function(x){round(mean(x, na.rm=TRUE),2)}),
-ST.DEV=
-aggregate(densita.apparente ~ TRT+LAVORAZIONE,
-data = df.petrolio,
-function(x){round(sd(x, na.rm=TRUE),2)})[,3],
-n= aggregate(densita.apparente ~ TRT+LAVORAZIONE,
-data = df.petrolio,
-function(x){sum(!is.na(x))})[,3],
-Tukey =     as.vector(tuk.cld$mcletters$Letters)
-)
+    data.frame(
+        aggregate(densita.apparente ~ TRT+LAVORAZIONE,
+                  data = df.petrolio,
+                  function(x){round(mean(x, na.rm=TRUE),2)}),
+        ST.DEV=
+            aggregate(densita.apparente ~ TRT+LAVORAZIONE,
+                      data = df.petrolio,
+                      function(x){round(sd(x, na.rm=TRUE),2)})[,3],
+        n= aggregate(densita.apparente ~ TRT+LAVORAZIONE,
+                     data = df.petrolio,
+                     function(x){sum(!is.na(x))})[,3],
+        Tukey =     as.vector(tuk.cld$mcletters$Letters)
+    )
 
 ##names(summary.campo)[4] <- "Dens.app.g.cmc"
 attach(summary.petrolio)
@@ -1597,6 +1600,8 @@ names(summary.petrolio) <- c("Conduzione","Lavorazione","Media","Dev. std", "n",
 summary.petrolio$Conduzione <- c("Convenzionale", rep("", 2), "Organico", rep("", 2))
 summary.petrolio$Lavorazione <- mapvalues(summary.petrolio$Lavorazione, from = c("Ara", "Rip", "Fzo"),
                                           to = c("Arato", "Rippato", "Frangizollato"))
+summary.petrolio <- rbind(summary.petrolio[1:3,], rep(NA, 6), 
+                          summary.petrolio[3:6,])
 @ 
 
 Il metodo \emph{Clod} ha permesso, grazie alla sua speditività, di
@@ -1604,28 +1609,37 @@ analizzare tutte le 108 combinazioni dei fattori dell'esperimento:
 per ogni combinazione sono stati analizzati tre campioni. La media dei
 tre campioni è stata usata per l'analisi dei dati.
 I valori della densità apparente calcolati mediante l'equazione
-\ref{eq:densitapetrolio} sono mediamente più elevati (media;
-(\SI{\Sexpr{round(mean(df.petrolio$densita.apparente, na.rm=T),2)}}{\gram\per\cubic\centi\metre}
+\ref{eq:densitapetrolio} sono mediamente più elevati (media:
+(\Sexpr{round(mean(df.petrolio$densita.apparente, na.rm=T),2)}\SI{}{\gram\per\cubic\centi\metre})
 rispetto a quelli ottenuti utilizzando il metodo \emph{Core}
-(\SI{\Sexpr{round(mean(df.dueAnni$densita.apparente, na.rm=),2)}}{\gram\per\cubic\centi\metre}
- \todo[inline]{righe vuote tra Conduzioni}
+(\Sexpr{round(mean(df.dueAnni$densita.apparente, na.rm=TRUE),2)}\SI{}{\gram\per\cubic\centi\metre}).
 
-<<Sommario_petrolio, echo=FALSE, eval=TRUE, results=tex>>=
-tabella.petrolio <-
-xtable(summary.petrolio,
-label = 'tab:summaryClod', align  = "lllcccc",
-caption =
-"Valori medi della densit\\`a apparente (in
-\\SI{}{\\gram\\per\\cubic\\centi\\metre}),
-relativi al tipo di conduzione e lavorazione ", 
-digits =  c(rep(0,3),2,2,0,0))
-print(tabella.petrolio, include.rownames=FALSE, caption.placement = "top")
+<<Analisi_Petrolio, echo=FALSE, eval=TRUE>>=
+lm.spinta <-
+lm(densita.apparente ~ TRT + LAVORAZIONE, data = df.petrolio)
+
+anova_spinta <-
+anova(lm.spinta)
+
+summary_spinta <-
+summary(lm.spinta)
 @
 
-In tabella \ref{tab:summaryClod} è riportata l'ANOVA dei dati
-\todo[inline]{mica vero !! è la 3.4 con l'anova} di densità apparente
-relativi al tipo di \emph{Conduzione}. In Fig. \ref{fig:boxplotClod} è
-riportato il boxplot.
+<<Analisi_Petrolio, echo=FALSE, eval=TRUE, results=tex>>=
+rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Totale")
+tabella.spinta.anova <-
+xtable(anova_spinta,
+label = 'tab:anova piccoli aggregati', align = 'lrrrrr',
+caption = ' Tabella ANOVA per i valori di densit\\`a misurati con il metodo \\emph{Clod}',
+digits = c(0,0,rep(3,4))
+)
+print(tabella.spinta.anova, caption.placement = "top")
+@
+
+In tabella \ref{tab:anova piccoli aggregati} è riportata la tabella
+dell'analisi della varianza condizionata alla \emph{conduzione} e alla
+\emph{lavorazione}; mentre in figura \ref{fig:boxplotClod} è riportato
+il boxplot.
 
 
 <<label = boxplotpetr, fig.width=0.8, fig.height=0.8, echo=FALSE, fig = TRUE, include = FALSE>>=
@@ -1666,63 +1680,68 @@ with(data = df.petrolio,
 
 @
 
+
 \begin{figure}[ht]
   \centering
-<<label=figmah, fig=TRUE, echo=FALSE, width = 5.4, height  = 5.4 >>=
-<<boxplotpetr>>
-@
+  % <<label=figboh2, fig=TRUE, echo=FALSE, width=5.4, height=5.4 >>=
+  % <<ResiduiCampo>>
+% @
+  \includegraphics[width=0.9\textwidth]{boxClod.pdf}
   \caption[Boxplot dei valori di densità apparente: metodo \emph{Clod}
   ]{Boxplot dei valori di densità apparente dei campioni misurati col metodo di
     analisi \emph{Clod}; gli appezzamenti condotti convenzionalmente (a
     sinistra) hanno valori più alti degli appezzamenti
     condotti a Biologico (a destra)}
   \label{fig:boxplotClod}
-
 \end{figure}
 \FloatBarrier
 
+% \begin{figure}[ht]
+%   \centering
+% <<label=figmah, fig=TRUE, echo=FALSE, width = 5.4, height  = 5.4 >>=
+% <<boxplotpetr>>
+% @
+%   \caption[Boxplot dei valori di densità apparente: metodo \emph{Clod}
+%   ]{Boxplot dei valori di densità apparente dei campioni misurati col metodo di
+    %     analisi \emph{Clod}; gli appezzamenti condotti convenzionalmente (a
+%     sinistra) hanno valori più alti degli appezzamenti
+%     condotti a Biologico (a destra)}
+%   \label{fig:boxplotClod}
+
+% \end{figure}
+% \FloatBarrier
+
 L'analisi della varianza, (Tab. \ref{tab:anova piccoli aggregati})
-indica che entrambi i fattori sono statisticamente significativi.\todo[inline]{a livello p ?}
+indica che entrambi i fattori sono statisticamente significativi ($p<0.05$)
 Avendo verificato l'assenza di interazioni tra \emph{Conduzione} e
 \emph{Lavorazione} (vedi pag. \pageref{mod:MetodoClod}) è quindi stato
-effettuato un test di Tukey-Siegel.
+effettuato un test di Tukey-Siegel ($p<0.05$).
 
-<<Analisi_Petrolio, echo=FALSE, eval=TRUE>>=
-lm.spinta <-
-lm(densita.apparente ~ TRT + LAVORAZIONE, data = df.petrolio)
+%La tabella dei contrasti %\dubbio{Gigi dice che non si chiama t-table}
+%(Tab. \ref{tab:sommario piccoli aggregati}) 
 
-anova_spinta <-
-anova(lm.spinta)
-
-summary_spinta <-
-summary(lm.spinta)
+<<Sommario_petrolio, echo=FALSE, eval=TRUE, results=tex>>=
+tabella.petrolio <-
+xtable(summary.petrolio,
+label = 'tab:summaryClod', align  = "lllcccc",
+caption =
+"Valori medi della densit\\`a apparente (in
+\\SI{}{\\gram\\per\\cubic\\centi\\metre}),
+relativi al tipo di conduzione e lavorazione ", 
+digits =  c(rep(0,3),2,2,0,0))
+print(tabella.petrolio, include.rownames=FALSE, caption.placement = "top")
 @
 
-<<Analisi_Petrolio, echo=FALSE, eval=TRUE, results=tex>>=
-rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Totale")
-tabella.spinta.anova <-
-xtable(anova_spinta,
-label = 'tab:anova piccoli aggregati', align = 'lrrrrr',
-caption = ' Tabella ANOVA per i valori di densit\\`a misurati con il metodo \\emph{Clod}',
-digits = c(0,0,rep(3,4))
-)
-print(tabella.spinta.anova, caption.placement = "top")
 
-@
-
-La tabella dei contrasti %\dubbio{Gigi dice che non si chiama t-table}
-(Tab. \ref{tab:sommario piccoli aggregati}) mostra come i terreni a
-conduzione Biologica abbiano una densità apparente minore
-(\todo[inline]{valore medio e unità misura}) rispetto a quelli a
-conduzione Convenzionale (\todo[inline]{valore medio e unità misura});
-il terreno in cui è stata effettuata l'aratura
-\todo[inline]{convenzionale}, risulta più denso rispetto ai terreni
-rippati e frangizollati.
+Il test di Tukey in tabella \ref{tab:summaryClod}, mostra come i
+campioni provenienti dai terreni \emph{Convenzionali arati}, siano
+significativamente ($p<0.05$) più densi rispetto agli altri, mentre
+i campioni provenienti dai terreni \emph{Biologici frangizollato}
+abbiano una densità significativamente minore. 
 
 
 
-<<Summary_Petrolio, echo=FALSE, eval=TRUE, results=tex>>=
-
+<<Summary_Petrolio, echo=FALSE, eval=FALSE, results=tex>>=
 summary_spinta <- coef(summary_spinta)
 rownames(summary_spinta) <-
 c("CO Arato","Scostamento OO",
@@ -1733,8 +1752,8 @@ label = 'tab:sommario piccoli aggregati', align = 'lrrrr',
 caption = 'sommario del modello adattato per i valori misurati con il metodo \\emph{Clod}',
 
 )
-print(tabella.summary.spinta, caption.placement = "top")
-vec.paletti <- c(250, 20)
+#print(tabella.summary.spinta, caption.placement = "top")
+
 #vec.paletti <- c(180, 50)
 #https://books.google.it/books?hl=it&lr=&id=gDnLAwAAQBAJ&oi=fnd&pg=PA15&dq=the+soil+habitat+voroney+heck&ots=rfoIOSpZhk&sig=4KK3HFUIYP2oAsd8FZIhEpv_iNg#v=onepage&q=the%20soil%20habitat%20voroney%20heck&f=false
 @
@@ -1748,6 +1767,7 @@ plot(lm.spinta)
 \section{Dinamica della distribuzione della dimensione degli aggregati}
 
 <<Import_aggregati, echo = FALSE, eval = TRUE>>=
+vec.paletti <- c(250, 20)
 df.data <-
 read.table(file.path(DirElab, "Stabilita_wide.csv"),
 sep = ";", dec = ".", header=TRUE
@@ -1786,9 +1806,9 @@ data.frame(df.data[,c(1:13,18,120)],
 MACRO = apply(df.data[,lis.paletti$uno], 1,
 function(x) sum(x, na.rm=TRUE)),
 MESO = apply(df.data[,lis.paletti$due], 1,
-function(x) sum(x, na.rm=TRUE)),
+             function(x) sum(x, na.rm=TRUE)),
 MICRO = apply(df.data[,lis.paletti$tre], 1,
-function(x) sum(x, na.rm=TRUE))
+              function(x) sum(x, na.rm=TRUE))
 )
 require(compositions)
 
@@ -1797,61 +1817,92 @@ require(compositions)
 ###############################
 
 getModelMatrix <- function(object,
-newdata=NULL,
-na.action=na.pass) {
-  if( is.null(newdata) )
-  return(model.matrix(object))
-  Terms <- delete.response(terms(object))
-  mf <- model.frame(Terms,newdata,na.action=na.action,
-  xlev = object$xlevels)
-  if (!is.null(cl <- attr(Terms, "dataClasses")))
-  .checkMFClasses(cl, mf)
-  model.matrix(Terms, mf, contrasts.arg = object$contrasts)
+                           newdata=NULL,
+                           na.action=na.pass) {
+    if( is.null(newdata) )
+        return(model.matrix(object))
+    Terms <- delete.response(terms(object))
+    mf <- model.frame(Terms,newdata,na.action=na.action,
+                      xlev = object$xlevels)
+    if (!is.null(cl <- attr(Terms, "dataClasses")))
+        .checkMFClasses(cl, mf)
+    model.matrix(Terms, mf, contrasts.arg = object$contrasts)
 }
 lis.paletti <-
-list(uno=which(diametri > vec.paletti[1])+18,
-due=which(diametri < vec.paletti[1] & diametri > vec.paletti[2] )+18,
-tre=which(diametri < vec.paletti[2])+18
-)
+    list(uno=which(diametri > vec.paletti[1])+18,
+         due=which(diametri < vec.paletti[1] & diametri > vec.paletti[2] )+18,
+         tre=which(diametri < vec.paletti[2])+18
+         )
 df.tessitura <-
-data.frame(df.data[,c(1:13,18,120)],
-MACRO = apply(df.data[,lis.paletti$uno], 1,
-function(x) sum(x, na.rm=TRUE)),
-MESO = apply(df.data[,lis.paletti$due], 1,
-function(x) sum(x, na.rm=TRUE)),
-MICRO = apply(df.data[,lis.paletti$tre], 1,
-function(x) sum(x, na.rm=TRUE))
-)
+    data.frame(df.data[,c(1:13,18,120)],
+               MACRO = apply(df.data[,lis.paletti$uno], 1,
+                             function(x) sum(x, na.rm=TRUE)),
+               MESO = apply(df.data[,lis.paletti$due], 1,
+                            function(x) sum(x, na.rm=TRUE)),
+               MICRO = apply(df.data[,lis.paletti$tre], 1,
+                             function(x) sum(x, na.rm=TRUE))
+               )
 questi <-
-with(df.tessitura, which(HUMIDITY=="wet"))
+    with(df.tessitura, which(HUMIDITY=="wet"))
 df.plot <- df.tessitura[questi,]
 Y.Msizer1 <-
-acomp(df.plot[, 16:18])
+    acomp(df.plot[, 16:18])
 lm.2 <-
-with(df.plot, lm(ilr(Y.Msizer1) ~ COND+TIME2+I(TIME2^2)))
+    with(df.plot, lm(ilr(Y.Msizer1) ~ COND+TIME2+I(TIME2^2)))
 
 @
 
 
-Per la costruzione dei modelli statistici è stato escluso il fattore
+Per l'adattamento dei modelli statistici è stato escluso il fattore
 \emph{lavorazione} in quanto non significativo.
 
-Nel modello statistico è presente la variabile continua \emph{tempo}
-espressa al quadrato la quale, come è possibile vedere dalla tabella
-ANOVA (Tab. \ref{tab:anova_compWET}), è significativa.
+\begin{samepage}
+Il modello composizionale adattato per i dati linearizzati è il seguente:
+
+\nopagebreak
+\begin{modello}
+  \bm{Y} \sim \bm{\mu}  \oplus \bm{\beta_1} \odot x_1 \oplus \bm{\beta_2} \odot x_2 \oplus
+  \bm{\beta_3} \odot x_2^2 \oplus \bm{\epsilon}
+  \label{mod:Stabilita}
+\end{modello}
+
+Dove:
+
+\nopagebreak
+\begin{tabular}{lp{12cm}}
+  $\bm{Y}$  & = Composizione (tre componenti: \emph{macroaggregati,
+              mesoaggregati, microaggregati});\\
+  $\bm{\mu}$     & = media generale;\\
+  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
+  $\bm{\beta_2}$  & = coefficiente della variabile \emph{tempo};\\
+  $\bm{\beta_3}$ & = coefficiente della variabile \emph{tempo} elevata al quadrato;\\
+  $\bm{\epsilon}$ & = residui o errore.
+\end{tabular}
+\end{samepage}
+\vspace*{3em}
+
+La notazione $\oplus$ e $\odot$ è tipica delle operazioni algebriche
+negli spazi composizionali (appendice \ref{sec:composizionale}).
+
+Nel modello composizionale \ref{mod:Stabilita} è presente la variabile
+continua \emph{tempo} espressa al quadrato la quale, come è possibile
+vedere dalle tabella dell'analisi della varianza
+(Tab. \ref{tab:anova_compWET} e \ref{tab:anova_compDRY}), è
+significativa.
 
 La misura è stata effettuata sia su aggregati essiccati all'aria che
 su aggregati inumiditi, per studiare il fenomeno dello
-\emph{slaking}. Di conseguenza sono stati creati due modelli: uno per
-i campioni inumiditi (\emph{WET}) e uno per i campioni secchi
-(\emph{DRY}). 
+\emph{slaking}. Di conseguenza sono stati adattati due modelli: uno
+per i campioni inumiditi (\emph{WET}) e uno per i campioni secchi
+(\emph{DRY}).
 
 
-L'analisi evidenzia che gli aggregati provenienti da appezzamenti
-condotti convenzionalmente, successivamente all'immersione, si
-disgregano generando frammenti più grandi di quanto non facciano gli
-aggregati provenienti da appezzamenti a conduzione Biologica.  E
-questo avviene sia con gli aggregati umidi che con quelli essiccati.
+La tabella dell'analisi della varianza evidenzia che gli aggregati
+provenienti da appezzamenti condotti convenzionalmente,
+successivamente all'immersione, si disgregano generando frammenti più
+grandi di quanto non facciano gli aggregati provenienti da
+appezzamenti a conduzione Biologica; questo avviene anche con gli
+aggregati essiccati.
 
 Questo si ricavare dall'intercetta del modello; per quanto riguarda i
 valori di pendenza e di curvatura, questi sono invarianti rispetto alla
@@ -1864,11 +1915,24 @@ con la conduzione \emph{Convenzionale}.
 
 
 <<label = plotacompWETDRY, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+tessitura8rino <- 
+    read.table(file.path(DirData, "tessitureXstabilità.csv"), sep = ";", dec = ",", header = TRUE)[,-1]
+tessitura8rino2 <- 
+    cbind(tessitura8rino[,1:3][c(TRUE,FALSE,FALSE),],
+          matrix(tessitura8rino[,4], ncol = 3, byrow = TRUE))[,c(1:3, 6,5,4)]
+colnames(tessitura8rino2)[4:6] <- c("MACRO", "MESO", "MICRO")
+
 
 modello <- lm.2
 coefs <-  ilrInv(coef(modello), orig = Y.Msizer1)
 alpha <- 0.05
+
 plot(Y.Msizer1, cex=0.15, col=df.plot$COND, axes = TRUE, plotMissings = FALSE)
+plot(acomp(tessitura8rino2[,4:6]), cex=1.5, 
+     pch = 18, 
+     col=as.numeric(rev(tessitura8rino2$CONDUZIONE)),
+     add = TRUE)
+
 ## macro meso micro
 ## plot(acomp(c(2,2,2)), pch = 20, cex = 2, add = TRUE, col = 1)
 ## plot(acomp(c(80,5,15)), pch = 20, cex = 2, add = TRUE, col = 2)
@@ -1879,19 +1943,19 @@ plot(Y.Msizer1, cex=0.15, col=df.plot$COND, axes = TRUE, plotMissings = FALSE)
 ## plot(acomp(c(5, 55 ,40)), pch = 20, cex = 2, add = TRUE, col = 3)
 on.ultra.off <- c(0, 11, 23)
 CO <- round(matrix(coefs[1,] +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-ncol = 3, byrow = FALSE), 3)
+                   acomp(coefs[3,])*on.ultra.off +
+                   acomp(coefs[4,])*on.ultra.off^2,
+                   ncol = 3, byrow = FALSE), 3)
 OO <- round(matrix(acomp(coefs[1,]) +
-acomp(coefs[2,]) +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-ncol = 3, byrow = FALSE), 3)
+                   acomp(coefs[2,]) +
+                   acomp(coefs[3,])*on.ultra.off +
+                   acomp(coefs[4,])*on.ultra.off^2,
+                   ncol = 3, byrow = FALSE), 3)
 dati.iufd <- rbind(CO*100, OO*100)
-#i = inizio, u = accension ultrasuoni, f = fine d = dry/w = wet
+                                        #i = inizio, u = accension ultrasuoni, f = fine d = dry/w = wet
 Conduzione <-
-c("Convenzionale"," ", " ",
-"Biologico "," "," ")
+    c("Convenzionale"," ", " ",
+      "Biologico "," "," ")
 Fase <- rep(c("misura","inizio sonicatura", "fine misura"),2)
 colnames(dati.iufd) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufd <- cbind(Conduzione, Fase, dati.iufd)
@@ -1901,57 +1965,57 @@ df.iufd <- rbind(df.iufd[1:3,], "", df.iufd[4:6,])
 
 ## banda.predizione <- FALSE
 ## for(i in 1:2){
-  ##     for(k in 0:23){
-    ##         newdata <-
-    ##             list(COND = levels(df.plot$COND)[i],
-    ##                  TIME2 = k)
-    ##         X <- getModelMatrix(modello,newdata)
-    ##         prediction <- ilrInv(predict(modello,newdata=newdata),orig=Y)
-    ##         varEpsilon = var(modello)
-    ##         XX <- kronecker(diag(ncol(predict(modello))),X)
-    ##         estVar <- XX %*% vcov(modello) %*% t(XX)
-    ##         predVar <- estVar+varEpsilon
-    ##         plot(prediction,  add=TRUE, col= i, type= "b")
-    ##         ## ellipses(prediction,ilrvar2clr(estVar),
-    ##         ##          r=ConfRadius(modello,1-alpha), col=i)
-    ##         if(banda.predizione)
-    ##             ellipses(prediction,ilrvar2clr(predVar),
-    ##                      r=ConfRadius(modello,1-alpha), col=i)
-    ##     }
-  ## }
+##     for(k in 0:23){
+##         newdata <-
+##             list(COND = levels(df.plot$COND)[i],
+##                  TIME2 = k)
+##         X <- getModelMatrix(modello,newdata)
+##         prediction <- ilrInv(predict(modello,newdata=newdata),orig=Y)
+##         varEpsilon = var(modello)
+##         XX <- kronecker(diag(ncol(predict(modello))),X)
+##         estVar <- XX %*% vcov(modello) %*% t(XX)
+##         predVar <- estVar+varEpsilon
+##         plot(prediction,  add=TRUE, col= i, type= "b")
+##         ## ellipses(prediction,ilrvar2clr(estVar),
+##         ##          r=ConfRadius(modello,1-alpha), col=i)
+##         if(banda.predizione)
+##             ellipses(prediction,ilrvar2clr(predVar),
+##                      r=ConfRadius(modello,1-alpha), col=i)
+##     }
+## }
 plot(acomp(coefs[1,]) +
-acomp(coefs[3,])*0:23 +
-acomp(coefs[4,])*(0:23)^2,
-col=1,  type="l", add=TRUE)## sequenza temporale CO
+     acomp(coefs[3,])*0:23 +
+     acomp(coefs[4,])*(0:23)^2,
+     col=1,  type="l", add=TRUE)## sequenza temporale CO
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-acomp(coefs[3,])*0:23+
-acomp(coefs[4,])*(0:23)^2,
-col=2, add=TRUE, type="l")## sequenza temporale OO
-
-plot(acomp(coefs[1,]) +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-col="white",
-add=TRUE, pch=16, cex = 2)## start stop CO
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-col="white", add=TRUE, pch= 16, cex = 2)## start stop OO
-
-
+     acomp(coefs[3,])*0:23+
+     acomp(coefs[4,])*(0:23)^2,
+     col=2, add=TRUE, type="l")## sequenza temporale OO
 
 plot(acomp(coefs[1,]) +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-col=1, add=TRUE, pch=c("c", "D","C"))## start stop CO
+     acomp(coefs[3,])*on.ultra.off +
+     acomp(coefs[4,])*on.ultra.off^2,
+     col="white",
+     add=TRUE, pch=16, cex = 2)## start stop CO
+plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
+     acomp(coefs[3,])*on.ultra.off +
+     acomp(coefs[4,])*on.ultra.off^2,
+     col="white", add=TRUE, pch= 16, cex = 2)## start stop OO
+
+
+
+plot(acomp(coefs[1,]) +
+     acomp(coefs[3,])*on.ultra.off +
+     acomp(coefs[4,])*on.ultra.off^2,
+     col=1, add=TRUE, pch=c("c", "D","C"))## start stop CO
 
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-col=2, add=TRUE, pch= c("o","D","O"))## start stop OO
+     acomp(coefs[3,])*on.ultra.off +
+     acomp(coefs[4,])*on.ultra.off^2,
+     col=2, add=TRUE, pch= c("o","D","O"))## start stop OO
 
 questi <-
-with(df.tessitura, which(HUMIDITY=="dry"))
+    with(df.tessitura, which(HUMIDITY=="dry"))
 df.plot <- df.tessitura[questi,]
 Y.Msizer <- acomp(df.plot[, 16:18])
 lm.2.2 <-   with(df.plot,lm(ilr(Y.Msizer) ~ COND+TIME2+I(TIME2^2)))
@@ -1959,20 +2023,20 @@ modelloMsizer <- lm.2.2
 coefs <-  ilrInv(coef(modelloMsizer), orig=Y.Msizer)
 ##############################################################
 CO <- round(matrix(coefs[1,] +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-ncol = 3, byrow = FALSE), 3)
+                   acomp(coefs[3,])*on.ultra.off +
+                   acomp(coefs[4,])*on.ultra.off^2,
+                   ncol = 3, byrow = FALSE), 3)
 OO <- round(matrix(acomp(coefs[1,]) +
-acomp(coefs[2,]) +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-ncol = 3, byrow = FALSE), 3)
+                   acomp(coefs[2,]) +
+                   acomp(coefs[3,])*on.ultra.off +
+                   acomp(coefs[4,])*on.ultra.off^2,
+                   ncol = 3, byrow = FALSE), 3)
 dati.iufw <- rbind(CO*100, OO*100)
-#i = inizio, u = accension ultrasuoni, f = fine d = dry/w = wet
+                                        #i = inizio, u = accension ultrasuoni, f = fine d = dry/w = wet
 rm(CO);rm(OO)
 Conduzione <-
-c("Convenzionale"," ", " ",
-"Biologico "," "," ")
+    c("Convenzionale"," ", " ",
+      "Biologico "," "," ")
 Fase <- rep(c("inizio misura","inizio sonicatura", "fine misura"),2)
 colnames(dati.iufw) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufw <- cbind(Conduzione, Fase, dati.iufw)
@@ -1980,52 +2044,51 @@ df.iufw <- rbind(df.iufw[1:3,], "", df.iufw[4:6,])
 
 plot(Y.Msizer, cex=0.25, col= as.numeric(df.plot$COND)+2, add=TRUE)
 plot(acomp(coefs[1,]) +
-acomp(coefs[3,])*0:23 +
-acomp(coefs[4,])*(0:23)^2,
-col=3,  type="l", add=TRUE)## sequenza temporale CO
+     acomp(coefs[3,])*0:23 +
+     acomp(coefs[4,])*(0:23)^2,
+     col=3,  type="l", add=TRUE)## sequenza temporale CO
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-acomp(coefs[3,])*0:23+
-acomp(coefs[4,])*(0:23)^2,
-col=4, add=TRUE, type="l")## sequenza temporale OO
+     acomp(coefs[3,])*0:23+
+     acomp(coefs[4,])*(0:23)^2,
+     col=4, add=TRUE, type="l")## sequenza temporale OO
 plot(acomp(coefs[1,]) +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-col="white", add=TRUE, pch=16, cex = 2)## start stop CO
+     acomp(coefs[3,])*on.ultra.off +
+     acomp(coefs[4,])*on.ultra.off^2,
+     col="white", add=TRUE, pch=16, cex = 2)## start stop CO
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-col="white", add=TRUE, pch= 16, cex = 2)## start stop OO
+     acomp(coefs[3,])*on.ultra.off +
+     acomp(coefs[4,])*on.ultra.off^2,
+     col="white", add=TRUE, pch= 16, cex = 2)## start stop OO
 plot(acomp(coefs[1,]) +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
+     acomp(coefs[3,])*on.ultra.off +
+     acomp(coefs[4,])*on.ultra.off^2,
+     col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-acomp(coefs[3,])*on.ultra.off +
-acomp(coefs[4,])*on.ultra.off^2,
-col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
+     acomp(coefs[3,])*on.ultra.off +
+     acomp(coefs[4,])*on.ultra.off^2,
+     col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
 ## for(i in 1:2){
-  ##     for(k in 0:23){
-    ##         newdata <-
-    ##             list(COND = levels(df.plot$COND)[i],
-    ##                  TIME2 = k)
-    ##         X <- getModelMatrix(modello,newdata)
-    ##         prediction <- ilrInv(predict(modello,newdata=newdata),orig=Y)
-    ##         varEpsilon = var(modello)
-    ##         XX <- kronecker(diag(ncol(predict(modello))),X)
-    ##         estVar <- XX %*% vcov(modello) %*% t(XX)
-    ##         predVar <- estVar+varEpsilon
-    ##         plot(prediction,  add=TRUE, col= i, type= "b")
-    ##         ## ellipses(prediction,ilrvar2clr(estVar),
-    ##         ##          r=ConfRadius(modello,1-alpha), col=i)
-    ##         if(banda.predizione)
-    ##             ellipses(prediction,ilrvar2clr(predVar),
-    ##                      r=ConfRadius(modello,1-alpha), col=i)
-    ##     }
-  ## }
+##     for(k in 0:23){
+##         newdata <-
+##             list(COND = levels(df.plot$COND)[i],
+##                  TIME2 = k)
+##         X <- getModelMatrix(modello,newdata)
+##         prediction <- ilrInv(predict(modello,newdata=newdata),orig=Y)
+##         varEpsilon = var(modello)
+##         XX <- kronecker(diag(ncol(predict(modello))),X)
+##         estVar <- XX %*% vcov(modello) %*% t(XX)
+##         predVar <- estVar+varEpsilon
+##         plot(prediction,  add=TRUE, col= i, type= "b")
+##         ## ellipses(prediction,ilrvar2clr(estVar),
+##         ##          r=ConfRadius(modello,1-alpha), col=i)
+##         if(banda.predizione)
+##             ellipses(prediction,ilrvar2clr(predVar),
+##                      r=ConfRadius(modello,1-alpha), col=i)
+##     }
+## }
 legend("topleft",
-c("Dry.CO", "Dry.OO", "CO.Wet", "OO.Wet"),
-fill=1:4, bty = "n")
-
+       c("Dry.CO", "Dry.OO", "CO.Wet", "OO.Wet"),
+       fill=1:4, bty = "n")
 @
 
 
@@ -2043,7 +2106,7 @@ rm(nomi)
 xt.IUFW <- xtable(df.iufw,
 
                   label = 'tab:iufw',
-caption = 'Distribuzione dei frammenti di particelle degli aggregati inumiditi in seguito a:
+                  caption = 'Distribuzione dei frammenti di particelle degli aggregati inumiditi in seguito a:
 i) inizio misura (immersione):
 ii) inizio sonicatura
 iii) fine ciclo ',  digits = 1
@@ -2064,10 +2127,10 @@ df.iufd <-
     )
 names(df.iufd) <- nomi
 rm(nomi)
-
+df.iufd[c(1,5),2] <- "inizio misura"
 xt.IUFD <- xtable(df.iufd,
-label = 'tab:iufd',
-caption = 'Distribuzione dei frammenti di particelle degli aggregati essiccati in seguito a:
+                  label = 'tab:iufd',
+                  caption = 'Distribuzione dei frammenti di particelle degli aggregati essiccati in seguito a:
 i) inizio misura (immersione):
 ii) inizio sonicatura
 iii) fine ciclo ', digits = 1
@@ -2081,9 +2144,9 @@ anova.comp.wet[1:4,6] <- "<10^-3"
 
 rownames(anova.comp.wet) <- c("Intercetta","Conduzione", "Tempo", "Tempo^2","Totale")
 anova_tabella <- xtable(anova.comp.wet,
-label = 'tab:anova_compWET', align = 'lrrrrrr',
-caption = 'ANOVA stabilit\\`a aggregati per i dati WET '
-)
+                        label = 'tab:anova_compWET', align = 'lrrrrrr',
+                        caption = 'Analisi della varianza relativa ai dati composizionali per la stabilit\\`a degli aggregati inumiditi'
+                        )
 print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 @
 
@@ -2094,9 +2157,9 @@ anova.comp.dry <- anova(lm.2.2)
 rownames(anova.comp.dry) <- c("Intercetta","Conduzione","Tempo", "Tempo^2","Totale")
 anova.comp.dry[1:4,6] <- "<10^-3"
 anova_tabella_dry<- xtable(anova.comp.dry,
-label = 'tab:anova_compWET', align = 'lrrrrrr',
-caption = 'ANOVA stabilit\\`a aggregati per i dati DRY '
-)
+                           label = 'tab:anova_compDRY', align = 'lrrrrrr',
+                           caption = 'Analisi della varianza relativa ai dati composizionali per la stabilit\\`a degli aggregati secchi all\'aria'
+                           )
 print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRUE)
 @
 
@@ -2104,21 +2167,22 @@ print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRU
 
 
 \begin{figure}[ht]
-  \centering
+\centering
 <<label=figboh3,fig=TRUE,echo=FALSE, width=5.4, height=5.4>>=
 <<plotacompWETDRY>>
 @
 
-  \caption[Evoluzione della distribuzione granulometrica delle
-  particelle in seguito alla distruzione degli aggregati]{Evoluzione
-    della distribuzione granulometrica delle particelle liberatisi in
-    seguito a: \newline i) inizio misura (immersione, punti indicati
-    dalle lettere minuscole \emph{c} e \emph{o}) \newline ii) accensione
-    sonicatore (lettere \emph{W} e \emph{D}) \newline iii) fine ciclo.
-    \newline Gli apici del triangolo rappresentano particelle maggiori
-    di \Sexpr{vec.paletti[1]} (MACRO), comprese tra
-    \Sexpr{vec.paletti[1]} e \Sexpr{vec.paletti[2]} (MESO) e inferiori a
-    \SI{\Sexpr{vec.paletti[2]}}{\micro\metre} (MICRO)}
+\caption[Evoluzione della distribuzione granulometrica delle
+particelle in seguito alla distruzione degli aggregati]{Evoluzione
+  della distribuzione granulometrica delle particelle liberatisi in
+  seguito a: \newline i) inizio misura (immersione, punti indicati
+  dalle lettere minuscole \emph{c} e \emph{o}) \newline ii) accensione
+  sonicatore (lettere \emph{W} e \emph{D}) \newline iii) fine ciclo.
+  \newline Gli apici del triangolo rappresentano particelle maggiori
+  di \Sexpr{vec.paletti[1]} (\emph{Macro}), comprese tra
+  \Sexpr{vec.paletti[1]} e \Sexpr{vec.paletti[2]} (\emph{Meso}) e
+  inferiori a \SI{\Sexpr{vec.paletti[2]}}{\micro\metre}
+  (\emph{Micro})}
 \end{figure}
 \FloatBarrier
 
@@ -2134,59 +2198,59 @@ qqnorm(ilrInv(resid(modelloMsizer), orig=Y.Msizer))
 \section{Distribuzione dimensionale dei pori}
 
 <<Import_porosimetria, echo = FALSE, eval = TRUE>>=
-#PoroElabora <- FALSE
-# ## Si importano i soli file "CSV" MAIUSCOLI, che derivano dalla manipolazione dei dati grezzi della porosimetria
+                                        #PoroElabora <- FALSE
+                                        # ## Si importano i soli file "CSV" MAIUSCOLI, che derivano dalla manipolazione dei dati grezzi della porosimetria
 vec.paletti.poro <- c(0.5, 50) 
 ## if(PoroElabora){
-  ##    source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
-  ##     }else{
-  ##         NULL}
+##    source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
+##     }else{
+##         NULL}
 
 Export.Dir <-
-file.path(DirMain, "dati_elaborati/porosimetria")
+    file.path(DirMain, "dati_elaborati/porosimetria")
 nomi.file.elab <- 
-list.files(Export.Dir, pattern = ".CSV")
+    list.files(Export.Dir, pattern = ".CSV")
 
 df.data <- data.frame()
 
 for(i in 1:length(nomi.file.elab)){
-  file.in.elaborazione <-
-  nomi.file.elab[i]
-  path.completo <-
-  file.path(Export.Dir,file.in.elaborazione)
-  df.this <-
-  read.table(file=path.completo,
-  sep=";", dec=",", header=TRUE,
-  fileEncoding =  "UTF-16LE")[-4,]
-  df.this$MAN <- substr(file.in.elaborazione, 3,3)
-  df.this$FIELD <-  substr(file.in.elaborazione, 4,5 )
-  df.this$TIL <-  substr(file.in.elaborazione, 6,6)
-  df.this$ROW <-  substr(file.in.elaborazione, 7,7)
-  df.this$REP <-  substr(file.in.elaborazione, 8,8)
-  df.this$REPPORO <-  substr(file.in.elaborazione, 10,10)
-  df.data <- rbind.data.frame(df.data, df.this)
+    file.in.elaborazione <-
+        nomi.file.elab[i]
+    path.completo <-
+        file.path(Export.Dir,file.in.elaborazione)
+    df.this <-
+        read.table(file=path.completo,
+                   sep=";", dec=",", header=TRUE,
+                   fileEncoding =  "UTF-16LE")[-4,]
+    df.this$MAN <- substr(file.in.elaborazione, 3,3)
+    df.this$FIELD <-  substr(file.in.elaborazione, 4,5 )
+    df.this$TIL <-  substr(file.in.elaborazione, 6,6)
+    df.this$ROW <-  substr(file.in.elaborazione, 7,7)
+    df.this$REP <-  substr(file.in.elaborazione, 8,8)
+    df.this$REPPORO <-  substr(file.in.elaborazione, 10,10)
+    df.data <- rbind.data.frame(df.data, df.this)
 }
 
 df.data <- 
-df.data[c(2,3,13:18)]
+    df.data[c(2,3,13:18)]
 
 df.data <-
-cbind.data.frame(df.data[c(T,F,F),-(1:2)],
-matrix(df.data[,1], ncol=3, byrow=TRUE)
-)        
+    cbind.data.frame(df.data[c(T,F,F),-(1:2)],
+                     matrix(df.data[,1], ncol=3, byrow=TRUE)
+                     )        
 
 names(df.data)[7:9] <-
-c("Residuals", "Storage", "Transmission")
+    c("Residuals", "Storage", "Transmission")
 require(compositions)
 row.names(df.data) <- 1:dim(df.data)[1]
 PESI <- read.table(file.path(DirElab, "pesoaggre.csv"), sep = ";")$x
 
 df.data <- data.frame(
-df.data[,1:6],
-RESIDUALS = (df.data[,7]-df.data[,8])/PESI, 
-STORAGE = (df.data[,8]-df.data[,9])/PESI, 
-TRANSMISSION = df.data[,9]/PESI
-#    TOT = df.data[,7]/PESI
+    df.data[,1:6],
+    RESIDUALS = (df.data[,7]-df.data[,8])/PESI, 
+    STORAGE = (df.data[,8]-df.data[,9])/PESI, 
+    TRANSMISSION = df.data[,9]/PESI
+                                        #    TOT = df.data[,7]/PESI
 )
 
 ## lm.micropori <- 
@@ -2216,7 +2280,7 @@ df.porosimetria <-
 
 Y <- acomp(df.porosimetria[, 7:9])
 modelloPoro <-
-with(df.porosimetria, lm(ilr(Y) ~ MAN+TIL))
+    with(df.porosimetria, lm(ilr(Y) ~ MAN+TIL))
 coefs.Poro <-  ilrInv(coef(modelloPoro), orig=Y)
 alpha <- 0.05
 ##df.data$TOT <- rowSums(df.data[,7:8])
@@ -2232,8 +2296,37 @@ alpha <- 0.05
 
 
 I dati ottenuti sono stati analizzati mediante tecniche di analisi
-composizionale. In Fig. \ref{fig:Poros_triangolo} e in Tab.
-\ref{tab:poros_anova} sono visibili i valori medi della composizione
+composizionale.
+
+\begin{samepage}
+Il modello composizionale adattato per i dati linearizzati è il seguente:
+
+\nopagebreak
+\begin{modello}
+  \bm{Y} \sim \bm{\mu}  \oplus \bm{\beta_1} \odot x_1 \oplus
+  \bm{\beta_2} \odot x_2 \oplus  \bm{\epsilon}
+  \label{mod:Porosita}
+\end{modello}
+
+Dove:
+
+\nopagebreak
+\begin{tabular}{lp{12cm}}
+  $\bm{Y}$  & = Composizione (tre componenti: pori \emph{residui},
+              pori di \emph{trasmissione} e pori di \emph{immagazzinamento});\\
+  $\bm{\mu}$     & = media generale;\\
+  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
+  $\bm{\beta_2}$  & = coefficiente della variabile \emph{lavorazione},
+                    due livelli: \emph{arato, rippato, frangizollato};\\
+  $\bm{\epsilon}$ & = residui o errore.
+\end{tabular}
+\end{samepage}
+\vspace*{3em}
+
+
+
+In Fig. \ref{fig:Poros_triangolo} e in Tab.
+\ref{tab:Poro_medie} sono visibili i valori medi della composizione
 per ogni combinazione di trattamenti.
 
 <<summary_pori, eval = TRUE, echo = FALSE, results = tex>>=
@@ -2254,7 +2347,7 @@ sommario <-
 tabella_sommario <- 
     xtable(sommario,
            caption = "Sommario della distribuzione dei pori nelle tre classi dimensionali dei dati ottenuti dalla analisi 
-con porosimetria a mercurio", label = 'tab:Poro_medie', align = "lllccc", digits = 0)
+con porosimetria a mercurio", label = 'tab:Poro_medie', align = "lllp{1.25cm}p{3.25cm}p{2cm}", digits = 0)
 print(tabella_sommario, include.rownames=FALSE,
       caption.placement = "top",
       table.placement= "hb")
@@ -2262,22 +2355,24 @@ anova.poros <- round(anova(modelloPoro), 3)
 rownames(anova.poros) <- c("Intercetta","Conduzione", "Lavorazione","Totale")
 anova.poros[1,6] <- "<10^-3"
 anova_tabella <- xtable(anova.poros,
-label = 'tab:poros_anova', align = 'lrrrrrr',
-caption = 'ANOVA del modello composizionale dei dati ottenuti dalle analisi con porosimetria a mercurio '
-)
+                        label = 'tab:poros_anova', align = 'lrrrrrr',
+                        caption = 'ANOVA del modello composizionale dei dati ottenuti dalle analisi con porosimetria a mercurio '
+                        )
 print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
 
-è possibile evincere come i dati non permettano di evidenziare delle
-differenze. I punti all'interno del diagramma ternario si trovano in
-corrispondenza dei pori residui (minori di
-\Sexpr{vec.paletti.poro[1]} \SI{}{\micro\metre}), indicando quindi una
-prevalenza di questi pori rispetto ai pori di trasmissione e immagazzinamento.
+La tabella dell'analisi della varianza, mostra come non sia possibile
+affermare delle differenze tra i dati. I punti all'interno del
+diagramma ternario si trovano in corrispondenza dei pori residui
+(minori di \Sexpr{vec.paletti.poro[1]} \SI{}{\micro\metre}), indicando
+quindi una prevalenza di questi pori rispetto ai pori di trasmissione
+e immagazzinamento (terreno con scarso drenaggio).
 
 <<label = plotacompPore, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
 
-plot(acomp(df.porosimetria[, 7:9]), cex = 2, col = as.numeric(as.factor(df.porosimetria$MAN)), pch = as.numeric(as.factor(df.porosimetria$TIL)))
-#plot(Y)#, cex=2, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
+plot(acomp(df.porosimetria[, 7:9]), cex = 2, col = as.numeric(as.factor(df.porosimetria$MAN)), 
+     pch = as.numeric(as.factor(df.porosimetria$TIL)))
+                                        #plot(Y)#, cex=2, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
 ## intercetta <-
 ## ilrInv(coef(modelloPoro)[1,], orig=Y)
 ## bi <-
@@ -2285,25 +2380,26 @@ plot(acomp(df.porosimetria[, 7:9]), cex = 2, col = as.numeric(as.factor(df.poros
 ## medie <- intercetta+acomp(bi)
 ## plot(medie, col= 3:6, pch = 20, add = TRUE)
 
-legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"), cex = 0.7, pt.cex = 1, col = rep(1:2, each = 3), pch = 1:3, border = "white", fill=NULL)
+legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"), cex = 0.7, pt.cex = 1, 
+       col = rep(1:2, each = 3), pch = 1:3, border = "white", fill=NULL)
 @
- 
+
 % \noindent%
 % \begin{minipage}{\linewidth}% to keep image and caption on one page
 %   \makebox[\linewidth]{%        to center the image
 \begin{figure}[ht]
-  \centering
+\centering
 <<label = figurina, fig=TRUE, echo=FALSE, width=5, height=5>>=
 <<plotacompPore>>
 @
 \caption[Diagramma ternario della distribuzione dei pori]{Diagramma
-  ternario della distribuzione dei pori. Gli apici del triangolo
-  rappresentano le classi dimensionali in cui i pori sono divisi in:
-  inferiori di \Sexpr{vec.paletti.poro[1]} (pori residui), comprese
-  tra \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (pori
-  di immagazzinamento) e superiori di \Sexpr{vec.paletti.poro[2]}
-  \SI{}{\micro\metre} (pori di trasmissione)}
-  \label{fig:Poros_triangolo}
+    ternario della distribuzione dei pori. Gli apici del triangolo
+    rappresentano le classi dimensionali in cui i pori sono divisi in:
+                                                                       inferiori di \Sexpr{vec.paletti.poro[1]} (pori residui), comprese
+    tra \Sexpr{vec.paletti.poro[1]} e \Sexpr{vec.paletti.poro[2]} (pori
+        di immagazzinamento) e superiori di \Sexpr{vec.paletti.poro[2]}
+    \SI{}{\micro\metre} (pori di trasmissione)}
+\label{fig:Poros_triangolo}
 \end{figure}
 % \end{minipage}
 \FloatBarrier
@@ -2321,6 +2417,7 @@ della porosità totale del campione, normalizzato al suo peso.
 
 
 <<pori_totali, eval = TRUE, echo = FALSE, results = tex>>=
+
 lm.totale <- 
     lm(RESIDUALS+STORAGE+TRANSMISSION ~ MAN+TIL, data = df.data)
 anova.totale <- 
@@ -2331,6 +2428,8 @@ anova_tabellaTot <- xtable(anova.totale,
                            caption = 'ANOVA del modello adattato alla porosit\\`a totale', digits = c(0,0, rep(3,4))
                            )
 print(anova_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
+
+
 @ 
 
 
@@ -2344,16 +2443,46 @@ campioni di suolo provenienti da appezzamenti condotti a \emph{Biologico}.
 
 
 <<sommario_totali, eval = TRUE, echo = FALSE, results = tex>>=
-sommario.totale <- 
-    round(coef(summary(lm.totale)),3)
-rownames(sommario.totale) <- 
-    c("Convenzionale Arato", "Biologico Arato", "Convenzionale Rippato", "Convenzionale F.zollato")
-sommario.totale[1,4] <- "<10^-3" 
-sommario_tabellaTot <- xtable(sommario.totale,
-                              label = 'tab:tot_sommario', align = 'lrrrr',
-                              caption = 'Tabella di contingenza del modello adattato alla porosit\\`a totale'
+## sommario.totale <- 
+##     round(coef(summary(lm.totale)),3)
+fattore <- interaction(df.data$MAN, df.data$TIL)
+df.data$TOTALE <- df.data$RESIDUALS+df.data$STORAGE+df.data$TRANSMISSION
+amod <- aov(TOTALE ~ fattore, data=df.data)
+HSD.test(amod, "fattore", group=TRUE, alpha = 0.05)
+tuk <- glht(amod, linfct = mcp(fattore = "Tukey"))
+tuk.cld<- cld(tuk)
+summary.totale <-
+    data.frame(
+        aggregate(TOTALE ~ MAN+TIL,
+                  data = df.data,
+                  function(x){round(mean(x, na.rm=TRUE),2)}),
+        ST.DEV=
+            aggregate(TOTALE ~ MAN+TIL,
+                      data = df.data,
+                      function(x){round(sd(x, na.rm=TRUE),2)})[,3],
+        n= aggregate(TOTALE ~ MAN+TIL,
+                     data = df.data,
+                     function(x){sum(!is.na(x))})[,3],
+        Tukey  = as.vector(tuk.cld$mcletters$Letters)
+    )
+##names(summary.campo)[4] <- "Dens.app.g.cmc"
+attach(summary.totale)
+summary.totale <-
+    summary.totale[order(MAN,TIL),]
+detach(summary.totale)
+names(summary.totale)[1:3] <-c("Conduzione", "Lavorazione", "Porosità totale")
+
+summary.totale$Conduzione <- c("Convenzionale", "", "", "Biologico", "", "")
+summary.totale$Lavorazione <- mapvalues(summary.totale$Lavorazione, from = c("a", "b", "c"), to = c("Arato", "Rippato", "Frangizollato"))
+
+summary.totale <- rbind(summary.totale[1:3,], rep(NA, 6), summary.totale[4:6,])
+
+
+sommario_tabellaTot <- xtable(summary.totale,
+                              label = 'tab:tot_sommario', align = 'llccccc',
+                              caption = 'Sommario della porosit\\`a totale dei dati ricavati dalle analisi della porosimetria a mercurio'
                               )
-print(sommario_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE)
+print(sommario_tabellaTot, caption.placement = "top", include.rownames = FALSE)#, math.style.exponents = TRUE)
 @ 
 
 % \begin{figure}[ht]
@@ -2363,19 +2492,19 @@ print(sommario_tabellaTot, caption.placement = "top")#, math.style.exponents = T
 
 %   @
 %   \caption[didascalia corta]{Distribuzione dei pori in ogni campione misurato
-% }
+    % }
 %   \label{fig:Poros_hist}
-% \end{figure}
+    % \end{figure}
 
 % \begin{figure}[ht]
-%   \centering
+    %   \centering
 %   <<label = istogrammiPoro2, fig=TRUE, echo=FALSE, width=5.4, height=5.4>>=
-%   print(hist.media)
+    %   print(hist.media)
 %   @
 
-%   \caption[didascalia corta]{Distribuzione dei pori: media dei trattamenti}
+    %   \caption[didascalia corta]{Distribuzione dei pori: media dei trattamenti}
 %   \label{fig:Poros_hist}
-% \end{figure}
+    % \end{figure}
 
 %% Essendo la statistica composizionale un tipo di analisi che li
 
@@ -2399,22 +2528,17 @@ print(sommario_tabellaTot, caption.placement = "top")#, math.style.exponents = T
 
 \chapter{Discussione}
 
-L'ipotesi che ci ha portato ad effettuare questa misurazione è data
-dal fatto che la conduzione Biologica, non utilizzando concimi e
-pesticidi di sintesi, avrebbe un minor impatto sulla microflora e
-microfauna tellurica, e di conseguenza ci aspetteremmo una migliore
-struttura favorita dall'attività biologica e dal conseguente
-incremento di sostanza organica.
+\paragraph{Densità apparente con metodi \textit{Core} e \textit{Clod}.}
 
 Dai risultati della densità apparente è emerso che:
 \begin{itemize}
-\item la densità apparente misurata tramite metodo \emph{Core},
-  non evidenzia differenze statisticamente significative tra i trattamenti;
-\item la densità apparente misurata tramite metodo \emph{Clod}
-  mostra differenze statisticamente significative tra i trattamenti.
+\item il metodo \emph{Core}, non mostra differenze significative, né
+  per la conduzione né per la lavorazione;
+\item con il metodo \emph{Clod} sono state rilevate differenze statisticamente
+  significative tra i trattamenti conduzione e lavorazione.
 \end{itemize}
 
-Come si può notare confrontando la tabella \ref{tab:summaryCore} con
+Dal confrontro della tabella \ref{tab:summaryCore} con
 la tabella \ref{tab:summaryClod}, il metodo \emph{Clod} fornisce
 dei  valori di  densità apparente  più elevati  rispetto a  quelli
 misurati utilizzando il metodo \emph{Core}, questo è dovuto al fatto
@@ -2432,10 +2556,14 @@ profondità.
 La t-table in Tab. \ref{tab:anova piccoli aggregati} mostra che,
 nonostante la rilevata significatività statistica, le differenze di
 densità sono dell'ordine della seconda cifra decimale. Questo ci
-permette di affermare: in primo luogo che il numero di campioni è
-idoneo agli obiettivi dello studio, in secondo luogo che i trattamenti
-non risultano significativi dal punto di vista tecnologico, ovvero non
-hanno una rilevanza pratica effettiva. 
+permette di affermare, in primo luogo, che il numero di campioni è
+idoneo agli obiettivi dello studio, in secondo luogo che la
+lavorazione e la conduzione non risultano significativi dal punto di
+vista tecnologico, ovvero non hanno una rilevanza pratica effettiva.
+
+\paragraph{Dinamica della distribuzione della dimensione degli
+  aggregati.}
+
 
 Dall'analisi della stabilità degli aggregati è emersa una maggiore
 stabilità degli aggregati Convenzionali rispetto agli aggregati
@@ -2469,15 +2597,27 @@ stabilità in seguito alla rimozione della sostanza organica
 superficiale, per comprendere se la conduzione influenzi questo tipo
 di sostanza organica.
 
+\paragraph{Distribuzione dimensionale dei pori.}
+
+
 Per quanto riguarda la distribuzione dei pori non sono state
-riscontrate differenze significative tra i trattamenti.
+riscontrate differenze significative tra i trattamenti. Dalla tabella
+\ref{tab:Poro_medie} si può notare una prevalenza di pori
+\emph{residui} rispetto a quelli di \emph{trasmissione} e
+\emph{immagazzinamento}, di si tratta quindi di terreni asfittici e
+con scarso drenaggio; tuttavia dalla stessa tabella si nota una
+tendenza dei terreni condotti a \emph{Biologico} ad avere una maggior
+percentuale di pori utili al movimento dell'acqua rispetto ai terreni
+condotti a \emph{Convenzionale}.
 
 Tuttavia i dati mostrano come i campioni biologici tendano ad avere
 una maggior porosità rispetto ai campioni convenzionali, in linea
 con quanto riscontrato dall'analisi \emph{Clod} e con quanto hanno
-trovato altri autori \citep{ikemura2008some, mendoza2011assessment}.
+trovato altri autori \citep{ikemura2008some,
+  mendoza2011assessment}.
 
-La mancanza di risultati coerenti tra le diverse analisi può essere
+
+La mancanza di coerenza tra le diverse analisi può essere
 spiegata dal disegno sperimentale stesso: lo scopo dello studio era
 infatti quello di valutare l'effetto su alcune caratteristiche fisiche
 del suolo dovute all'impiego di diverse pratiche agronomiche tipiche
@@ -2494,40 +2634,49 @@ considerazione nella bibliografia, hanno utilizzato pratiche di
 concimazioni organiche.
 
 In conclusione, i dati non ci permettono di affermare una differenza
-statisticamente significativa tra le differenti lavorazioni del suolo
-sulle sue caratteristiche fisiche; inoltre non ci permettono di
-confermare che le pratiche agricole Biologiche, senza una adeguata
-concimazione organica, portano a benefici dal punto di vista fisico al
-terreno agrario.
+significativa, dal punto di vista pratico, tra le differenti
+lavorazioni del suolo sulle sue caratteristiche fisiche. 
+
+Si può quindi affermare che le pratiche agricole Biologiche, senza una
+adeguata concimazione organica, non influiscano positivamente sullo
+stato della struttura del terreno.
 
 \chapter{Conclusioni}
 
 Dai risultati è emerso che gli indicatori dello stato fisico del
 suolo non sono in grado di evidenziare differenze significative 
 \begin{itemize}
-\item Densità
+\item Densità apparente del suolo
   \begin{itemize}
-  \item Nessuna differenza col metodo \emph{Core}. 
-  \item Il metodo \emph{Clod} mostra delle differenze per due
-    combinazioni di trattamenti. La differenza è
-    sulla seconda decimale, quindi tecnicamente superflua
+  \item nessuna differenza col metodo \emph{Core};
+  \item il metodo \emph{Clod} mostra delle differenze per i
+    trattamenti \emph{Convenzionale arato}, la differenza è
+    sulla seconda decimale, quindi tecnicamente superflua.
   \end{itemize}
   % In generale si deve considerare che la densità apparente è
-  % principalmente influenzata dalla tessitura \citep{AskinBulkDensity}
+    % principalmente influenzata dalla tessitura \citep{AskinBulkDensity}
   % e solo in secondo luogo dalla quantità di sostanza organica.
-\item Le misura di stabilità hanno riscontrato un maggiore
-  stabilità degli aggregati convenzionali rispetto ai biologici, questo può essere
-  dovuto alla mancata concimazione organica dei campi coltivati
-  biologicamente; nessuna significatività dei trattamenti di lavorazione;
-\item Per quanto riguarda le misure tramite porosimetria al mercurio,
-  la tendenza conferma la maggiore porosità per i campioni di suolo
-  biologico, tuttavia il numero di campioni non è sufficiente a
-  confermare la significatività dei trattamenti.
-\end{itemize}
+    \item dalle misura di stabilità degli aggregati è stata riscontrata
+    una maggiore stabilità degli aggregati provenienti da appezzamenti
+    \emph{Convenzionali} rispetto a quelli provenienti da appezzamenti
+    \emph{Biologici}, questo può essere dovuto alla mancata concimazione
+    organica dei campi condotti a \emph{Biologico}; non sono state
+    riscontrate differenze significative all'interno trattamenti di
+  \emph{lavorazione};
+\item per quanto riguarda le misure tramite porosimetria al mercurio,
+  la tendenza conferma la maggiore porosità totale per i campioni di
+  suolo condotti a \emph{Biologico} e mostra una maggior percentuale
+  di pori adibiti al movimento dell'acqua negli stessi, tuttavia il
+    numero di campioni non è sufficiente a confermare la significatività
+    dei trattamenti.
+    \end{itemize}
 
-In conclusione, nessuno dei parametri fisici a disposizione è
-riuscito a differenziare adeguatamente le parcelle con diversi
-trattamenti.
+    In conclusione, il parametro fisico misurato che ha permesso di
+    differenziare maggiormente i diversi trattamenti è stato quello della
+    misura della dinamica della distribuzione degli aggregati. 
+
+    Anche la distribuzione dei pori mostra delle tendenze che però, dato
+    l'esiguo numero di campioni, non sono statisticamente significative.
 
 
 
@@ -2540,11 +2689,11 @@ trattamenti.
     deflesse ovvero cambiano traiettoria, a seconda della collisione
     con altre particelle o onde (dal punto di vista quantistico) in
     maniera disordinata e in buona maniera casuale}
-  \citep{scattering}.
+\citep{scattering}.
 
-  Le equazioni che descrivono lo scattering sono molto complesse; nel
-  caso in cui le particelle abbiano dimensione maggiore della lunghezza
-  d'onda della radiazione luminosa incidente, esiste (assumendo la
+Le equazioni che descrivono lo scattering sono molto complesse; nel
+caso in cui le particelle abbiano dimensione maggiore della lunghezza
+d'onda della radiazione luminosa incidente, esiste (assumendo la
   perfetta sfericità delle particelle) una soluzione matematicamente
   rigorosa, detta \emph{Soluzione di Mie}.
 
@@ -2599,35 +2748,35 @@ trattamenti.
     $I$            & = intensità della luce a una distanza $b$ dal campo
                      delle particelle di assorbanza $\alpha$\\
     $I_0$          & = intensità della radiazione luminosa all'ingresso
-                     del campo delle particelle 
-  \end{tabular}
-  
-  \bigskip
-  
-  Il rapporto a sinistra dell'equazione ($\frac{I}{I_0}$) rappresenta
+del campo delle particelle 
+\end{tabular}
+
+\bigskip
+
+Il rapporto a sinistra dell'equazione ($\frac{I}{I_0}$) rappresenta
   la trasmittanza T del raggio (misurata direttamente dallo
   strumento), ovvero, $I_0$ è l'intensità del laser quando nessun
-  campione è presente e $I$ è l'intensità con il campione
+campione è presente e $I$ è l'intensità con il campione
   presente.
 
 
   Ri-arrangiando l'equazione \ref{eq:BeerLambert}:
 
-  \begin{equation}
-    \alpha=\frac{-1}{b}ln \langle T \rangle
-  \end{equation}
+    \begin{equation}
+\alpha=\frac{-1}{b}ln \langle T \rangle
+\end{equation}
 
-  Il termine $\alpha$ contiene informazioni concernenti la
-  concentrazione volumetrica riguardo alle particelle di una
-  determinata classe dimensionale.
+Il termine $\alpha$ contiene informazioni concernenti la
+concentrazione volumetrica riguardo alle particelle di una
+determinata classe dimensionale.
 
-  Secondo la teoria dello scattering, la luce attenuata da una particella
-  $i$ può essere descritta da:
+Secondo la teoria dello scattering, la luce attenuata da una particella
+$i$ può essere descritta da:
 
-  \begin{equation}
-    a_i=Q_i\pi r_i^2n_i
-    \label{eq:Msizer_Luce_Attenuata}
-  \end{equation}
+    \begin{equation}
+a_i=Q_i\pi r_i^2n_i
+\label{eq:Msizer_Luce_Attenuata}
+\end{equation}
 
   Dove:
   
@@ -2917,13 +3066,14 @@ trattamenti.
   La coerenza subcomposizionale si applica tutte le volte che \emph{si
     chiude} una composizione. Ad esempio: gli elementi presenti
   nell'acqua sono molteplici ma hanno in genere concentrazioni ben
-  diverse: possiamo infatti dividerli in macro e microelementi. La
-  composizione totale dovrebbe comprenderli tutti, ma a seconda dello
+  diverse e possono essere divisi in macro e microelementi; la
+  composizione totale dovrebbe comprenderli tutti ma, a seconda dello
   studio, la \emph{chiusura} delle percentuali viene fatta per i soli
-  macro o per i soli micro; oppure nel caso di uno studio di chimica
-  del suolo si può considerare le sole basi di scambio presenti,
-  anche in questo caso si può considerare solamente il totale della
-  subcomposizione.
+  macro o per i soli micro. Un altro esempio è quello di un caso di
+  uno studio di chimica del suolo: dal dosaggio degli elementi
+  presenti nella soluzione circolante del suolo si possono considerare
+  le sole basi di scambio presenti, anche in questo caso si
+  considererà solamente il totale della subcomposizione.
   
   I dati composizionali vengono sempre trattati in una
   \emph{log-ratio-transformed scale}. Questa operazione porta a
@@ -2946,8 +3096,29 @@ trattamenti.
   \bigskip
   
   In questo spazio vettoriale le relazioni sono linearizzate e quindi
-  è possibile utilizzare tutte le tecniche di statistica
-  multivariata: regressione, anova, modelli lineari, ecc.
+  è possibile utilizzare tutte le tecniche di statistica lineare:
+  regressione, anova, modelli lineari, ecc.
+  
+  In questo spazio vettoriale l'operazione algebrica di somma ha un
+  corrispettivo chiamato \emph{perturbazione} \citep{van2013analyzing}
+  ed è indicato con il simbolo $\oplus$, consiste in una moltiplicazione tra
+  due composizioni $\bm{x}$ e $\bm{y}$ (di dimensione $D$) che
+  viene successivamente \emph{chiusa}:
+  \begin{equation}
+    \label{eq:perturbazione}
+    \bm{x} \oplus \bm{y} = C \left[x_1y_1, x_2y_2,.....,x_Dy_D \right]
+  \end{equation}.
+  
+  L'operazione di moltiplicazione di uno scalare nello spazio
+  composizionale, invece, viene indicata con $\odot$
+  \citep{van2013analyzing} e consiste nella elevazione a potenza di
+  tutte le componenti della composizione per uno scalare $\lambda$ a
+  cui successivamente viene applicata l'operazione di \emph{chiusura}:
+  \begin{equation}
+    \label{eq:powering}
+    \lambda \odot \bm{x} = C \left[x_1^\lambda, x_2^\lambda,.....,x_D^\lambda \right]
+  \end{equation}.
+  
 
 
   \chapter{Grafici dei residui dei modelli statistici utilizzati per

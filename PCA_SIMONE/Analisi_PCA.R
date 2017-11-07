@@ -108,7 +108,7 @@ res <- PCA(df.PCAFisica, quali.sup = c(1, 2, 3, 4),
 plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2),
          title = "Fisica")
 plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2),
-         title = "Chimica")
+         title = "Fisica")
 plotellipses(res, keepvar = c("TRT", "LAVORAZIONE"))
 ## df.PCA2 <- df.PCA1[,c(1:4, 7, 8, 10, 12, 13)]
 ## res <- PCA(df.PCA2, quali.sup = c(1, 2), quanti.sup = 9, graph = FALSE)
