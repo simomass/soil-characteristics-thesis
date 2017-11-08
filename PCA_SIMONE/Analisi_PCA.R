@@ -88,6 +88,17 @@ fviz_pca_biplot(res, col.ind = df.PCAChimica$TRT, palette = "jco", addEllipses =
 fviz_ellipses(res, habillage = df.PCAChimica$TRT, axes = c(1, 2), addEllipses = TRUE,
        ellipse.type = "confidence", , palette = NULL, pointsize = 1,
        geom = c("point", "text"))
+
+res <- PCA(df.PCATotale, quali.sup = c(1, 2, 3, 4), quanti.sup = 15, graph = FALSE)
+fviz_screeplot(res, addlabels = TRUE)
+corrplot(res$var$cos2)
+fviz_pca_var(res, col.var = "contrib", gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"))
+##fviz_pca_ind(res,geom.ind = "point", col.ind = df.PCAChimica$TRT, addEllipses = TRUE)
+fviz_pca_biplot(res, col.ind = df.PCAChimica$TRT, palette = "jco", addEllipses = FALSE, label = "var", col.var = "black", repel = TRUE)
+fviz_ellipses(res, habillage = df.PCAChimica$TRT, axes = c(1, 2), addEllipses = TRUE,
+       ellipse.type = "confidence", , palette = NULL, pointsize = 1,
+       geom = c("point", "text"))
+
 dev.off()
 
 
@@ -110,6 +121,15 @@ plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2),
 plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2),
          title = "Fisica")
 plotellipses(res, keepvar = c("TRT", "LAVORAZIONE"))
+
+res <- PCA(df.PCATotale, quali.sup = c(1, 2, 3, 4),
+           quanti.sup =  15, graph = FALSE)
+plot.PCA(res, choix = "var", habillage = "TRT",
+         axes = c(1,2), title = "Totale")
+plot.PCA(res, choix = "ind", habillage = "TRT", axes = c(1,2),
+         title = "Totale")
+plotellipses(res, keepvar = c("TRT", "LAVORAZIONE"),
+             level = c(0.90, 0.99))
 ## df.PCA2 <- df.PCA1[,c(1:4, 7, 8, 10, 12, 13)]
 ## res <- PCA(df.PCA2, quali.sup = c(1, 2), quanti.sup = 9, graph = FALSE)
 ## plot.PCA(res, choix = "var", habillage = "TRT", axes = c(1,2), title = "Tolta la porosità anche dal dataframe e gli N")

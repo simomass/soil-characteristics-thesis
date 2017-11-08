@@ -43,8 +43,8 @@ final]{scrbook}
 \usepackage[dvipsnames]{xcolor}
 %% Questa parte sotto controlla i colori dei riferimenti cliccabili
 \hypersetup{colorlinks,
-  linkcolor={red!50!black},
-  citecolor={red},
+  linkcolor={red!20!black},
+  citecolor={blue!80!black},
   urlcolor={blue!80!black},
   pdfstartview={XYZ null null 1}
 }
@@ -214,8 +214,7 @@ final]{scrbook}
   \DeclareSIUnit\atm{atm}
   \DeclareSIUnit\torr{torr}
 
-  \usepackage{lipsum}
-  % blocchi di testo fittizi
+
 
 <<PacchettiRichiesti, echo=FALSE, eval=TRUE>>=
 library(nlme)
@@ -308,12 +307,12 @@ file.path(DirMain, "tabelle")
     experiment} dell'Università di Firenze dove, dal 1991 presso
   l'azienda agricola Montepaldi, situata a San Casciano val di Pesa
   (FI), viene condotta una sperimentazione sul sistema Biologico. I
-  risultati delle analisi sulla densità apparente mostrano
-  differenze statisticamente significative tra i trattamenti, tuttavia
-  i cambiamenti sono minimi rendendoli non rilevanti dal punto di
-  vista pratico. Invece i risultati delle analisi sulla distribuzione
-  dei pori non mostrano differenze statisticamente significative,
-  mentre quelle sulla stabilità degli aggregati indicano una maggior
+  risultati delle analisi sulla densità apparente mostrano differenze
+  statisticamente significative tra i trattamenti, tuttavia i
+  cambiamenti sono minimi rendendoli non rilevanti dal punto di vista
+  pratico. Invece i risultati delle analisi sulla distribuzione dei
+  pori non mostrano differenze statisticamente significative, mentre
+  quelle sulla stabilità degli aggregati indicano una maggior
   stabilità degli aggregati nei suoli a conduzione Convenzionale
   rispetto a quella Biologica.
 \end{abstract}
@@ -325,20 +324,20 @@ file.path(DirMain, "tabelle")
     systems in Mediterranean area (organic and conventional management
     on site since twenty five years) through the assessement of three
     soil's physical properties such as: bulk density, pore size
-  distribution and aggregate stability; \textbf{ii)} to compare the
-effects of three tillage systems: plowing, chisel plowing and disk
-harrowing. The study is implemented within the \emph{MOLTE}
-project, a long term experiment of the University of Florence
-where, since 1991, at Montepaldi farm, located in San Casciano val
-di Pesa (FI) was carried out an experimentation on organic farming
-systems.  The result of the analysis of the bulk density, show
-statistically significant differences between two farming systems,
-however these difference were so small that are negligible from a
-practical point of view. On the contrary the results of the pore
-size distribution do not display statistically significant
-differences.  The aggregate stability shows that the aggregates
-from the conventional soil are more stable than those from the
-organic one.
+    distribution and aggregate stability; \textbf{ii)} to compare the
+    effects of three tillage systems: plowing, chisel plowing and disk
+    harrowing. The study is implemented within the \emph{MOLTE}
+    project, a long term experiment of the University of Florence
+    where, since 1991, at Montepaldi farm, located in San Casciano val
+    di Pesa (FI) was carried out an experimentation on organic farming
+    systems.  The result of the analysis of the bulk density, show
+    statistically significant differences between two farming systems,
+    however these difference were so small that are negligible from a
+    practical point of view. On the contrary the results of the pore
+    size distribution do not display statistically significant
+    differences.  The aggregate stability shows that the aggregates
+    from the conventional soil are more stable than those from the
+    organic one.
 \end{engabstract}%
 \end{otherlanguage*}
 
@@ -534,7 +533,28 @@ movimenti di acqua, aria e fauna tellurica.  Invece una cattiva
 struttura favorisce l'erosione, la compattazione e la
 desertificazione.
 
-Secondo \citet{pagliai2002soil}, la classificazione dei suoli più
+In figura \ref{fig:distroPori} sono riportate le principali classificazioni
+dimensionali dei pori. Ogni autore ha definito dei range dimensionali
+in base alle funzioni (biologiche, chimiche, fisiche) che i pori di
+quella dimensione hanno.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{../grafici/DiametroPoriLetteratura.jpg}
+  \caption[Distribuzione dei pori a seconda dell'autore]{In figura
+    sono riportate le principali classificazioni dimensionali dei pori
+    \citep{lal2004principles} definite da diversi autori; nell'asse
+    delle ascisse sono riportate le dimensioni dei diametri, espresse
+    in \SI{}{\micro\metre}, in scala logaritmica; sull'asse delle
+    ordinate sono riportati gli autori; le croci rappresentano i
+    limiti delle classi dimensionali; la linea più scura rappresenta
+    la classe che gli autori identificano con \emph{micropori}; le
+    linee rosse verticali rappresentano invece i limiti scelti per
+    l'elaborazione dei dati sulla stabilità degli aggregati(paragrafo \ref{sec:Dinamica})}
+  \label{fig:distroPori}
+\end{figure}
+
+Secondo \citet{pagliai2002soil}, la classificazione dei pori più
 usata è quella di \citet{greenland1977soil} ed è mostrata in Tab.
 \ref{tab:green}. 
  
@@ -579,26 +599,26 @@ piante. Se i pori grandi, medi e piccoli sono in proporzione ottimale,
 si osserva un concomitante immagazzinamento/conduzione di acqua e aria
 che permette un'adeguata crescita radicale.
 
-Un ulteriore indicatore di fertilità fisica del suolo è la
-stabilità degli aggregati; questi ultimi sono definiti come \emph{un
-  insieme di particelle primarie di suolo legate l'un l'altra in modo
-  maggiore rispetto alle particelle adiacenti}, mentre la stabilità
-degli aggregati è \emph{la capacità degli aggregati di suolo di
-  resistere alla rottura quando vengono applicate forze esterne
-  (solitamente dall'acqua)} \citep{SoilQualStab}. L'importanza della
-stabilità degli aggregati si esplica soprattutto durante una
-pioggia, in quanto l'erosione è collegata direttamente alla
-resistenza degli aggregati \citep{de1985aggregate,
-  bissonnais1996aggregate}. In molti tipi di suoli è stato visto
-come la stabilità degli aggregati dipenda dalla quantità di
-sostanza organica e quindi, in un suolo
-agrario, dalla gestione dell'agroecosistema \citep{tisdall1982organic}.
+Un ulteriore indicatore di fertilità fisica del suolo è la stabilità
+degli aggregati; questi ultimi sono definiti come \emph{un insieme di
+  particelle primarie di suolo legate l'un l'altra in modo maggiore
+  rispetto alle particelle adiacenti}, mentre la stabilità degli
+aggregati è \emph{la capacità degli aggregati di suolo di resistere
+  alla rottura quando vengono applicate forze esterne (solitamente
+  dall'acqua)} \citep{SoilQualStab}. L'importanza della stabilità
+degli aggregati si esplica soprattutto durante una pioggia, in quanto
+l'erosione è collegata direttamente alla resistenza degli aggregati
+\citep{de1985aggregate, bissonnais1996aggregate}. In molti tipi di
+suoli è stato visto come la stabilità degli aggregati dipenda dalla
+quantità di sostanza organica e quindi, in un suolo agrario, dalla
+gestione dell'agroecosistema \citep{tisdall1982organic}.
 
 
 \begin{samepage}
-Sono diversi i meccanismi che provocano la rottura degli aggregati \citep{EJSS4_12311}:
+  Sono diversi i meccanismi che provocano la rottura degli aggregati
+  \citep{EJSS4_12311}:
 \begin{itemize}
-  \item rottura per compressione di aria intrappolata (\emph{slaking});
+\item rottura per compressione di aria intrappolata (\emph{slaking});
   \item rottura per rigonfiamento asimmetrico;
   \item rottura per impatto della pioggia;
   \item dispersione fisico-chimica.
@@ -608,11 +628,11 @@ Lo \emph{slaking} consiste nella rottura degli aggregati di suolo
 causata dall'aria intrappolata dentro all'aggregato durante
 l'inumidimento; avviene quando gli aggregati secchi sono immersi in
 acqua e si bagnano rapidamente, l'effetto dipende dal volume dell'aria
-intrappolata e dalla velocità di inumidimento, i frammenti
-risultanti dallo \emph{slaking} sono principalmente microaggregati e
-aumentano in dimensioni all'aumentare del contenuto di argilla; lo
-\emph{slaking} diminuisce all'aumentare dell'umidità
-\citep{le1988comportement, truman1990antecedent}.
+intrappolata e dalla velocità di inumidimento, i frammenti risultanti
+dallo \emph{slaking} sono principalmente microaggregati e aumentano in
+dimensioni all'aumentare del contenuto di argilla; lo \emph{slaking}
+diminuisce all'aumentare dell'umidità \citep{le1988comportement,
+  truman1990antecedent}.
 
 La rottura per rigonfiamento asimmetrico, è un meccanismo molto
 simile al precedente: ha lo stesso effetto ed è generato dalle
@@ -656,9 +676,9 @@ In risposta alle problematiche descritte, durante gli anni '70 sono
 nati dei movimenti di agricoltori che cercavano di coltivare in modo
 naturale eliminando fitofarmaci e concimi di sintesi. Da questi
 movimenti inizia a prendere forma l'agricoltura Biologica che, ad
-oggi, costituisce un'importante realtà dell'agricoltura mondiale. Si
-stima infatti che, il 12\% della SAU italiana sia coltivata a
-Biologico \citep{Bio_cifre}, in crescita. 
+oggi, costituisce un'importante realtà dell'agricoltura mondiale e
+italiana. Si stima infatti che, il 14,5\% della SAU Nazionale sia
+coltivata a Biologico \citep{Bio_cifre}, in crescita.
 
 Secondo il \citet{ue2007834}: \emph{La produzione biologica è un
   sistema globale di gestione dell’azienda agricola e di produzione
@@ -791,9 +811,9 @@ Lo scopo di questo lavoro è cercare la risposta ai seguenti due quesiti:
 \begin{itemize}
 \item dopo 25 anni di conduzione Biologica tipica di ambienti
   Mediterranei, sono cambiate le caratteristiche fisico-strutturali
-  del terreno ?
+  del terreno?
 \item tre diverse lavorazioni primarie quali aratura,
-  rippatura e frangizollatura influenzano i parametri fisici del suolo ?
+  rippatura e frangizollatura influenzano i parametri fisici del suolo?
 \end{itemize}
 
 Per rispondere a queste due domande sono stati scelti degli indicatori
@@ -816,8 +836,6 @@ Firenze (località Montepaldi, San Casciano Val di Pesa) ed interessa
 una superficie leggermente declive di circa \SI{15}{\hectare} a
 \SI{90}{\meter} s.l.m..
 
-
-
 Il clima è sub-appenninico con precipitazioni totali di circa
 \SI{800}{\milli\meter} annui con massimo in autunno e primavera e
 minimo nel periodo tra giugno-agosto. La temperatura media annuale è
@@ -831,12 +849,6 @@ pianeggianti) con caratteristiche tessiturali da essere definite tra i
 \emph{medio impasto limo-argillosi} e gli \emph{argillosi} con
 presenza variabile di scheletro di piccole e medie dimensioni.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.9\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
-  \caption{\label{fig:FotoPanoramaMpaldi} Veduta d'insieme dei campi sperimentali oggetto dello studio}
-\end{figure}
-
 Il sito sperimentale è costituito da due agroecosistemi, da qui in
 avanti definiti come \emph{Conduzione}:
 \begin{itemize}
@@ -847,26 +859,30 @@ avanti definiti come \emph{Conduzione}:
 \item conduzione \emph{Convenzionale}, \emph{CO}
 \end{itemize}
 
-I due agroecosistemi sono suddivisi in più appezzamenti
-rettangolari (\SI{1.3}{\hectare} ciascuno),
-identificati da sigle quali \emph{OO1, OO2, OO3, OO4} per il Biologico
-vecchio e \emph{CO9, CO10} per il
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.9\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
+  \caption{\label{fig:FotoPanoramaMpaldi} Veduta d'insieme dei campi sperimentali oggetto dello studio}
+\end{figure}
+\FloatBarrier
+
+I due agroecosistemi sono suddivisi in più appezzamenti rettangolari
+(\SI{1.3}{\hectare} ciascuno), identificati da sigle quali \emph{OO1,
+  OO2, OO3, OO4} per il Biologico vecchio e \emph{CO9, CO10} per il
 Convenzionale (Fig. \ref{fig:foto_OO_sito}).
 
-Nell'anno 2015-2016, sono stati campionati gli appezzamenti \emph{OO1, OO3, CO9, CO10},
-mentre nell'anno 2016-2017 sono stati campionati \emph{OO2, OO4, CO9,
-  CO10}
+Nell'anno 2015-2016, sono stati campionati gli appezzamenti \emph{OO1,
+  OO3, CO9, CO10}, mentre nell'anno 2016-2017 sono stati campionati
+\emph{OO2, OO4, CO9, CO10}
 
 I due agroecosistemi sono circondati da infrastrutture ecologiche
 quali siepi naturali e/o artificiali e/o strisce di essenze erbacee
 spontanee. In particolare sono presenti due siepi: una naturale che
 separa il Biologico vecchio da quello nuovo, costeggiata da entrambi i
-lati da due strisce inerbite di 2 metri; l’altra artificiale,
-piantata dal DISAT con l’aiuto del WWF agli inizi degli anni ’90,
-separa gli appezzamenti a conduzione Biologica dagli altri campi
+lati da due strisce inerbite di 2 metri; l’altra artificiale, piantata
+che separa gli appezzamenti a conduzione Biologica dagli altri campi
 aziendali ed è formata da specie autoctone. Inoltre, una striscia
-inerbita separa il sistema Biologico nuovo da quello
-Convenzionale.
+inerbita separa il sistema Biologico nuovo da quello Convenzionale.
 
 
 Dal 2001, sono state adottate le seguente rotazioni:
@@ -889,7 +905,8 @@ Nell'anno precedente ai campionamenti effettuati per questo studio, (2015), è
 stato coltivato l'orzo negli appezzamenti \emph{OO2} e \emph{CO9} e il
 girasole negli appezzamenti \emph{OO4} e \emph{CO10}.
 
-In ogni appezzamento sono state messe a confronto le seguenti
+In ogni appezzamento (oltre ad una ulteriore frangizollatura comune
+per tutti in pre-semina) sono state messe a confronto le seguenti
 lavorazioni primarie (\emph{Lavorazione}):
 \begin{itemize}
 \item aratura (\emph{Ara}),
@@ -897,12 +914,8 @@ lavorazioni primarie (\emph{Lavorazione}):
 \item frangizollatura (\emph{Fzo}).
 \end{itemize}
 
-In pre-semina è stata effettuata una ulteriore frangizollatura per
-tutti gli appezzamenti.
-
 Ogni lavorazione è stata replicata tre volte per appezzamento che
 diventa cos\`i suddiviso in 9 parcelle.
-
 
 All'interno di ogni parcella sono stati individuati tre punti di
 campionamento, partendo dal centro del campo
@@ -927,7 +940,7 @@ serie \emph{m}, quindi 36 campioni.
 }\quad
   \subfloat[Convenzionale]{
     \includegraphics[width=0.5\textwidth]{../foto/CO_sito.jpeg}
-  }
+}
   \caption[Diagramma degli appezzamenti a conduzione \emph{Biologica} e
   \emph{Convenzionale}]{Appezzamenti oggetto di studio. \emph{OO} seguito da un
     numero che indica l'appezzamento; la lettera maiuscola indica la
@@ -1766,6 +1779,8 @@ plot(lm.spinta)
 
 \section{Dinamica della distribuzione della dimensione degli aggregati}
 
+\label{sec:Dinamica}
+
 <<Import_aggregati, echo = FALSE, eval = TRUE>>=
 vec.paletti <- c(250, 20)
 df.data <-
@@ -2182,7 +2197,11 @@ particelle in seguito alla distruzione degli aggregati]{Evoluzione
   di \Sexpr{vec.paletti[1]} (\emph{Macro}), comprese tra
   \Sexpr{vec.paletti[1]} e \Sexpr{vec.paletti[2]} (\emph{Meso}) e
   inferiori a \SI{\Sexpr{vec.paletti[2]}}{\micro\metre}
-  (\emph{Micro})}
+  (\emph{Micro}). \newline I rombi rossi (appezzamenti Biologici) e
+  neri (appezzamenti Convenzionali) indicano le tessiture apparenti
+  determinate per densimetria \citep{agricoledecreto}, le quali si posizionano in corrispondenza
+  del punto in cui vengono applicati gli ultrasuoni}
+ \label{fig:plotAggrDistro}
 \end{figure}
 \FloatBarrier
 
@@ -2433,7 +2452,7 @@ print(anova_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE
 @ 
 
 
-La tabella AANOVA (Tab. \ref{tab:tot_anova}) ci permette di affermare che il
+La tabella ANOVA (Tab. \ref{tab:tot_anova}) ci permette di affermare che il
 numero di campioni non è sufficiente per determinare la
 significatività dei trattamenti, tuttavia come si può vedere dalla
 tabella \ref{tab:tot_sommario}, i dati tenderebbero a confermare il
@@ -2479,7 +2498,7 @@ summary.totale <- rbind(summary.totale[1:3,], rep(NA, 6), summary.totale[4:6,])
 
 
 sommario_tabellaTot <- xtable(summary.totale,
-                              label = 'tab:tot_sommario', align = 'llccccc',
+                              label = 'tab:tot_sommario', align = 'lllcccc',
                               caption = 'Sommario della porosit\\`a totale dei dati ricavati dalle analisi della porosimetria a mercurio'
                               )
 print(sommario_tabellaTot, caption.placement = "top", include.rownames = FALSE)#, math.style.exponents = TRUE)
@@ -2553,13 +2572,13 @@ rispetto ai terreni condotti ad agricoltura Convenzionale e nei
 terreni lavorati superficialmente rispetto a quelli lavorati più in
 profondità.
 
-La t-table in Tab. \ref{tab:anova piccoli aggregati} mostra che,
-nonostante la rilevata significatività statistica, le differenze di
-densità sono dell'ordine della seconda cifra decimale. Questo ci
-permette di affermare, in primo luogo, che il numero di campioni è
-idoneo agli obiettivi dello studio, in secondo luogo che la
-lavorazione e la conduzione non risultano significativi dal punto di
-vista tecnologico, ovvero non hanno una rilevanza pratica effettiva.
+La tabella \ref{tab:summaryClod} mostra che, nonostante la rilevata
+significatività statistica, le differenze di densità sono dell'ordine
+della seconda cifra decimale. Questo ci permette di affermare, in
+primo luogo, che il numero di campioni è idoneo agli obiettivi dello
+studio, in secondo luogo che la lavorazione e la conduzione non
+risultano significativi dal punto di vista tecnologico, ovvero non
+hanno una rilevanza pratica effettiva.
 
 \paragraph{Dinamica della distribuzione della dimensione degli
   aggregati.}
@@ -2570,9 +2589,15 @@ stabilità degli aggregati Convenzionali rispetto agli aggregati
 Biologici. Mentre tra le lavorazioni non risultano differenze
 statisticamente significative.
 
-Alla fine del trattamento disgregativo con ultrasuoni, tutti gli
-aggregati convergono in un punto che coincide con i dati disponibili
-sulla distribuzione tessiturale del sito di prelievo dei campioni.
+Alla fine del trattamento disgregativo con ultrasuoni le composizioni
+dei frammenti risultanti convergono in un punto. Proiettando le
+tessiture dei terreni sul grafico della dinamica della distribuzione
+(Fig. \ref{fig:plotAggrDistro}) si può vedere come i punti si
+dispongano in corrispondenza del momento precedente all'accensione
+degli ultrasuoni, questo significa che i frammenti risultanti dal
+trattamento con ultrasuoni sono più piccoli di quelli risultanti
+dall'analisi della tessitura apparente per densimetria
+\citep{agricoledecreto}.
 
 I risultati vanno in controtendenza a ciò che hanno rilevato altri
 autori come \citet{siegrist1998does}, \citet{williams2017organic} e
@@ -3095,9 +3120,18 @@ a_i=Q_i\pi r_i^2n_i
   
   \bigskip
   
-  In questo spazio vettoriale le relazioni sono linearizzate e quindi
-  è possibile utilizzare tutte le tecniche di statistica lineare:
-  regressione, anova, modelli lineari, ecc.
+  In questo spazio vettoriale le relazioni sono linearizzate
+  \ref{fig:simplexdeform} e quindi è possibile utilizzare tutte le
+  tecniche di statistica lineare: regressione, anova, modelli lineari,
+  ecc.
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{../foto/simplessodeforma.png}
+    \caption[Deformazione ad opera del simplesso]{Coppia di rette
+      parallele all'interno dello spazio vettoriale del simplesso
+      ($S^3$) a destra e in coordinate a sinistra (immagine presa da \cite{pawlowsky2007lecture})}
+    \label{fig:simplexdeform}
+  \end{figure}
   
   In questo spazio vettoriale l'operazione algebrica di somma ha un
   corrispettivo chiamato \emph{perturbazione} \citep{van2013analyzing}
