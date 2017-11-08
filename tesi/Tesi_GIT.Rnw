@@ -468,7 +468,14 @@ tessiturale di Whitney, è stata introdotta nel 1951 \citep{SoilTr}.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.8\textwidth]{../foto/USDA_triangolo.jpeg}
-  \caption[Il triangolo tessiturale]{Triangolo tessiturale secondo USDA}
+  \caption[Il triangolo tessiturale]{Triangolo tessiturale secondo lo
+    USDA, i punti rappresentano le tessiture apparenti dei terreni
+    oggetto di studio determinate per densimetria
+    \citep{agricoledecreto}; \emph{B} e \emph{C} indicano
+    rispettivamente i terreni Biologici e Convenzionali, \emph{a, b} e
+    \emph{c} indicano le lavorazioni (\emph{Arato, Rippato,
+      Frangizollato}), \emph{cn, dx} e \emph{sx} servono ad indicare
+    la posizione (cfr. paragrafo \ref{sec:MOLTE}).}
   \label{fig:triangolo}
 \end{figure}
 \FloatBarrier
@@ -1272,43 +1279,16 @@ ad oggetti R 3.4.0 \citep{r_programming}.  L'esplorazione dei modelli
 statistici \citep{fox2002r, chambers1992statistical, faraway2004} è
 stata fatta mediante confronto di modelli statistici marginali e un
 test F ($\textrm{p < 0,05}$).  Tutti i modelli statistici sono stati
-validati attraverso l'analisi esplorativa dei residui (appendice \ref{sec:residui}) in modo da
-verificare le eventuali violazioni delle assunzioni di normalità
-\citep{stefanini2007introduzione}.
+validati attraverso l'analisi esplorativa dei residui (appendice
+\ref{sec:residui}) in modo da verificare le eventuali violazioni delle
+assunzioni di normalità \citep{stefanini2007introduzione}.
 
 \subsection{Densità}
-I risultati delle analisi sia con il metodo \emph{Core} che con il metodo \emph{Clod} non hanno
-riscontrato interazioni statisticamente significative tra i parametri
-considerati e quindi esse non compaiono nei modelli statistici sotto riportati,
-che sono quindi di natura additiva.
-
-\`E stato quindi adattato il seguente modello statistico:
-
-\begin{samepage}
-\begin{modello}
-  \label{mod:MetodoClod}
-  y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
-\end{modello}
-\nopagebreak
-
-Dove:
-
-\nopagebreak
-\begin{tabular}{lp{12cm}}
-  $y$       & = densità apparente\\
-  $\mu$     & = media generale\\
-  $\beta_1$ & = coefficiente della variabile \emph{anno}, due livelli: \emph{2015, 2016};\\
-  $\beta_2$  & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
-  $\beta_3$ & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
-  $\epsilon$ & = residui o errore.
-\end{tabular}
-\end{samepage}
-\vspace*{3em}
-
-
-La variabile categorica \emph{anno}, è stata necessariamente
-eliminata dal modello per il metodo \emph{Clod}, per la mancata
-disponibilità dei dati per l'anno 2015.
+I risultati delle analisi sia con il metodo \emph{Core} che con il
+metodo \emph{Clod} non hanno riscontrato interazioni statisticamente
+significative tra i parametri considerati e quindi esse non compaiono
+nei modelli statistici adattati ai dati (modello \ref{mod:MetodoCore}
+\ref{mod:MetodoClod}), che sono quindi di natura additiva.
 
 Una volta ottenuto il modello definitivo è stata effettuata
 un'analisi della varianza (ANOVA) sul modello.
@@ -1388,7 +1368,7 @@ detach(summary.campo)
 
 La tabella \ref{tab:summaryCore} riassume i dati ottenuti calcolando
 la densità apparente (formula \ref{eq:DensitaApparente}, pag.
-                      \pageref{eq:DensitaApparente}). La figura \ref{fig:boxplotCore}
+\pageref{eq:DensitaApparente}). La figura \ref{fig:boxplotCore}
 riporta gli stessi dati in forma grafica. I valori, la cui media
 generale è pari a
 \SI{\Sexpr{round(mean(df.dueAnni$densita.apparente,na.rm=TRUE),2)}}{\gram\per\cubic\centi\metre},
@@ -1487,6 +1467,31 @@ lm.DensSign <-
 %% significative tra l'anno, la \emph{Conduzione} e la \emph{Lavorazione}
 
 %% \migliora[inline]{riscrivere}
+
+Il modello statistico adattato è il seguente:
+
+%
+\begin{modello}
+  \label{mod:MetodoCore}
+  y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
+\end{modello}
+%\nopagebreak
+
+\begin{samepage}
+Dove:
+
+\nopagebreak
+\begin{tabular}{lp{12cm}}
+  $y$       & = densità apparente\\
+  $\mu$     & = media generale\\
+  $\beta_1$ & = coefficiente della variabile \emph{anno}, due livelli: \emph{2015, 2016};\\
+  $\beta_2$  & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
+  $\beta_3$ & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
+  $\epsilon$ & = residui o errore.
+\end{tabular}
+\end{samepage}
+\vspace*{2em}
+
 
 La tabella \ref{tab:anova del modello} riporta l'ANOVA del modello
 statistico e indica la non significatività ($p<0.05$) dei trattamenti presi in esame.
@@ -1648,6 +1653,29 @@ digits = c(0,0,rep(3,4))
 )
 print(tabella.spinta.anova, caption.placement = "top")
 @
+
+Il modello statistico adattato è il seguente:
+
+\begin{samepage}
+\begin{modello}
+  \label{mod:MetodoClod}
+  y \sim \mu + \beta_1x_1 + \beta_2x_2 + \epsilon
+\end{modello}
+\nopagebreak
+
+Dove:
+
+\nopagebreak
+\begin{tabular}{lp{12cm}}
+  $y$       & = densità apparente\\
+  $\mu$     & = media generale\\
+  $\beta_1$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
+  $\beta_2$  & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
+  $\epsilon$ & = residui o errore.
+\end{tabular}
+\end{samepage}
+\vspace*{3em}
+
 
 In tabella \ref{tab:anova piccoli aggregati} è riportata la tabella
 dell'analisi della varianza condizionata alla \emph{conduzione} e alla
@@ -2387,11 +2415,14 @@ diagramma ternario si trovano in corrispondenza dei pori residui
 quindi una prevalenza di questi pori rispetto ai pori di trasmissione
 e immagazzinamento (terreno con scarso drenaggio).
 
-<<label = plotacompPore, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
+<<plotacompPore, echo=FALSE, eval = TRUE, fig=FALSE, include = FALSE>>=
+##jpeg(filename = "plotAcompPore", width = 550, height = 450)
+
+##commento perché sennò mi da NULL DEVICE
 
 plot(acomp(df.porosimetria[, 7:9]), cex = 2, col = as.numeric(as.factor(df.porosimetria$MAN)), 
      pch = as.numeric(as.factor(df.porosimetria$TIL)))
-                                        #plot(Y)#, cex=2, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
+##plot(Y)#, cex=2, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
 ## intercetta <-
 ## ilrInv(coef(modelloPoro)[1,], orig=Y)
 ## bi <-
@@ -2401,6 +2432,7 @@ plot(acomp(df.porosimetria[, 7:9]), cex = 2, col = as.numeric(as.factor(df.poros
 
 legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"), cex = 0.7, pt.cex = 1, 
        col = rep(1:2, each = 3), pch = 1:3, border = "white", fill=NULL)
+##dev.off()
 @
 
 % \noindent%
@@ -2408,9 +2440,10 @@ legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"),
 %   \makebox[\linewidth]{%        to center the image
 \begin{figure}[ht]
 \centering
-<<label = figurina, fig=TRUE, echo=FALSE, width=5, height=5>>=
-<<plotacompPore>>
-@
+%<<label = figurina, fig=TRUE, echo=FALSE, width=5, height=5>>=
+%<<plotacompPore>>
+%@
+\includegraphics[width=0.8\textwidth]{plotAcompPore.jpeg}
 \caption[Diagramma ternario della distribuzione dei pori]{Diagramma
     ternario della distribuzione dei pori. Gli apici del triangolo
     rappresentano le classi dimensionali in cui i pori sono divisi in:
@@ -2421,7 +2454,7 @@ legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"),
 \label{fig:Poros_triangolo}
 \end{figure}
 % \end{minipage}
-\FloatBarrier
+%\FloatBarrier
 
 La tabella \ref{tab:poros_anova}, mostra che all'interno dei
 trattamenti non sono presenti differenze statisticamente
@@ -2535,14 +2568,6 @@ print(sommario_tabellaTot, caption.placement = "top", include.rownames = FALSE)#
 %% caption.placement = "top",
 %% table.placement= "hb")
 %% @ 
-
-
-
-
-
-
-
-
 
 
 \chapter{Discussione}
@@ -2932,15 +2957,16 @@ a_i=Q_i\pi r_i^2n_i
     \label{eq:Washburn}
   \end{equation}  
   
+  \begin{samepage}
   Dove:
-  
+  \nopagebreak
   \begin{tabular}{lp{12cm}}
     $p$      & = pressione assoluta applicata (\SI{}{\kilogram \per \centi \meter \squared})\\
     $r$      & = raggio dei pori (\SI{}{\nano\meter})\\
     $\sigma$ & = tensione superficiale del mercurio (\SI{}{\meter \newton \per \meter \squared})\\
     $\theta$ & = angolo di contatto (\SI{}{\celsius})
   \end{tabular}
-
+  \end{samepage}
   
   Nonostante che quasi tutte le sostanze porose abbiano pori sferici e
   non cilindrici, questa equazione è generalmente usata per
@@ -2981,21 +3007,19 @@ a_i=Q_i\pi r_i^2n_i
   di \SI{480}{\meter \newton \per \meter \squared} e angolo di contatto
   di \SI{143.1}{\degree}) e assumendo i pori come cilindrici, si ottiene
   la seguente relazione:
+
   \begin{equation}
     r=7500/P
     \label{eq:WashburnHg}
   \end{equation}
-
-  \begin{samepage}
+  
   Dove:
-  \nopagebreak
   
   \begin{tabular}{lp{12cm}}
     $r$ &  = raggio dei pori, espresso in \SI{}{\nano\meter}\\
     $p$ &  = pressione assoluta applicata, espressa in
           \SI{}{\kilogram \per \centi \meter \squared}
   \end{tabular}
-  \end{samepage}
 
   Per i pori irregolari, il rapporto tra la sezione trasversale dei
   pori (relativa alla pressione esercitata) e alla circonferenza dei
@@ -3124,15 +3148,16 @@ a_i=Q_i\pi r_i^2n_i
   \ref{fig:simplexdeform} e quindi è possibile utilizzare tutte le
   tecniche di statistica lineare: regressione, anova, modelli lineari,
   ecc.
+  \begin{samepage}
   \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{../foto/simplessodeforma.png}
+    \includegraphics[width=0.9\textwidth]{../foto/simplessodeforma.png}
     \caption[Deformazione ad opera del simplesso]{Coppia di rette
       parallele all'interno dello spazio vettoriale del simplesso
       ($S^3$) a destra e in coordinate a sinistra (immagine presa da \cite{pawlowsky2007lecture})}
     \label{fig:simplexdeform}
   \end{figure}
-  
+  \nopagebreak
   In questo spazio vettoriale l'operazione algebrica di somma ha un
   corrispettivo chiamato \emph{perturbazione} \citep{van2013analyzing}
   ed è indicato con il simbolo $\oplus$, consiste in una moltiplicazione tra
@@ -3142,7 +3167,7 @@ a_i=Q_i\pi r_i^2n_i
     \label{eq:perturbazione}
     \bm{x} \oplus \bm{y} = C \left[x_1y_1, x_2y_2,.....,x_Dy_D \right]
   \end{equation}.
-  
+  \nopagebreak
   L'operazione di moltiplicazione di uno scalare nello spazio
   composizionale, invece, viene indicata con $\odot$
   \citep{van2013analyzing} e consiste nella elevazione a potenza di
@@ -3152,7 +3177,7 @@ a_i=Q_i\pi r_i^2n_i
     \label{eq:powering}
     \lambda \odot \bm{x} = C \left[x_1^\lambda, x_2^\lambda,.....,x_D^\lambda \right]
   \end{equation}.
-  
+  \end{samepage}  
 
 
   \chapter{Grafici dei residui dei modelli statistici utilizzati per
@@ -3165,15 +3190,15 @@ a_i=Q_i\pi r_i^2n_i
 @ 
 
 \caption[Distribuzione dei residui del modello densità con metodo
-\emph{Core}]{Distribuzione dei residui del modello densità con metodo
-  \emph{Core}.\newline In alto a destra si può vedere come la varianza
-  sia costante lungo l'asse dei valori adattati dal modello
-  lineare;\newline in alto a sinistra abbiamo il qqplot, il quale ci
-  conferma che i residui assumono una distribuzione normale;\newline
-  in basso a sinistra, viene ripetuta la verifica della varianza
-  costante con i valori dei residui standardizzati, anche in questo
-  caso la varianza è costante;\newline in basso a destra sono
-  rappresentati i punti di leverage}
+\emph{Core}]{Distribuzione dei residui del modello densità col
+  \emph{Core} (modello \ref{mod:MetodoCore}).\newline In alto a destra
+  si può vedere come la varianza sia costante lungo l'asse dei valori
+  adattati dal modello lineare;\newline in alto a sinistra abbiamo il
+  qqplot, il quale ci conferma che i residui assumono una
+  distribuzione normale;\newline in basso a sinistra, viene ripetuta
+  la verifica della varianza costante con i valori dei residui
+  standardizzati, anche in questo caso la varianza è costante;\newline
+  in basso a destra sono rappresentati i punti di leverage}
     \label{fig:qqplotCore}
 \end{figure}
 \FloatBarrier
@@ -3187,7 +3212,7 @@ a_i=Q_i\pi r_i^2n_i
 
 \caption[Distribuzione dei residui del modello densità con metodo
   \emph{Clod}]{Distribuzione dei residui del modello densità con
-    metodo \emph{Clod}\newline In alto a destra si può vedere come la
+    metodo \emph{Clod} (modello \ref{mod:MetodoClod})\newline In alto a destra si può vedere come la
     varianza sia costante lungo l'asse dei valori adattati dal modello
     lineare;\newline in alto a sinistra abbiamo il qqplot, il quale ci
     conferma che i residui assumono una distribuzione normale;\newline
@@ -3205,9 +3230,9 @@ a_i=Q_i\pi r_i^2n_i
 <<label=figboh4, fig=TRUE, echo=FALSE>>=
 <<qqplotAcomp>>
 @
-\caption{Grafico quantile-quantile per i residui
-  del modello statistico composizionale per la stabilità degli
-  aggregati}
+\caption{Grafico quantile-quantile per i residui del modello
+  statistico composizionale della dinamica della distribuzione della
+  dimensione degli aggregati (modello \ref{mod:Stabilita})}
   \label{fig:qqplot_dinamica_aggregati}
 \end{figure}
 \FloatBarrier
@@ -3224,7 +3249,8 @@ a_i=Q_i\pi r_i^2n_i
 <<qqplotpori>>
 @
 \caption{Grafico quantile-quantile per i residui
-  del modello composizionale per i dati di porosimetria}
+  del modello composizionale per i dati della distrubuzione dei pori
+  tramite porosimetria ad intrusione di mercurio (modello \ref{mod:Porosita})}
   \label{fig:qqplot_porosimetria}
 \end{figure}
 \FloatBarrier
