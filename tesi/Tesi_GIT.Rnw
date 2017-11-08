@@ -3013,13 +3013,16 @@ a_i=Q_i\pi r_i^2n_i
     \label{eq:WashburnHg}
   \end{equation}
   
+\begin{samepage}
   Dove:
-  
+
+  \nopagebreak
   \begin{tabular}{lp{12cm}}
     $r$ &  = raggio dei pori, espresso in \SI{}{\nano\meter}\\
     $p$ &  = pressione assoluta applicata, espressa in
           \SI{}{\kilogram \per \centi \meter \squared}
   \end{tabular}
+\end{samepage}
 
   Per i pori irregolari, il rapporto tra la sezione trasversale dei
   pori (relativa alla pressione esercitata) e alla circonferenza dei
