@@ -310,11 +310,14 @@ file.path(DirMain, "tabelle")
   risultati delle analisi sulla densità apparente mostrano differenze
   statisticamente significative tra i trattamenti, tuttavia i
   cambiamenti sono minimi rendendoli non rilevanti dal punto di vista
-  pratico. Invece i risultati delle analisi sulla distribuzione dei
-  pori non mostrano differenze statisticamente significative, mentre
-  quelle sulla stabilità degli aggregati indicano una maggior
-  stabilità degli aggregati nei suoli a conduzione Convenzionale
-  rispetto a quella Biologica.
+  pratico. I risultati delle analisi sulla distribuzione dei pori non
+  mostrano differenze statisticamente significative, molto
+  probabilmente per l'esiguo numero di campioni analizzati. Al
+  contrario, quelle sulla stabilità degli aggregati indicano una
+  maggior stabilità degli aggregati nei suoli a conduzione
+  Convenzionale rispetto a quella Biologica. \todo[inline]{Non torna
+    l'ordine in cui sono poi esposte le analisi nella tesi, vedi anche
+    nota a p. \pageref{rev:note8_1}}\label{rev:note8_0}
 \end{abstract}
 
 
@@ -329,15 +332,16 @@ file.path(DirMain, "tabelle")
     harrowing. The study is implemented within the \emph{MOLTE}
     project, a long term experiment of the University of Florence
     where, since 1991, at Montepaldi farm, located in San Casciano val
-    di Pesa (FI) was carried out an experimentation on organic farming
-    systems.  The result of the analysis of the bulk density, show
-    statistically significant differences between two farming systems,
-    however these difference were so small that are negligible from a
-    practical point of view. On the contrary the results of the pore
-    size distribution do not display statistically significant
-    differences.  The aggregate stability shows that the aggregates
-    from the conventional soil are more stable than those from the
-    organic one.
+    di Pesa (FI, Italy) was carried out an experimentation on organic
+    farming systems. The result of the analysis of the bulk density,
+    show statistically significant differences between two farming
+    systems, however these difference were so small that are
+    negligible from a practical point of view. On the contrary the
+    results of the pore size distribution do not display statistically
+    significant differences. The aggregate stability shows that the
+    aggregates from the conventional soil are more stable than those
+    from the organic one. \todo[inline]{Non torna l'ordine in cui sono
+      poi esposte le analisi nella tesi}
 \end{engabstract}%
 \end{otherlanguage*}
 
@@ -349,12 +353,12 @@ file.path(DirMain, "tabelle")
 % \fancyfoot[C]{\today\  \currenttime}
 % \fancyfoot[LE,RO]{\thepage}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \chapter{Il suolo in sistemi agricoli Convenzionali e Biologici}
 
 
-
+\info[inline]{Questo non lo leggo per focalizzarmi sul dopo}
 Il concetto di suolo o terreno è piuttosto chiaro nell'immaginario
 collettivo; nonostante questo è difficile individuare una
 definizione univoca. Un tentativo di definizione è quello di
@@ -812,7 +816,7 @@ Il presente lavoro si inserisce nell'ambito di questo progetto con
 l'intento di contribuire al raggiungimento dell’obiettivo 2, studiando
 l’impatto di lavorazioni a diversa intensità per mezzo di indicatori
 di qualità della struttura fisica del suolo.
-
+\info[inline]{Da qui rileggo con attenzione}
 \section{Scopo dello studio}
 Lo scopo di questo lavoro è cercare la risposta ai seguenti due quesiti:
 \begin{itemize}
@@ -823,11 +827,14 @@ Lo scopo di questo lavoro è cercare la risposta ai seguenti due quesiti:
   rippatura e frangizollatura influenzano i parametri fisici del suolo?
 \end{itemize}
 
-Per rispondere a queste due domande sono stati scelti degli indicatori
-di fertilità del suolo di natura fisica, quali la densità
-apparente, la distribuzione dei pori e la stabilità degli aggregati.
-Tali parametri sono stati misurati durante la stagione 2016-2017.
+\todo[inline]{La serie di analisi non torna con l'esposizione
+  seguente, vedi note a p \pageref{rev:note8_0}} \label{rev:note8_1}
 
+Per rispondere a queste due domande sono stati scelti degli indicatori
+di fertilità del suolo di natura fisica, quali la densità apparente,
+la distribuzione dei pori e la stabilità degli aggregati. Tali
+parametri sono stati misurati durante la stagione 2016-2017. \migliora{Ci sono anche dati del 2015. }
+\info[inline]{Da qui NON rileggo con attenzione}
 
 \chapter{Materiali e metodi}
 \section{Descrizione del sito sperimentale}
@@ -1261,59 +1268,72 @@ migliore è la distribuzione delle dimensioni dei pori.
 La progressiva penetrazione di mercurio nel campione è acquisita
 tramite un sensore capacitivo. Il segnale elettrico che ne deriva
 viene convertito in volume di mercurio intruso. Il calcolo della
-distribuzione dei pori, mediante l'equazione di Washburn
-(eq. \ref{eq:Washburn}, pag. \pageref{eq:Washburn}), viene effettuata dopo la sottrazione
-automatica punto per punto dei valori legati alla compressibilità di
-mercurio preventivamente calcolati in un ciclo di misura senza
-campioni. Alla fine del ciclo di intrusione, l'apparecchio va
-automaticamente in depressione.
+distribuzione dei pori, mediante l'equazione di Washburn (eq.
+\ref{eq:Washburn}, pag. \pageref{eq:Washburn}), viene effettuata dopo
+la sottrazione automatica punto per punto dei valori legati alla
+compressibilità di mercurio preventivamente calcolati in un ciclo di
+misura senza campioni. Alla fine del ciclo di intrusione,
+l'apparecchio va automaticamente in depressione.
 
 
 % \subsection{Protocollo di misura}
 
-
+\info[inline]{Da qui rileggo con attenzione}
 \section{Elaborazione dei dati}
 
 I dati sono stati analizzati mediante il linguaggio di programmazione
-ad oggetti R 3.4.0 \citep{r_programming}.  L'esplorazione dei modelli
+ad oggetti R 3.4.0 \citep{r_programming}. L'esplorazione dei modelli
 statistici \citep{fox2002r, chambers1992statistical, faraway2004} è
 stata fatta mediante confronto di modelli statistici marginali e un
-test F ($\textrm{p < 0,05}$).  Tutti i modelli statistici sono stati
-validati attraverso l'analisi esplorativa dei residui (appendice
-\ref{sec:residui}) in modo da verificare le eventuali violazioni delle
-assunzioni di normalità \citep{stefanini2007introduzione}.
+test F ($\textrm{p < 0,05}$). Tutti i modelli sono stati validati
+attraverso l'analisi esplorativa dei residui, i cui risultati sono
+esposti in appendice \ref{sec:residui}, e che indicano assenza di
+violazioni delle assunzioni di normalità.
+\citep{stefanini2007introduzione}.
 
 \subsection{Densità}
-I risultati delle analisi sia con il metodo \emph{Core} che con il
+\migliora[inline]{Riscrivi dettagliando che la mancanza
+  dell'interazione è stata accertata coi modelli marginali. I
+risultati delle analisi sia con il metodo \emph{Core} che con il
 metodo \emph{Clod} non hanno riscontrato interazioni statisticamente
 significative tra i parametri considerati e quindi esse non compaiono
-nei modelli statistici adattati ai dati (modello \ref{mod:MetodoCore}
-\ref{mod:MetodoClod}), che sono quindi di natura additiva.
+nei modelli utilizzati per l'analisi dei dati (modelli
+\ref{mod:MetodoCore} e modello \ref{mod:MetodoClod}), che sono quindi
+di natura additiva.
+
 
 Una volta ottenuto il modello definitivo è stata effettuata
 un'analisi della varianza (ANOVA) sul modello.
 
-Infine, data la natura additiva dei modelli statistici, ai gruppi oggetto dello
-studio, è stato applicato il test di \citet{siegel1960nonparametric} utilizzando le
-librerie 'agricolae' \citep{agricolae} e 'multcomp' \citep{multcomp}.
+Infine, data la natura additiva dei modelli statistici, ai gruppi
+oggetto dello studio, è stato applicato il test di
+\citet{siegel1960nonparametric} utilizzando le librerie 'agricolae'
+\citep{agricolae} e 'multcomp' \citep{multcomp}.}
 
 
 \subsection{Dinamica della distribuzione degli aggregati e porosimetria}
 
 I dati provenienti da queste due analisi sono, per loro stessa natura,
-composizionali e quindi sono stati analizzati con la libreria
-'composition' \citep{compositional}.  Le distribuzioni ricavate dagli
-strumenti, infatti, sono espresse come valore percentuale sul totale;
-questi sono stati raggruppati in tre classi dimensionali
-(rispettivamente: macroaggregati, mesoaggregati e microaggregati per
-gli aggregati e residui, immagazzinamento e trasmissione per i
-pori). I limiti delle tre classi dimensionali sono state definiti in
-base alla classificazione della letteratura \citep{paul2014soil,
-  tisdall1982organic, greenland1977soil, lal2004principles}.
+composizionali (appendice \ref{sec:composizionale}) e quindi sono
+stati analizzati con la libreria 'composition' \citep{compositional}.
+
+\migliora[inline]{Le distribuzioni sono distribuzioni. Le classi delle
+  distribuzioni sono espresse come percentuale sul totale Le
+distribuzioni ricavate dagli strumenti, infatti, sono espresse come
+valore percentuale sul totale; questi sono stati raggruppati in tre
+classi dimensionali (rispettivamente: macroaggregati, mesoaggregati e
+microaggregati per gli aggregati e residui, immagazzinamento e
+trasmissione per i pori).}
+
+\todo[inline]{state definiti ???? STOP: la riguardo solo dopo che hai
+  tolto queste minchiate } I limiti delle tre classi dimensionali sono
+state definiti in base alla classificazione della letteratura
+\citep{paul2014soil, tisdall1982organic, greenland1977soil,
+  lal2004principles}.
 
 A questo punto è stato adattato il modello statistico all'interno
 dello spazio vettoriale del simplesso
-(appendice \ref{sec:composizionale}) e, dopo l'esplorazione visuale
+ e, dopo l'esplorazione visuale
 della normalità dei residui (appendice \ref{sec:residui}),
 verificata la significatività dei trattamenti mediante l'ANOVA.
 
