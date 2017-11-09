@@ -3127,10 +3127,9 @@ a_i=Q_i\pi r_i^2n_i
   le sole basi di scambio presenti, anche in questo caso si
   considererà solamente il totale della subcomposizione.
   
-  I dati composizionali vengono sempre trattati in una
-  \emph{log-ratio-transformed scale}. Questa operazione porta a
-  definire uno spazio vettoriale ristretto, contenuto nello spazio
-  reale, denominato \emph{simplesso} definito come:
+  I dati composizionali possono essere rappresentati 
+ in uno spazio vettoriale ristretto, contenuto nello spazio
+  reale, denominato \emph{simplesso} e definito come:
   \begin{equation}
     \label{eq:simplesso}
     S^D= \left \{ x= \left [x_1,x_2,\dots,x_D \right ] \in R^D | x_i>0, i=1,2,\dots,D;
@@ -3146,11 +3145,7 @@ a_i=Q_i\pi r_i^2n_i
   \end{tabular}
   
   \bigskip
-  
-  In questo spazio vettoriale le relazioni sono linearizzate
-  \ref{fig:simplexdeform} e quindi è possibile utilizzare tutte le
-  tecniche di statistica lineare: regressione, anova, modelli lineari,
-  ecc.
+
   \begin{samepage}
   \begin{figure}
     \centering
@@ -3180,6 +3175,11 @@ a_i=Q_i\pi r_i^2n_i
     \label{eq:powering}
     \lambda \odot \bm{x} = C \left[x_1^\lambda, x_2^\lambda,.....,x_D^\lambda \right]
   \end{equation}.
+
+  Per essere linearizzati i dati devono essere trattati in una \emph{log-ratio-transformed scale}
+  (Fig. \ref{fig:simplexdeform}), questa operazione rende possibile utilizzare tutte le
+  tecniche di statistica lineare: regressione, anova, modelli lineari,
+  ecc.
   \end{samepage}  
 
 
