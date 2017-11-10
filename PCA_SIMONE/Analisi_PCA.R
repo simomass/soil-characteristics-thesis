@@ -165,8 +165,9 @@ abline(v = 0, lty = 2);abline(h = 0, lty = 2);
 abline(coef(modello)[c(1,3)], col = 1)
 abline(coef(modello)[c(2,4)], col = 2)
 points(x = c(0,0), y = coef(modello)[1:2], col = 1:2, cex = 3)
-modello <- lm(C.organico ~ TRT*C.inorganico, data = df.PCAChimica)
+modello <- lm(C.organico ~ TRT, data = df.PCAChimica)
 summary(modello)
+
 
 modello <- lm(C.inorganico ~ TRT, data = df.PCAChimica)
 
