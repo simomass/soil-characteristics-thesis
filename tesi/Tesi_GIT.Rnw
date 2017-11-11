@@ -143,8 +143,8 @@ final]{scrbook}
 
 
 % \usepackage[printwatermark]{xwatermark}
-    % \newwatermark[allpages,color=grey!50,angle=90,scale=1,xpos=0,ypos=0]{Tesi
-% di Simone Massenzio}
+%     \newwatermark*[allpages,color=grey!10,angle=90,scale=1,xpos=75,ypos=0]{Tesi
+% di Laurea magistrale di Simone Massenzio}
 
     %\usepackage[raggedright]{titlesec}
 % Serve per evitare la sillabazione nei titoli
@@ -206,6 +206,8 @@ final]{scrbook}
 
 \usepackage{amsmath}
 \numberwithin{equation}{chapter} % numera le equazioni col numero di capitolo
+
+\usepackage{wrapfig}
 
   \usepackage[nogin]{Sweave}
   % https://tex.stackexchange.com/questions/11619/resize-arrays-and-figures-in-a-sweave-document
@@ -436,7 +438,7 @@ intervengono fattori fisici (frantumazione, alternanza di gelo e disgelo,
 alternanza di idratazione ed essiccamento), chimici (reazioni
 acido-base, ossidoriduzioni) e biologici (fermentazioni o, in
 generale, processi operati da microrganismi, piante e animali).
-Secondo \citet{jenny1994factors} i fattori che intervengono nella
+Secondo \citet{jenny1941factors} i fattori che intervengono nella
 formazione del suolo possono essere descritti con la seguente funzione:
 \begin{equation}
   s = f(cl, o, r, p, t, ...)
@@ -519,13 +521,11 @@ struttura. Mediamente la densità apparente corrisponde a circa la metà
 del valore di densità reale, nonostante si discosta da questo a
 seconda dello stato di aggregazione della fase solida del
 terreno. Secondo \citet{AskinBulkDensity}, la densità apparente di un
-terreno è influenzata principalmente dalla tessitura del terreno, e
+terreno è influenzata principalmente dalla tessitura del terreno e,
 più in particolare, dalla frazione sabbiosa e argillosa. Tuttavia,
 anche se con un effetto più lieve, questi autori riscontrano una
 significativa correlazione negativa tra il contenuto di sostanza
 organica e il valore della densità apparente.
-
-%% Simo Tutta sta roba l'ho presa da Pagliai
 
 Un ulteriore indicatore di fertilità fisica del suolo è la stabilità
 degli aggregati; questi ultimi sono definiti come \emph{un insieme di
@@ -541,8 +541,7 @@ suoli è stato visto come la stabilità degli aggregati dipenda dalla
 quantità di sostanza organica e quindi, in un suolo agrario, dalla
 gestione dell'agroecosistema \citep{tisdall1982organic}.
 
-
-\begin{samepage}
+%\begin{samepage}
   Sono diversi i meccanismi che provocano la rottura degli aggregati
   \citep{EJSS4_12311}:
 \begin{itemize}
@@ -551,7 +550,7 @@ gestione dell'agroecosistema \citep{tisdall1982organic}.
   \item rottura per impatto della pioggia;
   \item dispersione fisico-chimica.
 \end{itemize}
-\end{samepage}
+%\end{samepage}
 
 Lo \emph{slaking} consiste nella rottura degli aggregati di suolo
 causata dall'aria intrappolata dentro all'aggregato durante
@@ -602,7 +601,7 @@ struttura favorisce l'erosione, la compattazione e la
 desertificazione.
 
 In figura \ref{fig:distroPori} sono riportate le principali classificazioni
-dimensionali dei pori. Ogni autore ha definito dei range dimensionali
+dimensionali dei pori; ogni autore ha definito le classi dimensionali
 in base alle funzioni (biologiche, chimiche, fisiche) che i pori di
 quella dimensione hanno.
 
@@ -627,8 +626,7 @@ usata è quella di \citet{greenland1977soil} ed è mostrata in Tab.
 \ref{tab:green}.
 
 \begin{table}[ht]
-  \caption[Classificazione dei pori del terreno secondo le
-  dimensioni]{Classificazione dei pori del terreno secondo le
+  \caption[Classificazione dei pori del terreno secondo Greenland]{Classificazione dei pori del terreno secondo le
     dimensioni: da \citet{pagliai2002soil}.}
   \label{tab:green}
   \centering
@@ -656,15 +654,16 @@ I pori di diametro inferiore a \SI{0.5}{\micro\metre} sono definiti
 \emph{pori residui} per le loro interazioni chimiche a livello
 molecolare; i pori che hanno un diametro compreso tra 0,5 e
 \SI{50}{\micro\metre} sono detti \emph{pori di immagazzinamento},
-quelli con diametro compreso tra 50 e \SI{500}{\micro\metre} sono i \emph{pori di
-  conduzione}. I pori di dimensioni maggiori di \SI{500}{\micro\metre}
-sono utili alla penetrazione delle radici e al movimento dell’acqua di
-drenaggio specialmente nei suoli a tessitura fine. Cionondimeno, una loro
-percentuale pari o superiore al 70-80\% della porosità totale,
-indica una cattiva struttura che non favorisce la crescita delle
-piante. Se i pori grandi, medi e piccoli sono in proporzione ottimale,
-si osserva un concomitante immagazzinamento/conduzione di acqua e aria
-che permette un'adeguata crescita radicale.
+quelli con diametro compreso tra 50 e \SI{500}{\micro\metre} sono i
+\emph{pori di conduzione}. I pori di dimensioni maggiori di
+\SI{500}{\micro\metre} sono utili alla penetrazione delle radici e al
+movimento dell’acqua di drenaggio specialmente nei suoli a tessitura
+fine. Cionondimeno, una loro percentuale pari o superiore al 70-80\%
+della porosità totale, indica una cattiva struttura che non favorisce
+la crescita delle piante. Una porosità distribuita ottimamente tra le
+classi dimensionali dei pori, consente un miglior
+immagazzinamento/conduzione di acqua e aria e un'adeguata crescita
+radicale.
 
 
 
@@ -869,8 +868,8 @@ avanti definiti come \emph{Conduzione}:
 \item conduzione Biologica\footnote{In realtà nell'azienda sono
     presenti due blocchi a conduzione Biologica: il primo è quello
     citato, ovvero il "Biologico vecchio", il secondo, non esaminato
-    nel presente lavoro è denominato "Biologico nuovo"}, \emph{OO} (\emph{Old Organic})
-\item conduzione \emph{Convenzionale}, \emph{CO}
+    nel presente lavoro è denominato "Biologico nuovo"}, \emph{OO} (\emph{Old Organic});
+\item conduzione \emph{Convenzionale}, \emph{CO}.
 \end{itemize}
 
 \begin{figure}[ht]
@@ -903,15 +902,15 @@ Dal 2001, sono state adottate le seguente rotazioni:
 \begin{itemize}
 \item per la conduzione Biologica
   \begin{enumerate}
-  \item \small sovescio e coltura da rinnovo 
-  \item \small cereale e leguminosa
-  \item \small leguminosa 
-  \item \small cereale
+  \item \small sovescio e coltura da rinnovo,
+  \item \small cereale e leguminosa,
+  \item \small leguminosa,
+  \item \small cereale;
   \end{enumerate}
 \item  per la conduzione Convenzionale
   \begin{enumerate}
-    \item \small coltura da rinnovo
-    \item \small cereale
+    \item \small coltura da rinnovo,
+    \item \small cereale.
   \end{enumerate} 
 \end{itemize}
 
@@ -920,13 +919,9 @@ stato coltivato l'orzo negli appezzamenti \emph{OO2} e \emph{CO9} e il
 girasole negli appezzamenti \emph{OO4} e \emph{CO10}.
 
 In ogni appezzamento (oltre ad una ulteriore frangizollatura comune
-per tutti in pre-semina) sono state messe a confronto le seguenti
-lavorazioni primarie (\emph{Lavorazione}):
-\begin{itemize}
-\item  \emph{aratura},
-\item  \emph{rippatura},
-\item  \emph{frangizollatura}.
-\end{itemize}
+per tutti in pre-semina) sono state messe a confronto le lavorazioni
+primarie (\emph{Lavorazione}): \emph{aratura}, \emph{rippatura},
+\emph{frangizollatura}.
 
 Ogni lavorazione è stata replicata tre volte per appezzamento che
 diventa cos\`i suddiviso in 9 parcelle.
@@ -945,6 +940,16 @@ distanti \SI{4}{\meter} dal medio lungo l'asse maggiore della parcella.
 
 In totale sono stati raccolti 108 campioni di terreno, sia nell'anno
 2015 che nell'anno 2016.
+\begin{wrapfigure}{L}{0.55\textwidth}
+\centering
+  \includegraphics[width=0.5\textwidth]{../foto/cilindroOttone.jpeg}
+
+  \caption[Cilindro in ottone usato per la misura della densità
+  apparente: metodo \emph{Core}]{Cilindro in ottone utilizzato per
+    prelevare i campioni da destinare all'analisi di densità
+    apparente col metodo \emph{Core}.}
+  \label{fig:cilindro}
+\end{wrapfigure}
 
 Il campionamento è stato effettuato con due modalità: 
 \begin{itemize}
@@ -960,17 +965,14 @@ inserito nel suolo per tutta la sua lunghezza e quindi estratto
 facendo attenzione che il materiale al suo interno non fuoriuscisse in
 modo da formare due superfici piatte sulle basi del cilindro.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.5\textwidth]{../foto/cilindroOttone.jpeg}
 
-  \caption[Cilindro in ottone usato per la misura della densità
-  apparente: metodo \emph{Core}]{Cilindro in ottone utilizzato per
-    prelevare i campioni da destinare all'analisi di densità
-    apparente col metodo \emph{Core}.}
-  \label{fig:cilindro}
-\end{figure}
-\FloatBarrier
+
+
+% \begin{figure}[ht]
+%   \centering
+
+% \end{figure}
+% \FloatBarrier
 
 Il campione prelevato con il secondo metodo, verrà successivamente suddiviso in
 aliquote utilizzate per gli altri metodi di misura.
@@ -1068,6 +1070,7 @@ consiste mantenere a bagno nel petrolio per una notte gli aggregati
 di terreno (Fig. \ref{fig:petrolio}) cercando di ridurre al minimo le
 manipolazioni per mantenere la struttura dell'aggregato stesso.
 
+
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\textwidth]{../foto/petrolio.jpeg}
@@ -1075,7 +1078,7 @@ manipolazioni per mantenere la struttura dell'aggregato stesso.
     misura della densità apparente}
   \label{fig:petrolio}
 \end{figure}
-\FloatBarrier
+
 
 
 Successivamente gli aggregati (completamente imbevuti di petrolio)
@@ -1191,7 +1194,7 @@ particelle è compresa tra 1 e \SI{2}{\milli\meter}; successivamente
 della misurazione effettiva del campione è stato necessario misurare
 un "bianco" per acquisire l'intensità della radiazione luminosa
 all'ingresso del campo delle particelle, $I_0$
-(Eq. \ref{eq:BeerLambert} pag. \pageref{eq:BeerLambert}). Da questa
+(Eq. \ref{eq:BeerLambert}, p. \pageref{eq:BeerLambert}). Da questa
 aliquota, \SI{300}{\mg} sono stati immessi nell'unità di dispersione
 del campione opportunamente riempita di acqua.  
 
@@ -1240,7 +1243,7 @@ distribuzione granulometrica fornita dallo strumento.
 Le misure della distribuzione dei pori sono state realizzate
 rispettivamente: con un porosimetro Carlo Erba serie 2000 per i
 macropori e un porosimetro PASCAL 140 per i micropori, entrambi
-collegati ad un elaboratore DOS per la raccolta e per una prima
+collegati ad un terminale DOS per la raccolta e per una prima
 elaborazione dei dati \citep{LuigiTesi}.
 
 \begin{figure}[ht]
@@ -1257,7 +1260,7 @@ diametro compreso tra circa \SI{0.005}{\micro\meter} a circa
 \SI{2000}{\micro\meter}.
 
 Gli aggregati di circa un grammo vengono introdotti in un contenitore
-di vetro speciale (dilatometro, Fig. \ref{fig:dilatometro} a
+di vetro speciale (dilatometro, Fig. \ref{fig:dilatometro} a 
 p. \pageref{fig:dilatometro}) esso ha nella base un contatto elettrico
 con terminazione interna ed esterna, superiormente è chiuso da un cono
 a smeriglio che si prolunga in un capillare calibrato di \SI{6}{\mm}
@@ -1284,21 +1287,7 @@ a \SI{2000}{\atm}; incrementi di pressione possono essere regolati da
 un'unità di controllo; naturalmente più è lenta l'intrusione
 migliore è la distribuzione delle dimensioni dei pori.
 
-La progressiva penetrazione di mercurio nel campione è acquisita
-tramite un sensore capacitivo. Il segnale elettrico che ne deriva
-viene convertito in volume di mercurio intruso. Il calcolo della
-distribuzione dei pori, mediante l'equazione di Washburn (eq.
-\ref{eq:Washburn}, pag. \pageref{eq:Washburn}), viene effettuata dopo
-la sottrazione automatica punto per punto dei valori legati alla
-compressibilità di mercurio preventivamente calcolati in un ciclo di
-misura senza campioni. Alla fine del ciclo di intrusione,
-lo strumento torna automaticamente alla pressione di partenza.
-
-In figura \ref{fig:distribuzionePori} è rappresentato un esempio di
-distribuzione della porosità.
-
-
-\begin{figure}[ht]
+\begin{wrapfigure}{R}{0.75\textwidth}
   \centering
   \includegraphics[width=0.7\textwidth]{../grafici/distribuzionePorosit.pdf}
   \caption[Esempi di una curva di distribuzione della porosità]{Un
@@ -1308,8 +1297,24 @@ distribuzione della porosità.
     dei pori espresso in \SI{}{\micro\metre}; sull'asse delle ordinate
     sono presenti i relativi valori in percentuale sul volume totale.}
   \label{fig:distribuzionePori}
-\end{figure}
-\FloatBarrier
+\end{wrapfigure}
+
+La progressiva penetrazione di mercurio nel campione è acquisita
+tramite un sensore capacitivo. Il segnale elettrico che ne deriva
+viene convertito in volume di mercurio intruso. Il calcolo della
+distribuzione dei pori, mediante l'equazione di Washburn (eq.
+\ref{eq:Washburn}, p. \pageref{eq:Washburn}), viene effettuata dopo
+la sottrazione automatica punto per punto dei valori legati alla
+compressibilità di mercurio preventivamente calcolati in un ciclo di
+misura senza campioni. Alla fine del ciclo di intrusione,
+lo strumento torna automaticamente alla pressione di partenza.
+
+In figura \ref{fig:distribuzionePori} è rappresentato un esempio di
+distribuzione della porosità.
+
+
+
+%\FloatBarrier
 
 
 \section{Elaborazione dei dati}
@@ -1333,8 +1338,8 @@ interazioni). Dal confronto non è stato rilevata nessuna differenza
 statisticamente significativa ($p<0.05$). Dunque si può
 affermare che non ci siano interazioni tra i trattamenti. I modelli
 utilizzati per l'analisi sono quindi di natura additiva (modello
-\ref{mod:MetodoCore} a Pag. \pageref{mod:MetodoCore} e modello
-\ref{mod:MetodoClod} a Pag. \pageref{mod:MetodoClod}).
+\ref{mod:MetodoCore} a p. \pageref{mod:MetodoCore} e modello
+\ref{mod:MetodoClod} a p. \pageref{mod:MetodoClod}).
 
 Una volta ottenuti i modelli definitivi, dopo l'esplorazione visuale
 della normalità dei residui, è stata effettuata un'analisi della
@@ -1342,7 +1347,7 @@ varianza (ANOVA).
 
 Infine, data la natura additiva dei modelli statistici, ai gruppi
 oggetto dello studio, è stato applicato il test di
-\citet{siegel1960nonparametric} utilizzando le librerie 'agricolae'
+\citet{tukey1949comparing} utilizzando le librerie 'agricolae'
 \citep{agricolae} e 'multcomp' \citep{multcomp}.
 
 
@@ -1373,8 +1378,8 @@ classificazione della letteratura
 
 Una volta applicate le dovute trasformazioni ai dati (appendice
 \ref{sec:composizionale}) è stato adattato un modello composizionale
-(modello \ref{mod:Stabilita} a Pag. \pageref{mod:Stabilita} e modello
-\ref{mod:Porosita} a Pag. \pageref{mod:Porosita}), dopo l'esplorazione
+(modello \ref{mod:Stabilita} a p. \pageref{mod:Stabilita} e modello
+\ref{mod:Porosita} a p. \pageref{mod:Porosita}), dopo l'esplorazione
 visuale della normalità dei residui, è
 stata verificata la significatività dei trattamenti mediante l'ANOVA.
 
@@ -1428,13 +1433,17 @@ detach(summary.campo)
 \subsection{Metodo \emph{Core}}
 
 La tabella \ref{tab:summaryCore} riassume i dati ottenuti calcolando
-la densità apparente (formula \ref{eq:DensitaApparente}, pag.
-\pageref{eq:DensitaApparente}). La figura \ref{fig:boxplotCore}
-riporta gli stessi dati in forma grafica. I valori, la cui media
-generale è pari a
+la densità apparente (formula \ref{eq:DensitaApparente}, p.
+\pageref{eq:DensitaApparente}). In totale, nell'anno 2016, sono stati
+analizzati 35 campioni, su un totale previsto di 36 campioni
+appartenenti alla serie \emph{m} (il numero minore è da attribuirsi a
+campioni scartati a causa di errori di misura); oltre ai campioni
+misurati dell'anno 2016, sono stati aggiunti i dati dell'anno 2015
+provenienti da un precedente lavoro di tesi. La figura
+\ref{fig:boxplotCore} riporta gli stessi dati in forma grafica. I
+valori, la cui media generale è pari a
 \SI{\Sexpr{round(mean(df.dueAnni$densita.apparente,na.rm=TRUE),2)}}{\gram\per\cubic\centi\metre},
 sono simili a quelli che più frequentemente si riscontrano nel suolo.
-
 <<Summary_Campo, echo=FALSE, eval=TRUE, results=tex>>=
 names(summary.campo) <-  
     c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n", "Tukey")
@@ -1446,7 +1455,7 @@ summary.campo$Conduzione <-
 summary.campo$Lavorazione <- 
     mapvalues(summary.campo$Lavorazione, from = c("Ara", "Rip", "Fzo"), to = c("Arato", "Rippato", "Frangizollato"))
 summary.campo <- rbind(summary.campo[1:3,], rep(NA, 7), 
-                       summary.campo[4:6,], rep(NA, 7), rep(NA, 7), summary.campo[7:9,], rep(NA, 7), 
+                       summary.campo[4:6,], rep(NA, 7), summary.campo[7:9,], rep(NA, 7), 
                        summary.campo[10:nrow(summary.campo),])
 tabella.campo <-
     xtable(summary.campo[,-7],
@@ -1529,12 +1538,14 @@ lm.DensSign <-
 
 %% \migliora[inline]{riscrivere}
 
+\newpage
+
 Il modello statistico adattato è il seguente:
 
 %
 \begin{modello}
   \label{mod:MetodoCore}
-  y \sim \mu + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
+  y \sim \beta_0 + \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + \epsilon
 \end{modello}
 %\nopagebreak
 
@@ -1544,11 +1555,11 @@ Dove:
 \nopagebreak
 \begin{tabular}{lp{12cm}}
   $y$       & = densità apparente\\
-  $\mu$     & = media generale\\
+  $\beta_0$     & = media generale (intercetta del modello)\\
   $\beta_1$ & = coefficiente della variabile \emph{anno}, due livelli: \emph{2015, 2016};\\
   $\beta_2$  & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
   $\beta_3$ & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
-  $\epsilon$ & = residui o errore.
+  $\epsilon$ & = residui o errore
 \end{tabular}
 \end{samepage}
 \vspace*{2em}
@@ -1684,13 +1695,13 @@ summary.petrolio <- rbind(summary.petrolio[1:3,], rep(NA, 6),
 @ 
 
 Il metodo \emph{Clod} ha permesso, grazie alla sua speditività, di
-analizzare tutte le 108 combinazioni dei fattori dell'esperimento:
-per ogni combinazione sono stati analizzati tre campioni. La media dei
-tre campioni è stata usata per l'analisi dei dati.
+analizzare i 108 campioni raccolti, ogni misura è stata replicata tre
+volte. La media delle tre misure è stata usata per l'analisi dei dati.
 I valori della densità apparente calcolati mediante l'equazione
-\ref{eq:densitapetrolio} sono mediamente più elevati (media:
-(\Sexpr{round(mean(df.petrolio$densita.apparente, na.rm=T),2)}\SI{}{\gram\per\cubic\centi\metre})
-rispetto a quelli ottenuti utilizzando il metodo \emph{Core}
+\ref{eq:densitapetrolio} (p. \pageref{eq:densitapetrolio}) sono
+mediamente più elevati (media:
+(\Sexpr{round(mean(df.petrolio$densita.apparente, na.rm=T),2)}\SI{}{\gram\per\cubic\centi\metre}) rispetto a quelli
+ottenuti utilizzando il metodo \emph{Core}
 (\Sexpr{round(mean(df.dueAnni$densita.apparente, na.rm=TRUE),2)}\SI{}{\gram\per\cubic\centi\metre}).
 
 <<Analisi_Petrolio, echo=FALSE, eval=TRUE>>=
@@ -1704,6 +1715,35 @@ summary_spinta <-
 summary(lm.spinta)
 @
 
+
+
+Il modello statistico adattato è il seguente:
+
+\begin{samepage}
+\begin{modello}
+  \label{mod:MetodoClod}
+  y \sim \beta_0 + \beta_1x_1 + \beta_2x_2 + \epsilon
+\end{modello}
+\nopagebreak
+
+Dove:
+
+\nopagebreak
+\begin{tabular}{lp{12cm}}
+  $y$       & = densità apparente\\
+  $\beta_0$     & = media generale (intercetta del modello)\\
+  $\beta_1$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
+  $\beta_2$  & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
+  $\epsilon$ & = residui o errore
+\end{tabular}
+\end{samepage}
+\vspace*{3em}
+
+
+La tabella \ref{tab:summaryClod} riassume i dati ottenuti; il boxplot
+in figura \ref{fig:boxplotClod} riporta gli stessi dati in forma
+grafica.
+
 <<Analisi_Petrolio, echo=FALSE, eval=TRUE, results=tex>>=
 rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Totale")
 tabella.spinta.anova <-
@@ -1714,34 +1754,6 @@ digits = c(0,0,rep(3,4))
 )
 print(tabella.spinta.anova, caption.placement = "top")
 @
-
-Il modello statistico adattato è il seguente:
-
-\begin{samepage}
-\begin{modello}
-  \label{mod:MetodoClod}
-  y \sim \mu + \beta_1x_1 + \beta_2x_2 + \epsilon
-\end{modello}
-\nopagebreak
-
-Dove:
-
-\nopagebreak
-\begin{tabular}{lp{12cm}}
-  $y$       & = densità apparente\\
-  $\mu$     & = media generale\\
-  $\beta_1$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
-  $\beta_2$  & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
-  $\epsilon$ & = residui o errore.
-\end{tabular}
-\end{samepage}
-\vspace*{3em}
-
-
-In tabella \ref{tab:anova piccoli aggregati} è riportata la tabella
-dell'analisi della varianza condizionata alla \emph{conduzione} e alla
-\emph{lavorazione}; mentre in figura \ref{fig:boxplotClod} è riportato
-il boxplot.
 
 
 <<label = boxplotpetr, fig.width=0.8, fig.height=0.8, echo=FALSE, fig = TRUE, include = FALSE>>=
@@ -1815,8 +1827,8 @@ with(data = df.petrolio,
 L'analisi della varianza, (Tab. \ref{tab:anova piccoli aggregati})
 indica che entrambi i fattori sono statisticamente significativi ($p<0.05$)
 Avendo verificato l'assenza di interazioni tra \emph{Conduzione} e
-\emph{Lavorazione} (vedi pag. \pageref{mod:MetodoClod}) è quindi stato
-effettuato un test di Tukey-Siegel ($p<0.05$).
+\emph{Lavorazione} (vedi p. \pageref{mod:MetodoClod}) è quindi stato
+effettuato un test di Tukey ($p<0.05$).
 
 %La tabella dei contrasti %\dubbio{Gigi dice che non si chiama t-table}
 %(Tab. \ref{tab:sommario piccoli aggregati}) 
@@ -1864,7 +1876,7 @@ par(mfrow = c(2,2))
 plot(lm.spinta)
 @ 
 
-
+\newpage
 \section{Dinamica della distribuzione della dimensione degli aggregati}
 
 \label{sec:Dinamica}
@@ -1956,15 +1968,16 @@ lm.2 <-
 @
 
 
-Per l'adattamento dei modelli statistici è stato escluso il fattore
-\emph{lavorazione} in quanto non significativo.
+Per l'adattamento dei modelli relativi alla dinamica della
+distribuzione è stato escluso il fattore \emph{lavorazione} in quanto
+non significativo ($p<0.05$).
 
 \begin{samepage}
 Il modello composizionale adattato per i dati linearizzati è il seguente:
 
 \nopagebreak
 \begin{modello}
-  \bm{Y} \sim \bm{\mu}  \oplus \bm{\beta_1} \odot x_1 \oplus \bm{\beta_2} \odot x_2 \oplus
+  \bm{Y} \sim \bm{\beta_0}  \oplus \bm{\beta_1} \odot x_1 \oplus \bm{\beta_2} \odot x_2 \oplus
   \bm{\beta_3} \odot x_2^2 \oplus \bm{\epsilon}
   \label{mod:Stabilita}
 \end{modello}
@@ -1974,12 +1987,12 @@ Dove:
 \nopagebreak
 \begin{tabular}{lp{12cm}}
   $\bm{Y}$  & = Composizione (tre componenti: \emph{macroaggregati,
-              mesoaggregati, microaggregati});\\
-  $\bm{\mu}$     & = media generale;\\
-  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
-  $\bm{\beta_2}$  & = coefficiente della variabile \emph{tempo};\\
-  $\bm{\beta_3}$ & = coefficiente della variabile \emph{tempo} elevata al quadrato;\\
-  $\bm{\epsilon}$ & = residui o errore.
+              mesoaggregati, microaggregati})\\
+  $\bm{\beta_0}$     & = media generale (intercetta del modello)\\
+  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico}\\
+  $\bm{\beta_2}$  & = coefficiente della variabile \emph{tempo}\\
+  $\bm{\beta_3}$ & = coefficiente della variabile \emph{tempo} elevata al quadrato\\
+  $\bm{\epsilon}$ & = residui o errore
 \end{tabular}
 \end{samepage}
 \vspace*{3em}
@@ -1996,8 +2009,7 @@ significativa.
 La misura è stata effettuata sia su aggregati essiccati all'aria che
 su aggregati inumiditi, per studiare il fenomeno dello
 \emph{slaking}. Di conseguenza sono stati adattati due modelli: uno
-per i campioni inumiditi (\emph{WET}) e uno per i campioni secchi
-(\emph{DRY}).
+per i campioni inumiditi e uno per i campioni secchi.
 
 
 La tabella dell'analisi della varianza evidenzia che gli aggregati
@@ -2013,7 +2025,7 @@ conduzione.
 
 Questo comportamento mostrerebbe che le pratiche agricole utilizzate
 nella conduzione di tipo \emph{Biologico} porterebbero a formare
-aggregati di meno stabili con cementi meno efficaci rispetto a quelli
+aggregati meno stabili con cementi meno efficaci rispetto a quelli
 ottenuti con la conduzione \emph{Convenzionale}.
 
 
@@ -2410,7 +2422,7 @@ Il modello composizionale adattato per i dati linearizzati è il seguente:
 
 \nopagebreak
 \begin{modello}
-  \bm{Y} \sim \bm{\mu}  \oplus \bm{\beta_1} \odot x_1 \oplus
+  \bm{Y} \sim \bm{\beta_0}  \oplus \bm{\beta_1} \odot x_1 \oplus
   \bm{\beta_2} \odot x_2 \oplus  \bm{\epsilon}
   \label{mod:Porosita}
 \end{modello}
@@ -2420,12 +2432,12 @@ Dove:
 \nopagebreak
 \begin{tabular}{lp{12cm}}
   $\bm{Y}$  & = Composizione (tre componenti: pori \emph{residui},
-              pori di \emph{trasmissione} e pori di \emph{immagazzinamento});\\
-  $\bm{\mu}$     & = media generale;\\
-  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
+              pori di \emph{trasmissione} e pori di \emph{immagazzinamento})\\
+  $\bm{\beta_0}$     & = media generale (intercetta del modello)\\
+  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico}\\
   $\bm{\beta_2}$  & = coefficiente della variabile \emph{lavorazione},
-                    due livelli: \emph{arato, rippato, frangizollato};\\
-  $\bm{\epsilon}$ & = residui o errore.
+                    due livelli: \emph{arato, rippato, frangizollato}\\
+  $\bm{\epsilon}$ & = residui o errore
 \end{tabular}
 \end{samepage}
 \vspace*{3em}
@@ -2516,12 +2528,10 @@ legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"),
 % \end{minipage}
 %\FloatBarrier
 
-La tabella \ref{tab:poros_anova}, mostra che all'interno dei
-trattamenti non sono presenti differenze statisticamente
-significative. Di conseguenza, dato il basso numero di campioni, non
-è possibile evidenziare una significatività dei trattamenti.
+La mancanza di significatività può essere spiegata con il basso numero
+di campioni.
 
-Considerato che le tecniche di statistica composizionale non
+Visto che le tecniche di statistica composizionale non
 considerano la somma totale delle composizioni ma i loro rapporti
 (appendice \ref{sec:composizionale}), è stata tentata una analisi
 statistica univariata prendendo come variabile dipendente il valore
@@ -2545,13 +2555,13 @@ print(anova_tabellaTot, caption.placement = "top")#, math.style.exponents = TRUE
 @ 
 
 
-La tabella ANOVA (Tab. \ref{tab:tot_anova}) ci permette di affermare che il
-numero di campioni non è sufficiente per determinare la
-significatività dei trattamenti, tuttavia come si può vedere dalla
-tabella \ref{tab:tot_sommario}, i dati tenderebbero a confermare il
-risultato dell'analisi della densità apparente misurata con il
-metodo \emph{Clod} dal quale risultava una maggior porosità nei
-campioni di suolo provenienti da appezzamenti condotti a \emph{Biologico}.
+La tabella ANOVA (Tab. \ref{tab:tot_anova}) non ci permette di
+affermare la significatività dei trattamenti, tuttavia come si può
+vedere dalla tabella \ref{tab:tot_sommario}, i dati tenderebbero a
+confermare il risultato dell'analisi della densità apparente misurata
+con il metodo \emph{Clod} dal quale risultava una maggior porosità nei
+campioni di suolo provenienti da appezzamenti condotti a
+\emph{Biologico}.
 
 
 <<sommario_totali, eval = TRUE, echo = FALSE, results = tex>>=
@@ -2636,17 +2646,17 @@ print(sommario_tabellaTot, caption.placement = "top", include.rownames = FALSE)#
 
 Dai risultati della densità apparente è emerso che:
 \begin{itemize}
-\item il metodo \emph{Core}, non mostra differenze significative, né
+\item il metodo \emph{Core}, non mostra differenze statisticamente significative, né
   per la conduzione né per la lavorazione;
 \item con il metodo \emph{Clod} sono state rilevate differenze statisticamente
   significative tra i trattamenti conduzione e lavorazione.
 \end{itemize}
 
-Dal confrontro della tabella \ref{tab:summaryCore} con
-la tabella \ref{tab:summaryClod}, il metodo \emph{Clod} fornisce
-dei  valori di  densità apparente  più elevati  rispetto a  quelli
-misurati utilizzando il metodo \emph{Core}, questo è dovuto al fatto
-che    nella    misura    non    sono    considerate    le    fratture
+Dal confrontro della tabella \ref{tab:summaryCore} con la tabella
+\ref{tab:summaryClod}, il metodo \emph{Clod} fornisce dei valori di
+densità apparente più elevati rispetto a quelli misurati utilizzando
+il metodo \emph{Core}, questo è dovuto al fatto che nella misura
+\emph{Clod} non sono considerate le fratture
 \citep{tisdall1951comparison}.
 
 I dati si allineano con ciò che hanno rilevato altri autori
@@ -2657,11 +2667,11 @@ rispetto ai terreni condotti ad agricoltura Convenzionale e nei
 terreni lavorati superficialmente rispetto a quelli lavorati più in
 profondità.
 
-La tabella \ref{tab:summaryClod} mostra che, nonostante la rilevata
-significatività statistica, le differenze di densità sono dell'ordine
-della seconda cifra decimale. Questo ci permette di affermare, in
-primo luogo, che il numero di campioni è idoneo agli obiettivi dello
-studio, in secondo luogo che la lavorazione e la conduzione non
+Tuttavia la tabella \ref{tab:summaryClod} mostra che, nonostante la
+rilevata significatività statistica, le differenze di densità sono
+dell'ordine della seconda cifra decimale. Questo ci porta ad affermare,
+in primo luogo, che il numero di campioni è idoneo agli obiettivi
+dello studio, in secondo luogo che la lavorazione e la conduzione non
 risultano significativi dal punto di vista tecnologico, ovvero non
 hanno una rilevanza pratica effettiva.
 
@@ -2716,15 +2726,14 @@ riscontrate differenze significative tra i trattamenti. Dalla tabella
 \emph{residui} rispetto a quelli di \emph{trasmissione} e
 \emph{immagazzinamento}, di si tratta quindi di terreni asfittici e
 con scarso drenaggio; tuttavia dalla stessa tabella si nota una
-tendenza dei terreni condotti a \emph{Biologico} ad avere una maggior
-percentuale di pori utili al movimento dell'acqua rispetto ai terreni
-condotti a \emph{Convenzionale}.
+tendenza da parte dei terreni condotti a \emph{Biologico} ad avere una
+maggior percentuale di pori utili al movimento dell'acqua rispetto ai
+terreni condotti a \emph{Convenzionale}.
 
-Tuttavia i dati mostrano come i campioni biologici tendano ad avere
-una maggior porosità rispetto ai campioni convenzionali, in linea
-con quanto riscontrato dall'analisi \emph{Clod} e con quanto hanno
-trovato altri autori \citep{ikemura2008some,
-  mendoza2011assessment}.
+Inoltre i dati mostrano come i campioni biologici tendano ad avere una
+maggior porosità rispetto ai campioni convenzionali, in linea con
+quanto riscontrato dall'analisi \emph{Clod} e con quanto hanno trovato
+altri autori \citep{ikemura2008some, mendoza2011assessment}.
 
 
 La mancanza di coerenza tra le diverse analisi può essere
@@ -2753,41 +2762,55 @@ stato della struttura del terreno.
 
 \chapter{Conclusioni}
 
-Dai risultati è emerso che gli indicatori dello stato fisico del
-suolo non sono in grado di evidenziare differenze significative 
+Questo studio ha cercato di rispondere a due quesiti:
+
 \begin{itemize}
-\item Densità apparente del suolo
-  \begin{itemize}
-  \item nessuna differenza col metodo \emph{Core};
-  \item il metodo \emph{Clod} mostra delle differenze per i
-    trattamenti \emph{Convenzionale arato}, la differenza è
-    sulla seconda decimale, quindi tecnicamente superflua.
-  \end{itemize}
-  % In generale si deve considerare che la densità apparente è
-    % principalmente influenzata dalla tessitura \citep{AskinBulkDensity}
-  % e solo in secondo luogo dalla quantità di sostanza organica.
-    \item dalle misura di stabilità degli aggregati è stata riscontrata
-    una maggiore stabilità degli aggregati provenienti da appezzamenti
-    \emph{Convenzionali} rispetto a quelli provenienti da appezzamenti
-    \emph{Biologici}, questo può essere dovuto alla mancata concimazione
-    organica dei campi condotti a \emph{Biologico}; non sono state
-    riscontrate differenze significative all'interno trattamenti di
-  \emph{lavorazione};
-\item per quanto riguarda le misure tramite porosimetria al mercurio,
-  la tendenza conferma la maggiore porosità totale per i campioni di
-  suolo condotti a \emph{Biologico} e mostra una maggior percentuale
-  di pori adibiti al movimento dell'acqua negli stessi, tuttavia il
-    numero di campioni non è sufficiente a confermare la significatività
-    dei trattamenti.
-    \end{itemize}
+\item dopo 25 anni di conduzione Biologica tipica di ambienti
+  Mediterranei, sono cambiate le caratteristiche fisico-strutturali
+  del terreno?
+\item tre diverse lavorazioni primarie quali aratura, rippatura e
+  frangizollatura influenzano i parametri fisici del suolo?
+\end{itemize}
 
-    In conclusione, il parametro fisico misurato che ha permesso di
-    differenziare maggiormente i diversi trattamenti è stato quello della
-    misura della dinamica della distribuzione degli aggregati. 
+Sono stati valutati tre parametri fisici quali possibili indicatori
+quali-quantitativi dello stato di aggregazione delle particelle di
+suolo. Lo studio è stato effettuato su campioni di terreno prelevati
+dall'azienda agricola dell'università di Firenze (località Montepaldi,
+San Casciano Val di Pesa) in cui, dal 1991, è attivo l'esperimento a
+lungo termine MoLTE.
 
-    Anche la distribuzione dei pori mostra delle tendenze che però, dato
-    l'esiguo numero di campioni, non sono statisticamente significative.
+Il parametro densità apparente del suolo misurato con il metodo
+\emph{Core}, nonostante la semplicità esecutiva, sembra inadeguato a
+cogliere differenze di qualsiasi genere (\emph{anno, lavorazione,
+  conduzione}).
 
+Il parametro densità apparente misurato con il metodo \emph{Clod}
+mostra differenze significative, ma di una entità tale da non
+risultare tecnologicamente rilevanti.
+
+Al contrario la porosimetria, mostra una tendenza da parte dei suoli
+\emph{Biologici} ad essere più porosi e con pori mediamente più grandi
+dei campioni di suolo \emph{Convenzionali}.
+
+Dalle misure della distribuzione dinamica, è stata riscontrata una
+maggiore stabilità degli aggregati provenienti da appezzamenti
+\emph{Convenzionali} rispetto a quelli provenienti da appezzamenti
+\emph{Biologici}; non sono state riscontrate differenze significative
+all'interno trattamenti di \emph{lavorazione}.
+
+Una possibile spiegazione di tali risultati può essere fornita dalle
+caratteristiche stesse dell'agroecosistema, caratterizzato da terreni
+calcarei, clima tipicamente Mediterraneo e mancanza di concimazioni
+organiche. Questo ecosistema è infatti resiliente ai cambiamenti
+imposti dalle pratiche colturali, rendendo i parametri fisici poco
+adeguati per la valutazione della fertilità del suolo.
+
+Una raccomandazione per ulteriori ricerche future potrebbe essere
+quella di realizzare uno studio simile in agroecosistemi diversi, al
+fine di riuscire ad avere un quadro più completo dell'effetto delle
+diverse pratiche agronomiche sulla struttura fisica del suolo nei vari
+ecosistemi agricoli.
+ 
 
 
 \appendix
@@ -2817,11 +2840,11 @@ d'onda della radiazione luminosa incidente, esiste (assumendo la
   \end{figure}
 \FloatBarrier
 
-  Se la dimensione delle particelle in dettagli riguardanti la loro
-  struttura sono noti, il modo in cui diffondono la luce può essere
-  previsto accuratamente. Ogni dimensione della particella avrà il suo
-  caratteristico pattern di diffusione che sarà diverso da quello di
-  qualsiasi altra particella a diversa dimensione.
+Se la dimensione delle particelle e altri dettagli riguardanti la loro
+struttura sono noti, il modo in cui diffondono la luce può essere
+previsto accuratamente. Ogni dimensione della particella avrà il suo
+caratteristico "pattern" (disegno) di diffusione che sarà diverso da quello di
+qualsiasi altra particella a diversa dimensione.
 
   Facendo il ragionamento inverso è quindi possibile calcolare la
   dimensione delle particelle in base al pattern di diffusione.
@@ -2836,7 +2859,7 @@ d'onda della radiazione luminosa incidente, esiste (assumendo la
       garantire che il materiale in prova passi attraverso il raggio
       laser come un flusso omogeneo di particelle in uno stato di
       dispersione noto e riproducibile; 3) una serie di rilevatori che
-      sono utilizzati per misurare il “pattern” (disegno) di luce
+      sono utilizzati per misurare il pattern di luce
       ottenuto in una vasta gamma di angoli. (Immagine e descrizione
       prese da \cite{MsizerDiff})}
     \label{fig:MastersizerInt}
@@ -2941,7 +2964,7 @@ a_i=Q_i\pi r_i^2n_i
     $Q_i$, & = coefficiente di estinzione medio per la classe
              dimensionale $i$, è calcolato dalla teoria dello scattering, ed
              è una funzione delle proprietà ottiche delle particelle e del
-             mezzo disperdente.
+             mezzo disperdente
   \end{tabular}
   
   \bigskip
@@ -3087,9 +3110,18 @@ a_i=Q_i\pi r_i^2n_i
   Per i pori irregolari, il rapporto tra la sezione trasversale dei
   pori (relativa alla pressione esercitata) e alla circonferenza dei
   pori (relativa alla tensione superficiale) non è proporzionale al
-  raggio e dipende dalla forma del poro e l'equazione
-  \ref{eq:WashburnHg} darà valori più bassi.
-
+  raggio e dipende dalla forma del poro; l'equazione
+  \ref{eq:WashburnHg} darà quindi valori più bassi.
+  
+  \begin{wrapfigure}{R}{0.65\textwidth}
+    \centering
+    \includegraphics[width=0.6\textwidth]{../foto/dilatometro.jpeg}
+    \caption[Schema di funzionamento del dilatometro]{Rappresentazione
+    del dilatometro con sistema di misura capacitivo, immagine ripresa dal
+    manuale utente dello strumento Pascal 140}
+    \label{fig:dilatometro}
+  \end{wrapfigure}
+  
   Il volume di mercurio penetrato corrisponde al volume del poro del
   campione espresso in \SI{}{\mm \cubed}, ed è acquisito tramite un
   sensore elettrico capacitivo, in cui: un'armatura è rappresentata
@@ -3097,14 +3129,6 @@ a_i=Q_i\pi r_i^2n_i
   è rappresentata dalla colonnina di mercurio interna al
   dilatometro. In Fig. \ref{fig:dilatometro} è rappresentato il
   dilatometro utilizzato.
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{../foto/dilatometro.jpeg}
-    \caption[Schema di funzionamento del dilatometro]{Rappresentazione
-    del dilatometro con sistema di misura capacitivo, immagine ripresa dal
-    manuale utente dello strumento Pascal 140}
-    \label{fig:dilatometro}
-  \end{figure}
   
   Con gli incrementi di pressione e in presenza di penetrazione, la
   colonna di mercurio calerà, permettendo di misurare il valore
@@ -3121,7 +3145,7 @@ a_i=Q_i\pi r_i^2n_i
   composizionali  \citep{van2013analyzing}.
   
   Un dataset può essere definito composizionale se contiene porzioni
-  di un totale. Ad esempio: la percentuale di lavoratori in differenti settori,
+  di un totale; ad esempio: la percentuale di lavoratori in differenti settori,
   le porzioni di elementi chimici in un minerale, la tessitura di un suolo,
   ecc.
 
@@ -3167,7 +3191,7 @@ a_i=Q_i\pi r_i^2n_i
     unità statistiche.
   \end{itemize}
 
-  Una composizione è sempre formata da più subcomposizioni. E la
+  Una composizione è sempre formata da più subcomposizioni. e la
   stessa composizione di partenza è a sua volta una subcomposizione.
 
   Nonostante ciò, l'analisi dei dati composizionali è eseguibile
@@ -3255,14 +3279,15 @@ a_i=Q_i\pi r_i^2n_i
 
 \caption[Distribuzione dei residui del modello \ref{mod:MetodoCore}
 con metodo \emph{Core}]{Distribuzione dei residui del modello densità
-  col \emph{Core} (modello \ref{mod:MetodoCore}).\newline In alto a
-  destra si può vedere come la varianza sia costante lungo l'asse dei
-  valori adattati dal modello lineare;\newline in alto a sinistra
-  abbiamo il qqplot, il quale ci conferma che i residui assumono una
-  distribuzione normale;\newline in basso a sinistra, viene ripetuta
-  la verifica della varianza costante con i valori dei residui
-  standardizzati, anche in questo caso la varianza è costante;\newline
-  in basso a destra sono rappresentati i punti di leverage}
+  col \emph{Core} (modello \ref{mod:MetodoCore}, p.
+  \pageref{mod:MetodoCore}).\newline In alto a destra si può vedere
+  come la varianza sia costante lungo l'asse dei valori adattati dal
+  modello lineare;\newline in alto a sinistra abbiamo il qqplot, il
+  quale ci conferma che i residui assumono una distribuzione
+  normale;\newline in basso a sinistra, viene ripetuta la verifica
+  della varianza costante con i valori dei residui standardizzati,
+  anche in questo caso la varianza è costante;\newline in basso a
+  destra sono rappresentati i punti di leverage}
     \label{fig:qqplotCore}
 \end{figure}
 \FloatBarrier
@@ -3276,15 +3301,15 @@ con metodo \emph{Core}]{Distribuzione dei residui del modello densità
 
 \caption[Distribuzione dei residui del modello \ref{mod:MetodoClod}
 con metodo \emph{Clod}]{Distribuzione dei residui del modello densità
-  con metodo \emph{Clod} (modello \ref{mod:MetodoClod})\newline In
-  alto a destra si può vedere come la varianza sia costante lungo
-  l'asse dei valori adattati dal modello lineare;\newline in alto a
-  sinistra abbiamo il qqplot, il quale ci conferma che i residui
-  assumono una distribuzione normale;\newline in basso a sinistra,
-  viene ripetuta la verifica della varianza costante con i valori dei
-  residui standardizzati, anche in questo caso la varianza è
-  costante;\newline in basso a destra sono rappresentati i punti di
-  leverage}
+  con metodo \emph{Clod} (modello \ref{mod:MetodoClod}, p.
+  \pageref{mod:MetodoClod})\newline In alto a destra si può vedere
+  come la varianza sia costante lungo l'asse dei valori adattati dal
+  modello lineare;\newline in alto a sinistra abbiamo il qqplot, il
+  quale ci conferma che i residui assumono una distribuzione
+  normale;\newline in basso a sinistra, viene ripetuta la verifica
+  della varianza costante con i valori dei residui standardizzati,
+  anche in questo caso la varianza è costante;\newline in basso a
+  destra sono rappresentati i punti di leverage}
    \label{fig:qqplotClod}
 \end{figure}
 \FloatBarrier
@@ -3297,7 +3322,7 @@ con metodo \emph{Clod}]{Distribuzione dei residui del modello densità
 @
 \caption{Grafico quantile-quantile per i residui del modello
   statistico composizionale della dinamica della distribuzione della
-  dimensione degli aggregati (modello \ref{mod:Stabilita})}
+  dimensione degli aggregati (modello \ref{mod:Stabilita}, p. \pageref{mod:Stabilita})}
   \label{fig:qqplot_dinamica_aggregati}
 \end{figure}
 \FloatBarrier
@@ -3315,7 +3340,8 @@ con metodo \emph{Clod}]{Distribuzione dei residui del modello densità
 @
 \caption{Grafico quantile-quantile per i residui
   del modello composizionale per i dati della distrubuzione dei pori
-  tramite porosimetria ad intrusione di mercurio (modello \ref{mod:Porosita})}
+  tramite porosimetria ad intrusione di mercurio (modello
+  \ref{mod:Porosita}, p. \pageref{mod:Porosita})}
   \label{fig:qqplot_porosimetria}
 \end{figure}
 \FloatBarrier
@@ -3337,7 +3363,7 @@ con metodo \emph{Clod}]{Distribuzione dei residui del modello densità
 
 
 
-\nonvisibile{Simo: pagina 143 Pantieri per sitografia}
+
 \listoffigures % non funziona con xtable
 \listoftables
 % \section*{\refname}
