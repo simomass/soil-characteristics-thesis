@@ -142,9 +142,11 @@ final]{scrbook}
 \usepackage[font=small, textfont=it, labelfont=bf, format=plain]{caption}
 
 
-% \usepackage[printwatermark]{xwatermark}
-%     \newwatermark*[allpages,color=grey!10,angle=90,scale=1,xpos=75,ypos=0]{Tesi
+%\usepackage[printwatermark]{xwatermark}
+%     \newwatermark[allpages,color=black!10,angle=90,scale=1,xpos=75,ypos=0]{Tesi
 % di Laurea magistrale di Simone Massenzio}
+
+%\backgroundsetup{angle=60,contents={\usebox\mybox}}
 
     %\usepackage[raggedright]{titlesec}
 % Serve per evitare la sillabazione nei titoli
@@ -518,7 +520,7 @@ altro valore di densità: la densità apparente. Come detto
 precedentemente, questo valore considera anche i vuoti ed è legato
 principalmente alla distribuzione granulometrica e alla
 struttura. Mediamente la densità apparente corrisponde a circa la metà
-del valore di densità reale, nonostante si discosta da questo a
+del valore di densità reale, nonostante si discosti da questo a
 seconda dello stato di aggregazione della fase solida del
 terreno. Secondo \citet{AskinBulkDensity}, la densità apparente di un
 terreno è influenzata principalmente dalla tessitura del terreno e,
@@ -693,7 +695,7 @@ nati dei movimenti di agricoltori che cercavano di coltivare in modo
 naturale eliminando fitofarmaci e concimi di sintesi. Da questi
 movimenti inizia a prendere forma l'agricoltura Biologica che, ad
 oggi, costituisce un'importante realtà dell'agricoltura mondiale e
-italiana. Si stima infatti che, il 14,5\% della SAU Nazionale sia
+italiana. Si stima infatti che il 14,5\% della SAU Nazionale sia
 coltivata a Biologico \citep{Bio_cifre}, in crescita.
 
 Secondo il \citet{ue2007834}: \emph{La produzione biologica è un
@@ -794,7 +796,7 @@ impegnata nell’esperimento di lungo termine MoLTE.
 
 Lo scopo principale del progetto è quello di sviluppare delle tecniche
 di gestione sostenibili ed efficienti per incrementare la
-produttività nei sistemi agricoli biologici e si pone i seguenti
+produttività nei sistemi agricoli Biologici e si pone i seguenti
 obiettivi:
 \begin{enumerate}
 \item studio dell’interazione spazio-temporale tra infestanti, sovesci
@@ -868,7 +870,7 @@ avanti definiti come \emph{Conduzione}:
 \item conduzione Biologica\footnote{In realtà nell'azienda sono
     presenti due blocchi a conduzione Biologica: il primo è quello
     citato, ovvero il "Biologico vecchio", il secondo, non esaminato
-    nel presente lavoro è denominato "Biologico nuovo"}, \emph{OO} (\emph{Old Organic});
+    nel presente lavoro, è denominato "Biologico nuovo"}, \emph{OO} (\emph{Old Organic});
 \item conduzione \emph{Convenzionale}, \emph{CO}.
 \end{itemize}
 
@@ -885,8 +887,8 @@ I due agroecosistemi sono suddivisi in più appezzamenti rettangolari
 Convenzionale (Fig. \ref{fig:foto_OO_sito}).
 
 Nell'anno 2015-2016, sono stati campionati gli appezzamenti \emph{OO1,
-  OO3, CO9, CO10}, mentre nell'anno 2016-2017 \emph{OO2, OO4, CO9,
-  CO10}
+  OO3, CO9, CO10}, mentre nell'anno 2016-2017 e gli appezzamenti
+\emph{OO2, OO4, CO9, CO10}
 
 I due agroecosistemi sono circondati da infrastrutture ecologiche
 quali siepi naturali e/o artificiali e/o strisce di essenze erbacee
@@ -1049,12 +1051,12 @@ apparente ($\rho_{CoreApp}$) tramite la seguente formula:
 Dove:
 
 \begin{tabular}{lp{12cm}}
-  $V_{cilindro}$     & = volume del cilindro di ottone (\SI{854.1}{\cubic\centi\metre}); \\
+  $V_{cilindro}$     & = volume del cilindro di ottone (\SI{854.1}{\cubic\centi\metre}) \\
   $V_{scheletro}$    & = volume dello scheletro (>\SI{2}{\milli\metre}) misurato per spinta
-                        idrostatica (\SI{}{\cubic\centi\metre}); \\
+                        idrostatica (\SI{}{\cubic\centi\metre}) \\
   $P_{secco}$       & = peso del terreno vagliato
                        (<\SI{2}{\milli\metre}) ed essiccato a
-                       \SI{105}{\degree} (\SI{}{\kilogram}).
+                       \SI{105}{\degree} (\SI{}{\kilogram})
 \end{tabular}
 \vspace*{3em}
 
@@ -1102,11 +1104,11 @@ Dove:
 
 \begin{tabular}{lp{12cm}}
   $V_{totale}$    & = volume dell'aggregato comprendente il volume del
-    solido e il volume dei vuoti (\SI{}{\cubic\cm});\\
+    solido e il volume dei vuoti (\SI{}{\cubic\cm})\\
     $S_{totale}$    & = spinta idrostatica
-    dell'aggregato imbevuto di petrolio (\SI{}{\gram});\\
+    dell'aggregato imbevuto di petrolio (\SI{}{\gram})\\
   $D_{petrolio}$  & = densità del petrolio utilizzato per
-                     l'analisi (\SI{0.761}{\gram\per\cubic\cm}).
+                     l'analisi (\SI{0.761}{\gram\per\cubic\cm})
 \end{tabular}
 
 Successivamente il campione è stato essiccato per una notte a
@@ -1129,11 +1131,11 @@ Dove:
 
 \begin{tabular}{lp{12cm}}
   $\rho_{ClodApp}$  & = valore della densità apparente dell'aggregato
-        misurato (\SI{}{\gram\per\cubic\cm});\\
+        misurato (\SI{}{\gram\per\cubic\cm})\\
         $P_{150}$       & = peso dell'aggregato essiccato a
-                     \SI{150}{\celsius} (\SI{}{\gram});\\
+                     \SI{150}{\celsius} (\SI{}{\gram})\\
   $V_{totale}$  & = volume calcolato con la formula
-                      \ref{eq:VolumeAggr}  (\SI{}{\cubic\cm}).
+                      \ref{eq:VolumeAggr}  (\SI{}{\cubic\cm})
 \end{tabular}
 
 \begin{figure}[ht]
@@ -2273,7 +2275,7 @@ rownames(anova.comp.dry) <- c("Intercetta","Conduzione","Tempo", "Tempo^2","Tota
 anova.comp.dry[1:4,6] <- "<10^-3"
 anova_tabella_dry<- xtable(anova.comp.dry,
                            label = 'tab:anova_compDRY', align = 'lrrrrrr',
-                           caption = 'Analisi della varianza relativa ai dati composizionali per la stabilit\\`a degli aggregati secchi all\'aria'
+                           caption = 'Analisi della varianza relativa ai dati composizionali per la stabilit\\`a degli aggregati essiccati'
                            )
 print(anova_tabella_dry, caption.placement = "top")#, math.style.exponents = TRUE)
 @
@@ -2475,7 +2477,7 @@ rownames(anova.poros) <- c("Intercetta","Conduzione", "Lavorazione","Totale")
 anova.poros[1,6] <- "<10^-3"
 anova_tabella <- xtable(anova.poros,
                         label = 'tab:poros_anova', align = 'lrrrrrr',
-                        caption = 'Analisi della varianza relativa all modello composizionale dei dati ottenuti dalle analisi con porosimetria a mercurio '
+                        caption = 'Analisi della varianza relativa al modello composizionale dei dati ottenuti dalle analisi con porosimetria a mercurio '
                         )
 print(anova_tabella, caption.placement = "top")#, math.style.exponents = TRUE)
 @ 
@@ -2724,7 +2726,7 @@ Per quanto riguarda la distribuzione dei pori non sono state
 riscontrate differenze significative tra i trattamenti. Dalla tabella
 \ref{tab:Poro_medie} si può notare una prevalenza di pori
 \emph{residui} rispetto a quelli di \emph{trasmissione} e
-\emph{immagazzinamento}, di si tratta quindi di terreni asfittici e
+\emph{immagazzinamento}, si tratta quindi di terreni asfittici e
 con scarso drenaggio; tuttavia dalla stessa tabella si nota una
 tendenza da parte dei terreni condotti a \emph{Biologico} ad avere una
 maggior percentuale di pori utili al movimento dell'acqua rispetto ai
@@ -2745,8 +2747,8 @@ allevamenti associati \citep{migliorini2014agronomic}, non hanno la
 possibilità di utilizzare concimi organici di origine animale in
 modo costante.
 
-L'importanza fondamentale dell'effetto dei concimi organici sul suolo,
-\'e stata studiata e riscontrata da numerosi autori
+L'importanza fondamentale dell'effetto dei concimi organici sul suolo
+è stata studiata e riscontrata da numerosi autori
 \citep{hati2006effect, haynes1998influence, benbi1998influence},
 inoltre tutti gli studi effettuati su agroecosistemi Biologici presi in
 considerazione nella bibliografia, hanno utilizzato pratiche di
@@ -2799,11 +2801,11 @@ maggiore stabilità degli aggregati provenienti da appezzamenti
 all'interno trattamenti di \emph{lavorazione}.
 
 Una possibile spiegazione di tali risultati può essere fornita dalle
-caratteristiche stesse dell'agroecosistema, caratterizzato da terreni
-calcarei, clima tipicamente Mediterraneo e mancanza di concimazioni
-organiche. Questo ecosistema è infatti resiliente ai cambiamenti
-imposti dalle pratiche colturali, rendendo i parametri fisici poco
-adeguati per la valutazione della fertilità del suolo.
+caratteristiche stesse dell'agroecosistema, il quale è caratterizzato
+da terreni calcarei, clima tipicamente Mediterraneo e mancanza di
+concimazioni organiche. Questo ecosistema è infatti resiliente ai
+cambiamenti imposti dalle pratiche colturali, rendendo i parametri
+fisici poco adeguati per la valutazione della fertilità del suolo.
 
 Una raccomandazione per ulteriori ricerche future potrebbe essere
 quella di realizzare uno studio simile in agroecosistemi diversi, al
@@ -2824,10 +2826,10 @@ ecosistemi agricoli.
     maniera disordinata e in buona maniera casuale}
 \citep{scattering}.
 
-Le equazioni che descrivono lo scattering sono molto complesse; nel
+Nel
 caso in cui le particelle abbiano dimensione maggiore della lunghezza
-d'onda della radiazione luminosa incidente, esiste (assumendo la
-  perfetta sfericità delle particelle) una soluzione matematicamente
+d'onda della radiazione luminosa incidente, le equazioni che descrivono lo scattering (assumendo la
+  perfetta sfericità delle particelle) hanno una soluzione matematicamente
   rigorosa, detta \emph{Soluzione di Mie}.
 
   \begin{figure}[ht]
@@ -3236,7 +3238,7 @@ a_i=Q_i\pi r_i^2n_i
     \includegraphics[width=0.9\textwidth]{../foto/simplessodeforma.png}
     \caption[Deformazione ad opera del simplesso]{Coppia di rette
       parallele all'interno dello spazio vettoriale del simplesso
-      ($S^3$) a destra e in coordinate a sinistra (immagine presa da \cite{pawlowsky2007lecture})}
+      ($S^3$) a sinistra e in coordinate a destra (immagine presa da \cite{pawlowsky2007lecture})}
     \label{fig:simplexdeform}
   \end{figure}
   \nopagebreak
