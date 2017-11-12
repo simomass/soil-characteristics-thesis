@@ -3048,8 +3048,8 @@ a_i=Q_i\pi r_i^2n_i
   \begin{tabular}{lp{12cm}}
     $p$      & = pressione assoluta applicata (\SI{}{\kilogram \per \centi \meter \squared})\\
     $r$      & = raggio dei pori (\SI{}{\nano\meter})\\
-    $\sigma$ & = tensione superficiale del mercurio (\SI{}{\meter \newton \per \meter \squared})\\
-    $\theta$ & = angolo di contatto (\SI{}{\celsius})
+    $\sigma$ & = tensione superficiale del mercurio (\SI{}{\milli \newton \per \meter \squared})\\
+    $\theta$ & = angolo di contatto (\SI{}{\degree})
   \end{tabular}
   \end{samepage}
   
@@ -3089,7 +3089,7 @@ a_i=Q_i\pi r_i^2n_i
   \end{equation}
 
   Sapendo le caratteristiche fisiche del mercurio (tensione superficiale
-  di \SI{480}{\meter \newton \per \meter \squared} e angolo di contatto
+  di \SI{480}{\milli \newton \per \meter \squared} e angolo di contatto
   di \SI{143.1}{\degree}) e assumendo i pori come cilindrici, si ottiene
   la seguente relazione:
 
