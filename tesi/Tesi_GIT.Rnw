@@ -258,8 +258,10 @@ file.path(DirMain, "tabelle")
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\author{Simone Massenzio}
-\title{25 anni di conduzione Biologica: uno studio di fisica del suolo}
+\author{Simone Massenzio} 
+\title{Confronto fra le caratteristiche
+  fisico-strutturali di suoli in area Mediterranea sottoposti a
+  diversi metodi di conduzione e lavorazione}
 \begin{document}
 % \begin{frontespizio}
 %   \Universita{Università degli studi di Firenze}
@@ -283,8 +285,10 @@ file.path(DirMain, "tabelle")
 \Istituzione{Università degli Studi di Firenze}
 \Divisione{Scuola di Agraria}
 \Scuola{Corso di Laurea in Scienze e tecnologie agrarie (LM-69)}
-\Titolo{25 anni di conduzione Biologica in area Mediterranea}
-\Sottotitolo{Uno studio di fisica del suolo}
+\Titolo{Confronto fra le caratteristiche
+  fisico-strutturali di suoli in area Mediterranea sottoposti a
+  diversi metodi di conduzione e lavorazione}
+%\Sottotitolo{Uno studio di fisica del suolo}
 \NCandidato{Candidato}
 \Candidato{Simone Massenzio}
 \NRelatore{Relatore}{}
@@ -307,7 +311,7 @@ file.path(DirMain, "tabelle")
   proprietà fisiche del suolo: densità apparente, distribuzione dei
   pori e stabilità degli aggregati; \textbf{ii)} comparare gli effetti
   di tre lavorazioni primarie: aratura, rippatura e
-  frangizollatura. Lo studio è inserito nel progetto MOLTE, un
+  frangizollatura. Lo studio è inserito nel progetto MoLTE, un
   \textbf{long term experiment} dell'Università di Firenze dove, dal
   1991 presso l'azienda agricola Montepaldi, situata a San Casciano
   val di Pesa (FI), viene condotta una sperimentazione sul sistema
@@ -326,21 +330,21 @@ file.path(DirMain, "tabelle")
 \begin{otherlanguage*}{english}
   \begin{engabstract}
     The purposes of this work were: \textbf{i)} to compare two farming
-    systems in Mediterranean area (organic and conventional management
+    systems in Mediterranean area (Organic and Conventional management
     on site since more than twenty five years) through the assessement of three
     soil's physical properties such as: bulk density, pore size
     distribution and aggregate stability; \textbf{ii)} to compare the
     effects of three tillage systems: plowing, chisel plowing and disk
-    harrowing. The study is implemented within the \emph{MOLTE}
+    harrowing. The study is implemented within the \emph{MoLTE}
     project, a long term experiment of the University of Florence
     where, since 1991, at Montepaldi farm, located in San Casciano val
-    di Pesa (FI, Italy) was carried out an experimentation on organic
+    di Pesa (FI, Italy) was carried out an experimentation on Organic
     farming systems. The result of the analysis of the bulk density,
     show statistically significant differences between two farming
     systems, however these difference were so small that are
     negligible from a practical point of view. The aggregate stability
-    shows that the aggregates from the conventional soil are more
-    stable than those from the organic one. The results of the pore
+    shows that the aggregates from the Conventional soil are more
+    stable than those from the Organic one. The results of the pore
     size distribution do not display statistically significant
     differences.
 \end{engabstract}%
@@ -619,7 +623,8 @@ quella dimensione hanno.
     limiti delle classi dimensionali; la linea più scura rappresenta
     la classe che gli autori identificano con \emph{micropori}; le
     linee rosse verticali rappresentano invece i limiti scelti per
-    l'elaborazione dei dati sulla stabilità degli aggregati(paragrafo \ref{sec:Dinamica})}
+    l'elaborazione dei dati sulla distribuzione dimensionale dei pori
+    (paragrafo \ref{sec:Porosimetria})}
   \label{fig:distroPori}
 \end{figure}
 
@@ -674,21 +679,23 @@ radicale.
 La rivoluzione verde avvenuta negli anni '50 del secolo scorso, è
 stato un processo che ha trasformato l'agricoltura la quale è passata
 da una forma tradizionale ad una che fa largo uso della tecnologia,
-oggi chiamata Convenzionale. L'agricoltura Convenzionale esaspera il
-concetto di massimizzazione del rendimento economico, è
-tecnologicamente orientata, utilizza ampie superfici spesso coltivate
-a monocoltura (con conseguente perdita della biodiversità) e richiede
-ingenti quantità di concimi e fertilizzanti, normalmente di
-sintesi. Grazie alla rivoluzione verde, la produzione agricola
-mondiale ha potuto fronteggiare il rapido e gigantesco aumento della
-popolazione di metà '900 \citep{Ciuffoletti_2014}; ma, al tempo
-stesso, ha portato a problemi di tipo ambientale e sanitario:
-patologie dovute all'esposizione dell'uomo ad antiparassitari, alla
-riduzione della biodiversità degli ecosistemi, all'inquinamento di
-aria, suolo e acqua, alla desertificazione e desertizzazione. Inoltre
-le coltivazioni intensive monovarietali hanno facilitato la diffusione
-di patogeni, provocando gravi danni di tipo economico agli
-agricoltori.
+oggi chiamata Convenzionale. 
+
+L'agricoltura Convenzionale esaspera il concetto di massimizzazione
+del rendimento economico, è tecnologicamente orientata, utilizza ampie
+superfici spesso coltivate a monocoltura (con conseguente perdita
+della biodiversità) e richiede ingenti quantità di concimi e
+fertilizzanti, normalmente di sintesi. 
+
+Grazie alla rivoluzione verde, la produzione agricola mondiale ha
+potuto fronteggiare il rapido e gigantesco aumento della popolazione
+di metà '900 \citep{Ciuffoletti_2014}; ma, al tempo stesso, ha portato
+a problemi di tipo ambientale e sanitario: patologie dovute
+all'esposizione dell'uomo ad antiparassitari, alla riduzione della
+biodiversità degli ecosistemi, all'inquinamento di aria, suolo e
+acqua, alla desertificazione e desertizzazione. Inoltre le
+coltivazioni intensive monovarietali hanno facilitato la diffusione di
+patogeni, provocando gravi danni di tipo economico agli agricoltori.
 
 In risposta alle problematiche descritte, durante gli anni '70 sono
 nati dei movimenti di agricoltori che cercavano di coltivare in modo
@@ -705,9 +712,9 @@ Secondo il \citet{ue2007834}: \emph{La produzione biologica è un
   risorse naturali, l’applicazione di criteri rigorosi in materia di
   benessere degli animali e una produzione confacente alle preferenze
   di taluni consumatori per prodotti ottenuti con sostanze e
-  procedimenti naturali. Il metodo di produzione biologico esplica
+  procedimenti naturali. Il metodo di produzione Biologico esplica
   pertanto una duplice funzione sociale, provvedendo da un lato a un
-  mercato specifico che risponde alla domanda di prodotti biologici
+  mercato specifico che risponde alla domanda di prodotti Biologici
   dei consumatori e, dall’altro, fornendo beni pubblici che
   contribuiscono alla tutela dell’ambiente, al benessere degli animali
   e allo sviluppo rurale.}
@@ -754,7 +761,7 @@ porterebbe ad un aumento della sostanza organica nel terreno.
 
 
 La conservazione di sostanza organica è un punto chiave dei sistemi
-agricoli biologici, soprattutto nei sistemi agricoli localizzati in
+agricoli Biologici, soprattutto nei sistemi agricoli localizzati in
 ambienti Mediterranei in cui le precipitazioni incostanti e le alte
 temperature sono favorevoli alla sua mineralizzazione
 \citep{montemurro2008anaerobic}.
@@ -929,7 +936,7 @@ Ogni lavorazione è stata replicata tre volte per appezzamento che
 diventa cos\`i suddiviso in 9 parcelle.
 
 L'esperimento MoLTE si propone di studiare il comportamento di un
-sistema agricolo biologico in area Mediterranea, questo comporta un
+sistema agricolo Biologico in area Mediterranea, questo comporta un
 ridotto apporto di concimi organici di origine animale
 (\emph{stockless farming system}, \cite{migliorini2014agronomic}). 
 
@@ -1230,7 +1237,7 @@ distribuzione granulometrica fornita dallo strumento.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.8\textwidth]{../grafici/boh.jpg}
+  \includegraphics[width=0.8\textwidth]{../grafici/boh.jpeg}
   \caption[Esempi di una curva di distribuzione granulometrica]{Un
     esempio di distribuzione granulometrica. Sull'asse delle ascisse,
     in scala logaritmica, sono presenti i valori delle classi di
@@ -1242,6 +1249,7 @@ distribuzione granulometrica fornita dallo strumento.
 \FloatBarrier
 
 \section{Porosimetria per intrusione di mercurio}
+
 Le misure della distribuzione dei pori sono state realizzate
 rispettivamente: con un porosimetro Carlo Erba serie 2000 per i
 macropori e un porosimetro PASCAL 140 per i micropori, entrambi
@@ -1268,6 +1276,18 @@ con terminazione interna ed esterna, superiormente è chiuso da un cono
 a smeriglio che si prolunga in un capillare calibrato di \SI{6}{\mm}
 di diametro e lungo \SI{10}{\centi\meter}.
 
+\begin{wrapfigure}{R}{0.75\textwidth}
+  \centering
+  \includegraphics[width=0.7\textwidth]{../grafici/distribuzionePorosit.pdf}
+  \caption[Esempi di una curva di distribuzione della porosità]{Un
+    esempio di distribuzione della porosità. In figura sono
+    rappresentate sia la curva cumulata della distribuzione dei pori,
+    sia l'istogramma. Sull'asse delle ascisse è presente il diametro
+    dei pori espresso in \SI{}{\micro\metre}; sull'asse delle ordinate
+    sono presenti i relativi valori in percentuale sul volume totale.}
+  \label{fig:distribuzionePori}
+\end{wrapfigure}
+
 Il dilatometro contenente il campione viene inserito nel circuito del
 vuoto dall'unità macropore; dopo la stabilizzazione del vuoto esso
 viene lentamente riempito (\SI{15}{\centi\meter\cubed}) con mercurio
@@ -1288,19 +1308,7 @@ realizza all'interno, tramite un olio dielettrico, una pressione fino
 a \SI{2000}{\atm}; incrementi di pressione possono essere regolati da
 un'unità di controllo; naturalmente più è lenta l'intrusione
 migliore è la distribuzione delle dimensioni dei pori.
-
-\begin{wrapfigure}{R}{0.75\textwidth}
-  \centering
-  \includegraphics[width=0.7\textwidth]{../grafici/distribuzionePorosit.pdf}
-  \caption[Esempi di una curva di distribuzione della porosità]{Un
-    esempio di distribuzione della porosità. In figura sono
-    rappresentate sia la curva cumulata della distribuzione dei pori,
-    sia l'istogramma. Sull'asse delle ascisse è presente il diametro
-    dei pori espresso in \SI{}{\micro\metre}; sull'asse delle ordinate
-    sono presenti i relativi valori in percentuale sul volume totale.}
-  \label{fig:distribuzionePori}
-\end{wrapfigure}
-
+\begin{samepage}
 La progressiva penetrazione di mercurio nel campione è acquisita
 tramite un sensore capacitivo. Il segnale elettrico che ne deriva
 viene convertito in volume di mercurio intruso. Il calcolo della
@@ -1310,13 +1318,14 @@ la sottrazione automatica punto per punto dei valori legati alla
 compressibilità di mercurio preventivamente calcolati in un ciclo di
 misura senza campioni. Alla fine del ciclo di intrusione,
 lo strumento torna automaticamente alla pressione di partenza.
+\end{samepage}
 
 In figura \ref{fig:distribuzionePori} è rappresentato un esempio di
 distribuzione della porosità.
 
 
 
-%\FloatBarrier
+\FloatBarrier
 
 
 \section{Elaborazione dei dati}
@@ -1330,6 +1339,7 @@ attraverso l'analisi esplorativa dei residui, i cui risultati sono
 esposti in appendice \ref{sec:residui}, e che indicano assenza di
 violazioni delle assunzioni di normalità.
 \citep{stefanini2007introduzione}.
+
 
 \subsection{Densità}
 
@@ -1354,6 +1364,7 @@ oggetto dello studio, è stato applicato il test di
 
 
 \subsection{Dinamica della distribuzione degli aggregati e porosimetria}
+
 
 I dati provenienti da queste due analisi sono delle distribuzioni,
 ovvero: rappresentazioni del modo in cui la variabile quantitativa,
@@ -2317,6 +2328,7 @@ qqnorm(ilrInv(resid(modelloMsizer), orig=Y.Msizer))
 
 
 \section{Distribuzione dimensionale dei pori}
+\label{sec:Porosimetria}
 
 <<Import_porosimetria, echo = FALSE, eval = TRUE>>=
                                         #PoroElabora <- FALSE
@@ -2708,9 +2720,9 @@ incremento della biomassa nei primi \SI{20}{\centi\meter} di suolo.
 Secondo \citet{mizuta2015soil}, la stabilità degli aggregati dipende
 esclusivamente dal contenuto di sostanza organica e non dal tipo di
 molecole organiche coinvolte. Di conseguenza nell'appezzamento
-biologico, nonostante la minore stabilità degli aggregati possono
+Biologico, nonostante la minore stabilità degli aggregati possono
 essere presenti cementi organici di maggiore qualità (quindi meno
-labili) rispetto a quelli presenti nell'appezzamento biologico.
+labili) rispetto a quelli presenti nell'appezzamento Biologico.
 
 Secondo \citet{d2017physical} la stabilità degli aggregati è
 fortemente influenzata dalla sostanza organica protetta dagli
@@ -2732,7 +2744,7 @@ tendenza da parte dei terreni condotti a \emph{Biologico} ad avere una
 maggior percentuale di pori utili al movimento dell'acqua rispetto ai
 terreni condotti a \emph{Convenzionale}.
 
-Inoltre i dati mostrano come i campioni biologici tendano ad avere una
+Inoltre i dati mostrano come i campioni Biologici tendano ad avere una
 maggior porosità rispetto ai campioni convenzionali, in linea con
 quanto riscontrato dall'analisi \emph{Clod} e con quanto hanno trovato
 altri autori \citep{ikemura2008some, mendoza2011assessment}.

@@ -1,0 +1,31 @@
+
+
+
+###############Codice incompleto, da correggere 
+###############(risultato di un copia e incolla da densita su dropbox)
+
+
+
+read.table(df.stab)
+jpeg(file.path("~/Simo_GIT/grafici","boh.jpeg"))
+vet.clas <- as.numeric(substr(
+         colnames(df.stab)
+         [1:101], 2, nchar(colnames(df.stab)[1:101])
+))
+boh <- as.vector(df.stab[1,1:101], mode = "numeric")
+boh[1] <- 0
+freq <- c(NA)
+for(i in 1:length(boh)){
+    freq <-
+        c(freq, rep(vet.clas[i], (boh[i]*100000)))
+}
+h <- hist(log10(freq), plot = FALSE)
+plot(h, main = "Particle size distribution",
+     xlab = expression(paste("Particle diameter (Log of ", mu, "m)")), ylab = "Volume (%)",
+     axes = TRUE, labels = FALSE, nclass = NULL)
+
+#x <- log10(freq)
+#d <- density(x[complete.cases(x)])
+lines(h$mids, h$counts, lwd = 2)#x = d$x, y = d$y * length(x) * diff(h$breaks)[1], lwd = 2)
+
+dev.off()
