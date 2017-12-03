@@ -1338,7 +1338,8 @@ test F ($\textrm{p < 0,05}$). Tutti i modelli sono stati validati
 attraverso l'analisi esplorativa dei residui, i cui risultati sono
 esposti in appendice \ref{sec:residui}, e che indicano assenza di
 violazioni delle assunzioni di normalità.
-\citep{stefanini2007introduzione}.
+\citep{stefanini2007introduzione}. Per il plot dei grafici è stato
+utilizzata la libreria 'ggplot2' \citep{ggplot}.
 
 
 \subsection{Densità}
@@ -1457,6 +1458,10 @@ provenienti da un precedente lavoro di tesi. La figura
 valori, la cui media generale è pari a
 \SI{\Sexpr{round(mean(df.dueAnni$densita.apparente,na.rm=TRUE),2)}}{\gram\per\cubic\centi\metre},
 sono simili a quelli che più frequentemente si riscontrano nel suolo.
+
+I risultati del  Tukey test, a differenza della tabella \ref{tab:summaryClod}, non sono stati inseriti in
+quanto non significativi.
+
 <<Summary_Campo, echo=FALSE, eval=TRUE, results=tex>>=
 names(summary.campo) <-  
     c("Anno", "Conduzione", "Lavorazione", "Media", "Dev. std", "n", "Tukey")
@@ -1482,9 +1487,6 @@ print(tabella.campo, include.rownames=FALSE,
 
 @
 \FloatBarrier
-
-I risultati del  Tukey test, a differenza della tabella \ref{tab:summaryClod}, non sono stati inseriti in
-quanto non significativi.
 
 
 <<label = ResiduiCampo, echo=FALSE, fig = TRUE, include = FALSE>>=
@@ -1532,7 +1534,7 @@ text(11, 1.7, "OO", pos = 1, cex = 1.5)
     della densità apparente misurata con il metodo \emph{Core}
     relativi alla conduzione (\emph{Convenzionale} e \emph{Biologico})
     e per le varie lavorazioni (\emph{Arato, Frangizollato} e
-    \emph{Rippato}). La riga rossa indica la media generale}
+    \emph{Rippato}). La riga nera indica la media generale}
   \label{fig:boxplotCore}
 \end{figure}
 \FloatBarrier

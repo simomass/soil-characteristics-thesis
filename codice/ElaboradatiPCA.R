@@ -1,6 +1,6 @@
 library(nlme)
 library(plyr)
-library(lattice)
+library(ggplot2)
 library(xtable)
 library(foreign)
 library(agricolae)
@@ -37,12 +37,65 @@ DirTab <-
 df.dueAnni <-
     read.table(file.path(DirElab, "df_dueanni.csv"),
                header = T, sep = "")
+
+df.vecchio <- df.dueAnni
+
+levels(df.dueAnni$YEAR) <- c("2015", "2016")
+levels(df.dueAnni$TRT) <-c("Convenzionale", "Biologico")
+levels(df.dueAnni$LAVORAZIONE) <- c("Arato", "Frangizollato", "Rippato")
+
+p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.dueAnni) +
+    geom_boxplot(position=position_dodge(1))+
+    facet_grid(.~YEAR+TRT)+
+    geom_hline(yintercept = 1.35)+
+    theme(axis.title.x=element_blank(),
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+    
+    theme(text = element_text(size = 20),
+          axis.text.x = element_text(angle=0, hjust=0))+
+    theme(legend.position = "bottom",
+          legend.background = element_rect(color = "white", 
+                                           fill = "white", size = 1, linetype = "solid"),
+          legend.direction = "horizontal") + scale_fill_discrete(name= "Lavorazione")+ylab("Densità apparente")+
+    theme(axis.title.x=element_blank(),
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())
+
+pdf("residuicampo")
+p10
+dev.off()
+
+df.dueAnni <- df.vecchio
 df.dueAnni <-  df.dueAnni[df.dueAnni$REPLICA == "m", ]
 df.petrolio <-
     read.table(file.path(DirElab, "df_spinta.csv"),
                header = T, sep = "")
-rownames(anova_spinta) <- c("Conduzione", "Lavorazione", "Residui")
 
+
+df.vecchio <- df.petrolio
+levels(df.petrolio$TRT) <-c("Convenzionale", "Biologico")
+levels(df.petrolio$LAVORAZIONE) <- c("Arato", "Frangizollato", "Rippato")
+
+
+p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.petrolio) +
+    geom_boxplot(position=position_dodge(1))+
+    facet_grid(.~TRT)+
+    theme(axis.title.x=element_blank(),
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+    
+    theme(text = element_text(size = 20),
+          axis.text.x = element_text(angle=0, hjust=0))+
+    theme(legend.position = "bottom",
+          legend.background = element_rect(color = "white", 
+                                           fill = "white", size = 1, linetype = "solid"),
+          legend.direction = "horizontal") + scale_fill_discrete(name= "Lavorazione")+ylab("Densità apparente")+
+    theme(axis.title.x=element_blank(),
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())
+pdf("residuipetrolio")
+p10
+dev.off()
+df.vecchio <- df.petrolio
 
 ##vec.paletti <- c(250, 20)
 df.data <-
@@ -227,10 +280,10 @@ df.densitaCompleto <-
 
 
 df.datiporimedi <- read.table(file.path(Export.Dir, "mediaDiametriPond.csv"),
-             sep = ";")
+                              sep = ";")
 df.porimedi2 <- data.frame(
-     YEAR = rep("y16", nrow(df.datiporimedi)),
-     df.datiporimedi
+    YEAR = rep("y16", nrow(df.datiporimedi)),
+    df.datiporimedi
 )
 df.porimedi2 <-
     df.porimedi2[-c(3, 6, 10, 11), c(1:3, 5, 4, 6:8)]
@@ -322,7 +375,7 @@ for(i in 1:nrow(df.stabilita2)){
             df.stabilita2[i,8] <- df.stabilita3[k,7]
         }else{
             NULL
-            }
+        }
     }
 }
 
