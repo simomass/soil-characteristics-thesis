@@ -2520,6 +2520,18 @@ plot(acomp(df.porosimetria[, 7:9]), cex = 2, col = as.numeric(as.factor(df.poros
 
 legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"), cex = 0.7, pt.cex = 1, 
        col = rep(1:2, each = 3), pch = 1:3, border = "white", fill=NULL)
+######Faccio ggplot
+##require(ggplot2)
+##require(ggtern) 
+  
+## prova <- acomp(df.porosimetria[, 7:9])
+## prova <- data.frame(prova)
+
+## plot <- ggtern() + 
+##          theme_bw() +
+##          theme_hidetitles() +
+##          geom_point(data = prova, 
+##              aes(x = RESIDUALS, y = STORAGE, z = TRANSMISSION), alpha = 0.8, size = 1)
 ##dev.off()
 @
 

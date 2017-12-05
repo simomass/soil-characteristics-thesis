@@ -56,12 +56,12 @@ p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.d
     theme(legend.position = "bottom",
           legend.background = element_rect(color = "white", 
                                            fill = "white", size = 1, linetype = "solid"),
-          legend.direction = "horizontal") + scale_fill_discrete(name= "Lavorazione")+ylab("Densità apparente")+
+          legend.direction = "horizontal") + scale_fill_discrete(name= NULL)+ylab(expression(paste("Densità apparente g ", cm^-3)))+
     theme(axis.title.x=element_blank(),
           axis.text.x=element_blank(),
           axis.ticks.x=element_blank())
 
-pdf("residuicampo")
+pdf("../tesi/boxCore.pdf")
 p10
 dev.off()
 
@@ -88,13 +88,15 @@ p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.p
     theme(legend.position = "bottom",
           legend.background = element_rect(color = "white", 
                                            fill = "white", size = 1, linetype = "solid"),
-          legend.direction = "horizontal") + scale_fill_discrete(name= "Lavorazione")+ylab("Densità apparente")+
+          legend.direction = "horizontal") + scale_fill_discrete(name= NULL)+ylab(expression(paste("Densità apparente g ", cm^-3)))+
     theme(axis.title.x=element_blank(),
           axis.text.x=element_blank(),
           axis.ticks.x=element_blank())
-pdf("residuipetrolio")
+
+pdf("../tesi/boxClod.pdf")
 p10
 dev.off()
+
 df.vecchio <- df.petrolio
 
 ##vec.paletti <- c(250, 20)

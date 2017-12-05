@@ -1,0 +1,275 @@
+\documentclass[fontsize=11pt,
+captions=tableheading,
+captions=figureheading,
+a4paper,
+headsepline=true,
+footsepline=true,
+open=right,
+titlepage,
+final]{scrbook}
+
+% draft/final onecolumn/twocolumn oneside/twoside openany/openright
+% Circa 80 lettere per pagina con draft al posto di final fa il pdf senza foto
+\usepackage{scrlayer-scrpage}
+%\usepackage[toc, page]{appendix}
+
+\usepackage[english, italian]{babel}
+% per la sillabazione corretta e per biblatex
+% \usepackage[english]english serve se c'e' bisogno di una parte da scrivere in inglese
+
+% https://tex.stackexchange.com/questions/82993/how-to-change-the-name-of-document-elements-like-figure-contents-bibliogr
+
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% \usepackage{geometry}
+% \geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=5cm}
+% \usepackage[nochapters,pdfspacing,dottedtoc]{classicthesis}
+% \setcounter{secnumdepth}{4} % numerini alle sezioni dentro al testo
+% \setcounter{tocdepth}{4} % nell'indice
+\usepackage{url}
+\usepackage{comment}
+
+% hyperref serve per i link
+% Tutti le opzioni che ci sono adesso non sappiamo se servono: le disattivo per il momento
+% 
+\usepackage[]{hyperref} % caricare questo prima di floats per evitare casini
+% unicode=true, pdfusetitle, backref=false, pdfborder={0 0 1},
+% bookmarks=true, bookmarksnumbered=true, bookmarksopen=true, bookmarksopenlevel=2, colorlinks=false,
+% breaklinks=false
+
+%% xcolor serve per colorare il testo
+\usepackage[dvipsnames]{xcolor}
+%% Questa parte sotto controlla i colori dei riferimenti cliccabili
+\hypersetup{colorlinks,
+  linkcolor={red!20!black},
+  citecolor={blue!80!black},
+  urlcolor={blue!80!black},
+  pdfstartview={XYZ null null 1}
+}
+% \usepackage{textcomp}
+% Sperimentale per le liste; non attivare
+%% \usepackage{enumitem}
+%% \setlist{nosep} %
+\usepackage{bm}
+
+%%\usepackage{longtable} % per avere tabelle spezzate tra le pagine
+%%\usepackage{tabularx} % per le tabelle con molto testo
+\usepackage{lscape} % per ruotare qualche pagina in landscape
+\usepackage{booktabs} % per fare tabelle semplici come nei libri (top mid e bottomrule)
+
+\usepackage{setspace} % permette di cambiare la spaziatura quando necessario
+%\doublespacing % per avere spazio per scrivere a penna
+\onehalfspacing  % per l'interlinea finale
+% meglio questi due comandi sopra che linespread.
+% Cosi sistema interlinea 1 nelle tabelle automaticamente
+% \linespread{1.3} % Di default è \linespread{1} che corrisponde
+% all'interlinea uno; 1.3 sta per interlinea 1 e mezzo
+
+%% \usepackage{multirow} % tabelle multiriga e multicolonna
+
+%% \usepackage{threeparttable}
+% vedi http://www.tug.org/pracjourn/2007-2/asknelly/
+
+%% \usepackage{lineno}
+%% \linenumbers
+% Queste due righe sopra aggiungono la numerazione delle righe
+% scommentare nella versione finale
+
+% Queste righe sotto si occupano della bibliografia
+% \usepackage[babel]{csquotes}
+
+
+\usepackage[backend=biber, sorting=nyt, style=authoryear,
+            autolang=hyphen, natbib=true, backref]{biblatex}
+%% style=numeric
+
+% nty Sort by name, title, year.
+% nyt Sort by name, year, title.
+% nyvt Sort by name, year, volume, title.
+% anyt Sort by alphabetic label, name, year, title.
+% anyvt Sort by alphabetic label, name, year, volume, ynt.
+% titl Sort by year, name, title.
+% ydnt Sort by year (descending), name, title.
+% none Do not sort at all. All entries are processed in citation order.
+% Debug Sort by entry key. This is intended for debugging only.
+
+%% Qui sotto ci va il nome del file della bibliografia
+\bibliography{bibliomone.bib}
+% non ho capito a che serve ma dovrebbe essere utile a citare R in bib
+% \newcommand{\code}[1]{\texttt{\smaller #1}}
+    \setlength\bibitemsep{1.5\itemsep}
+    \DeclareBibliographyCategory{cartaceo}
+    \DeclareBibliographyCategory{web}
+
+    \defbibheading{cartaceo}{\subsection*{Bibliografia}}
+    \defbibheading{web}{\subsection*{Siti Web consultati}}
+
+    %% siunitx serve per le unità di misura
+    \usepackage{siunitx}
+    \sisetup{detect-all = true, detect-family = true, output-decimal-marker = {,}}
+    % http://tex.stackexchange.com/questions/66713/can-i-make-siunitx-commands-use-serif-fonts-like-the-rest-of-the-math-in-beamer
+
+%% questa roba sotto serve per non perdere il filo sulle copie stampate
+%% commentare opportunamente nella versione finale
+\usepackage[short, hhmmss]{datetime}
+%\usepackage{fancyhdr}
+    \usepackage{placeins}
+    \usepackage{graphicx} %per le figure
+%\pagestyle{fancy}
+    % \setlength{\headheight}{14pt} % il compilatore si lamenta che c'e' poco spazio 1 ott 2016 Siena
+    \usepackage[]{subfig} % per le figure affiancate
+
+\usepackage{float}
+% per forzare il posizionamento delle figure
+
+    %% \usepackage[normalem]{ulem}
+    % serve per barrare del testo in fase di correzione
+% se non si usa [normalem], \emph sottolinea invece di fare il suo dovere
+
+    %% Pezzo per scrivere note a margine
+    \usepackage{xargs} % Use more than one optional parameter in a new commands
+\usepackage[colorinlistoftodos, prependcaption, italian, textsize=scriptsize]{todonotes}
+\newcommandx{\dubbio}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\cambia}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\migliora}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\fatto}[2][1=]{\todo[linecolor=gray, backgroundcolor=black!75]{#2}}
+\newcommandx{\nonvisibile}[2][1=]{\todo[disable,#1]{#2}}
+% \presetkeys{todonotes}{fancyline}{}
+    % Vediamo se con questo si riduce lo spazio tra la caption.
+\usepackage[font=small, textfont=it, labelfont=bf, format=plain]{caption}
+
+
+%\usepackage[printwatermark]{xwatermark}
+%     \newwatermark[allpages,color=black!10,angle=90,scale=1,xpos=75,ypos=0]{Tesi
+% di Laurea magistrale di Simone Massenzio}
+
+%\backgroundsetup{angle=60,contents={\usebox\mybox}}
+
+    %\usepackage[raggedright]{titlesec}
+% Serve per evitare la sillabazione nei titoli
+
+    %\newcommand{\sectionbreak}{\clearpage}
+%% serve per mettere ogni section a pagina nuova
+
+%\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\space#1}{}}
+    %\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.2pt}
+    % \cfoot{Pag. \thepage\, Compilata il \today\ alle \currenttime}
+% \lfoot{}
+    % \rfoot{}
+% E Even page
+    % O Odd page
+% L Left field
+    % C Center field
+% R Right field
+    % H Header
+% F Footer
+    % \fancyhead{} % clear all header fields
+    \usepackage{enumitem}
+    % per fare l'itemize con il tondo intorno ai numeri
+% e altri controlli sulle liste
+
+    %\usepackage[font=it, labelfont=bf, format=plain, skip=40pt]{caption}
+% The optional argument of \setcapwidth is not supported and will be ignored if used in con-
+                                                                                            % junction with the caption package. Furthermore the KOMA-Script options tablecaption-
+% 30above & tablecaptionbelow and the commands \captionabove & \captionbelow
+    % are stronger than the position= setting offered by the caption package.
+% \DeclareCaptionFont{mysize}{\fontsize{10}{9.6}\selectfont}
+    % \captionsetup{font=mysize}
+% \usepackage[swapnames]{frontespizio} %per il frontespizio
+\usepackage{frontespizio}
+
+\newenvironment{abstract}%
+    {\cleardoublepage\null \vfill\begin{center}%
+    \bfseries \abstractname \end{center} \footnotesize}%\doublespace }%
+{\vfill\null}
+
+\newenvironment{engabstract}%
+    {\cleardoublepage\null \vfill\begin{center}%
+    \bfseries Summary  \end{center} \footnotesize}%\doublespace }%
+{\vfill\null}
+
+%% https://tex.stackexchange.com/questions/202512/translate-appendices-from-addappheadtotoc-in-other-languages-with-polyglossia
+% \addto\captionsitalian{%
+%   \renewcommand{\appendixtocname}{Appendici}%
+%   \renewcommand{\appendixpagename}{Appendici}%
+% }
+
+    \renewcommand{\theequation}{Eq. \arabic{equation}}
+    \usepackage{environ}
+    \NewEnviron{modello}{%
+  \begin{equation}
+    \BODY
+  \end{equation}
+}
+
+\usepackage{amsmath}
+\numberwithin{equation}{chapter} % numera le equazioni col numero di capitolo
+
+\usepackage{wrapfig}
+
+  \usepackage[nogin]{Sweave}
+  % https://tex.stackexchange.com/questions/11619/resize-arrays-and-figures-in-a-sweave-document
+% nogin serve per definiore le dimensioni delle figure e passarle a latex
+
+  \DeclareSIUnit\atm{atm}
+  \DeclareSIUnit\torr{torr}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{document}
+\begin{samepage}
+\begin{abstract}
+  Lo scopo di questa tesi è quello di: \textbf{i)} comparare due
+  sistemi di conduzione agricola in ambiente Mediterraneo (Biologico e
+  Convenzionale, attivi da più di venticinque anni) studiando tre
+  proprietà fisiche del suolo: densità apparente, distribuzione dei
+  pori e stabilità degli aggregati; \textbf{ii)} comparare gli effetti
+  di tre lavorazioni primarie: aratura, rippatura e
+  frangizollatura. Lo studio è inserito nel progetto MoLTE, un
+  \textbf{long term experiment} dell'Università di Firenze dove, dal
+  1991 presso l'azienda agricola Montepaldi, situata a San Casciano
+  val di Pesa (FI), viene condotta una sperimentazione sul sistema
+  Biologico. I risultati delle analisi sulla densità apparente
+  mostrano differenze statisticamente significative tra i trattamenti,
+  tuttavia i cambiamenti sono minimi rendendoli non rilevanti dal
+  punto di vista pratico.  Le analisi sulla stabilità degli aggregati
+  indicano una maggior stabilità degli aggregati nei suoli a
+  conduzione Convenzionale rispetto a quella Biologica. I risultati
+  sulla distribuzione dei pori, non mostrano differenze
+  statisticamente significative, molto probabilmente per l'esiguo
+  numero di campioni analizzati.
+\end{abstract}
+\nopagebreak
+\begin{otherlanguage*}{english}
+  \begin{engabstract}
+    The purposes of this work were: \textbf{i)} to compare two farming
+    systems in Mediterranean area (Organic and Conventional management
+    on site since more than twenty five years) through the assessement of three
+    soil's physical properties such as: bulk density, pore size
+    distribution and aggregate stability; \textbf{ii)} to compare the
+    effects of three tillage systems: plowing, chisel plowing and disk
+    harrowing. The study is implemented within the \emph{MoLTE}
+    project, a long term experiment of the University of Florence
+    where, since 1991, at Montepaldi farm, located in San Casciano val
+    di Pesa (FI, Italy) was carried out an experimentation on Organic
+    farming systems. The result of the analysis of the bulk density,
+    show statistically significant differences between two farming
+    systems, however these difference were so small that are
+    negligible from a practical point of view. The aggregate stability
+    shows that the aggregates from the Conventional soil are more
+    stable than those from the Organic one. The results of the pore
+    size distribution do not display statistically significant
+    differences.
+\end{engabstract}%
+\end{otherlanguage*}
+\end{samepage}
+\end{document}
+
