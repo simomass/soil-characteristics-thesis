@@ -35,6 +35,8 @@
 \usepackage{siunitx}
 \usepackage{placeins}
 \usepackage{datetime}
+\usepackage{media9}
+\usepackage{tikz}
 \newdate{date}{21}{12}{2017}
 
 % -------------------------------------------------------
@@ -52,19 +54,18 @@
 % \setbeamertemplate{title page}
 % {
 \title[25 anni di conduzione Biologica in
-area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar on every slide
+area Mediterranea. ] % [] is optional - is placed on the bottom of the
+                     % sidebar on every slide
 { % is placed on the title page
   25 anni di  conduzione Biologica  in
   area Mediterranea}
 
 
-\subtitle[Uno studio di fisica del suolo]
-{
+\subtitle[Uno studio di fisica del suolo]{
   Uno studio di fisica del suolo
 }
 
-\author[Simone Massenzio]
-{ 
+\author[Simone Massenzio]{ 
   Candidato: Simone Massenzio \\
   Relatore: Dott. O.L. Pantani\\
   \vspace{0.1cm}
@@ -120,26 +121,37 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar o
 
 
 \begin{frame}{Obiettivi}{}
-
-\large
-\begin{itemize}[<+->]
-\item verificare la presenza di differenze nelle caratteristiche
-  fisiche del suolo in aree: coltivate convenzionalmente (\emph{CO})
-  oppure coltivate a biologico (\emph{OO}) tramite:
-  \begin{itemize}
-  \item Densit\`a apparente
+    \begin{columns}[c]
+    \column{.50\textwidth}
+  \large
+  \begin{itemize}[<+->]
+  \item verificare la presenza di differenze nelle caratteristiche
+    fisiche del suolo in aree: coltivate convenzionalmente (\emph{CO})
+    oppure coltivate a biologico (\emph{OO}) tramite:
     \begin{itemize}
-    \item Metodo \emph{Core}
-    \item Metodo \emph{Clod}
+    \item Densit\`a apparente
+      \begin{itemize}
+      \item Metodo \emph{Core}
+      \item Metodo \emph{Clod}
+      \end{itemize}
+    \item Stabilit\`a degli aggregati tramite dinamica della
+      distribuzione della dimensione degli aggregati;
+    \item Distribuzione dimensionale dei pori tramite tecniche di
+      porosimetria ad intrusione di mercurio;      
     \end{itemize}
-  \item Stabilit\`a degli aggregati tramite dinamica della
-    distribuzione della dimensione degli aggregati;
-  \item Distribuzione dimensionale dei pori tramite tecniche di
-    porosimetria ad intrusione di mercurio;      
+  \item verificare eventuali effetti dovuti a diverse lavorazioni
+    (aratura, rippatura, frangizollatura).
   \end{itemize}
-\item verificare eventuali effetti dovuti a diverse lavorazioni
-  (aratura, rippatura, frangizollatura).
-\end{itemize}
+\column{.48\textwidth}
+    \only<2>{\includegraphics[width=0.8\textwidth]{../foto/cilindroOttone.jpeg}}
+    \only<3>{\includegraphics[width=0.8\textwidth]{../foto/cilindrosuolo.jpg}}
+    \only<4>{\includegraphics[width=\textwidth]{../foto/secco.jpeg}}
+    \only<5>{
+      \[
+      \rho_{ApparenteCore} = P_{campione}/V_{cilindro}
+      \]
+    }
+  \end{columns}
 \end{frame}
 
 \section{Densit\`a apparente}
@@ -168,6 +180,15 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar o
   \end{columns}
 \end{frame}
 
+\begin{frame}
+\includemedia[
+  width=0.4\linewidth,
+  height=0.3\linewidth,
+  activate=pageopen,
+  addresource=/home/simone/Simo_GIT/foto/PoreSize.mp4,
+  flashvars={source=/home/simone/Simo_GIT/foto/PoreSize.mp4}
+]{}{VPlayer.swf}
+\end{frame}
 
 \begin{frame}{Misura densita}{Due metodi: \emph{Core} e \emph{Clod}}
 
@@ -311,6 +332,9 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar o
       dello \textit{slacking}
     \end{itemize}
   \end{minipage}
+  \transdissolve<2>
+
+  \transdissolve<3>
   \begin{minipage}[ht]{\textwidth}
     \centering
     \only<2>{
@@ -318,7 +342,7 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar o
       \begin{tikzpicture}[remember picture,overlay]
         \node at (current page.center) 
         {%\vspace{1cm}
-          \includegraphics[width=0.5\textwidth]{../grafici/boh.jpg}
+          \includegraphics[width=0.5\textwidth]{../grafici/boh.jpeg}
         };
       \end{tikzpicture}
       % \begin{figure}[hb][width=6cm]
@@ -348,7 +372,6 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar o
   % \end{minipage}
 
   % \begin{minipage}[hb]{\textwidth}
-  \transdissolve<3>
   \onslide<3->{
     \begin{figure}[hb]
       \includegraphics[width=0.8\textwidth]{../foto/simplessodeforma.png}
@@ -426,16 +449,24 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar o
 
 \begin{frame}{Sintesi finale}
   \begin{itemize}[<+->]
-  \item La densit\`a per grandi volumi mostra una maggior compattezza
-    negli appezzamenti OO. Differenza significativa, ma solo sulla
-    seconda cifra decimale. Nessun effetto delle lavorazioni
-  \item La densit\`a misurata sugli aggregati mostra l'inverso (OO
-    meno compatto). Anche qui differenze sulla seconda decimale. Le
-    lavorazioni mostrano un effetto (aratura la pi\`u compatta)
-  \item Le misure di stabilit\`a indicano un suolo generalmente poco
-    stabile (aggregati inferiori a 1 mm) e che il CO produce aggregati
-    di maggiori dimensioni (sia secchi che umidi).
-  \item La 
+
+  \item densità apparente:
+    \begin{itemize}
+    \item metodo \emph{Core}, nonostante la semplicità esecutiva,
+      sembra inadeguato a cogliere differenze di qualsiasi genere
+      (\emph{anno, lavorazione, conduzione}).
+
+    \item metodo \emph{Clod} mostra differenze significative, ma di
+      una entità tale da non risultare tecnologicamente rilevanti.
+    \end{itemize}
+  \item distribuzione dinamica: riscontrata una
+    maggiore stabilità degli aggregati provenienti da appezzamenti
+    \emph{Convenzionali} rispetto a quelli provenienti da appezzamenti
+    \emph{Biologici}; non sono state riscontrate differenze significative
+    all'interno trattamenti di \emph{lavorazione}.
+  \item porosimetria: mostra una tendenza da parte dei suoli
+    \emph{Biologici} ad essere più porosi e con pori mediamente più
+    grandi dei campioni di suolo \emph{Convenzionali}.
   \end{itemize}
 
 \end{frame}
@@ -493,7 +524,7 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar o
 \begin{frame}
   \vspace{1.5cm}
   \begin{figure}
-    \includegraphics[width=0.8\textwidth]{../tesi/boxCore.pdf}
+    \includegraphics[width=0.6\textwidth]{../tesi/boxCore.pdf}
   \end{figure}
 \end{frame}
 
@@ -541,7 +572,7 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the sidebar o
 \begin{frame}
   \vspace{1.5cm}
   \begin{figure}
-    \includegraphics[width=0.8\textwidth]{../tesi/Tesi_GIT-figmah.pdf}
+    \includegraphics[width=0.6\textwidth]{../tesi/boxClod.pdf}
   \end{figure}
 \end{frame}
 

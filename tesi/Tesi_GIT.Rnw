@@ -234,7 +234,7 @@ library(multcomp)
 info.sistema <-
 Sys.info()[c(1,7)]
 if(info.sistema[1]=="Windows"){
-  DirMain <- paste("C:/Users/", info.sistema[2], "/Dropbox/MOLTE_R", sep="")
+  DirMain <- "D:/Simo_GIT"
 } else {
   if(info.sistema[2]=="simone" ){
     DirMain <-"~/Simo_GIT"
@@ -1572,8 +1572,8 @@ Dove:
   $y$       & = densità apparente\\
   $\beta_0$     & = media generale (intercetta del modello)\\
   $\beta_1$ & = coefficiente della variabile \emph{anno}, due livelli: \emph{2015, 2016};\\
-  $\beta_2$  & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
-  $\beta_3$ & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
+  $\beta_2$  & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico}\\
+  $\beta_3$ & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato}\\
   $\epsilon$ & = residui o errore
 \end{tabular}
 \end{samepage}
@@ -1747,8 +1747,8 @@ Dove:
 \begin{tabular}{lp{12cm}}
   $y$       & = densità apparente\\
   $\beta_0$     & = media generale (intercetta del modello)\\
-  $\beta_1$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico};\\
-  $\beta_2$  & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato};\\
+  $\beta_1$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico}\\
+  $\beta_2$  & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato}\\
   $\epsilon$ & = residui o errore
 \end{tabular}
 \end{samepage}
@@ -2414,6 +2414,7 @@ df.porosimetria <-
     df.data[-c(3,6,11,10),]
 
 Y <- acomp(df.porosimetria[, 7:9])
+
 modelloPoro <-
     with(df.porosimetria, lm(ilr(Y) ~ MAN+TIL))
 coefs.Poro <-  ilrInv(coef(modelloPoro), orig=Y)
@@ -2521,18 +2522,26 @@ plot(acomp(df.porosimetria[, 7:9]), cex = 2, col = as.numeric(as.factor(df.poros
 legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"), cex = 0.7, pt.cex = 1, 
        col = rep(1:2, each = 3), pch = 1:3, border = "white", fill=NULL)
 ######Faccio ggplot
-##require(ggplot2)
-##require(ggtern) 
-  
+## require(ggplot2)
+## require(ggtern) 
+
 ## prova <- acomp(df.porosimetria[, 7:9])
 ## prova <- data.frame(prova)
-
+## df.porosimetria$TIL <- 
+##     mapvalues(df.porosimetria$TIL, from = c("a", "b", "c"), to =  c("Arato", "Rippato", "Frangizollato"))
+## Conduzione <- as.factor(df.porosimetria$MAN)
+## Lavorazione <-  as.factor(df.porosimetria$TIL)
+## Conduzione <- 
+##     mapvalues(df.porosimetria$MAN, from = c("C", "O"), to =  c("Convenzionale", "Biologico"))
 ## plot <- ggtern() + 
 ##          theme_bw() +
-##          theme_hidetitles() +
+##          ##theme_hidetitles() +
 ##          geom_point(data = prova, 
-##              aes(x = RESIDUALS, y = STORAGE, z = TRANSMISSION), alpha = 0.8, size = 1)
-##dev.off()
+##              aes(x = RESIDUALS, y = STORAGE, z = TRANSMISSION, colour = Conduzione, 
+##                  shape = Lavorazione), alpha = 0.4, size = 2.5)+
+##   ylab("Storage") + xlab("Residuals") + zlab("Transmission")+theme_legend_position("bottommiddle")+theme(legend.direction = "horizontal")
+## ##  theme_showarrows()
+## plot##dev.off()
 @
 
 % \noindent%
@@ -2816,15 +2825,15 @@ Il parametro densità apparente misurato con il metodo \emph{Clod}
 mostra differenze significative, ma di una entità tale da non
 risultare tecnologicamente rilevanti.
 
-Al contrario la porosimetria, mostra una tendenza da parte dei suoli
-\emph{Biologici} ad essere più porosi e con pori mediamente più grandi
-dei campioni di suolo \emph{Convenzionali}.
-
 Dalle misure della distribuzione dinamica, è stata riscontrata una
 maggiore stabilità degli aggregati provenienti da appezzamenti
 \emph{Convenzionali} rispetto a quelli provenienti da appezzamenti
 \emph{Biologici}; non sono state riscontrate differenze significative
 all'interno trattamenti di \emph{lavorazione}.
+
+Al contrario la porosimetria, mostra una tendenza da parte dei suoli
+\emph{Biologici} ad essere più porosi e con pori mediamente più grandi
+dei campioni di suolo \emph{Convenzionali}.
 
 Una possibile spiegazione di tali risultati può essere fornita dalle
 caratteristiche stesse dell'agroecosistema, il quale è caratterizzato
@@ -2989,7 +2998,7 @@ a_i=Q_i\pi r_i^2n_i
                           misurato direttamente dallo strumento\\
     $v_i$ & = distribuzione di particelle, ovvero il volume relativo
             nella classe dimensionale $i$ con diametro medio $d_i$\\
-    $Q_i$, & = coefficiente di estinzione medio per la classe
+    $Q_i$ & = coefficiente di estinzione medio per la classe
              dimensionale $i$, è calcolato dalla teoria dello scattering, ed
              è una funzione delle proprietà ottiche delle particelle e del
              mezzo disperdente
@@ -3020,7 +3029,7 @@ a_i=Q_i\pi r_i^2n_i
     \item la dimensione minima della particella misurata,
       impiegata come diametro di una sfera teorica;
     \item il diametro teorico di una sfera che abbia lo stesso volume
-      della particella originale;
+      della particella originale.
   \end{itemize}
   
   Il Mastersizer utilizza quest'ultimo metodo. Ognuno di questi metodi

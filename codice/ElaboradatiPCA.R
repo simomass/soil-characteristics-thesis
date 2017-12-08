@@ -38,68 +38,68 @@ df.dueAnni <-
     read.table(file.path(DirElab, "df_dueanni.csv"),
                header = T, sep = "")
 
-df.vecchio <- df.dueAnni
+## df.vecchio <- df.dueAnni
 
-levels(df.dueAnni$YEAR) <- c("2015", "2016")
-levels(df.dueAnni$TRT) <-c("Convenzionale", "Biologico")
-levels(df.dueAnni$LAVORAZIONE) <- c("Arato", "Frangizollato", "Rippato")
+## levels(df.dueAnni$YEAR) <- c("2015", "2016")
+## levels(df.dueAnni$TRT) <-c("Convenzionale", "Biologico")
+## levels(df.dueAnni$LAVORAZIONE) <- c("Arato", "Frangizollato", "Rippato")
 
-p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.dueAnni) +
-    geom_boxplot(position=position_dodge(1))+
-    facet_grid(.~YEAR+TRT)+
-    geom_hline(yintercept = 1.35)+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.ticks.x=element_blank())+    
-    theme(text = element_text(size = 20),
-          axis.text.x = element_text(angle=0, hjust=0))+
-    theme(legend.position = "bottom",
-          legend.background = element_rect(color = "white", 
-                                           fill = "white", size = 1, linetype = "solid"),
-          legend.direction = "horizontal") + scale_fill_discrete(name= NULL)+ylab(expression(paste("Densità apparente g ", cm^-3)))+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.ticks.x=element_blank())
+## p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.dueAnni) +
+##     geom_boxplot(position=position_dodge(1))+
+##     facet_grid(.~YEAR+TRT)+
+##     geom_hline(yintercept = 1.35)+
+##     theme(axis.title.x=element_blank(),
+##           axis.text.x=element_blank(),
+##           axis.ticks.x=element_blank())+    
+##     theme(text = element_text(size = 20),
+##           axis.text.x = element_text(angle=0, hjust=0))+
+##     theme(legend.position = "bottom",
+##           legend.background = element_rect(color = "white", 
+##                                            fill = "white", size = 1, linetype = "solid"),
+##           legend.direction = "horizontal") + scale_fill_discrete(name= NULL)+ylab(expression(paste("Densità apparente g ", cm^-3)))+
+##     theme(axis.title.x=element_blank(),
+##           axis.text.x=element_blank(),
+##           axis.ticks.x=element_blank())
 
-pdf("../tesi/boxCore.pdf")
-p10
-dev.off()
+## pdf("../tesi/boxCore.pdf")
+## p10
+## dev.off()
 
-df.dueAnni <- df.vecchio
+## df.dueAnni <- df.vecchio
 df.dueAnni <-  df.dueAnni[df.dueAnni$REPLICA == "m", ]
 df.petrolio <-
     read.table(file.path(DirElab, "df_spinta.csv"),
                header = T, sep = "")
 
 
-df.vecchio <- df.petrolio
-levels(df.petrolio$TRT) <-c("Convenzionale", "Biologico")
-levels(df.petrolio$LAVORAZIONE) <- c("Arato", "Frangizollato", "Rippato")
+## df.vecchio <- df.petrolio
+## levels(df.petrolio$TRT) <-c("Convenzionale", "Biologico")
+## levels(df.petrolio$LAVORAZIONE) <- c("Arato", "Frangizollato", "Rippato")
 
 
-p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.petrolio) +
-    geom_boxplot(position=position_dodge(1))+
-    facet_grid(.~TRT)+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.ticks.x=element_blank())+    
-    theme(text = element_text(size = 20),
-          axis.text.x = element_text(angle=0, hjust=0))+
-    theme(legend.position = "bottom",
-          legend.background = element_rect(color = "white", 
-                                           fill = "white", size = 1, linetype = "solid"),
-          legend.direction = "horizontal") + scale_fill_discrete(name= NULL)+ylab(expression(paste("Densità apparente g ", cm^-3)))+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.ticks.x=element_blank())
+## p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.petrolio) +
+##     geom_boxplot(position=position_dodge(1))+
+##     facet_grid(.~TRT)+
+##     theme(axis.title.x=element_blank(),
+##           axis.text.x=element_blank(),
+##           axis.ticks.x=element_blank())+    
+##     theme(text = element_text(size = 20),
+##           axis.text.x = element_text(angle=0, hjust=0))+
+##     theme(legend.position = "bottom",
+##           legend.background = element_rect(color = "white", 
+##                                            fill = "white", size = 1, linetype = "solid"),
+##           legend.direction = "horizontal") + scale_fill_discrete(name= NULL)+ylab(expression(paste("Densità apparente g ", cm^-3)))+
+##     theme(axis.title.x=element_blank(),
+##           axis.text.x=element_blank(),
+##           axis.ticks.x=element_blank())
 
-pdf("../tesi/boxClod.pdf")
-p10
-dev.off()
+## pdf("../tesi/boxClod.pdf")
+## p10
+## dev.off()
 
-df.vecchio <- df.petrolio
+## df.vecchio <- df.petrolio
 
-##vec.paletti <- c(250, 20)
+vec.paletti <- c(250, 20)
 df.data <-
     read.table(file.path(DirElab, "Stabilita_wide.csv"),
                sep = ";", dec = ".", header=TRUE
@@ -107,7 +107,7 @@ df.data <-
 
 df.data$TIME <- df.data$TIME-1 ## corregge i tempi che partono con 1
 df.data$TIME2 <- df.data$TIME
-UltraVeri <- which(df.data$Ultrasonic.level)
+UltraVeri <-which(df.data$Ultrasonic.level)
 df.data$TIME2[UltraVeri] <- df.data$TIME2[UltraVeri]+12
 ##df.data[1:30, c("TIME", "TIME2", "Ultrasonic.level","Sample.Name")]
 anomali32 <-
@@ -360,6 +360,9 @@ PoriTotPCA <-
 
 df.densitapori <- merge(merge(df.densitaCompleto, df.porimedi3), df.fittiziopori)
 
+## stampaLorenzo <- df.densitapori[,-c(7,8)]
+## write.table(stampaLorenzo, "/home/simone/Dropbox/MOLTE/SoloSuolo/dati_grezzi/poriMediTot.csv", sep = ";", row.names = FALSE) 
+
 df.stabilita <-
     read.table("/home/simone/Dropbox/MOLTE/SoloSuolo/dati_grezzi/Stabil.Terr.csv", sep = ";")
 
@@ -480,6 +483,7 @@ df.PCAFisica <-
     df.finale[, c(1:4, 6:11)]
 df.PCAChimica <-
     df.finale[, c(1:4, 12:15)]
+
 
 
 write.table(df.PCA, file.path(DirElab, "df.PCATotale.csv"), sep = ";", row.names = T)
