@@ -306,8 +306,8 @@ file.path(DirMain, "tabelle")
 
 \begin{abstract}
   Lo scopo di questa tesi è quello di: \textbf{i)} comparare due
-  sistemi di conduzione agricola in ambiente Mediterraneo (Biologico e
-  Convenzionale, attivi da più di venticinque anni) studiando tre
+  sistemi di conduzione agricola in ambiente Mediterraneo (biologico e
+  convenzionale, attivi da più di venticinque anni) studiando tre
   proprietà fisiche del suolo: densità apparente, distribuzione dei
   pori e stabilità degli aggregati; \textbf{ii)} comparare gli effetti
   di tre lavorazioni primarie: aratura, rippatura e
@@ -315,12 +315,12 @@ file.path(DirMain, "tabelle")
   \textbf{long term experiment} dell'Università di Firenze dove, dal
   1991 presso l'azienda agricola Montepaldi, situata a San Casciano
   val di Pesa (FI), viene condotta una sperimentazione sul sistema
-  Biologico. I risultati delle analisi sulla densità apparente
+  biologico. I risultati delle analisi sulla densità apparente
   mostrano differenze statisticamente significative tra i trattamenti,
   tuttavia i cambiamenti sono minimi rendendoli non rilevanti dal
   punto di vista pratico.  Le analisi sulla stabilità degli aggregati
   indicano una maggior stabilità degli aggregati nei suoli a
-  conduzione Convenzionale rispetto a quella Biologica. I risultati
+  conduzione convenzionale rispetto a quella biologica. I risultati
   sulla distribuzione dei pori, non mostrano differenze
   statisticamente significative, molto probabilmente per l'esiguo
   numero di campioni analizzati.
@@ -360,7 +360,7 @@ file.path(DirMain, "tabelle")
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\chapter{Il suolo in sistemi agricoli Convenzionali e Biologici}
+\chapter{Il suolo in sistemi agricoli convenzionali e biologici}
 
 
 
@@ -401,25 +401,24 @@ provocato la degradazione determinando una diminuzione della sua
 fertilità.
 
 A fronte di un previsto aumento di popolazione mondiale, è più che mai
-necessario individuare delle tecniche che permettano il mantenimento delle
-caratteristiche dei terreni agrari senza diminuirne la
-produttività. Gli stessi consumatori occidentali sono più attenti
-ai loro acquisti e cercano prodotti che siano coltivati rispettando
-l'ambiente e con un basso impatto ambientale. In particolare sono
-sempre più richiesti prodotti di agricoltura Biologica che hanno
-l'obiettivo di impattare il meno possibile l'ambiente utilizzando
-prodotti naturali e non di sintesi.
+necessario individuare delle tecniche che permettano il mantenimento
+delle caratteristiche dei terreni agrari senza diminuirne la
+produttività. Gli stessi consumatori occidentali sono più attenti ai
+loro acquisti e cercano prodotti che siano coltivati rispettando
+l'ambiente e con un basso utilizzo di input esterni. In particolare
+sono sempre più richiesti prodotti di agricoltura biologica per le
+loro potenzialità.
 
-Nonostante questo, non è stato dimostrato scientificamente in
-maniera inequivocabile la superiorità dell'agricoltura Biologica
-rispetto all'agricoltura Convenzionale. Ciò può essere dovuto ad
+Nonostante questo, non è stato dimostrata scientificamente in
+maniera inequivocabile la superiorità dell'agricoltura biologica
+rispetto all'agricoltura convenzionale. Ciò può essere dovuto ad
 alcuni dei problemi che la ricerca scientifica deve fronteggiare nello
-studio dell'agricoltura Biologica:
+studio dell'agricoltura biologica:
 \begin{itemize}
 \item ogni ambiente agrario ha le sue caratteristiche pedoclimatiche e
   risponde in maniera diversa alle varie tecniche agricole, inoltre
   anche le colture agrarie hanno esigenze molto diverse;
-\item non esiste un indicatore di fertilità univoco che permetta di
+\item non esiste un indice di fertilità univoco che permetta di
   confrontare i vari tipi di agricoltura.
 \end{itemize}
 
@@ -486,11 +485,7 @@ dal triangolo tessiturale di Whitney, è stata introdotta nel 1951
   \caption[Il triangolo tessiturale]{Triangolo tessiturale secondo lo
     USDA, i punti rappresentano le tessiture apparenti dei terreni
     oggetto di studio determinate per densimetria
-    \citep{agricoledecreto}; \emph{B} e \emph{C} indicano
-    rispettivamente i terreni Biologici e Convenzionali, \emph{a, b} e
-    \emph{c} indicano le lavorazioni (\emph{Arato, Rippato,
-      Frangizollato}), \emph{cn, dx} e \emph{sx} servono ad indicare
-    la posizione (cfr. paragrafo \ref{sec:MOLTE}).}
+    \citep{agricoledecreto}  (cfr. paragrafo \ref{sec:MOLTE}).}
   \label{fig:triangolo}
 \end{figure}
 \FloatBarrier
@@ -514,17 +509,18 @@ valore di densità, in funzione del materiale di cui sono
 costituite. Questo non è uniforme per tutti i componenti (varia da
 circa 2 a oltre 3) ma, in considerazione del fatto che nel suolo sono
 presenti prevalentemente i silicati (con densità che varia da 2,5 a
-2,8), si assume il valore di \SI{2.65}{\gram\per\cubic\centi\metre}
+2,8), si assume come riferimento il valore di
+\SI{2.65}{\gram\per\cubic\centi\metre}
 \citep{radaelli2001chimica}. Questo valore è, a fini pratici,
-costante, considera la sola frazione minerale ed è preso
-come valore di riferimento della densità reale.
+costante, considera la sola frazione minerale ed è preso come valore
+di riferimento della densità reale.
 
 Per considerare, oltre alla fase solida, anche i vuoti si utilizza un
 altro valore di densità: la densità apparente. Come detto
 precedentemente, questo valore considera anche i vuoti ed è legato
 principalmente alla distribuzione granulometrica e alla
 struttura. Mediamente la densità apparente corrisponde a circa la metà
-del valore di densità reale, nonostante si discosti da questo a
+del valore di densità reale, ma può discostarsi in diversa misura a
 seconda dello stato di aggregazione della fase solida del
 terreno. Secondo \citet{AskinBulkDensity}, la densità apparente di un
 terreno è influenzata principalmente dalla tessitura del terreno e,
@@ -565,7 +561,8 @@ acqua e si bagnano rapidamente, l'effetto dipende dal volume dell'aria
 intrappolata e dalla velocità di inumidimento, i frammenti risultanti
 dallo \emph{slaking} sono principalmente microaggregati e aumentano in
 dimensioni all'aumentare del contenuto di argilla; lo \emph{slaking}
-diminuisce all'aumentare dell'umidità \citep{truman1990antecedent, le1988comportement}.
+diminuisce all'aumentare dell'umidità iniziale
+\citep{truman1990antecedent, le1988comportement}.
 
 La rottura per rigonfiamento asimmetrico, è un meccanismo molto
 simile al precedente: ha lo stesso effetto ed è generato dalle
@@ -654,7 +651,7 @@ usata è quella di \citet{greenland1977soil} ed è mostrata in Tab.
 I pori con diametro inferiore ai \SI{0.005}{\micro\meter} sono
 chiamati \emph{pori di legame} e sono particolarmente importanti per
 quanto riguarda le forze che tengono insieme la particelle primarie in
-\emph{domains}.
+\emph{domain}.
 
 
 I pori di diametro inferiore a \SI{0.5}{\micro\metre} sono definiti
@@ -668,7 +665,7 @@ movimento dell’acqua di drenaggio specialmente nei suoli a tessitura
 fine. Cionondimeno, una loro percentuale pari o superiore al 70-80\%
 della porosità totale, indica una cattiva struttura che non favorisce
 la crescita delle piante. Una porosità distribuita ottimamente tra le
-classi dimensionali dei pori, consente un miglior
+classi dimensionali dei pori consente un miglior
 immagazzinamento/conduzione di acqua e aria e un'adeguata crescita
 radicale.
 
@@ -679,16 +676,16 @@ radicale.
 La rivoluzione verde avvenuta negli anni '50 del secolo scorso, è
 stato un processo che ha trasformato l'agricoltura la quale è passata
 da una forma tradizionale ad una che fa largo uso della tecnologia,
-oggi chiamata Convenzionale. 
+oggi chiamata convenzionale. 
 
-L'agricoltura Convenzionale esaspera il concetto di massimizzazione
+L'agricoltura convenzionale esaspera il concetto di massimizzazione
 del rendimento economico, è tecnologicamente orientata, utilizza ampie
 superfici spesso coltivate a monocoltura (con conseguente perdita
 della biodiversità) e richiede ingenti quantità di concimi e
 fertilizzanti, normalmente di sintesi. 
 
 Grazie alla rivoluzione verde, la produzione agricola mondiale ha
-potuto fronteggiare il rapido e gigantesco aumento della popolazione
+potuto mitigare il rapido e gigantesco aumento della popolazione
 di metà '900 \citep{Ciuffoletti_2014}; ma, al tempo stesso, ha portato
 a problemi di tipo ambientale e sanitario: patologie dovute
 all'esposizione dell'uomo ad antiparassitari, alla riduzione della
@@ -698,12 +695,14 @@ coltivazioni intensive monovarietali hanno facilitato la diffusione di
 patogeni, provocando gravi danni di tipo economico agli agricoltori.
 
 In risposta alle problematiche descritte, durante gli anni '70 sono
-nati dei movimenti di agricoltori che cercavano di coltivare in modo
-naturale eliminando fitofarmaci e concimi di sintesi. Da questi
-movimenti inizia a prendere forma l'agricoltura Biologica che, ad
-oggi, costituisce un'importante realtà dell'agricoltura mondiale e
-italiana. Si stima infatti che il 14,5\% della SAU Nazionale sia
-coltivata a Biologico \citep{Bio_cifre}, in crescita.
+nati dei movimenti di agricoltori che, sulla base di una serie di
+iniziative precedenti a partire dagli anni '20 del secolo scorso,
+cercavano di coltivare in modo naturale eliminando fitofarmaci e
+concimi di sintesi. Da questi movimenti inizia a prendere forma
+l'agricoltura biologica che, ad oggi, costituisce un'importante realtà
+dell'agricoltura mondiale e italiana. Si stima infatti che il 14,5\%
+della SAU Nazionale sia coltivata a biologico \citep{Bio_cifre}, in
+crescita.
 
 Secondo il \citet{ue2007834}: \emph{La produzione biologica è un
   sistema globale di gestione dell’azienda agricola e di produzione
@@ -712,14 +711,14 @@ Secondo il \citet{ue2007834}: \emph{La produzione biologica è un
   risorse naturali, l’applicazione di criteri rigorosi in materia di
   benessere degli animali e una produzione confacente alle preferenze
   di taluni consumatori per prodotti ottenuti con sostanze e
-  procedimenti naturali. Il metodo di produzione Biologico esplica
+  procedimenti naturali. Il metodo di produzione biologico esplica
   pertanto una duplice funzione sociale, provvedendo da un lato a un
-  mercato specifico che risponde alla domanda di prodotti Biologici
+  mercato specifico che risponde alla domanda di prodotti biologici
   dei consumatori e, dall’altro, fornendo beni pubblici che
   contribuiscono alla tutela dell’ambiente, al benessere degli animali
   e allo sviluppo rurale.}
 
-Gli obiettivi che si prefigge di raggiungere l'agricoltura Biologica
+Gli obiettivi che si prefigge di raggiungere l'agricoltura biologica
 sono:
 
 \begin{itemize}
@@ -761,13 +760,13 @@ porterebbe ad un aumento della sostanza organica nel terreno.
 
 
 La conservazione di sostanza organica è un punto chiave dei sistemi
-agricoli Biologici, soprattutto nei sistemi agricoli localizzati in
+agricoli biologici, soprattutto nei sistemi agricoli localizzati in
 ambienti Mediterranei in cui le precipitazioni incostanti e le alte
 temperature sono favorevoli alla sua mineralizzazione
 \citep{montemurro2008anaerobic}.
 
 
-Mentre la produzione e l'impatto ambientale dell'agricoltura Biologica
+Mentre la produzione e l'impatto ambientale dell'agricoltura biologica
 sono stati ampiamente studiati, l'impatto sulle proprietà del suolo
 non lo è stato altrettanto. Inoltre le conclusioni a cui arrivano i
 pochi studi effettuati (quasi tutti a breve termine, ossia dalla
@@ -775,12 +774,12 @@ durata inferiore a 20 anni) danno risultati contrastanti
 \citep{williams2017organic}.
 
 \citet{siegrist1998does} affermano che la stabilità degli aggregati
-dei suoli in conduzione Biologica sia maggiore rispetto a
+dei suoli in conduzione biologica sia maggiore rispetto a
 quelli condotti Convenzionalmente, anche se i benefici dati
-rispetto all'agricoltura Convenzionale non sono sufficienti a ridurre
+rispetto all'agricoltura convenzionale non sono sufficienti a ridurre
 l'erosione dovuta ad una pioggia molto intensa.
 
-\citet{williams2017organic} sostengono che l'agricoltura Biologica
+\citet{williams2017organic} sostengono che l'agricoltura biologica
 migliora le proprietà fisiche relative alla stabilità degli
 aggregati, alla compattazione del suolo e al drenaggio.
 
@@ -790,7 +789,7 @@ aggregati, alla compattazione del suolo e al drenaggio.
   (paragrafo \ref{sec:MOLTE})}, hanno riscontrato, a fronte di una
 paragonabile produzione tra i due metodi di conduzione, un minor
 surplus di azoto ed una miglior conservazione di carbonio e azoto a
-lento rilascio (organico) in favore della conduzione Biologica.
+lento rilascio (organico) in favore della conduzione biologica.
 
 
 \section{Progetto \emph{FertilCrop}}
@@ -803,7 +802,7 @@ impegnata nell’esperimento di lungo termine MoLTE.
 
 Lo scopo principale del progetto è quello di sviluppare delle tecniche
 di gestione sostenibili ed efficienti per incrementare la
-produttività nei sistemi agricoli Biologici e si pone i seguenti
+produttività nei sistemi agricoli biologici e si pone i seguenti
 obiettivi:
 \begin{enumerate}
 \item studio dell’interazione spazio-temporale tra infestanti, sovesci
@@ -833,7 +832,7 @@ di qualità della struttura fisica del suolo.
 \section{Scopo dello studio}
 Lo scopo di questo lavoro è cercare la risposta ai seguenti due quesiti:
 \begin{itemize}
-\item dopo 25 anni di conduzione Biologica tipica di ambienti
+\item dopo 25 anni di conduzione biologica tipica di ambienti
   Mediterranei, sono cambiate le caratteristiche fisico-strutturali
   del terreno?
 \item tre diverse lavorazioni primarie quali aratura,
@@ -869,16 +868,21 @@ di tipo conglomeratico misto a lenti sabbiose e argillose (aree
 declivi) e da sedimenti del fiume Pesa risalenti all’Olocene (aree
 pianeggianti) con caratteristiche tessiturali da essere definite tra i
 \emph{medio impasto limo-argillosi} e gli \emph{argillosi} con
-presenza variabile di scheletro di piccole e medie dimensioni.
+presenza variabile di scheletro di piccole e medie dimensioni
+(triangolo tessiturale in Fig. \ref{fig:triangolo}, dove \emph{B} e
+\emph{C} indicano rispettivamente i terreni biologici e convenzionali,
+\emph{a, b} e \emph{c} indicano le lavorazioni (\emph{Arato, Rippato,
+  Frangizollato}), \emph{cn, dx} e \emph{sx} servono ad indicare la
+posizione).
 
 Il sito sperimentale è costituito da due agroecosistemi, da qui in
 avanti definiti come \emph{Conduzione}:
 \begin{itemize}
-\item conduzione Biologica\footnote{In realtà nell'azienda sono
-    presenti due blocchi a conduzione Biologica: il primo è quello
-    citato, ovvero il "Biologico vecchio", il secondo, non esaminato
-    nel presente lavoro, è denominato "Biologico nuovo"}, \emph{OO} (\emph{Old Organic});
-\item conduzione \emph{Convenzionale}, \emph{CO}.
+\item conduzione biologica\footnote{In realtà nell'azienda sono
+    presenti due blocchi a conduzione biologica: il primo è quello
+    citato, ovvero il "biologico vecchio", il secondo, non esaminato
+    nel presente lavoro, è denominato "biologico nuovo"}, \emph{OO} (\emph{Old Organic});
+\item conduzione \emph{convenzionale}, \emph{CO}.
 \end{itemize}
 
 \begin{figure}[ht]
@@ -890,8 +894,8 @@ avanti definiti come \emph{Conduzione}:
 
 I due agroecosistemi sono suddivisi in più appezzamenti rettangolari
 (\SI{1.3}{\hectare} ciascuno), identificati da sigle quali \emph{OO1,
-  OO2, OO3, OO4} per il Biologico vecchio e \emph{CO9, CO10} per il
-Convenzionale (Fig. \ref{fig:foto_OO_sito}).
+  OO2, OO3, OO4} per il biologico vecchio e \emph{CO9, CO10} per il
+convenzionale (Fig. \ref{fig:foto_OO_sito}).
 
 Nell'anno 2015-2016, sono stati campionati gli appezzamenti \emph{OO1,
   OO3, CO9, CO10}, mentre nell'anno 2016-2017 e gli appezzamenti
@@ -900,23 +904,23 @@ Nell'anno 2015-2016, sono stati campionati gli appezzamenti \emph{OO1,
 I due agroecosistemi sono circondati da infrastrutture ecologiche
 quali siepi naturali e/o artificiali e/o strisce di essenze erbacee
 spontanee. In particolare sono presenti due siepi: una naturale che
-separa il Biologico vecchio da quello nuovo, costeggiata da entrambi i
+separa il biologico vecchio da quello nuovo, costeggiata da entrambi i
 lati da due strisce inerbite di 2 metri; l’altra artificiale, che
-separa gli appezzamenti a conduzione Biologica dagli altri campi
+separa gli appezzamenti a conduzione biologica dagli altri campi
 aziendali ed è formata da specie autoctone. Inoltre, una striscia
-inerbita separa il sistema Biologico nuovo da quello Convenzionale.
+inerbita separa il sistema biologico nuovo da quello convenzionale.
 
 
 Dal 2001, sono state adottate le seguente rotazioni:
 \begin{itemize}
-\item per la conduzione Biologica
+\item per la conduzione biologica
   \begin{enumerate}
   \item \small sovescio e coltura da rinnovo,
   \item \small cereale e leguminosa,
   \item \small leguminosa,
   \item \small cereale;
   \end{enumerate}
-\item  per la conduzione Convenzionale
+\item  per la conduzione convenzionale
   \begin{enumerate}
     \item \small coltura da rinnovo,
     \item \small cereale.
@@ -936,7 +940,7 @@ Ogni lavorazione è stata replicata tre volte per appezzamento che
 diventa cos\`i suddiviso in 9 parcelle.
 
 L'esperimento MoLTE si propone di studiare il comportamento di un
-sistema agricolo Biologico in area Mediterranea, questo comporta un
+sistema agricolo biologico in area Mediterranea, questo comporta un
 ridotto apporto di concimi organici di origine animale
 (\emph{stockless farming system}, \cite{migliorini2014agronomic}). 
 
@@ -994,14 +998,14 @@ rinforzata (per evitare la perdita di materiale).
 \begin{figure}
  % \begin{minipage}{.5\linewidth}
 \centering
-\subfloat[Biologico]{
+\subfloat[biologico]{
     \includegraphics[width=0.5\textwidth]{../foto/OO_sito.jpeg}
 }\quad
-  \subfloat[Convenzionale]{
+  \subfloat[convenzionale]{
     \includegraphics[width=0.5\textwidth]{../foto/CO_sito.jpeg}
 }
-  \caption[Diagramma degli appezzamenti a conduzione \emph{Biologica} e
-  \emph{Convenzionale}]{Appezzamenti oggetto di studio. \emph{OO} seguito da un
+  \caption[Diagramma degli appezzamenti a conduzione \emph{biologica} e
+  \emph{convenzionale}]{Appezzamenti oggetto di studio. \emph{OO} seguito da un
     numero che indica l'appezzamento; la lettera maiuscola indica la
     lavorazione \emph{A}(aratura), \emph{B}(rippatura),
     \emph{C}(frangizollatura); il numero (\emph{1, 2, 3}) indica la
@@ -1017,8 +1021,8 @@ rinforzata (per evitare la perdita di materiale).
 %   \centering
 %   \includegraphics[width=0.75\textwidth]{../foto/CO_sito.jpeg}
 %   \caption[Diagramma degli appezzamenti a conduzione
-%   Convenzionale]{Appezzamenti Convenzionale, la codifica segue quella
-%     descritta per l'appezzamento Biologico}
+%   convenzionale]{Appezzamenti convenzionale, la codifica segue quella
+%     descritta per l'appezzamento biologico}
     %   \label{fig:foto_CO_sito}
 
 % \end{figure}
@@ -1468,8 +1472,8 @@ names(summary.campo) <-
 summary.campo$Anno <- 
     c("2015", rep(" ", 5), "2016", rep(" ", 5))
 summary.campo$Conduzione <-
-    c("Convenzionale", rep(" ", 2), "Organico", rep(" ", 2),
-      "Convenzionale", rep(" ", 2), "Organico", rep(" ", 2))
+    c("convenzionale", rep(" ", 2), "Organico", rep(" ", 2),
+      "convenzionale", rep(" ", 2), "Organico", rep(" ", 2))
 summary.campo$Lavorazione <- 
     mapvalues(summary.campo$Lavorazione, from = c("Ara", "Rip", "Fzo"), to = c("Arato", "Rippato", "Frangizollato"))
 summary.campo <- rbind(summary.campo[1:3,], rep(NA, 7), 
@@ -1532,7 +1536,7 @@ text(11, 1.7, "OO", pos = 1, cex = 1.5)
 
   \caption[Sintesi grafica dei risultati metodo \emph{Core}]{Boxplot
     della densità apparente misurata con il metodo \emph{Core}
-    relativi alla conduzione (\emph{Convenzionale} e \emph{Biologico})
+    relativi alla conduzione (\emph{convenzionale} e \emph{biologico})
     e per le varie lavorazioni (\emph{Arato, Frangizollato} e
     \emph{Rippato}). La riga nera indica la media generale}
   \label{fig:boxplotCore}
@@ -1572,7 +1576,7 @@ Dove:
   $y$       & = densità apparente\\
   $\beta_0$     & = media generale (intercetta del modello)\\
   $\beta_1$ & = coefficiente della variabile \emph{anno}, due livelli: \emph{2015, 2016};\\
-  $\beta_2$  & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico}\\
+  $\beta_2$  & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
   $\beta_3$ & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato}\\
   $\epsilon$ & = residui o errore
 \end{tabular}
@@ -1601,9 +1605,9 @@ print(tabella.anova.dens,
 
 % 8rino revisionare \newline Da questa è possibile
 % confermare ciò che è stato mostrato dall'analisi visuale,
-% ovvero: il terreno degli appezzamenti condotti a Biologico è
+% ovvero: il terreno degli appezzamenti condotti a biologico è
 % mediamente più denso di quello degli appezzamenti condotti a
-% Convenzionale. Inoltre l'anno 2015 presenta delle densità
+% convenzionale. Inoltre l'anno 2015 presenta delle densità
 % apparenti più alte rispetto all'anno 2016.}
 
 
@@ -1657,7 +1661,7 @@ text(1.5, 1.8, "Anno 2015", pos = 1, cex = 1.5)
 text(3.5, 1.8, "Anno 2016", pos = 1, cex = 1.5)
 text(x = 1:4, y = posiz.y, tuk.cld$mcletters$Letters, cex = 1.5, col = "red")
 legend(3, 1.2,
-       c("Convenzionale", "Biologico"),
+       c("convenzionale", "biologico"),
        box.col = "transparent",
        fill=c(5,6), cex=0.8,  ncol = 1)
 ##points(y = jitter(rep(1:12, each = 6), 0.5),
@@ -1702,7 +1706,7 @@ attach(summary.petrolio)
 summary.petrolio <- summary.petrolio[order(TRT, LAVORAZIONE),]
 detach(summary.petrolio)
 names(summary.petrolio) <- c("Conduzione","Lavorazione","Media","Dev. std", "n", "Tukey")
-summary.petrolio$Conduzione <- c("Convenzionale", rep("", 2), "Organico", rep("", 2))
+summary.petrolio$Conduzione <- c("convenzionale", rep("", 2), "Organico", rep("", 2))
 summary.petrolio$Lavorazione <- mapvalues(summary.petrolio$Lavorazione, from = c("Ara", "Rip", "Fzo"),
                                           to = c("Arato", "Rippato", "Frangizollato"))
 summary.petrolio <- rbind(summary.petrolio[1:3,], rep(NA, 6), 
@@ -1747,7 +1751,7 @@ Dove:
 \begin{tabular}{lp{12cm}}
   $y$       & = densità apparente\\
   $\beta_0$     & = media generale (intercetta del modello)\\
-  $\beta_1$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico}\\
+  $\beta_1$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
   $\beta_2$  & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato}\\
   $\epsilon$ & = residui o errore
 \end{tabular}
@@ -1819,7 +1823,7 @@ with(data = df.petrolio,
   \caption[Sintesi grafica dei risultati metodo \emph{Clod}]{Boxplot dei valori di densità apparente dei campioni misurati col metodo di
     analisi \emph{Clod}; gli appezzamenti condotti convenzionalmente (a
     sinistra) hanno valori più alti degli appezzamenti
-    condotti a Biologico (a destra)}
+    condotti a biologico (a destra)}
   \label{fig:boxplotClod}
 \end{figure}
 \FloatBarrier
@@ -1833,7 +1837,7 @@ with(data = df.petrolio,
 %   ]{Boxplot dei valori di densità apparente dei campioni misurati col metodo di
     %     analisi \emph{Clod}; gli appezzamenti condotti convenzionalmente (a
 %     sinistra) hanno valori più alti degli appezzamenti
-%     condotti a Biologico (a destra)}
+%     condotti a biologico (a destra)}
 %   \label{fig:boxplotClod}
 
 % \end{figure}
@@ -1862,9 +1866,9 @@ print(tabella.petrolio, include.rownames=FALSE, caption.placement = "top")
 
 
 Il test di Tukey in tabella \ref{tab:summaryClod}, mostra come i
-campioni provenienti dai terreni \emph{Convenzionali arati}, siano
+campioni provenienti dai terreni \emph{convenzionali arati}, siano
 significativamente ($p<0.05$) più densi rispetto agli altri, mentre
-i campioni provenienti dai terreni \emph{Biologici frangizollato}
+i campioni provenienti dai terreni \emph{biologici frangizollato}
 abbiano una densità significativamente minore. 
 
 
@@ -2004,7 +2008,7 @@ Dove:
   $\bm{Y}$  & = Composizione (tre componenti: \emph{macroaggregati,
               mesoaggregati, microaggregati})\\
   $\bm{\beta_0}$     & = media generale (intercetta del modello)\\
-  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico}\\
+  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
   $\bm{\beta_2}$  & = coefficiente della variabile \emph{tempo}\\
   $\bm{\beta_3}$ & = coefficiente della variabile \emph{tempo} elevata al quadrato\\
   $\bm{\epsilon}$ & = residui o errore
@@ -2031,7 +2035,7 @@ La tabella dell'analisi della varianza evidenzia che gli aggregati
 provenienti da appezzamenti condotti convenzionalmente,
 successivamente all'immersione, si disgregano generando frammenti più
 grandi di quanto non facciano gli aggregati provenienti da
-appezzamenti a conduzione Biologica; questo avviene anche con gli
+appezzamenti a conduzione biologica; questo avviene anche con gli
 aggregati essiccati.
 
 Questo si può ricavare dall'intercetta del modello; per quanto riguarda i
@@ -2039,9 +2043,9 @@ valori di pendenza e di curvatura, questi sono invarianti rispetto alla
 conduzione.
 
 Questo comportamento mostrerebbe che le pratiche agricole utilizzate
-nella conduzione di tipo \emph{Biologico} porterebbero a formare
+nella conduzione di tipo \emph{biologico} porterebbero a formare
 aggregati meno stabili con cementi meno efficaci rispetto a quelli
-ottenuti con la conduzione \emph{Convenzionale}.
+ottenuti con la conduzione \emph{convenzionale}.
 
 
 <<label = plotacompWETDRY, fig.width=0.8, fig.height=0.8, echo=FALSE, eval = TRUE, fig=TRUE, include = FALSE>>=
@@ -2084,8 +2088,8 @@ OO <- round(matrix(acomp(coefs[1,]) +
 dati.iufd <- rbind(CO*100, OO*100)
                                         #i = inizio, u = accension ultrasuoni, f = fine d = dry/w = wet
 Conduzione <-
-    c("Convenzionale"," ", " ",
-      "Biologico "," "," ")
+    c("convenzionale"," ", " ",
+      "biologico "," "," ")
 Fase <- rep(c("inizio misura","inizio sonicatura", "fine misura"),2)
 colnames(dati.iufd) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufd <- cbind(Conduzione, Fase, dati.iufd)
@@ -2165,8 +2169,8 @@ dati.iufw <- rbind(CO*100, OO*100)
                                         #i = inizio, u = accension ultrasuoni, f = fine d = dry/w = wet
 rm(CO);rm(OO)
 Conduzione <-
-    c("Convenzionale"," ", " ",
-      "Biologico "," "," ")
+    c("convenzionale"," ", " ",
+      "biologico "," "," ")
 Fase <- rep(c("inizio misura","inizio sonicatura", "fine misura"),2)
 colnames(dati.iufw) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufw <- cbind(Conduzione, Fase, dati.iufw)
@@ -2312,8 +2316,8 @@ particelle in seguito alla distruzione degli aggregati]{Evoluzione
   di \Sexpr{vec.paletti[1]} (\emph{Macro}), comprese tra
   \Sexpr{vec.paletti[1]} e \Sexpr{vec.paletti[2]} (\emph{Meso}) e
   inferiori a \SI{\Sexpr{vec.paletti[2]}}{\micro\metre}
-  (\emph{Micro}). \newline I rombi rossi (appezzamenti Biologici) e
-  neri (appezzamenti Convenzionali) indicano le tessiture apparenti
+  (\emph{Micro}). \newline I rombi rossi (appezzamenti biologici) e
+  neri (appezzamenti convenzionali) indicano le tessiture apparenti
   determinate per densimetria \citep{agricoledecreto}, le quali si posizionano in corrispondenza
   del punto in cui vengono applicati gli ultrasuoni}
  \label{fig:plotAggrDistro}
@@ -2451,7 +2455,7 @@ Dove:
   $\bm{Y}$  & = Composizione (tre componenti: pori \emph{residui},
               pori di \emph{trasmissione} e pori di \emph{immagazzinamento})\\
   $\bm{\beta_0}$     & = media generale (intercetta del modello)\\
-  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{Convenzionale, Biologico}\\
+  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
   $\bm{\beta_2}$  & = coefficiente della variabile \emph{lavorazione},
                     due livelli: \emph{arato, rippato, frangizollato}\\
   $\bm{\epsilon}$ & = residui o errore
@@ -2475,7 +2479,7 @@ attach(sommario)
 sommario <- sommario[order(Conduzione, Lavorazione),]
 detach(sommario)
 sommario[,3:5] <- sommario[,3:5]*100
-sommario$Conduzione <- c("Convenzionale","","", "Biologico", "", "")
+sommario$Conduzione <- c("convenzionale","","", "biologico", "", "")
 sommario$Lavorazione <- c("Arato", "Rippato", "Frangizollato", "Arato", "Rippato", "Frangizollato")
 colnames(sommario)[3:5] <- c("Residui (%)", "Immagazzinamento (%)", "Trasmissione (%)")
 sommario <- 
@@ -2532,7 +2536,7 @@ legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"),
 ## Conduzione <- as.factor(df.porosimetria$MAN)
 ## Lavorazione <-  as.factor(df.porosimetria$TIL)
 ## Conduzione <- 
-##     mapvalues(df.porosimetria$MAN, from = c("C", "O"), to =  c("Convenzionale", "Biologico"))
+##     mapvalues(df.porosimetria$MAN, from = c("C", "O"), to =  c("convenzionale", "biologico"))
 ## plot <- ggtern() + 
 ##          theme_bw() +
 ##          ##theme_hidetitles() +
@@ -2598,7 +2602,7 @@ vedere dalla tabella \ref{tab:tot_sommario}, i dati tenderebbero a
 confermare il risultato dell'analisi della densità apparente misurata
 con il metodo \emph{Clod} dal quale risultava una maggior porosità nei
 campioni di suolo provenienti da appezzamenti condotti a
-\emph{Biologico}.
+\emph{biologico}.
 
 
 <<sommario_totali, eval = TRUE, echo = FALSE, results = tex>>=
@@ -2631,7 +2635,7 @@ summary.totale <-
 detach(summary.totale)
 names(summary.totale)[1:3] <-c("Conduzione", "Lavorazione", "Porosità totale")
 
-summary.totale$Conduzione <- c("Convenzionale", "", "", "Biologico", "", "")
+summary.totale$Conduzione <- c("convenzionale", "", "", "biologico", "", "")
 summary.totale$Lavorazione <- mapvalues(summary.totale$Lavorazione, from = c("a", "b", "c"), to = c("Arato", "Rippato", "Frangizollato"))
 
 summary.totale <- rbind(summary.totale[1:3,], rep(NA, 6), summary.totale[4:6,])
@@ -2699,8 +2703,8 @@ il metodo \emph{Core}, questo è dovuto al fatto che nella misura
 I dati si allineano con ciò che hanno rilevato altri autori
 \citep{williams2017organic, green2005soil, ikemura2008some,
   vian2009effects}, ovvero una densità apparente con valori
-mediamente più bassi nei terreni condotti ad agricoltura Biologica
-rispetto ai terreni condotti ad agricoltura Convenzionale e nei
+mediamente più bassi nei terreni condotti ad agricoltura biologica
+rispetto ai terreni condotti ad agricoltura convenzionale e nei
 terreni lavorati superficialmente rispetto a quelli lavorati più in
 profondità.
 
@@ -2717,8 +2721,8 @@ hanno una rilevanza pratica effettiva.
 
 
 Dall'analisi della stabilità degli aggregati è emersa una maggiore
-stabilità degli aggregati Convenzionali rispetto agli aggregati
-Biologici. Mentre tra le lavorazioni non risultano differenze
+stabilità degli aggregati convenzionali rispetto agli aggregati
+biologici. Mentre tra le lavorazioni non risultano differenze
 statisticamente significative.
 
 Alla fine del trattamento disgregativo con ultrasuoni le composizioni
@@ -2735,7 +2739,7 @@ I risultati vanno in controtendenza a ciò che hanno rilevato altri
 autori come \citet{siegrist1998does}, \citet{williams2017organic} e
 \citet{green2005soil}.
 
-Nell'appezzamento Convenzionale, al contrario, sono state effettuate
+Nell'appezzamento convenzionale, al contrario, sono state effettuate
 concimazioni con fertilizzanti di sintesi. Questo potrebbe aver
 portato ad un aumento delle radici superficiali con conseguente
 incremento della biomassa nei primi \SI{20}{\centi\meter} di suolo.
@@ -2743,9 +2747,9 @@ incremento della biomassa nei primi \SI{20}{\centi\meter} di suolo.
 Secondo \citet{mizuta2015soil}, la stabilità degli aggregati dipende
 esclusivamente dal contenuto di sostanza organica e non dal tipo di
 molecole organiche coinvolte. Di conseguenza nell'appezzamento
-Biologico, nonostante la minore stabilità degli aggregati possono
+biologico, nonostante la minore stabilità degli aggregati possono
 essere presenti cementi organici di maggiore qualità (quindi meno
-labili) rispetto a quelli presenti nell'appezzamento Biologico.
+labili) rispetto a quelli presenti nell'appezzamento biologico.
 
 Secondo \citet{d2017physical} la stabilità degli aggregati è
 fortemente influenzata dalla sostanza organica protetta dagli
@@ -2763,11 +2767,11 @@ riscontrate differenze significative tra i trattamenti. Dalla tabella
 \emph{residui} rispetto a quelli di \emph{trasmissione} e
 \emph{immagazzinamento}, si tratta quindi di terreni asfittici e
 con scarso drenaggio; tuttavia dalla stessa tabella si nota una
-tendenza da parte dei terreni condotti a \emph{Biologico} ad avere una
+tendenza da parte dei terreni condotti a \emph{biologico} ad avere una
 maggior percentuale di pori utili al movimento dell'acqua rispetto ai
-terreni condotti a \emph{Convenzionale}.
+terreni condotti a \emph{convenzionale}.
 
-Inoltre i dati mostrano come i campioni Biologici tendano ad avere una
+Inoltre i dati mostrano come i campioni biologici tendano ad avere una
 maggior porosità rispetto ai campioni convenzionali, in linea con
 quanto riscontrato dall'analisi \emph{Clod} e con quanto hanno trovato
 altri autori \citep{ikemura2008some, mendoza2011assessment}.
@@ -2785,7 +2789,7 @@ modo costante.
 L'importanza fondamentale dell'effetto dei concimi organici sul suolo
 è stata studiata e riscontrata da numerosi autori
 \citep{hati2006effect, haynes1998influence, benbi1998influence},
-inoltre tutti gli studi effettuati su agroecosistemi Biologici presi in
+inoltre tutti gli studi effettuati su agroecosistemi biologici presi in
 considerazione nella bibliografia, hanno utilizzato pratiche di
 concimazioni organiche.
 
@@ -2802,7 +2806,7 @@ stato della struttura del terreno.
 Questo studio ha cercato di rispondere a due quesiti:
 
 \begin{itemize}
-\item dopo 25 anni di conduzione Biologica tipica di ambienti
+\item dopo 25 anni di conduzione biologica tipica di ambienti
   Mediterranei, sono cambiate le caratteristiche fisico-strutturali
   del terreno?
 \item tre diverse lavorazioni primarie quali aratura, rippatura e
@@ -2827,13 +2831,13 @@ risultare tecnologicamente rilevanti.
 
 Dalle misure della distribuzione dinamica, è stata riscontrata una
 maggiore stabilità degli aggregati provenienti da appezzamenti
-\emph{Convenzionali} rispetto a quelli provenienti da appezzamenti
-\emph{Biologici}; non sono state riscontrate differenze significative
+\emph{convenzionali} rispetto a quelli provenienti da appezzamenti
+\emph{biologici}; non sono state riscontrate differenze significative
 all'interno trattamenti di \emph{lavorazione}.
 
 Al contrario la porosimetria, mostra una tendenza da parte dei suoli
-\emph{Biologici} ad essere più porosi e con pori mediamente più grandi
-dei campioni di suolo \emph{Convenzionali}.
+\emph{biologici} ad essere più porosi e con pori mediamente più grandi
+dei campioni di suolo \emph{convenzionali}.
 
 Una possibile spiegazione di tali risultati può essere fornita dalle
 caratteristiche stesse dell'agroecosistema, il quale è caratterizzato

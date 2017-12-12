@@ -35,8 +35,9 @@
 \usepackage{siunitx}
 \usepackage{placeins}
 \usepackage{datetime}
-\usepackage{media9}
+\usepackage{animate}
 \usepackage{tikz}
+\usepackage{graphics}
 \newdate{date}{21}{12}{2017}
 
 % -------------------------------------------------------
@@ -53,17 +54,17 @@
 % -------------------------------------------------------
 % \setbeamertemplate{title page}
 % {
-\title[25 anni di conduzione Biologica in
-area Mediterranea. ] % [] is optional - is placed on the bottom of the
-                     % sidebar on every slide
-{ % is placed on the title page
-  25 anni di  conduzione Biologica  in
-  area Mediterranea}
+\title[Tesi di laurea magistrale Simone Massenzio ] % [] is optional - is placed on the bottom of the
+% sidebar on every slide
+{ Confronto fra le caratteristiche
+  fisico-strutturali di suoli in area
+  Mediterranea sottoposti a diversi metodi di
+  conduzione e lavorazione}
 
 
-\subtitle[Uno studio di fisica del suolo]{
-  Uno studio di fisica del suolo
-}
+% \subtitle[Uno studio di fisica del suolo]{
+% Uno studio di fisica del suolo
+% }
 
 \author[Simone Massenzio]{ 
   Candidato: Simone Massenzio \\
@@ -121,359 +122,195 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the
 
 
 \begin{frame}{Obiettivi}{}
-    \begin{columns}[c]
+  %\transdissolve<1>
+  %\transdissolve<2>
+  \begin{columns}[c]
     \column{.50\textwidth}
-  \large
-  \begin{itemize}[<+->]
-  \item verificare la presenza di differenze nelle caratteristiche
-    fisiche del suolo in aree: coltivate convenzionalmente (\emph{CO})
-    oppure coltivate a biologico (\emph{OO}) tramite:
-    \begin{itemize}
+    \begin{itemize}[<+->]
+      \pause
+    \item verificare la presenza di differenze nelle caratteristiche
+      fisiche del suolo in aree: coltivate convenzionalmente oppure
+      coltivate a biologico tramite indicatori fisici di fertilità del
+      suolo
+    \item verificare eventuali effetti dovuti a diverse lavorazioni
+      (aratura, rippatura, frangizollatura).
+    \end{itemize}
+    \column{.48\textwidth}
+    \only<2>{\includegraphics[width=0.8\textwidth]{../foto/lavorazione.jpg}}
+    \only<3>{\includegraphics[width=0.8\textwidth]{../foto/logo-Bio.png}}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \begin{columns}[c]
+    \column{.50\textwidth}
+    \begin{itemize}[<+->]
     \item Densit\`a apparente
       \begin{itemize}
       \item Metodo \emph{Core}
+      \pause
       \item Metodo \emph{Clod}
+      \pause
       \end{itemize}
     \item Stabilit\`a degli aggregati tramite dinamica della
       distribuzione della dimensione degli aggregati;
     \item Distribuzione dimensionale dei pori tramite tecniche di
       porosimetria ad intrusione di mercurio;      
     \end{itemize}
-  \item verificare eventuali effetti dovuti a diverse lavorazioni
-    (aratura, rippatura, frangizollatura).
-  \end{itemize}
-\column{.48\textwidth}
-    \only<2>{\includegraphics[width=0.8\textwidth]{../foto/cilindroOttone.jpeg}}
-    \only<3>{\includegraphics[width=0.8\textwidth]{../foto/cilindrosuolo.jpg}}
-    \only<4>{\includegraphics[width=\textwidth]{../foto/secco.jpeg}}
-    \only<5>{
-      \[
-      \rho_{ApparenteCore} = P_{campione}/V_{cilindro}
-      \]
-    }
+    \column{.48\textwidth}
+    \begin{overlayarea}{\linewidth}{3cm}
+      \only<2>{\includegraphics[width=0.8\textwidth]{../foto/cilindroOttone.jpeg}}
+      \only<3>{\includegraphics[width=0.8\textwidth]{../foto/cilindrosuolo.jpg}}
+      \only<4>{\vspace{1cm}
+\begin{figure}[hb]\includegraphics[width=0.8\textwidth]{../foto/petrolio}
+\end{figure}}
+      \only<5>{\includegraphics[width=0.8\textwidth]{../foto/navicella}}
+      \only<6>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{0}{2}}%233
+      \only<7>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/poresize/PoreSize-}{0}{2}}%%396
+    \end{overlayarea}
   \end{columns}
 \end{frame}
 
-\section{Densit\`a apparente}
-\subsection{Metodi}
-\begin{frame}{Misura densita}{Due metodi: \emph{Core} e \emph{Clod}}
-  \begin{columns}[c]
-    \column{.50\textwidth}
-    \onslide<1-> Metodo \emph{Core}
-    \pause
-    \begin{itemize}[<+->] 
-    \item estrazione di un volume di suolo ($V_{cilindro}$) noto mediante un cilindro
-      non deformabile di ottone
-      \pause
-    \item essiccazione del campione di terreno e sua pesatura ($P_{campione}$)
-    \item calcolo della densit\`a apparente
-    \end{itemize}
-    \column{.48\textwidth}
-    \only<2>{\includegraphics[width=0.8\textwidth]{../foto/cilindroOttone.jpeg}}
-    \only<3>{\includegraphics[width=0.8\textwidth]{../foto/cilindrosuolo.jpg}}
-    \only<4>{\includegraphics[width=\textwidth]{../foto/secco.jpeg}}
-    \only<5>{
-      \[
-      \rho_{ApparenteCore} = P_{campione}/V_{cilindro}
-      \]
-    }
-  \end{columns}
-\end{frame}
+
 
 \begin{frame}
-\includemedia[
-  width=0.4\linewidth,
-  height=0.3\linewidth,
-  activate=pageopen,
-  addresource=/home/simone/Simo_GIT/foto/PoreSize.mp4,
-  flashvars={source=/home/simone/Simo_GIT/foto/PoreSize.mp4}
-]{}{VPlayer.swf}
-\end{frame}
-
-\begin{frame}{Misura densita}{Due metodi: \emph{Core} e \emph{Clod}}
-
-  \begin{columns}[c]
-    \column{.50\textwidth}
-    \onslide<1-> Metodo \emph{Clod}
-    \pause
-    \begin{itemize}[<+->]
-    \item separazione di un aggregato (3-5 cm di diametro) dal
-      campione di suolo
-    \item misura della spinta idrostatica proporzionale, per il
-      \emph{Principio di Archimede}, al volume di petrolio spostato
-      dall'aggregato ($V_{aggregato}$)
-    \item essiccazione a \SI{150}{\celsius} per una notte e pesatura campione
-      secco ($P_{aggregato}$)
-    \item calcolo della densit\`a apparente
-    \end{itemize}
-    \column{.48\textwidth}
-    \only<2>{\includegraphics[width=\textwidth]{../foto/petrolio.jpeg}}
-    \only<3>{\includegraphics[width=0.8\textwidth]{../foto/navicella.jpeg}}
-    \only<4>{\includegraphics[width=\textwidth]{../foto/fornospinta.jpeg}}
-    \only<5>{
-      \[
-      \rho_{ApparenteClod} = V_{aggregato}/P_{aggregato}
-      \]}    
-  \end{columns}
-
-\end{frame}
-
-\subsection{Adattamento del modello lineare}
-\begin{frame}
-  \frametitle{Sintesi tramite modello lineare}
+  \frametitle{Analisi statistica}
   \transwipe<4>[direction=90]
+  L'elaborazione dei dati è stata effettuata mediante il linguaggio di
+  programmazione R, ed ha riguardato:
   \begin{itemize}
-    \onslide<1->\item 
+    \onslide<2->\item la costruzione di un modello lineare nella forma:
     \vspace{0.25cm}
     $Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \epsilon$
-    \vspace{0.25cm}
 
-    \onslide<2->{in cui le variabili categoriche sono:}
+    \onslide<3->{in cui le variabili categoriche sono:}
     \begin{itemize}
 
-      \onslide<3->\item $\beta_1$ conduzione \newline
+      \onslide<4->\item $\beta_1$ conduzione \newline
       \emph{Convenzionale}, \emph{Biologico}
 
-      \onslide<4->\item $\beta_2$ lavorazioni \newline \emph{Arato, Rippato,
+      \onslide<5->\item $\beta_2$ lavorazioni \newline \emph{Arato, Rippato,
         Frangizollato}
 
-      \onslide<5->\item$\epsilon$ residui o errore
+      \onslide<6->\item$\epsilon$ residui o errore
     \end{itemize}
-    \onslide<6->\item validazione del modello attraverso l'analisi
+    \onslide<7->\item la validazione del modello attraverso l'analisi
     dei residui 
-    \onslide<7->\item analisi della varianza (ANOVA)
-  \end{itemize}
-\end{frame}
-
-\subsection{Risultati}
-\begin{frame}[label=densita]
-  Dall'analisi statistica \`e emerso che:
-  \begin{itemize}[<+->]
-  \item dai dati ricavati tramite
-    l'analisi col metodo \hyperlink{Core}{\beamerbutton{Core}} non sono
-    state riscontrate differenze statisticamente significative tra i
-    trattamenti
-  \item dai dati ricavati tramite l'analisi col metodo
-    \hyperlink{Clod}{\beamerbutton{Clod}} sono state riscontrate
-    differenze significative tra i trattamenti tuttavia le \hyperlink{summary}{\beamerbutton{differenze}}
-    sono sulla seconda cifra decimale:
-    \begin{itemize}[<+->]
-    \item numero di campioni adeguato
-    \item differenze poco rilevanti dal punto di vista pratico
-    \end{itemize}
+    \onslide<8->\item verifica della significatività delle ipotesi mediante analisi della varianza (ANOVA)
   \end{itemize}
 \end{frame}
 
 
-\section{Stabilit\`a degli aggregati}
-% \subsection{Strumentazione e metodo}
 \begin{frame}
-  \frametitle{Misura stabilit\`a degli aggregati}
-  % \citep{ugolini2010basi} 
+
   \begin{columns}
     \column{.50\textwidth}
-    % \begin{block}{}
-    \pause
-    \begin{enumerate}[<+->] 
-    \item immissione degli aggregati di terreno setacciati nella vasca
-      dello strumento
-    \item acquisizione ottica della distribuzione granulometrica:
-      una al minuto per 12 minuti durante i quali \ldots
-    \item lo strumento provvede al ricircolo dell'acqua che disgrega
-      le particelle di suolo
-    \item attivazione della sonicazione dal \SI{13}{\degree} al
-      \SI{24}{\degree} minuto per completare la rottura degli
-      aggregati
-    \end{enumerate}
-
-    \column{.48\textwidth}
-    \only<2>{
-      \begin{figure}[ht]
-        \includegraphics[width=\textwidth]{../foto/Hydro.jpeg}
-      \end{figure}
-    }
-    \only<3-4>{
-      \begin{figure}
-        \includegraphics[width=0.8\textwidth]{../foto/Acquisiz.jpeg}
-      \end{figure}
-    }    
-    % \only<4>{
-    % \begin{figure}
-    %   \includegraphics[width=0.8\textwidth]{../foto/Acquisiz.jpeg}
-    % \end{figure}
-    % } 
-    \only<5>{
-      \begin{figure}
-        \includegraphics[width=\textwidth]{../foto/distropisa.jpeg}
-      \end{figure}
-    }
-  \end{columns}  
-\end{frame}
-
-
-\begin{frame}
-
-  \only<1>{\vspace{1.5cm}}
-  \only<2>{\vspace{0.5cm}}
-  \onslide<3->{\vspace{1.5cm}}
-  \begin{minipage}[ht]{\textwidth}
+    \vspace{1cm}
     \footnotesize
     \begin{itemize}[<+->]
-    \item i dati ottenuti sono rappresentati da distribuzioni in cui ad
-      ogni classe dimensionale \`e associato il valore percentuale di
-      volume sul totale
+    \item I dati ottenuti dalle analisi di porosimetria e
+      stabilità degli aggregati sono delle distribuzioni in cui ogni
+      classe dimensionale è espressa come percentuale sul volume totale,
+      questo tipo di dati prende il nome di \emph{dati Composizionali}
       \pause
-    \item La variazione di queste distribuzioni nel tempo ci fornisce
-      informazioni sulla resistenza degli aggregati alle sollecitazioni
-      meccaniche.
-    \item Oltre che sui campioni \textcolor{blue}{secchi}, la misura \`e
-      stata ripetuta su aggregati \textcolor{magenta}{previamente
-        inumiditi} per studiare la disgregazione in assenza del fenomeno
-      dello \textit{slacking}
+    \item Per rappresentare i dati composizionali si utilizza un
+      grafico triangolare. Per l'elaborazione è necessaria
+      un'operazione di linearizzazione
+    \item Queste operazioni sono state effettuate tramite il package 'composition' del
+      linguaggio di programmazione R
     \end{itemize}
-  \end{minipage}
-  \transdissolve<2>
 
-  \transdissolve<3>
-  \begin{minipage}[ht]{\textwidth}
-    \centering
-    \only<2>{
-      \vspace{2cm}
-      \begin{tikzpicture}[remember picture,overlay]
-        \node at (current page.center) 
-        {%\vspace{1cm}
-          \includegraphics[width=0.5\textwidth]{../grafici/boh.jpeg}
-        };
-      \end{tikzpicture}
-      % \begin{figure}[hb][width=6cm]
-      %   \includegraphics[width=\textwidth]{../grafici/boh.pdf}
-      % \end{figure}
-    }
-  \end{minipage}
-
-\end{frame}
-
-\begin{frame}
-
-  \vspace{1.5cm}
-
-  % \begin{minipage}[ht]{\textwidth}
-  \onslide<1->{I dati ottenuti dalla misurazione contengono porzioni di un totale,
-    questo tipo di dati prende il nome di \emph{dati Composizionali}.}
-
-  \onslide<2->{Questi sono stati elaborati tramite il package 'composition' del
-    linguaggio di programmazione R}
-
-
-  \onslide<3->{I dati vengono trattati tramite una \emph{Isometric
-      logratio transform} che porta a definire uno spazio vettoriale
-    (\emph{simplesso}) in cui possono essere applicate le tecniche di
-    statistica multivariata.}
-  % \end{minipage}
-
-  % \begin{minipage}[hb]{\textwidth}
-  \onslide<3->{
-    \begin{figure}[hb]
-      \includegraphics[width=0.8\textwidth]{../foto/simplessodeforma.png}
-    \end{figure}}
-  % \end{minipage}
-\end{frame}
-
-\begin{frame}[label=Composizionale]
-  \vspace{2cm}
-  Risultati analisi \hyperlink{Anova}{\beamerbutton{composizionale}}
-  \begin{figure}[hb]
-    \includegraphics[width=0.6\textwidth]{../tesi/Tesi_GIT-plotacompWETDRY.pdf}
-  \end{figure}
-\end{frame}
-
-
-
-
-% 
-
-
-
-
-
-\section{Porosimetria}
-
-\begin{frame}{Metodo di misura}
-  \begin{columns}
-    \column{.50\textwidth}
-    \begin{itemize}[<+->]
-    \item Separazione aggregati di circa \SI{1}{\gram}
-    \item immissione degli aggregati nel \emph{dilatometro}
-    \item il porosimetro riempie di mercurio il dilatometro e lo
-      comprime per permetterne l'ingresso nei pori
-    \item la variazione del volume di mercurio indica l'ingresso del
-      mercurio nei pori 
-    \item mediante l'equazione di Washburn si risale, in base alla
-      pressione esercitata ($p$), al valore del diametro del poro ($r$)
-    \end{itemize}
     \column{.48\textwidth}
-    \only<3>{
-      \begin{figure}[ht]
-        \includegraphics[width=\textwidth]{../foto/porosimetri.jpeg}
-      \end{figure}
-    }
-    \only<5>{
-      \large{Equazione di Washburn}
-
-      \[
-      pr=2\sigma cos \theta
-      % \label{eq:Washburn}
-      \]
-    }
+    \only<2>{\begin{overlayarea}{\linewidth}{3cm}
+        \includegraphics[width=\textwidth]{../grafici/boh.jpeg}
+      \end{overlayarea}}
+    \only<3>{\begin{overlayarea}{\linewidth}{2cm}\includegraphics[width=\textwidth]{../foto/simplessodeforma.png}     
+      \end{overlayarea}}
   \end{columns}
 \end{frame}
 
-% \begin{frame}
-%   \begin{figure}[ht]
-%     \includegraphics[width=0.8\textwidth, page=8]{../grafici/penetrometria/Penetrometria2015-2016.pdf}
+% \begin{frame}[label=Composizionale]
+%   \vspace{2cm}
+%   Risultati analisi \hyperlink{Anova}{\beamerbutton{composizionale}}
+%   \begin{figure}[hb]
+%     \includegraphics[width=0.6\textwidth]{../tesi/Tesi_GIT-plotacompWETDRY.pdf}
 %   \end{figure}
 % \end{frame}
 
 
-% \begin{frame}
-%   \begin{figure}[ht]
-%     \includegraphics[width=0.8\textwidth, page=9]{../grafici/penetrometria/Penetrometria2015-2016.pdf}
-%   \end{figure}
-% \end{frame}
 
-% \begin{frame}
-%   \begin{figure}[ht]
-%     \includegraphics[width=0.8\textwidth, page=10]{../grafici/penetrometria/Penetrometria2015-2016.pdf}
-%   \end{figure}
-% \end{frame}
-
-\begin{frame}{Sintesi finale}
+\begin{frame}[label=finale]{Risultati}
   \begin{itemize}[<+->]
 
   \item densità apparente:
     \begin{itemize}
-    \item metodo \emph{Core}, nonostante la semplicità esecutiva,
+    \item metodo \hyperlink{Core}{\beamerbutton{Core}}, nonostante la semplicità esecutiva,
       sembra inadeguato a cogliere differenze di qualsiasi genere
       (\emph{anno, lavorazione, conduzione}).
-
-    \item metodo \emph{Clod} mostra differenze significative, ma di
+    \item metodo \hyperlink{Clod}{\beamerbutton{Clod}} mostra differenze significative, ma di
       una entità tale da non risultare tecnologicamente rilevanti.
     \end{itemize}
-  \item distribuzione dinamica: riscontrata una
+  \item \hyperlink{distribuzione}{\beamerbutton{distribuzione}} dinamica: riscontrata una
     maggiore stabilità degli aggregati provenienti da appezzamenti
     \emph{Convenzionali} rispetto a quelli provenienti da appezzamenti
     \emph{Biologici}; non sono state riscontrate differenze significative
     all'interno trattamenti di \emph{lavorazione}.
-  \item porosimetria: mostra una tendenza da parte dei suoli
+  \item \hyperlink{Porosimetria}{\beamerbutton{Porosimetria}}: mostra una tendenza da parte dei suoli
     \emph{Biologici} ad essere più porosi e con pori mediamente più
     grandi dei campioni di suolo \emph{Convenzionali}.
   \end{itemize}
 
 \end{frame}
-\section{Porosimetria a mercurio}
+
+\begin{frame}{Aspetti produttivi}
+  
+  % \begin{table}[ht]
+  %   \centering
+  %   \caption{mah}
+  %   \label{tab:tabelloneMah}
+  %   \scalebox{0.8}{
+  %   \begin{tabular}{rllllllllllll}
+  %     \hline
+  %     & Biologico arato 2016 & Biologico arato 2017 & Biologico rippato 2016 & Biologico rippato 2017 & Biologico frangizollato 2016 & Biologico frangizollato 2017 & Convenzionale arato 2016 & Convenzionale arato 2017 & Convenzionale rippato 2016 & Convenzionale rippato 2017 & Convenzionale frangizollato 2016 & Convenzionale frangizollato 2017 \\
+  %     \hline
+  %     Orzo & 3.7$\pm$0.04 abc & 2.9$\pm$0.08 bc & 3.3$\pm$0.25 bc & 2.3$\pm$0.27 c & 3.2$\pm$0.08 bc & 2.2$\pm$0.17 c & 5.0$\pm$0.16 a & 4.5$\pm$0.19 ab & 5.0$\pm$0.23 a & 4.5$\pm$0.11 ab & 5.0$\pm$0.20 a & 3.9$\pm$0.21 ab \\
+  %     Girasole & 2.45$\pm$0.75 abc & 1.40$\pm$0.33 bc & 2.94$\pm$0.47 abc & 1.00$\pm$0.10 bc & 1.58$\pm$0.05 bc & 1.13$\pm$0.18 bc & 4.52$\pm$0.38 a & 0.17$\pm$0.18 c & 3.35$\pm$0.08 ab & 0.17$\pm$0.27 c & 2.68$\pm$0.07 abc & 0.40$\pm$0.18 c \\
+  %     \hline
+  %   \end{tabular}
+  % }
+  % \end{table}
+  \vspace{0.5cm}
+  \footnotesize{
+    \begin{table}[ht]
+      \centering
+      \begin{tabular}{lllcc}
+        \hline
+        Conduzione   & Anno & Lavorazione   & Orzo(t/ha)         & Girasole(t/ha) \\ 
+        \hline
+        Biologico    & 2016 & Arato         & 3.7 $\pm$ 0.04 abc & 2.5 $\pm$ 0.75 abc\\ 
+                     &      & Rippato       & 3.3 $\pm$ 0.25 bc  & 2.9 $\pm$ 0.47 abc\\ 
+                     &      & Frangizollato & 3.2 $\pm$ 0.08 bc  & 1.6 $\pm$ 0.05 bc \\ 
+                     & 2017 & Arato         & 2.9 $\pm$ 0.08 bc  & 1.4 $\pm$ 0.33 bc \\ 
+                     &      & Rippato       & 2.3 $\pm$ 0.27 c   & 1.0 $\pm$ 0.10 bc \\ 
+                     &      & Frangizollato & 2.2 $\pm$ 0.17 c   & 1.1 $\pm$ 0.18 bc \\ 
+        Convenzionale& 2016 & Arato         & 5.0 $\pm$ 0.16 a   & 4.5 $\pm$ 0.38 a \\ 
+                     &      & Rippato       & 5.0 $\pm$ 0.23 a   & 3.4 $\pm$ 0.08 ab \\ 
+                     &      & Frangizollato & 5.0 $\pm$ 0.20 a   & 2.7 $\pm$ 0.07 abc\\ 
+                     & 2017 & Arato         & 4.5 $\pm$ 0.19 ab  & 0.2 $\pm$ 0.18 c \\ 
+                     &      & Rippato       & 4.5 $\pm$ 0.11 ab  & 0.2 $\pm$ 0.27 c \\ 
+                     &      & Frangizollato & 3.9 $\pm$ 0.21 ab  & 0.4 $\pm$ 0.18 c \\ 
+        \hline
+      \end{tabular}
+    \end{table}}
+
+
+
+\end{frame}
+
+
 
 \begin{frame}
-  \finalpage{Boh.}
+  \finalpage{Grazie per l'attenzione.}
 \end{frame}
 
 %%% Local Variables:
@@ -492,7 +329,7 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the
 \begin{frame}[label=Core]
 
   \vspace{1.5cm}
-  \hyperlink{densita}{\beamerbutton{indietro}}
+  \hyperlink{finale}{\beamerbutton{indietro}}
   \footnotesize
   \begin{table}[ht]
     \centering
@@ -501,19 +338,19 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the
       Anno & Conduzione & Lavorazione & Densit\`a apparente
                                         ($g/cm^3$) & dev std & n \\ 
       \hline
-      2015 & CO & Ara & 1.35 & 0.14 &   5 \\ 
-           &    & Fzo & 1.34 & 0.07 &   5 \\ 
-           &    & Rip & 1.38 & 0.10 &   5 \\ 
-           & OO & Ara & 1.37 & 0.10 &  15 \\ 
-           &    & Fzo & 1.44 & 0.10 &  15 \\ 
-           &    & Rip & 1.43 & 0.07 &  15 \\ 
+      2015 & Convenzionale & Arato & 1.35 & 0.14 &   5 \\ 
+           &               & Frangizollato & 1.34 & 0.07 &   5 \\ 
+           &               & Rippato & 1.38 & 0.10 &   5 \\ 
+           & Biologico     & Arato & 1.37 & 0.10 &  15 \\ 
+           &               & Frangizollato & 1.44 & 0.10 &  15 \\ 
+           &               & Rippato & 1.43 & 0.07 &  15 \\ 
       \\
-      2016 & CO & Ara & 1.38 & 0.16 &   6 \\ 
-           &    & Fzo & 1.35 & 0.15 &   6 \\ 
-           &    & Rip & 1.26 & 0.09 &   5 \\ 
-           & OO & Ara & 1.37 & 0.06 &   6 \\ 
-           &    & Fzo & 1.35 & 0.07 &   6 \\ 
-           &    & Rip & 1.40 & 0.15 &   6 \\ 
+      2016 & Convenzionale & Arato & 1.38 & 0.16 &   6 \\ 
+           &               & Frangizollato & 1.35 & 0.15 &   6 \\ 
+           &               & Rippato & 1.26 & 0.09 &   5 \\ 
+           & Biologico     & Arato & 1.37 & 0.06 &   6 \\ 
+           &               & Frangizollato & 1.35 & 0.07 &   6 \\ 
+           &               & Rippato & 1.40 & 0.15 &   6 \\ 
       \hline
     \end{tabular}
     \label{tab:RiassuntoDensitaCAmpo}
@@ -547,9 +384,8 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the
   \end{table}
 \end{frame}
 
-
 \begin{frame}[label=Clod]
-  \hyperlink{densita}{\beamerbutton{indietro}}
+  \hyperlink{finale}{\beamerbutton{indietro}}
   \footnotesize
   \begin{table}[ht]
     \centering
@@ -560,7 +396,7 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the
       Convenzionale & Arato & 1.93 & 0.06 &  18 & b \\ 
                  & Frangizollato & 1.89 & 0.05 &  18 & ab \\ 
                  & Rippato & 1.90 & 0.06 &  18 & ab \\ 
-      Organico & Arato & 1.90 & 0.07 &  18 & ab \\ 
+      Biologico & Arato & 1.90 & 0.07 &  18 & ab \\ 
                  & Frangizollato & 1.84 & 0.06 &  18 & a \\ 
                  & Rippato & 1.87 & 0.07 &  18 & ab \\ 
       \hline
@@ -572,7 +408,7 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the
 \begin{frame}
   \vspace{1.5cm}
   \begin{figure}
-    \includegraphics[width=0.6\textwidth]{../tesi/boxClod.pdf}
+    \includegraphics[width=0.9\textwidth]{../tesi/boxClod.pdf}
   \end{figure}
 \end{frame}
 
@@ -595,32 +431,15 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the
   \end{table}
 \end{frame}
 
-\begin{frame}[label=summary]
-  % \hyperlink{densita}{\beamerbutton{indietro}}
-  % latex table generated in R 3.4.0 by xtable 1.8-2 package
-  % Thu Jun 22 10:44:00 2017
-  \footnotesize
-  % latex table generated in R 3.4.0 by xtable 1.8-2 package
-  % Thu Jun 22 16:31:31 2017
-  \begin{table}[ht]
-    \centering
-    \begin{tabular}{rrrrr}
-      \hline
-      & Estimate & Std. Error & t value & Pr($>$$|$t$|$) \\ 
-      \hline
-      % Convenzionale arato & 1.9470 & 0.0295 & 65.98 & 0.0000 \\ 
-      % Scostamento biologico & -0.0534 & 0.0295 & -1.81 & 0.0731 \\ 
-      % Scostamento frangizollato & -0.0780 & 0.0361 & -2.16 & 0.0331 \\ 
-      % Scostamento rippato & -0.0881 & 0.0361 & -2.44 & 0.0164 \\ 
-      Convenzionale arato & 1.93 & 0.01 & 157.38 & 0.000 \\ 
-      Scostamento biologico & -0.03 & 0.01 & -2.51 & 0.014 \\ 
-      Scostamento frangizollato & -0.05 & 0.02 & -3.39 & 0.001 \\ 
-      Scostamento rippato & -0.03 & 0.02 & -2.04 & 0.043 \\ 
-      \hline
-    \end{tabular}
-    \label{tab:Riassunto densita spinta}
-  \end{table}
+\begin{frame}[label=distribuzione]
+  \hyperlink{finale}{\beamerbutton{indietro}}
+  \vspace{1.5cm}
+  \begin{figure}
+    \includegraphics[width=0.6\textwidth]{../tesi/Tesi_GIT-figboh.pdf}
+  \end{figure}
 \end{frame}
+
+
 
 \begin{frame}[label=Anova]
   \hyperlink{Composizionale}{\beamerbutton{indietro}}
@@ -643,6 +462,13 @@ area Mediterranea. ] % [] is optional - is placed on the bottom of the
   \end{table}
 \end{frame}
 
+\begin{frame}[label=Porosimetria]
+  \hyperlink{finale}{\beamerbutton{indietro}}
+  \vspace{1.5cm}
+  \begin{figure}
+    \includegraphics[width=0.9\textwidth]{../tesi/Tesi_GIT-figurina.pdf}
+  \end{figure}
+\end{frame}
 
 \end{document}
 
