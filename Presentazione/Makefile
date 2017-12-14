@@ -1,4 +1,4 @@
-PRINCIPALE		= Feathertheme
+PRINCIPALE		= Presentazione_Simone_Massenzio
 PRINCIPALE_TEX		= $(PRINCIPALE).tex
 #PRINCIPALE_PDF		= $(PRINCIPALE).pdf
 
