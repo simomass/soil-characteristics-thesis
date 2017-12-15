@@ -266,35 +266,35 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
       \includegraphics[width=0.5\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
     \end{figure}}
   \only<3>{
-  \scriptsize
-  \begin{table}[ht]
-    \centering
-    \begin{tabular}{|l|c|c|c|}
-      \hline
-      Campi        & Convenzionale & Biologico   &    \\
+    \scriptsize
+    \begin{table}[ht]
+      \centering
+      \begin{tabular}{|l|c|c|c|}
+        \hline
+        Campi        & Convenzionale & Biologico   &    \\
 
-      \hline
-                   &                &                      &      \\ 
-      Appezzamenti & 2              &  2                   &       \\ 
+        \hline
+                     &                &                      &      \\ 
+        Appezzamenti & 2              &  2                   &       \\ 
 
-                   &                &                      &        \\
-      \hline
-                   &                &                      &         \\
-      Parcelle     &               &                       &   \\
-      entro appezzamento   &      9 &     9                &       \\
+                     &                &                      &        \\
+        \hline
+                     &                &                      &         \\
+        Parcelle     &               &                       &   \\
+        entro appezzamento   &      9 &     9                &       \\
 
-                   &                &                      &        \\
-      \hline
-                   &                &                      &        \\
-      Punti entro  &          3     &    3                 &\\ 
-      parcella     &                &                      &
-      \\
-      \hline
-                   &                &                      &        \\
-      Totale campioni& 54           &     54               &108   \\
-\hline
-    \end{tabular}
-  \end{table}
+                     &                &                      &        \\
+        \hline
+                     &                &                      &        \\
+        Punti entro  &          3     &    3                 &\\ 
+        parcella     &                &                      &
+        \\
+        \hline
+                     &                &                      &        \\
+        Totale campioni& 54           &     54               &108   \\
+        \hline
+      \end{tabular}
+    \end{table}
     % \begin{figure}
     %   \centering
     %   \includegraphics[width=0.5\textwidth]{../foto/OO_sito.jpeg}
@@ -302,14 +302,6 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
   }
 \end{frame}
 
-\begin{frame}
-
-\end{frame}
-
-
-
-
-\end{frame}
 
 \begin{frame}{Parte 2 \small{Metodi di analisi}}
   \begin{columns}[c]
@@ -348,30 +340,27 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
   \transwipe<4>[direction=90]
   \begin{minipage}[0.2\textheight]{\textwidth}
     \begin{columns}[T]
-      \begin{column}{0.8\textwidth}
-        L'elaborazione dei dati è stata effettuata mediante il linguaggio di
-        programmazione R, ed ha riguardato:
+      \column{0.8\textwidth}
+      L'elaborazione dei dati è stata effettuata mediante il linguaggio di
+      programmazione R, ed ha riguardato:
+      \begin{itemize}
+        \onslide<2->\item l'adattamento di un modello lineare nella forma:
+        \vspace{0.25cm}
+        $Y \sim \beta_0 + \beta_1x_1 + \beta_2x_2 + \epsilon$
+
+        \onslide<3->{in cui le variabili categoriche sono:}
         \begin{itemize}
-          \onslide<2->\item l'adattamento di un modello lineare nella forma:
-          \vspace{0.25cm}
-          $Y \sim \beta_0 + \beta_1x_1 + \beta_2x_2 + \epsilon$
+          \onslide<4->\item $x_1$ conduzione %\newline
+          \emph{Convenzionale}, \emph{Biologico}
 
-          \onslide<3->{in cui le variabili categoriche sono:}
-          \begin{itemize}
+          \onslide<5->\item $x_2$ lavorazioni \newline \emph{Arato, Rippato,
+            Frangizollato}
 
-            \onslide<4->\item $\x_1$ conduzione \newline
-            \emph{Convenzionale}, \emph{Biologico}
-
-            \onslide<5->\item $\x_2$ lavorazioni \newline \emph{Arato, Rippato,
-              Frangizollato}
-
-            \onslide<6->\item$\epsilon$ residui o errore
-          \end{itemize}
+          \onslide<6->\item $\epsilon$ residui o errore
         \end{itemize}
-      \end{column}
-      \begin{column}{0.2\textwidth}
-        \includegraphics[width=2.5cm]{../foto/logo-R.png}
-      \end{column}
+      \end{itemize}
+      \column{0.2\textwidth}
+      \includegraphics[width=2.5cm]{../foto/logo-R.png}
     \end{columns}
   \end{minipage}
 
@@ -467,35 +456,38 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
     \end{tabular}
     \label{tab:Anova densita per spinta}
   \end{table}
+
 \end{frame}
 
 
-% \begin{frame}{Parte 3 \small{Dati composizionali}}
-
-%   \begin{columns}
-%     \column{.50\textwidth}
-%     \vspace{1cm}
-%     \footnotesize
-%     \begin{itemize}[<+->]
-%     \item Dati ottenuti dalle analisi di porosimetria e
-%       stabilità degli aggregati $\rightarrow$ \emph{dati Composizionali}%sono delle distribuzioni in cui ogni
-%       %       classe dimensionale è espressa come percentuale sul volume totale,
-%       %       questo tipo di dati prende il nome di
-%       \pause
-%     \item Per rappresentare i dati composizionali si utilizza un
-%       grafico triangolare. Per l'elaborazione è necessaria
-%       un'operazione di linearizzazione
-%     \item Operazioni sono state effettuate tramite il package 'composition'
-%     \end{itemize}
-
-%     \column{.48\textwidth}
-%     \only<2>{\begin{overlayarea}{\linewidth}{3cm}
-%       \includegraphics[width=\textwidth]{../grafici/boh.jpeg}
-%     \end{overlayarea}}
-%     \only<3>{\includegraphics[width=0.5\textwidth]{../foto/simplessodeformaVerticale.png}}
-%     \only<4>{\includegraphics[width=\textwidth]{../tesi/Tesi_GIT-figboh.pdf}}
-%   \end{columns}
-% \end{frame}
+\begin{frame}{Parte 3 \small{Dati composizionali}}
+  %   %% \begin{columns}
+  %   %%   \column{.50\textwidth}
+  %   %%   \vspace{1cm}
+  %   %%   \footnotesize
+  %   %%   \begin{itemize}[<+->]
+  %   %%   \item 
+  Dati ottenuti dalle analisi di porosimetria e
+  stabilità degli aggregati $\rightarrow$ \emph{dati Composizionali}%sono delle distribuzioni in cui ogni
+  %   %   % classe dimensionale è espressa come percentuale sul volume totale,
+  %   %   % questo tipo di dati prende il nome di
+  %   % \pause
+  %   % \item Per rappresentare i dati composizionali si utilizza un
+  %   %   grafico triangolare. Per l'elaborazione è necessaria
+  %   %   un'operazione di linearizzazione
+  %   % \item Operazioni sono state effettuate tramite il package 'composition'
+  %   % \end{itemize}
+  % \vfill
+  %   %% \column{.48\textwidth}
+  \only<2>{%%\begin{overlayarea}{\linewidth}{3cm}
+    \includegraphics[width=0.5\textwidth]{../grafici/boh.jpeg}}
+  \only<3>{%%\begin{overlayarea}{\linewidth}{3cm}
+    \includegraphics[width=0.5\textwidth]{../grafici/SplitStab.jpeg}}
+  %% \end{overlayarea}}
+  %   %% \only<3>{\includegraphics[width=0.5\textwidth]{../foto/simplessodeformaVerticale.png}}
+  \only<4>{\includegraphics[width=0.5\textwidth]{../tesi/Tesi_GIT-figboh.pdf}}
+  %% \end{columns}
+\end{frame}
 
 
 
