@@ -54,12 +54,11 @@
 % -------------------------------------------------------
 % \setbeamertemplate{title page}
 % {
-\title[Tesi di laurea magistrale Simone Massenzio ] % [] is optional - is placed on the bottom of the
+\title[25 anni di conduzione biologica in area Mediterranea: uno
+studio di fisica del suolo] % [] is optional - is placed on the bottom of the
 % sidebar on every slide
-{ Confronto fra le caratteristiche
-  fisico-strutturali di suoli in area
-  Mediterranea sottoposti a diversi metodi di
-  conduzione e lavorazione}
+{ Caratteristiche fisico-strutturali di suoli in area Mediterranea
+  sottoposti a diversi metodi di conduzione e lavorazione}
 
 
 % \subtitle[Uno studio di fisica del suolo]{
@@ -122,13 +121,13 @@
 \vspace{2cm}
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{../foto/segnalibro.png}
+\includegraphics[width=0.8\textwidth]{../foto/wordcloud.png}
 \end{figure}
 \end{frame}
 
 \begin{frame}{Parte 1 \small{Fertilità del suolo e agricoltura biologica}}
 \begin{columns}
-\column{.50\textwidth}
+\column{.32\textwidth}
   \only<1-2>{\emph{Progetto Fertilcrop} } \newline
   \only<2>{Sviluppare tecniche di
   gestione sostenibili ed efficienti per incrementare la produttività
@@ -145,18 +144,36 @@ Agricoltura biologica:
   \onslide<6->{\item non utilizza prodotti di sintesi}
   \onslide<7->{\item pone maggiore attenzione alla fertilità del suolo}
 \end{itemize}}
-\column{.48\textwidth}
+\column{.65\textwidth}
 \only<2>{
 \vfill
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{../foto/FertilCropLogo.png}
+\includegraphics[width=0.6\textwidth]{../foto/FertilCropLogo.png}
 \end{figure}}
-\only<3->{
-\vspace{1.5cm}
+\only<4>{
+%\vspace{1.5cm}
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{../foto/segnalibro.png}
+\includegraphics[width=0.6\textwidth]{../foto/marchiobio.jpg}
+\end{figure}}
+\only<5>{
+%\vspace{1.5cm}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../foto/carbonCycle.jpg}
+\end{figure}}
+\only<6>{
+%\vspace{1.5cm}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../foto/fitofarmaci.jpg}
+\end{figure}}
+\only<7>{
+%\vspace{1.5cm}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../foto/fertilitsuolo.jpg}
 \end{figure}}
 \end{columns}
 \end{frame}
@@ -174,6 +191,12 @@ Agricoltura biologica:
 \item produttivi
 \item \Large{fisici} \onslide<7->{\Large{$\rightarrow$ trascurati
       dalla letteratura}}
+\pause
+\begin{enumerate}[<+->]
+   \item Densità apparente
+   \item Stabilità di struttura
+   \item Distribuzione dei pori
+\end{enumerate}
 \end{itemize}
   
 \end{frame}
@@ -181,7 +204,8 @@ Agricoltura biologica:
 
 
 \begin{frame}{Parte 1 \small{Obiettivi}}
-  Indici dello stato di aggregazione del suolo. 
+  Tramite l'uso di indici di fertilità del suolo, verificare la
+  presenza di differenze tra:
   \begin{columns}[c]
     \column{.50\textwidth}
     \begin{itemize}[<+->]
@@ -277,7 +301,7 @@ Agricoltura biologica:
       \only<5>{\includegraphics[width=0.8\textwidth]{../foto/navicella}}
       \only<6>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{117}{176}
                \animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{208}{233}}%233
-      \only<7>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/poresize/PoreSize-}{0}{3}}%%396
+      \only<7>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/poresize/PoreSize-}{0}{396}}%%396
     %\end{overlayarea}
   \end{columns}
 \end{frame}
@@ -296,7 +320,7 @@ Agricoltura biologica:
     \vspace{0.25cm}
     $Y \sim \mu + \beta_1x_1 + \beta_2x_2 + \epsilon$
 
-    \onslide<3->{in cui le variabili categoriche sono:}
+    \onslide<3->{in cui i coefficienti delle variabili categoriche sono:}
     \begin{itemize}
 
       \onslide<4->\item $\beta_1$ conduzione \newline
@@ -332,35 +356,8 @@ Agricoltura biologica:
 %   \end{figure}
 % \end{frame}
 
-\begin{frame}[label=Core]{Parte 3: metodo \emph{Core}}
-
-  
-  \hyperlink{finale}{\beamerbutton{Conclusioni}}
-  \footnotesize
-  \begin{table}[ht]
-    \centering
-    \begin{tabular}{lllccc}
-      \hline
-      Anno & Conduzione & Lavorazione & Densit\`a apparente
-                                        ($g/cm^3$) & dev std & n \\ 
-      \hline
-      2015 & Convenzionale & Arato & 1.35 & 0.14 &   5 \\ 
-           &               & Frangizollato & 1.34 & 0.07 &   5 \\ 
-           &               & Rippato & 1.38 & 0.10 &   5 \\ 
-           & Biologico     & Arato & 1.37 & 0.10 &  15 \\ 
-           &               & Frangizollato & 1.44 & 0.10 &  15 \\ 
-           &               & Rippato & 1.43 & 0.07 &  15 \\ 
-      \\
-      2016 & Convenzionale & Arato & 1.38 & 0.16 &   6 \\ 
-           &               & Frangizollato & 1.35 & 0.15 &   6 \\ 
-           &               & Rippato & 1.26 & 0.09 &   5 \\ 
-           & Biologico     & Arato & 1.37 & 0.06 &   6 \\ 
-           &               & Frangizollato & 1.35 & 0.07 &   6 \\ 
-           &               & Rippato & 1.40 & 0.15 &   6 \\ 
-      \hline
-    \end{tabular}
-    \label{tab:RiassuntoDensitaCAmpo}
-  \end{table}
+\begin{frame}
+  \finalpage{\Huge{Risultati}}
 \end{frame}
 
 
@@ -462,8 +459,7 @@ Agricoltura biologica:
     \only<2>{\begin{overlayarea}{\linewidth}{3cm}
         \includegraphics[width=\textwidth]{../grafici/boh.jpeg}
       \end{overlayarea}}
-    \only<3>{\begin{overlayarea}{\linewidth}{2cm}\includegraphics[width=\textwidth]{../foto/simplessodeforma.png}     
-      \end{overlayarea}}
+    \only<3>{\includegraphics[width=0.5\textwidth]{../foto/simplessodeformaVerticale.png}}
     \only<4>{\includegraphics[width=\textwidth]{../tesi/Tesi_GIT-figboh.pdf}}
   \end{columns}
 \end{frame}

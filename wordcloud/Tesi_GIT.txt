@@ -1,0 +1,3297 @@
+Università degli Studi di Firenze
+SCUOLA DI AGRARIA
+Corso di Laurea in Scienze e tecnologie agrarie (LM-69)
+
+Confronto fra le caratteristiche
+fisico-strutturali di suoli in area
+Mediterranea sottoposti a diversi metodi di
+conduzione e lavorazione
+
+Candidato:
+
+Relatore:
+
+Simone Massenzio
+
+Dott. Ottorino-Luca Pantani
+Correlatori:
+
+Dott. Luigi Paolo D’Acqui
+Prof. Gaio Cesare Pacini
+
+Anno accademico 2016-2017
+
+Sommario
+Lo scopo di questa tesi   quello di: i) comparare due sistemi di conduzione agricola in ambiente Mediterraneo (biologico e convenzionale, attivi da più di venticinque anni) studiando tre proprietà fisiche del
+suolo: densità apparente, distribuzione dei pori e stabilità degli aggregati; ii) comparare gli effetti di tre
+lavorazioni primarie: aratura, rippatura e frangizollatura. Lo studio   inserito nel progetto MoLTE, un
+long term experiment dell’Università di Firenze dove, dal 1991 presso l’azienda agricola Montepaldi,
+situata a San Casciano val di Pesa (FI), viene condotta una sperimentazione sul sistema biologico. I
+risultati delle analisi sulla densità apparente mostrano differenze statisticamente significative tra i trattamenti, tuttavia i cambiamenti sono minimi rendendoli non rilevanti dal punto di vista pratico. Le analisi
+sulla stabilità degli aggregati indicano una maggior stabilità degli aggregati nei suoli a conduzione convenzionale rispetto a quella biologica. I risultati sulla distribuzione dei pori, non mostrano differenze
+statisticamente significative, molto probabilmente per l’esiguo numero di campioni analizzati.
+
+3
+
+Summary
+The purposes of this work were: i) to compare two farming systems in Mediterranean area (Organic
+and Conventional management on site since more than twenty five years) through the assessement of
+three soil’s physical properties such as: bulk density, pore size distribution and aggregate stability;
+ii) to compare the effects of three tillage systems: plowing, chisel plowing and disk harrowing. The
+study is implemented within the MoLTE project, a long term experiment of the University of Florence
+where, since 1991, at Montepaldi farm, located in San Casciano val di Pesa (FI, Italy) was carried out
+an experimentation on Organic farming systems. The result of the analysis of the bulk density, show
+statistically significant differences between two farming systems, however these difference were so small
+that are negligible from a practical point of view. The aggregate stability shows that the aggregates
+from the Conventional soil are more stable than those from the Organic one. The results of the pore size
+distribution do not display statistically significant differences.
+
+5
+
+Indice
+1. Il suolo in sistemi agricoli convenzionali e biologici
+
+9
+
+1.1. Caratteristiche generali del suolo . . . . . . . . . . . . . . . . . . . . . . . 10
+1.2. Sistemi agricoli a basso impatto ambientale . . . . . . . . . . . . . . . . . 17
+1.3. Progetto FertilCrop
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+
+1.4. Scopo dello studio . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+2. Materiali e metodi
+
+23
+
+2.1. Sito sperimentale . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+2.2. Campionamento . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+2.3. Misura della densità apparente . . . . . . . . . . . . . . . . . . . . . . . . 28
+2.3.1. Metodo Core . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+2.3.2. Metodo Clod . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+2.4. Dinamica della distribuzione della dimensione degli aggregati . . . . . . . 32
+2.4.1. Protocollo di misura . . . . . . . . . . . . . . . . . . . . . . . . . . 33
+2.4.2. Dinamica della distribuzione granulometrica . . . . . . . . . . . . . 33
+2.5. Porosimetria per intrusione di mercurio . . . . . . . . . . . . . . . . . . . 35
+2.6. Elaborazione dei dati . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+2.6.1. Densità . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+2.6.2. Dinamica della distribuzione degli aggregati e porosimetria . . . . 38
+3. Risultati
+
+39
+
+3.1. Densità apparente . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+3.1.1. Metodo Core . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+3.1.2. Metodo Clod . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+3.2. Dinamica della distribuzione della dimensione degli aggregati . . . . . . . 46
+
+7
+
+Indice
+3.3. Distribuzione dimensionale dei pori . . . . . . . . . . . . . . . . . . . . . . 50
+4. Discussione
+
+53
+
+5. Conclusioni
+
+57
+
+A. Misurazione delle distribuzioni granulometriche ottenuta mediante Mastersizer 2000
+
+59
+
+B. Princı̀pi di funzionamento della porosimetria ad intrusione di mercurio
+
+65
+
+C. Dati composizionali: natura e metodi di analisi
+
+69
+
+D. Grafici dei residui dei modelli statistici utilizzati per l’analisi dei dati
+
+73
+
+8
+
+1. Il suolo in sistemi agricoli convenzionali e
+biologici
+Il concetto di suolo o terreno   piuttosto chiaro nell’immaginario collettivo, nonostante
+questo   difficile individuare una definizione univoca. Un tentativo di definizione   quello
+di Johnson (1998): suolo   qualsiasi materiale minerale e organico posto alla superficie
+di pianeti o corpi simili, alterato da agenti biologici, chimici e/o fisici.
+Nella definizione di Johnson non vengono considerate le piante; la ”Soil Taxonomy”
+americana (USDA, 1999) ha fornito una definizione   completa in cui vengono considerati anche gli organismi vegetali: Il suolo   un corpo naturale composto da una fase solida
+(minerale e organica), una fase liquida e una gassosa presenti sulla superficie terrestre,
+occupa spazio ed   caratterizzato da una o   delle seguenti caratteristiche: orizzonti, o
+strati, che sono distinguibili dal materiale iniziale grazie alle aggiunte, perdite, trasferimenti e trasformazioni di energia e materia o l’abilità di supportare piante vascolari in
+un ambiente naturale.
+Dal suolo naturale distinguiamo il terreno agrario; questo   caratterizzato da pesanti
+modifiche operate dall’uomo mediante lavorazioni meccaniche, concimazioni e sistemazioni idrauliche. Lo scopo di queste operazioni   quello di aumentare il   possibile la
+produzione alimentare umana e animale, mantenendo costante la fertilità del terreno.
+Secondo Ellis e Foth (1996): la fertilità di un suolo si riferisce alla sua abilità di
+fornire in maniera adeguata e proporzionata nutrienti e acqua necessari per la crescita
+e la riproduzione delle piante, e all’assenza di sostanze tossiche che possono inibirle.
+Tuttavia, lo sfruttamento intensivo del suolo degli ultimi 50 anni, ne ha provocato la
+degradazione determinando una diminuzione della sua fertilità.
+A fronte di un previsto aumento di popolazione mondiale,     che mai necessario
+
+9
+
+1. Il suolo in sistemi agricoli convenzionali e biologici
+individuare delle tecniche che permettano il mantenimento delle caratteristiche dei terreni agrari senza diminuirne la produttività. Gli stessi consumatori occidentali sono  
+attenti ai loro acquisti e cercano prodotti che siano coltivati rispettando l’ambiente e
+con un basso utilizzo di input esterni. In particolare sono sempre   richiesti prodotti
+di agricoltura biologica per le loro potenzialità di comporre diete salubri e il basso impatto dei relativi processi di produzione che escludono prodotti di sintesi e organismi
+geneticamente modificati.
+Nonostante questo, non   stato dimostrata scientificamente in maniera inequivocabile
+la superiorità dell’agricoltura biologica rispetto all’agricoltura convenzionale. Ciò  
+essere dovuto ad alcuni dei problemi che la ricerca scientifica deve fronteggiare nello
+studio dell’agricoltura biologica:
+ ogni ambiente agrario ha le sue caratteristiche pedoclimatiche e risponde in maniera
+diversa alle varie tecniche agricole, inoltre anche le colture agrarie hanno esigenze
+molto diverse;
+ non esiste un indice di fertilità univoco che permetta di confrontare i vari tipi di
+agricoltura.
+
+1.1. Caratteristiche generali del suolo
+Il suolo   un sistema naturale trifasico costituito da:
+ fase solida, materiale minerale e materiale organico vivo o in decomposizione;
+ fase liquida, ovvero una soluzione acquosa di cationi, anioni e composti organici;
+ fase gassosa, simile per composizione a quella atmosferica.
+In linea di massima, il 50% del suolo   composto dalla fase solida (di cui il 5%  
+materiale organico), il 30% dalla fase liquida e il 20% dalla fase gassosa, anche se queste
+ultime due variano reciprocamente a seconda delle condizioni atmosferiche.
+La formazione del suolo   un processo estremamente complesso in cui intervengono
+fattori fisici (frantumazione, alternanza di gelo e disgelo, alternanza di idratazione ed
+
+10
+
+1.1. Caratteristiche generali del suolo
+essiccamento), chimici (reazioni acido-base, ossidoriduzioni) e biologici (fermentazioni
+o, in generale, processi operati da microrganismi, piante e animali). Secondo Jenny
+(1941) i fattori che intervengono nella formazione del suolo possono essere descritti con
+la seguente funzione:
+s = f (cl, o, r, p, t, ...)
+
+(1.1)
+
+Dove:
+s sono le proprietà del suolo
+cl
+
+  il clima
+
+o
+
+sono i fattori biologici
+
+r
+
+  la topografia
+
+p
+
+  la roccia madre
+
+t
+
+  il tempo.
+
+Una volta formato, il suolo presenta caratteristiche che lo possono rendere   o meno
+idoneo alla coltivazione. Per valutare queste caratteristiche vengono impiegati parametri
+chimici, fisici e biologici.
+Data la sua influenza verso gli altri parametri del suolo,   importante la distribuzione
+granulometrica, o tessitura, in cui le particelle di diametro superiore a 2 mm sono definite
+scheletro, quelle comprese tra 2 mm e 50 µm sono definite sabbia, quelle comprese tra
+50 µm e 2 µm sono definite limo e quelle inferiori a 2 µm sono definite argilla. La tessitura
+  usualmente rappresentata mediante il triangolo tessiturale introdotto da Whitney nel
+1911 e adottata dall’USDA come metodo di rappresentazione ufficiale; la versione attuale
+(Fig. 1.1), modificata dal triangolo tessiturale di Whitney,   stata introdotta nel 1951
+(Jelinski, 2014).
+
+11
+
+1. Il suolo in sistemi agricoli convenzionali e biologici
+
+Figura 1.1.: Triangolo tessiturale secondo lo USDA, i punti rappresentano le tessiture apparenti dei terreni oggetto di studio determinate per densimetria (Ministero dell’agricoltura e delle
+foreste, Decreto ministeriale dell’11 maggio 1992) (cfr. paragrafo 2.1).
+
+La presenza di cementi, organici o minerali, che portano alla formazione di aggregati
+permette di definire la struttura del terreno come il particolare modo di aggregarsi dei
+suoi vari componenti in rapporto soprattutto all’azione ”legante” della frazione colloidale,
+organica e inorganica. (Tassinari, 1976).
+La tessitura   diretto risultato dei fattori di formazione del suolo sopra elencati, di
+conseguenza non risente particolarmente delle diverse tecniche agronomiche. Al contrario, la struttura viene notevolmente condizionata dalla tecnica agronomica con effetti
+sulle proprietà fisiche, meccaniche e chimiche del suolo, e quindi sulla maggiore o minore
+fertilità.
+La particelle solide che costituiscono il suolo, hanno un diverso valore di densità,
+in funzione del materiale di cui sono costituite. Questo non   uniforme per tutti i
+
+12
+
+1.1. Caratteristiche generali del suolo
+componenti (varia da circa 2 a oltre 3) ma, in considerazione del fatto che nel suolo sono
+presenti prevalentemente i silicati (con densità che varia da 2,5 a 2,8), si assume come
+riferimento il valore di 2,65 g  3 (Radaelli e Calamai, 2001). Questo valore  , a fini
+pratici, costante, considera la sola frazione minerale ed   preso come valore di riferimento
+della densità reale.
+Per considerare, oltre alla fase solida, anche i vuoti si utilizza un altro valore di densità: la densità apparente. Come detto precedentemente, questo valore considera anche i
+vuoti ed   legato principalmente alla distribuzione granulometrica e alla struttura. Mediamente la densità apparente corrisponde a circa la metà del valore di densità reale,
+ma   discostarsi in diversa misura a seconda dello stato di aggregazione della fase
+solida del terreno. Secondo Aşkin e Özdemir (2003), la densità apparente di un terreno  
+influenzata principalmente dalla tessitura del terreno e,   in particolare, dalla frazione
+sabbiosa e argillosa. Tuttavia, anche se con un effetto   lieve, questi autori riscontrano
+una significativa correlazione negativa tra il contenuto di sostanza organica e il valore
+della densità apparente.
+Un ulteriore indicatore di fertilità fisica del suolo   la stabilità degli aggregati; questi
+ultimi sono definiti come un insieme di particelle primarie di suolo legate l’un l’altra
+in modo maggiore rispetto alle particelle adiacenti, mentre la stabilità degli aggregati
+  la capacità degli aggregati di suolo di resistere alla rottura quando vengono applicate
+forze esterne (solitamente dall’acqua) (Soil Quality Indicator Sheets, Aggregate Stability
+2008). L’importanza della stabilità degli aggregati si esplica soprattutto durante una
+pioggia, in quanto l’erosione   collegata direttamente alla resistenza degli aggregati (Le
+Bissonnais, 1996; De Ploey e Poesen, 1985). In molti tipi di suoli   stato visto come
+la stabilità degli aggregati dipenda dalla quantità di sostanza organica e quindi, in un
+suolo agrario, dalla gestione dell’agroecosistema (J. Tisdall e Oades, 1982).
+Sono diversi i meccanismi che provocano la rottura degli aggregati (Le Bissonnais,
+2016):
+ rottura per compressione di aria intrappolata (slaking);
+ rottura per rigonfiamento asimmetrico;
+ rottura per impatto della pioggia;
+
+13
+
+1. Il suolo in sistemi agricoli convenzionali e biologici
+ dispersione fisico-chimica.
+Lo slaking consiste nella rottura degli aggregati di suolo causata dall’aria intrappolata dentro all’aggregato durante l’inumidimento; avviene quando gli aggregati secchi
+sono immersi in acqua e si bagnano rapidamente, l’effetto dipende dal volume dell’aria
+intrappolata e dalla velocità di inumidimento, i frammenti risultanti dallo slaking sono
+principalmente microaggregati e aumentano in dimensioni all’aumentare del contenuto
+di argilla; lo slaking diminuisce all’aumentare dell’umidità iniziale (Truman, Bradford e
+Ferris, 1990; Le Bissonnais, 1988).
+La rottura per rigonfiamento asimmetrico,   un meccanismo molto simile al precedente:
+ha lo stesso effetto ed   generato dalle stesse condizioni dello slaking, la differenza sta
+nel meccanismo fisico con cui avviene. Inoltre, al contrario dello slaking, questo processo
+aumenta all’aumentare del contenuto in argilla (Chan e Mullins, 1994).
+La rottura degli aggregati durante un evento piovoso, avviene quando l’energia dell’impatto della goccia   sufficiente a rompere le forze che tengono insieme l’aggregato,
+ed avviene in combinazione con gli altri meccanismi (Al-Durrah e Bradford, 1982).
+La dispersione chimico fisica risulta dalla diminuzione delle forze attrattive tra le
+particelle colloidali durante l’inumidimento (Sumner, 1992).
+La porosità del terreno   un ulteriore parametro fondamentale per le caratteristiche
+fisiche del suolo: il volume dei pori rispetto al volume della fase solida influenza notevolmente il contenuto idrico e la lavorabilità del terreno. La sua misura   aiutare la
+quantificazione dell’impatto delle pratiche colturali sul suolo ed   il miglior indicatore
+per la qualità della struttura (Pagliai e Vignozzi, 2002). La valutazione dei pori in termini di forma, spazio, dimensione, continuità, orientamento e arrangiamento permette di
+definire la complessità della struttura e fa capire le modificazioni indotte dalle pratiche
+colturali; in questo modo   possibile indicare quali di queste siano   compatibili con
+la protezione ambientale.
+La porosità ha relazioni con la resistenza alla penetrazione: la diminuzione del volume
+dei pori   solitamente associata ad un aumento della resistenza alla penetrazione. Sia
+la forma dei pori che la distribuzione della loro grandezza, influenza direttamente le
+proprietà chimiche, biochimiche e biologiche. In particolare, una buona struttura del
+
+14
+
+1.1. Caratteristiche generali del suolo
+suolo promuove l’approfondimento radicale e i movimenti di acqua, aria e fauna tellurica.
+Invece una cattiva struttura favorisce l’erosione, la compattazione e la desertificazione.
+In figura 1.2 sono riportate le principali classificazioni dimensionali dei pori; ogni
+autore ha definito le classi dimensionali in base alle funzioni (biologiche, chimiche, fisiche)
+che i pori di quella dimensione hanno.
+Secondo Pagliai e Vignozzi (2002), la classificazione dei pori   usata   quella di
+Greenland e Pereira (1977) ed   mostrata in Tab. 1.1.
+Tabella 1.1.: Classificazione dei pori del terreno secondo le dimensioni: da Pagliai e Vignozzi
+(2002).
+
+Diametro pori
+µm
+
+Potenziale idrico
+bar
+
+Nome
+
+< 0,005
+0,005-0,5
+0,5-50
+50-500
+> 500
+
+> -600
+-600/-6
+- 6/- 0,06
+- 0,06/- 0,006
+<- 0,006
+
+Spazi di legame
+Pori residui
+Pori di immagazzinamento
+Pori di trasmissione
+Fessure
+
+I pori con diametro inferiore ai 0,005 µm sono chiamati pori di legame e sono particolarmente importanti per quanto riguarda le forze che tengono insieme la particelle
+primarie in domain.
+I pori di diametro inferiore a 0,5 µm sono definiti pori residui per le loro interazioni
+chimiche a livello molecolare; i pori che hanno un diametro compreso tra 0,5 e 50 µm
+sono detti pori di immagazzinamento, quelli con diametro compreso tra 50 e 500 µm
+sono i pori di conduzione. I pori di dimensioni maggiori di 500 µm sono utili alla penetrazione delle radici e al movimento dell’acqua di drenaggio specialmente nei suoli a
+tessitura fine. Cionondimeno, una loro percentuale pari o superiore al 70-80% della porosità totale, indica una cattiva struttura che non favorisce la crescita delle piante. Una
+porosità distribuita ottimamente tra le classi dimensionali dei pori consente un miglior
+immagazzinamento/conduzione di acqua e aria e un’adeguata crescita radicale.
+
+15
+
+1. Il suolo in sistemi agricoli convenzionali e biologici
+
+Figura 1.2.: In figura sono riportate le principali classificazioni dimensionali dei pori (Lal e
+Shukla, 2004) definite da diversi autori; nell’asse delle ascisse sono riportate le dimensioni dei
+diametri, espresse in µm, in scala logaritmica; sull’asse delle ordinate sono riportati gli autori; le
+croci rappresentano i limiti delle classi dimensionali; la linea   scura rappresenta la classe che
+gli autori identificano con micropori; le linee rosse verticali rappresentano invece i limiti scelti
+per l’elaborazione dei dati sulla distribuzione dimensionale dei pori (paragrafo 3.3)
+
+16
+
+1.2. Sistemi agricoli a basso impatto ambientale
+
+1.2. Sistemi agricoli a basso impatto ambientale
+La rivoluzione verde avvenuta negli anni ’50 del secolo scorso,   stato un processo che
+ha trasformato l’agricoltura la quale   passata da una forma tradizionale ad una che fa
+largo uso della tecnologia, oggi chiamata convenzionale.
+L’agricoltura convenzionale esaspera il concetto di massimizzazione del rendimento
+economico,   tecnologicamente orientata, utilizza ampie superfici spesso coltivate a monocoltura (con conseguente perdita della biodiversità) e richiede ingenti quantità di concimi
+e fertilizzanti, normalmente di sintesi.
+Grazie alla rivoluzione verde, la produzione agricola mondiale ha potuto mitigare il
+rapido e gigantesco aumento della popolazione di metà ’900 (Ciuffoletti, 2014); ma, al
+tempo stesso, ha portato a problemi di tipo ambientale e sanitario: patologie dovute
+all’esposizione dell’uomo ad antiparassitari, alla riduzione della biodiversità degli ecosistemi, all’inquinamento di aria, suolo e acqua, alla desertificazione e desertizzazione.
+Inoltre le coltivazioni intensive monovarietali hanno facilitato la diffusione di patogeni,
+provocando gravi danni di tipo economico agli agricoltori.
+In risposta alle problematiche descritte, durante gli anni ’70 sono nati dei movimenti
+di agricoltori che, sulla base di una serie di iniziative precedenti a partire dagli anni
+’20 del secolo scorso, cercavano di coltivare in modo naturale eliminando fitofarmaci e
+concimi di sintesi. Da questi movimenti inizia a prendere forma l’agricoltura biologica
+che, ad oggi, costituisce un’importante realtà dell’agricoltura mondiale e italiana. Si
+stima infatti che il 14,5% della SAU Nazionale sia coltivata a biologico (MiPAAF, 2017),
+in crescita.
+Secondo il Regolamento CE 834/2007 relativo alla produzione biologica e all’etichettatura dei prodotti biologici (Consiglio del 28 giugno 2007): La produzione biologica  
+un sistema globale di gestione dell’azienda agricola e di produzione agroalimentare basato sull’interazione tra le migliori pratiche ambientali, un alto livello di biodiversità, la
+salvaguardia delle risorse naturali, l’applicazione di criteri rigorosi in materia di benessere degli animali e una produzione confacente alle preferenze di taluni consumatori per
+prodotti ottenuti con sostanze e procedimenti naturali. Il metodo di produzione biologico esplica pertanto una duplice funzione sociale, provvedendo da un lato a un mercato
+
+17
+
+1. Il suolo in sistemi agricoli convenzionali e biologici
+specifico che risponde alla domanda di prodotti biologici dei consumatori e, dall’altro,
+fornendo beni pubblici che contribuiscono alla tutela dell’ambiente, al benessere degli
+animali e allo sviluppo rurale.
+Gli obiettivi che si prefigge di raggiungere l’agricoltura biologica sono:
+ migliorare la biodiversità e la stabilità dell’agro-ecosistema;
+ evitare mezzi tecnici con impatto ambientale (locale e globale);
+ garantire una buona qualità del prodotto.
+Per raggiungere tali obiettivi, le aziende che aderiscono a questa forma di agricoltura
+si impegnano a:
+ escludere prodotti di sintesi;
+ utilizzare tecniche agronomiche idonee, piante resistenti e insetti predatori contro
+i parassiti (lotta biologica);
+ utilizzare tecniche di lavorazione non distruttive;
+ effettuare rotazioni colturali e sovesci;
+ utilizzare fertilizzanti naturali;
+ scegliere varietà, sementi e materiale vivaistico idonei a alla zona di coltivazione
+(intesa come insieme delle caratteristiche del terreno e del clima di una certa area)
+e ottimali per una determinata specie;
+ raccogliere i prodotti al momento ottimale di maturazione;
+ certificare sia il processo di produzione a garanzia del rispetto delle norme legislative che lo codificano che ogni singolo intervento lungo le differenti filiere
+produttive;
+ impiegare le tecniche e gli additivi di sola origine naturale per la preparazione e
+trasformazione degli alimenti.
+
+18
+
+1.3. Progetto FertilCrop
+Si suppone che l’applicazione di questi principi consenta il mantenimento della fertilità
+dei suoli: l’eliminazione dei pesticidi comporterebbe una miglior salute della microfauna
+e microflora tellurica, mentre l’impiego di sovesci e concimazioni organiche porterebbe
+ad un aumento della sostanza organica nel terreno.
+La conservazione di sostanza organica   un punto chiave dei sistemi agricoli biologici,
+soprattutto nei sistemi agricoli localizzati in ambienti Mediterranei in cui le precipitazioni
+incostanti e le alte temperature sono favorevoli alla sua mineralizzazione (Montemurro
+et al., 2008).
+Mentre la produzione e l’impatto ambientale dell’agricoltura biologica sono stati ampiamente studiati, l’impatto sulle proprietà del suolo non lo   stato altrettanto. Inoltre
+le conclusioni a cui arrivano i pochi studi effettuati (quasi tutti a breve termine, ossia
+dalla durata inferiore a 20 anni) danno risultati contrastanti (Williams et al., 2017).
+Siegrist et al. (1998) affermano che la stabilità degli aggregati dei suoli in conduzione
+biologica sia maggiore rispetto a quelli condotti Convenzionalmente, anche se i benefici
+dati rispetto all’agricoltura convenzionale non sono sufficienti a ridurre l’erosione dovuta
+ad una pioggia molto intensa.
+Williams et al. (2017) sostengono che l’agricoltura biologica migliora le proprietà fisiche
+relative alla stabilità degli aggregati, alla compattazione del suolo e al drenaggio.
+Migliorini, Moschini et al. (2014), in un lavoro sul progetto MoLTE 1 , hanno riscontrato, a fronte di una paragonabile produzione tra i due metodi di conduzione, un minor surplus di azoto ed una miglior conservazione di carbonio e azoto a lento rilascio
+(organico) in favore della conduzione biologica.
+
+1.3. Progetto FertilCrop
+FertilCrop (Fertility Building Management Measures in Organic Cropping Systems 2015)
+  un progetto europeo che prevede la collaborazione di venti dipartimenti e istituti di
+ricerca, tra cui il Dipartimento delle Scienze delle Produzioni Agroalimentari e dell’Am1 Montepaldi
+
+Long Term Experiment: l’esperimento a lungo termine attivo dal 1991 in cui   coinvolto
+anche questo studio (paragrafo 2.1)
+
+19
+
+1. Il suolo in sistemi agricoli convenzionali e biologici
+biente (DISPAA) dell’Università degli Studi di Firenze già impegnata nell’esperimento
+di lungo termine MoLTE.
+Lo scopo principale del progetto   quello di sviluppare delle tecniche di gestione sostenibili ed efficienti per incrementare la produttività nei sistemi agricoli biologici e si pone
+i seguenti obiettivi:
+1. studio dell’interazione spazio-temporale tra infestanti, sovesci e colture;
+2. valutazione del ruolo della struttura e della porosità degli orizzonti del suolo nella
+crescita delle colture e delle radici nell’assorbimento e perdita di nutrienti e negli
+scambi gassosi;
+3. identificazione, analisi e miglioramento della comprensione dell’interazione piantamicrorganismi;
+4. quantificazione e riesame delle variazioni nelle riserve di C e N e nella dinamica dei
+flussi di tali elementi;
+5. calibrazione di modelli dinamici di flusso di C e N e di crescita delle piante in
+relazione alle pratiche che incrementano la fertilità;
+6. parametrizzazione di un modello di pianificazione strategica delle rotazioni colturali
+in relazione alla gestione della fertilità del suolo;
+7. sviluppo, in collaborazione con gli agricoltori, di strumenti e strategie per il riconoscimento visivo della fertilità dei suoli.
+Il presente lavoro si inserisce nell’ambito di questo progetto con l’intento di contribuire
+al raggiungimento dell’obiettivo 2, studiando l’impatto di lavorazioni a diversa intensità
+per mezzo di indicatori di qualità della struttura fisica del suolo.
+
+1.4. Scopo dello studio
+Lo scopo di questo lavoro   cercare la risposta ai seguenti due quesiti:
+
+20
+
+1.4. Scopo dello studio
+ dopo 25 anni di conduzione biologica tipica di ambienti Mediterranei, sono cambiate le caratteristiche fisico-strutturali del terreno?
+ tre diverse lavorazioni primarie quali aratura, rippatura e frangizollatura influenzano i parametri fisici del suolo?
+Per rispondere a queste due domande sono stati scelti degli indicatori di fertilità
+del suolo di natura fisica, quali la densità apparente, la stabilità degli aggregati e la
+distribuzione dei pori.
+
+21
+
+2. Materiali e metodi
+2.1. Sito sperimentale
+L’esperimento oggetto di questa tesi fa parte del progetto MoLTE (Montepaldi Long
+Term Experiment, DISPAA, 2016) che   attivo dal 1991 (Gaifami e Pacini, 2017; Migliorini, Moschini et al., 2014; Bedini et al., 2013; Vazzana, Raso e Migliorini, 2008;
+Migliorini e Vazzana, 2007; Vereijken, 1999; Raso e Vazzana, 1999; Vazzana, Raso e
+Pieri, 1997; Vereijken, 1997; Vereijken et al., 1994) nell’azienda agricola dell’Università
+di Firenze (località Montepaldi, San Casciano Val di Pesa) ed interessa una superficie
+leggermente declive di circa 15 ha a 90 m s.l.m.
+Il clima   sub-appenninico con precipitazioni totali di circa 800 mm annui con massimo
+in autunno e primavera e minimo nel periodo tra giugno-agosto. La temperatura media
+annuale   di 14,1 ◦C con la massima che   superare i 30 ◦C in estate e la minima nel
+mese di gennaio che   scendere sotto gli 0 ◦C. Dal punto di vista pedologico l’Azienda
+  caratterizzata da terreni evoluti su sedimenti pliocenici di tipo conglomeratico misto a
+lenti sabbiose e argillose (aree declivi) e da sedimenti del fiume Pesa risalenti all’Olocene
+(aree pianeggianti) con caratteristiche tessiturali da essere definite tra i medio impasto
+limo-argillosi e gli argillosi con presenza variabile di scheletro di piccole e medie dimensioni (triangolo tessiturale in Fig. 1.1, dove B e C indicano rispettivamente i terreni
+biologici e convenzionali, a, b e c indicano le lavorazioni (Arato, Rippato, Frangizollato),
+cn, dx e sx servono ad indicare la posizione).
+Il sito sperimentale   costituito da due agroecosistemi, da qui in avanti definiti come
+Conduzione:
+ conduzione biologica1 , OO (Old Organic);
+1 In
+
+realtà nell’azienda sono presenti due blocchi a conduzione biologica: il primo   quello citato, ovvero
+
+23
+
+2. Materiali e metodi
+ conduzione convenzionale, CO.
+
+Figura 2.1.: Veduta d’insieme dei campi sperimentali
+
+I due agroecosistemi sono suddivisi in   appezzamenti rettangolari (1,3 ha ciascuno),
+identificati da sigle quali OO1, OO2, OO3, OO4 per il biologico vecchio e CO9, CO10
+per il convenzionale (Fig. 2.3).
+Nell’anno 2015-2016, sono stati campionati gli appezzamenti OO1, OO3, CO9, CO10,
+mentre nell’anno 2016-2017 e gli appezzamenti OO2, OO4, CO9, CO10
+I due agroecosistemi sono circondati da infrastrutture ecologiche quali siepi naturali
+e/o artificiali e/o strisce di essenze erbacee spontanee. In particolare sono presenti due
+siepi: una naturale che separa il biologico vecchio da quello nuovo, costeggiata da entrambi i lati da due strisce inerbite di 2 metri; l’altra artificiale, che separa gli appezzamenti
+il ”biologico vecchio”, il secondo, non esaminato nel presente lavoro,   denominato ”biologico nuovo”
+
+24
+
+2.2. Campionamento
+a conduzione biologica dagli altri campi aziendali ed   formata da specie autoctone.
+Inoltre, una striscia inerbita separa il sistema biologico nuovo da quello convenzionale.
+Dal 2001, sono state adottate le seguente rotazioni:
+ per la conduzione biologica
+1. sovescio e coltura da rinnovo,
+2. cereale e leguminosa,
+3. leguminosa,
+4. cereale;
+
+ per la conduzione convenzionale
+1. coltura da rinnovo,
+2. cereale.
+
+Nell’anno precedente ai campionamenti effettuati per questo studio, (2015),   stato
+coltivato l’orzo negli appezzamenti OO2 e CO9 e il girasole negli appezzamenti OO4 e
+CO10.
+In ogni appezzamento (oltre ad una ulteriore frangizollatura comune per tutti in presemina) sono state messe a confronto le lavorazioni primarie (Lavorazione): aratura,
+rippatura, frangizollatura.
+Ogni lavorazione   stata replicata tre volte per appezzamento che diventa cosı̀ suddiviso
+in 9 parcelle.
+L’esperimento MoLTE si propone di studiare il comportamento di un sistema agricolo
+biologico in area Mediterranea, questo comporta un ridotto apporto di concimi organici
+di origine animale (stockless farming system, Migliorini, Moschini et al., 2014).
+
+2.2. Campionamento
+All’interno di ogni parcella sono stati individuati tre punti (Fig. 2.3): m (medio), il
+centro dato dall’incrocio delle diagonali di ogni parcella; a (alto) e b (basso), distanti
+4 m dal medio lungo l’asse maggiore della parcella.
+In totale sono stati raccolti 108 campioni di terreno, sia nell’anno 2015 che nell’anno
+2016.
+
+25
+
+2. Materiali e metodi
+Il campionamento   stato effettuato
+con due modalità:
+ estraendo un volume di suolo
+mediante un cilindro non deformabile di volume noto (Fig.
+2.2);
+ prelevando un campione omogeneo di terra tramite l’ausilio di uno strumento manuale
+(vanga).
+Il prelievo tramite cilindro   stato
+utilizzato per l’analisi con il metodo
+Core (paragrafo 2.3.1). Il cilindro  
+stato inserito nel suolo per tutta la
+sua lunghezza e quindi estratto facendo attenzione che il materiale al suo
+
+Figura 2.2.: Cilindro in ottone utilizzato per prelevare i campioni da destinare all’analisi di densità interno non fuoriuscisse in modo da
+apparente col metodo Core.
+formare due superfici piatte sulle basi
+
+del cilindro.
+Il campione prelevato con il secondo metodo, verrà successivamente
+suddiviso in aliquote utilizzate per gli altri metodi di misura.
+Entrambi i campioni sono stati conservati in dei sacchi di plastica rinforzata (per
+evitare la perdita di materiale).
+
+26
+
+(b) convenzionale
+
+Figura 2.3.: Appezzamenti oggetto di studio. OO seguito da un numero che indica l’appezzamento; la lettera maiuscola
+indica la lavorazione A(aratura), B(rippatura), C(frangizollatura); il numero ( 1, 2, 3) indica la riga; la lettera minuscola
+indica la replica all’interno del plot ( a alto, m medio, b basso). Il fiume Pesa si trova sul margine inferiore dello schema
+e la collina su quello superiore
+
+(a) biologico
+
+2.2. Campionamento
+
+27
+
+2. Materiali e metodi
+
+2.3. Misura della densità apparente
+La densità apparente del suolo   stata misurata sia con il metodo Core (utilizzando
+grandi volumi) che con il metodo Clod (utilizzando piccoli aggregati) (Klute, 1986).
+
+2.3.1. Metodo Core
+Il campione prelevato tramite il cilindro in figura 2.2, una volta portato in laboratorio,
+  stato passato a umido attraverso un vaglio con fori circolari a 2 mm di diametro. Il
+volume dello scheletro rimasto nel vaglio   stato misurato successivamente per spinta
+idrostatica. Il suolo vagliato   stato essiccato in stufa a 105 ◦C fino a peso costante, e
+successivamente pesato (Ugolini e Certini, 2010).
+
+Figura 2.4.: Metodo Core: il terreno dopo essicazione in stufa
+
+Con i dati ottenuti,   stato ricavato il valore della densità apparente (ρCoreApp ) tramite
+la seguente formula:
+ρCoreApp =
+
+28
+
+Psecco
+Vcilindro − Vscheletro
+
+(2.1)
+
+2.3. Misura della densità apparente
+Dove:
+Vcilindro
+
+= volume del cilindro di ottone (854,1 cm3 )
+
+Vscheletro
+
+= volume dello scheletro (>2 mm) misurato per spinta idrostatica (cm3 )
+
+Psecco
+
+= peso del terreno vagliato (<2 mm) ed essiccato a 105° (kg)
+
+2.3.2. Metodo Clod
+A differenza del metodo Core, questa misura viene effettuata su aggregati di piccole
+dimensioni (3-4 cm di diametro) suddivisi dal campione di suolo prelevato. Il metodo
+Clod viene anche detto metodo per spinta idrostatica (Monnier, Stengel e Fies, 1973). La
+procedura consiste mantenere a bagno nel petrolio per una notte gli aggregati di terreno
+(Fig. 2.5) cercando di ridurre al minimo le manipolazioni per mantenere la struttura
+dell’aggregato stesso.
+
+Figura 2.5.: Metodo Clod: aggregati immersi in petrolio per la misura della densità apparente
+
+29
+
+2. Materiali e metodi
+Successivamente gli aggregati (completamente imbevuti di petrolio) vengono asciugati con carta fino a ”brillantezza”, in modo che solo una pellicola di liquido avvolga il
+campione. Per misurare la spinta idrostatica   stato posto sul piatto di una bilancia
+(sensibilità ±10−3 g), un contenitore riempito di petrolio nel quale era immersa una navicella di rete forata, mantenuta sospesa da un supporto metallico. Dopo aver misurato
+la tara,   stato posto il campione entro la navicella (Fig. 2.6) e quindi   stato misurato
+il peso del volume di petrolio spostato (principio di Archimede) questo volume   stato
+calcolato con la seguente formula:
+Vtotale =
+Dove:
+Vtotale
+
+Stotale
+D petrolio
+
+(2.2)
+
+= volume dell’aggregato comprendente il volume del solido e il volume
+dei vuoti (cm3 )
+
+Stotale
+
+= spinta idrostatica dell’aggregato imbevuto di petrolio (g)
+
+D petrolio = densità del petrolio utilizzato per l’analisi (0,761 g  3 )
+Successivamente il campione   stato essiccato per una notte a 150 ◦C quindi   stato
+pesato2 . Il peso misurato   quello della sola fase solida.
+La densità reale   si ottiene da:
+ρClodApp =
+Dove:
+ρClodApp
+
+2 Il
+
+P150
+Vtotale
+
+(2.3)
+
+= valore della densità apparente dell’aggregato misurato (g  3 )
+
+P150
+
+= peso dell’aggregato essiccato a 150 ◦C (g)
+
+Vtotale
+
+= volume calcolato con la formula 2.2 (cm3 )
+
+raggiungimento di questa temperatura consente di allontanare l’acqua di idratazione dei cationi di
+scambio bivalenti (Ca, Mg) degli interstrati dei minerali a reticolo espandibile (Monnier, Stengel e
+Fies, 1973)
+
+30
+
+2.3. Misura della densità apparente
+
+Figura 2.6.: Metodo Clod: disposizione della bilancia per la misura della spinta idrostatica
+
+31
+
+2. Materiali e metodi
+
+2.4. Dinamica della distribuzione della dimensione degli
+aggregati
+La dinamica di disgregazione degli aggregati di suolo   stata indagata per mezzo dello
+strumento Mastersizer 2000 (User Manual 2007). Il Mastersizer 2000   mostrato in Fig.
+2.7 nella cui didascalia vengono descritti i dettagli.
+
+Figura 2.7.: Schema dello strumento Mastersizer 2000, immagine tratta dal manuale utente.
+1) un tavolo ottico, che colleziona i dati i quali verranno usati per calcolare la dimensione delle
+particelle del campione; 2) una unità di dispersione del campione, che ha lo scopo di disperdere il
+campione in acqua e condurlo al tavolo ottico tramite una pompa, per effettuare la misura laser;
+3) un elaboratore su cui   installato il software apposito che analizza i dati grezzi per determinare
+la dimensione delle particelle.
+
+Per rompere totalmente gli aggregati, viene utilizzato un emettitore di ultrasuoni
+presente nel Mastersizer 2000.
+La presenza di una pompa e di un agitatore sono necessari per consentire il ricircolo
+della sospensione di suolo e acqua e la corretta lettura della sua torbidità. Nel nostro caso
+l’applicazione dell’energia cinetica al campione dovuta al ricircolo dell’acqua,   tenuta in
+considerazione per la determinazione della resistenza alla disgregazione degli aggregati.
+Infatti viene effettuata una lettura a intervalli regolari (quindi analizzando la variazione
+
+32
+
+2.4. Dinamica della distribuzione della dimensione degli aggregati
+della distribuzione nel tempo) viene determinata la capacità degli aggregati di resistere
+alle sollecitazioni prima della sonicazione
+
+2.4.1. Protocollo di misura
+Per la preparazione del campione da misurare,   stata separata una aliquota di suolo
+dal campione tal quale la cui dimensione delle particelle   compresa tra 1 e 2 mm; successivamente   stata messa a seccare a 40 ◦C per una notte. Prima della misurazione
+effettiva del campione   stato necessario misurare un ”bianco” per acquisire l’intensità
+della radiazione luminosa all’ingresso del campo delle particelle, I0 (Eq. A.1, p. 60).
+Da questa aliquota, 300 mg sono stati immessi nell’unità di dispersione del campione
+opportunamente riempita di acqua.
+Lo strumento effettua una misurazione della distribuzione granulometrica ogni minuto,
+per 12 minuti. Dopo il 12° minuto, per completare la rottura degli aggregati, viene
+attivata la sonicazione.
+Per valutare il fenomeno dello slaking, ogni misurazione   stata ripetuta due volte: una sul campione secco e una sul campione precedentemente inumidito con acqua
+demineralizzata.
+
+2.4.2. Dinamica della distribuzione granulometrica
+A conclusione della misura abbiamo ottenuto, per le 36 combinazioni dei fattori dell’esperimento, 24+24 distribuzioni granulometriche:
+ 24 per ogni campione secco di cui:
+  12 distribuzioni dal minuto 1 al minuto 12 senza sonicatura;
+  12 distribuzioni dal minuto 13 al minuto 24 con la sonicatura attiva;
+ 24 per ogni campione umido di cui
+  12 distribuzioni dal tempo 1 al tempo 12 senza sonicatura;
+  12 distribuzioni dal minuto 13 al minuto 24 con la sonicatura attiva.
+In figura 2.8   rappresentato un esempio di distribuzione granulometrica fornita dallo
+strumento.
+
+33
+
+2. Materiali e metodi
+
+Figura 2.8.: Un esempio di distribuzione granulometrica. Sull’asse delle ascisse, in scala logaritmica, sono presenti i valori delle classi di diametri delle varie particelle misurate dallo strumento
+in µm; sull’asse delle ordinate sono presenti i relativi valori in percentuale sul volume totale.
+
+34
+
+2.5. Porosimetria per intrusione di mercurio
+
+2.5. Porosimetria per intrusione di mercurio
+Le misure della distribuzione dei pori sono state realizzate rispettivamente: con un
+porosimetro Carlo Erba serie 2000 per i macropori e un porosimetro PASCAL 140 per
+i micropori, entrambi collegati ad un terminale DOS per la raccolta e per una prima
+elaborazione dei dati (D’Acqui, 1988).
+
+Figura 2.9.: Apparecchi per la misura della porosità degli aggregati: a sinistra il porosimetro
+PASCAL 140 utilizzato per la misura dei micropori; a destra il porosimetro Carlo Erba series
+2000 per la misura dei macropori.
+
+La misura viene effettuata per i pori nell’intervallo di diametro compreso tra circa
+0,005 µm a circa 2000 µm.
+Gli aggregati di circa un grammo vengono introdotti in un contenitore di vetro speciale
+(dilatometro, Fig. B.1 a p. 67) esso ha nella base un contatto elettrico con terminazione
+interna ed esterna, superiormente   chiuso da un cono a smeriglio che si prolunga in un
+capillare calibrato di 6 mm di diametro e lungo 10 cm.
+Il dilatometro contenente il campione viene inserito nel circuito del vuoto dall’unità
+macropore; dopo la stabilizzazione del vuoto esso viene lentamente riempito (15 cm3 ) con
+
+35
+
+2. Materiali e metodi
+mercurio fino a raggiungere una pressione idrostatica, valutata dal baricentro del campione, di circa 35 torr. Questo livello consente di seguire, traguardandone otticamente
+il menisco, l’intrusione di mercurio nell’intervallo 0-1 atm, realizzato per progressiva immissione di aria esterna. La scelta di questo valore di pressione idrostatica del mercurio
+consente di seguire il livello del menisco in tutto l’intervallo di intrusione dei campioni.
+Questa scelta limita a circa 2000 µm il valore massimo del diametro dei pori misurabile.
+Per valutare i pori   piccoli si introduce il dilatometro,
+
+previo riem-
+
+pimento del capillare, nell’autoclave
+del Porosimetro PASCAL 140.
+
+Una
+
+pompa idraulica collegata ad un moltiplicatore di pressione realizza all’interno, tramite un
+olio dielettrico, una
+pressione fino a 2000 atm;
+incrementi di pressione possono essere
+regolati da un’unità
+di controllo; naturalmente     lenta Figura 2.10.: Un esempio di distribuzione della porosità. In figura sono
+l’intrusione miglio- rappresentate sia la curva cumulata della distribuzione dei pori, sia l’istogramma. Sull’asse delle ascisse   presente il diametro dei pori espresso in
+
+re   la distribuzione µm; sull’asse delle ordinate sono presenti i relativi valori in percentuale
+delle dimensioni dei sul volume totale.
+pori.
+
+La progres-
+
+siva penetrazione di
+
+36
+
+2.6. Elaborazione dei dati
+mercurio nel campione   acquisita tramite un sensore capacitivo. Il segnale elettrico che
+ne deriva viene convertito in volume di mercurio intruso. Il calcolo della distribuzione
+dei pori, mediante l’equazione di Washburn (eq. B.1, p. 65), viene effettuata dopo la
+sottrazione automatica punto per punto dei valori legati alla compressibilità di mercurio
+preventivamente calcolati in un ciclo di misura senza campioni. Alla fine del ciclo di
+intrusione, lo strumento torna automaticamente alla pressione di partenza.
+In figura 2.10   rappresentato un esempio di distribuzione della porosità.
+
+2.6. Elaborazione dei dati
+I dati sono stati analizzati mediante il linguaggio di programmazione ad oggetti R 3.4.0
+(R Core Team, 2017). L’esplorazione dei modelli statistici (Fox, 2002; Chambers e Hastie, 1992; Faraway, 2004)   stata fatta mediante confronto di modelli statistici marginali
+e un test F (p < 0,05). Tutti i modelli sono stati validati attraverso l’analisi esplorativa
+dei residui, i cui risultati sono esposti in appendice D, e che indicano assenza di violazioni
+delle assunzioni di normalità. (Stefanini, 2016). Per il plot dei grafici   stato utilizzata
+la libreria ’ggplot2’ (Wickham, 2009).
+
+2.6.1. Densità
+Per l’adattamento dei modelli, sono state valutate eventuali interazioni tra i trattamenti
+(conduzione e lavorazione) mediante il confronto di modelli marginali (con interazioni e
+senza interazioni). Dal confronto non   stato rilevata nessuna differenza statisticamente
+significativa (p < 0.05). Dunque si   affermare che non ci siano interazioni tra i
+trattamenti. I modelli utilizzati per l’analisi sono quindi di natura additiva (modello 3.1
+a p. 42 e modello 3.2 a p. 43).
+Una volta ottenuti i modelli definitivi, dopo l’esplorazione visuale della normalità dei
+residui,   stata effettuata un’analisi della varianza (ANOVA).
+Infine, data la natura additiva dei modelli statistici, ai gruppi oggetto dello studio,  
+stato applicato il test di Tukey (1949) utilizzando le librerie ’agricolae’ (De Mendiburu,
+2016) e ’multcomp’ (Hothorn, Bretz e Westfall, 2008).
+
+37
+
+2. Materiali e metodi
+
+2.6.2. Dinamica della distribuzione degli aggregati e porosimetria
+I dati provenienti da queste due analisi sono delle distribuzioni, ovvero: rappresentazioni
+del modo in cui la variabile quantitativa, raggruppata in classi, si distribuisce nelle sue
+varie modalità. Nel caso della distribuzione degli aggregati e dei pori, la rappresentazione
+riguarda la percentuale, espressa sul volume totale, di particelle o pori appartenenti ad
+una certa classe dimensionale.
+Dati di questo tipo vengono definiti dati composizionali e richiedono tecniche statistiche appropriate (appendice C). L’elaborazione dei dati   stata quindi effettuata mediante
+la libreria ’composition’ (Gerald et al., 2014) del linguaggio di programmazione ad oggetti R 3.4.0 (R Core Team, 2017), la quale contiene funzioni utili all’analisi dei dati
+composizionali.
+Le classi delle distribuzioni fornite dagli strumenti, sono state suddivise in tre classi principali (rispettivamente: macroaggregati, mesoaggregati e microaggregati per gli
+aggregati e residui, immagazzinamento e trasmissione per i pori), definite in base alla
+classificazione della letteratura (Paul, 2014; Lal e Shukla, 2004; J. Tisdall e Oades, 1982;
+Greenland e Pereira, 1977).
+Una volta applicate le dovute trasformazioni ai dati (appendice C)   stato adattato un
+modello composizionale (modello 3.3 a p. 46 e modello 3.4 a p. 50), dopo l’esplorazione
+visuale della normalità dei residui,   stata verificata la significatività dei trattamenti
+mediante l’ANOVA.
+
+38
+
+3. Risultati
+3.1. Densità apparente
+3.1.1. Metodo Core
+La tabella 3.1 riassume i dati ottenuti calcolando la densità apparente (formula 2.1, p.
+28). In totale, nell’anno 2016, sono stati analizzati 35 campioni, su un totale previsto
+di 36 campioni appartenenti alla serie m (il numero minore   da attribuirsi a campioni
+scartati a causa di errori di misura); oltre ai campioni misurati dell’anno 2016, sono stati
+aggiunti i dati dell’anno 2015 provenienti da un precedente lavoro di tesi. La figura 3.1
+riporta gli stessi dati in forma grafica. I valori, la cui media generale   pari a 1,37 g  3 ,
+sono simili a quelli che   frequentemente si riscontrano nel suolo.
+I risultati del Tukey test, a differenza della tabella 3.4, non sono stati inseriti in quanto
+non significativi.
+
+39
+
+3. Risultati
+
+Tabella 3.1.: Valori medi della densità apparente (in g  3 ), suddivisi per Anno, Conduzione
+e Lavorazione
+
+Anno
+2015
+
+2016
+
+40
+
+Conduzione
+convenzionale
+
+Lavorazione
+Arato
+Frangizollato
+Rippato
+
+Media
+1.35
+1.34
+1.38
+
+Dev. std
+0.14
+0.07
+0.10
+
+n
+5
+5
+5
+
+Organico
+
+Arato
+Frangizollato
+Rippato
+
+1.38
+1.42
+1.43
+
+0.07
+0.13
+0.04
+
+5
+5
+5
+
+convenzionale
+
+Arato
+Frangizollato
+Rippato
+
+1.38
+1.35
+1.26
+
+0.16
+0.15
+0.09
+
+6
+6
+5
+
+Organico
+
+Arato
+Frangizollato
+Rippato
+
+1.37
+1.35
+1.40
+
+0.06
+0.07
+0.15
+
+6
+6
+6
+
+3.1. Densità apparente
+
+2015
+Convenzionale
+
+2015
+Biologico
+
+2016
+Convenzionale
+
+2016
+Biologico
+
+
+Densità apparente g  3
+
+1.6
+
+
+
+
+
+
+
+1.4
+
+
+
+
+
+1.2
+
+
+
+
+
+Arato
+
+Frangizollato
+
+Rippato
+
+Figura 3.1.: Boxplot della densità apparente misurata con il metodo Core relativi alla conduzione
+( convenzionale e biologico) e per le varie lavorazioni ( Arato, Frangizollato e Rippato). La riga
+nera indica la media generale
+
+41
+
+3. Risultati
+Il modello statistico adattato   il seguente:
+y ∼ β 0 + β 1 x1 + β 2 x2 + β 3 x3 + e
+
+(3.1)
+
+Dove:
+y
+= densità apparente
+β0
+
+= media generale (intercetta del modello)
+
+β1
+
+= coefficiente della variabile anno, due livelli: 2015, 2016 ;
+
+β2
+
+= coefficiente della variabile conduzione, due livelli: convenzionale,
+biologico
+
+β3
+
+= coefficiente della variabile lavorazione, tre livelli: Arato, Rippato,
+Frangizollato
+
+e
+
+= residui o errore
+
+La tabella 3.2 riporta l’ANOVA del modello statistico e indica la non significatività
+(p < 0.05) dei trattamenti presi in esame.
+Tabella 3.2.: Analisi della varianza relativa ai valori di densità rilevati col metodo Core
+
+Anno
+Conduzione
+Lavorazione
+Totale
+
+Df
+1
+1
+2
+60
+
+Sum Sq
+0.017
+0.039
+0.001
+0.709
+
+Mean Sq
+0.017
+0.039
+0.000
+0.012
+
+F value
+1.414
+3.294
+0.028
+
+Pr(>F)
+0.239
+0.075
+0.973
+
+3.1.2. Metodo Clod
+Il metodo Clod ha permesso, grazie alla sua speditività, di analizzare i 108 campioni
+raccolti, ogni misura   stata replicata tre volte. La media delle tre misure   stata usata
+per l’analisi dei dati. I valori della densità apparente calcolati mediante l’equazione 2.3
+(p. 30) sono mediamente   elevati (media: (1.89g  3 ) rispetto a quelli ottenuti
+utilizzando il metodo Core (1.37g  3 ).
+
+42
+
+3.1. Densità apparente
+Il modello statistico adattato   il seguente:
+y ∼ β 0 + β 1 x1 + β 2 x2 + e
+
+(3.2)
+
+Dove:
+y
+= densità apparente
+β0
+
+= media generale (intercetta del modello)
+
+β1
+
+= coefficiente della variabile conduzione, due livelli: convenzionale,
+biologico
+
+β2
+
+= coefficiente della variabile lavorazione, tre livelli: Arato, Rippato,
+Frangizollato
+
+e
+
+= residui o errore
+
+La tabella 3.4 riassume i dati ottenuti; il boxplot in figura 3.2 riporta gli stessi dati in
+forma grafica.
+Tabella 3.3.: Analisi della varianza relativa ai valori di densità misurati con il metodo Clod
+
+Conduzione
+Lavorazione
+Totale
+
+Df
+1
+2
+104
+
+Sum Sq
+0.026
+0.047
+0.423
+
+Mean Sq
+0.026
+0.024
+0.004
+
+F value
+6.310
+5.829
+
+Pr(>F)
+0.014
+0.004
+
+43
+
+3. Risultati
+
+Convenzionale
+
+Biologico
+
+
+2.1
+
+Densità apparente g  3
+
+
+
+
+
+
+2.0
+
+
+
+
+
+1.9
+
+
+
+1.8
+
+1.7
+Arato
+
+Frangizollato
+
+Rippato
+
+Figura 3.2.: Boxplot dei valori di densità apparente dei campioni misurati col metodo di analisi Clod; gli appezzamenti condotti convenzionalmente (a sinistra) hanno valori   alti degli
+appezzamenti condotti a biologico (a destra)
+
+44
+
+3.1. Densità apparente
+L’analisi della varianza, (Tab. 3.3) indica che entrambi i fattori sono statisticamente significativi (p < 0.05) Avendo verificato l’assenza di interazioni tra Conduzione e
+Lavorazione (vedi p. 43)   quindi stato effettuato un test di Tukey (p < 0.05).
+Tabella 3.4.: Valori medi della densità apparente (in g  3 ), relativi al tipo di conduzione e
+lavorazione, metodo Clod
+
+Conduzione
+convenzionale
+
+Organico
+
+Lavorazione
+Arato
+Frangizollato
+Rippato
+
+Media
+1.93
+1.89
+1.90
+
+Dev. std
+0.06
+0.05
+0.06
+
+n
+18
+18
+18
+
+Tukey
+b
+ab
+ab
+
+Rippato
+Arato
+Frangizollato
+Rippato
+
+1.90
+1.90
+1.84
+1.87
+
+0.06
+0.07
+0.06
+0.07
+
+18
+18
+18
+18
+
+ab
+ab
+a
+ab
+
+Il test di Tukey in tabella 3.4, mostra come i campioni provenienti dai terreni convenzionali arati, siano significativamente (p < 0.05)   densi rispetto agli altri, mentre
+i campioni provenienti dai terreni biologici frangizollato abbiano una densità significativamente minore.
+
+45
+
+3. Risultati
+
+3.2. Dinamica della distribuzione della dimensione degli
+aggregati
+Per l’adattamento dei modelli relativi alla dinamica della distribuzione   stato escluso il
+fattore lavorazione in quanto non significativo (p < 0.05).
+Il modello composizionale adattato per i dati linearizzati   il seguente:
+Y ∼ β 0 ⊕ β 1  x1 ⊕ β 2  x2 ⊕ β 3  x22 ⊕ e
+Dove:
+Y
+= Composizione (tre componenti:
+
+(3.3)
+
+macroaggregati, mesoaggregati,
+
+microaggregati)
+β0
+
+= media generale (intercetta del modello)
+
+β1
+
+= coefficiente della variabile conduzione, due livelli: convenzionale,
+biologico
+
+β2
+
+= coefficiente della variabile tempo
+
+β3
+
+= coefficiente della variabile tempo elevata al quadrato
+
+e
+
+= residui o errore
+
+La notazione ⊕ e    tipica delle operazioni algebriche negli spazi composizionali
+(appendice C).
+Nel modello composizionale 3.3   presente la variabile continua tempo espressa al
+quadrato la quale, come   possibile vedere dalle tabella dell’analisi della varianza (Tab.
+3.7 e 3.8),   significativa.
+La misura   stata effettuata sia su aggregati essiccati all’aria che su aggregati inumiditi,
+per studiare il fenomeno dello slaking. Di conseguenza sono stati adattati due modelli:
+uno per i campioni inumiditi e uno per i campioni secchi.
+La tabella dell’analisi della varianza evidenzia che gli aggregati provenienti da appezzamenti condotti convenzionalmente, successivamente all’immersione, si disgregano
+generando frammenti   grandi di quanto non facciano gli aggregati provenienti da
+appezzamenti a conduzione biologica; questo avviene anche con gli aggregati essiccati.
+
+46
+
+3.2. Dinamica della distribuzione della dimensione degli aggregati
+Questo si   ricavare dall’intercetta del modello; per quanto riguarda i valori di
+pendenza e di curvatura, questi sono invarianti rispetto alla conduzione.
+Questo comportamento mostrerebbe che le pratiche agricole utilizzate nella conduzione
+di tipo biologico porterebbero a formare aggregati meno stabili con cementi meno efficaci
+rispetto a quelli ottenuti con la conduzione convenzionale.
+Tabella 3.5.: Distribuzione dei frammenti di particelle degli aggregati inumiditi in seguito a: i)
+inizio misura (immersione): ii) inizio sonicatura iii) fine ciclo
+
+Conduzione
+convenzionale
+
+Fase
+inizio misura
+inizio sonicatura
+fine misura
+
+Macro (%)
+24.5
+9.3
+5.2
+
+Meso (%)
+69.4
+63.6
+29.7
+
+Micro (%)
+6.0
+27.1
+65.1
+
+biologico
+
+inizio misura
+inizio sonicatura
+fine misura
+
+20.3
+7.3
+4.0
+
+72.9
+63.6
+28.7
+
+6.8
+29.1
+67.4
+
+Tabella 3.6.: Distribuzione dei frammenti di particelle degli aggregati essiccati in seguito a: i)
+inizio misura (immersione): ii) inizio sonicatura iii) fine ciclo
+
+Conduzione
+convenzionale
+
+Fase
+inizio misura
+inizio sonicatura
+fine misura
+
+Macro (%)
+47.6
+10.8
+5.0
+
+Meso (%)
+44.2
+54.9
+31.2
+
+Micro (%)
+8.1
+34.3
+63.9
+
+biologico
+
+inizio misura
+inizio sonicatura
+fine misura
+
+42.6
+8.8
+3.9
+
+47.9
+54.3
+29.8
+
+9.5
+36.8
+66.3
+
+47
+
+3. Risultati
+
+Tabella 3.7.: Analisi della varianza relativa ai dati composizionali per la stabilità degli aggregati
+inumiditi
+
+Intercetta
+Conduzione
+Tempo
+Tempo^2
+Totale
+
+Df
+1
+1
+1
+1
+836
+
+Pillai
+0.92
+0.06
+0.92
+0.19
+
+approx F
+4706.24
+25.02
+4525.72
+97.88
+
+num Df
+2
+2
+2
+2
+
+den Df
+835
+835
+835
+835
+
+Pr(>F)
+<10^-3
+<10^-3
+<10^-3
+<10^-3
+
+Tabella 3.8.: Analisi della varianza relativa ai dati composizionali per la stabilità degli aggregati
+essiccati
+
+Intercetta
+Conduzione
+Tempo
+Tempo^2
+Totale
+
+48
+
+Df
+1
+1
+1
+1
+858
+
+Pillai
+0.98
+0.10
+0.94
+0.19
+
+approx F
+18863.73
+49.27
+6718.41
+101.99
+
+num Df
+2
+2
+2
+2
+
+den Df
+857
+857
+857
+857
+
+Pr(>F)
+<10^-3
+<10^-3
+<10^-3
+<10^-3
+
+3.2. Dinamica della distribuzione della dimensione degli aggregati
+
+Dry.CO
+Dry.OO
+CO.Wet
+OO.Wet
+
+MICRO
+
+0.8
+
+0.2
+
+
+
+
+
+O
+
+O
+C
+
+C
+
+
+
+  
+
+
+
+ 
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+ 
+ 
+
+
+
+  
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+   
+
+ 
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+   
+ 
+
+
+
+
+   
+
+
+  
+ 
+
+
+
+
+
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+  
+  
+
+ 
+  
+
+
+
+  
+
+ 
+ 
+
+
+   
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+
+
+  
+
+
+
+ 
+
+
+
+ 
+
+
+
+   
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+  
+
+
+ 
+ 
+
+ 
+
+
+
+
+
+
+   
+
+
+  
+ 
+
+
+    
+
+  
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+ 
+
+
+
+
+
+ 
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+ 
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+ 
+
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+0.4
+
+0.6
+
+
+
+
+
+
+
+
+
+
+
+0.2
+
+
+
+
+
+
+
+
+o
+c
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+0.4
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ 
+
+
+
+
+
+  
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+  
+
+ 
+
+ 
+
+ 
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+ 
+
+  
+ 
+ 
+
+
+ 
+
+ 
+ 
+ 
+
+
+ 
+
+   
+ 
+ 
+
+
+   
+
+ 
+  
+
+
+
+
+  
+
+  
+
+
+
+
+
+
+  
+ 
+ 
+
+
+
+
+
+
+
+ 
+
+       
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+ 
+  
+
+
+
+    
+ 
+
+
+  
+   
+
+
+
+
+
+
+  
+
+
+   
+
+
+ 
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+0.4
+
+D
+
+D
+
+W
+
+W
+
+
+  
+     
+ 
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+   
+   
+  
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+ 
+      
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+  
+     
+
+
+   
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+0.8
+
+MACRO
+
+0.6
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+0.2
+
+ 
+
+
+
+o
+c
+
+
+0.6
+
+0.8
+
+MESO
+
+Figura 3.3.: Evoluzione della distribuzione granulometrica delle particelle liberatisi in seguito a:
+i) inizio misura (immersione, punti indicati dalle lettere minuscole c e o)
+ii) accensione sonicatore (lettere W e D)
+iii) fine ciclo.
+Gli apici del triangolo rappresentano particelle maggiori di 250 ( Macro), comprese tra 250 e 20
+( Meso) e inferiori a 20 µm ( Micro).
+I rombi rossi (appezzamenti biologici) e neri (appezzamenti convenzionali) indicano le tessiture
+apparenti determinate per densimetria (Ministero dell’agricoltura e delle foreste, Decreto ministeriale dell’11 maggio 1992), le quali si posizionano in corrispondenza del punto in cui vengono
+applicati gli ultrasuoni
+
+49
+
+3. Risultati
+
+3.3. Distribuzione dimensionale dei pori
+I dati ottenuti sono stati analizzati mediante tecniche di analisi composizionale.
+Il modello composizionale adattato per i dati linearizzati   il seguente:
+Y ∼ β 0 ⊕ β 1  x1 ⊕ β 2  x2 ⊕ e
+
+(3.4)
+
+Dove:
+Y
+= Composizione (tre componenti: pori residui, pori di trasmissione e
+pori di immagazzinamento)
+β0
+
+= media generale (intercetta del modello)
+
+β1
+
+= coefficiente della variabile conduzione, due livelli: convenzionale,
+biologico
+
+β2
+
+= coefficiente della variabile lavorazione, due livelli: arato, rippato,
+frangizollato
+
+e
+
+= residui o errore
+
+In Fig. 3.4 e in Tab. 3.9 sono visibili i valori medi della composizione per ogni
+combinazione di trattamenti.
+Tabella 3.9.: Distribuzione dei pori nelle tre classi dimensionali dei dati ottenuti dalla analisi
+con porosimetria a mercurio
+
+Conduzione
+
+Lavorazione
+Arato
+Rippato
+Frangizollato
+
+Residui
+(%)
+74
+61
+65
+
+Immagazzinamento
+(%)
+24
+34
+33
+
+Trasmissione
+(%)
+2
+6
+2
+
+convenzionale
+
+biologico
+
+Arato
+Rippato
+Frangizollato
+
+56
+56
+64
+
+41
+41
+32
+
+3
+3
+4
+
+La tabella dell’analisi della varianza, mostra come non sia possibile affermare delle
+differenze tra i dati. I punti all’interno del diagramma ternario si trovano in corrispon-
+
+50
+
+3.3. Distribuzione dimensionale dei pori
+Tabella 3.10.: Analisi della varianza relativa al modello composizionale dei dati ottenuti dalle
+analisi con porosimetria a mercurio
+
+Intercetta
+Conduzione
+Lavorazione
+Totale
+
+Df
+1
+1
+2
+8
+
+Pillai
+0.94
+0.14
+0.52
+
+approx F
+60.45
+0.58
+1.41
+
+num Df
+2
+2
+4
+
+den Df
+7
+7
+16
+
+Pr(>F)
+<10^-3
+0.585
+0.275
+
+denza dei pori residui (minori di 0.5 µm), indicando quindi una prevalenza di questi pori
+rispetto ai pori di trasmissione e immagazzinamento (terreno con scarso drenaggio).
+La mancanza di significatività   essere spiegata con il basso numero di campioni.
+Visto che le tecniche di statistica composizionale non considerano la somma totale
+delle composizioni ma i loro rapporti (appendice C),   stata tentata una analisi statistica univariata prendendo come variabile dipendente il valore della porosità totale del
+campione, normalizzato al suo peso.
+Tabella 3.11.: Analisi della varianza del modello adattato alla porosità totale
+
+Conduzione
+Lavorazione
+Totale
+
+Df
+1
+2
+12
+
+Sum Sq
+1562.183
+3129.812
+7906.885
+
+Mean Sq
+1562.183
+1564.906
+658.907
+
+F value
+2.371
+2.375
+
+Pr(>F)
+0.150
+0.135
+
+La tabella ANOVA (Tab. 3.11) non ci permette di affermare la significatività dei
+trattamenti, tuttavia come si   vedere dalla tabella 3.12, i dati tenderebbero a confermare il risultato dell’analisi della densità apparente misurata con il metodo Clod dal
+quale risultava una maggior porosità nei campioni di suolo provenienti da appezzamenti
+condotti a biologico.
+
+51
+
+3. Risultati
+
+Figura 3.4.: Diagramma ternario della distribuzione dei pori. Gli apici del triangolo rappresentano le classi dimensionali in cui i pori sono divisi in: inferiori di 0.5 (pori residui), comprese
+tra 0.5 e 50 (pori di immagazzinamento) e superiori di 50 µm (pori di trasmissione)
+
+Tabella 3.12.: Sintesi dei dati della porosità totale ricavati dalle analisi della porosimetria a
+mercurio
+
+52
+
+Conduzione
+convenzionale
+
+Lavorazione
+Arato
+Rippato
+Frangizollato
+
+Porosità totale
+159.91
+168.37
+186.13
+
+ST.DEV
+16.21
+20.92
+30.38
+
+n
+2
+3
+3
+
+Tukey
+a
+a
+a
+
+biologico
+
+Arato
+Rippato
+Frangizollato
+
+168.03
+192.20
+218.28
+
+9.62
+38.54
+7.29
+
+2
+4
+2
+
+a
+a
+a
+
+4. Discussione
+Densità apparente con metodi Core e Clod. Dai risultati della densità apparente  
+emerso che:
+ il metodo Core, non mostra differenze statisticamente significative, né per la conduzione né per la lavorazione;
+ con il metodo Clod sono state rilevate differenze statisticamente significative tra i
+trattamenti conduzione e lavorazione.
+Dal confrontro della tabella 3.1 con la tabella 3.4, il metodo Clod fornisce dei valori
+di densità apparente   elevati rispetto a quelli misurati utilizzando il metodo Core,
+questo   dovuto al fatto che nella misura Clod non sono considerate le fratture (A.
+Tisdall, 1951).
+I dati si allineano con ciò che hanno rilevato altri autori (Williams et al., 2017; Green
+et al., 2005; Ikemura et al., 2008; Vian et al., 2009), ovvero una densità apparente
+con valori mediamente   bassi nei terreni condotti ad agricoltura biologica rispetto
+ai terreni condotti ad agricoltura convenzionale e nei terreni lavorati superficialmente
+rispetto a quelli lavorati   in profondità.
+Tuttavia la tabella 3.4 mostra che, nonostante la rilevata significatività statistica, le
+differenze di densità sono dell’ordine della seconda cifra decimale. Questo ci porta ad
+affermare, in primo luogo, che il numero di campioni   idoneo agli obiettivi dello studio,
+in secondo luogo che la lavorazione e la conduzione non risultano significativi dal punto
+di vista tecnologico, ovvero non hanno una rilevanza pratica effettiva.
+Dinamica della distribuzione della dimensione degli aggregati. Dall’analisi della stabilità degli aggregati   emersa una maggiore stabilità degli aggregati convenzionali ri-
+
+53
+
+4. Discussione
+spetto agli aggregati biologici. Mentre tra le lavorazioni non risultano differenze statisticamente significative.
+Alla fine del trattamento disgregativo con ultrasuoni le composizioni dei frammenti
+risultanti convergono in un punto. Proiettando le tessiture dei terreni sul grafico della
+dinamica della distribuzione (Fig. 3.3) si   vedere come i punti si dispongano in corrispondenza del momento precedente all’accensione degli ultrasuoni, questo significa che
+i frammenti risultanti dal trattamento con ultrasuoni sono   piccoli di quelli risultanti
+dall’analisi della tessitura apparente per densimetria (Ministero dell’agricoltura e delle
+foreste, Decreto ministeriale dell’11 maggio 1992).
+I risultati vanno in controtendenza a ciò che hanno rilevato altri autori come Siegrist
+et al. (1998), Williams et al. (2017) e Green et al. (2005).
+Nell’appezzamento convenzionale, al contrario, sono state effettuate concimazioni con
+fertilizzanti di sintesi. Questo potrebbe aver portato ad un aumento delle radici superficiali con conseguente incremento della biomassa nei primi 20 cm di suolo.
+Secondo Mizuta, Taguchi e Sato (2015), la stabilità degli aggregati dipende esclusivamente dal contenuto di sostanza organica e non dal tipo di molecole organiche coinvolte.
+Di conseguenza nell’appezzamento biologico, nonostante la minore stabilità degli aggregati possono essere presenti cementi organici di maggiore qualità (quindi meno labili)
+rispetto a quelli presenti nell’appezzamento biologico.
+Secondo D’Acqui et al. (2017) la stabilità degli aggregati   fortemente influenzata dalla
+sostanza organica protetta dagli aggregati stessi. Sarebbe quindi interessante ripetere
+la misura di stabilità in seguito alla rimozione della sostanza organica superficiale, per
+comprendere se la conduzione influenzi questo tipo di sostanza organica.
+Distribuzione dimensionale dei pori. Per quanto riguarda la distribuzione dei pori
+non sono state riscontrate differenze significative tra i trattamenti. Dalla tabella 3.9
+si   notare una prevalenza di pori residui rispetto a quelli di trasmissione e immagazzinamento, si tratta quindi di terreni asfittici e con scarso drenaggio; tuttavia dalla
+stessa tabella si nota una tendenza da parte dei terreni condotti a biologico ad avere una
+maggior percentuale di pori utili al movimento dell’acqua rispetto ai terreni condotti a
+convenzionale.
+
+54
+
+Inoltre i dati mostrano come i campioni biologici tendano ad avere una maggior porosità rispetto ai campioni convenzionali, in linea con quanto riscontrato dall’analisi Clod
+e con quanto hanno trovato altri autori (Ikemura et al., 2008; Mendoza et al., 2011).
+La mancanza di coerenza tra le diverse analisi   essere spiegata dal disegno sperimentale stesso: lo scopo dello studio era infatti quello di valutare l’effetto su alcune
+caratteristiche fisiche del suolo dovute all’impiego di diverse pratiche agronomiche tipiche
+di ambienti Mediterranei, sistemi che, a causa della mancanza di allevamenti associati
+(Migliorini, Moschini et al., 2014), non hanno la possibilità di utilizzare concimi organici
+di origine animale in modo costante.
+L’importanza fondamentale dell’effetto dei concimi organici sul suolo   stata studiata
+e riscontrata da numerosi autori (Hati et al., 2006; Haynes e Naidu, 1998; Benbi et al.,
+1998), inoltre tutti gli studi effettuati su agroecosistemi biologici presi in considerazione
+nella bibliografia, hanno utilizzato pratiche di concimazioni organiche.
+In conclusione, i dati non ci permettono di affermare una differenza significativa, dal
+punto di vista pratico, tra le differenti lavorazioni del suolo sulle sue caratteristiche
+fisiche.
+Si   quindi affermare che le pratiche agricole Biologiche, senza una adeguata concimazione organica, non influiscano positivamente sullo stato della struttura del terreno.
+
+55
+
+5. Conclusioni
+Questo studio ha cercato di rispondere a due quesiti:
+ dopo 25 anni di conduzione biologica tipica di ambienti Mediterranei, sono cambiate le caratteristiche fisico-strutturali del terreno?
+ tre diverse lavorazioni primarie quali aratura, rippatura e frangizollatura influenzano i parametri fisici del suolo?
+Sono stati valutati tre parametri fisici quali possibili indicatori quali-quantitativi dello
+stato di aggregazione delle particelle di suolo. Lo studio   stato effettuato su campioni di
+terreno prelevati dall’azienda agricola dell’università di Firenze (località Montepaldi, San
+Casciano Val di Pesa) in cui, dal 1991,   attivo l’esperimento a lungo termine MoLTE.
+Il parametro densità apparente del suolo misurato con il metodo Core, nonostante la
+semplicità esecutiva, sembra inadeguato a cogliere differenze di qualsiasi genere (anno,
+lavorazione, conduzione).
+Il parametro densità apparente misurato con il metodo Clod mostra differenze significative, ma di una entità tale da non risultare tecnologicamente rilevanti.
+Dalle misure della distribuzione dinamica,   stata riscontrata una maggiore stabilità
+degli aggregati provenienti da appezzamenti convenzionali rispetto a quelli provenienti
+da appezzamenti biologici ; non sono state riscontrate differenze significative all’interno
+trattamenti di lavorazione.
+Al contrario la porosimetria, mostra una tendenza da parte dei suoli biologici ad essere
+  porosi e con pori mediamente   grandi dei campioni di suolo convenzionali.
+Una possibile spiegazione di tali risultati   essere fornita dalle caratteristiche stesse
+dell’agroecosistema, il quale   caratterizzato da terreni calcarei, clima tipicamente Mediterraneo e mancanza di concimazioni organiche. Questo ecosistema   infatti resiliente ai
+
+57
+
+5. Conclusioni
+cambiamenti imposti dalle pratiche colturali, rendendo i parametri fisici poco adeguati
+per la valutazione della fertilità del suolo.
+Una raccomandazione per ulteriori ricerche future potrebbe essere quella di realizzare
+uno studio simile in agroecosistemi diversi, al fine di riuscire ad avere un quadro  
+completo dell’effetto delle diverse pratiche agronomiche sulla struttura fisica del suolo
+nei vari ecosistemi agricoli.
+
+58
+
+A. Misurazione delle distribuzioni
+granulometriche ottenuta mediante
+Mastersizer 2000
+Lo strumento Mastersizer 2000 si basa sul fenomeno della diffusione ottica (scattering),
+ovvero un’ampia classe di fenomeni di interazione radiazione-materia in cui onde o particelle vengono deflesse ovvero cambiano traiettoria, a seconda della collisione con altre
+particelle o onde (dal punto di vista quantistico) in maniera disordinata e in buona
+maniera casuale (Wikipedia, 2017).
+Nel caso in cui le particelle abbiano dimensione maggiore della lunghezza d’onda della
+radiazione luminosa incidente, le equazioni che descrivono lo scattering (assumendo la
+perfetta sfericità delle particelle) hanno una soluzione matematicamente rigorosa, detta
+Soluzione di Mie.
+
+Figura A.1.: In figura   rappresentato il fenomeno dello scattering di Mie, immagine presa da
+LaVision (2017)
+
+59
+
+A. Misurazione delle distribuzioni granulometriche ottenuta mediante Mastersizer 2000
+Se la dimensione delle particelle e altri dettagli riguardanti la loro struttura sono noti,
+il modo in cui diffondono la luce   essere previsto accuratamente. Ogni dimensione
+della particella avrà il suo caratteristico ”pattern” (disegno) di diffusione che sarà diverso
+da quello di qualsiasi altra particella a diversa dimensione.
+Facendo il ragionamento inverso   quindi possibile calcolare la dimensione delle particelle in base al pattern di diffusione.
+
+Figura A.2.: In figura, un tipico sistema a diffrazione laser costituito da: 1) un laser per fornire
+una fonte di luce con lunghezza d’onda fissa coerente ed intensa; 2) un sistema di presentazione
+del campione per garantire che il materiale in prova passi attraverso il raggio laser come un
+flusso omogeneo di particelle in uno stato di dispersione noto e riproducibile; 3) una serie di
+rilevatori che sono utilizzati per misurare il pattern di luce ottenuto in una vasta gamma di
+angoli. (Immagine e descrizione prese da Alfatest Strumentazione scientifica, 2010)
+
+Per calcolare la classe dimensionale, il software utilizza la legge di Lambert-Beer :
+I
+= e−αb
+I0
+
+(A.1)
+
+Dove:
+I = intensità della luce a una distanza b dal campo delle particelle di
+assorbanza α
+I0
+
+= intensità della radiazione luminosa all’ingresso del campo delle
+particelle
+
+Il rapporto a sinistra dell’equazione ( II0 ) rappresenta la trasmittanza T del raggio
+
+60
+
+(misurata direttamente dallo strumento), ovvero, I0   l’intensità del laser quando nessun
+campione   presente e I   l’intensità con il campione presente.
+Ri-arrangiando l’equazione A.1:
+α=
+
+−1
+lnh T i
+b
+
+(A.2)
+
+Il termine α contiene informazioni concernenti la concentrazione volumetrica riguardo
+alle particelle di una determinata classe dimensionale.
+Secondo la teoria dello scattering, la luce attenuata da una particella i   essere
+descritta da:
+ai = Qi πri2 ni
+
+(A.3)
+
+Dove:
+ai
+= dimensione della particella i
+Qi
+
+= efficienza dell’estinzione luminosa calcolata dalla teoria Mie per una
+particella di raggio ri
+
+πri2
+
+= area della sezione della particella
+
+ni
+
+= il numero di particelle di raggio ri
+
+Considerando la formula per il calcolo del volume delle particelle sferiche(Vi = 43 πri3 ni ),
+l’equazione A.3, per un insieme di particelle, diventa:
+αi =
+
+3
+Qi Vi
+∑
+4
+ri
+
+(A.4)
+
+La dimensione delle particelle   espressa in base al diametro d e il volume   essere
+separato in una distribuzione relativa dei volumi v e in una concentrazione totale Cv
+(volume totale delle particelle in una unità di volume del disperdente). L’equazione
+quindi diventa:
+αi =
+
+3
+Qi Vi
+∑
+2
+di
+
+(A.5)
+
+61
+
+A. Misurazione delle distribuzioni granulometriche ottenuta mediante Mastersizer 2000
+Uguagliandola con la formula A.1, si ottiene:
+Cv =
+
+−2Lnh T i
+3b ∑ Qdi ivi
+
+(A.6)
+
+Se d   espresso in µm e b in mm, allora v   la concentrazione relativa della distribuzione
+del volume (in cui ∑ vi = 1) allora:
+Cv ( ppm) =
+
+−2000Lnh T i
+3b ∑ Qdi ivi
+
+(A.7)
+
+Dove:
+h T i = Trasmittanza,   un valore compreso tra 0 e 1 ed   misurato
+direttamente dallo strumento
+= distribuzione di particelle, ovvero il volume relativo nella classe
+
+vi
+
+dimensionale i con diametro medio di
+Qi
+
+= coefficiente di estinzione medio per la classe dimensionale i,   calcolato
+dalla teoria dello scattering, ed   una funzione delle proprietà ottiche
+delle particelle e del mezzo disperdente
+
+Questa equazione ci fornisce la concentrazione delle particelle della classe dimensionale
+i in parti per milione (ppm). La percentuale di concentrazione del volume viene calcolata
+dividendo il valore finale per 10000.
+I precedenti calcoli partono dall’assunto che le particelle misurate siano sfere perfette
+e non irregolari. In pratica questo avviene raramente, quindi si pone il seguente problema: quale delle tre dimensioni della particella irregolare (altezza, larghezza, profondità)
+dovrei misurare?
+Lo scopo dello strumento   quello di fornire un singolo numero che descriva la dimensione delle particelle, per farlo   necessario scegliere un valore che ne descriva, col
+minimo errore, le caratteristiche dimensionali; ad esempio:
+ il diametro teorico di una sfera che abbia la stessa superficie della particella originale;
+
+62
+
+ la dimensione massima della particella misurata, impiegata come diametro di una
+sfera teorica;
+ la dimensione minima della particella misurata, impiegata come diametro di una
+sfera teorica;
+ il diametro teorico di una sfera che abbia lo stesso volume della particella originale.
+Il Mastersizer utilizza quest’ultimo metodo. Ognuno di questi metodi   accettabile ma,
+allo stesso tempo, fornisce un valore differente. A causa di ciò non   possibile mettere a
+confronto misure che sono state effettuate utilizzando metodi diversi.
+
+63
+
+B. Princı̀pi di funzionamento della
+porosimetria ad intrusione di mercurio
+La distribuzione dei pori nei campioni di suolo   stata rilevata mediante due porosimetri
+ad intrusione di mercurio: il PASCAL 140 (Instruction manual porosimeter PASCAL
+140 1996) per la misura della microporosità e il Porosimetro Carlo Erba 2000 series
+(Carli e Motta, 1989) per quella della macroporosità.
+Entrambi gli strumenti sono formati da tre macroblocchi:
+1. un dilatometro, in cui viene immesso il campione pesato;
+2. un sistema di pressurizzazione, che include una pompa peristaltica per l’aria, un
+moltiplicatore di pressione e una autoclave;
+3. un sistema di misura del volume e della pressione del mercurio che viene intruso
+nel campione.
+La determinazione della dimensione dei pori mediante la tecnica a penetrazione di mercurio   basata sul comportamento dei liquidi non bagnanti nei capillari. Un liquido non
+  spontaneamente entrare in un poro che ha un angolo di contatto superficie/liquido
+maggiore di 90° a causa della tensione superficiale, comunque questa resistenza   essere
+superata grazie a una pressione esterna.
+La pressione richiesta per vincere tale resistenza,   in funzione della dimensione dei
+pori, la relazione tra la dimensione dei pori e la pressione esercitata quando un poro viene
+considerato cilindrico   espresso dalla seguente relazione, detta equazione di Washburn:
+pr = 2σcosθ
+
+(B.1)
+
+65
+
+B. Princı̀pi di funzionamento della porosimetria ad intrusione di mercurio
+Dove:
+p = pressione assoluta applicata (kg  2 )
+r
+
+= raggio dei pori (nm)
+
+σ
+
+= tensione superficiale del mercurio (mN m−2 )
+
+θ
+
+= angolo di contatto (°)
+
+Nonostante che quasi tutte le sostanze porose abbiano pori sferici e non cilindrici,
+questa equazione   generalmente usata per calcolare la distribuzione dei pori a partire
+da dati derivati da tecniche di analisi per porosimetria ad intrusione di mercurio.
+L’equazione di Washburn   derivata dalla seguente considerazione: in un capillare con
+una sezione circolare, la tensione superficiale del liquido   esercitata nell’area di contatto
+in cui la circonferenza del poro   superiore all’area di contatto.
+La forza 2πrσ,   perpendicolare al piano della superficie di contatto.
+La forza che tende a spingere il liquido all’esterno del capillare  :
+2πrσi cosθ
+
+(B.2)
+
+Contro questa forza, la pressione esterna che dovrà essere esercitata sull’area della
+superficie di contatto sarà uguale a:
+πr2 p
+
+(B.3)
+
+Quando l’equilibrio   raggiunto, queste due forze si equivalgono. L’equazione B.1
+espressa in funzione della pressione sarà:
+r=
+
+2σcosθ
+p
+
+(B.4)
+
+Sapendo le caratteristiche fisiche del mercurio (tensione superficiale di 480 mN m−2 e
+angolo di contatto di 143,1°) e assumendo i pori come cilindrici, si ottiene la seguente
+relazione:
+r = 7500/P
+
+66
+
+(B.5)
+
+Dove:
+r = raggio dei pori, espresso in nm
+p = pressione assoluta applicata, espressa in kg  2
+Per i pori irregolari, il rapporto tra la sezione trasversale dei pori (relativa alla pressione esercitata) e alla circonferenza dei pori (relativa alla tensione superficiale) non  
+proporzionale al raggio e dipende dalla forma del poro; l’equazione B.5 darà quindi valori
+  bassi.
+Il volume di mercurio penetrato corrisponde al volume del poro del campione
+espresso in mm3 , ed   acquisito tramite un sensore
+elettrico capacitivo, in cui:
+un’armatura   rappresentata da un elettrodo tubulare esterno, fissato al dilatometro; l’altra   rappresentata dalla colonnina di mercurio interna al dilatometro. In
+Fig. B.1   rappresentato il
+dilatometro utilizzato.
+Con gli incrementi di pressione e in presenza di penetrazione,
+
+la colonna di
+
+mercurio calerà, permetten- Figura B.1.: Rappresentazione del dilatometro con sistema di
+misura capacitivo, immagine ripresa dal manuale utente dello
+
+do di misurare il valore del- strumento Pascal 140
+la capacità in funzione della
+penetrazione.
+
+Siccome l’abbassamento della colonna sarà influenzato anche dalla compressibilità del
+mercurio (e non solo dalla sua penetrazione)   necessario effettuare una prova preliminare
+in bianco.
+
+67
+
+C. Dati composizionali: natura e metodi di
+analisi
+In questa tesi sono state utilizzate tecniche di analisi per dati composizionali (Boogaart,
+Gerald e Tolosana-Delgado, 2013).
+Un dataset   essere definito composizionale se contiene porzioni di un totale; ad
+esempio: la percentuale di lavoratori in differenti settori, le porzioni di elementi chimici
+in un minerale, la tessitura di un suolo, ecc.
+Le parti individuali del dataset composizionale sono chiamate componenti. Ogni componente ha una quota (in valori assoluti o relativi), rappresentata dalla sua frazione sul
+totale.
+Ogni composizione   essere rappresentata da un vettore positivo le cui componenti convergono ad una costante. Il vettore che rappresenta la somma costante delle
+componenti   detta chiusura (Aitchison, 1986) ed   indicata con C [·]
+"
+C [ x1 , x2 , . . . , x D ] =
+
+x1
+
+x2
+
+xD
+
+,
+,..., D
+∑iD=1 xi ∑iD=1 xi
+∑ i =1 x i
+
+#
+(C.1)
+
+Dove:
+C [·] = vettore riga
+D
+
+= numero delle componenti
+
+x
+
+= valore della componente i-esima
+
+I metodi classici di analisi utilizzati per i dati scalari non possono essere applicati per
+i dati composizionali che richiedono quindi i metodi statistici appropriati (Aitchison,
+1986).
+
+69
+
+C. Dati composizionali: natura e metodi di analisi
+La caratteristica fondamentale dei dati composizionali   che non siamo interessati alla
+somma totale delle composizioni, questo accade per diverse ragioni:
+ quando i dati composizionali sono misurati, possiamo influenzare il totale;
+ spesso il totale delle composizioni non   completo e non dà la somma del totale
+”reale”;
+ tipicamente, il totale non   comparabile tra le diverse unità statistiche.
+Una composizione   sempre formata da   subcomposizioni. e la stessa composizione
+di partenza   a sua volta una subcomposizione.
+Nonostante ciò, l’analisi dei dati composizionali   eseguibile anche su dataset a cui
+mancano delle componenti irrilevanti, questa   chiamata ’coerenza subcomposizionale’
+(Aitchison, 1986).
+La coerenza subcomposizionale si applica tutte le volte che si chiude una composizione. Ad esempio: gli elementi presenti nell’acqua sono molteplici ma hanno in genere
+concentrazioni ben diverse e possono essere divisi in macro e microelementi; la composizione totale dovrebbe comprenderli tutti ma, a seconda dello studio, la chiusura delle
+percentuali viene fatta per i soli macro o per i soli micro. Un altro esempio   quello di
+un caso di uno studio di chimica del suolo: dal dosaggio degli elementi presenti nella soluzione circolante del suolo si possono considerare le sole basi di scambio presenti, anche
+in questo caso si considererà solamente il totale della subcomposizione.
+I dati composizionali possono essere rappresentati in uno spazio vettoriale ristretto,
+contenuto nello spazio reale, denominato simplesso e definito come:
+(
+D
+
+S =
+
+D
+
+x = [ x1 , x2 , . . . , x D ] ∈ R | xi > 0, i = 1, 2, . . . , D; ∑ xi = κ
+D
+
+i =1
+
+Dove:
+S D = Simplesso di Aitchinson
+
+70
+
+D
+
+= numero delle componenti
+
+x
+
+= valore della componente i-esima
+
+)
+(C.2)
+
+Figura C.1.: Coppia di rette parallele all’interno dello spazio vettoriale del simplesso (S3 ) a
+sinistra e in coordinate a destra (immagine presa da Pawlowsky-Glahn, Egozcue e Tolosana
+Delgado, 2007)
+
+In questo spazio vettoriale l’operazione algebrica di somma ha un corrispettivo chiamato perturbazione (Boogaart, Gerald e Tolosana-Delgado, 2013) ed   indicato con il
+simbolo ⊕, consiste in una moltiplicazione tra due composizioni x e y (di dimensione D)
+che viene successivamente chiusa:
+x ⊕ y = C [ x1 y1 , x2 y2 , ....., x D y D ]
+
+(C.3)
+
+L’operazione di moltiplicazione di uno scalare nello spazio composizionale, invece,
+viene indicata con  (Boogaart, Gerald e Tolosana-Delgado, 2013) e consiste nella elevazione a potenza di tutte le componenti della composizione per uno scalare λ a cui
+successivamente viene applicata l’operazione di chiusura:
+h
+i
+λ  x = C x1λ , x2λ , ....., x λD
+
+(C.4)
+
+Per essere linearizzati i dati devono essere trattati in una log-ratio-transformed scale
+(Fig. C.1), questa operazione rende possibile utilizzare tutte le tecniche di statistica
+lineare: regressione, anova, modelli lineari, ecc.
+
+71
+
+D. Grafici dei residui dei modelli statistici
+utilizzati per l’analisi dei dati
+
+73
+
+D. Grafici dei residui dei modelli statistici utilizzati per l’analisi dei dati
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
