@@ -1577,9 +1577,9 @@ Dove:
 \begin{tabular}{lp{12cm}}
   $y$       & = densità apparente\\
   $\beta_0$     & = media generale (intercetta del modello)\\
-  $\beta_1$ & = coefficiente della variabile \emph{anno}, due livelli: \emph{2015, 2016};\\
-  $\beta_2$  & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
-  $\beta_3$ & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato}\\
+  $x_1$ & = variabile categorica \emph{anno}, due livelli: \emph{2015, 2016};\\
+  $x_2$  & = variabile categorica \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
+  $x_3$ & = variabile categorica \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato}\\
   $\epsilon$ & = residui o errore
 \end{tabular}
 \end{samepage}
@@ -1753,8 +1753,8 @@ Dove:
 \begin{tabular}{lp{12cm}}
   $y$       & = densità apparente\\
   $\beta_0$     & = media generale (intercetta del modello)\\
-  $\beta_1$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
-  $\beta_2$  & = coefficiente della variabile \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato}\\
+  $x_1$ & = variabile categorica \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
+  $x_2$  & = variabile categorica \emph{lavorazione}, tre livelli: \emph{Arato, Rippato, Frangizollato}\\
   $\epsilon$ & = residui o errore
 \end{tabular}
 \end{samepage}
@@ -2010,9 +2010,9 @@ Dove:
   $\bm{Y}$  & = Composizione (tre componenti: \emph{macroaggregati,
               mesoaggregati, microaggregati})\\
   $\bm{\beta_0}$     & = media generale (intercetta del modello)\\
-  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
-  $\bm{\beta_2}$  & = coefficiente della variabile \emph{tempo}\\
-  $\bm{\beta_3}$ & = coefficiente della variabile \emph{tempo} elevata al quadrato\\
+  $\bm{x_1}$ & = variabile categorica \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
+  $\bm{x_2}$  & = variabile \emph{tempo}\\
+  $\bm{x_3}$ & = variabile \emph{tempo} elevata al quadrato\\
   $\bm{\epsilon}$ & = residui o errore
 \end{tabular}
 \end{samepage}
@@ -2457,8 +2457,8 @@ Dove:
   $\bm{Y}$  & = Composizione (tre componenti: pori \emph{residui},
               pori di \emph{trasmissione} e pori di \emph{immagazzinamento})\\
   $\bm{\beta_0}$     & = media generale (intercetta del modello)\\
-  $\bm{\beta_1}$ & = coefficiente della variabile \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
-  $\bm{\beta_2}$  & = coefficiente della variabile \emph{lavorazione},
+  $\bm{x_1}$ & = variabile categorica \emph{conduzione}, due livelli: \emph{convenzionale, biologico}\\
+  $\bm{x_2}$  & = variabile categorica \emph{lavorazione},
                     due livelli: \emph{arato, rippato, frangizollato}\\
   $\bm{\epsilon}$ & = residui o errore
 \end{tabular}
