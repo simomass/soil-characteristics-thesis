@@ -59,20 +59,21 @@ df.dueAnni <-
 ##           legend.direction = "horizontal") + scale_fill_discrete(name= NULL)+ylab(expression(paste("Densità apparente g ", cm^-3)))+
 ##     theme(axis.title.x=element_blank(),
 ##           axis.text.x=element_blank(),
-##           axis.ticks.x=element_blank())
+##           axis.ticks.x=element_blank())+
+##        scale_y_continuous(limits=c(1.2,2.1))#, expand = c(0, 0))
 
-## pdf("../tesi/boxCore.pdf")
+## pdf("~/Simo_GIT/tesi/boxCore_SCALA.pdf")
 ## p10
 ## dev.off()
 
 ## df.dueAnni <- df.vecchio
-df.dueAnni <-  df.dueAnni[df.dueAnni$REPLICA == "m", ]
-df.petrolio <-
-    read.table(file.path(DirElab, "df_spinta.csv"),
-               header = T, sep = "")
+ df.dueAnni <-  df.dueAnni[df.dueAnni$REPLICA == "m", ]
+ df.petrolio <-
+     read.table(file.path(DirElab, "df_spinta.csv"),
+                header = T, sep = "")
 
 
-## df.vecchio <- df.petrolio
+##df.vecchio <- df.petrolio
 ## levels(df.petrolio$TRT) <-c("Convenzionale", "Biologico")
 ## levels(df.petrolio$LAVORAZIONE) <- c("Arato", "Frangizollato", "Rippato")
 
@@ -80,6 +81,7 @@ df.petrolio <-
 ## p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.petrolio) +
 ##     geom_boxplot(position=position_dodge(1))+
 ##     facet_grid(.~TRT)+
+##      geom_hline(yintercept = 1.35)+
 ##     theme(axis.title.x=element_blank(),
 ##           axis.text.x=element_blank(),
 ##           axis.ticks.x=element_blank())+    
@@ -91,9 +93,9 @@ df.petrolio <-
 ##           legend.direction = "horizontal") + scale_fill_discrete(name= NULL)+ylab(expression(paste("Densità apparente g ", cm^-3)))+
 ##     theme(axis.title.x=element_blank(),
 ##           axis.text.x=element_blank(),
-##           axis.ticks.x=element_blank())
+##           axis.ticks.x=element_blank())+scale_y_continuous(limits=c(1.2,2.1))#, expand = c(0, 0))
 
-## pdf("../tesi/boxClod.pdf")
+## pdf("~/Simo_GIT/tesi/boxClod_SCALA.pdf")
 ## p10
 ## dev.off()
 

@@ -7,7 +7,7 @@ headsepline=true,
 footsepline=true,
 open=right,
 titlepage,
-final]{scrbook}
+final, BCOR=10mm]{scrbook}
 
 % draft/final onecolumn/twocolumn oneside/twoside openany/openright
 % Circa 80 lettere per pagina con draft al posto di final fa il pdf senza foto
@@ -461,7 +461,7 @@ Dove:
   $p$  &  è la roccia madre\\
   $t$  &  è il tempo.
 \end{tabular}
-\vspace*{3em}
+\vspace*{0.5cm}
 
 Una volta formato, il suolo presenta caratteristiche che lo possono
 rendere più o meno idoneo alla coltivazione. Per valutare queste
@@ -489,8 +489,10 @@ dal triangolo tessiturale di Whitney, è stata introdotta nel 1951
     oggetto di studio determinate per densimetria
     \citep{agricoledecreto}  (cfr. paragrafo \ref{sec:MOLTE}).}
   \label{fig:triangolo}
+\vspace{-2.8em}
 \end{figure}
 \FloatBarrier
+
 
 La presenza di cementi, organici o minerali, che portano alla
 formazione di aggregati permette di definire la
@@ -947,24 +949,22 @@ ridotto apporto di concimi organici di origine animale
 (\emph{stockless farming system}, \cite{migliorini2014agronomic}). 
 
 \section{Campionamento}
-
 All'interno di ogni parcella sono stati individuati tre punti
 (Fig. \ref{fig:foto_OO_sito}): \emph{m} (medio), il centro dato dall'incrocio
 delle diagonali di ogni parcella; \emph{a} (alto) e \emph{b} (basso),
 distanti \SI{4}{\meter} dal medio lungo l'asse maggiore della parcella.
-
-In totale sono stati raccolti 108 campioni di terreno, sia nell'anno
-2015 che nell'anno 2016.
 \begin{wrapfigure}{L}{0.55\textwidth}
 \centering
   \includegraphics[width=0.5\textwidth]{../foto/cilindroOttone.jpeg}
-
   \caption[Cilindro in ottone usato per la misura della densità
   apparente: metodo \emph{Core}]{Cilindro in ottone utilizzato per
     prelevare i campioni da destinare all'analisi di densità
     apparente col metodo \emph{Core}.}
   \label{fig:cilindro}
+  \vspace{-3em}
 \end{wrapfigure}
+In totale sono stati raccolti 108 campioni di terreno, sia nell'anno
+2015 che nell'anno 2016.
 
 Il campionamento è stato effettuato con due modalità: 
 \begin{itemize}
@@ -973,21 +973,11 @@ Il campionamento è stato effettuato con due modalità:
 \item prelevando un campione omogeneo di terra tramite l'ausilio di
   uno strumento manuale (vanga).
 \end{itemize}
-
 Il prelievo tramite cilindro è stato utilizzato per l'analisi con il
 metodo \emph{Core} (paragrafo \ref{sec:Core}). Il cilindro è stato
 inserito nel suolo per tutta la sua lunghezza e quindi estratto
 facendo attenzione che il materiale al suo interno non fuoriuscisse in
 modo da formare due superfici piatte sulle basi del cilindro.
-
-
-
-
-% \begin{figure}[ht]
-%   \centering
-
-% \end{figure}
-% \FloatBarrier
 
 Il campione prelevato con il secondo metodo, verrà successivamente suddiviso in
 aliquote utilizzate per gli altri metodi di misura.
@@ -1091,6 +1081,7 @@ manipolazioni per mantenere la struttura dell'aggregato stesso.
   \includegraphics[width=0.7\textwidth]{../foto/petrolio.jpeg}
   \caption{Metodo \emph{Clod}: aggregati immersi in petrolio per la
     misura della densità apparente}
+  \vspace{-2em}
   \label{fig:petrolio}
 \end{figure}
 
@@ -1123,7 +1114,7 @@ Dove:
   $D_{petrolio}$  & = densità del petrolio utilizzato per
                      l'analisi (\SI{0.761}{\gram\per\cubic\cm})
 \end{tabular}
-
+\vspace{0.5cm}
 Successivamente il campione è stato essiccato per una notte a
 \SI{150}{\degreeCelsius} quindi è stato pesato\footnote{Il
   raggiungimento di questa temperatura consente di allontanare l'acqua
@@ -1292,6 +1283,7 @@ di diametro e lungo \SI{10}{\centi\meter}.
     dei pori espresso in \SI{}{\micro\metre}; sull'asse delle ordinate
     sono presenti i relativi valori in percentuale sul volume totale.}
   \label{fig:distribuzionePori}
+  \vspace{-3em}
 \end{wrapfigure}
 
 Il dilatometro contenente il campione viene inserito nel circuito del
@@ -1979,7 +1971,7 @@ df.tessitura <-
                              function(x) sum(x, na.rm=TRUE))
                )
 questi <-
-    with(df.tessitura, which(HUMIDITY=="wet"))
+    with(df.tessitura, which(HUMIDITY=="dry"))
 df.plot <- df.tessitura[questi,]
 Y.Msizer1 <-
     acomp(df.plot[, 16:18])
@@ -2151,7 +2143,7 @@ plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
      col=2, add=TRUE, pch= c("o","D","O"))## start stop OO
 
 questi <-
-    with(df.tessitura, which(HUMIDITY=="dry"))
+    with(df.tessitura, which(HUMIDITY=="wet"))
 df.plot <- df.tessitura[questi,]
 Y.Msizer <- acomp(df.plot[, 16:18])
 lm.2.2 <-   with(df.plot,lm(ilr(Y.Msizer) ~ COND+TIME2+I(TIME2^2)))
@@ -2178,7 +2170,8 @@ colnames(dati.iufw) <- c("Macro (%)", "Meso (%)", "Micro (%)")
 df.iufw <- cbind(Conduzione, Fase, dati.iufw)
 df.iufw <- rbind(df.iufw[1:3,], "", df.iufw[4:6,])
 
-plot(Y.Msizer, cex=0.25, col= as.numeric(df.plot$COND)+2, add=TRUE)
+plot(Y.Msizer, cex=0.25, col= as.numeric(df.plot$COND)+2, add=TRUE
+     , plotMissings = FALSE)
 plot(acomp(coefs[1,]) +
      acomp(coefs[3,])*0:23 +
      acomp(coefs[4,])*(0:23)^2,

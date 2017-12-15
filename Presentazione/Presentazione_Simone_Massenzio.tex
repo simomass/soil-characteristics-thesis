@@ -189,9 +189,8 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
   \item biologici
   \item ecologici
   \item produttivi
-  \item \Large{fisici} \onslide<7->{\Large{$\rightarrow$ trascurati
-        dalla letteratura}}
-    \pause
+  \item \Large{fisici} %\onslide<7->{\Large{$\rightarrow$ trascurati
+       % dalla letteratura}}
     \begin{enumerate}[<+->]
     \item Densità apparente
     \item Stabilità di struttura
@@ -337,7 +336,7 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
 
 
 \begin{frame}{Parte 2 \small{Elaborazione dei dati}}
-  \transwipe<4>[direction=90]
+  %%\transwipe<4>[direction=90]
   \begin{minipage}[0.2\textheight]{\textwidth}
     \begin{columns}[T]
       \column{0.8\textwidth}
@@ -386,8 +385,8 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
 \end{frame}
 
 
-\begin{frame}{Parte 3 \small{boxplot metodo Cilindro}}
-  
+\begin{frame}[label=Core]{Parte 3 \small{boxplot metodo Cilindro}}
+  \hyperlink{finale}{\beamerbutton{Conclusioni}}  
   \begin{figure}
     \includegraphics[width=0.6\textwidth]{../tesi/boxCore.pdf}
   \end{figure}
@@ -412,33 +411,17 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
   \end{table}
 \end{frame}
 
-\begin{frame}[label=Clod]{Parte 3 \small{ metodo Spinta idrostatica}}
+\begin{frame}[label=Clod]{Parte 3 \small{Boxplot metodo Spinta
+      idrostatica}} 
   \hyperlink{finale}{\beamerbutton{Conclusioni}}
-  \footnotesize
-  \begin{table}[ht]
-    \centering
-    \begin{tabular}{llrccc}
-      \hline
-      Conduzione    & Lavorazione   & Media& Dev. std & n    & Tukey \\ 
-      \hline
-      Convenzionale & Arato         & 1.93 & 0.06      &  18 & b     \\ 
-                    & Frangizollato & 1.89 & 0.05      &  18 & ab    \\ 
-                    & Rippato       & 1.90 & 0.06      &  18 & ab    \\ 
-      Biologico     & Arato         & 1.90 & 0.07      &  18 & ab    \\ 
-                    & Frangizollato & 1.84 & 0.06      &  18 & a     \\ 
-                    & Rippato       & 1.87 & 0.07      &  18 & ab    \\ 
-      \hline
-    \end{tabular}
-    \label{tab:RiassuntoDensitaSpinta}
-  \end{table}
-\end{frame}
-
-\begin{frame}{Parte 3 \small{Boxplot metodo Spinta idrostatica}} 
+  \only<1>{\begin{figure}
+      \includegraphics[width=0.6\textwidth]{../tesi/boxCore_SCALA.pdf}
+    \end{figure}} 
+  \only<2>{
   \begin{figure}
-    \includegraphics[width=0.6\textwidth]{../tesi/boxClod.pdf}
-  \end{figure}
+    \includegraphics[width=0.6\textwidth]{../tesi/boxClod_SCALA.pdf}
+  \end{figure}}
 \end{frame}
-
 
 \begin{frame}{Parte 3 \small{ ANOVA metodo Spinta idrostatica}}
   % latex table generated in R 3.4.0 by xtable 1.8-2 package
@@ -459,6 +442,30 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
 
 \end{frame}
 
+\begin{frame}{Parte 3 \small{ metodo Spinta idrostatica}}
+
+  \footnotesize
+  \begin{table}[ht]
+    \centering
+    \begin{tabular}{llrccc}
+      \hline
+      Conduzione    & Lavorazione   & Media& Dev. std & n    & Tukey \\ 
+      \hline
+      Convenzionale & Arato         & 1.93 & 0.06      &  18 & b     \\ 
+                    & Frangizollato & 1.89 & 0.05      &  18 & ab    \\ 
+                    & Rippato       & 1.90 & 0.06      &  18 & ab    \\ 
+      Biologico     & Arato         & 1.90 & 0.07      &  18 & ab    \\ 
+                    & Frangizollato & 1.84 & 0.06      &  18 & a     \\ 
+                    & Rippato       & 1.87 & 0.07      &  18 & ab    \\ 
+      \hline
+    \end{tabular}
+    \label{tab:RiassuntoDensitaSpinta}
+  \end{table}
+\end{frame}
+
+
+
+
 
 \begin{frame}{Parte 3 \small{Dati composizionali}}
   %   %% \begin{columns}
@@ -467,8 +474,13 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
   %   %%   \footnotesize
   %   %%   \begin{itemize}[<+->]
   %   %%   \item 
-  Dati ottenuti dalle analisi di porosimetria e
-  stabilità degli aggregati $\rightarrow$ \emph{dati Composizionali}%sono delle distribuzioni in cui ogni
+\begin{center}
+  Dati ottenuti dalle analisi di porosimetria e\\
+  stabilità degli aggregati $\rightarrow$ \emph{dati
+    Composizionali}%sono delle distribuzioni in cui ogni
+\end{center}
+
+\vfill
   %   %   % classe dimensionale è espressa come percentuale sul volume totale,
   %   %   % questo tipo di dati prende il nome di
   %   % \pause
@@ -480,13 +492,23 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
   % \vfill
   %   %% \column{.48\textwidth}
   \only<2>{%%\begin{overlayarea}{\linewidth}{3cm}
-    \includegraphics[width=0.5\textwidth]{../grafici/boh.jpeg}}
+\begin{figure}
+\centering
+    \includegraphics[width=0.5\textwidth]{../grafici/boh.jpeg}
+\end{figure}}
   \only<3>{%%\begin{overlayarea}{\linewidth}{3cm}
-    \includegraphics[width=0.5\textwidth]{../grafici/SplitStab.jpeg}}
+\begin{figure}
+\centering
+    \includegraphics[width=0.5\textwidth]{../grafici/SplitStab.jpeg}
+\end{figure}}
   %% \end{overlayarea}}
   %   %% \only<3>{\includegraphics[width=0.5\textwidth]{../foto/simplessodeformaVerticale.png}}
-  \only<4>{\includegraphics[width=0.5\textwidth]{../tesi/Tesi_GIT-figboh.pdf}}
-  %% \end{columns}
+  \only<4>{
+\begin{figure}
+\centering
+       \includegraphics[width=0.5\textwidth, page=1]{../grafici/puntostabilita.pdf}
+\end{figure}}  %% \end{columns}
+
 \end{frame}
 
 
@@ -494,11 +516,32 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
 
 
 \begin{frame}[label=distribuzione]{Parte 3 \small{Diagramma ternario Stabilità}}
-  \hyperlink{finale}{\beamerbutton{Conclusioni}}
-  
-  \begin{figure}
-    \includegraphics[width=0.6\textwidth]{../tesi/Tesi_GIT-figboh.pdf}
-  \end{figure}
+%  \hyperlink{finale}{\beamerbutton{Conclusioni}} 
+
+\only<1>{\begin{figure}
+    \includegraphics[width=0.75\textwidth, page=2]{../grafici/stabilita.pdf}
+  \end{figure}}
+\only<2>{  \begin{figure}
+    \includegraphics[width=0.75\textwidth, page=3]{../grafici/stabilita.pdf}
+  \end{figure}}
+\only<3>{  \begin{figure}
+    \includegraphics[width=0.75\textwidth, page=4]{../grafici/stabilita.pdf}
+  \end{figure}}
+\only<4>{  \begin{figure}
+    \includegraphics[width=0.75\textwidth, page=5]{../grafici/stabilita.pdf}
+  \end{figure}}
+\only<5>{  \begin{figure}
+    \includegraphics[width=0.75\textwidth, page=6]{../grafici/stabilita.pdf}
+  \end{figure}}
+\only<6>{  \begin{figure}
+    \includegraphics[width=0.75\textwidth, page=7]{../grafici/stabilita.pdf}
+  \end{figure}}
+\only<7>{  \begin{figure}
+    \includegraphics[width=0.75\textwidth, page=8]{../grafici/stabilita.pdf}
+  \end{figure}}
+\only<8>{  \begin{figure}
+    \includegraphics[width=0.75\textwidth, page=9]{../grafici/stabilita.pdf}
+  \end{figure}}
 \end{frame}
 
 
@@ -641,13 +684,16 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
 %%% TeX-master: t
 %%% End:
 \appendix
-% \section{More}
-% \begin{frame}[label=supplemental]
-%   Supplemental content.
-%   Back to .
-% \end{frame}
 
-% \subsection{Risultati Core}
+\begin{frame}
+\vspace{1.5cm}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth, page=3]{../grafici/RisultatiChimica-Fisica.pdf}
+\end{figure}
+\end{frame}
+
+
 
 \end{document}
 
