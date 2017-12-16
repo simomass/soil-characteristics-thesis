@@ -2030,9 +2030,7 @@ provenienti da appezzamenti condotti convenzionalmente,
 successivamente all'immersione, si disgregano generando frammenti più
 grandi di quanto non facciano gli aggregati provenienti da
 appezzamenti a conduzione biologica; questo avviene anche con gli
-aggregati essiccati.
-
-Questo si può ricavare dall'intercetta del modello; per quanto riguarda i
+aggregati essiccati. Questo si può ricavare dall'intercetta del modello; per quanto riguarda i
 valori di pendenza e di curvatura, questi sono invarianti rispetto alla
 conduzione.
 
@@ -2729,6 +2727,10 @@ degli ultrasuoni, questo significa che i frammenti risultanti dal
 trattamento con ultrasuoni sono più piccoli di quelli risultanti
 dall'analisi della tessitura apparente per densimetria
 \citep{agricoledecreto}.
+
+Come ci aspettavamo gli aggregati inumiditi presentano frammenti di
+dimensioni maggiori rispetto agli aggregati essiccati, per la
+diminuzione dell'effetto dello \emph{slaking} \citep{EJSS4_12311}.
 
 I risultati vanno in controtendenza a ciò che hanno rilevato altri
 autori come \citet{siegrist1998does}, \citet{williams2017organic} e

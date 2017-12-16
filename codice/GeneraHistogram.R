@@ -367,7 +367,8 @@ bs <- round(bs, 1)
 bs[4:length(bs)] <- round(bs[4:length(bs)], 0)
 
 p1 + scale_x_log10(breaks=c(20,250), labels=round(c(20,250), 1))+theme(legend.position="none")+
-       theme(axis.text.x=element_text(size=20))#,
+       theme(axis.text.x=element_text(size=20))+
+        theme(axis.title=element_text(size=15))#,
 dev.off()
 
 
