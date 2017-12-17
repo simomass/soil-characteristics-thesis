@@ -147,6 +147,7 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
     \column{.32\textwidth} 
     Agricoltura biologica:
     \begin{itemize}[<+->]
+      \pause
     \item suscita interesse commerciale
     \item chiude il ciclo energetico \newline dell'agroecosistema
     \item non utilizza prodotti di sintesi
@@ -154,25 +155,25 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
     \end{itemize}
     
     \column{.65\textwidth}
-    \only<1>{
-      % \vspace{1.5cm}
-      \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.6\textwidth]{../foto/marchiobio.jpg}
-      \end{figure}}
     \only<2>{
       % \vspace{1.5cm}
       \begin{figure}[h]
         \centering
-        \includegraphics[width=\textwidth]{../foto/carbonCycle.jpg}
+        \includegraphics[width=\textwidth]{../foto/crescitaBio.jpg}
       \end{figure}}
     \only<3>{
       % \vspace{1.5cm}
       \begin{figure}[h]
         \centering
-        \includegraphics[width=\textwidth]{../foto/fitofarmaci.jpg}
+        \includegraphics[width=\textwidth]{../foto/carbonCycle.jpg}
       \end{figure}}
     \only<4>{
+      % \vspace{1.5cm}
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{../foto/fitofarmaci.jpg}
+      \end{figure}}
+    \only<5>{
       % \vspace{1.5cm}
       \begin{figure}[h]
         \centering
@@ -254,47 +255,33 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
 \end{frame}
 
 
+
+
 \begin{frame}{Parte 2 \small{Aspetti produttivi}}
+  \transdissolve<2>
 % latex table generated in R 3.4.3 by xtable 1.8-2 package
 % Sun Dec 17 09:25:34 2017
 \begin{table}[ht]
 \centering
-\scalebox{0.9}{
-\begin{tabular}{rllll}
+\scalebox{0.8}{
+\begin{tabular}{l c p{0.1cm} c c p{0.1cm} c}
   \hline
-                & CONV          & BIO          & CONV          &  BIO           \\
-                & 2016          & 2016         & 2017          &      2017      \\   
-  \hline                                        
-Orzo (t/ha)     & 5.00$\pm$0.05 &3.40$\pm$0.05 & 4.30$\pm$0.06 &  2.50$\pm$0.06 \\ 
-Girasole (t/ha) & 3.52$\pm$0.18 &2.32$\pm$0.02 & 0.25$\pm$0.07 &  1.18$\pm$0.09 \\ 
-   \hline
+  Anno            &           &2016& &          &2017&                \\
+    &&&&&&\\
+Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
+  \hline
+  &&&&&&\\
+         Orzo (t/ha)     & 5.00$\pm$0.05 &&3.40$\pm$0.05 & 4.30$\pm$0.06 && 2.50$\pm$0.06 \\
+    &&&&&&\\
+  Girasole (t/ha) & 3.52$\pm$0.18 &&2.32$\pm$0.02 &
+\alt<1>{0.25$\pm$0.07}{\alert{0.25$\pm$0.07}} &&
+\alt<1>{1.18$\pm$0.09}{\alert{1.18$\pm$0.09}}\\
+    &&&&&&\\
+  \hline
 \end{tabular}
 }
 \end{table}
 
-  % \vspace{0.5cm}
-  % \footnotesize{
-  %   \begin{table}[ht]
-  %     \centering
-  %     \begin{tabular}{lllcc}
-  %       \hline
-  %       Conduzione   & Anno & Lavorazione   & Orzo(t/ha)      & Girasole(t/ha) \\ 
-  %       \hline
-  %       Biologico    & 2016 & Arato         & 3.7 $\pm$ 0.04  & 2.5 $\pm$ 0.75 \\ 
-  %                    &      & Rippato       & 3.3 $\pm$ 0.25  & 2.9 $\pm$ 0.47 \\ 
-  %                    &      & Frangizollato & 3.2 $\pm$ 0.08  & 1.6 $\pm$ 0.05 \\ 
-  %                    & 2017 & Arato         & 2.9 $\pm$ 0.08  & 1.4 $\pm$ 0.33 \\ 
-  %                    &      & Rippato       & 2.3 $\pm$ 0.27  & 1.0 $\pm$ 0.10 \\ 
-  %                    &      & Frangizollato & 2.2 $\pm$ 0.17  & 1.1 $\pm$ 0.18 \\ 
-  %       Convenzionale& 2016 & Arato         & 5.0 $\pm$ 0.16  & 4.5 $\pm$ 0.38 \\ 
-  %                    &      & Rippato       & 5.0 $\pm$ 0.23  & 3.4 $\pm$ 0.08 \\ 
-  %                    &      & Frangizollato & 5.0 $\pm$ 0.20  & 2.7 $\pm$ 0.07 \\ 
-  %                    & 2017 & Arato         & 4.5 $\pm$ 0.19  & 0.2 $\pm$ 0.18 \\ 
-  %                    &      & Rippato       & 4.5 $\pm$ 0.11  & 0.2 $\pm$ 0.27 \\ 
-  %                    &      & Frangizollato & 3.9 $\pm$ 0.21  & 0.4 $\pm$ 0.18 \\ 
-  %       \hline
-  %     \end{tabular}
-  %   \end{table}}
 
 \end{frame}
 
@@ -377,16 +364,26 @@ Girasole (t/ha) & 3.52$\pm$0.18 &2.32$\pm$0.02 & 0.25$\pm$0.07 &  1.18$\pm$0.09 
     \column{.48\textwidth}
     % \begin{overlayarea}{\linewidth}{3cm}
     \only<2>{\includegraphics[width=0.8\textwidth]{../foto/cilindroOttone.jpeg}}
-    \only<3>{\includegraphics[width=0.8\textwidth]{../foto/cilindrosuolo.jpg}}
+    \only<3>{\vspace{1cm}
+      \[
+      D_{App}=\frac{P_{secco}}{V_{cilindro}}
+      \]
+    \begin{figure}[hb]
+      \includegraphics[width=0.8\textwidth]{../foto/cilindrosuolo.jpg}
+    \end{figure}}
     \only<4>{\vspace{1cm}
-      \begin{figure}[hb]\includegraphics[width=0.8\textwidth]{../foto/petrolio}
+      \begin{figure}[hb]
+        \includegraphics[width=0.8\textwidth]{../foto/petrolio}
       \end{figure}}
-    \only<5>{\includegraphics[width=0.8\textwidth]{../foto/navicella}}
+    \only<5>{
+        \[
+        D_{app} = \frac{P_{aggregato}}{V_{aggregato}}
+        \]
+        \includegraphics[width=0.8\textwidth]{../foto/spintapeso}}
     \only<6>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/stabilitVid/stabilitVid-}{0}{196}}%%396
     \only<7-8>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{117}{176}
       \animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{208}{233}}%233
     \only<9>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/poresize/PoreSize-}{0}{396}}%%396
-    % \end{overlayarea}
   \end{columns}
 \end{frame}
 
@@ -563,8 +560,14 @@ Girasole (t/ha) & 3.52$\pm$0.18 &2.32$\pm$0.02 & 0.25$\pm$0.07 &  1.18$\pm$0.09 
   \only<3>{
     \begin{figure}
       \centering
-      \includegraphics[width=0.5\textwidth, page=1]{../grafici/puntostabilita.pdf}
+      \includegraphics[width=0.5\textwidth, page=1]{../grafici/stabilita.pdf}
     \end{figure}}  %% \end{columns}
+  \only<4>{\begin{center}
+      \animategraphics[autoplay,width=0.5\linewidth]{12}{../grafici/stabilita}{1}{11}
+\end{center}}
+  \only<5>{\begin{center}
+      \animategraphics[autoplay,width=0.5\linewidth]{12}{../grafici/stabilita}{11}{22}
+\end{center}}
 
 \end{frame}
 
@@ -576,28 +579,22 @@ Girasole (t/ha) & 3.52$\pm$0.18 &2.32$\pm$0.02 & 0.25$\pm$0.07 &  1.18$\pm$0.09 
   % \hyperlink{finale}{\beamerbutton{Conclusioni}} 
 
   \only<1>{\begin{figure}
-      \includegraphics[width=0.75\textwidth, page=2]{../grafici/stabilita.pdf}
+      \includegraphics[width=0.75\textwidth, page=25]{../grafici/stabilita.pdf}
     \end{figure}}
   \only<2>{  \begin{figure}
-      \includegraphics[width=0.75\textwidth, page=3]{../grafici/stabilita.pdf}
+      \includegraphics[width=0.75\textwidth, page=26]{../grafici/stabilita.pdf}
     \end{figure}}
   \only<3>{  \begin{figure}
-      \includegraphics[width=0.75\textwidth, page=4]{../grafici/stabilita.pdf}
+      \includegraphics[width=0.75\textwidth, page=27]{../grafici/stabilita.pdf}
     \end{figure}}
   \only<4>{  \begin{figure}
-      \includegraphics[width=0.75\textwidth, page=5]{../grafici/stabilita.pdf}
+      \includegraphics[width=0.75\textwidth, page=28]{../grafici/stabilita.pdf}
     \end{figure}}
   \only<5>{  \begin{figure}
-      \includegraphics[width=0.75\textwidth, page=6]{../grafici/stabilita.pdf}
+      \includegraphics[width=0.75\textwidth, page=32]{../grafici/stabilita.pdf}
     \end{figure}}
   \only<6>{  \begin{figure}
-      \includegraphics[width=0.75\textwidth, page=7]{../grafici/stabilita.pdf}
-    \end{figure}}
-  \only<7>{  \begin{figure}
-      \includegraphics[width=0.75\textwidth, page=8]{../grafici/stabilita.pdf}
-    \end{figure}}
-  \only<8>{  \begin{figure}
-      \includegraphics[width=0.75\textwidth, page=9]{../grafici/stabilita.pdf}
+      \includegraphics[width=0.75\textwidth, page=33]{../grafici/stabilita.pdf}
     \end{figure}}
 \end{frame}
 

@@ -520,7 +520,7 @@ pdf("stabilita.pdf")
 par(mfrow = c(1,1))
 ## solo secchi e no ultrasuoni
 for(i in 1:24){
-    questo <- rep(1cd ..24)[1:i]
+    questo <- rep(1,24)[1:i]
     trasparenti <- rep("transparent", 840-i)
     questo <- c(questo, trasparenti)
 fun.triangolo.stabilita(dimen=2,
