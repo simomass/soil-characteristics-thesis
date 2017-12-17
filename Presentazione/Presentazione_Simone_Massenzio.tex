@@ -204,6 +204,7 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
     \item  \large{Distribuzione dei pori}, \normalsize{studio degli spazi vuoti}
     \end{enumerate}
   \end{itemize}
+  
 \end{frame}
 
 
@@ -301,7 +302,7 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
       \centering
       \includegraphics[width=0.5\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
     \end{figure}}
-  \onslide<3->{
+  \only<3-4>{
     \scriptsize
     \begin{table}[ht]
       \centering
@@ -351,11 +352,10 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
         \pause
       \end{itemize}
     \item Stabilit\`a degli aggregati
-      \begin{itemize}
-      \item secchi all'aria (\emph{DRY})
-      \item inumiditi (\emph{WET})
-      \end{itemize}
-      \pause
+       \begin{itemize}
+       \item secchi all'aria (\emph{DRY})
+       \item inumiditi (\emph{WET})
+       \end{itemize}
     \item Distribuzione dimensionale dei pori tramite tecniche di
       porosimetria ad intrusione di mercurio      
     \end{enumerate}
@@ -368,9 +368,9 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
       \end{figure}}
     \only<5>{\includegraphics[width=0.8\textwidth]{../foto/navicella}}
     \only<6>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/stabilitVid/stabilitVid-}{0}{196}}%%396
-    \only<7>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{117}{176}
+    \only<7-8>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{117}{176}
       \animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{208}{233}}%233
-    \only<8>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/poresize/PoreSize-}{0}{396}}%%396
+    \only<9>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/poresize/PoreSize-}{0}{396}}%%396
     % \end{overlayarea}
   \end{columns}
 \end{frame}
@@ -533,19 +533,19 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
   %   %   \end{itemize}
   %   \vfill
   %   %%   \column{.48\textwidth}
-  \only<2>{%%\begin{overlayarea}{\linewidth}{3cm}
+  \only<1>{%%\begin{overlayarea}{\linewidth}{3cm}
     \begin{figure}
       \centering
-      \includegraphics[width=0.5\textwidth]{../grafici/boh.jpeg}
+      \includegraphics[width=0.5\textwidth]{../grafici/HistoStab.jpeg}
     \end{figure}}
-  \only<3>{%%\begin{overlayarea}{\linewidth}{3cm}
+  \only<2>{%%\begin{overlayarea}{\linewidth}{3cm}
     \begin{figure}
       \centering
       \includegraphics[width=0.5\textwidth]{../grafici/SplitStab.jpeg}
     \end{figure}}
   %% \end{overlayarea}}
   %   %% \only<3>{\includegraphics[width=0.5\textwidth]{../foto/simplessodeformaVerticale.png}}
-  \only<4>{
+  \only<3>{
     \begin{figure}
       \centering
       \includegraphics[width=0.5\textwidth, page=1]{../grafici/puntostabilita.pdf}
@@ -703,12 +703,12 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
 %%% End:
 \appendix
 
-\begin{frame}<presentation:0>
-  \vspace{1.5cm}
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.2\textwidth, page=3]{../grafici/RisultatiChimica-Fisica.pdf}
-  \end{figure}
+\begin{frame}
+\vspace{1.5cm}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth, page=3]{../grafici/RisultatiChimica-Fisica.pdf}
+\end{figure}
 \end{frame}
 
 
