@@ -515,10 +515,11 @@ fun.triangolo.stabilita <-
                c( "CONV Secchi", "BIO Secchi"),
                fill=1:2, bty = "n", cex=1.1)
         }
-        text(0.1,0.025, "> 250 um")
-        text(0.85,0.025, "tra 20 e 250 um")
-        text(0.5,0.72, "< 20 um")
-    }
+        text(0.1,0.025, expression(paste(">250 ", mu, "m")))
+        text(0.85,0.025, expression(paste("tra 20 e 250 ", mu, "m")))
+        text(0.5,0.72, expression(paste("<20 ", mu, "m")))
+        
+        }
 pdf(file.path(DirGraf,"stabilita.pdf"))
 par(mfrow = c(1,1))
 ## solo secchi e no ultrasuoni
@@ -1114,9 +1115,9 @@ par(mfrow = c(1,1))
 plot(acomp(df.porosimetria[, 7:9]), cex = 2,
      col = as.numeric(as.factor(df.porosimetria$MAN)),
      pch = as.numeric(as.factor(df.porosimetria$TIL)))
-        text(0.1,0.025, "> 50 um")
-        text(0.85,0.025, "tra 0.5 e 50 um")
-        text(0.5,0.72, "< 0.5 um")
+        text(0.5,0.72, expression(paste(">50 ", mu, "m")))
+        text(0.85,0.025, expression(paste("tra 0.5 e 50 ", mu, "m")))
+        text(0.1,0.025, expression(paste("<0.5 ", mu, "m")))
 ##plot(Y)#, cex=2, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
 ## intercetta <-
 ## ilrInv(coef(modelloPoro)[1,], orig=Y)
