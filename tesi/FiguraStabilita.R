@@ -489,8 +489,17 @@ modello <- lm.2
 coefs <-  ilrInv(coef(modello), orig = Y.Msizer1)
 alpha <- 0.05
 
+## si riparte coi campioni dry
+questi <-
+    with(df.tessitura, which(HUMIDITY=="dry"))
+df.plotDRY <- df.tessitura[questi,]
+Y.Msizer <- acomp(df.plotDRY[, 16:18])
+lm.2.2 <-   with(df.plotDRY,lm(ilr(Y.Msizer) ~ COND+TIME2+I(TIME2^2)))
+modelloMsizer <- lm.2.2
+coefsDRY <-  ilrInv(coef(modelloMsizer), orig=Y.Msizer)
+
 fun.triangolo.stabilita <-
-    function(dimen=0.5,
+    function(dimen=0.5, legenda=TRUE,
              df=Y.Msizer1,
              tinta=df.plot$COND,tipo=1 ){
         plot(df, pch=tipo,
@@ -498,9 +507,10 @@ fun.triangolo.stabilita <-
              col=tinta,
              axes = TRUE, plotMissings = FALSE,
              add = FALSE)
+        if(legenda){
         legend("topleft",
-               c( "CO.Dry", "OO.Dry","CO.Wet", "OO.Wet"),
-               fill=1:4, bty = "n")
+               c( "CONV Dry", "BIO Dry","CONV Wet", "BIO Wet"),
+               fill=1:4, bty = "n")}
         text(0.1,0.025, "> 250 um")
         text(0.85,0.025, "tra 20 e 250 um")
         text(0.5,0.72, "< 20 um")
@@ -509,37 +519,34 @@ fun.triangolo.stabilita <-
 pdf("stabilita.pdf")
 par(mfrow = c(1,1))
 ## solo secchi e no ultrasuoni
-fun.triangolo.stabilita(dimen=2,tipo =20, tinta= c(6,rep("transparent",839)))
-colori <-
+for(i in 1:24){
+    questo <- rep(1cd ..24)[1:i]
+    trasparenti <- rep("transparent", 840-i)
+    questo <- c(questo, trasparenti)
+fun.triangolo.stabilita(dimen=2,
+                        tipo =20,
+                        tinta= questo,
+                        legenda= FALSE)
+}
+coloriWET_NOsonic <-
     ifelse(df.plot$Ultrasonic.level,
            "transparent", as.numeric(df.plot$COND)+2)
+coloriWET_all <- as.numeric(df.plot$COND)+2
+coloriDRY_NOsonic<-
+    ifelse(df.plotDRY$Ultrasonic.level,
+           "transparent", df.plotDRY$COND)
+## WET no ultrasuoni
 fun.triangolo.stabilita(dimen=0.5,
-                        df=Y.Msizer1, tinta=colori)
+                        df=Y.Msizer1,
+                        tinta=coloriWET_NOsonic)
+## WET ultrasuoni
 fun.triangolo.stabilita(df=Y.Msizer1,
-                        tinta= as.numeric(df.plot$COND)+2)
+                        tinta= coloriWET_all)
 # punto accensione ultrasuoni
 on.ultra.off <- c(0, 11, 23)
-CO <- round(matrix(coefs[1,] +
-                   acomp(coefs[3,])*on.ultra.off +
-                   acomp(coefs[4,])*on.ultra.off^2,
-                   ncol = 3, byrow = FALSE), 3)
-OO <- round(matrix(acomp(coefs[1,]) +
-                   acomp(coefs[2,]) +
-                   acomp(coefs[3,])*on.ultra.off +
-                   acomp(coefs[4,])*on.ultra.off^2,
-                   ncol = 3, byrow = FALSE), 3)
-dati.iufd <- rbind(CO*100, OO*100)
-##i = inizio, u = accension ultrasuoni, f = fine d = dry/w = wet
-Conduzione <-
-    c("Convenzionale"," ", " ",
-      "Biologico "," "," ")
-Fase <- rep(c("inizio misura","inizio sonicatura", "fine misura"),2)
-colnames(dati.iufd) <- c("Macro (%)", "Meso (%)", "Micro (%)")
-df.iufd <- cbind(Conduzione, Fase, dati.iufd)
-df.iufd <- rbind(df.iufd[1:3,], "", df.iufd[4:6,])
 ## equazioni WET
 fun.triangolo.stabilita(df=Y.Msizer1,
-                        tinta= as.numeric(df.plot$COND)+2)
+                        tinta=coloriWET_all)
 plot(acomp(coefs[1,]) +
      acomp(coefs[3,])*0:23 +
      acomp(coefs[4,])*(0:23)^2,
@@ -556,7 +563,7 @@ plot(acomp(coefs[1,]) +
      col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
 ##
 fun.triangolo.stabilita(df=Y.Msizer1,
-                        tinta= as.numeric(df.plot$COND)+2)
+                        tinta=coloriWET_all)
 plot(acomp(coefs[1,]) +
      acomp(coefs[3,])*0:23 +
      acomp(coefs[4,])*(0:23)^2,
@@ -584,57 +591,13 @@ plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
      acomp(coefs[3,])*on.ultra.off +
      acomp(coefs[4,])*on.ultra.off^2,
-     col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
-## si riparte coi campioni dry
-questi <-
-    with(df.tessitura, which(HUMIDITY=="dry"))
-df.plotDRY <- df.tessitura[questi,]
-Y.Msizer <- acomp(df.plotDRY[, 16:18])
-lm.2.2 <-   with(df.plotDRY,lm(ilr(Y.Msizer) ~ COND+TIME2+I(TIME2^2)))
-modelloMsizer <- lm.2.2
-coefsDRY <-  ilrInv(coef(modelloMsizer), orig=Y.Msizer)
+     col=4, add=TRUE, pch= c("b","W","B"))## start stop OO
 ##############################################################
-CO <- round(matrix(coefsDRY[1,] +
-                   acomp(coefsDRY[3,])*on.ultra.off +
-                   acomp(coefsDRY[4,])*on.ultra.off^2,
-                   ncol = 3, byrow = FALSE), 3)
-OO <- round(matrix(acomp(coefsDRY[1,]) +
-                   acomp(coefsDRY[2,]) +
-                   acomp(coefsDRY[3,])*on.ultra.off +
-                   acomp(coefsDRY[4,])*on.ultra.off^2,
-                   ncol = 3, byrow = FALSE), 3)
-dati.iufw <- rbind(CO*100, OO*100)
-##i = inizio, u = accension ultrasuoni, f = fine d = dry/w = wet
-rm(CO);rm(OO)
-Conduzione <-
-    c("Convenzionale"," ", " ",
-      "Biologico "," "," ")
-Fase <- rep(c("inizio misura","inizio sonicatura", "fine misura"),2)
-colnames(dati.iufw) <- c("Macro (%)", "Meso (%)", "Micro (%)")
-df.iufw <- cbind(Conduzione, Fase, dati.iufw)
-df.iufw <- rbind(df.iufw[1:3,], "", df.iufw[4:6,])
-##
-colori <-
-    ifelse(df.plotDRY$Ultrasonic.level,
-           "transparent", df.plotDRY$COND)
-fun.triangolo.stabilita(df=Y.Msizer, tinta=colori)
+## Campioni DRY
+fun.triangolo.stabilita(df=Y.Msizer,
+                        tinta=coloriDRY_NOsonic)
 fun.triangolo.stabilita(df=Y.Msizer,
                         tinta=df.plotDRY$COND)
-##
-fun.triangolo.stabilita(df=Y.Msizer,
-                        tinta= tinta=df.plotDRY$COND)
-plot(acomp(coefsDRY[1,]) +
-     acomp(coefsDRY[3,])*0:23 +
-     acomp(coefsDRY[4,])*(0:23)^2,
-     col=1, lwd= 3, type="l", add=TRUE)## sequenza temporale CO dry
-plot(acomp(coefsDRY[1,]) +
-     acomp(coefsDRY[3,])*on.ultra.off +
-     acomp(coefsDRY[4,])*on.ultra.off^2,
-     col="white", add=TRUE, pch=16, cex = 2)## start stop CO dry
-plot(acomp(coefsDRY[1,]) +
-     acomp(coefsDRY[3,])*on.ultra.off +
-     acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "W","C"))## start stop COdry
 ##
 fun.triangolo.stabilita(df=Y.Msizer,
                         tinta=df.plotDRY$COND)
@@ -649,7 +612,22 @@ plot(acomp(coefsDRY[1,]) +
 plot(acomp(coefsDRY[1,]) +
      acomp(coefsDRY[3,])*on.ultra.off +
      acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "W","C"))## start stop COdry
+     col=1, add=TRUE, pch=c("c", "D","C"))## start stop COdry
+##
+fun.triangolo.stabilita(df=Y.Msizer,
+                        tinta=df.plotDRY$COND)
+plot(acomp(coefsDRY[1,]) +
+     acomp(coefsDRY[3,])*0:23 +
+     acomp(coefsDRY[4,])*(0:23)^2,
+     col=1, lwd= 3, type="l", add=TRUE)## sequenza temporale CO dry
+plot(acomp(coefsDRY[1,]) +
+     acomp(coefsDRY[3,])*on.ultra.off +
+     acomp(coefsDRY[4,])*on.ultra.off^2,
+     col="white", add=TRUE, pch=16, cex = 2)## start stop CO dry
+plot(acomp(coefsDRY[1,]) +
+     acomp(coefsDRY[3,])*on.ultra.off +
+     acomp(coefsDRY[4,])*on.ultra.off^2,
+     col=1, add=TRUE, pch=c("c", "D","C"))## start stop COdry
 plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
      acomp(coefsDRY[3,])*0:23+
      acomp(coefsDRY[4,])*(0:23)^2,
@@ -661,9 +639,10 @@ plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
 plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
      acomp(coefsDRY[3,])*on.ultra.off +
      acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=2, add=TRUE, pch= c("o","W","O"))## start stop OO dry
+     col=2, add=TRUE, pch= c("b","D","B"))## start stop OO dry
 ### DIAPO FINALE
 fun.triangolo.stabilita(df=Y.Msizer1, tinta="transparent")
+## relazione conv DRY
 plot(acomp(coefsDRY[1,]) +
      acomp(coefsDRY[3,])*0:23 +
      acomp(coefsDRY[4,])*(0:23)^2,
@@ -675,7 +654,8 @@ plot(acomp(coefsDRY[1,]) +
 plot(acomp(coefsDRY[1,]) +
      acomp(coefsDRY[3,])*on.ultra.off +
      acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "W","C"))## start stop COdry
+     col=1, add=TRUE, pch=c("c", "D","C"))## start stop COdry
+## relazione bio DRY
 plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
      acomp(coefsDRY[3,])*0:23+
      acomp(coefsDRY[4,])*(0:23)^2,
@@ -687,8 +667,8 @@ plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
 plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
      acomp(coefsDRY[3,])*on.ultra.off +
      acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=2, add=TRUE, pch= c("o","W","O"))## start stop OO dry
-## ROBA WET
+     col=2, add=TRUE, pch= c("b","D","B"))## start stop OO dry
+## relazione conv WET
 plot(acomp(coefs[1,]) +
      acomp(coefs[3,])*0:23 +
      acomp(coefs[4,])*(0:23)^2,
@@ -703,6 +683,7 @@ plot(acomp(coefs[1,]) +
      acomp(coefs[3,])*on.ultra.off +
      acomp(coefs[4,])*on.ultra.off^2,
      col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
+## relazione bio WET
 plot(acomp(coefs[1,]) + acomp(coefs[2,])+
      acomp(coefs[3,])*0:23+
      acomp(coefs[4,])*(0:23)^2,
@@ -716,12 +697,12 @@ plot(acomp(coefs[1,]) + acomp(coefs[2,])+
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
      acomp(coefs[3,])*on.ultra.off +
      acomp(coefs[4,])*on.ultra.off^2,
-     col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
+     col=4, add=TRUE, pch= c("b","W","B"))## start stop OO
 ## inserisce le tessiture apparenti ricalcolate
-plot(acomp(tessitura8rino2[,4:6]), cex=1.5,
-     pch = 18,
-     col=as.numeric(rev(tessitura8rino2$CONDUZIONE)),
-     add = TRUE)
+## plot(acomp(tessitura8rino2[,4:6]), cex=1.5,
+##      pch = 18,
+##      col=as.numeric(rev(tessitura8rino2$CONDUZIONE)),
+##      add = TRUE)
 dev.off()
 
 ## ###################################################
@@ -930,7 +911,7 @@ dev.off()
 ## df.iufw <- cbind(Conduzione, Fase, dati.iufw)
 ## df.iufw <- rbind(df.iufw[1:3,], "", df.iufw[4:6,])
 
-## plot(Y.Msizer, cex=0.25, col= as.numeric(df.plot$COND)+2, add=TRUE)
+## plot(Y.Msizer, cex=0.25, col=coloriWET_all, add=TRUE)
 ## plot(acomp(coefs[1,]) +
 ##      acomp(coefs[3,])*0:23 +
 ##      acomp(coefs[4,])*(0:23)^2,
