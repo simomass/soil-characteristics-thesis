@@ -509,14 +509,17 @@ fun.triangolo.stabilita <-
              add = FALSE)
         if(legenda){
         legend("topleft",
-               c( "CONV Dry", "BIO Dry","CONV Wet", "BIO Wet"),
-               fill=1:4, bty = "n")}
+               c("CONV Umidi", "BIO Umidi"),
+               fill=3:4, bty = "n", cex=1.1)
+        legend("topright",
+               c( "CONV Secchi", "BIO Secchi"),
+               fill=1:2, bty = "n", cex=1.1)
+        }
         text(0.1,0.025, "> 250 um")
         text(0.85,0.025, "tra 20 e 250 um")
         text(0.5,0.72, "< 20 um")
     }
-
-pdf("stabilita.pdf")
+pdf(file.path(DirGraf,"stabilita.pdf"))
 par(mfrow = c(1,1))
 ## solo secchi e no ultrasuoni
 for(i in 1:24){
@@ -560,7 +563,7 @@ plot(acomp(coefs[1,]) +
 plot(acomp(coefs[1,]) +
      acomp(coefs[3,])*on.ultra.off +
      acomp(coefs[4,])*on.ultra.off^2,
-     col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
+     col=3, add=TRUE, pch=c("c", "U","C")[3:1], cex=1.5)## start stop CO
 ##
 fun.triangolo.stabilita(df=Y.Msizer1,
                         tinta=coloriWET_all)
@@ -577,7 +580,7 @@ plot(acomp(coefs[1,]) +
 plot(acomp(coefs[1,]) +
      acomp(coefs[3,])*on.ultra.off +
      acomp(coefs[4,])*on.ultra.off^2,
-     col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
+     col=3, add=TRUE, pch=c("c", "U","C")[3:1], cex=1.5)## start stop CO
 plot(acomp(coefs[1,]) + acomp(coefs[2,])+
      acomp(coefs[3,])*0:23+
      acomp(coefs[4,])*(0:23)^2,
@@ -591,7 +594,7 @@ plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
      acomp(coefs[3,])*on.ultra.off +
      acomp(coefs[4,])*on.ultra.off^2,
-     col=4, add=TRUE, pch= c("b","W","B"))## start stop OO
+     col=4, add=TRUE, pch= c("b","U","B")[3:1], cex=1.5)## start stop OO
 ##############################################################
 ## Campioni DRY
 fun.triangolo.stabilita(df=Y.Msizer,
@@ -612,7 +615,7 @@ plot(acomp(coefsDRY[1,]) +
 plot(acomp(coefsDRY[1,]) +
      acomp(coefsDRY[3,])*on.ultra.off +
      acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "D","C"))## start stop COdry
+     col=1, add=TRUE, pch=c("c", "S","C")[3:1], cex=1.5)## start stop COdry
 ##
 fun.triangolo.stabilita(df=Y.Msizer,
                         tinta=df.plotDRY$COND)
@@ -627,7 +630,7 @@ plot(acomp(coefsDRY[1,]) +
 plot(acomp(coefsDRY[1,]) +
      acomp(coefsDRY[3,])*on.ultra.off +
      acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "D","C"))## start stop COdry
+     col=1, add=TRUE, pch=c("c", "S","C")[3:1], cex=1.5)## start stop COdry
 plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
      acomp(coefsDRY[3,])*0:23+
      acomp(coefsDRY[4,])*(0:23)^2,
@@ -639,7 +642,7 @@ plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
 plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
      acomp(coefsDRY[3,])*on.ultra.off +
      acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=2, add=TRUE, pch= c("b","D","B"))## start stop OO dry
+     col=2, add=TRUE, pch= c("b","S","B")[3:1], cex=1.5)## start stop OO dry
 ### DIAPO FINALE
 fun.triangolo.stabilita(df=Y.Msizer1, tinta="transparent")
 ## relazione conv DRY
@@ -654,7 +657,7 @@ plot(acomp(coefsDRY[1,]) +
 plot(acomp(coefsDRY[1,]) +
      acomp(coefsDRY[3,])*on.ultra.off +
      acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "D","C"))## start stop COdry
+     col=1, add=TRUE, pch=c("c", "S","C")[3:1], cex=1.5)## start stop COdry
 ## relazione bio DRY
 plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
      acomp(coefsDRY[3,])*0:23+
@@ -667,7 +670,7 @@ plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
 plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
      acomp(coefsDRY[3,])*on.ultra.off +
      acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=2, add=TRUE, pch= c("b","D","B"))## start stop OO dry
+     col=2, add=TRUE, pch= c("b","S","B")[3:1], cex=1.5)## start stop OO dry
 ## relazione conv WET
 plot(acomp(coefs[1,]) +
      acomp(coefs[3,])*0:23 +
@@ -682,7 +685,7 @@ plot(acomp(coefs[1,]) +
 plot(acomp(coefs[1,]) +
      acomp(coefs[3,])*on.ultra.off +
      acomp(coefs[4,])*on.ultra.off^2,
-     col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
+     col=3, add=TRUE, pch=c("c", "U","C")[3:1], cex=1.5)## start stop CO
 ## relazione bio WET
 plot(acomp(coefs[1,]) + acomp(coefs[2,])+
      acomp(coefs[3,])*0:23+
@@ -697,7 +700,7 @@ plot(acomp(coefs[1,]) + acomp(coefs[2,])+
 plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
      acomp(coefs[3,])*on.ultra.off +
      acomp(coefs[4,])*on.ultra.off^2,
-     col=4, add=TRUE, pch= c("b","W","B"))## start stop OO
+     col=4, add=TRUE, pch= c("b","U","B")[3:1], cex=1.5)## start stop OO
 ## inserisce le tessiture apparenti ricalcolate
 ## plot(acomp(tessitura8rino2[,4:6]), cex=1.5,
 ##      pch = 18,
@@ -876,12 +879,12 @@ dev.off()
 ## plot(acomp(coefs[1,]) +
 ##      acomp(coefs[3,])*on.ultra.off +
 ##      acomp(coefs[4,])*on.ultra.off^2,
-##      col=1, add=TRUE, pch=c("c", "D","C"))## start stop CO
+##      col=1, add=TRUE, pch=c("c", "S","C"))## start stop CO
 
 ## plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
 ##      acomp(coefs[3,])*on.ultra.off +
 ##      acomp(coefs[4,])*on.ultra.off^2,
-##      col=2, add=TRUE, pch= c("o","D","O"))## start stop OO
+##      col=2, add=TRUE, pch= c("o","S","O"))## start stop OO
 
 ## questi <-
 ##     with(df.tessitura, which(HUMIDITY=="dry"))
@@ -931,11 +934,11 @@ dev.off()
 ## plot(acomp(coefs[1,]) +
 ##      acomp(coefs[3,])*on.ultra.off +
 ##      acomp(coefs[4,])*on.ultra.off^2,
-##      col=3, add=TRUE, pch=c("c", "W","C"))## start stop CO
+##      col=3, add=TRUE, pch=c("c", "U","C"))## start stop CO
 ## plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
 ##      acomp(coefs[3,])*on.ultra.off +
 ##      acomp(coefs[4,])*on.ultra.off^2,
-##      col=4, add=TRUE, pch= c("o","W","O"))## start stop OO
+##      col=4, add=TRUE, pch= c("o","U","O"))## start stop OO
 ## ## for(i in 1:2){
 ## ##     for(k in 0:23){
 ## ##         newdata <-
@@ -970,100 +973,100 @@ dev.off()
 ## ###################################################
 ## ### code chunk number 26: Import_porosimetria
 ## ###################################################
-##                                         #PoroElabora <- FALSE
-##                                         # ## Si importano i soli file "CSV" MAIUSCOLI, che derivano dalla manipolazione dei dati grezzi della porosimetria
-## vec.paletti.poro <- c(0.5, 50)
-## ## if(PoroElabora){
-## ##    source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
-## ##     }else{
-## ##         NULL}
+                                        #PoroElabora <- FALSE
+                                        # ## Si importano i soli file "CSV" MAIUSCOLI, che derivano dalla manipolazione dei dati grezzi della porosimetria
+vec.paletti.poro <- c(0.5, 50)
+## if(PoroElabora){
+##    source(file.path(DirCod, "ElaboraPorosimetriaConPaletti.R"))
+##     }else{
+##         NULL}
 
-## Export.Dir <-
-##     file.path(DirMain, "dati_elaborati/porosimetria")
-## nomi.file.elab <-
-##     list.files(Export.Dir, pattern = ".CSV")
+Export.Dir <-
+    file.path(DirMain, "dati_elaborati/porosimetria")
+nomi.file.elab <-
+    list.files(Export.Dir, pattern = ".CSV")
 
-## df.data <- data.frame()
+df.data <- data.frame()
 
-## for(i in 1:length(nomi.file.elab)){
-##     file.in.elaborazione <-
-##         nomi.file.elab[i]
-##     path.completo <-
-##         file.path(Export.Dir,file.in.elaborazione)
-##     df.this <-
-##         read.table(file=path.completo,
-##                    sep=";", dec=",", header=TRUE,
-##                    fileEncoding =  "UTF-16LE")[-4,]
-##     df.this$MAN <- substr(file.in.elaborazione, 3,3)
-##     df.this$FIELD <-  substr(file.in.elaborazione, 4,5 )
-##     df.this$TIL <-  substr(file.in.elaborazione, 6,6)
-##     df.this$ROW <-  substr(file.in.elaborazione, 7,7)
-##     df.this$REP <-  substr(file.in.elaborazione, 8,8)
-##     df.this$REPPORO <-  substr(file.in.elaborazione, 10,10)
-##     df.data <- rbind.data.frame(df.data, df.this)
-## }
+for(i in 1:length(nomi.file.elab)){
+    file.in.elaborazione <-
+        nomi.file.elab[i]
+    path.completo <-
+        file.path(Export.Dir,file.in.elaborazione)
+    df.this <-
+        read.table(file=path.completo,
+                   sep=";", dec=",", header=TRUE,
+                   fileEncoding =  "UTF-16LE")[-4,]
+    df.this$MAN <- substr(file.in.elaborazione, 3,3)
+    df.this$FIELD <-  substr(file.in.elaborazione, 4,5 )
+    df.this$TIL <-  substr(file.in.elaborazione, 6,6)
+    df.this$ROW <-  substr(file.in.elaborazione, 7,7)
+    df.this$REP <-  substr(file.in.elaborazione, 8,8)
+    df.this$REPPORO <-  substr(file.in.elaborazione, 10,10)
+    df.data <- rbind.data.frame(df.data, df.this)
+}
 
-## df.data <-
-##     df.data[c(2,3,13:18)]
+df.data <-
+    df.data[c(2,3,13:18)]
 
-## df.data <-
-##     cbind.data.frame(df.data[c(T,F,F),-(1:2)],
-##                      matrix(df.data[,1], ncol=3, byrow=TRUE)
-##                      )
+df.data <-
+    cbind.data.frame(df.data[c(T,F,F),-(1:2)],
+                     matrix(df.data[,1], ncol=3, byrow=TRUE)
+                     )
 
-## names(df.data)[7:9] <-
-##     c("Residuals", "Storage", "Transmission")
-## require(compositions)
-## row.names(df.data) <- 1:dim(df.data)[1]
-## PESI <- read.table(file.path(DirElab, "pesoaggre.csv"), sep = ";")$x
+names(df.data)[7:9] <-
+    c("Residuals", "Storage", "Transmission")
+require(compositions)
+row.names(df.data) <- 1:dim(df.data)[1]
+PESI <- read.table(file.path(DirElab, "pesoaggre.csv"), sep = ";")$x
 
-## df.data <- data.frame(
-##     df.data[,1:6],
-##     RESIDUALS = (df.data[,7]-df.data[,8])/PESI,
-##     STORAGE = (df.data[,8]-df.data[,9])/PESI,
-##     TRANSMISSION = df.data[,9]/PESI
-##                                         #    TOT = df.data[,7]/PESI
-## )
+df.data <- data.frame(
+    df.data[,1:6],
+    RESIDUALI = (df.data[,7]-df.data[,8])/PESI,
+    IMMAGAZZ = (df.data[,8]-df.data[,9])/PESI,
+    TRASMISSIONE = df.data[,9]/PESI
+                                        #    TOT = df.data[,7]/PESI
+)
 
-## ## lm.micropori <-
-## ##     with(df.data, lm(MICRO ~ MAN)) #+ TIL))
-## ## anova(lm.micropori)
-## ## summary(lm.micropori)
-## ## lm.macropori <-
-## ##     with(df.data, lm(MACRO ~ MAN)) #+ TIL))
-## ## anova(lm.macropori)
-## ## summary(lm.macropori)
-## ## lm.totale <-
-## ##     with(df.data, lm(TOT ~ MAN))#+TIL))
-## ## anova(lm.totale)
-## ## summary(lm.totale)
-
-
-## ## par(mfrow = c(2,2))
-## ## qqnorm(resid(lm.macropori))
-
-## ## lm.ratio <-
-## ##     lm(MACRO/MICRO ~ MAN*TIL, data = df.data)
-## ## anova(lm.ratio)
+## lm.micropori <-
+##     with(df.data, lm(MICRO ~ MAN)) #+ TIL))
+## anova(lm.micropori)
+## summary(lm.micropori)
+## lm.macropori <-
+##     with(df.data, lm(MACRO ~ MAN)) #+ TIL))
+## anova(lm.macropori)
+## summary(lm.macropori)
+## lm.totale <-
+##     with(df.data, lm(TOT ~ MAN))#+TIL))
+## anova(lm.totale)
+## summary(lm.totale)
 
 
-## df.porosimetria <-
-##     df.data[-c(3,6,11,10),]
+## par(mfrow = c(2,2))
+## qqnorm(resid(lm.macropori))
 
-## Y <- acomp(df.porosimetria[, 7:9])
-## modelloPoro <-
-##     with(df.porosimetria, lm(ilr(Y) ~ MAN+TIL))
-## coefs.Poro <-  ilrInv(coef(modelloPoro), orig=Y)
-## alpha <- 0.05
-## ##df.data$TOT <- rowSums(df.data[,7:8])
-## ##df.data$P.INDEX <- df.data$TOT/df.data$PESI
-## ## lm.totale <-
-## ##     lm(df.data$P.INDEX ~ df.data$MAN+df.data$TIL)
-## ## lm.totale2 <-
-## ##     lm(df.data$P.INDEX ~ df.data$MAN*df.data$TIL)
-## ## anova(lm.totale, lm.totale2)
-## ##anova.PorTot <-
-## ##    anova(lm.totale)
+## lm.ratio <-
+##     lm(MACRO/MICRO ~ MAN*TIL, data = df.data)
+## anova(lm.ratio)
+
+
+df.porosimetria <-
+    df.data[-c(3,6,11,10),]
+
+Y <- acomp(df.porosimetria[, 7:9])
+modelloPoro <-
+    with(df.porosimetria, lm(ilr(Y) ~ MAN+TIL))
+coefs.Poro <-  ilrInv(coef(modelloPoro), orig=Y)
+alpha <- 0.05
+##df.data$TOT <- rowSums(df.data[,7:8])
+##df.data$P.INDEX <- df.data$TOT/df.data$PESI
+## lm.totale <-
+##     lm(df.data$P.INDEX ~ df.data$MAN+df.data$TIL)
+## lm.totale2 <-
+##     lm(df.data$P.INDEX ~ df.data$MAN*df.data$TIL)
+## anova(lm.totale, lm.totale2)
+##anova.PorTot <-
+##    anova(lm.totale)
 
 
 ## ###################################################
@@ -1103,35 +1106,49 @@ dev.off()
 ## ###################################################
 ## ### code chunk number 28: plotacompPore
 ## ###################################################
-## ##jpeg(filename = "plotAcompPore", width = 550, height = 450)
+##jpeg(filename = "plotAcompPore", width = 550, height = 450)
 
-## ##commento perché sennò mi da NULL DEVICE
+##commento perché sennò mi da NULL DEVICE
+pdf(file.path(DirGraf,"AcompPORO.pdf"))
+par(mfrow = c(1,1))
+plot(acomp(df.porosimetria[, 7:9]), cex = 2,
+     col = as.numeric(as.factor(df.porosimetria$MAN)),
+     pch = as.numeric(as.factor(df.porosimetria$TIL)))
+        text(0.1,0.025, "> 50 um")
+        text(0.85,0.025, "tra 0.5 e 50 um")
+        text(0.5,0.72, "< 0.5 um")
+##plot(Y)#, cex=2, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
+## intercetta <-
+## ilrInv(coef(modelloPoro)[1,], orig=Y)
+## bi <-
+## ilrInv(rbind(0, coef(modelloPoro)[-1,]), orig=Y)
+## medie <- intercetta+acomp(bi)
+## plot(medie, col= 3:6, pch = 20, add = TRUE)
+legend("topleft",
+       c("CONV Arato", "CONV Rippato", "CONV Frang.to"),
+       cex = 1.1, pt.cex = 2,
+       col = rep(1,3),
+       pch = 1:3, border = "white", fill=NULL)
+legend("topright",
+       c("BIO Aratp", "BIO Rippato", "BIO Frang.to"),
+       cex = 1.1, pt.cex = 2,
+       col = rep(2, 3),
+       pch = 1:3, border = "white", fill=NULL)
+dev.off()
 
-## plot(acomp(df.porosimetria[, 7:9]), cex = 2, col = as.numeric(as.factor(df.porosimetria$MAN)),
-##      pch = as.numeric(as.factor(df.porosimetria$TIL)))
-## ##plot(Y)#, cex=2, col=as.numeric(df.porosimetria$MAN), axes = TRUE)
-## ## intercetta <-
-## ## ilrInv(coef(modelloPoro)[1,], orig=Y)
-## ## bi <-
-## ## ilrInv(rbind(0, coef(modelloPoro)[-1,]), orig=Y)
-## ## medie <- intercetta+acomp(bi)
-## ## plot(medie, col= 3:6, pch = 20, add = TRUE)
+######Faccio ggplot
+##require(ggplot2)
+##require(ggtern)
 
-## legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"), cex = 0.7, pt.cex = 1,
-##        col = rep(1:2, each = 3), pch = 1:3, border = "white", fill=NULL)
-## ######Faccio ggplot
-## ##require(ggplot2)
-## ##require(ggtern)
+## prova <- acomp(df.porosimetria[, 7:9])
+## prova <- data.frame(prova)
 
-## ## prova <- acomp(df.porosimetria[, 7:9])
-## ## prova <- data.frame(prova)
-
-## ## plot <- ggtern() +
-## ##          theme_bw() +
-## ##          theme_hidetitles() +
-## ##          geom_point(data = prova,
-## ##              aes(x = RESIDUALS, y = STORAGE, z = TRANSMISSION), alpha = 0.8, size = 1)
-## ##dev.off()
+## plot <- ggtern() +
+##          theme_bw() +
+##          theme_hidetitles() +
+##          geom_point(data = prova,
+##              aes(x = RESIDUALS, y = STORAGE, z = TRANSMISSION), alpha = 0.8, size = 1)
+##dev.off()
 
 
 ## ###################################################

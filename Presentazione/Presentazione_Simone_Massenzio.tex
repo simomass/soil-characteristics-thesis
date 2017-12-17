@@ -1,4 +1,4 @@
-\documentclass[10pt]{beamer}
+\documentclass[xcolor={usenames, table, x11names}, final, 10pt]{beamer}
 \usetheme[
 %%% option passed to the outer theme
 % progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
@@ -38,6 +38,9 @@
 \usepackage{animate}
 \usepackage{tikz}
 \usepackage{graphics}
+\usepackage[table]{xcolor} % richiesto per colortbl
+% \usepackage{tabu} %per colorare il testo delle tabelle, non lo sfondo lez 11
+\usepackage{booktabs}
 \newdate{date}{21}{12}{2017}
 
 % -------------------------------------------------------
@@ -119,10 +122,10 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
 
 \begin{frame}
   \vspace{2cm}
-  \begin{figure}
+  
     \centering
     \includegraphics[width=0.8\textwidth]{../foto/wordcloud.png}
-  \end{figure}
+  
 \end{frame}
 
 \begin{frame}{Parte 1 \small{Fertilità del suolo e agricoltura biologica}}
@@ -135,10 +138,10 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
     incrementare la produttività nei sistemi agricoli biologici
     
     \column[T]{.65\textwidth}
-    \begin{figure}
+    
       \centering
       \includegraphics[width=0.6\textwidth]{../foto/FertilCropLogo.png}
-    \end{figure}
+    
   \end{columns}
 \end{frame}
 
@@ -153,32 +156,32 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
     \item non utilizza prodotti di sintesi
     \item pone maggiore attenzione alla fertilità del suolo
     \end{itemize}
-    
+    \
     \column{.65\textwidth}
     \only<2>{
       % \vspace{1.5cm}
-      \begin{figure}[h]
+      
         \centering
         \includegraphics[width=\textwidth]{../foto/crescitaBio.jpg}
-      \end{figure}}
+      }
     \only<3>{
       % \vspace{1.5cm}
-      \begin{figure}[h]
+      
         \centering
         \includegraphics[width=\textwidth]{../foto/carbonCycle.jpg}
-      \end{figure}}
+      }
     \only<4>{
       % \vspace{1.5cm}
-      \begin{figure}[h]
+      
         \centering
         \includegraphics[width=\textwidth]{../foto/fitofarmaci.jpg}
-      \end{figure}}
+      }
     \only<5>{
       % \vspace{1.5cm}
-      \begin{figure}[h]
+      
         \centering
         \includegraphics[width=\textwidth]{../foto/fertilitsuolo.jpg}
-      \end{figure}}
+      }
   \end{columns}
 \end{frame}
 
@@ -212,23 +215,29 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
 
 \begin{frame}{Parte 1 \small{Obiettivi}}
   Tramite l'uso di indici di fertilità del suolo, verificare la
-  presenza di differenze tra:
+  presenza di eventuali differenze tra:
   \begin{columns}[c]
     \column{.50\textwidth}
-    \begin{itemize}[<+->]
-      \pause
-    \item Metodo di conduzione (convenzionale, biologico) 
-
-    \item Lavorazioni primarie (aratura, frangizollatura, rippatura)
+    \begin{itemize}
+    \item<2-> Metodo di conduzione
+      \begin{itemize}
+      \item <2->      convenzionale
+      \item <2->      biologico
+      \end{itemize}
+    \item<3-> Lavorazioni primarie
+      \begin{itemize}
+      \item <3->      aratura, 
+      \item <3->      frangizollatura
+      \item <3->      rippatura        
+      \end{itemize}
     \end{itemize}
     \column{.48\textwidth}
-    \only<2>{\includegraphics[width=0.8\textwidth]{../foto/logo-Bio.png}}
-    \only<3>{\includegraphics[width=0.8\textwidth]{../foto/lavorazione.jpg}}
+    \temporal<2>{}{\includegraphics[width=0.8\textwidth]{../foto/logo-Bio.png}}{\includegraphics[width=0.8\textwidth]{../foto/lavorazione.jpg}}
   \end{columns}
 \end{frame}
 
 \begin{frame}{Parte 2 \small{Sito sperimentale}}
-  \begin{minipage}[0.45\textheight]{\textwidth}
+  \begin{overlayarea}{\textwidth}{0.20\textheight}
     \begin{itemize}[<+->]
     \item esperimento a lungo termine dal 1991 (MoLTE) presso Azienda
       agricola Montepaldi
@@ -237,50 +246,51 @@ studio di fisica del suolo] % [] is optional - is placed on the bottom of the
     \item area Mediterranea $\rightarrow$ ridotto apporto di concimi
       organici di origine animale
     \end{itemize}
-  \end{minipage}
+  \end{overlayarea}
   \vfill
-  \begin{minipage}[0.45\textheight]{\textwidth}
+  \begin{overlayarea}{\textwidth}{0.45\textheight}
     \only<1>{
       \begin{figure}
         \centering
         \includegraphics[width=0.9\textwidth]{../foto/Montepaldi.jpg}
-      \end{figure}}
+      \end{figure}
+      }
 
     \only<2-3>{
       \begin{figure}
         \centering
         \includegraphics[width=0.7\textwidth]{../foto/campi2.jpg}
-      \end{figure}}
-  \end{minipage}
+      \end{figure}
+      }
+  \end{overlayarea}  
 \end{frame}
 
 
 
 
 \begin{frame}{Parte 2 \small{Aspetti produttivi}}
-  \transdissolve<2>
-% latex table generated in R 3.4.3 by xtable 1.8-2 package
-% Sun Dec 17 09:25:34 2017
-\begin{table}[ht]
-\centering
-\scalebox{0.8}{
-\begin{tabular}{l c p{0.1cm} c c p{0.1cm} c}
-  \hline
-  Anno            &           &2016& &          &2017&                \\
-    &&&&&&\\
-Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
-  \hline
-  &&&&&&\\
-         Orzo (t/ha)     & 5.00$\pm$0.05 &&3.40$\pm$0.05 & 4.30$\pm$0.06 && 2.50$\pm$0.06 \\
-    &&&&&&\\
-  Girasole (t/ha) & 3.52$\pm$0.18 &&2.32$\pm$0.02 &
-\alt<1>{0.25$\pm$0.07}{\alert{0.25$\pm$0.07}} &&
-\alt<1>{1.18$\pm$0.09}{\alert{1.18$\pm$0.09}}\\
-    &&&&&&\\
-  \hline
-\end{tabular}
-}
-\end{table}
+  % latex table generated in R 3.4.3 by xtable 1.8-2 package
+  % Sun Dec 17 09:25:34 2017
+  \begin{table}[ht]
+    \centering
+    \scalebox{0.8}{
+      \begin{tabular}{l c p{0.1cm} c c p{0.1cm} c}
+        \toprule
+        Anno            &           &2016& &          &2017&                \\
+                        &&&&&&\\
+        Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
+        \midrule
+                        &&&&&&\\
+        Orzo (t/ha)     & 5.00$\pm$0.05 &&3.40$\pm$0.05 & 4.30$\pm$0.06 && 2.50$\pm$0.06 \\
+                        &&&&&&\\
+        Girasole (t/ha) & 3.52$\pm$0.18 &&2.32$\pm$0.02 &
+                                                          \alt<1>{0.25$\pm$0.07}{\cellcolor{red!40}{0.25$\pm$0.07}} &&
+                                                          \alt<1>{1.18$\pm$0.09}{\cellcolor{red!40}{1.18$\pm$0.09}}\\
+                        &&&&&&\\
+        \bottomrule
+      \end{tabular}
+    }
+  \end{table}
 
 
 \end{frame}
@@ -288,102 +298,123 @@ Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
 
 
 \begin{frame}{Parte 2 \small{Sito sperimentale}}
-  \begin{itemize}[<+->]
-  \item 4 appezzamenti, 2 Convenzionali e 2 Biologici
-  \item 9 parcelle entro appezzamento $\rightarrow$ lavorazioni con 3 repliche
-  \item in ogni parcella $\rightarrow$ tre punti campionati in novembre 2016,
-  \end{itemize}
-  \vfill
-  \only<1>{
-    \begin{figure}
-      \centering
-      \includegraphics[width=0.6\textwidth]{../foto/bionuovovecchio.png}
-    \end{figure}}
-  \only<2>{
-    \begin{figure}
-      \centering
-      \includegraphics[width=0.5\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
-    \end{figure}}
-  \only<3-4>{
-    \scriptsize
-    \begin{table}[ht]
-      \centering
-      \begin{tabular}{|l|c|c|c|}
-        \hline
-        Campi        & Convenzionale & Biologico   &    \\
-
-        \hline
-                     &                &                      &      \\ 
-        Appezzamenti & 2              &  2                   &       \\ 
-
-                     &                &                      &        \\
-        \hline
-                     &                &                      &         \\
-        Parcelle     &                &                      &   \\
-        entro appezzamento   &      9 &     9                &       \\
-
-                     &                &                      &        \\
-        \hline
-                     &                &                      &        \\
-        Punti entro  &          3     &    3                 &\\ 
-        parcella     &                &                      &
-        \\
-        \hline
-                     &                &                      &        \\
-        Totale campioni& 54           &     54               & \only<3>{108}\only<4>{\alert{\large{108}}}   \\
-        \hline
-      \end{tabular}
-    \end{table}
-    % \begin{figure}
-    %   \centering
-    %   \includegraphics[width=0.5\textwidth]{../foto/OO_sito.jpeg}
-    % \end{figure}
-  }
+  \begin{overlayarea}{\textwidth}{0.20\textheight}  
+    \begin{itemize}[<+->]
+    \item 4 appezzamenti, 2 Convenzionali e 2 Biologici
+    \item 9 parcelle entro appezzamento $\rightarrow$ lavorazioni con 3 repliche
+    \item in ogni parcella $\rightarrow$ tre punti campionati in novembre 2016
+    \end{itemize}
+  \end{overlayarea}
+  \begin{overlayarea}{\textwidth}{0.60\textheight}
+    \only<1>{
+      
+        \centering
+        \includegraphics[width=0.6\textwidth]{../foto/bionuovovecchio.png}
+      }
+    \only<2>{
+      
+        \centering
+        \includegraphics[width=0.5\textwidth]{../foto/Panoramica_lavorazioni.jpeg}
+      }
+    \only<3-4>{
+      \scriptsize
+      \begin{table}[ht]
+        \centering
+        \begin{tabular}{|l|c|c|c|}
+          \hline
+          &&&\\ 
+          Campi        & Convenzionale & Biologico    &\\
+          &&&\\
+          \hline
+          &&&\\ 
+          Appezzamenti & 2              &  2          &\\ 
+          &&&\\
+          \hline
+          &&&\\
+          Parcelle     &                &             &\\
+          entro appezzamento   &      9 &     9       &\\
+          &&&\\
+          \hline
+          &&&\\
+          Punti entro  &          3     &    3        &\\ 
+          parcella     &&&\\
+          \hline
+          &&                             &\alt<3>{}{\cellcolor{red!40}{}}   \\
+          Totale campioni& 54           &     54      &\alt<3>{108}{\cellcolor{red!40}{108}}   \\
+          &&                             &\alt<3>{}{\cellcolor{red!40}{}}   \\
+          \hline
+        \end{tabular}
+      \end{table}
+      % 
+      %   \centering
+      %   \includegraphics[width=0.5\textwidth]{../foto/OO_sito.jpeg}
+      % 
+    }%% fine 3-4
+  \end{overlayarea}
 \end{frame}
 
 
 \begin{frame}{Parte 2 \small{Metodi di analisi}}
-  \begin{columns}[c]
+  \begin{columns}[T]
     \column{.50\textwidth}
-    \begin{enumerate}[<+->]
-    \item Densit\`a apparente
+    \begin{enumerate}
+    \item<1->Densità  apparente
       \begin{itemize}
-      \item Metodo con cilindro in ottone ($854.1\: cm^3$)
-        \pause
-      \item Metodo per spinta idrostatica ($\sim 30 \: cm^3$)
-        \pause
+      \item<2-> Metodo con cilindro in ottone ($854.1\: cm^3$)
+      \item<4-> Metodo per spinta idrostatica ($\sim 30 \: cm^3$)
       \end{itemize}
-    \item Stabilit\`a degli aggregati
-       \begin{itemize}
-       \item secchi all'aria (\emph{DRY})
-       \item inumiditi (\emph{WET})
-       \end{itemize}
-    \item Distribuzione dimensionale dei pori tramite tecniche di
-      porosimetria ad intrusione di mercurio      
+    \item<6-> Stabilità degli aggregati
+      \begin{itemize}
+      \item<7-> secchi all'aria (\emph{DRY})
+      \item<7-> inumiditi (\emph{WET})
+      \end{itemize}
+    \item<8-> Porosimetria ad intrusione di mercurio      
     \end{enumerate}
     \column{.48\textwidth}
-    % \begin{overlayarea}{\linewidth}{3cm}
-    \only<2>{\includegraphics[width=0.8\textwidth]{../foto/cilindroOttone.jpeg}}
-    \only<3>{\vspace{1cm}
-      \[
-      D_{App}=\frac{P_{secco}}{V_{cilindro}}
-      \]
-    \begin{figure}[hb]
-      \includegraphics[width=0.8\textwidth]{../foto/cilindrosuolo.jpg}
-    \end{figure}}
-    \only<4>{\vspace{1cm}
-      \begin{figure}[hb]
-        \includegraphics[width=0.8\textwidth]{../foto/petrolio}
-      \end{figure}}
-    \only<5>{
+    %%%%%%%%%%%%%%% COLONNA SINISTRA dentro overlay area %%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{overlayarea}{\textwidth}{0.8\textheight}
+      \only<2>{
+        \includegraphics[width=0.8\textwidth]{../foto/cilindroOttone.jpeg}
+      }%% fine 2
+      \only<3>{
+        \vspace{1cm}
         \[
-        D_{app} = \frac{P_{aggregato}}{V_{aggregato}}
+          D_{App}=\frac{P_{secco}}{V_{cilindro}}
         \]
-        \includegraphics[width=0.8\textwidth]{../foto/spintapeso}}
-    \only<6>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/stabilitVid/stabilitVid-}{0}{196}}%%396
-    \only<7-8>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{117}{176}
-      \animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{208}{233}}%233
-    \only<9>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/poresize/PoreSize-}{0}{396}}%%396
+          \includegraphics[width=0.8\textwidth]{../foto/cilindrosuolo.jpg}
+        
+      }%% fine 3
+      \only<4>{
+        \vspace{1cm}
+          \includegraphics[width=0.8\textwidth]{../foto/petrolio}
+        
+      }%% fine 4
+
+      \only<5>{
+        \centering
+        \[
+          D_{app} = \frac{P_{aggregato}}{V_{aggregato}}
+        \]
+        
+        \includegraphics[width=0.8\textwidth]{../foto/spintapeso}
+      }%% fine 5
+
+      \only<6>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/stabilitVid/stabilitVid-}{0}{196}
+      }%%396 %% fine 6
+
+      \only<7>{\animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{117}{176}
+        \animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/msizer/Msizer-}{208}{233}
+      }%233 %% fine 7
+
+      \only<8->{
+        \centering
+        \vspace{1cm}
+        \begin{center}
+        \animategraphics[loop,autoplay,width=\linewidth]{12}{../foto/poresize/PoreSize-}{0}{396}
+      \end{center}
+
+      }%%396 %% fine 8
+    \end{overlayarea}   
   \end{columns}
 \end{frame}
 
@@ -429,9 +460,9 @@ Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
 % \begin{frame}[label=Composizionale]
 %   \vspace{2cm}
 %   Risultati analisi \hyperlink{Anova}{\beamerbutton{composizionale}}
-%   \begin{figure}[hb]
+%   [hb]
 %     \includegraphics[width=0.6\textwidth]{../tesi/Tesi_GIT-plotacompWETDRY.pdf}
-%   \end{figure}
+%   
 % \end{frame}
 
 \begin{frame}
@@ -439,79 +470,91 @@ Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
 \end{frame}
 
 
-\begin{frame}[label=Core]{Parte 3 \small{Densità apparente con \bf{cilindro}}}
+\begin{frame}[label=Core]{Parte 3 \small{Densità apparente con \bf{\large{cilindro}}}}
   \hyperlink{finale}{\beamerbutton{Conclusioni}}  
-  \begin{figure}
+  \centering
     \includegraphics[width=0.6\textwidth]{../tesi/boxCore.pdf}
-  \end{figure}
+  
 \end{frame}
 
-\begin{frame}{Parte 3 \small{Densità apparente con \bf{cilindro}} }
+\begin{frame}{Parte 3 \small{Densità apparente con  \bf{\large{cilindro}}}}
   % latex table generated in R 3.4.0 by xtable 1.8-2 package
   % Thu Jun 22 16:16:27 2017
+
+  Tabella ANOVA
+
   \begin{table}[ht]
     \centering
     \label{tab:anova del modello}
     \begin{tabular}{lrrrrr}
-      \hline
-      & Df & SS & MS & F value & Pr($>$F) \\ 
-      \hline 
+      \toprule
+      & Df & SS & MS & F  & Pr($>$F) \\ 
+      \midrule 
       Anno         & 1  &  0.02  &  0.02  &   1.41   & 0.2390   \\ 
       Conduzione   & 1  &  0.04  &  0.04  &   3.29   & 0.0745   \\ 
       Lavorazione  & 2  &  0.00  &  0.00  &   0.03   & 0.9728   \\ 
       Residui      & 90 &  0.97  &  0.01  &          &          \\ 
-      \hline
+      \bottomrule
     \end{tabular}
   \end{table}
 \end{frame}
 
-\begin{frame}[label=Clod]{Parte 3 \small{Densità apparente per \bf{spinta
-        idrostatica}}} 
+\begin{frame}[label=Clod]{Parte 3 \small{Densità apparente per \bf{\large{spinta idrostatica}}}}
   \hyperlink{finale}{\beamerbutton{Conclusioni}}
-  \only<1>{\begin{figure}
+  \only<1>{\centering
       \includegraphics[width=0.6\textwidth]{../tesi/boxCore_SCALA.pdf}
-    \end{figure}} 
+    } 
   \only<2>{
-    \begin{figure}
+    \centering
       \includegraphics[width=0.6\textwidth]{../tesi/boxClod_SCALA.pdf}
-    \end{figure}}
+    }
 \end{frame}
 
-\begin{frame}{Parte 3 \small{Densità apparente per \bf{spinta idrostatica}}}
+\begin{frame}{Parte 3 \small{Densità apparente per \bf{\large{spinta idrostatica}}}}
   % latex table generated in R 3.4.0 by xtable 1.8-2 package
   % Thu Jun 22 16:32:35 2017
+  % Thu Jun 22 16:16:27 2017
+
+  Tabella ANOVA
+
+  
   \begin{table}
     \centering
     \begin{tabular}{llcccc}
-      \hline
+      \toprule
       & Df  & SS & MS & F & Pr($>$F) \\ 
-      \hline
+      \midrule
       Conduzione  & 1   & 0.03   & 0.03    & 6.31    & 0.012    \\ 
       Lavorazione & 2   & 0.05   & 0.02    & 5.83    & 0.004    \\ 
       Totale      & 104 & 0.42   & 0.00    &         &          \\ 
-      \hline
+      \bottomrule
     \end{tabular}
     \label{tab:Anova densita per spinta}
   \end{table}
 
 \end{frame}
 
-\begin{frame}{Parte 3 \small{Densità apparente con \bf{spinta idrostatica}}}
+\begin{frame}{Parte 3 \small{Densità apparente con \bf{\large{spinta idrostatica}}}}
 
   \footnotesize
   \begin{table}[ht]
     \centering
     \begin{tabular}{llrccc}
-      \hline
-      Conduzione    & Lavorazione   & Media& Dev. std & n    & Tukey \\ 
-      \hline
+      \toprule
+      \\
+      Conduzione    & Lavorazione   & Media& Dev. std & n    & \cellcolor{red}{Tukey(0.95p??)} \\ 
+      \\
+      \midrule
+      \\
       Convenzionale & Arato         & 1.93 & 0.06      &  18 & b     \\ 
                     & Frangizollato & 1.89 & 0.05      &  18 & ab    \\ 
-                    & Rippato       & 1.90 & 0.06      &  18 & ab    \\ 
+                    & Rippato       & 1.90 & 0.06      &  18 & ab    \\
+      \\
       Biologico     & Arato         & 1.90 & 0.07      &  18 & ab    \\ 
                     & Frangizollato & 1.84 & 0.06      &  18 & a     \\ 
                     & Rippato       & 1.87 & 0.07      &  18 & ab    \\ 
-      \hline
+      \\
+      \bottomrule
     \end{tabular}
     \label{tab:RiassuntoDensitaSpinta}
   \end{table}
@@ -522,6 +565,7 @@ Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
 
 
 \begin{frame}{Parte 3 \small{Stabilità degli aggregati}}
+  \transdissolve<2>
   %   %% \begin{columns}
   %   %%   \column{.50\textwidth}
   %   %%   \vspace{1cm}
@@ -546,28 +590,35 @@ Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
   %   \vfill
   %   %%   \column{.48\textwidth}
   \only<1>{%%\begin{overlayarea}{\linewidth}{3cm}
-    \begin{figure}
+    
       \centering
       \includegraphics[width=0.5\textwidth]{../grafici/HistoStab.jpeg}
-    \end{figure}}
+    
+  }
   \only<2>{%%\begin{overlayarea}{\linewidth}{3cm}
-    \begin{figure}
+    
       \centering
       \includegraphics[width=0.5\textwidth]{../grafici/SplitStab.jpeg}
-    \end{figure}}
+    
+  }
   %% \end{overlayarea}}
   %   %% \only<3>{\includegraphics[width=0.5\textwidth]{../foto/simplessodeformaVerticale.png}}
   \only<3>{
-    \begin{figure}
+    
       \centering
-      \includegraphics[width=0.5\textwidth, page=1]{../grafici/stabilita.pdf}
-    \end{figure}}  %% \end{columns}
-  \only<4>{\begin{center}
-      \animategraphics[autoplay,width=0.5\linewidth]{12}{../grafici/stabilita}{1}{11}
-\end{center}}
-  \only<5>{\begin{center}
-      \animategraphics[autoplay,width=0.5\linewidth]{12}{../grafici/stabilita}{11}{22}
-\end{center}}
+      \includegraphics[width=0.75\textwidth, page=1]{../grafici/stabilita.pdf}
+    
+  }  %% \end{columns}
+  \only<4>{
+    \begin{center}
+      \animategraphics[autoplay,width=0.75\linewidth]{3}{../grafici/stabilita}{1}{11}
+    \end{center}
+  }
+  \only<5>{
+    \begin{center}
+      \animategraphics[autoplay,width=0.75\linewidth]{3}{../grafici/stabilita}{11}{22}
+    \end{center}
+  }
 
 \end{frame}
 
@@ -577,25 +628,37 @@ Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
 
 \begin{frame}[label=distribuzione]{Parte 3 \small{Stabilità degli aggregati}}
   % \hyperlink{finale}{\beamerbutton{Conclusioni}} 
-
-  \only<1>{\begin{figure}
+  \transdissolve<1-2, 5-6>[duration=0.8]
+  \only<1>{
+\centering
       \includegraphics[width=0.75\textwidth, page=25]{../grafici/stabilita.pdf}
-    \end{figure}}
-  \only<2>{  \begin{figure}
+
+  }
+  \only<2>{
+\centering
       \includegraphics[width=0.75\textwidth, page=26]{../grafici/stabilita.pdf}
-    \end{figure}}
-  \only<3>{  \begin{figure}
+
+  }
+  \only<3>{
+\centering
       \includegraphics[width=0.75\textwidth, page=27]{../grafici/stabilita.pdf}
-    \end{figure}}
-  \only<4>{  \begin{figure}
+
+  }
+  \only<4>{
+\centering
       \includegraphics[width=0.75\textwidth, page=28]{../grafici/stabilita.pdf}
-    \end{figure}}
-  \only<5>{  \begin{figure}
+
+  }
+  \only<5>{
+\centering
       \includegraphics[width=0.75\textwidth, page=32]{../grafici/stabilita.pdf}
-    \end{figure}}
-  \only<6>{  \begin{figure}
+
+  }
+  \only<6>{
+\centering
       \includegraphics[width=0.75\textwidth, page=33]{../grafici/stabilita.pdf}
-    \end{figure}}
+
+  }
 \end{frame}
 
 
@@ -605,28 +668,31 @@ Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
   \footnotesize
   % latex table generated in R 3.4.0 by xtable 1.8-2 package
   % Tue Jun 27 21:29:19 2017
+  Tabella ANOVA 
   \begin{table}
     \centering
     \begin{tabular}{lrrrrcr}
-      \hline
+      \toprule
       & Df&Pillai& approx F & num Df & den Df & Pr($>$F) \\ 
-      \hline
+      \midrule
       Convenzionale & 1 & 0.92 & 4955.26  &      2 &    835 & $<10^{-3}$\\ 
       Biologico     & 1 & 0.09 & 41.72    &      2 &    835 & $<10^{-3}$\\ 
       Tempo         & 1 & 0.92 & 4504.77  &      2 &    835 & $<10^{-3}$\\ 
       Tempo$^2$     & 1 & 0.35 & 227.06   &      2 &    835 & $<10^{-3}$\\ 
       Totale        & 836 &    &          &        &        &          \\ 
-      \hline
+      \bottomrule
     \end{tabular}
   \end{table}
 \end{frame}
 
 \begin{frame}[label=Porosimetria]{Parte 3 \small{Distribuzione dei pori}}
+
   \hyperlink{finale}{\beamerbutton{Conclusioni}}
   
   \begin{figure}
-    \includegraphics[width=0.6\textwidth]{../tesi/Tesi_GIT-figurina.pdf}
+    \includegraphics[width=0.7\textwidth]{../grafici/AcompPORO.pdf}
   \end{figure}
+
 \end{frame}
 
 \begin{frame}{Parte 3 \small{Distribuzione dei pori}}
@@ -639,24 +705,31 @@ Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
     % con porosimetria a mercurio}
     % \label{tab:Poro_medie}
     \begin{tabular}{llccc}%p{1.25cm}p{3.25cm}p{2cm}}
-      \hline
-      Conduzione & Lavorazione & Residui & Immagazzinamento &
-                                                              Trasmissione \\ 
-                 &             & (\%) &  (\%) &  (\%) \\ 
-      \hline
+      
+      \toprule
+      \\
+      &             & Pori    & Pori          & Pori di\\
+      Conduzione & Lavorazione & residuali & immagazzinamento &
+                                                              trasmissione \\ 
+      &             & (\%) &  (\%) &  (\%) \\
+      \\
+      \midrule
+      \\
       Convenzionale & Arato & 74 & 24 & 2 \\ 
-                 & Rippato & 61 & 34 & 6 \\ 
-                 & Frangizollato & 65 & 33 & 2 \\ 
-                 &  &  &  &  \\ 
+      & Rippato & 61 & 34 & 6 \\ 
+      & Frangizollato & 65 & 33 & 2 \\ 
+      &  &  &  &  \\ 
       Biologico & Arato & 56 & 41 & 3 \\ 
-                 & Rippato & 56 & 41 & 3 \\ 
-                 & Frangizollato & 64 & 32 & 4 \\ 
-      \hline
+      & Rippato & 56 & 41 & 3 \\ 
+      & Frangizollato & 64 & 32 & 4 \\ 
+      \\
+      \bottomrule
     \end{tabular}
   \end{table}
 \end{frame}
 
 \begin{frame}{Parte 3 \small{Distribuzione dei pori}}
+  Tabella ANOVA 
   \begin{table}[ht]
     \centering
     % \caption{Analisi della varianza relativa al modello
@@ -664,14 +737,14 @@ Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
     % a mercurio }
     % \label{tab:poros_anova}
     \begin{tabular}{lrrrrrr}
-      \hline
+      \toprule
       & Df & Pillai & approx F & num Df & den Df & Pr($>$F) \\ 
-      \hline
+      \midrule
       Intercetta & 1 & 0.94 & 60.45 & 2 & 7 & $<10^{-3}$ \\ 
       Conduzione & 1 & 0.14 & 0.58 & 2 & 7 & 0.585 \\ 
       Lavorazione & 2 & 0.52 & 1.41 & 4 & 16 & 0.275 \\ 
       Totale & 8 &  &  &  &  &  \\ 
-      \hline
+      \bottomrule
     \end{tabular}
   \end{table}
 \end{frame}
@@ -702,13 +775,13 @@ Conduzione      & Conv      &    & Bio      & Conv          &&  Bio           \\
 
 \end{frame}
 
-\begin{frame}{Parte 4: \small{Conclusioni II}}
-L'analisi dei tre indici misurati porta a concludere che:
+\begin{frame}{Parte 4 \small{Conclusioni II}}
+  I tre indici misurati indicano che:
   \begin{itemize}[<+->]
-\pause
-  \item La conduzione convenzionale ha mostrato una maggiore stabilità
+    \pause
+  \item La conduzione convenzionale esibisce una maggiore stabilità
     alla rottura degli aggregati
-  \item La conduzione biologica ha mostrato per contro una maggiore
+  \item La conduzione biologica  per contro posside una maggiore
     porosità e una tendenza ad ad avere pori più grandi
   \item Gli effetti delle lavorazioni sono di minima entità se non nulle
   \end{itemize}
@@ -718,7 +791,7 @@ L'analisi dei tre indici misurati porta a concludere che:
 
 
 \begin{frame}
-  \finalpage{Grazie per l'attenzione.}
+  \finalpage{\LARGE{Grazie per l'attenzione}}
 \end{frame}
 
 %%% Local Variables:
@@ -727,35 +800,61 @@ L'analisi dei tre indici misurati porta a concludere che:
 %%% End:
 \appendix
 
-\begin{frame}
-\vspace{1.5cm}
-\begin{figure}
-\centering
-\includegraphics[width=0.7\textwidth, page=3]{../grafici/RisultatiChimica-Fisica.pdf}
-\end{figure}
-\end{frame}
+
 
 \begin{frame}
-\begin{table}[ht]
-\centering
-\caption{Sintesi dei dati della porosit\`a totale ricavati dalle analisi della porosimetria a mercurio} 
-\label{tab:tot_sommario}
-\begin{tabular}{llcccc}
-  \hline
-Conduzione & Lavorazione & Porosità totale & ST.DEV & n & Tukey \\ 
-  \hline
-convenzionale & Arato & 159.91 & 16.21 &   2 & a \\ 
-   & Rippato & 168.37 & 20.92 &   3 & a \\ 
-   & Frangizollato & 186.13 & 30.38 &   3 & a \\ 
-   &  &  &  &  &  \\ 
-  biologico & Arato & 168.03 & 9.62 &   2 & a \\ 
-   & Rippato & 192.20 & 38.54 &   4 & a \\ 
-   & Frangizollato & 218.28 & 7.29 &   2 & a \\ 
-   \hline
-\end{tabular}
-\end{table}
+  \begin{table}[ht]
+    \centering
+    \caption{Sintesi dei dati della porosit\`a totale ricavati dalle analisi della porosimetria a mercurio} 
+    \label{tab:tot_sommario}
+    \begin{tabular}{llSScc}%llcccc}
+      \toprule
+      Conduzione & {Lavorazione} & {Porosità totale} & ST.DEV & n & Tukey \\ 
+      \midrule
+      Convenzionale & Arato & 159.91 & 16.21 &   2 & a \\ 
+                 & Rippato & 168.37 & 20.92 &   3 & a \\ 
+                 & Frangizollato & 186.13 & 30.38 &   3 & a \\ 
+                 &  &  &  &  &  \\ 
+      Biologico & Arato & 168.03 & 9.62 &   2 & a \\ 
+                 & Rippato & 192.20 & 38.54 &   4 & a \\ 
+                 & Frangizollato & 218.28 & 7.29 &   2 & a \\ 
+      \bottomrule
+    \end{tabular}
+  \end{table}
 \end{frame}
 
+
+\begin{frame}
+     \centering
+   \includegraphics[width=0.4\textwidth, page=3]{../grafici/RisultatiChimica-Fisica.pdf} 
+ \end{frame}
+ 
+ \begin{frame}
+      \centering
+   \includegraphics[width=0.6\textwidth, page=1]{../grafici/PCA_penetrometria_LavorazETConduz.pdf} 
+ \end{frame}
+
+
+ \begin{frame}
+      \centering
+   \includegraphics[width=0.6\textwidth, page=2]{../grafici/PCA_penetrometria_LavorazETConduz.pdf} 
+ \end{frame}
+
+
+ \begin{frame}
+      \centering
+   \includegraphics[width=0.6\textwidth]{../foto/USDA_triangolo} 
+ \end{frame}
+
+ \begin{frame}
+   \centering
+   \includegraphics[width=0.6\textwidth]{../foto/simplessodeforma} 
+ \end{frame}
+
+
+
+
+ 
 \end{document}
 
 %%% Local Variables:
