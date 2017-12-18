@@ -1023,9 +1023,9 @@ PESI <- read.table(file.path(DirElab, "pesoaggre.csv"), sep = ";")$x
 
 df.data <- data.frame(
     df.data[,1:6],
-    RESIDUALI = (df.data[,7]-df.data[,8])/PESI,
-    IMMAGAZZ = (df.data[,8]-df.data[,9])/PESI,
-    TRASMISSIONE = df.data[,9]/PESI
+    RESIDUALS = (df.data[,7]-df.data[,8])/PESI,
+    STORAGE = (df.data[,8]-df.data[,9])/PESI,
+    TRANSMISSION = df.data[,9]/PESI
                                         #    TOT = df.data[,7]/PESI
 )
 
@@ -1111,7 +1111,7 @@ alpha <- 0.05
 
 ##commento perché sennò mi da NULL DEVICE
 pdf(file.path(DirGraf,"AcompPORO.pdf"))
-par(mfrow = c(1,1))
+par(mar = c(3,5,3,5))
 plot(acomp(df.porosimetria[, 7:9]), cex = 2,
      col = as.numeric(as.factor(df.porosimetria$MAN)),
      pch = as.numeric(as.factor(df.porosimetria$TIL)))

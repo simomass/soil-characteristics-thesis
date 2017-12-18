@@ -1021,8 +1021,8 @@ rinforzata (per evitare la perdita di materiale).
 
 \section{Misura della densità apparente}
 La densità apparente del suolo è stata misurata sia con il metodo
-\emph{Core} (utilizzando grandi volumi) che con il metodo \emph{Clod}
-(utilizzando piccoli aggregati) \citep{black1900method}.
+\emph{Core}, utilizzando grandi volumi, che con il metodo \emph{Clod},
+utilizzando piccoli aggregati \citep{black1900method}.
 
 \subsection{Metodo \emph{Core}}
 \label{sec:Core}
@@ -1035,13 +1035,13 @@ misurato successivamente per spinta idrostatica.  Il suolo vagliato è
 stato essiccato in stufa a \SI{105}{\celsius} fino a peso costante, e
 successivamente pesato \citep{ugolini2010basi}.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.7\textwidth]{../foto/secco.jpeg}
-  \caption{Metodo \emph{Core}: il terreno dopo essicazione in stufa}
-  \label{fig:FotoSeccoCore}
-\end{figure}
-\FloatBarrier
+%% \begin{figure}[ht]
+%%   \centering
+%%   \includegraphics[width=0.7\textwidth]{../foto/secco.jpeg}
+%%   \caption{Metodo \emph{Core}: il terreno dopo essicazione in stufa}
+%%   \label{fig:FotoSeccoCore}
+%% \end{figure}
+%% \FloatBarrier
 
 Con i dati ottenuti, è stato ricavato il valore della densità
 apparente ($\rho_{CoreApp}$) tramite la seguente formula:
@@ -1061,7 +1061,7 @@ Dove:
                        (<\SI{2}{\milli\metre}) ed essiccato a
                        \SI{105}{\degree} (\SI{}{\kilogram})
 \end{tabular}
-\vspace*{3em}
+\vspace*{1em}
 
 
 
@@ -1072,18 +1072,18 @@ aggregati di piccole dimensioni (3-\SI{4}{\cm} di diametro) suddivisi
 dal campione di suolo prelevato.  Il metodo \emph{Clod} viene anche
 detto metodo per spinta idrostatica \citep{Monnier_1973}. La procedura
 consiste mantenere a bagno nel petrolio per una notte gli aggregati
-di terreno (Fig. \ref{fig:petrolio}) cercando di ridurre al minimo le
+di terreno  cercando di ridurre al minimo le
 manipolazioni per mantenere la struttura dell'aggregato stesso.
 
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.7\textwidth]{../foto/petrolio.jpeg}
-  \caption{Metodo \emph{Clod}: aggregati immersi in petrolio per la
-    misura della densità apparente}
-  \vspace{-2em}
-  \label{fig:petrolio}
-\end{figure}
+%(Fig. \ref{fig:petrolio})
+%% \begin{figure}[ht]
+%%   \centering
+%%   \includegraphics[width=0.7\textwidth]{../foto/petrolio.jpeg}
+%%   \caption{Metodo \emph{Clod}: aggregati immersi in petrolio per la
+%%     misura della densità apparente}
+%%   \vspace{-2em}
+%%   \label{fig:petrolio}
+%% \end{figure}
 
 
 
@@ -2549,7 +2549,7 @@ legend("topleft", c("CO Ara", "CO Rip", "CO Fzo", "OO Ara", "OO Rip", "OO Fzo"),
 %<<label = figurina, fig=TRUE, echo=FALSE, width=5, height=5>>=
 %<<plotacompPore>>
 %@
-\includegraphics[width=0.8\textwidth]{plotAcompPore.jpeg}
+\includegraphics[width=0.8\textwidth]{plotAcompPore.pdf}
 \caption[Diagramma ternario della distribuzione dei pori]{Diagramma
     ternario della distribuzione dei pori. Gli apici del triangolo
     rappresentano le classi dimensionali in cui i pori sono divisi in:
