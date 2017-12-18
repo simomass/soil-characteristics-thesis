@@ -47,7 +47,7 @@ df.dueAnni <-
 ## p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.dueAnni) +
 ##     geom_boxplot(position=position_dodge(1))+
 ##     facet_grid(.~YEAR+TRT)+
-##     geom_hline(yintercept = 1.35)+
+##     geom_hline(yintercept = 1.35, size = 1.0)+
 ##     theme(axis.title.x=element_blank(),
 ##           axis.text.x=element_blank(),
 ##           axis.ticks.x=element_blank())+    
@@ -62,7 +62,7 @@ df.dueAnni <-
 ##           axis.ticks.x=element_blank())+
 ##        scale_y_continuous(limits=c(1.2,2.1))#, expand = c(0, 0))
 
-## pdf("~/Simo_GIT/tesi/boxCore_SCALA.pdf")
+## pdf("~/Simo_GIT/tesi/boxCore.pdf_SCALA.pdf")
 ## p10
 ## dev.off()
 
@@ -78,26 +78,26 @@ df.dueAnni <-
 ## levels(df.petrolio$LAVORAZIONE) <- c("Arato", "Frangizollato", "Rippato")
 
 
-## p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.petrolio) +
-##     geom_boxplot(position=position_dodge(1))+
-##     facet_grid(.~TRT)+
-##      geom_hline(yintercept = 1.35)+
-##     theme(axis.title.x=element_blank(),
-##           axis.text.x=element_blank(),
-##           axis.ticks.x=element_blank())+    
-##     theme(text = element_text(size = 20),
-##           axis.text.x = element_text(angle=0, hjust=0))+
-##     theme(legend.position = "bottom",
-##           legend.background = element_rect(color = "white", 
-##                                            fill = "white", size = 1, linetype = "solid"),
-##           legend.direction = "horizontal") + scale_fill_discrete(name= NULL)+ylab(expression(paste("Densità apparente g ", cm^-3)))+
-##     theme(axis.title.x=element_blank(),
-##           axis.text.x=element_blank(),
-##           axis.ticks.x=element_blank())+scale_y_continuous(limits=c(1.2,2.1))#, expand = c(0, 0))
+p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.petrolio) +
+    geom_boxplot(position=position_dodge(1))+
+    facet_grid(.~TRT)+
+     geom_hline(yintercept = 1.35, size = 1)+
+    theme(axis.title.x=element_blank(),
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+    
+    theme(text = element_text(size = 20),
+          axis.text.x = element_text(angle=0, hjust=0))+
+    theme(legend.position = "bottom",
+          legend.background = element_rect(color = "white", 
+                                           fill = "white", size = 1, linetype = "solid"),
+          legend.direction = "horizontal") + scale_fill_discrete(name= NULL)+ylab(expression(paste("Densità apparente g ", cm^-3)))+
+    theme(axis.title.x=element_blank(),
+          axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())+scale_y_continuous(limits=c(1.2,2.1))#, expand = c(0, 0))
 
-## pdf("~/Simo_GIT/tesi/boxClod_SCALA.pdf")
-## p10
-## dev.off()
+pdf("~/Simo_GIT/tesi/boxClod_SCALA.pdf")
+p10
+dev.off()
 
 ## df.vecchio <- df.petrolio
 

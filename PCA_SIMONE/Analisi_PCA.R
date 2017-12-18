@@ -48,11 +48,11 @@ df.PCAChimica<-
     read.table(file.path(DirElab, "df.PCAChimica.csv"), sep = ";")
 
 
-## names(df.PCAChimica)
+names(df.PCAChimica)
 
-## lm.carbonio <-
-##     lm(C.organico ~ TRT+LAVORAZIONE, data = df.PCAChimica)
-## summary(lm.carbonio)
+lm.carbonio <-
+    lm(C.organico ~ TRT+LAVORAZIONE, data = df.PCAChimica)
+summary(lm.carbonio)
 
 require(FactoMineR)
 ##res <- PCA(df.PCA1, quali.sup = c(1, 2, 3), quanti.sup = c(param.chim, 16), graph = FALSE)

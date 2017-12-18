@@ -1115,6 +1115,7 @@ Dove:
                      l'analisi (\SI{0.761}{\gram\per\cubic\cm})
 \end{tabular}
 \vspace{0.5cm}
+
 Successivamente il campione è stato essiccato per una notte a
 \SI{150}{\degreeCelsius} quindi è stato pesato\footnote{Il
   raggiungimento di questa temperatura consente di allontanare l'acqua
