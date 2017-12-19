@@ -172,9 +172,7 @@ fun.triangolo.stabilita <-
         text(0.1,0.025, expression(paste(">250 ", mu, "m")))
         text(0.85,0.025, expression(paste("tra 20 e 250 ", mu, "m")))
         text(0.5,0.72, expression(paste("<20 ", mu, "m")))
-        
-    }
-
+}
 pdf(file.path(DirGraf,"stabilita.pdf"))
 par(mfrow = c(1,1))
 ## solo secchi e no ultrasuoni
@@ -206,51 +204,84 @@ on.ultra.off <- c(0, 11, 23)
 ## equazioni WET
 fun.triangolo.stabilita(df=Y.Msizer1,
                         tinta=coloriWET_all)
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*0:23 +
-     acomp(coefs[4,])*(0:23)^2,
+lineaCOwet <-
+    acomp(coefs[1,]) +
+    acomp(coefs[3,])*0:23 +
+    acomp(coefs[4,])*(0:23)^2
+startStopCOwet <-
+    acomp(coefs[1,]) +
+    acomp(coefs[3,])*on.ultra.off +
+    acomp(coefs[4,])*on.ultra.off^2
+rigaModificata <- startStopCOwet[1, ]+c(0,0,0.05)
+startStopCOwet <- acomp(rbind(rigaModificata, startStopCOwet[-1,]))
+lineaOOwet <-
+    acomp(coefs[1,]) + acomp(coefs[2,])+
+     acomp(coefs[3,])*0:23+
+    acomp(coefs[4,])*(0:23)^2
+startStopOOwet <-
+    acomp(coefs[1,]) + acomp(coefs[2,]) +
+    acomp(coefs[3,])*on.ultra.off +
+    acomp(coefs[4,])*on.ultra.off^2
+rigaModificata <- startStopOOwet[1, ]+c(0,0,-0.04)
+startStopOOwet <-
+    acomp(rbind(rigaModificata, startStopOOwet[-1,]))
+lineaCOdry <-
+    acomp(coefsDRY[1,]) +
+     acomp(coefsDRY[3,])*0:23 +
+    acomp(coefsDRY[4,])*(0:23)^2
+startStopCOdry <-
+    acomp(coefsDRY[1,]) +
+    acomp(coefsDRY[3,])*on.ultra.off +
+    acomp(coefsDRY[4,])*on.ultra.off^2
+startstopOOdry <-
+    acomp(coefsDRY[1,]) +
+    acomp(coefsDRY[3,])*on.ultra.off +
+    acomp(coefsDRY[4,])*on.ultra.off^2
+rigaModificata <- startStopCOdry[1, ]+c(0,0,+0.04)
+startStopCOdry <-
+    acomp(rbind(rigaModificata, startStopOOwet[-1,]))
+lineaOOdry <-
+    acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
+    acomp(coefsDRY[3,])*0:23+
+    acomp(coefsDRY[4,])*(0:23)^2
+startStopOOdry <-
+    acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
+    acomp(coefsDRY[3,])*on.ultra.off +
+    acomp(coefsDRY[4,])*on.ultra.off^2
+rigaModificata <- startStopOOdry[1, ]
+plot(lineaCOwet,
      col=3,  lwd=3, type="l", add=TRUE)## sequenza temporale CO wet
 ## bollini bianchi per lettere
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
+plot(startStopCOwet,
      col="white",
      add=TRUE, pch=16, cex = 3)## start stop CO
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=3, add=TRUE, pch=c("c", "U","C")[3:1], cex=1.5)## start stop CO
+## lettere
+plot(startStopCOwet,
+     col=3, add=TRUE, pch=c("c", "U","C")[3:1],
+     cex=1.5)## start stop CO
 ##
 fun.triangolo.stabilita(df=Y.Msizer1,
                         tinta=coloriWET_all)
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*0:23 +
-     acomp(coefs[4,])*(0:23)^2,
+plot(lineaCOwet,
      col=3,  lwd=3,type="l", add=TRUE)## sequenza temporale CO wet
 ## bollini bianchi per lettere
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
+plot(startStopCOwet,
      col="white",
      add=TRUE, pch=16, cex = 3)## start stop CO
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=3, add=TRUE, pch=c("c", "U","C")[3:1], cex=1.5)## start stop CO
-plot(acomp(coefs[1,]) + acomp(coefs[2,])+
-     acomp(coefs[3,])*0:23+
-     acomp(coefs[4,])*(0:23)^2,
+plot(startStopCOwet,
+     col=3, add=TRUE,
+     pch=c("c", "U","C")[3:1], cex=1.5)## start stop CO
+plot(lineaOOwet,
      col=4, lwd=3, add=TRUE, type="l")## sequenza temporale OO wet
+## punti OO wet
 ## bollini bianchi per lettere
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col="white", add=TRUE, pch= 16, cex = 3)## start stop OO
-##
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=4, add=TRUE, pch= c("b","U","B")[3:1], cex=1.5)## start stop OO
+plot(startStopOOwet,
+     col="white", add=TRUE,
+     pch= 16, cex = 3)## start stop OO
+plot(startStopOOwet,
+     col=4, add=TRUE,
+     pch= c("b","U","B")[3:1],
+     cex=1.5)## start stop OO
 ##############################################################
 ## Campioni DRY
 fun.triangolo.stabilita(df=Y.Msizer,
@@ -260,77 +291,56 @@ fun.triangolo.stabilita(df=Y.Msizer,
 ##
 fun.triangolo.stabilita(df=Y.Msizer,
                         tinta=df.plotDRY$COND)
-plot(acomp(coefsDRY[1,]) +
-     acomp(coefsDRY[3,])*0:23 +
-     acomp(coefsDRY[4,])*(0:23)^2,
-     col=1, lwd= 3, type="l", add=TRUE)## sequenza temporale CO dry
-plot(acomp(coefsDRY[1,]) +
-     acomp(coefsDRY[3,])*on.ultra.off +
-     acomp(coefsDRY[4,])*on.ultra.off^2,
-     col="white", add=TRUE, pch=16, cex = 2)## start stop CO dry
-plot(acomp(coefsDRY[1,]) +
-     acomp(coefsDRY[3,])*on.ultra.off +
-     acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "S","C")[3:1], cex=1.5)## start stop COdry
+plot(lineaCOdry,
+col=1, lwd= 3, type="l", add=TRUE)## sequenza temporale CO dry
+plot(startStopCOdry,
+     col="white", add=TRUE, pch=16, cex = 3)## start stop CO dry
+plot(startStopCOdry,
+     col=1, add=TRUE,
+     pch=c("c", "S","C")[3:1],
+     cex=1.5)## start stop COdry
 ##
 fun.triangolo.stabilita(df=Y.Msizer,
                         tinta=df.plotDRY$COND)
-plot(acomp(coefsDRY[1,]) +
-     acomp(coefsDRY[3,])*0:23 +
-     acomp(coefsDRY[4,])*(0:23)^2,
-     col=1, lwd= 3, type="l", add=TRUE)## sequenza temporale CO dry
-plot(acomp(coefsDRY[1,]) +
-     acomp(coefsDRY[3,])*on.ultra.off +
-     acomp(coefsDRY[4,])*on.ultra.off^2,
-     col="white", add=TRUE, pch=16, cex = 2)## start stop CO dry
-plot(acomp(coefsDRY[1,]) +
-     acomp(coefsDRY[3,])*on.ultra.off +
-     acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "S","C")[3:1], cex=1.5)## start stop COdry
-plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
-     acomp(coefsDRY[3,])*0:23+
-     acomp(coefsDRY[4,])*(0:23)^2,
-     col=2,  lwd= 3, add=TRUE, type="l")## sequenza temporale OO dry
-plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
-     acomp(coefsDRY[3,])*on.ultra.off +
-     acomp(coefsDRY[4,])*on.ultra.off^2,
-     col="white", add=TRUE, pch= 16, cex = 2)## start stop OO dry
-plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
-     acomp(coefsDRY[3,])*on.ultra.off +
-     acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=2, add=TRUE, pch= c("b","S","B")[3:1], cex=1.5)## start stop OO dry
+plot(lineaCOdry,
+     col=1, lwd= 3,
+     type="l", add=TRUE)## sequenza temporale CO dry
+plot(startStopCOdry,
+     col="white", add=TRUE,
+     pch=16, cex = 3)## start stop CO dry
+plot(startstopOOdry,
+     col=1, add=TRUE,
+     pch=c("c", "S","C")[3:1], cex=1.5)## start stop COdry
+plot(lineaOOdry,
+    col=2,  lwd= 3, add=TRUE, type="l")## sequenza temporale OO dry
+plot(startStopOOdry,
+     col="white", add=TRUE, pch= 16, cex = 3)## start stop OO dry
+plot(startStopOOdry,
+     col=2, add=TRUE,
+     pch= c("b","S","B")[3:1], cex=1.5)## start stop OO dry
 ### DIAPO FINALE
 fun.triangolo.stabilita(df=Y.Msizer1, tinta="transparent")
 ## relazione conv DRY
-plot(acomp(coefsDRY[1,]) +
-     acomp(coefsDRY[3,])*0:23 +
-     acomp(coefsDRY[4,])*(0:23)^2,
+plot(lineaCOdry,
      col=1, lwd= 3, type="l", add=TRUE)## sequenza temporale CO dry
 ## plot(acomp(coefsDRY[1,]) +
 ##      acomp(coefsDRY[3,])*on.ultra.off +
 ##      acomp(coefsDRY[4,])*on.ultra.off^2,
 ##      col="white", add=TRUE, pch=16, cex = 2)## start stop CO dry
-plot(acomp(coefsDRY[1,]) +
-     acomp(coefsDRY[3,])*on.ultra.off +
-     acomp(coefsDRY[4,])*on.ultra.off^2,
-     col=1, add=TRUE, pch=c("c", "S","C")[3:1], cex=1.5)## start stop COdry
+plot(startStopCOdry,
+     col=1, add=TRUE,
+     pch=c("c", "S","C")[3:1], cex=1.5)## start stop COdry
 ## relazione bio DRY
-plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
-     acomp(coefsDRY[3,])*0:23+
-     acomp(coefsDRY[4,])*(0:23)^2,
+plot(lineaOOdry,
      col=2,  lwd= 3, add=TRUE, type="l")## sequenza temporale OO dry
 ## plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
 ##      acomp(coefsDRY[3,])*on.ultra.off +
 ##      acomp(coefsDRY[4,])*on.ultra.off^2,
 ##      col="white", add=TRUE, pch= 16, cex = 2)## start stop OO dry
-plot(acomp(coefsDRY[1,]) + acomp(coefsDRY[2,]) +
-     acomp(coefsDRY[3,])*on.ultra.off +
-     acomp(coefsDRY[4,])*on.ultra.off^2,
+plot(startStopOOdry,
      col=2, add=TRUE, pch= c("b","S","B")[3:1], cex=1.5)## start stop OO dry
 ## relazione conv WET
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*0:23 +
-     acomp(coefs[4,])*(0:23)^2,
+plot(lineaCOwet,
      col=3,  lwd=3,type="l", add=TRUE)## sequenza temporale CO wet
 ## bollini bianchi per lettere
 ## plot(acomp(coefs[1,]) +
@@ -338,14 +348,11 @@ plot(acomp(coefs[1,]) +
 ##      acomp(coefs[4,])*on.ultra.off^2,
 ##      col="white",
 ##      add=TRUE, pch=16, cex = 3)## start stop CO
-plot(acomp(coefs[1,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=3, add=TRUE, pch=c("c", "U","C")[3:1], cex=1.5)## start stop CO
+plot(startStopCOwet,
+     col=3, add=TRUE,
+     pch=c("c", "U","C")[3:1], cex=1.5)## start stop CO
 ## relazione bio WET
-plot(acomp(coefs[1,]) + acomp(coefs[2,])+
-     acomp(coefs[3,])*0:23+
-     acomp(coefs[4,])*(0:23)^2,
+plot(lineaOOwet,
      col=4, lwd=3, add=TRUE, type="l")## sequenza temporale OO wet
 ## ## bollini bianchi per lettere
 ## plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
@@ -353,10 +360,18 @@ plot(acomp(coefs[1,]) + acomp(coefs[2,])+
 ##      acomp(coefs[4,])*on.ultra.off^2,
 ##      col="white", add=TRUE, pch= 16, cex = 3)## start stop OO
 ##
-plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
-     acomp(coefs[3,])*on.ultra.off +
-     acomp(coefs[4,])*on.ultra.off^2,
-     col=4, add=TRUE, pch= c("b","U","B")[3:1], cex=1.5)## start stop OO
+plot(startStopOOwet,
+     col=4, add=TRUE,
+     pch= c("b","U","B")[3:1], cex=1.5)## start stop
+plot(acomp(c(0.42582946, 0.4786861, 0.09548441)),
+##    c( 0.47624943, 0.4423284, 0.08142218)),
+     col=4, add=TRUE,
+     pch= 1, cex=10)# start stop
+plot(acomp(startStopOOdry[1,]),
+##    c( 0.47624943, 0.4423284, 0.08142218)),
+     col=1, add=TRUE,
+     pch= 1, cex=10)# start stop
+## OO
 ## inserisce le tessiture apparenti ricalcolate
 ## plot(acomp(tessitura8rino2[,4:6]), cex=1.5,
 ##      pch = 18,
@@ -364,6 +379,7 @@ plot(acomp(coefs[1,]) + acomp(coefs[2,]) +
 ##      add = TRUE)
 dev.off()
 
+iiii
 ## ###################################################
 ## ### code chunk number 20: IUFW
 ## ###################################################
