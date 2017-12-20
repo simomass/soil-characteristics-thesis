@@ -74,8 +74,8 @@ df.dueAnni <-
 
 
 ##df.vecchio <- df.petrolio
-## levels(df.petrolio$TRT) <-c("Convenzionale", "Biologico")
-## levels(df.petrolio$LAVORAZIONE) <- c("Arato", "Frangizollato", "Rippato")
+ levels(df.petrolio$TRT) <-c("Convenzionale", "Biologico")
+ levels(df.petrolio$LAVORAZIONE) <- c("Arato", "Frangizollato", "Rippato")
 
 
 p10 <- ggplot(aes(y = densita.apparente, x = 1, fill = LAVORAZIONE), data = df.petrolio) +
@@ -328,7 +328,14 @@ df.datiporitot <- data.frame(
     PARCELLA = rep(2, nrow(df.data)),
     df.data
 )
-
+## Mi è venuto il dubbio pre tesi, faccio una prova di test non Par
+## tanto per vedere che viene fuori
+## friedman.test(TOT ~ MAN+TIL, data = df.datiporitot)
+## wb <- aggregate(df.datiporitot$TOT,
+##                       by = list(w = df.datiporitot$MAN,
+##                                 t = df.datiporitot$TIL),
+##                 FUN = mean)
+## friedman.test(wb$x, wb$w)#, wb$t)
 
 df.datiporitot <-
     df.datiporitot[,c(1, 3, 4, 2, 5, 7, 12)]
