@@ -25,7 +25,7 @@ final, BCOR=10mm]{scrbook}
 \usepackage[utf8]{inputenc}
 % \usepackage{geometry}
 % \geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=5cm}
-% \usepackage[nochapters,pdfspacing,dottedtoc]{classicthesis}
+%\usepackage[nochapters,pdfspacing,dottedtoc]{classicthesis}
 % \setcounter{secnumdepth}{4} % numerini alle sezioni dentro al testo
 % \setcounter{tocdepth}{4} % nell'indice
 \usepackage{url}
